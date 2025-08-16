@@ -1,0 +1,114 @@
+# What advice would you like to give to future participants?
+
+> **Note:** Some comments were originally written in [Finnish](./feedback-original.md). These have been translated into English and are marked with the prefix **Auto translated**.
+
+- **Auto translated**: Go through everything carefully at the beginning, so the following material won't feel too overwhelming. Many concepts build on top of each other, so if you don't understand the earlier content, it's unlikely you'll understand the next.  
+- The course feels intense, but in the end, there isn't much. Things are covered, and overall it doesn't feel hard, even with 0 experience.  
+- Focus on time management.  
+- My advice: be prepared for every class by reading materials beforehand.  
+- **Auto translated**: The course is difficult. It's worth focusing during the first three weeks when the basics of JavaScript are reviewed.  
+- Prepare for lectures diligently.  
+- Try allocating as much time as you can for this course.  
+- Dedicate hours to it and stay motivated. Nothing special really.  
+- Start from day one.  
+- Don't give up because it gets more interesting as you go along.  
+- Ask ChatGPT questions about how things work if you don't get it.  
+- Be interested, watch the videos, and try to document them before the lectures.  
+- Be prepared to spend a lot of time on the course: studying pre-class materials, working on individual tasks, and group project tasks. Also, you cannot expect to understand everything the first time around, so try to follow instructions from online tutorials as well, even if they're not related to the class labs.  
+- **Auto translated**: It's worth studying a lot independently.  
+- **Auto translated**: Stick with the studies at the beginning, and the rest of the course will be really easy to complete! The beginning is the hardest part, with so much material in a short time. Really make time for studying.  
+- Complete the assignments on time and stay on track.  
+- **Auto translated**: Attend lectures and follow the materials. If you fall behind, watch videos on the subject.  
+- **Auto translated**: Do the homework and try to learn something new related to the subject every day during the course. Aim to communicate with your project group as much and as often as possible, as this will significantly impact your final grade in the course.  
+- **Auto translated**: Spend time getting to know React's documentation; it's a valuable resource and helps solve many problems on your own.  
+- **Auto translated**: Always go through the materials before the lessons, even if just by watching them.  
+- If you don't have time management or even a little discipline, it's not worth taking this course because you just won't do it well.  
+- **Auto translated**: Set up your own repo for pair programming right from the start. Do all the activities and try to do everything yourself, even if you have a team.  
+- Slow and steady with the project. Plan it properly.  
+- Start the project early, watch the homework videos proactively, and communicate and discuss the code with your group members during the activities.  
+- **Auto translated**: Don't leave things for the last minute.  
+- Don't skip the classes, and always watch the videos before class; they are really helpful. If you watch the videos, you will not be lost during the class.  
+- **Auto translated**: Ask a lot of questions. Google things. Try to do everything right away. Review before the class starts.  
+- Do all the required tasks and attend the lessons.  
+- **Auto translated**: The course is difficult. It's worth focusing during the first three weeks when the basics of JavaScript are reviewed.  
+- **Auto translated**: Go through everything carefully at the beginning, so the following material won't feel too overwhelming. Many concepts build on top of each other, so if you don't understand the earlier content, it's unlikely you'll understand the next.  
+- Focus on time management.  
+- I would give advice to be prepared for every class by reading materials in advance.  
+- Be well-prepared. Things start easy but often become difficult.  
+- Ask for help and clarification when needed.  
+- Try allocating as much time as you can for this course.  
+- Dedicate hours to it and stay motivated. Nothing special really.  
+- Don't give up because it gets more interesting as you go along.  
+- Be prepared to spend a lot of time: study the pre-class materials, work on individual tasks as well as the group project. Also, you cannot expect to understand everything the first time around.  
+- Always ask for help and clarification. The teacher running this course is very knowledgeable, and you can always benefit from the knowledge they have to offer.  
+- **Auto translated**: Don't skip any classes because the material will be too difficult to understand later on.  
+- **Auto translated**: Use your time outside of class to get the most out of the course. The classes reinforce what you learn on your own, but you won't get the full picture if you don't study outside of them.  
+- **Auto translated**: Follow closely from the start. The course is very fast-paced and requires a lot of focus and time for studying.  
+- **Auto translated**: Scrimba.com is an excellent resource for this course, and it offers courses on React and React Router.  
+- **Auto translated**: It's good to do the homework thoughtfully and on time, and preparing for the lessons supports learning and understanding the big picture much better!  
+- **Auto translated**: Watch the homework videos before class, and do all the exercises so you can succeed in the course.  
+- **Auto translated**: Start studying the YouTube videos given in the course immediately, and don't hesitate to ask the teacher for help if you encounter problems.  
+- **Auto translated**: To future students, I can give this advice: focus 100% on studying the materials and videos. Don't hesitate to ask for help if something is unclear.  
+- **Auto translated**: It's easy to pass the course, but if you want to learn something, watch the videos and turn off Copilot when doing the exercises.  
+- **Auto translated**: Learn things as soon as they come up. New topics come at a fast pace, so keeping up is crucial. To learn everything well in this course, you'll be spending many extra hours.  
+- **Auto translated**: Use Scrimba and practice these things in your free time to keep up with the course.  
+- **Auto translated**: It's really worth reviewing everything again at the early stages and focusing 110% to stay on track and dedicate your free time to studying because there are many new topics!  
+- I recommend working on the project and/or watching previous examples/labs from lectures every day you don't have school.  
+- **Auto translated**: It's worth investing in your studies from the first week because it will make the course much clearer.  
+- **Auto translated**: Try to really understand things, don't just Ctrl+C and Ctrl+V.  
+- **Auto translated**: Whenever you learn a new thing, for example, during class exercises or pair programming, try to incorporate it into your group project right away. Be active and do all the exercises and tasks; they will be very beneficial later in the course and beyond.  
+- Sijoittakaa aikaa tähän! Tulee palkitsemaan rutkasti.
+- Keskity web kehityksen luentoihin ja tehtäviin niin web projektikin menee hyvin.
+- Complete all homework exercise before coming to class and spend more time to study.
+- You should study diligently at the beginning of the course and start your project as early as possible. Effective time management is the key to success.
+- Focus on creating something that you will continue to use after the course. Work on a project that is meaningful to you and that you can possibly share with your friends. (PS: use tailwind and try v0)
+- Gain a comprehensive understanding of the project's structure and its activities. Analyze what is happening, where it is taking place, and the reasons behind it.
+- Immediately apply what you learn from the Web Development course to your project. Don’t be afraid to make mistakes—you’ll learn more by debugging and solving issues than by having perfectly working code right away. Research the technologies you’ll need, and while AI can be a helpful tool, don’t rely on it entirely. Always review AI-generated code, understand it, and try to write your own version. Compare both solutions to deepen your understanding.
+- It may be challenging at first, but never give up. You are capable of achieving more than you realize. Using AI for learning can be a great strategy. It’s important to stay updated with the latest technology and take advantage of its benefits.
+- You should put in the work to follow everything in this course.
+- Choose your team and goals wisely. Decide your roles early on(backend or frontend) and stick to it. Only jump to other side to help if you have completed your work. Use scrum methodology and todo list. At the beginning you might not understand the reason behind it but trust the process. Be flexible and determined! The most important traits you need in this course. First achieve the requirements then if you have time add more features. If you implement these advices, you will reach your goals and way beyond them in this course.
+- Invest enough time. Complete the project carefully
+- My advice: Do not just learn what's in the class. There is much more to learn on the Internet.
+- My advice: Do not just learn what's in the class. There is much more to learn on the Internet.
+- Katsokaa materiaalit läpi.
+- Puhukaa usein ryhmän kanssa.
+- There is a very long video, more than 10 hours, if you can, watch it and you will have the whole picture of the course, then you can catch the lessons easily.
+- Be prepared to spend lots of time on the project, and have a open mindset
+- Watch the homework videos and do the activities
+- During the learning stage, try to type the code by hand to reduce copying operations.
+- Choose your team members thoughtfully, as you will learn as much from them as you will from the teacher. It's important that everyone shares the same level of motivation, or one person may end up carrying the workload for the entire group, leading to burnout. The success of the project reflects the collective effort of the team, and it's designed so that each member contributes their skills. For instance, one person who is good at design takes lead on frontend aesthetics, another takes the lead in React and the remaining members take responsibility for the backend. If one person shoulders the entire responsibility, the project will likely suffer in one way or another.
+- Start working on project as soon as possible. Some problems definitely arise in process, so it's better to have some buffer time.
+- Adjust your project work to the team you have. If you're an over achiever and the rest of your team is underperforming, you risk burning yourself out if you try to implement crazier features.
+- Gather, Adapt, Accept challenges, try to squeeze knowledge from different branches.
+- Stay focused, spend lots of time on the course. Try to do both backend and frontend on your project.
+- Find yourself a group of like minded future developers who are also eager to learn and reach the same goals as you and you will be more than fine. Also, don't procrastinate in developing the project.
+- Communication with group members is important
+- Be proactive, do not wait till you group members will assign you some tasks, find things that you can work on. If you struggling with your task, ask for help from your group mates.
+- When choosing a group, find out if they have similar goals and motivation. As a group, focus on creating effective working methods and excellent communication
+- Keep constant study pace.
+- Completed all homework tasks before coming to class. Practice more and more until you get familiar with specific topic
+- You should study diligently at the beginning of the course and start your project as early as possible. Effective time management is the key to success.
+- Use tailwind and try v0 :D
+- Stay active throughout the course. While watching videos and listening to the teacher is important, real learning happens through hands-on experience. You won’t fully understand or retain the material until you apply it. Focus on spending more time on your project—it will likely teach you more than the weekly videos and activities. Also, ensure you understand both the code and the overall structure of your project. While AI tools can be helpful, to truly succeed, you need to grasp the entire scope and logic of your code and project.
+- It'll be hard, but very useful. Don't forget about soft skills. Good luck!
+- Spend extra time reviewing your foundational knowledge during the first two weeks, as it plays a critical role in understanding the rest of the course. Don't skip the homework—try to follow along with the videos and attempt the exercises on your own. Prepare thoroughly before each lecture so you can follow along better, and any confusion you have can be clarified during class by the instructor or fellow students. After the lectures, apply what you've learned to your projects or exercises and do further research to deepen your understanding.
+- It may be challenging at first, but never give up. You are capable of achieving more than you realize. Using AI for learning can be a great strategy. It’s important to stay updated with the latest technology and take advantage of its benefits.
+- Näkekää vaivaa, se on sen arvoista.
+- Take time to go through the materials. They are very helpful. Don't be lazy.
+- Get youtube premium if possible. Cant recommend it enough. Watch more videos regarding the topics and use LLM to study. Ask it to explain every code in detail even if you think you understand it completely. Get familiar with javascript asap. Work hard at the beginning of the course. Prepare yourself for each day by doing the homework. Read the summary and read the activities before each class if possible. Implement what you have learned in your project.
+- Please do all your homework before class, it helps you alot before class. Also, try make use of all the link the teacher shared, they are valuable resources.
+- Invest enough time.
+- Watch the videos before class and try to work on project as the suggested progress by teacher.
+- The first few weeks may make it seem like the course is not going to be very time consuming. However, the second the project starts rolling, the overlapping courses have a very heavy workload: makes the first year's courses seem very light. Regardless, it is a very interesting course and giving it the time it requires will end up being very rewarding.
+- Try to watch the React course 3 hours video before joining the course, so you have a full picture and then you built brick by brick towards it.
+- Do the activities and check homework videos.
+- Manage your time effectively, preview the videos provided by the teacher, and complete the exercises provided by the teacher. Read more related technical blogs if you have the opportunity.
+- Kannaatta lukea/katoa ne videot sillä ne pohjustavat hyvin ja kuunnella opettajaa tunnilla, sillä pääsee jo pitkälle.
+- Do your best and don't be afraid to ask for help.
+- Study and work. Most importantly, debug on your own, do not look to other people to debug for you, cause you won't be able to handle the workload after. Yes, this means spending time to read and debug yourself, without chatGPT. But if you must use somebody or something else, please spend your time and make sure you understood the issue.
+- Due to the advancements of technologies, try to learn from each and every branches and try to focus on the main objective.
+- Focus on your study and it is better not having any distraction, for example, part-time job.
+- Definitely watch the pre-lesson videos, find yourself a group who have similar goals as you in learning and don't stress too much about the course load. After the course you'll realize that there's actually not overbearingly much new information
+- Practise javascript and react in the summer before the course begins. You will have a less stressful start. Invest a lot of time from day 1. Research and try out different time management skills, since the workload is high.
+- There is a lot to learn. When new topics are covered in the lectures, practice them actively independently through pair programming and coding marathon tasks. Try to focus on understanding rather than just completing tasks, because when things become complex, you won't be able to solve problems if you don't understand them. (even with ai!)
+- Prepare well in advanced for the lectures. Do all assignments and follow the timeline. Time management is a must.
