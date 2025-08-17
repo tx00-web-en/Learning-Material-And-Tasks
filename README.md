@@ -113,8 +113,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 
 ## 4. What Now? *Next steps*
 
-- Group formation
-  - [Icebreaker Task](./material/ice-breaker.md)
+- Group formation: [Icebreaker Task](./material/ice-breaker.md)
 - [Unified Setup](./material/unified-setup.md)
 - [Homework](./material/homework.md) before Wednesday
 - Explore [design resources for developers](https://github.com/bradtraversy/design-resources-for-developers)
