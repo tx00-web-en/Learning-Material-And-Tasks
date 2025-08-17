@@ -92,7 +92,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - [Schedule](./material/timeline.md) 
 - Important dates
 - Optional sessions
-- [5-step learning cycle](./img/learning-phases.png)
+- [5-step learning cycle](./material/img/learning-phases.png)
 - Grading: Pair Programming, etc.
 - [Self Assessment](./material/self-assesment.xlsx)
 - Challenges
