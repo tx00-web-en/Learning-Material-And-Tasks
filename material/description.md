@@ -104,6 +104,7 @@
   - Testing is a critical aspect of software development to ensure the reliability and quality of your code. We'll explore different types of testing, including unit testing, integration testing, and end-to-end testing.
 - **Security:**
   - Security is a paramount concern in modern web applications. While we won't delve deeply into security considerations at this point, we'll touch upon its importance. Later in the course, we'll explore how to identify potential security vulnerabilities and implement best practices.
+- **AI**  
 - Where to go next? (e.g Nextjs, GraphQL)
 
 **4. Advantages of Using MERN for Building Web Applications:**
@@ -252,7 +253,7 @@ Collaboration and a consistent setup are key to your success in this course. Rem
 [Node.js]:https://roadmap.sh/nodejs
 [now]:https://esnext.github.io/esnext/
 [MLOps]:https://en.wikipedia.org/wiki/MLOps
-[Scrimba: React]:https://youtu.be/bMknfKXIFA8
+[Scrimba: React]:https://www.youtube.com/watch?v=x4rFhThSX04
 [Coding Addict: Node.js and Express.js]:https://youtu.be/Oe421EPjeBE
 [Coding Addict: Node.js / Express Projects]:https://youtu.be/qwfE7fSVaZM
 [Coding Addict: React 18]:https://youtu.be/2-crBg6wpp0

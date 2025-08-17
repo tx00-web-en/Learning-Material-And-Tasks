@@ -52,7 +52,7 @@
   - Emphasis on productivity and adaptability
   - Integration of AI for productivity boost
   - [Use of AI in the course: copilot / ChatGPT]
-- Exceptional Value e.g. Bootcamps
+- Exceptional Value e.g. [Bootcamps](https://www.ironhack.com/us)
 - Soft skills integration
 
 ### b) Relevance
@@ -69,7 +69,7 @@
   - [Salary](https://www.indeed.com/career/full-stack-developer/salaries?from=top_sb)
   - [How to negotiate your full-stack developer salary](https://www.salaryexpert.com/)
 - Backbone for AI specialization
-*[Visual Placeholder: Roadmap/Mapping Web → Other Courses → Graduation]*
+- *[Visual Placeholder: Roadmap/Mapping Web → Other Courses → Graduation]*
 
 <!-- - Turbiini Metropolia 
 https://www.metropolia.fi/fi/asiakastyot-ja-palvelut/yrittajyyskiihdyttamo-turbiini
@@ -133,7 +133,6 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - [Roadmap](https://roadmap.sh/full-stack): BE, FE, DevOps, Security, Testing, AI, Agile, Soft Skills
 - `Fullstack App` vs `Fullstack AI App` → added opportunities
 - Challenges and Opportunities
-
 - [Course dynamics summary](./material/course-dynamics.md)
 - [Course description](./material/description.md)
 
