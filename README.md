@@ -4,7 +4,7 @@
 - [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers)
 - About Privacy
 - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/Et5CIYwWNCVMnGe4jQWd88QBdGtZRWZV1Qxb_e6XOkbJOQ)
-- [`Team Formation`](./material/teams.md)
+- [Team Formation](./material/teams.md)
 - [9 Proven Time Management Techniques and Tools](https://www.usa.edu/blog/time-management-techniques/)
 - Advices from past participants
   - [Translated](./material/feedback-translated.md)
