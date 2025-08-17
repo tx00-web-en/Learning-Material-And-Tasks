@@ -9,7 +9,7 @@
 - Advices from past participants
   - [Translated](./material/feedback-translated.md)
   - [Original](./material/feedback-original.md)
-
+- [Effective prompt for learning with an LLM](https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e)
 
 <!-- 
 Metropolia  PRE-INCUBATOR/yrityshautomo
@@ -17,6 +17,7 @@ https://turbiini.net/
 https://turbiini.net/3149-2/
 https://www.linkedin.com/company/turbiini-campus-incubator
 -->
+<!-- design templates: https://www.phlox.pro/ -->
 
 ----
 ## How You'll Learn in This Course
