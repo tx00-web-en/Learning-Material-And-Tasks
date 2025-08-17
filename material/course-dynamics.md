@@ -19,9 +19,7 @@
 - Self-paced learning
 - Cover extensive topics
 - Two-month duration
-How You'll Learn in This Course
-
-We'll follow a 5-step learning cycle as shown in the figure below:
+- How You'll Learn in This Course: We'll follow a 5-step learning cycle as shown in the figure below:
 
 ![](./img/learning-phases.png)
 
@@ -40,8 +38,8 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 #### 3. Two-Phase Course Structure
 
-- 1-week normalization
-- 7-week competence demonstration
+- 2-week normalization
+- 6-week competence demonstration
 
 #### 4. Catering to Different Learning Styles
 

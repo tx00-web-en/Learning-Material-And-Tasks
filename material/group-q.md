@@ -14,7 +14,6 @@
 - **ChatGPT** or **Your friend who says, "I know what I’m doing"?  
 
 
-
 ### **4. What’s your dream team snack while coding?**
 - **Pizza** or **Energy drinks**?  
 

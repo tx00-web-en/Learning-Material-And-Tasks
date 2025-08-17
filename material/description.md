@@ -5,7 +5,7 @@
 
 - This course is more than just a set of classes; it's a comprehensive package that encompasses three key components: Front-end, Backend, and Project Development.
 - These components are closely intertwined, reflecting the real-world interactions between different aspects of web development.
-- This is the ninth iteration of the course, and it has been refined based on invaluable feedback from previous students.
+- This is the twelfth iteration of the course, and it has been refined based on invaluable feedback from previous students.
 - Notably, graduates of this course have successfully transitioned to roles as Junior Web Developers, launched their startups (consider one exchange student as an example), or advanced their careers as skilled software developers.
 
 ### Showcase of What You Can Achieve
@@ -37,7 +37,6 @@
 - Startup environments offer substantial potential for financial growth, particularly if you bring innovative ideas to the table.
   - [Finnish Startup Community]
   - [Innovation Projects at Metropolia]
-
 
 ### Benefits: Exceptional Value
 
@@ -121,7 +120,8 @@
 
 - We'll adopt a balanced approach:
   - **1 foot in industry:** Real-world applications and practical skills: [Scrimba], [Freecodecamp], [Traversy Media]
-  - **1 foot academia:** A solid foundation in theories and concepts: [Full Stack open]
+  - **1 foot academia:** A solid foundation in theories and concepts.
+  <!-- : [Full Stack open] -->
 
 ### Teaching Method:
   - Straightforward assignments to illustrate single concepts.
