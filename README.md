@@ -108,6 +108,9 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - [The 26 most effective time management techniques](https://clockify.me/time-management-techniques)
   - [6 Strategies to Better Manage Your Time](https://www.coursera.org/articles/time-management)
 - Preparation required before each class
+- AI For SW eng
+  - AI assitant vs Vibe coding
+  - Ai replaces some taks, nut make 90% more productive
 
 ---
 
