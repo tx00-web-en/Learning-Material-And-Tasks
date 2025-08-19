@@ -15,7 +15,7 @@ You are responsible for tracking the total points you've earned throughout the c
 
 - Group Activities: Maximum of 40 points: 20 points for front-end development and 20 points for back-end development.
 
-- Pair Programming: Maximum of 70 points: 35 points for front-end development and 35 points for back-end development.
+- Pair Programming: Maximum of 60 points: 30 points for front-end development and 30 points for back-end development.
 
 Make sure to regularly update your progress and upload the updated [`self-assessment.xlsx`](./self-assesment.xlsx) file to OMA. This way you can keep track of your performance throughout the course. 
 
