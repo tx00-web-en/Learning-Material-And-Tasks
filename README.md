@@ -10,6 +10,7 @@
   - [Translated](./material/feedback-translated.md)
   - [Original](./material/feedback-original.md)
 - [Effective prompt for learning with an LLM](https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e)
+- [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
 
 <!-- 
 Metropolia  PRE-INCUBATOR/yrityshautomo
@@ -86,12 +87,17 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Friday Afternoon::
 
 - Brainstorm to decide on a project idea and begin Sprint 1 planning.
+- **Communication and miscommunication** within the group --> Next week
 - [Agenda for Team Meeting](./material/group-agenda.md)
 - [UI & AI](./material/UI.md)
 
 <!--  - [Startup ideas YouTube channel](https://www.youtube.com/@GregIsenberg/videos) -->
 
+---
 
 ### Note
 
 - Pair programming begins in Week 3. You’ll be paired with different classmates to work on projects and benefit from each other’s strengths.
+
+
+<!-- - [The many, many, many JavaScript runtimes of the last decade](https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/) -->
