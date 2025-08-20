@@ -4,7 +4,7 @@
 
 #### **Team 1: The High-Touch Collaborators (Kept)**
 *   **Members:** Tuukka, Noah, Aleksi, Shreeya
-*   **Rationale:** This team is the gold standard for a collaborative unit and was kept because of its perfectly aligned **workflow**. Every member indicated a preference for "High-Touch Collaboration," meaning their natural way of working involves frequent check-ins, pair programming, and brainstorming. This eliminates the risk of communication breakdown. This is complemented by dual leadership (Tuukka and Noah), a perfect balance of dynamic roles (Leader, Problem-Solver, Creative, Morale Booster), and outstanding technical flexibility with three Full-Stack members.
+*   **Rationale:** This team is the gold standard for a collaborative unit and was **kept** because of its perfectly aligned **workflow**. Every member indicated a preference for "High-Touch Collaboration," meaning their natural way of working involves frequent check-ins, pair programming, and brainstorming. This eliminates the risk of communication breakdown. This is complemented by dual leadership (Tuukka and Noah), a perfect balance of dynamic roles (Leader, Problem-Solver, Creative, Morale Booster), and outstanding technical flexibility with three Full-Stack members.
 
 #### **Team 2: The Full-Stack Nexus**
 *   **Members:** Miku, Mustafa, Donya, Long
@@ -24,7 +24,7 @@
 
 #### **Team 6: The Adaptable Leadership Core (Kept)**
 *   **Members:** Eyob, Mehdi, Jesper, Malgorzata
-*   **Rationale:** This team was kept because it represents an ideal **synergistic structure**. It combines a powerful analytical leadership core with a dedicated creative wing. The two leaders, Eyob and Mehdi, are also primary Problem-Solvers with Full-Stack skills, allowing them to architect the project's logic. They are perfectly balanced by Jesper and Malgorzata, two dedicated UI/UX specialists who can focus on creating a polished user experience. This 2+2 structure is a classic recipe for success.
+*   **Rationale:** This team was **kept** because it represents an ideal **synergistic structure**. It combines a powerful analytical leadership core with a dedicated creative wing. The two leaders, Eyob and Mehdi, are also primary Problem-Solvers with Full-Stack skills, allowing them to architect the project's logic. They are perfectly balanced by Jesper and Malgorzata, two dedicated UI/UX specialists who can focus on creating a polished user experience. This 2+2 structure is a classic recipe for success.
 
 #### **Team 7: The Agile Backend Trio**
 *   **Members:** Soreen, Su (#4), Lu
