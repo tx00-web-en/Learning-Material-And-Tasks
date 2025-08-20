@@ -1,6 +1,55 @@
 # Team Formations:
 
+## Alternative Team Formations
 
+#### **Team 1: The Early Bird Powerhouse**
+*   **Members:** Noah, Shreeya, Osama, Udaya
+*   **Team Rationale:** This team is built for maximum morning productivity, as all four members are self-identified **Early Birds**. Their synchronized schedule will make collaboration effortless.
+    *   **Leadership & Roles:** **Noah** (Leader/Morale Booster) provides the core leadership. The team's dynamic roles are perfectly filled by **Shreeya** (Problem-Solver/Creative), **Osama** (Creative), and **Udaya** (a second Morale Booster), ensuring a positive and innovative environment.
+    *   **Technical Skills:** The team is technically robust with two **Full-Stack** members (Noah, Shreeya) and two **UI/UX** specialists (Osama, Udaya), allowing them to tackle any part of a project with confidence.
+
+#### **Team 2: The Night Owl Task Force**
+*   **Members:** Yicheng, Megha, TANVIR, Su (#26)
+*   **Team Rationale:** This is the dedicated **Night Owl** team, designed to be highly effective during late-night work sessions.
+    *   **Leadership & Roles:** The team benefits from two distinct leaders: **Yicheng** (Leader/Problem-Solver) brings a technical, analytical approach, while **Megha** (Leader/Creative/Morale Booster) ensures the team stays motivated and thinks outside the box. **TANVIR** and **Su** add more problem-solving and creative depth.
+    *   **Technical Skills:** They have excellent technical balance, covering **Backend** (Yicheng), **UI/UX** (Megha, Su), and **Full-Stack** (TANVIR), enabling them to build a complete product.
+
+#### **Team 3: The High-Collaboration Innovators**
+*   **Members:** Tuukka, Aleksi, Jari, Malgorzata
+*   **Team Rationale:** This team is anchored by its two members, Tuukka and Aleksi, who prefer a **High-Touch Collaboration** style. The other members' "Healthy Mix" preference makes them a perfect fit for this communicative and interactive workflow.
+    *   **Leadership & Roles:** **Tuukka** (Leader/Creative) will guide the team's vision. **Aleksi** brings a primary Creative and Morale Booster focus, while **Jari** and **Malgorzata** provide a powerful Problem-Solver core.
+    *   **Technical Skills:** With two **Full-Stack** developers (Aleksi, Jari) and two **UI/UX** specialists (Tuukka, Malgorzata), this team is ideally structured to brainstorm, design, and build user-centric applications collaboratively.
+
+#### **Team 4: The Independent Operators**
+*   **Members:** Juan, Donya, Long, Onni
+*   **Team Rationale:** This team is composed of three members who prefer to **Work Independently** and a flexible leader. They will excel at owning individual tasks and syncing up efficiently.
+    *   **Leadership & Roles:** **Juan** (Leader/Problem-Solver) is an ideal leader for this group, capable of setting clear goals and trusting the team to execute. The core roles are covered by **Donya** (Creative), **Long** (Problem-Solver), and **Onni** (Morale Booster).
+    *   **Technical Skills:** A perfect 50/50 split. The team has two **Backend** specialists (Juan, Long) and two **UI/UX** specialists (Donya, Onni), creating a clear and powerful division of technical responsibilities.
+
+#### **Team 5: The Full-Stack Vanguard**
+*   **Members:** Eyob, Miku, Jesper, Amir
+*   **Team Rationale:** This is an elite, technically flexible team led by two versatile **Full-Stack** developers.
+    *   **Leadership & Roles:** **Eyob** and **Miku** are both Leaders and Problem-Solvers, giving this team an immense capacity for tackling complex challenges. **Jesper** is the dedicated Creative, ensuring a strong vision, while **Amir**'s primary role as a Morale Booster will keep the high-performing team cohesive.
+    *   **Technical Skills:** With three **Full-Stack** members (Eyob, Miku, Amir) and a dedicated **UI/UX** designer (Jesper), this team can adapt to any technical need that arises during the project.
+
+#### **Team 6: The Backend & Logic Specialists**
+*   **Members:** Mustafa, Su (#4), Ode, Lev
+*   **Team Rationale:** This team is built to handle the most demanding architectural and backend tasks.
+    *   **Leadership & Roles:** The group is led by two leaders with a strong **Backend** focus, **Mustafa** and **Su**. Their complementary secondary roles (Problem-Solver, Morale Booster, Creative) provide a solid foundation. **Ode** and **Lev**, both primary Problem-Solvers and Creatives, give the team a massive engine for innovation and execution.
+    *   **Technical Skills:** With two dedicated **Backend** leaders and two versatile **Full-Stack** members, this team is the project's logical core.
+
+#### **Team 7: The Leadership Trio (Team of 3)**
+*   **Members:** MINH, Eemeli, Mehdi
+*   **Team Rationale:** A senior team composed entirely of primary leaders, designed for autonomy and high-level execution.
+    *   **Leadership & Roles:** Each member brings a different flavor of leadership: **MINH** (Creative/Morale), **Eemeli** (Morale), and **Mehdi** (Problem-Solver). This creates a balanced, collaborative leadership model.
+    *   **Technical Skills:** Their skills are perfectly complementary, with two **UI/UX** specialists (MINH, Eemeli) and one **Full-Stack** developer (Mehdi) to bridge the gap.
+
+#### **Team 8: The Agile Problem-Solvers (Team of 3)**
+*   **Members:** Soreen, Lu, Phitinan
+*   **Team Rationale:** This is a nimble, adaptable team with a strong focus on problem-solving.
+    *   **Leadership & Roles:** **Soreen** provides clear leadership as a Leader and Morale Booster. **Lu** and **Phitinan** create a focused problem-solving unit to tackle any technical hurdles.
+    *   **Technical Skills:** The team is technically sound, with two **Full-Stack** members (Soreen, Lu) and a dedicated **UI/UX** specialist (Phitinan), making them a well-rounded and effective group.
+----
 ## First Iteration
 
 #### **Team 1: The High-Touch Collaborators**
