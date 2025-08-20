@@ -1,4 +1,4 @@
-# **Team Formations:
+# Team Formations:
 
 
 ## First Iteration
