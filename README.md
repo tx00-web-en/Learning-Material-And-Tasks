@@ -76,11 +76,17 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Friday Morning: 
 
 <!-- - [Bug Bounty](./material/bug-bounty.md) -->
-- *Friday Afternoon from 16:00-19:00: Optional QA session*
-- [**Sprint 1**](https://github.com/tx00-web-en/Project/)
+- ~~Reveal/Drawio~~
+- Announcements:
+  - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
+  *Friday Afternoon from 16:00-19:00: Optional QA session*
+  - [**Sprint 1**](https://github.com/tx00-web-en/Project/)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
+- **Explore npm Packages**: Discover npm packages, which act as building blocks for your projects.
+  - [Summary](./material/npm.md)
+  - [Activity](./material/npm-activity.md)  
 - **Git Basics**: Learn how to use Git to track changes in your code.
   - [Summary](./material/github.md)
   - [Activity](./material/github-activity2.md)

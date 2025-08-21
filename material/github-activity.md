@@ -45,6 +45,7 @@ git config user.email
 You should see your name and email address returned. Repeat this step if there
 are any errors.
 
+<!-- - Show hidden files in MacOS Command (⌘) + Shift + . -->
 
 **Step 2: Initializing a Git Repository**
 

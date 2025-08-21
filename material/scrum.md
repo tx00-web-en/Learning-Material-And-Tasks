@@ -5,10 +5,11 @@
 - [Product-Backlog vs User Stories](#product-backlog-vs-user-stories)
 - [QA](#qa)
   - Product Backlog vs User Stories
-  - Is it true that "Agile is dead"?
   - When using scrum, who is the "team leader"?
   - What are Epics?
   - The "`Liked`, `Learned`, `Lacked`, and `Longed For`" retrospective?
+  - User stories vs tickets
+  - Is it true that "Agile is dead"?  
 - [Links](#links)
 
 <!-- > Very good link: [What is Scrum?](https://www.scrum.org/learning-series/what-is-scrum/) -->
@@ -224,24 +225,7 @@ The Waterfall model is a traditional, sequential approach, the V-Model extends W
 
 In summary, the product backlog is a comprehensive list of all work for a product, including user stories, while user stories are specific, user-focused features or functionalities that provide value and are part of the product backlog. User stories are a way of breaking down larger product backlog items into more manageable pieces for development and delivery.
 
-
-
-### Is it true that "Agile is dead"
-
-The idea that "Agile is dead" or "Agile is broken" has become a popular topic of debate, often sparking strong opinions. This backlash stems from a few key issues:
-
-1. **Misinterpretation and Misapplication**: Agile principles are meant to be flexible and adaptive, focusing on delivering value quickly through collaboration and iteration. However, in many cases, companies have adopted Agile in name only, without fully embracing its underlying values. They may implement rigid processes or misinterpret the framework, leading to frustration and the perception that Agile doesn't work as promised.
-
-2. **Commercialization of Agile**: As Agile gained popularity, many consultants, tools, and training programs sprang up to capitalize on the trend. This led to the commercialization of Agile, where the focus shifted from its core principles to selling certifications, tools, and processes. This can dilute the true essence of Agile, making it seem like just another bureaucratic process rather than a flexible, value-driven approach.
-
-3. **Scaling Challenges**: Agile works well in small, focused teams, but scaling it across large organizations can be challenging. As companies try to implement Agile at scale, they often encounter difficulties, such as coordinating across multiple teams, maintaining consistent communication, and aligning with broader business goals. These challenges can lead to a breakdown in the Agile process, causing some to argue that it doesn't work in larger environments.
-
-4. **Resistance to Change**: Agile requires a cultural shift, and not all organizations are prepared for that. Traditional hierarchical structures, resistance from management, and fear of losing control can all hinder Agile adoption. When these issues arise, people may blame Agile itself rather than recognizing that the failure lies in the organization's inability to change.
-
-5. **Overpromising and Under-delivering**: Agile has often been marketed as a silver bullet that will solve all development problems. When companies adopt Agile expecting immediate and dramatic improvements, they may be disappointed if the results don't meet their high expectations. This can lead to disillusionment and claims that Agile is broken.
-
-In summary, the perception that Agile is "dead" or "broken" often comes from misunderstandings, poor implementations, and the challenges of scaling and maintaining Agile principles in complex environments. Agile itself is not inherently flawed, but its success depends on how well it is understood, implemented, and supported within an organization.
-
+----
 
 ### When using scrum, who is the "team leader"
 
@@ -256,6 +240,8 @@ In Scrum, there isn't a traditional "team leader" as in hierarchical teams. Inst
 So, while neither the Product Owner nor the Scrum Master is the "team leader" in the traditional sense, the Scrum Master often plays a guiding role in ensuring the team operates effectively within the Scrum framework. The Product Owner leads in terms of product direction and priorities.
 
 > [More on this topic](https://www.linkedin.com/posts/james-warrick_agile-is-dead-long-live-agility-activity-6881985602716360704-AEK0)
+
+----
 
 ### What are Epics?
 
@@ -273,6 +259,7 @@ Imagine you are building an e-commerce platform. An epic might be:
   - As a user, I want to reset my password if I forget it.
   - As a user, I want to receive a confirmation email upon successful registration.
 
+----
 
 ### The "`Liked`, `Learned`, `Lacked`, and `Longed For`" retrospective?
 
@@ -343,6 +330,73 @@ The "Liked, Learned, Lacked, and Longed For" retrospective is a structured metho
 > Conclusion:
 
 The "Liked, Learned, Lacked, and Longed For" retrospective is an effective tool for continuous improvement in teams. It helps to create a balanced view of what is working well, what could be improved, and what is desired for future work. This method fosters open communication, enhances team cohesion, and drives progress.
+
+----
+
+### User stories vs tickets
+
+####  User Story: The "Why" and "What"
+
+A **user story** is a high-level description of a feature or requirement from the perspective of the end user. It focuses on **value** and **intent**, not implementation.
+
+- **Format**:  
+  _As a [type of user], I want [some goal] so that [some reason]._
+
+- **Purpose**:  
+  To capture what the user needs and why it matters.
+
+- **Example**:  
+  _As a patient, I want to book an appointment online so that I don’t have to call the clinic._
+
+- **Includes**:  
+  - Acceptance criteria  
+  - Business context  
+  - Often part of a product backlog
+
+#### Ticket: The "How" and "Task"
+
+A **ticket** is a more granular unit of work—often derived from a user story. It’s used to track progress, assign responsibilities, and manage implementation.
+
+- **Format**:  
+  Varies by tool (e.g., Jira, GitHub Issues), but usually includes a title, description, status, assignee, and labels.
+
+- **Purpose**:  
+  To manage and execute the work needed to fulfill a story or fix an issue.
+
+- **Example**:  
+  _Implement appointment booking form UI_  
+  _Connect booking form to backend API_
+
+- **Includes**:  
+  - Technical details  
+  - Subtasks  
+  - Status updates
+
+#### How They Relate
+
+- A **user story** might spawn **multiple tickets**.
+- Stories are about **outcomes**, tickets are about **actions**.
+- Stories live in the **product backlog**, tickets live in the **task board**.
+
+
+----
+
+### Is it true that "Agile is dead"
+
+The idea that "Agile is dead" or "Agile is broken" has become a popular topic of debate, often sparking strong opinions. This backlash stems from a few key issues:
+
+1. **Misinterpretation and Misapplication**: Agile principles are meant to be flexible and adaptive, focusing on delivering value quickly through collaboration and iteration. However, in many cases, companies have adopted Agile in name only, without fully embracing its underlying values. They may implement rigid processes or misinterpret the framework, leading to frustration and the perception that Agile doesn't work as promised.
+
+2. **Commercialization of Agile**: As Agile gained popularity, many consultants, tools, and training programs sprang up to capitalize on the trend. This led to the commercialization of Agile, where the focus shifted from its core principles to selling certifications, tools, and processes. This can dilute the true essence of Agile, making it seem like just another bureaucratic process rather than a flexible, value-driven approach.
+
+3. **Scaling Challenges**: Agile works well in small, focused teams, but scaling it across large organizations can be challenging. As companies try to implement Agile at scale, they often encounter difficulties, such as coordinating across multiple teams, maintaining consistent communication, and aligning with broader business goals. These challenges can lead to a breakdown in the Agile process, causing some to argue that it doesn't work in larger environments.
+
+4. **Resistance to Change**: Agile requires a cultural shift, and not all organizations are prepared for that. Traditional hierarchical structures, resistance from management, and fear of losing control can all hinder Agile adoption. When these issues arise, people may blame Agile itself rather than recognizing that the failure lies in the organization's inability to change.
+
+5. **Overpromising and Under-delivering**: Agile has often been marketed as a silver bullet that will solve all development problems. When companies adopt Agile expecting immediate and dramatic improvements, they may be disappointed if the results don't meet their high expectations. This can lead to disillusionment and claims that Agile is broken.
+
+In summary, the perception that Agile is "dead" or "broken" often comes from misunderstandings, poor implementations, and the challenges of scaling and maintaining Agile principles in complex environments. Agile itself is not inherently flawed, but its success depends on how well it is understood, implemented, and supported within an organization.
+
 
 <!-- 
 #### Key Characteristics of Epics in Scrum:
