@@ -75,8 +75,9 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 ### Friday Morning: 
 
-- [Bug Bounty](./material/bug-bounty.md)
-- Sprint 1
+<!-- - [Bug Bounty](./material/bug-bounty.md) -->
+- *Friday Afternoon from 16:00-19:00: Optional QA session*
+- [**Sprint 1**](https://github.com/tx00-web-en/Project/)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
@@ -84,12 +85,17 @@ We'll follow a 5-step learning cycle as shown in the figure below:
   - [Summary](./material/github.md)
   - [Activity](./material/github-activity2.md)
 
-### Friday Afternoon::
+### Friday Afternoon (13:00-16:00):
 
+- You will have an autonomous group session.
 - Brainstorm to decide on a project idea and begin Sprint 1 planning.
 - **Communication and miscommunication** within the group --> Next week
 - [Agenda for Team Meeting](./material/group-agenda.md)
 - [UI & AI](./material/UI.md)
+
+### Friday Afternoon (Optional - 16:00-19:00):
+
+- Optional Session
 
 <!--  - [Startup ideas YouTube channel](https://www.youtube.com/@GregIsenberg/videos) -->
 

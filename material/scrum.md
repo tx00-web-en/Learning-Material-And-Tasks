@@ -11,7 +11,7 @@
   - The "`Liked`, `Learned`, `Lacked`, and `Longed For`" retrospective?
 - [Links](#links)
 
-> Very good link: [What is Scrum?](https://www.scrum.org/learning-series/what-is-scrum/)
+<!-- > Very good link: [What is Scrum?](https://www.scrum.org/learning-series/what-is-scrum/) -->
 
 ---------
 ## Scrum Terminology
@@ -228,7 +228,7 @@ In summary, the product backlog is a comprehensive list of all work for a produc
 
 ### Is it true that "Agile is dead"
 
-The idea that "Agile is dead" or "Agile is broken" has become a popular topic of debate, often sparking strong opinions. From my perspective, this backlash stems from a few key issues:
+The idea that "Agile is dead" or "Agile is broken" has become a popular topic of debate, often sparking strong opinions. This backlash stems from a few key issues:
 
 1. **Misinterpretation and Misapplication**: Agile principles are meant to be flexible and adaptive, focusing on delivering value quickly through collaboration and iteration. However, in many cases, companies have adopted Agile in name only, without fully embracing its underlying values. They may implement rigid processes or misinterpret the framework, leading to frustration and the perception that Agile doesn't work as promised.
 
