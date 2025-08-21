@@ -79,7 +79,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - ~~Reveal/Drawio~~
 - Announcements:
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
-  *Friday Afternoon from 16:00-19:00: Optional QA session*
+  - *Friday Afternoon from 16:00-19:00*: **Optional** QA session
   - [**Sprint 1**](https://github.com/tx00-web-en/Project/)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
