@@ -11,22 +11,22 @@ This afternoon's session will be conducted autonomously by each group. Teams can
    - Get to know each team member.
    - Discuss each member's skills, competencies, and areas to develop.
 
-2. **Task Assignment**
-   - Assign tasks based on individual strengths and development goals:
-     - One member to focus on reviewing `CSS` skills, particularly media queries and flexbox. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5680000000060713?sid=4846325380) at Metropolia's Library.
-     - One or two members to work with `Figma`. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5850000000052946?sid=4846325074) at Metropolia's Library.
-     - Another member to manage `Trello` for project coordination and product/sprint backlog and user stories.
+2. **Brainstorm Project Ideas**
+   - Discuss and finalize the type of project the team will build.
+
 
 3. **Establish Scrum Roles**
    - Decide who will serve as the Product Owner and Scrum Master:
      - The *Scrum Master role can rotate* with each Sprint.
      - The Product Owner should *ideally* remain consistent throughout the project.
 
-4. **Brainstorm Project Ideas**
-   - Discuss and finalize the type of project the team will build.
+4. **Task Assignment**
+   - Assign tasks based on individual strengths and development goals:
+     - One member to focus on reviewing `CSS` skills, particularly media queries and flexbox. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5680000000060713?sid=4846325380) at Metropolia's Library.
+     - One or two members to work with `Figma`. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5850000000052946?sid=4846325074) at Metropolia's Library.
+     - Another member to manage `Trello` for project coordination and product/sprint backlog and user stories.
    
-   
-> Feel free to use ChatGPT to refine the agenda items and brainstorm project ideas.
+> Feel free to use your favorite LLM (e.g. ChatGPT, Bing Copilot etc.) to refine the agenda items and brainstorm project ideas.
 
 ### Recommended Links
 
