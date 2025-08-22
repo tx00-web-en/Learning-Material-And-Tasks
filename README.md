@@ -84,6 +84,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
+  - [Slides](./material/scrum.pdf)
 - **Explore npm Packages**: Discover npm packages, which act as building blocks for your projects.
   - [Summary](./material/npm.md)
   - [Activity](./material/npm-activity.md)  
