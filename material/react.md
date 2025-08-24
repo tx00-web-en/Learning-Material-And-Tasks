@@ -101,8 +101,10 @@ JSX (JavaScript XML) is a syntax extension for JavaScript that allows you to wri
      ```
      converts directly to JSX:
      ```jsx
+     <>
      <p>This is a paragraph.</p>
      <p>This is another paragraph.</p>
+     </>
      ```
 
    - Use tools like [htmltojsx.com](https://transform.tools/html-to-jsx) to convert more complex HTML structures if needed.
