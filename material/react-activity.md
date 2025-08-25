@@ -82,7 +82,7 @@ This command starts the development server, and you should see output indicating
 
 Before starting Part 2:
 
-1. Stop the development server of Part 1 by pressing **Ctrl + C** (Windows/Linux) or **Cmd + C** (Mac) in the terminal where it is running.  
+1. Stop the development server of Part 1 by pressing **Ctrl + C** in the terminal where it is running.  
 2. Open a new terminal in VS Code by navigating to **View > Terminal** or using the shortcut. 
 3. Run the following command to create a new React project using Vite:
 
