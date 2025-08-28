@@ -48,6 +48,6 @@ By understanding and effectively using Git branches, you can streamline your dev
 - Git how-to: 
   - [www](https://githowto.com)
   - [src](https://github.com/GitHowTo/githowto-content)
-- [visualizing-git](https://github.com/git-school/visualizing-git)
+- [Visualizing-git](https://github.com/git-school/visualizing-git)
 - [Part 1: Git (Duration **36 min**)](https://www.youtube.com/watch?v=hrTQipWp6co)
 - [Part 2: GitHub (Duration **56 min**)](https://www.youtube.com/watch?v=1ibmWyt8hfw)
