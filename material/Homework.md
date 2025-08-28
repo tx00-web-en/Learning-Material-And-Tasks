@@ -24,7 +24,11 @@ The video homework uses emojis to represent the significance of each video. Belo
   - :blue_book:  [React CARD components (12min)](https://youtu.be/yYiwxYqQ9vg?si=sq50RKwzhf75eZ6f)
   - :star:  [PROPS in React explained (12min](https://youtu.be/uvEAvxWvwOs?si=PBoBuzE1HTya-zmu)
   - :star: [How to CONDITIONAL RENDER in React (10min](https://youtu.be/XvURBpFxdGw?si=OuoItPSTm5Lq2QyX)
-
+- Note:
+  > - The video homework demonstrates `PropTypes`, but in the Web Development and Project courses, we will **not** be using **PropTypes**. In Week 8, we’ll cover a more powerful alternative using **TypeScript**.  
+  > - For the homework videos, you can simply skip any sections related to PropTypes. If you still wish to use it, install the package by running:  `npm install prop-types`
+  > - There are different ways to import components. Here’s a [review of import methods](./material/import.md).
+  
 ### Monday Afternoon: 
 
 - :star: [Using nodemon with NodeJS Servers (6min)](https://youtu.be/kV6MJ9W4whM?si=8lkmrbQ-92kidu2M)
