@@ -161,7 +161,22 @@ In this lab, you will learn how to set up a Git branching structure for a projec
    git branch sprint-1
    git checkout sprint-1
    ```
-2. In newer versions of Git, `git switch` is often recommended over git checkout for switching branches, as it provides a clearer separation of concerns.
+2. In newer versions of Git, `git switch` is recommended over `git checkout` for switching branches because it separates branch operations more clearly.
+>
+> * To **switch to an existing branch**:
+>
+>   ```bash
+>   git switch branch-name
+>   ```
+>
+>   (equivalent to `git checkout branch-name`)
+> * To **create a new branch and switch to it**:
+>
+>   ```bash
+>   git switch -c new-branch
+>   ```
+>
+>   (equivalent to `git checkout -b new-branch`)
 
 
 ---

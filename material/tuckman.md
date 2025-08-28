@@ -16,7 +16,7 @@ During the norming stage, the **team starts to resolve its differences**, establ
 ### 4. Performing
 In this stage, the team is **functioning at a high level**. Members are **confident, motivated, and able to work independently and collaboratively.** The team is focused on achieving its goals and is highly productive. This stage is characterized by a **high degree of autonomy and effective problem-solving.**
 
-5. **Adjourning**
+### 5. **Adjourning**
 
 > Understanding these stages can help teams navigate their development more effectively and become more productive and cohesive.
 
