@@ -20,7 +20,7 @@ A good product backlog has four characteristics:
 
 2. **Emergent:** The details of user stories and items should emerge over time, meaning they can evolve and be refined as the team gains a better understanding. It's not necessary for all details to be known upfront.
 
-3. **Estimated:** The product backlog items should have some level of estimation associated with them, typically in terms of effort (e.g., time). This helps the team in planning and prioritization.
+3. **Estimated:** The product backlog items should have some level of estimation associated with them, typically in terms of effort. This helps the team in planning and prioritization.
 
 4. **Prioritized:** The product backlog should be ordered by priority, with the most valuable and important items at the top. This helps the team focus on what's most critical for the product.
 
@@ -85,15 +85,17 @@ Story points allow teams to estimate without the pressure of setting exact deadl
 Teams typically use a **scale** for story points, with the **Fibonacci sequence** (1, 2, 3, 5, 8, 13...) being popular. Smaller numbers represent simpler tasks, while higher numbers represent tasks with greater complexity and uncertainty.
 
 For example:
+
 - **1 Story Point**: Very simple, straightforward task.
 - **3 Story Points**: Slightly more complex, requires moderate effort.
 - **8 Story Points**: Complex, significant effort needed.
 - **13 Story Points**: Very complex, high uncertainty, and risk.
 
-- How Are Story Points Useful?
-- They help teams understand and compare the difficulty of tasks relative to each other.
-- They allow the team to **plan sprints and velocity** (the average number of story points completed in a sprint).
-- They support a focus on **value and progress** rather than exact time estimates, helping the team adapt and improve over time. 
+How Are Story Points Useful?
+
+  - They help teams understand and compare the difficulty of tasks relative to each other.
+  - They allow the team to **plan sprints and velocity** (the average number of story points completed in a sprint).
+  - They support a focus on **value and progress** rather than exact time estimates, helping the team adapt and improve over time. 
 
 In essence, story points provide a flexible, team-centered approach to estimating work.
 
