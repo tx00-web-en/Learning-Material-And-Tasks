@@ -21,7 +21,7 @@ Git branches are a fundamental concept in version control that allow developers 
 **Branching Workflow:**
 
 1. **Create a new branch:** Use the `git branch <branch-name>` command to create a new branch.
-2. **Switch to the new branch:** Use the `git checkout <branch-name>` command to start working on the new branch.
+2. **Switch to the new branch:** Use the `git switch <branch-name>` (or `git checkout <branch-name>` as an alternative) to start working on the new branch. The recommended command is git switch, but git checkout still works and is widely used.
 3. **Make changes:** Make your changes to the codebase.
 4. **Commit changes:** Use the `git commit -m "Commit message"` command to commit your changes.
 <!-- 5. **Merge or rebase:** Once you're satisfied with your changes, you can merge or rebase the branch back into the main branch. -->
