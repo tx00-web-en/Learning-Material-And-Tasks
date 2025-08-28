@@ -17,6 +17,10 @@ The video homework uses emojis to represent the significance of each video. Belo
 - :star: [PROPS in React explained (12min](https://youtu.be/uvEAvxWvwOs?si=PBoBuzE1HTya-zmu)
 - :star: [React: how to add CSS styles (8min)](https://youtu.be/r3SMd0YTSZs?si=9QExkyNxhe9FDRNu)
 - Review [Arrow functions](https://youtu.be/fRRRkognpOs?si=8dmlvfquytBVCRNj) 
+- Note:
+  > - The video homework demonstrates `PropTypes`, but in the Web Development and Project courses, we will **not** be using **PropTypes**. In Week 8, we’ll cover a more powerful alternative using **TypeScript**.  
+  > - For the homework videos, you can simply skip any sections related to PropTypes. If you still wish to use it, install the package by running:  `npm install prop-types`
+  > - There are different ways to import components. Here’s a [review of import methods](./material/import.md).
 
 ### Monday Afternoon: 
 
