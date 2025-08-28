@@ -2,6 +2,8 @@
 
 Bruce Tuckman's model of group development outlines key stages that teams typically go through to become high-performing. Here's a brief overview of each stage:
 
+<img src="./img/tuckman-model.png" heigt="20%"  width="20%">
+
 ## Stages
 
 ### 1. Forming
