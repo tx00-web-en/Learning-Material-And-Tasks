@@ -15,10 +15,6 @@ Take some time to go through these stories and assess how they match up against 
 
 2. Compare your answers with [the following](./scrum-part2.md)
 
-### Breaking Down User Stories into Tasks
-
-Your instruction is clear, but it could be slightly refined for clarity and flow. Here’s a polished version:
-
 ---
 
 ### Breaking Down User Stories into Tasks
