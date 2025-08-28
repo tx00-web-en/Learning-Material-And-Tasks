@@ -1,22 +1,26 @@
-# Activity: Scrum ...
+# Activity: Scrum
+
+### Part 1: INVEST Criteria
+
+1. Review these [user stories](./scrum-part1.md) for an e-commerce website.
+2. Assess how well each story meets the **INVEST** criteria:
+   * Independent
+   * Negotiable
+   * Valuable
+   * Estimable
+   * Small
+   * Testable
+3. Compare your answers with [this reference](./scrum-part2.md).
+
+### Part 2: Breaking Down User Stories into Tasks
+
+* Review [this table](./scrum-part3.md), which shows examples of user stories mapped to their corresponding tasks.
+* Consider the examples as a guide when start breaking down your own project’s user stories into actionable tasks.
+
+### Part 3: Applying INVEST & DEEP to Your Project
+
+* Review your project’s **product backlog** to ensure it follows the [**DEEP principle**](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/scrum.md#deep-principle).
+* Check that some of your project’s **user stories** also follow the [**INVEST criteria**](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/scrum.md#invest).
 
 
-### INVEST criteria
 
-1. Refer to these [user stories](./scrum-part1.md) for an ecommerce website 
-
-Take some time to go through these stories and assess how they match up against the `INVEST` criteria:
-  - Independent, 
-  - Negotiable, 
-  - Valuable, 
-  - Estimable, 
-  - Small, 
-  - Testable. 
-
-2. Compare your answers with [the following](./scrum-part2.md)
-
----
-
-### Breaking Down User Stories into Tasks
-
-[Here’s](./scrum-part3.md) a table showing examples of user stories mapped to their corresponding tasks. Take some time to review these examples, and then start planning how to break down the user stories of your project into actionable tasks.
