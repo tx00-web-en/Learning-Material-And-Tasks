@@ -1,4 +1,4 @@
-# Activity: Git Branches
+# Activity: Reflection Journal & Git Branches
 
 There are three parts to this activity:
 
