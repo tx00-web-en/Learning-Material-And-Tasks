@@ -1,7 +1,24 @@
 # Activity: Git Branches
 
+There are three parts to this activity:
 
-## Part 1/2: Git Branching
+1. How to submitt the Reflection Journal
+2. Practicing Git Branching
+3. (Optional) Using Visual Studio Live Share, which may be especially useful during the pair programming session.
+
+---
+
+## Part 1 of 3: Reflection Journal
+---
+
+This part is to ensure that every member of the group can push their Reflection Journal.
+
+* Create a **separate repository** for your journal.
+* The repository **must be private**.
+* Follow the provided instructions to set it up and add me as a collaborator. The detailed guide can be found [here](../Journal/README.md).
+
+
+## Part 2/3: Git Branching
 ---
 
 #### **Objective:**
@@ -181,7 +198,7 @@ In this lab, you will learn how to set up a Git branching structure for a projec
 
 ---
 
-## Part 2/2 (Optional)
+## Part 3/3 (Optional)
 
 Please install **Visual Studio Live Share** and practice using it to collaborate on coding projects in real-time.
 
