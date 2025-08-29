@@ -20,6 +20,11 @@ In this stage, the team is **functioning at a high level**. Members are **confid
 
 ### 5. **Adjourning**
 
+- Wrap up the project, finalize deliverables, and bring closure to the team’s work
+- Focus: Reflect on achievements, evaluate lessons learned, and celebrate successes before disbanding
+- Emotions: Members may feel pride, relief, or sadness as they part ways, especially if strong bonds formed
+
+
 > Understanding these stages can help teams navigate their development more effectively and become more productive and cohesive.
 
 ---
