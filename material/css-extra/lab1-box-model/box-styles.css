@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+h1,
+p {
+    background-color: #DDE0E3;
+    /* Light gray */
+}
+
+em,
+strong {
+    background-color: #387ac6;
+    /* Light blue */
+    display: inline;
+}
+
+h1 {
+    padding: 50px;
+    border: 3px solid #21b70d;
+}
+
+p {
+    padding: 20px 0 20px 10px;
+    margin: 20px;
+}
+
+strong {
+  margin: 50px;
+}
+
+div {
+  color: #FFF;
+  background-color: #5995DA;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 5px solid #5D6063;
+  border-radius: 5px;
+  width: 200px;
+}
