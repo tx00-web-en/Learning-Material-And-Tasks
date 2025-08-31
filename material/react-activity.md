@@ -222,7 +222,7 @@ Add CSS to style your `Book` component and the list of books to make it visually
 2. Import the `Book` component at the top of the `App.js` file.
 
 ```jsx
-import Book from './Bookjsx';
+import Book from './Book';
 ```
 
 3. In `App.jsx`, import the `booksData.js` file to access the list of books.
@@ -240,10 +240,6 @@ import './Book.css';
 5. Inside the `App` component, use the `map()` function to render each book from the imported data. Here's the final code:
 
 ```jsx
-import Book from './Book';
-import booksData from './booksData';
-import './Book.css';
-
 function App() {
   return (
     <div className="App">
