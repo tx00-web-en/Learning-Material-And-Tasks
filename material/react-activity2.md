@@ -297,7 +297,7 @@ In this part, you will learn how to work with lists in React by importing a list
 
 ```jsx
 // src/toursData.js
-//https://www.course-api.com/images/tours/tour-5.jpeg
+//Original src: https://www.course-api.com/images/tours/tour-5.jpeg
 export const tours = [
     {
       id: "rec6d6T3q5EBIdCfD",
