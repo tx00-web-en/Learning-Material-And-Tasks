@@ -1,6 +1,6 @@
 # Reflection journal
 
-**Each** reflection journal is worth **25 points**. To earn these points, the journal **must be submitted before the deadline**.
+**Each** reflection journal is worth **20 points**. To earn these points, the journal **must be submitted before the deadline**.
 
 ### Update the Journals
 
