@@ -2,6 +2,9 @@
 
 When building an API server, adopting the **MVC (Model-View-Controller)** architecture can significantly enhance code organization, maintainability, and scalability. This architecture separates the application logic into three main components: the **Model**, **View**, and **Controller**, each with a distinct responsibility. By adhering to this pattern, you can create a well-structured and easy-to-manage codebase.
 
+
+<img src="./img/mvc.png" width="50%">
+
 ## The MVC Components
 
 ### 1. Model
@@ -116,6 +119,7 @@ The MVC architecture helps create a well-structured, maintainable, and scalable 
 
 ## Links
 
+- [Extra: How To Use And Write Express Middleware](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/)
 - [Understaing MVC for MERN stack](https://www.pumped.dev/blog/posts/understanding-mvc-mern)
 - [MERN Stack Project Structure: Best Practices](https://dev.to/kingsley/mern-stack-project-structure-best-practices-2adk)
 - [A Comprehensive Guide to Successful MERN Stack Development](https://ellow.io/mern-stack-development/)
