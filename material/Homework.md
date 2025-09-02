@@ -50,6 +50,7 @@ The video homework uses emojis to represent the significance of each video. Belo
 - Please consider using one of the following tools for your slides:
   - [Figma Slides](https://www.figma.com/slides/), [Google Slides](https://workspace.google.com/products/slides/), or [Reveal.js](https://revealjs.com/)
   <!-- - Here’s a [template for a 12-minute presentation](./material/ppt-template.md) to help you structure your content effectively. -->
+- :blue_book:  [(Review) Practical Git and Github : From Basics to Pro Workflows](https://www.youtube.com/watch?v=G3q6zpyASnM)
 
 ----
 > Homework for next Week can be found in the respective branch.
