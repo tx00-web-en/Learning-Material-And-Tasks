@@ -82,12 +82,12 @@ Happy coding, and remember that you're not alone! Pair up and collaborate as you
 
 1. We will be refactoring an HTML website into a React app. Open the `index.html` file located at [./Original-HTML/index.html](./Original-HTML/index.html) using Visual Studio Code. The HTML file contains six sections with starting and ending line numbers for each section:
 
-   - Navbar: lines 16 - 66
-   - Hero: lines 68 - 79
-   - About: lines 81 - 110
-   - Services: lines 112 - 156
-   - Tours: lines 158 - 266
-   - Footer: lines 268 - 289
+   - Navbar: lines 15 - 48
+   - Hero: lines 50 - 61
+   - About: lines 63 - 88
+   - Services: lines 90 - 128
+   - Tours: lines 130 - 230
+   - Footer: lines 232 - 265
 
 2. Our first step is to extract the Navbar section and convert it to JSX. To achieve this, you can use an online tool for the conversion, such as [html-to-jsx](https://transform.tools/html-to-jsx). The converted JSX code for the Navbar should look like this:
 
