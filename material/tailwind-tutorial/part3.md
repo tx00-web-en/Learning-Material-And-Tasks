@@ -1,6 +1,6 @@
 # Install Tailwind CSS with Vite
 
-Tailwind CSS is a utility-first CSS framework that allows for rapid UI development. In this tutorial, you’ll learn how to set up a new Vite project with Tailwind CSS.
+Tailwind CSS is a utility-first CSS framework that allows for rapid UI development. In this tutorial, you’ll learn how to set up a new [Vite project with Tailwind CSS.](https://tailwindcss.com/docs/installation/using-vite)
 
 ### Step 1: Create Your Project
 
@@ -13,48 +13,37 @@ cd tailwind-demo
 
 ### Step 2: Install Tailwind CSS
 
-1. Install `tailwindcss` and its peer dependencies, then generate your `tailwind.config.js` and `postcss.config.js` files.
+Install `tailwindcss` and `@tailwindcss/vite` via npm.
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
+npm install tailwindcss @tailwindcss/vite
 ```
 
-2. Next, generate your `tailwind.config.js` and `postcss.config.js` files:
 
-```bash
-npx tailwindcss init -p
-```
+### Step 3: Configure the Vite plugin
 
-### Step 3: Configure Your Template Paths
-
-Add the paths to all of your template files in your `tailwind.config.js` file:
+Add the `@tailwindcss/vite` *plugin* to your Vite *configuration*.
 
 ```js
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite' // add this line
+
+export default defineConfig({
+  plugins: [
+    tailwindcss(), // add this line
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-}
+})
 ```
 
-### Step 4: Add the Tailwind Directives to Your CSS
-
-Add the `@tailwind` directives for each of Tailwind’s layers to your `./src/index.css`. 
+### Step 4: Import Tailwind CSS
 
 1. First, delete the existing content of `./src/index.css`.
-2. Now add the following:
+2. Now add an @import to your CSS file that imports Tailwind CSS.
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+```js
+@import "tailwindcss";
 ```
+
 
 ### Step 5: Update Your App Component
 
@@ -122,6 +111,6 @@ Now you can start using Tailwind’s utility classes to style your components!
 
 ### Additional Resources
 
-- [Tailwind CSS with Vite](https://tailwindcss.com/docs/guides/vite)
+- [Tailwind CSS with Vite](https://tailwindcss.com/docs/installation/using-vite)
 - [Get started with Tailwind CSS](https://tailwindcss.com/docs/installation/framework-guides)
 - [Core Concepts](https://tailwindcss.com/docs)

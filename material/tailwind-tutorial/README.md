@@ -7,6 +7,9 @@ This four-part series will introduce you to Tailwind CSS through hands-on tutori
   - **[My Tailwind Journey (7 min)](https://www.youtube.com/watch?v=5MKw-wOpJR8)**: Discover how Tailwind CSS can simplify your development process and design workflow.
   - **[Why is everyone talking about Tailwind? (5 min)](https://www.youtube.com/watch?v=gtb9OBhra5c)**: A quick overview of why Tailwind is a popular choice among developers.
   - **[Tailwind and the beauty of ugly code](https://www.youtube.com/watch?v=t-eR4hA7obg)**
+  - [Tailwind CSS 4.0  - The NEW way to install with Vite + React](https://www.youtube.com/watch?v=sHnG8tIYMB4)
+  - [Tailwind CSS V4 Crash Course 2025 - Become a Tailwind Pro in 1.5 Hours](https://www.youtube.com/results?search_query=tailwind+4)
+
 
 ---
 
@@ -28,7 +31,10 @@ In this [tutorial](./part1.md), we’ll build a *Simple Header* using Tailwind.
 
 ### Part 2: Building a Simple Subscription Form
 
-In this tutorial, we’ll build an *email subscription card* using Tailwind. You can follow the [written tutorial](./part2.md) or watch the [video tutorial](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/EmVYFKqvicNPl5GPiTHfDwwBqDjJbgZqBNVHS4t8WwTVRg?email=Roni.Strom%40metropolia.fi&e=5bfM2Z).
+In this [tutorial](./part2.md), we’ll build an *email subscription card* using Tailwind.  
+
+<!-- or watch the [video tutorial](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/EmVYFKqvicNPl5GPiTHfDwwBqDjJbgZqBNVHS4t8WwTVRg?email=Roni.Strom%40metropolia.fi&e=5bfM2Z). -->
+
 
 **Final Project Preview**  
 ![Tailwind Project Preview](./img/part2.png)
@@ -87,6 +93,7 @@ Consider refactoring the static landing page from Part 4 into a React applicatio
 ---
 ### Links
 
+- [Tailwind Playground](https://play.tailwindcss.com/)
 - Full Courses (Free for Metropolia's students)
   - [Tailwind CSS From Scratch - Learn by Building Projects](https://metropolia.finna.fi/Record/nelli15.5680000000060713?sid=4846325380)
   - [Book: Tailwind CSS, Ivaylo Gerchev](https://learning.oreilly.com/library/view/tailwind-css)
@@ -96,7 +103,7 @@ Consider refactoring the static landing page from Part 4 into a React applicatio
   - [The Box Model (30min read)](https://internetingishard.netlify.app/html-and-css/css-box-model/)
 - Tailwind
   - [Tailwind CSS Cheat Sheet](https://flowbite.com/tools/tailwind-cheat-sheet/)
-  - [Tailwind Colors](https://tailwindcolor.com/)
+  - Tailwind Colors: [src1](https://tailwindcolor.com/), [src2](https://tailwindcss.com/docs/colors)
   - [Tailwind colors online tool](https://github.com/ameistad/tailwind-colors) 
   - [Tailwind Starter Kit](https://tailwind-starter-kit.vercel.app/learn): A library of components made with Tailwind CSS to bootstrap your projects
   - [Documentation](https://tailwindcss.com/docs/) 

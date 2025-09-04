@@ -6,7 +6,7 @@ This tutorial will cover the basics of Tailwind CSS, including the box model, co
 There are seven demo sections (a-g), each focusing on a specific Tailwind CSS concept. Tailwind is included in each HTML file using the following script in the `<head>` section:
 
 ```html
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 ```
 
 ### Demos
@@ -117,6 +117,11 @@ This Emmet abbreviation expands to:
 
 The `container` class centers and restricts content width based on the screen size. It’s helpful for creating a structured, centered layout.
 
+In Tailwind CSS, .container is a responsive layout helper. It:
+- Sets a max-width for your content at different breakpoints (e.g., sm, md, lg, xl, 2xl), so your design doesn’t stretch edge-to-edge on huge screens.
+- Centers itself horizontally when combined with mx-auto (margin left/right auto).
+- Keeps content readable by preventing overly long line lengths and giving consistent spacing on large displays.
+
 ### Example: Using the Container Class
 
 ```html
@@ -125,7 +130,9 @@ The `container` class centers and restricts content width based on the screen si
 </div>
 ```
 
-Here, `mx-auto` centers the container horizontally, and the width adjusts based on screen size.
+- Here, `mx-auto` centers the container horizontally, and the width adjusts based on screen size.
+- When you add Tailwind’s container class, you’re not just saying “make a box.” You’re telling Tailwind: "At each responsive breakpoint, set a maximum width for this element instead of letting it stretch to 100% of the viewport."
+- That’s why on a big monitor, the green box stops growing after a certain point — because container applies a max-width that matches Tailwind’s breakpoint sizes. So if your screen is, say, 1920px wide, the container will still stop at 1280px (or 1536px for 2xl) — leaving space on both sides.
 
 ---
 
