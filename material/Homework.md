@@ -54,10 +54,7 @@ https://www.youtube.com/playlist?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv
 - :bell: :blush: [React JS how to update ARRAYS in state (9min)](https://youtu.be/A9Bz2YxhAQk?si=pPo3MyTb0l9FcsUw)
 - :bell: [React JS update ARRAY of OBJECTS in state (12min)](https://youtu.be/Y62mbztjmus?si=abay40hXVEp1MnZj)
 - :bell: :sweat_smile: [Build this React To-Do List app in 20 minutes](https://youtu.be/9wiWzu_tRB0?si=12_1Q82lEssfqIdE)
-- [Git Branches](./git-branches.md)
-
-
-
+- :bell: :blush: [Git Branches](./git-branches.md)
 
 
 <!-- 
