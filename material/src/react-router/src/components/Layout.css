@@ -1,0 +1,26 @@
+ /* Layout Styles */
+ nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  /* Page Content Styles */
+  main {
+    padding: 2rem;
+  }
