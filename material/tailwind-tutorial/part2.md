@@ -130,11 +130,11 @@ This container uses `flex` for a flexible layout. By default, it stacks elements
 ### 5. Image
 
 ```html
-<img src="images/image.jpg" alt="" class="object-fit rounded-xl h-80 md:h-64 md:rounded-l-xl md:rounded-r-none transform hover:scale-105 hover:rounded-xl duration-200"/>
+<img src="images/image.jpg" alt="" class="object-cover rounded-xl h-80 md:h-64 md:rounded-l-xl md:rounded-r-none transform hover:scale-105 hover:rounded-xl duration-200"/>
 ```
 
 The image is styled with:
-- `object-fit`: Ensures the image scales properly.
+- `object-cover`: Ensures the image scales properly.
 - `rounded-xl`: Rounds all corners.
 - `h-80`: Sets a fixed height of 80 (20 rem), adapting to medium screens (`md:h-64`).
 - `hover:scale-105 hover:rounded-xl duration-200`: On hover, the image slightly scales up (`scale-105`) and applies animation with `duration-200` for smooth transition.

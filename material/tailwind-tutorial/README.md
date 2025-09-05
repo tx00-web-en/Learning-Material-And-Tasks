@@ -55,14 +55,14 @@ In this [tutorial](./part3.md), you’ll learn how to set up a new React project
 
 ### Part 4: Customizing Tailwind and Optimizing Your Workflow
 
-In this [tutorial](./part4.md), you will explore how to customize Tailwind either by adding new utilities or by tweaking existing ones.
+> (**TBD**): In this [tutorial](./part4.md), you will explore how to customize Tailwind either by adding new utilities or by tweaking existing ones.
 
 
-Here's the final code for reference:
+<!-- Here's the final code for reference:
 
 ```sh
 git clone https://github.com/tx00-resources-en/tailwind-tutorial2
-```
+``` -->
 
 
 ---
