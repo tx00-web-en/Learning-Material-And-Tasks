@@ -37,7 +37,7 @@ export default defineConfig({
   ],
 })
 ```
-
+  
 ### Step 4: Import Tailwind CSS
 
 1. First, delete the existing content of `./src/index.css`.
