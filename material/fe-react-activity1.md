@@ -5,6 +5,7 @@ In this practice you will learn to use one of the most basic hooks, the [`useSta
 You will use the `useState` hook to change a background theme from light to dark, as well as to increment and decrement a number.
 
 > Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
+> There are sample solutions in [this folde](../material/src/lab1-sample-sol/). Please compare your code with your peers’ work.
 
 ## Setup
 
@@ -130,6 +131,18 @@ technique.
 
 All three specs in __02-counter.test.jsx__ should now pass.
 
+
+## Toggle Theme
+
+Create a "Toggle Theme" button to replace the "Light" and "Dark" buttons. This
+button should conditionally turn the `theme` "light" if the `theme` is "dark"
+and should turn the `theme` "dark" if the `theme` is "light". Kind of like a
+light switch.
+
+The test spec in __03-toggle-theme.test.jsx__ should now pass when you run `npm
+test 03`.
+
+
 ## Optional callback function
 
 An updater function returned by `useState` can take a callback function as an
@@ -174,16 +187,6 @@ setCount(prevCount => prevCount + 1);
 ```
 
 All three specs in __02-counter.test.jsx__ should still pass!
-
-## Toggle Theme
-
-Create a "Toggle Theme" button to replace the "Light" and "Dark" buttons. This
-button should conditionally turn the `theme` "light" if the `theme` is "dark"
-and should turn the `theme` "dark" if the `theme` is "light". Kind of like a
-light switch.
-
-The test spec in __03-toggle-theme.test.jsx__ should now pass when you run `npm
-test 03`.
 
 ## What you have learned
 
