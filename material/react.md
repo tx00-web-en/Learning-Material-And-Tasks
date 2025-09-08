@@ -177,6 +177,7 @@ By following this example, you will have a fundamental understanding of how to b
 ---
 ## Links
 
+- [Introduction to Events](https://javascript.info/introduction-browser-events)
 - [Responding to Events](https://react.dev/learn/responding-to-events)
 - [State: A Component's Memory](https://react.dev/learn/state-a-components-memory)
 - [Render and Commit](https://react.dev/learn/render-and-commit)

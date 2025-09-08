@@ -212,3 +212,11 @@ To protect routes, implement custom middleware.
   - Pull the latest changes from the remote repository.
   - Resolve any merge conflicts.
   - Push the merged code back to GitHub.
+
+
+---
+
+## Links
+
+- [How To Use And Write Express Middleware](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/)
+- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/)

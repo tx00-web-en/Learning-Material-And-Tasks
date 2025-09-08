@@ -5,7 +5,8 @@ In this practice you will learn to use one of the most basic hooks, the [`useSta
 You will use the `useState` hook to change a background theme from light to dark, as well as to increment and decrement a number.
 
 > Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
-> There are sample solutions in [this folde](../material/src/lab1-sample-sol/). Please compare your code with your peers’ work.
+>
+> There are sample solutions at the end of the the task. Please compare your code with your peers' work.
 
 ## Setup
 
@@ -30,7 +31,7 @@ Ensure that __UseState.css__ file is imported into your __UseState.jsx__ file us
 relative path.
 
 ```js
-import './UseState.css';
+import './Counter.css';
 ```
 
 To create state in your component, you will also need to import the `useState`
@@ -204,6 +205,7 @@ __Congratulations!__ In this practice you have learned how to
 
 ## Ref
 
+- [Sample solutions](../material/src/lab1-sample-sol/)
 - https://github.com/appacademy/aa14-react-hooks-useState
 
 
