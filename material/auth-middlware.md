@@ -159,3 +159,11 @@ Morgan is a middleware for logging HTTP requests in an Express application. It i
 ### Conclusion
 
 Middleware plays a crucial role in managing the flow of requests in an Express application. The `checkAdminRole` middleware allows us to restrict access based on user roles, with flexibility to obtain this information from different sources (query parameters or headers). Meanwhile, Morgan provides versatile logging capabilities, essential for debugging, monitoring, and analytics. Understanding and effectively using these tools can greatly enhance the functionality and security of your Express applications.
+
+
+---
+
+## Links
+
+- [How To Use And Write Express Middleware](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/)
+- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/)
