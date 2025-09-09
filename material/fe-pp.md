@@ -59,7 +59,9 @@ export default NotFound;
 ```
 
 #### 3. Update `App.jsx` with Basic Routing
-Open your main `App.jsx` file and update the `App` component to set up the routing. The final code should look like this:
+
+  - Open your main `App.jsx` file and update the `App` component to set up the routing. 
+  - The final code should look like this:
 
     ```jsx
     import About from "./components/About";
@@ -121,7 +123,8 @@ export default PageLinks;
 #### 4. Update `PageLink` Component
 Open the `PageLink` component file and make the following changes:
 
-- Import the `Link` component from `react-router-dom`. The final code should look like this:
+- Import the `Link` component from `react-router-dom`. 
+- The final code should look like this:
 
 ```jsx
 import { Link } from "react-router-dom";
