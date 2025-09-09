@@ -35,8 +35,14 @@ Follow the steps below to set up basic routing in your React application.
 Create a new file named `Home.jsx` in the `components` folder with the following content:
 
 ```jsx
+// Home.jsx
 function Home() {
-  return <div>This is Home</div>;
+  return (
+    <div className="temp">
+      <h1>This is Home</h1>
+      <p>Welcome! Glad you're here.</p>
+    </div>
+  );
 }
 
 export default Home;
@@ -46,9 +52,10 @@ export default Home;
 Create another file named `NotFound.jsx` in the `components` folder with the following content:
 
 ```jsx
+// NotFound.jsx
 function NotFound() {
   return (
-    <div>
+    <div className="temp">
       <h1>404 - Not Found</h1>
       <p>Oops! The page you are looking for doesn't exist.</p>
     </div>
