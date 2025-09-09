@@ -102,11 +102,12 @@ export default NotFound;
     export default App;
     ```
 
-> Refer to [this guide](./react-router.md#adding-navigation-with-react-router) for more details on adding navigation with React Router. For advanced routing, see Iteration 7 (Optional).
+> - Refer to [this guide](./react-router.md#adding-navigation-with-react-router) for more details on adding navigation with React Router.  
+> - For advanced routing, see Iteration 7 (Optional).
 
-<!-- #### 4. Update `PageLinks` Component
+<!-- #### 4. `PageLinks` Component
 
-> This step is not necessary!
+> This step is not needed!
 
 Open the `PageLinks` component file and replace its code with the following:
 
@@ -128,6 +129,7 @@ export default PageLinks;
 ``` -->
 
 #### 4. Update `PageLink` Component
+
 Open the `PageLink` component file and make the following changes:
 
 - Import the `Link` component from `react-router-dom`. 
@@ -167,11 +169,13 @@ Once all changes are made, commit them with a meaningful commit message describi
 ---
 ### Iteration 2:
 
-Refactor the `Services` component to incorporate services data into the component's state. Remember to import `useState` at the beginning of the file: `{ useState } from 'react';` and import `services` from the data file.
+- Refactor the `Services` component so the tours array is stored in component state (using `useState`). At the top of the file import useState from React — for example: `import { useState } from 'react';`
+- Also keep any other existing imports. Use the state variable (e.g.,`servicesData`) instead of the external tours array, and update it with the setter (e.g., `setServicesData`) when removing or restoring tours.
 
 ```jsx
 import { useState } from 'react';
 import { services } from "../data";
+// Rest of your  imports...
 
 function Services() {
   const [servicesData, setServicesData] = useState(services);
@@ -191,11 +195,13 @@ export default Services;
 ---
 ### Iteration 3:
 
-Refactor the `Tours` component to include tours data as part of the component's state. Remember to import `useState` at the beginning of the file: `{ useState } from 'react';` and import `tours` from the data file.
+- Refactor the `Tours` component so the tours array is stored in component state (using `useState`). At the top of the file import useState from React — for example: `import { useState } from 'react';`
+- Also keep any other existing imports. Use the state variable (e.g., `toursData`) instead of the external tours array, and update it with the setter (e.g., `setToursData`) when removing or restoring tours.
 
 ```jsx
 import { useState } from 'react';
 import { tours } from "../data";
+// Rest of your  imports...
 
 function Tours() {
   const [toursData, setToursData] = useState(tours);
