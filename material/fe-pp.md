@@ -35,8 +35,6 @@ Follow the steps below to set up basic routing in your React application.
 Create a new file named `Home.jsx` in the `components` folder with the following content:
 
 ```jsx
-import React from "react";
-
 function Home() {
   return <div>This is Home</div>;
 }
@@ -61,15 +59,7 @@ export default NotFound;
 ```
 
 #### 3. Update `App.jsx` with Basic Routing
-Open your main `App.jsx` file and follow these steps:
-
-- Import `BrowserRouter`, `Route`, and `Routes` from `react-router-dom`:
-
-    ```jsx
-    import { BrowserRouter, Route, Routes } from 'react-router-dom';
-    ```
-
-- Update the `App` component to set up the routing. The final code should look like this:
+Open your main `App.jsx` file and update the `App` component to set up the routing. The final code should look like this:
 
     ```jsx
     import About from "./components/About";
@@ -105,7 +95,7 @@ Open your main `App.jsx` file and follow these steps:
 
 > Refer to [this guide](./react-router.md#adding-navigation-with-react-router) for more details on adding navigation with React Router. For advanced routing, see Iteration 7 (Optional).
 
-#### 4. Update `PageLinks` Component
+<!-- #### 4. Update `PageLinks` Component
 
 > This step is not necessary!
 
@@ -126,20 +116,12 @@ const PageLinks = ({ parentClass, itemClass }) => {
 };
 
 export default PageLinks;
-```
+``` -->
 
-#### 5. Update `PageLink` Component
+#### 4. Update `PageLink` Component
 Open the `PageLink` component file and make the following changes:
 
-- Import the `Link` component from `react-router-dom`:
-
-    ```jsx
-    import { Link } from "react-router-dom";
-    ```
-
-- Remove the `<li key={link.id}>` from the original code (the `key` is now handled in the `PageLinks` component).
-
-The final code should look like this:
+- Import the `Link` component from `react-router-dom`. The final code should look like this:
 
 ```jsx
 import { Link } from "react-router-dom";
@@ -157,7 +139,7 @@ const PageLink = ({ link, itemClass }) => {
 export default PageLink;
 ```
 
-#### 6. Update `data.js`
+#### 5. Update `data.js`
 Open the `data.js` file and replace lines 6-11 with the following:
 
 ```jsx
@@ -169,7 +151,7 @@ export const pageLinks = [
 ];
 ```
 
-#### 7. Commit Your Changes
+#### 6. Commit Your Changes
 Once all changes are made, commit them with a meaningful commit message describing what was done.
 
 ---
