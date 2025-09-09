@@ -265,6 +265,11 @@ carSchema.set('toJSON', {
 
 By setting the `toJSON` transformation, Mongoose will apply these changes every time the document is serialized to JSON, such as when sending a response from an API.
 
+
+> [!TIP]
+> `__v` increments **only when you use `.save()`** on a document (or when optimistic concurrency is enabled).  If you’re using direct update queries (`updateOne`, `findByIdAndUpdate`, etc.), Mongoose does **not** increment `__v` by default. More details [here](./incrementing_v.md)
+
+
 ### Full Example of Mongoose Schema with Modifications
 
 Here's a full example incorporating all these adjustments:

@@ -1,6 +1,6 @@
 # Git Merging Activity
 
-This activity focuses on merging branches and will address the questions raised during Wednesday's session.
+This activity focuses on merging branches.
 
 <!-- You are welcome to participate individually, collaboratively with your peers, or both.
 
@@ -17,7 +17,7 @@ During this activity, we will:
 - Create a pull request.
 - Merge the newly created branches with the main branch.
 
-Additionally, we will cover the two questions asked on Wednesday:
+Additionally, we will cover these two questions:
 
 1. Whether to use  `git merge` or  `git rebase`.
 2. What to do if someone accidentally pushes directly to the main branch instead of making a pull request, including how to use `git revert` to handle this situation.

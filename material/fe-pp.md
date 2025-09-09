@@ -223,8 +223,8 @@ export default Tours;
 ---
 ### Iteration 4:
 
-- Enhance the `Services` component to allow visitors to hide services they are not interested in. Implement a button on each tour item for removal, similar to the [`demo` of Monday morning](./src/demo3/).
-- Enhance the `Tours` component to allow visitors to hide tours they are not interested in. Implement a button on each tour item for removal, similar to the [`demo` of Monday morning](./src/demo3/).
+- Enhance the `Services` component to allow visitors to hide services they are not interested in. Implement a button on each tour item for removal, similar to theis [`demo`](./src/demo3/).
+- Enhance the `Tours` component to allow visitors to hide tours they are not interested in. Implement a button on each tour item for removal, similar to this [`demo`](./src/demo3/).
 - **Commit Changes** with a meaningful message.
 
 ---

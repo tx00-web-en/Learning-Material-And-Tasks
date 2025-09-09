@@ -20,12 +20,4 @@
     color: #fff;
   }
 
-  /* Page Content Styles */
-  main {
-    padding: 2rem;
-  }
 
-  a.active {
-  color: #fff;
-  background: #007bff;
-}

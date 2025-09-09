@@ -516,8 +516,6 @@ In React Router, both `Link` and `NavLink` are used to create navigation links, 
 - **Purpose**: A special version of `Link` that adds styling attributes to the rendered element when it matches the current URL.
 - **Usage**: Useful for navigation menus where you want to highlight the currently active route.
 - **Additional Props**:
-  - `activeClassName`: Specifies the CSS class to apply when the link is active.
-  - `activeStyle`: Specifies the inline styles to apply when the link is active.
   - `isActive`: A function to determine if the link is active.
 - **Example**:
   ```jsx
@@ -525,18 +523,33 @@ In React Router, both `Link` and `NavLink` are used to create navigation links, 
 
   function Navbar() {
     return (
-      <nav>
-        <NavLink to="/" exact activeClassName="active">Home</NavLink>
-        <NavLink to="/about" activeClassName="active">About</NavLink>
-        <NavLink to="/contact" activeClassName="active">Contact</NavLink>
+      <nav className="navbar">
+        <ul>
+          <li>
+            <NavLink to="/" className={({ isActive }) => isActive ? 'active' : undefined}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" className={({ isActive }) => isActive ? 'active' : undefined}>About</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : undefined}>Contact</NavLink>
+          </li>
+        </ul>
       </nav>
     );
   }
   ```
 
+  ```css
+  a.active {
+    color: #fff;
+    background: #007bff;
+  }
+  ```
+
 ### Key Differences
 - **Styling Active Links**: `NavLink` provides built-in support for styling active links, making it easier to highlight the current route.
-- **Props**: `NavLink` includes additional props like `activeClassName` and `activeStyle` for customizing the appearance of active links, which `Link` does not offer¹².
+- **Props**: `NavLink` includes additional props like `activeClassName` and `activeStyle` for customizing the appearance of active links, which `Link` does not offer.
 
 These differences help you choose the right component based on your navigation needs. If you need to highlight active links, `NavLink` is the way to go. For simple navigation without active link styling, `Link` is sufficient.
 
