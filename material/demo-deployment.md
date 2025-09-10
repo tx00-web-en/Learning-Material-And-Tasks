@@ -6,9 +6,7 @@
 - Deploy React App to the cloud
 
 ---
-## Part 1/3
-
-**Step 1: Project Setup**
+## Part 1/3: Project Setup
 
 - Open your terminal and run the following command to create a new React project using Vite:
 
@@ -35,17 +33,6 @@ npm run dev
 ```
 
 - Open your web browser and go to the provided local URL (e.g., `http://localhost:5173`). You should see the default Vite React welcome page.
-
-
-**Step 2: Run the Development Server**
-
-1. Run the following command to start the development server:
-
-```bash
-npm run dev
-```
-
-2. Open your web browser and go to the provided local URL (e.g., `http://localhost:5173`). You should see both the "Hello, React!" and "Goodbye, React!" messages rendered on the page.
 
 ---
 ## Part 2/3: [Push to GitHub](./push-to-github.md)
@@ -126,7 +113,7 @@ Add the following lines **before** the `"build": "vite build"` line in `package.
 
 ```json
 "predeploy": "npm run build",
-"deploy": "gh-pages -d dist",
+"deploy": "gh-pages -d dist"
 ```
 
 - **predeploy**: This script will automatically run the `build` command before deploying.
