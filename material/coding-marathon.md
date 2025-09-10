@@ -56,7 +56,7 @@ Before starting this coding marathon, ensure that
 
 Each member will choose and develop one component from the following options: **SignupPage**, **BookCollectionManager, ContactListManager, RecipeManager,** or **ShoppingCart**.
 
-There is [starter code available for all these components](./react2.md), based on the ToDoList app code provided in the homework video. However, the provided code requires several modifications:
+There is [starter code available for all these components](./react2.md#how-to-adapt-the-to-do-list-for-other-apps), based on the ToDoList app code provided in the homework video. However, the provided code requires several modifications:
 
 1. **Refactor to Extract Components**:  
    Currently, all code is in a single file. Refactor the code to separate the main item into its own component:
@@ -67,10 +67,10 @@ There is [starter code available for all these components](./react2.md), based o
 
 2. **Expand Input Fields**:  
    The example code uses only two input fields. You should expand the input fields to capture additional details as follows:
-   - **BookCollectionManager**: `title`, `author`, `year`
-   - **ContactListManager**: `name`, `email`, `phone`
-   - **RecipeManager**: `name`, `ingredients`, `instructions`
-   - **ShoppingCart**: `item name`, `quantity`, `price` 
+   - **BookCollectionManager**: `title`, `author`, `year`, `publisher`, `ISBN`
+   - **ContactListManager**: `name`, `email`, `phone`, `address`, `company`
+   - **RecipeManager**: `name`, `ingredients`, `instructions`, `prepTime`, `nutritionInfo`
+   - **ShoppingCart**: `item name`, `quantity`, `price` , `category`, `discount`
 
 3. **`Optional`: Add CSS for Styling**:  
    The starter code does not include any styles. You are expected to create and apply CSS to improve the visual presentation of your component.
@@ -108,7 +108,7 @@ Create a `SignupPage` component with the following elements:
 #### 2. BookCollectionManager Component
 
 Develop a Book Collection Manager that allows users to add, view, and delete books:
-- **State Management**: Use the `useState` hook to manage the book list and input fields (`title`, `author`, `year`).
+- **State Management**: Use the `useState` hook to manage the book list and input fields (`title`, `author`, `year`, `publisher`, `ISBN`).
 - **Controlled Forms**: Ensure all inputs are controlled components.
 - **List Rendering**: Render the list of books using the `.map()` method.
 - **Functions**: Implement functions to add and delete books.
@@ -119,15 +119,15 @@ Develop a Book Collection Manager that allows users to add, view, and delete boo
 <BookCollectionManager />
 ```
 
-**Output**
+<!-- **Output**
 
-![image](./img/book-manager.png)
+![image](./img/book-manager.png) -->
 
 ---
 #### 3. ContactListManager Component
 
 Create a simple Contact List Manager to add, view, and delete contacts:
-- **State Management**: Use the `useState` hook to handle the contact list and input fields (`name`, `email`, `phone`).
+- **State Management**: Use the `useState` hook to handle the contact list and input fields (`name`, `email`, `phone`, `address`, `company`).
 - **Controlled Forms**: Manage input values using controlled components.
 - **List Rendering**: Render contacts dynamically with the `.map()` method.
 - **Functions**: Provide functions to add and delete contacts.
@@ -142,7 +142,7 @@ Create a simple Contact List Manager to add, view, and delete contacts:
 #### 4. RecipeManager Component
 
 Build a Recipe Manager that lets users add, view, and delete recipes:
-- **State Management**: Use the `useState` hook for the recipe list and input fields (`name`, `ingredients`, `instructions`).
+- **State Management**: Use the `useState` hook for the recipe list and input fields (`name`, `ingredients`, `instructions`, `prepTime`, `nutritionInfo`).
 - **Controlled Forms**: Handle inputs as controlled components.
 - **List Rendering**: Render the recipe ingredients and instructions as list items.
 - **Functions**: Add and delete recipes through functions.
@@ -158,7 +158,7 @@ Build a Recipe Manager that lets users add, view, and delete recipes:
 #### 5. ShoppingCart Component
 
 Develop a Shopping Cart where users can add, update quantities, and remove items:
-- **State Management**: Use the `useState` hook to manage cart items and input fields (`itemName`, `quantity`, `price`).
+- **State Management**: Use the `useState` hook to manage cart items and input fields (`item name`, `quantity`, `price` , `category`, `discount`).
 - **Controlled Forms**: Use controlled components for inputs.
 - **List Rendering**: Display items dynamically with the `.map()` function.
 - **Functions**: Implement functions to add items, update quantities, and remove items.
