@@ -1,0 +1,58 @@
+# Registering with MongoDB Atlas
+
+You can run MongoDB locally on your computer, but using a cloud-based service can simplify your setup. For this course, we will use [MongoDB Atlas](https://www.mongodb.com/atlas/database), a cloud-based MongoDB service.
+
+Here are three ways to set up MongoDB Atlas. These resources provide a **general overview of the process**, but since MongoDB Atlas frequently updates its interface and setup instructions, some steps may differ slightly from what is shown. You may need to adapt certain details, such as menu options, based on the latest version of Atlas. 
+
+- Watch this [7-minute video tutorial](https://www.youtube.com/watch?v=084rmLU1UgA).
+- Follow the steps in this [article guide](https://medium.com/@ddiscua/how-to-create-a-free-mongo-atlas-cluster-and-connect-to-mongo-compass-1b9fad30c9ee).
+- Follow the instructions provided below:
+
+
+---
+### Steps to Set Up MongoDB Atlas
+
+1. **Create and Log In to Your MongoDB Atlas Account**:
+   - Visit [MongoDB Atlas](https://www.mongodb.com/atlas/database) and sign up for an account or log in if you already have one.
+
+2. **Create a Free Cluster**:
+   - Once logged in, choose the free-tier option for a cloud database:
+     ![MongoDB Atlas - Choose Free Option](./img/mongo1.png)
+
+   - Select a cloud provider (AWS, Azure, Google Cloud) and a region for your cluster:
+     ![MongoDB Atlas - Select Cloud Provider and Region](./img/mongo2.png)
+
+   - Wait for your cluster to be created. This process might take a few minutes. **Note**: Do not proceed until the cluster status shows as "Cluster ready."
+
+3. **Create Database User Credentials**:
+   - Go to the **Security** tab to create new user credentials specifically for your application. These credentials are separate from your MongoDB Atlas account credentials and will be used by your application to connect to the database:
+     ![MongoDB Atlas - Create Database User](./img/mongo3.png)
+
+4. **Set Up IP Whitelisting**:
+   - Configure the IP addresses that are allowed to access your database. For simplicity, you can allow access from all IP addresses by adding `0.0.0.0/0`:
+     ![MongoDB Atlas - IP Whitelisting](./img/mongo4.png)
+     **Note**: If the modal menu differs, adding `0.0.0.0/0` ensures access from any IP address.
+
+5. **Get the Connection String**:
+   - Click on **Connect** to get the connection details for your cluster:
+     ![MongoDB Atlas - Connect](./img/mongo5.png)
+
+   - Choose **Connect your application**:
+     ![MongoDB Atlas - Connect Application](./img/mongo6.png)
+
+   - You will see the **MongoDB URI**, which is the connection string you will use in your application to connect to the database:
+     ```sh
+     mongodb+srv://<username>:<password>@cluster0.o1opl.mongodb.net/?retryWrites=true&w=majority
+     ```
+
+You are now set up and ready to use MongoDB Atlas with your application.
+
+### About MongoDB
+
+MongoDB is a [document database](https://en.wikipedia.org/wiki/Document-oriented_database) that stores data in a flexible, JSON-like format. Unlike relational databases, which use tables and rows, document databases organize data in collections of documents. MongoDB is categorized as a [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database.
+
+To learn more about MongoDB’s data organization, check out the chapters on [collections](https://docs.mongodb.com/manual/core/databases-and-collections/) and [documents](https://docs.mongodb.com/manual/core/document/) in the MongoDB manual.
+
+### References
+- [Fullstack GitHub Repository](https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/)
+
