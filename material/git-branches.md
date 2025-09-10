@@ -1,216 +1,269 @@
-# Practice: Basic Hooks - useState
+# Creating and Merging Branches in GitHub
 
-In this practice you will learn to use one of the most basic hooks, the [`useState`] hook. 
+**Objective:** Learn how to create branches, make changes, and merge them collaboratively in a GitHub repository while minimizing conflicts.
 
-You will use the `useState` hook to change a background theme from light to dark, as well as to increment and decrement a number.
+---
+## Why Use Branches?
 
-> Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
->
-> There are sample solutions at the end of the the task. Please compare your code with your peers' work.
+Branches allow multiple team members to work on different features or components of a project simultaneously without interfering with each other's code. This is essential in collaborative projects to ensure a smooth workflow.
 
-## Setup
+---
+## Steps
 
-- Clone the starter repo
+#### **Step 1:**
+
+> Initial Setup by the **First Member**
+
+1. **Create a Git Repository**:
+   - Open your terminal and create a new directory for your project:
      ```bash
-     git clone https://github.com/tx00-resources-en/fe-usestate w4-fe-activity1
-     cd w4-fe-activity1
-     rm -rf .git
+     mkdir collaborative-project
+     cd collaborative-project
      ```
+   - Initialize a new Git repository:
+     ```bash
+     git init
+     ```
+   - Create a README file:
+     ```bash
+     echo "# Collaborative Project" > README.md
+     git add README.md
+     git commit -m "Initial commit"
+     ```
+   - **Explanation:** The above steps initialize a local Git repository and make the first commit with a README file.
 
-- run `npm install`. To start your app, run `npm run dev`.
+2. **Push to GitHub**:
+   - Create a new repository on GitHub (do not initialize with a README).
+   - Link your local repository to the GitHub repository:
+     ```bash
+     git remote add origin https://github.com/your-username/collaborative-project.git
+     git branch -M main
+     git push -u origin main
+     ```
+   - **Explanation:** The commands set up the remote repository link and push the local repository’s main branch to GitHub.
 
-## Storing a background theme in state
+3. **Add Collaborators**:
+   - Go to your repository on GitHub.
+   - Navigate to `Settings` > `Collaborators` and add the GitHub usernames of the other members.
+   - **Explanation:** Adding collaborators allows team members to have push access to the repository.
 
-Take a look at the __UseState.css__ file in the __src/components/UseState__
-directory. Notice that there is a class for `light` and for `dark`. You will use
-these classes to change your background based on a button click.
+#### **Step 2:**
 
-Open the __UseState.jsx__ file in the __UseState__ directory.
+> Each Member Creates a Branch and Makes Changes
 
-Ensure that __UseState.css__ file is imported into your __UseState.jsx__ file using a
-relative path.
+1. **Clone the Repository**:
+   - **Each member (including the *first student*)** clones the repository:
+     ```bash
+     git clone https://github.com/your-username/collaborative-project.git
+     cd collaborative-project
+     ```
+   - **Explanation:** Cloning downloads the repository to each member's local machine.
 
-```js
-import './Counter.css';
+2. **Create a New Branch**:
+   - Each member creates a new branch:
+     ```bash
+     git checkout -b member-x-branch
+     ```
+   - **Explanation:** `git checkout -b` creates a new branch and switches to it. This is where each member will work independently. (replace `x` with your member number).
+
+3. **Create a File and Make Changes**:
+   - Each member creates a file named `member-x.txt` (replace `x` with your member number):
+     ```bash
+     echo "This is member x's file." > member-x.txt
+     git add member-x.txt
+     git commit -m "Add member-x.txt"
+     ```
+   - **Explanation:** Adding and committing changes records them locally. Each member creates a unique file to minimize conflicts.
+
+4. **Push to GitHub**:
+   - Each member pushes their branch to GitHub:
+     ```bash
+     git push origin member-x-branch
+     ```
+   - **Explanation:** This uploads each member's branch and changes to the remote repository on GitHub.
+
+5. **Create a Pull Request**:
+   - Each member goes to the GitHub repository and creates a pull request from their branch to the `main` branch.
+   - **Explanation:** Pull requests allow others to review changes before merging them into the main branch.
+
+#### **Step 3: Merging Branches by the First Student**
+
+1. **Review Pull Requests**:
+   - The first student reviews each pull request on GitHub to ensure there are no conflicts or issues.
+   - **Explanation:** Reviewing ensures that the code follows best practices and meets the team's standards.
+
+2. **Merge Pull Requests**:
+   - The first student merges each pull request into the `main` branch.
+   - **Explanation:** Merging incorporates the changes from each branch into the main branch.
+
+3. **Verify the Merge**:
+   - Ensure all branches are successfully merged without conflicts.
+   - **Explanation:** Verification ensures that the codebase is stable and works as expected after merging.
+
+#### **Step 4: Handling Merge Conflicts (If Any)**
+
+- If there are conflicts:
+  - **Communicate** with your team to decide how to resolve them.
+  - Use:
+    ```bash
+    git fetch origin
+    git checkout member-x-branch
+    git merge main
+    ```
+  - **Resolve Conflicts** in your text editor, then:
+    ```bash
+    git add .
+    git commit -m "Resolve merge conflicts"
+    git push origin member-x-branch
+    ```
+  - Update the pull request after resolving conflicts.
+
+### Notes
+
+- Ensure each member creates a unique file (`member-x.txt`) to avoid conflicts.
+- Use GitHub comments on pull requests for feedback and discussions.
+- Keep your branch updated with `git pull` to minimize conflicts.
+
+### Additional Tips
+
+- Regularly communicate with your team to avoid working on the same files.
+- Use `git fetch` and `git pull` to stay updated with changes in the remote repository.
+
+--- 
+<details>
+<summary>Conflict Q/A</summary>
+
+## Conflict Q/A
+
+### synchronize your local branch with the remote branch
+
+To synchronize your local branch with the remote branch, you generally want to fetch the latest changes from the remote repository and then merge or rebase them onto your local branch. 
+
+```bash
+git fetch origin
+git checkout <branch-name>
 ```
 
-To create state in your component, you will also need to import the `useState`
-hook from the `react` package. Place this import above your CSS import.
+Option A: Merge the changes from the remote branch into your local branch:
 
-```js
-import { useState } from 'react';
+```bash
+git merge origin/<branch-name>
 ```
 
-Inside your function component, type `console.log(useState('light'))`. In
-your browser DevTools, look at the console. Notice the two values that
-are returned in the array. The first value is your current state; the second
-value is the updater function used to update the state. Now remove the
-`console.log`.
+Option B: Rebase the changes from the remote branch onto your local branch:
 
-Next, inside your function component, declare state by destructuring the two
-values returned from the invoked `useState` function. Give this useState
-function an initial state of `'light'`.
-
-```js
-  const [theme, setTheme] = useState('light');
+```bash
+git rebase origin/<branch-name>
 ```
 
-Look at the React DevTools in your browser. Click on the `UseState` component.
-Notice under `hooks` -> `State` you will see the string `light`. This is the
-default value you stored in state.
+- If you have new commits on your local branch that you want to push to the remote branch, you can do so with:
 
-You are now going to add this light theme to your JSX. The outermost `div`
-element should have a `className` of `"state"`. Add the `theme` as another
-`className` to this `div`. The `div` should now look like this:
-
-```jsx
-<div className={`state ${theme}`}>
+```bash
+git push origin <branch-name>
 ```
 
-When you look at your browser you should see the light theme color as your
-background.
+### Accidentally pushed changes to the `main` branch instead of `branch-x`
 
-The first test spec in __01-theme.test.jsx__ should now pass when you run `npm
-test 01`.
+If you accidentally pushed changes to the `main` branch instead of `branch-x`, you need to revert those changes to restore the `main` branch to its previous state. Here’s a step-by-step guide to help you safely revert the changes:
 
-## Alternating the theme
+### Step-by-Step Guide to Revert the Accidental Push
 
-You've used the `useState` hook to create a background color, but you have not
-yet used the updater function. Now you are going to create buttons that will
-allow the theme to either be light or dark.
+**1. Determine the Last Good Commit on the `main` Branch**
 
-Beneath the `h1` tag, the `button` element with the text of `Dark` should turn
-the theme `'dark'`.
+First, identify the last correct commit on the `main` branch before the accidental push. You can do this by checking the commit history:
 
-Inside the button you will use your first [event handler]. Create an `onClick`
-handler as an attribute to your button element. Remember that `onClick` handlers
-in React use camelCase and should be assigned a function. Give the `onClick`
-handler an anonymous function that returns the `setTheme` updater function
-invoked with the string argument `'dark'`.
-
-In the browser, click the button. Your background should now switch from light
-to dark.
-
-The first two specs in __01-theme.test.jsx__ should now pass.
-
-Repeat the same process for the `Light` button which should `setTheme` to
-`'light'`.
-
-All three specs in __01-theme.test.jsx__ should now pass.
-
-## Add a counter
-
-When you want to store information for a different concern in state, you simply
-add an additional state variable to the component using another `useState` call.
-
-You now need a state variable to keep track of an ongoing number counter. Add
-a component state variable called `count` with `setCount` as its updater
-function. Use the `useState` hook. Set the initial value of the `count` state
-variable to the number `0`.
-
-Check your React DevTools to see that you now have state variable with the
-initial value of `"light"` and a state variable with the initial value of `0`.
-
-You also want to see a `0` as the count in your browser. Replace
-`DISPLAY COUNT HERE` in the `h2` tag with the value of the `count` variable.
-Remember to use curly braces!
-
-The first test spec in __02-counter.test.jsx__ should now pass when you run `npm
-test 02`.
-
-Add an `onClick` event listener to the `Increment` button that calls the updater
-function for the `count` to increment the `count` by `1` (turns `0` into `1`,
-or `1` into `2`, etc.).
-
-Test this button in your browser.
-
-The first two specs in __02-counter.test.jsx__ should now pass.
-
-Add an `onClick` event listener to the `Decrement` button that will decrement
-the `count` by 1 (turns `0` into `-1`, or `-1` into `-2`, etc.) using the same
-technique.
-
-All three specs in __02-counter.test.jsx__ should now pass.
-
-
-## Toggle Theme
-
-Create a "Toggle Theme" button to replace the "Light" and "Dark" buttons. This
-button should conditionally turn the `theme` "light" if the `theme` is "dark"
-and should turn the `theme` "dark" if the `theme` is "light". Kind of like a
-light switch.
-
-The test spec in __03-toggle-theme.test.jsx__ should now pass when you run `npm
-test 03`.
-
-
-## Optional callback function
-
-An updater function returned by `useState` can take a callback function as an
-argument.
-
-```js
-// without callback function:
-setCount(10);       // sets the count to 10
-
-// with callback function:
-setCount(() => 10); // still sets the count to 10
+```bash
+git log
 ```
 
-The updater function will pass the previous state value that it updates as an
-argument to the callback when invoking it. You are now going to use this feature
-with the `setCount` function to ensure that the state is updated based on the
-actual previous state.
+Look for the commit hash (a long alphanumeric string) of the commit before your accidental push.
 
-Inside your `Increment` button `setCount` invocation, remove the `count + 1` and
-replace it with `(prevCount) => prevCount + 1`. Do the same for the `Decrement`
-button (with the appropriate adjustment!). While you will not see a difference
-here, you are now ensuring that your changes based on a previous state will
-update correctly.
+**2. Create a New Branch to Save the Accidental Changes**
 
-Using a callback to update state whenever the update depends on the previous
-state is advisable because state updates are handled asynchronously and can be
-bundled together. In other words, without the callback, you cannot be sure that
-the value stored in `count` when the update is invoked will always represent the
-most current value.
+To avoid losing your accidental changes, create a new branch from the current state of `main`. This allows you to keep those changes in case you need them later.
 
-```js
-// without callback function:
-// increments the previous count value by 1
-setCount(count + 1);
-// works but not best practice
-
-// with callback function:
-// still increments the previous count value by 1
-setCount(prevCount => prevCount + 1);
-// This is best practice when using the value of
-// the previous state to update the state.
+```bash
+git checkout -b backup-branch
 ```
 
-All three specs in __02-counter.test.jsx__ should still pass!
+This command creates a new branch called `backup-branch` with all the accidental changes.
 
-## What you have learned
+**3. Reset the `main` Branch to the Last Good Commit**
 
-__Congratulations!__ In this practice you have learned how to
+Switch back to the `main` branch:
 
-1. Create `state` using the `useState` hook
-2. Update `state` using the returned updater function
-3. Create a separate slice of state for each concern
-4. Use the `onClick` event listener to execute some functionality when a button
-   is clicked
-5. Use the optional callback function to ensure that the current state is based
-   on the previous state
+```bash
+git checkout main
+```
+
+Then, reset the `main` branch to the last good commit (replace `<commit-hash>` with the hash you identified earlier):
+
+```bash
+git reset --hard <commit-hash>
+```
+
+This command moves the `main` branch back to the previous state before your accidental push.
+
+> **Warning:** The `--hard` option will reset both the commit history and the working directory to the specified commit. Ensure you have saved any necessary changes before running this command.
+
+**4. Force-Push the Reset `main` Branch to Remote**
+
+To update the remote `main` branch with the reset state, you need to force-push:
+
+```bash
+git push origin main --force
+```
 
 
+This command overwrites the remote `main` branch with your local changes, effectively removing the accidental commits from the remote.
 
-## Ref
+> **Important:** Be cautious when using `--force` as it rewrites the commit history and can impact other developers working on the same branch. Communicate with your team before force-pushing to `main`.
 
-- [Sample solutions](../material/src/lab1-sample-sol/)
-- https://github.com/appacademy/aa14-react-hooks-useState
+**5. Apply the Changes to `branch-x`**
 
+Now that you have reverted the `main` branch, you can apply your changes to the correct branch (`branch-x`).
 
-<!-- Links -->
+Switch to `branch-x`:
 
-[`useState`]: https://react.dev/reference/react/useState
-[event handler]: https://react.dev/learn/responding-to-events#adding-event-handlers
+```bash
+git checkout branch-x
+```
+
+Merge or cherry-pick the changes from the `backup-branch`:
+
+```bash
+git merge backup-branch
+```
+
+Alternatively, if you only want specific commits, use:
+
+```bash
+git cherry-pick <commit-hash>
+```
+
+**6. Push the Changes to `branch-x`**
+
+Finally, push your changes to `branch-x`:
+
+```bash
+git push origin branch-x
+```
+
+**7. Recap**
+
+- Create a backup branch to save the accidental changes.
+- Reset the `main` branch to the last good commit.
+- Force-push the reset `main` branch to remote.
+- Apply the saved changes to the correct branch (`branch-x`).
+- Push the changes to `branch-x`.
+
+</details>
+
+---
+## Links
+
+- [Git merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge) vs [Git rebase](https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase)
+- [Git revert](https://www.atlassian.com/git/tutorials/undoing-changes/git-revert)
+- [Making a Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
+- [Git cherry pick](https://www.atlassian.com/git/tutorials/cherry-pick)
 
