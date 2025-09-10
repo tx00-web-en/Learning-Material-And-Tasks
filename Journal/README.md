@@ -14,18 +14,9 @@ git commit -m "Add your commit message here"
 git push
 ```
 
----
 
 ### Journal Submission Deadlines
 
-Below are the specific deadlines for each week's journal entry:
-
-- **Week 3 Deadline**: [07/09 @ 17:00](./week3.md)
-- **Week 4 Deadline**: [14/09 @ 17:00](./week4.md)
-- **Week 5 Deadline**: [21/09 @ 17:00](./week5.md)
-- **Week 6 Deadline**: [28/10 @ 17:00](./week6.md)
-- **Week 7 Deadline**: [05/10 @ 17:00](./week7.md)
-
-
-> **Important:** Late submissions will not be accepted. Please make sure to commit and push your updates before the deadlines.
+- Reflection journals must be submitted by **Sunday at 5:00 PM**.  
+- **Important:** Late submissions will **not** be accepted. Ensure you commit and push all updates **before** the deadline.  
 

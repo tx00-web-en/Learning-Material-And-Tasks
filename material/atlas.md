@@ -54,5 +54,5 @@ MongoDB is a [document database](https://en.wikipedia.org/wiki/Document-oriented
 To learn more about MongoDB’s data organization, check out the chapters on [collections](https://docs.mongodb.com/manual/core/databases-and-collections/) and [documents](https://docs.mongodb.com/manual/core/document/) in the MongoDB manual.
 
 ### References
-- [Fullstack GitHub Repository](https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/)
+- [Fullstack GitHub Repository](https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/blob/source/src/content/3/en/part3c.md#mongodb)
 
