@@ -144,9 +144,10 @@ Additionally, we will cover these two questions:
 3. **Verify the Merge:**
    - **Explanation:** After merging, verify that all changes are correctly incorporated into the `main` branch and that the application still runs as expected. This helps ensure stability.
 
----
 
-## Additional Information
+--- 
+<details>
+<summary>Conflict Q/A</summary>
 
 ### Synchronize Your Local Branch with the Remote Branch
 
@@ -210,6 +211,7 @@ If you accidentally pushed changes directly to the `main` branch instead of a fe
    ```bash
    git push origin branch-x
    ```
+</details>
 
 ---
 ## Links
