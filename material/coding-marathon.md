@@ -6,13 +6,13 @@ Welcome to the first Coding Marathon focused on React! In this marathon, you'll 
 > **Please submit the following to OMA after completing this group activity:**
 
 > 1. **GitHub repository link(s)**  
->    - Include all branches.  
+>    - Include **all branches**.  
 >    - Make sure your **Self Assessment** is included. 
 > 2. **Link to the deployed app on GitHub Pages**  
 >    - The related repository must be **public**, otherwise deployment will not work.
 > 3. **If you have questions about the coding marathon:**  
 >    - You can ask during tomorrow’s session (09:00–12:00), **or**  
->    - Reserve a 30‑minute time slot for your whole group between 17:00–19:00.
+>    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**.
 
 
 ---
