@@ -26,11 +26,11 @@ Welcome to the first Coding Marathon focused on React! In this marathon, you'll 
 ## Success Criteria
 
 Your project will be evaluated based on the following criteria:
-1. Correct use of React hooks (`useState`) and controlled forms: **20 Points**.
-2. Clean, readable, and well-organized code: **20 Points**.
+1. Correct use of React hooks (`useState`) and controlled forms: **15 Points**.
+2. Clean, readable, and well-organized code: **15 Points**.
 3. Effective use of Git branching and merging: **20 Points**.
-4. Deployment to GitHub: **20 Points**.
-5. Self-assessment of your code: **20 Points**. You can use the [following template](./cm-template.md).
+4. Deployment to GitHub: **15 Points**.
+5. Self-assessment of your code: **15 Points**. You can use the [following template](./cm-template.md).
 
 ---
 ## Phase 0: Preparation
