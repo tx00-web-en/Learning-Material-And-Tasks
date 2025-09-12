@@ -52,7 +52,7 @@ Before starting this coding marathon, ensure that
    git clone https://github.com/tx00-resources-en/cm1
    ```
    - Remove the `.git` folder.
-   - Install react router: ` npm i react-router-dom`    
+   <!-- - Install react router: ` npm i react-router-dom`     -->
    - Update the `package.json` and `vite.config.js` to ensure the project works with GitHub Pages. Instructions are provided [here](./demo-deployment.md).   
    - Make sure you can view the React App deployed on GitHub Pages.
 
