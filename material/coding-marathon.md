@@ -54,6 +54,7 @@ Before starting this coding marathon, ensure that
    - Remove the `.git` folder.
    - Update the `package.json` and `vite.config.js` to ensure the project works with GitHub Pages. Instructions are provided [here](./demo-deployment.md).
    - Make sure you can view the React App deployed on GitHub Pages.
+   - Install react router: ` npm i react-router-dom` 
 
 2. **Create a Branch for Each Member:**
    - Follow these steps to set up your repository. Each Member:
