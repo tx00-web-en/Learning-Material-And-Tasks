@@ -236,6 +236,98 @@ git clone https://github.com/tx00-resources-en/fe-useeffect-demo
    ```
 
 ### Step 4: Explore the Code
-- **`client-react/src/pages/BlogDetails.jsx`**: Demonstrates how to **READ** a single resource and **DELETE** it.
-- **`client-react/src/pages/Create.jsx`**: Illustrates how to **POST** (create) a new resource.
+
+Two files demonstrate how to interact with an API from a React frontend:
+
+* **`client-react/src/pages/Create.jsx`** → shows how to **POST** (create) a new blog.
+* **`client-react/src/pages/BlogDetails.jsx`** → shows how to **DELETE** a blog by its ID.
+
+
+1. Creating a Blog Post (POST) — `Create.jsx`
+
+```jsx
+const [title, setTitle] = useState("");
+const [body, setBody] = useState("");
+const [author, setAuthor] = useState("mario");
+const navigate = useNavigate();
+
+const handleSubmit = async (e) => {
+  e.preventDefault(); // prevent page reload
+
+  // Prepare blog data
+  const blog = { title, body, author };
+
+  // Send POST request
+  const response = await fetch(apiUrl, {
+    method: "POST",
+    body: JSON.stringify(blog),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  const json = await response.json();
+
+  // Handle errors
+  if (!response.ok) {
+    console.log("Error");
+  }
+
+  // If successful
+  if (response.ok) {
+    setTitle("");
+    setBody("");
+    setAuthor("");
+    console.log("new blog added:", json);
+    navigate("/"); // redirect to homepage
+  }
+};
+```
+
+**Explanation**
+
+1. **State hooks** (`title`, `body`, `author`) hold the form inputs.
+2. **`handleSubmit`** prevents the default form submission and creates a blog object.
+3. A **POST request** is sent to `apiUrl` with JSON in the body.
+4. If successful, state is reset and the app navigates back to `/`.
+
+
+
+2. Deleting a Blog Post (DELETE) — `BlogDetails.jsx`
+
+```jsx
+const { id } = useParams(); // get blog ID from route params
+const [blog, setBlog] = useState(null);
+const navigate = useNavigate();
+
+const handleClick = async () => {
+  try {
+    await fetch(`${apiUrl}/${id}`, {
+      method: "DELETE",
+    });
+    navigate("/"); // redirect to homepage after deletion
+  } catch (error) {
+    console.error("Error deleting blog:", error);
+  }
+};
+```
+
+**Explanation**
+
+1. **`useParams`** extracts the blog ID from the URL (e.g., `/blogs/123`).
+2. **`handleClick`** sends a DELETE request to the API.
+3. If successful, the user is redirected back to the homepage.
+4. If there’s an error (e.g., network issue), it’s caught and logged.
+
+
+
+
+**Key Takeaways**
+
+* **POST (Create)** → `fetch(url, { method: "POST", body, headers })` adds a new resource.
+* **DELETE (Remove)** → `fetch(url, { method: "DELETE" })` removes a resource by ID.
+* `useNavigate` helps redirect after successful operations.
+* `useParams` is useful when working with dynamic routes (like blog IDs).
+
+
 

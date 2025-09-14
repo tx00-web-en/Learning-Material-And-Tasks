@@ -4,7 +4,7 @@ One of the most important things to understand about the `useEffect` hook is whe
 that depends on different factors.
 
 ---
-## Part 1/2
+## Part 1/3
 
 > Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
 
@@ -296,8 +296,53 @@ return () => {
 Test in your browser. Now you should see only one `setInterval` running at any
 given time.
 
+
 ---
-## Part 2/2 (Optional)
+## Part 2/3
+
+This part shows the **useEffect** hook in action. We’ll continue from the code provided in **Activity 1, Part 3**. Earlier, we discussed how the **DELETE** operation works. Now, we will look at how the **READ** operation works.
+
+The **READ** operation uses the `useEffect` hook. The code is in the file **`client-react/src/pages/BlogDetails.jsx`**, which demonstrates how to fetch and display a single resource:
+
+```jsx
+const [blog, setBlog] = useState(null);
+
+useEffect(() => {
+  const fetchBlog = async () => {
+    const response = await fetch(`${apiUrl}/${id}`);
+    console.log(`${apiUrl}/${id}`);
+    const json = await response.json();
+
+    if (response.ok) {
+      setBlog(json);
+    }
+  };
+
+  fetchBlog();
+}, [id]);
+```
+
+**Step-by-step breakdown:**
+
+1. **`const [blog, setBlog] = useState(null);`**
+   * We use React state to store the fetched blog data. Initially, it’s `null`.
+
+2. **`useEffect(() => { ... }, [id]);`**
+   * The effect runs after the component mounts.
+   * It will also re-run whenever the `id` changes (e.g., if the user navigates to a different blog post).
+
+3. **`fetch(${apiUrl}/${id})`**
+   * Sends an HTTP GET request to your backend for the specific blog post.
+
+4. **`const json = await response.json();`**
+   * Converts the response into JavaScript data.
+
+5. **`if (response.ok) { setBlog(json); }`**
+   * Checks that the request succeeded before updating state.
+   * If successful, we save the fetched blog into React state, which will trigger a re-render and display the blog content.
+
+---
+## Part 3/3 (Optional)
 
 > For a review and optional exercises on this topic, you can refer to the [following mini projects](./useeffect-extra.md).
 
