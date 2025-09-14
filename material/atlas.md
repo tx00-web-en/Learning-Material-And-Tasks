@@ -57,14 +57,13 @@ Here are three ways to set up MongoDB Atlas. These resources provide a **general
 
 You are now set up and ready to use MongoDB Atlas with your application. 
 
+<!-- 
 ### About MongoDB
 
 MongoDB is a [document database](https://en.wikipedia.org/wiki/Document-oriented_database) that stores data in a flexible, JSON-like format. Unlike relational databases, which use tables and rows, document databases organize data in collections of documents. MongoDB is categorized as a [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database.
 
-To learn more about MongoDB’s data organization, check out the chapters on [collections](https://docs.mongodb.com/manual/core/databases-and-collections/) and [documents](https://docs.mongodb.com/manual/core/document/) in the MongoDB manual.
+To learn more about MongoDB’s data organization, check out the chapters on [collections](https://docs.mongodb.com/manual/core/databases-and-collections/) and [documents](https://docs.mongodb.com/manual/core/document/) in the MongoDB manual. 
 
-
-<!-- 
 
 ### References
 - [Fullstack GitHub Repository](https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/blob/source/src/content/3/en/part3c.md#mongodb)
