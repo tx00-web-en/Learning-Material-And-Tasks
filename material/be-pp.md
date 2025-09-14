@@ -151,8 +151,12 @@ During the activity, you will **switch roles**: the driver (who writes the code)
   - **201 Created**: Returns the newly created tour object, followed by `_id`, `createdAt`, `updatedAt`, and `__v`.
   - **400 Bad Request**: Returns a JSON error message if tour creation fails (e.g., validation errors).
 - **Example Request**:
-  ```json
+  ```http
   POST http://localhost:4000/api/tours
+  ```
+
+  ```json
+  POST http://localhost:4000/api/tours  
   {
     "name": "Rome in 5 Days Tour",
     "info": "Discover the ancient history and vibrant culture of Rome in this 5-day tour.",
@@ -209,8 +213,11 @@ During the activity, you will **switch roles**: the driver (who writes the code)
   - **404 Not Found**: Returns a JSON error message if no tour with the specified ID is found.
   - **500 Internal Server Error**: Returns a JSON error message if an error occurs during the update.
 - **Example Request**:
-  ```json
+  ```http
   PUT http://localhost:4000/api/tours/614c1b6f62b9e53b8c4b28c5
+  ```
+  
+  ```json
   {
     "name": "London in 8 Days Tour",
     "info": "Explore the best of London in 8 days with our expert guides.",
@@ -354,8 +361,11 @@ During the activity, you will **switch roles**: the driver (who writes the code)
   - **201 Created**: Returns the newly created user object, including `_id`, `createdAt`, and `updatedAt`. 
   - **400 Bad Request**: Returns a JSON error message if user creation fails (e.g., validation errors).
 - **Example Request**:
-  ```json
+  ```http
   POST http://localhost:4000/api/users
+  ```
+  
+  ```json  
   {
     "name": "Anna Korhonen",
     "email": "anna@example.com",
@@ -421,8 +431,11 @@ During the activity, you will **switch roles**: the driver (who writes the code)
   - **404 Not Found**: Returns a JSON error message if no user with the specified ID is found.
   - **500 Internal Server Error**: Returns a JSON error message if an error occurs during the update.
 - **Example Request**:
-  ```json
+  ```http
   PUT http://localhost:4000/api/users/614c1b6f62b9e53b8c4b28c5
+  ```
+  
+  ```json 
   {
     "name": "Matti Seppänen",
     "email": "matti.seppanen@example.com",
