@@ -156,7 +156,6 @@ During the activity, you will **switch roles**: the driver (who writes the code)
   ```
 
   ```json
-  POST http://localhost:4000/api/tours  
   {
     "name": "Rome in 5 Days Tour",
     "info": "Discover the ancient history and vibrant culture of Rome in this 5-day tour.",
