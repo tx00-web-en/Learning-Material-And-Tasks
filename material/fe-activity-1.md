@@ -2,7 +2,7 @@
 
 
 ---
-## Part 1/3
+## Part 1/2
 
 ### Goals
 
@@ -183,29 +183,24 @@ node app.js
 
 You have now tested each CRUD operation individually using the Fetch API in Node.js. 
 
-----
-
-### Part 2/3
-
-Explore and enhance error handling within each function to create more robust and reliable applications.
-
-> Compare your solution with the [following](./src/test-all.js).
-
-
+> [!NOTE]  
+> - You can explore and enhance error handling within each function to create more robust and reliable applications. Compare your solution with the [following](./src/test-all.js).
 
 ---
 
-## Part 3/3
+## Part 2/2
 
 In this part of the activity, you'll explore the code in the provided repository and set up both the backend and frontend components.
 
 ### Step 1: Clone the Repository
+
 First, clone the repository by running the following command in your terminal:
 ```bash
 git clone https://github.com/tx00-resources-en/fe-useeffect-demo
 ```
 
 ### Step 2: Set Up the Backend
+
 1. Ensure that your MongoDB server is up and running.
 2. Navigate to the `backend` folder:
    ```bash
@@ -224,7 +219,26 @@ git clone https://github.com/tx00-resources-en/fe-useeffect-demo
    app.use(cors());
    ```
 
-### Step 3: Set Up the Frontend
+
+### Step 3: Using `fetch` to communicate with the back-end server
+
+Navigate to the `client-node` folder, for example:
+
+```bash
+cd ../client-node
+```
+
+Inside this folder, you will find different modules that demonstrate the CRUD operations using the command line:
+
+* **`fetch-post.js`** → Adds a new blog.
+* **`fetch-get-all.js`** → Reads all blogs.
+* **`fetch-get-one.js`** → Reads a single blog by ID.
+* **`fetch-update-one.js`** → Updates a blog by ID.
+* **`fetch-delete-one.js`** → Deletes a blog by ID.
+
+
+### Step 4: Set Up the Frontend
+
 1. Navigate to the `client-react` folder:
    ```bash
    cd ../client-react
@@ -235,7 +249,7 @@ git clone https://github.com/tx00-resources-en/fe-useeffect-demo
    npm run dev
    ```
 
-### Step 4: Explore the Code
+### Step 5: Explore the Code
 
 Two files demonstrate how to interact with an API from a React frontend:
 
