@@ -22,8 +22,8 @@ By the end of this practice, you should be able to
 Open your terminal and run:
 
 ```sh
-npx create-vite@latest useEffect-lab --template react
-cd useEffect-lab
+npx create-vite@latest w5-fe-activity2 --template react
+cd w5-fe-activity2
 npm install
 ```
 
