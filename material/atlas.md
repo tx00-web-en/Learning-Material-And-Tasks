@@ -15,16 +15,16 @@ Here are three ways to set up MongoDB Atlas. These resources provide a **general
    - Visit [MongoDB Atlas](https://www.mongodb.com/atlas/database) and sign up for an account or log in if you already have one.
 
 2. **Create a Free Cluster**:
-   - Once logged in, click on the build:
+   - Once logged in, click on `build Cluster`:
      ![MongoDB Atlas - Choose Free Option](./img/mongo1a.png)
 
    - Choose the free-tier option for a cloud database:
      ![MongoDB Atlas - Choose Free Option](./img/mongo1b.png)
 
-   - Select a cloud provider (AWS, Azure, Google Cloud) and a region for your cluster:
+   - Select a cloud provider (AWS, Azure, Google Cloud) and a region for your cluster e.g. `Stockholm` or `Frankfurt`:
      ![MongoDB Atlas - Select Cloud Provider and Region](./img/mongo2a.png)
 
-   - Click on Create Deployment:
+   - Click on `Create Deployment`:
      ![MongoDB Atlas - Select Cloud Provider and Region](./img/mongo2b.png)
 
 3. **Create Database User Credentials**:
@@ -34,7 +34,7 @@ Here are three ways to set up MongoDB Atlas. These resources provide a **general
 
 5. **Get the Connection String**:
    - Click on **Connect** to get the connection details for your cluster:
-     ![MongoDB Atlas - Connect](./img/mongo5.png)
+     ![MongoDB Atlas - Connect](./img/mongo4a.png)
 
    - Choose **Connect your application**:
      ![MongoDB Atlas - Connect Application](./img/mongo6a.png)
