@@ -3,7 +3,9 @@
 ---
 ## Overview
 
-In this activity, you will **refactor the API developed last week to use a database**. Please use the provided starter code, as it contains tests for the endpoints.
+In this activity, you will **refactor the API developed last week to use a database**. 
+
+<!-- Please use the provided starter code, as it contains tests for the endpoints. -->
 
 During the activity, you will **switch roles**: the driver (who writes the code) becomes the navigator (who reviews and guides), and vice versa. After each major step, make sure to **commit your changes and switch roles** to ensure both participants contribute to the coding and reviewing process.
 
@@ -14,7 +16,7 @@ During the activity, you will **switch roles**: the driver (who writes the code)
    - Determine who will start as the driver and who will be the navigator. Remember to switch roles after each major step.
 
 2. **Clone the Sample Solution**:
-   Instead of starting from scratch, we will start from the API from last week.
+   Instead of starting from scratch, we will start from the API from last week. You can either use the code that you wrote or this code. If using the sample solution:
 
    - Clone the tours API repository:
      ```bash
@@ -97,11 +99,11 @@ During the activity, you will **switch roles**: the driver (who writes the code)
 5. **Ensure Functionality**:
    - After refactoring, verify that the API functions correctly by testing all endpoints using Postman. Ensure each endpoint returns the expected response.
 
-5. **Run Tests**:
-   - Open a new terminal and execute the command `npm test tours.test.js` to run the tests. If any tests fail, review your code to ensure it aligns with the provided endpoint descriptions.
+<!-- 5. **Run Tests**:
+   - Open a new terminal and execute the command `npm test tours.test.js` to run the tests. If any tests fail, review your code to ensure it aligns with the provided endpoint descriptions. -->
 
 6. **Commit Changes**:
-   - Once all tests pass, commit your changes with a meaningful message (e.g., "Refactor tours API to use MongoDB").
+   - Commit your changes with a meaningful message (e.g., "Refactor tours API to use MongoDB").
 
 7. Here's the description of the endpoints:
 
@@ -295,18 +297,18 @@ During the activity, you will **switch roles**: the driver (who writes the code)
 3. **Ensure Functionality**:
    - After refactoring, verify that the API functions correctly by testing all endpoints using Postman. Ensure each endpoint returns the expected response.
 
-4. **Run Tests**:
-   - Open a new terminal and execute the command `npm test users.test.js` to run the tests. If any tests fail, review your code to ensure it aligns with the provided endpoint descriptions (below).
+<!-- 4. **Run Tests**:
+   - Open a new terminal and execute the command `npm test users.test.js` to run the tests. If any tests fail, review your code to ensure it aligns with the provided endpoint descriptions (below). -->
 
-5. **Commit Changes**:
-   - Once all tests pass, commit your changes with a meaningful message (e.g., "Refactor user API to use MongoDB").
+4. **Commit Changes**:
+   - Commit your changes with a meaningful message (e.g., "Refactor user API to use MongoDB").
 
-> Here's the description of the endpoints:
+5. Here's the description of the endpoints:
 
 - **Base URL**: `/api/users`
 - **Server**: Hosted on `localhost:4000` (e.g., `http://localhost:4000/api/users`)
 
-#### Endpoints
+**Endpoints**
 
 1. **GET /api/users**
 - **Description**: Retrieves a list of all users, sorted by their creation date in descending order (latest first).
@@ -602,8 +604,8 @@ This iteration consists of two parts.
      MONGO_URI=<atlas-URI>
      ```
 
-4. **Run Tests**:
-   - Execute `npm test` again. If your tests were successful in Iterations 2 and 3, they should continue to pass.
+<!-- 4. **Run Tests**:
+   - Execute `npm test` again. If your tests were successful in Iterations 2 and 3, they should continue to pass. -->
 
 This iteration helps you transition from a local MongoDB setup to a cloud-based MongoDB Atlas setup, ensuring your application works seamlessly with both environments.
 
