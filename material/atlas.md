@@ -4,8 +4,7 @@ You can run MongoDB locally on your computer, but using a cloud-based service ca
 
 Here are three ways to set up MongoDB Atlas. These resources provide a **general overview of the process**, but since MongoDB Atlas frequently updates its interface and setup instructions, some steps may differ slightly from what is shown. You may need to adapt certain details, such as menu options, based on the latest version of Atlas. 
 
-- Watch this [7-minute video tutorial](https://www.youtube.com/watch?v=084rmLU1UgA).
-- Follow the steps in this [article guide](https://medium.com/@ddiscua/how-to-create-a-free-mongo-atlas-cluster-and-connect-to-mongo-compass-1b9fad30c9ee).
+- Watch this [2-minute video tutorial](https://youtu.be/DMlWdd6Z66Q?feature=shared).
 - Follow the instructions provided below:
 
 
