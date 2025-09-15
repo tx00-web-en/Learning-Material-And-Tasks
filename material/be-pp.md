@@ -652,10 +652,10 @@ To properly implement a PUT request, you can use `findOneAndReplace` instead of 
 
      try {
        const updatedUser = await User.findOneAndReplace(
-         { _id: userId },
-         { ...req.body },
-         { new: true }
-       );
+        { _id: userId },
+        { ...req.body },
+      );
+
        if (updatedUser) {
          res.status(200).json(updatedUser);
        } else {

@@ -2,10 +2,10 @@
 
 You can run MongoDB locally on your computer, but using a cloud-based service can simplify your setup. For this course, we will use [MongoDB Atlas](https://www.mongodb.com/atlas/database), a cloud-based MongoDB service.
 
-Here are three ways to set up MongoDB Atlas. These resources provide a **general overview of the process**, but since MongoDB Atlas frequently updates its interface and setup instructions, some steps may differ slightly from what is shown. You may need to adapt certain details, such as menu options, based on the latest version of Atlas. 
+These resources provide a **general overview of the process**, but since MongoDB Atlas frequently updates its interface and setup instructions, some steps may differ slightly from what is shown. You may need to adapt certain details, such as menu options, based on the latest version of Atlas. 
 
-- Watch this [2-minute video tutorial](https://youtu.be/DMlWdd6Z66Q?feature=shared).
-- Follow the instructions provided below:
+1. Watch this [2-minute video tutorial](https://youtu.be/DMlWdd6Z66Q?feature=shared).
+2. Follow the instructions provided below:
 
 
 ---

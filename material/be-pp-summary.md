@@ -124,7 +124,7 @@ A PUT request is used to update an entire resource on the server. It replaces th
 // PUT /users/:userId
 app.put('/users/:userId', async (req, res) => {
   const { userId } = req.params;
-  const updatedUser = await User.findByIdAndUpdate(userId, req.body, { new: true });
+  const updatedUser = await User.findOneAndReplace(userId, req.body,);
   res.json(updatedUser);
 });
 ```
