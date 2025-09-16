@@ -83,6 +83,19 @@ This activity guides you and your partner through creating a frontend React appl
        postedDate: { type: Date, default: Date.now },
      });
      ```
+   - **Note:** You **don’t need** to provide `postedDate` when creating a job. It will be automatically set to the current date and time.  
+
+8. **Run Seeder Script to Insert Data**  
+   - Use the following commands to seed the database with sample data:     
+     ```bash
+     npm run data:import
+     ```  
+   - This will insert all job entries from `data/jobs.js` into the database. Alternatevely you can invoke the `seeder.js` script to populate the database with sample jobs: `node seeder.js` 
+   - Note that it is also possible to delete all job entries from the database by invoking invoke the `seeder.js` script.
+
+9. **Side note** 
+   - You can adapt this seeder approach for your own project if you find it useful, for example, to quickly set up test data during development.
+
 
 ---
 
@@ -217,6 +230,9 @@ The following backend endpoints are already implemented and ready for use:
 3. **Filter jobs by salary range**  
 4. **Count jobs by type**  
 
+
+> Detailed information about the backend endpoints and how to use them is available in the [supplementary file](./fe-pp-extra.md).
+
 **ToDo**  
 
 Your task is to implement logic in the React app to connect to one or more of these endpoints and display or interact with the data accordingly.
@@ -224,15 +240,19 @@ Your task is to implement logic in the React app to connect to one or more of th
 
 **Before You Begin**  
 1. **Prepare the Database**  
-   Use the following commands to seed the database with sample data or to clear all existing data:  
+   Use the following commands to seed the database with sample data:  
 
    ```bash
    # Import data
    npm run data:import
-
+   ```
+<!-- 
+   To clear all existing data:  
+   ```bash
    # Destroy data
    npm run data:destroy
    ```
+-->
 
 2. **Test the Endpoints**  
    Use **Postman** or any API testing tool to verify the backend endpoints:  
@@ -254,5 +274,3 @@ Your task is to implement logic in the React app to connect to one or more of th
      GET http://localhost:4000/api/jobs/count/type/Part-time
      ```
 
-3. **More Information**  
-   Detailed information about the backend endpoints and how to use them is available in the [supplementary file](./fe-pp-extra.md).

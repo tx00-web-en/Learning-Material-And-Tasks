@@ -190,10 +190,21 @@ While you now comprehend the concepts behind salting and hashing passwords, it i
 To use bcrypt in a Node.js project, you must initially install the npm package, **bcryptjs**.
 
 ```bash
+npm install bcrypt
+```
+
+or
+
+```bash
 npm install bcryptjs
 ```
 
 Next, import bcrypt into your JavaScript file:
+
+```javascript
+const bcrypt = require('bcrypt');
+```
+
 
 ```javascript
 const bcrypt = require('bcryptjs');

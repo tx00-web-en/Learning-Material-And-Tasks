@@ -40,7 +40,7 @@ const leakedTable = [
 // List of potential passwords an attacker might try (includes leaked passwords)
 const possiblePasswords = [
   "letmein",
-  "R#wdf78>$12",
+  "R#wdf78>$12",//match
   "abc123",
   "welcome",
   "dragon",
@@ -51,8 +51,8 @@ const possiblePasswords = [
   "hello",
   "password123",
   "qwerty",
-  "Ilovecats",
-  "admin",
+  "Ilovecats",//match
+  "admin",//match
   "123456",
   "test",
   "guest",
