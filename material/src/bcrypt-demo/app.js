@@ -19,7 +19,7 @@ const User = mongoose.model("User", userSchema);
 // Connect to MongoDB database
 mongoose
   .connect(
-    "mongodb+srv://your_mongo_URI"
+    "mongodb://localhost:27017/express-bcrypt-demo"
   )
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));

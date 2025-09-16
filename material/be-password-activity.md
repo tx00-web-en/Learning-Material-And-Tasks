@@ -97,6 +97,7 @@ When storing or verifying passwords, make sure you're aware of the version of bc
 Once a password is hashed and stored, you often need to verify it during user login. Here's how you can compare a password to a stored hash:
 
 ```javascript
+const bcrypt = require('bcrypt');
 // Function to compare a password with a hash
 async function comparePassword() {
   const inputPassword = 'mySecurePassword'; // Replace with the password you want to compare
@@ -217,19 +218,13 @@ Now, let's set up a simple Express server and connect it to a MongoDB database.
    This file will contain the main code for your Express app. Create a file called `app.js`.
 
 2. **Set Up a Basic Express Server**  
-   Inside `app.js`, set up a basic Express server that listens on a port (3001, for example). The `express.json()` middleware is used to parse incoming requests with JSON payloads:
+   Inside `app.js`, add the following snippet. The `express.json()` middleware is used to parse incoming requests with JSON payloads:
    ```javascript
    const express = require('express');
    const mongoose = require('mongoose');
 
    const app = express();
    app.use(express.json());
-
-   // Start server
-   const PORT = process.env.PORT || 3001;
-   app.listen(PORT, () => {
-     console.log(`Server is running on port ${PORT}`);
-   });
    ```
 
 3. **Connect to MongoDB**  
@@ -250,6 +245,16 @@ Now, let's set up a simple Express server and connect it to a MongoDB database.
    });
 
    const User = mongoose.model("User", userSchema);
+   ```
+   
+5. **Set Up a Basic Express Server**  
+   Inside `app.js`, set up a basic Express server that listens on a port (3001, for example). 
+   ```javascript
+   // Start server
+   const PORT = process.env.PORT || 3001;
+   app.listen(PORT, () => {
+     console.log(`Server is running on port ${PORT}`);
+   });
    ```
 
 ---
