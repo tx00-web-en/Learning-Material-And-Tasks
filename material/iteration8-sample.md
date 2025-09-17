@@ -4,29 +4,6 @@ Below is a step-by-step guide to implement a GET endpoint for jobs by type in th
 
 ---
 
-## Overview
-
-- **Goal:** Add GET /api/jobs/type/:type in Express + React UI that filters by type.
-- **Data assumption:** A Job model:
-
-```js
-const jobSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  type: { type: String, required: true },
-  description: { type: String, required: true },
-  company: {
-    name: { type: String, required: true },
-    contactEmail: { type: String, required: true },
-    contactPhone: { type: String, required: true },
-  },
-  location: { type: String, required: true },
-  salary: { type: Number, required: true },
-  postedDate: { type: Date, default: Date.now },
-});
-```
-
----
-
 ## Backend setup for jobs by type
 
 ### 1) Controller function
@@ -60,7 +37,14 @@ Wire the controller into your jobs route file (e.g., routes/jobRoutes.js):
 ```js
 // routes/jobRouter.js
 
-const { getJobsByType } = require('../controllers/jobControllers');
+const {
+  getAllJobs,
+  getJobById,
+  createJob,
+  updateJob,
+  deleteJob,
+  getJobsByType//new
+} = require("../controllers/jobControllers");
 
 // other routes
 // router.get('/', getAllJobs);
@@ -69,27 +53,6 @@ const { getJobsByType } = require('../controllers/jobControllers');
 router.get('/type/:type', getJobsByType);
 
 module.exports = router;
-```
-
-### 3) Mount the router in your server
-
-Ensure your main server file uses the jobs router with the /api/jobs base path (e.g., server.js or app.js):
-
-```js
-// server.js
-const express = require('express');
-const app = express();
-const jobRouter = require("./routes/jobRouter");
-
-
-
-// Mount the jobs routes at /api/jobs
-app.use('/api/jobs', jobRouter);
-
-// Start server
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`)
-})  
 ```
 
 ---
@@ -197,21 +160,33 @@ export default JobsByType;
 
 ```jsx
 // src/App.jsx
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+//Other imports
+//...
 import JobsByType from "./pages/JobsByType";
-
-function App() {
+ 
+const App = () => {
   return (
-    <BrowserRouter>
-	//
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/jobs/type" element={<JobsByType />} />
-      </Routes>
-    </BrowserRouter>
+
+      <div className="App">
+        <BrowserRouter>
+          <Navbar />
+          <div className="content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/add-job" element={<AddJobPage />} />
+              <Route path="/jobs/:id" element={<JobPage />} />
+              <Route path="/jobs/type" element={<JobsByType />} />{/* new */}
+              <Route path="/edit-job/:id" element={<EditJobPage />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </div>
+
   );
-}
+};
 
 export default App;
 ```
@@ -222,7 +197,7 @@ Add a simple nav link to Navbar:
 
 <nav>
   <h1><Link to="/">Home</Link></h1>
-  //
+   {/*  */}
   <Link to="/jobs/type">Jobs by Type</Link>
 </nav>
 ```
