@@ -35,7 +35,6 @@ Add the controller function in your jobs controller file (controllers/jobControl
 
 ```js
 // controllers/jobControllers.js
-const Job = require('../models/Job');
 
 // Get jobs by type
 const getJobsByType = async (req, res) => {
