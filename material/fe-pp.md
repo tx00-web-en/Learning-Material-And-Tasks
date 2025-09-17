@@ -231,8 +231,8 @@ The following backend endpoints are already implemented and ready for use:
 4. **Count jobs by type**  
 
 
-> Detailed information about the backend endpoints and how to use them is available in the [supplementary file](./fe-pp-extra.md).
-> End-to-end example: [Add "jobs by type" in backend and frontend](./iteration8-sample.md)
+> - Detailed information about the backend endpoints and how to use them is available in the [supplementary file](./fe-pp-extra.md).
+> - End-to-end example: [Add "jobs by type" in backend and frontend](./iteration8-sample.md)
 
 **ToDo**  
 
