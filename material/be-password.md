@@ -168,6 +168,132 @@ Salting passwords before hashing them is a best practice to thwart Rainbow Table
 To bolster security, it is imperative to NEVER expose salted and hashed passwords to clients. 
 
 ---
+# Introduction to bcrypt
+
+## Why Password Security Matters
+
+Passwords are the keys to user accounts. If they’re stored insecurely, a database leak can expose them to attackers — and because many people reuse passwords, one breach can lead to many compromised accounts.  
+**The solution:** Never store plain‑text passwords. Instead, store a **salted, hashed** version using a proven algorithm like bcrypt.
+
+---
+
+## What is bcrypt?
+
+bcrypt is a **password hashing function** designed to be:
+- **Slow** (on purpose) — to make brute‑force attacks expensive.
+- **Salted** — so identical passwords produce different hashes.
+- **Adaptive** — you can increase its cost factor over time.
+
+### Under the hood
+
+bcrypt is built on a modified version of the **Blowfish** cipher called **EksBlowfish** (“expensive key schedule Blowfish”).  
+Instead of encrypting and decrypting data, bcrypt:
+1. Takes your password and a random salt.
+2. Feeds them into Blowfish’s **key setup phase**.
+3. Repeats that process **2^cost** times (cost factor).
+4. Uses the final cipher state to encrypt a fixed string (`"OrpheanBeholderScryDoubt"`).
+5. Outputs the result along with the salt and cost factor in a single string.
+
+Even though Blowfish is symmetric, bcrypt’s use of it is **one‑way** — there’s no “decrypt” step.
+
+### Installing bcrypt
+
+In Node.js:
+```bash
+npm install bcrypt      # native bindings (faster)
+# or
+npm install bcryptjs    # pure JavaScript (slower, no native deps)
+```
+
+Import:
+```js
+const bcrypt = require('bcrypt');    // native
+// or
+const bcrypt = require('bcryptjs');  // pure JS
+```
+
+### Salting and Hashing a Password
+
+```js
+const salt = bcrypt.genSaltSync(10); // 10 = cost factor
+const hash = bcrypt.hashSync(plainTextPassword, salt);
+```
+
+- **Salt**: A unique 16‑byte random value (encoded as 22 Base64 characters) generated for each password.
+- **Cost factor**: `10` means \(2^{10} = 1024\) rounds of key expansion. Higher = slower = more secure.
+- **Hash output format**:
+  ```
+  $2b$10$<22-char-salt><31-char-hash>
+  ```
+  - `$2b$` → bcrypt version (modern, fixed revision)
+  - `10$` → cost factor
+  - `<22-char-salt>` → random salt
+  - `<31-char-hash>` → hashed password output
+
+### Verifying a Password
+
+```js
+bcrypt.compareSync(plainTextPassword, storedHash);
+```
+- bcrypt extracts the salt and cost from `storedHash`.
+- Re‑runs the hashing process with the provided password.
+- Compares the result to the stored hash.
+- Returns `true` if they match, `false` otherwise.
+
+#### Why bcrypt is Secure
+
+- **Unique salt per password** → defeats rainbow tables.
+- **Slow by design** → makes brute‑forcing expensive.
+- **Adaptive cost** → can be increased as hardware improves.
+- **One‑way** → hashes can’t be reversed to get the password.
+
+### Mental Model: bcrypt as a “Password Blender”
+
+Imagine Blowfish as a blender.  
+bcrypt:
+1. Pours in your password and salt.
+2. Turns the blender on low.
+3. Increases the speed and changes the ingredients back and forth thousands of times (cost factor).
+4. Pours out a thick, unique smoothie (the hash).
+There’s no way to separate the original ingredients from the smoothie — you can only try blending the same recipe again and see if it tastes the same.
+
+
+
+### Key Takeaways
+- bcrypt is **the standard** for password hashing in Node.js and many other environments.
+- `$2b$` is the modern, safe revision — older `$2a$`, `$2x$`, `$2y$` are for legacy compatibility.
+- The salt is **inside** the hash string — you don’t store it separately.
+- The cost factor is your “security dial” — turn it up over time.
+
+
+----
+## Ref
+
+- appacademy.io
+
+<!-- 
+---
+## Links used in the lecture
+
+- [Encryption](https://en.wikipedia.org/wiki/Encryption)
+- [Symmetric-key algorithm](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
+- [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
+- [Decoding](https://en.wikipedia.org/wiki/Decoding)
+- [Decode from Base64 format](https://www.base64decode.org/)
+- [Encode to Base64 format](https://www.base64encode.org/)
+- [MD5](https://en.wikipedia.org/wiki/MD5)
+- [SHA-2](https://en.wikipedia.org/wiki/SHA-2)
+- [Blowfish (cipher)](https://en.wikipedia.org/wiki/Blowfish_(cipher))
+- [Schneier on Security](https://www.schneier.com)
+- [bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
+- [An Update on LinkedIn Member Passwords Compromised](https://blog.linkedin.com/2012/06/06/linkedin-member-passwords-compromised)
+- [Salt (cryptography)](https://en.wikipedia.org/wiki/Salt_(cryptography))
+- [Rainbow table](https://en.wikipedia.org/wiki/Rainbow_table)
+- [MERN-Auth-Tutorial](https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/lesson-17)
+- [What Is the CIA Security Triad? ](https://www.bmc.com/blogs/cia-security-triad/)
+ -->
+
+<!-- 
 ## Using bcrypt for Secure Password Management
 
 Ensuring robust password security practices is paramount in web development. In this section, you will discover how to employ the bcrypt package to implement these practices effectively. By the end, you will be equipped to:
@@ -244,29 +370,4 @@ In this article, you have acquired the knowledge and syntax required to employ b
 While you might be tempted to create your custom algorithms for password salting and hashing, this practice is discouraged. Trusting bcrypt to handle this critical security task is the preferred approach, as it ensures robust protection against potential threats.
 
 
-----
-## Ref
-
-- appacademy.io
-
-<!-- 
----
-## Links used in the lecture
-
-- [Encryption](https://en.wikipedia.org/wiki/Encryption)
-- [Symmetric-key algorithm](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
-- [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography)
-- [Decoding](https://en.wikipedia.org/wiki/Decoding)
-- [Decode from Base64 format](https://www.base64decode.org/)
-- [Encode to Base64 format](https://www.base64encode.org/)
-- [MD5](https://en.wikipedia.org/wiki/MD5)
-- [SHA-2](https://en.wikipedia.org/wiki/SHA-2)
-- [Blowfish (cipher)](https://en.wikipedia.org/wiki/Blowfish_(cipher))
-- [Schneier on Security](https://www.schneier.com)
-- [bcrypt](https://en.wikipedia.org/wiki/Bcrypt)
-- [An Update on LinkedIn Member Passwords Compromised](https://blog.linkedin.com/2012/06/06/linkedin-member-passwords-compromised)
-- [Salt (cryptography)](https://en.wikipedia.org/wiki/Salt_(cryptography))
-- [Rainbow table](https://en.wikipedia.org/wiki/Rainbow_table)
-- [MERN-Auth-Tutorial](https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/lesson-17)
-- [What Is the CIA Security Triad? ](https://www.bmc.com/blogs/cia-security-triad/)
- -->
+-->
