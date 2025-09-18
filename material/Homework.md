@@ -1,8 +1,8 @@
 # Homework
 
 
-> [!TIP]  
-> Please take some time to review **parts** of this [material](./material/review.md) (ideally **over the weekend**). It’s a great way to refresh the frontend and backend concepts we’ve built up over the last 5 weeks.
+> [!NOTE]  
+> Please take some time to review **parts** of this [material](./material/review.md) (ideally **over the weekend**). It’s a great way to **refresh** the frontend and backend concepts we’ve built up **over the last 5 weeks**.
 
 ### Monday Morning
 
