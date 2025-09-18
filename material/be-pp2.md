@@ -10,7 +10,7 @@ We will work through this step by step. However, there will **not** be a detaile
 
 ### **Iteration 1: Set Up**
 
-1. You can either use the code that you wrote or clone this starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-bepp-starter)
+1. You can either use the code that you wrote last week or clone this starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-bepp-starter)
    - After cloning, **delete** the `.git` directory.
 2. Rename `.env.example` to `.env`.
 3. Run `npm install`
