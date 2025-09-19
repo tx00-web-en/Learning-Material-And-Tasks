@@ -1,4 +1,4 @@
-# Pair Programming Part 1: Build JWT from Scratch
+# Build JWT from Scratch
 
 ---
 
