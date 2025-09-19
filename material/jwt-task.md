@@ -48,17 +48,20 @@ Write a function to encode and decode strings using Base64URL.
 
 // Encode to Base64URL
 function base64UrlEncode(data) {
-  return Buffer.from(data)
-    .toString("base64")
-    .replace(/=/g, "")
-    .replace(/\+/g, "-")
-    .replace(/\//g, "_");
+    return Buffer.from(data)              // Convert the input string into a Buffer (binary data)
+        .toString("base64")               // Encode that binary data into standard Base64
+        .replace(/=/g, "")                // Remove '=' padding (optional in Base64URL)
+        .replace(/\+/g, "-")              // Replace '+' with '-' (URL-safe)
+        .replace(/\//g, "_");              // Replace '/' with '_' (URL-safe)
 }
 
 // Decode from Base64URL
 function base64UrlDecode(encodedData) {
-  const base64 = encodedData.replace(/-/g, "+").replace(/_/g, "/");
-  return Buffer.from(base64, "base64").toString();
+    const base64 = encodedData
+        .replace(/-/g, "+")               // Convert '-' back to '+'
+        .replace(/_/g, "/");               // Convert '_' back to '/'
+    return Buffer.from(base64, "base64")   // Decode Base64 back to bytes
+        .toString();                       // Convert bytes back to a normal string
 }
 
 // Test
@@ -188,7 +191,7 @@ function jwtVerify(token, secret) {
 }
 
 // Example Usage
-console.log(jwtVerify(token, secret)); // Should return: { valid: true, payload: { userId: 123, userName: "Matti" } }
+console.log(jwtVerify(token2, mySecret2)); // Should return: { valid: true, payload: { userId: 123, userName: "Matti" } }
 ```
 </details>
 
