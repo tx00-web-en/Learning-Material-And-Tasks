@@ -478,7 +478,7 @@ In this iteration, we'll set up environment variables in your Express.js applica
 
 1. **Prepare the `.env` File**
 
-   - Rename the `.env.example` file to `.env`.
+   - Copy the example environment file  `.env.example` to `.env`
    - Open the `.env` file and review its contents. You will find settings for the port and database URI:
      ```env
      PORT=4000
