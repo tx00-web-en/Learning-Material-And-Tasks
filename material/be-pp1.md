@@ -62,8 +62,7 @@ ASCII diagram:
 ### **Step 3: Project Setup**
 
 1. Create a file named `jwt.js`.  
-2. Use Node.js’s built‑in `crypto` module (no npm install needed).  
-3. No `node_modules` or `.env` required for this exercise.
+2. Use Node.js’s built‑in `crypto` module (no npm install needed) i.e. No `node_modules` or `.env` required for this exercise.
 
 ---
 
@@ -92,8 +91,9 @@ console.log(base64Encode("hello")); // aGVsbG8=
 console.log(base64Decode("aGVsbG8=")); // hello
 ```
 
-<details>
-<summary>Better Implementation (Base64URL for JWT) </summary>
+
+
+**Better Implementation (Base64URL for JWT)**
 
 ```javascript
 // Encode to Base64URL
@@ -110,9 +110,11 @@ function base64UrlDecode(encodedData) {
   const base64 = encodedData.replace(/-/g, "+").replace(/_/g, "/");
   return Buffer.from(base64, "base64").toString();
 }
+
+console.log(base64UrlEncode("hello")); // aGVsbG8=
+console.log(base64UrlDecode("aGVsbG8=")); // hello
 ```
 
-</details>
 
 ---
 
@@ -137,6 +139,13 @@ function hash(payload, secret, header) {
     .update(`${encodedHeader}.${encodedPayload}`)
     .digest("hex");
 }
+
+// Test
+const header1 = { alg: "HS256", typ: "JWT" }; // Customizable
+const payload1 = { userId: 123, exp: Math.floor(Date.now() / 1000) + 60 }; // Custom payload
+const secret1 = "my-secret-key";
+
+console.log("Hash:", hash(payload1, secret1, header1));
 ```
 
 </details>
@@ -160,6 +169,15 @@ function jwtSign(payload, secret, header = { alg: "HS256", typ: "JWT" }) {
   const signature = hash(payload, secret, header);
   return `${encodedHeader}.${encodedPayload}.${signature}`;
 }
+
+// Example Usage
+const payload2 = { userId: 123, exp: Math.floor(Date.now() / 1000) + 60 }; // Expires in 60 seconds
+const mySecret2 = require("crypto").randomBytes(64).toString("hex"); // Strong secret
+const header2 = { alg: "HS256", typ: "JWT" }; // Customizable
+
+console.log("Generated Secret:", mySecret2);
+const token2 = jwtSign(payload2, mySecret2, header2);
+console.log("JWT:", token2);
 ```
 
 </details>
@@ -191,6 +209,10 @@ function jwtVerify(token, secret) {
   }
   return { valid: true, payload };
 }
+
+// Example Usage
+console.log(jwtVerify(token2, mySecret2)); // Should return: { valid: true, payload: { userId: 123, userName: "Matti" } }
+
 ```
 
 </details>
@@ -226,8 +248,8 @@ npm install jsonwebtoken
 ```javascript
 const jwt = require("jsonwebtoken");
 
-const token = jwt.sign(payload, secret, { expiresIn: "1h" });
-const decoded = jwt.verify(token, secret);
+const newToken = jwt.sign(payload, secret, { expiresIn: "1h" });
+const decoded = jwt.verify(newToken, secret);
 console.log(decoded);
 ```
 
