@@ -1,4 +1,261 @@
-# Pair Programming Part 1: Build JWT from Scratch
+# (Optional Task) Build JWT from Scratch
+
+### **Objective**
+
+By the end of this lab you should be able to:
+
+1. Understand **why JWT exists** and what problem it solves.  
+2. Recognize the **three parts of a JWT** (header, payload, signature).  
+3. Write functions to:
+   - Encode/decode data using Base64URL.
+   - Hash data to create and verify JWTs.
+   - Simulate `jwt.sign()` to create a token.
+   - Simulate `jwt.verify()` to validate a token.  
+4. Put it all together in an end‑to‑end example.  
+5. Compare your implementation with the production‑ready `jsonwebtoken` library.
+
+---
+
+### **Step 1: Why JWT?**
+
+- In web apps, once a user logs in, the server needs a way to remember “who they are” on subsequent requests.  
+- Traditional sessions store this on the server, but that doesn’t scale well.  
+- JWTs solve this by letting the server issue a **self‑contained token** that the client sends back with each request.  
+- The token contains user data (payload) and a signature that proves it hasn’t been tampered with.
+
+Think of it like a **sealed envelope**:  
+- The header and payload are written on the paper inside (visible to anyone).  
+- The signature is the wax seal — if it’s broken or forged, the server knows not to trust it.
+
+---
+
+### **Step 2: JWT Structure**
+
+A JWT has three parts separated by dots:
+
+```
+header.payload.signature
+```
+
+- **Header**: Metadata (algorithm, type).  
+- **Payload**: Claims (user info, expiry time, etc.).  
+- **Signature**: A hash of header + payload + secret.  
+
+Example JWT:
+
+```plaintext
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.
+eyJfaWQiOiI2Mzc5ZjY3NzhlMTg3NDA2YjY0Mzk2YjciLCJpYXQiOjE2Njg5MzczMzYsImV4cCI6MTY2OTE5NjUzNn0.
+dWq1GPvujtGp168vSu3z_dtZBNd_ohl0HNi1vylqjT8
+```
+
+ASCII diagram:
+
+```
++--------+---------+--------------------------------+
+| Header | Payload | Signature                      |
++--------+---------+--------------------------------+
+```
+
+---
+
+### **Step 3: Project Setup**
+
+1. Create a file named `jwt.js`.  
+2. Use Node.js’s built‑in `crypto` module (no npm install needed).  
+3. No `node_modules` or `.env` required for this exercise.
+
+---
+
+### **Step 4: Encoding and Decoding**
+
+We need to encode the header and payload into Base64URL.
+
+- **Encoding**: Converts binary → text.  
+- **Decoding**: Converts text → binary.  
+- **Important**: Encoding/decoding is **not encryption**. It does not provide privacy, only a safe way to represent data. Anyone can decode it.
+
+
+```js
+// Simple Base64 Encode/Decode (not URL-safe)
+// Good for understanding the concept, but not robust for JWT
+function base64Encode(data) {
+  return Buffer.from(data).toString("base64");
+}
+
+function base64Decode(base64) {
+  return Buffer.from(base64, "base64").toString();
+}
+
+// Test
+console.log(base64Encode("hello")); // aGVsbG8=
+console.log(base64Decode("aGVsbG8=")); // hello
+```
+
+<details>
+<summary>Better Implementation (Base64URL for JWT) </summary>
+
+```javascript
+// Encode to Base64URL
+function base64UrlEncode(data) {
+  return Buffer.from(data)
+    .toString("base64")
+    .replace(/=/g, "")
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_");
+}
+
+// Decode from Base64URL
+function base64UrlDecode(encodedData) {
+  const base64 = encodedData.replace(/-/g, "+").replace(/_/g, "/");
+  return Buffer.from(base64, "base64").toString();
+}
+```
+
+</details>
+
+---
+
+### **Step 5: Hashing**
+
+The signature is created by hashing the header + payload with a secret.
+
+- Hashing is a **one‑way function**: you cannot reverse it.  
+- We use HMAC‑SHA256 here.  
+
+<details>
+<summary>Implementation</summary>
+
+```javascript
+const crypto = require("crypto");
+
+function hash(payload, secret, header) {
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  return crypto
+    .createHmac("sha256", secret)
+    .update(`${encodedHeader}.${encodedPayload}`)
+    .digest("hex");
+}
+```
+
+</details>
+
+---
+
+### **Step 6: Simulate `jwt.sign()`**
+
+Steps:
+1. Encode header and payload.  
+2. Hash them with the secret.  
+3. Concatenate into `header.payload.signature`.
+
+<details>
+<summary>Implementation</summary>
+
+```javascript
+function jwtSign(payload, secret, header = { alg: "HS256", typ: "JWT" }) {
+  const encodedHeader = base64UrlEncode(JSON.stringify(header));
+  const encodedPayload = base64UrlEncode(JSON.stringify(payload));
+  const signature = hash(payload, secret, header);
+  return `${encodedHeader}.${encodedPayload}.${signature}`;
+}
+```
+
+</details>
+
+---
+
+### **Step 7: Simulate `jwt.verify()`**
+
+Steps:
+1. Split the token into parts.  
+2. Decode header and payload.  
+3. Recreate the signature.  
+4. Compare with the token’s signature.
+
+<details>
+<summary>Implementation</summary>
+
+```javascript
+function jwtVerify(token, secret) {
+  const [encodedHeader, encodedPayload, signature] = token.split(".");
+  if (!encodedHeader || !encodedPayload || !signature) {
+    return { valid: false, error: "Malformed token" };
+  }
+  const header = JSON.parse(base64UrlDecode(encodedHeader));
+  const payload = JSON.parse(base64UrlDecode(encodedPayload));
+  const validSignature = hash(payload, secret, header);
+  if (validSignature !== signature) {
+    return { valid: false, error: "Invalid signature" };
+  }
+  return { valid: true, payload };
+}
+```
+
+</details>
+
+---
+
+### **Step 8: End‑to‑End Example**
+
+```javascript
+const header = { alg: "HS256", typ: "JWT" };
+const payload = { userId: 123, userName: "Matti" };
+const secret = "my-secret-key";
+
+const token = jwtSign(payload, secret, header);
+console.log("JWT:", token);
+
+console.log(jwtVerify(token, secret)); 
+// { valid: true, payload: { userId: 123, userName: "Matti" } }
+```
+
+Try tampering with the payload string and see verification fail.
+
+---
+
+### **Step 9: Using `jsonwebtoken`**
+
+In real projects, always use a library:
+
+```bash
+npm install jsonwebtoken
+```
+
+```javascript
+const jwt = require("jsonwebtoken");
+
+const token = jwt.sign(payload, secret, { expiresIn: "1h" });
+const decoded = jwt.verify(token, secret);
+console.log(decoded);
+```
+
+---
+
+### **Step 10: Recap**
+
+- **Why JWT**: Stateless authentication, scalable.  
+- **Parts**: Header, Payload, Signature.  
+- **Encoding/Decoding**: Just representation, not security.  
+- **Hashing**: One‑way, ensures integrity.  
+- **Sign/Verify**: Create and validate tokens.  
+- **Production**: Use `jsonwebtoken`.
+
+---
+
+### **Key Takeaways**
+
+1. JWTs are a compact way to securely transmit information.  
+2. Encoding/decoding is not robust security — it’s just a proof of concept here.  
+3. The real protection comes from hashing with a secret.  
+4. Always use well‑tested libraries in production.  
+
+
+
+
+
+<!-- # Build JWT from Scratch (Version 1)
 ---
 
 ### **Objective**
@@ -256,4 +513,4 @@ console.log(jwtVerify(token, secret)); // Should print: { valid: true, payload: 
 1. JWTs are a compact and secure way to transfer information.
 2. Encoding, hashing, and strong secrets are essential for security.
 3. While implementing from scratch is educational, production use should rely on well-tested libraries like `jsonwebtoken`.
-
+ -->

@@ -1,4 +1,4 @@
-# Pair Programming Part 2: 
+# Pair Programming: 
 
 In this pair, you'll be adding authentication to last week's API and protecting the CRUD operations (create, read, update, delete) for tours. 
 
