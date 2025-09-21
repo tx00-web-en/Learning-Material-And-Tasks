@@ -232,7 +232,7 @@ console.log("Hash:", hash(payload1, secret1, header1));
 4. `crypto.createHmac("sha256", secret)`  
    - Creates an **HMAC (Hash-based Message Authentication Code)** using:  
      - Algorithm: `sha256`  
-     - Secret key: `secret` (shared between server and client)  
+     - Secret key: `secret` (**never with the client**).
    - This ensures the token can’t be tampered with, because only someone with the secret can generate the same signature.  
 
 5. `.update(`${encodedHeader}.${encodedPayload}`)`  
