@@ -425,7 +425,7 @@ export default App;
 
 
 ---
-
+<!--
 ## (Optional) 
 
 1. Create a custom hook for managing items in the browser's local storage.
@@ -434,7 +434,7 @@ export default App;
 
 ---
 
-<!-- > For a review and optional exercises on this topic, you can refer to the following link: [.]() -->
+ > For a review and optional exercises on this topic, you can refer to the following link: [.]() -->
 
 
 <!-- Links -->

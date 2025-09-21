@@ -10,156 +10,7 @@
 -->
 
 ---
-## Part 1: Custom React Hooks: Creating a `useRegister` Hook for Signup and Login
-
-Custom hooks in React provide a way to encapsulate and reuse logic across multiple components. In this part, we'll explore the creation of a custom hook called `useRegister`, which handles both signup and login functionalities. We'll demonstrate how to implement this hook, use it in an `AuthForm` component, and integrate it within a main `App` component. By the end of this, you'll have a reusable, efficient way to handle user authentication in your React application.
-
-### 1. Creating the `useRegister` Hook
-
-The `useRegister` hook simplifies authentication by encapsulating both signup and login logic in a single function. Here's how it works:
-
-```jsx
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-const useRegister = (setIsAuthenticated, isSignup = true) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-
-  const handleRegister = async () => {
-    const endpoint = isSignup ? "/api/user/signup" : "/api/user/login";
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        const user = await response.json();
-        localStorage.setItem("user", JSON.stringify(user));
-        console.log(`User ${isSignup ? "signed up" : "logged in"} successfully!`);
-        setIsAuthenticated(true);
-        navigate("/");
-      } else {
-        console.error(`${isSignup ? "Signup" : "Login"} failed`);
-      }
-    } catch (error) {
-      console.error(`Error during ${isSignup ? "signup" : "login"}:`, error);
-    }
-  };
-
-  return {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    handleRegister,
-  };
-};
-
-export default useRegister;
-```
-
-#### How it works:
-- **State Management**: The hook uses `useState` to manage `email` and `password` fields.
-- **Dynamic Endpoint**: It determines whether the user is signing up or logging in based on the `isSignup` parameter, dynamically setting the appropriate API endpoint (`/api/user/signup` or `/api/user/login`).
-- **Authentication Flow**: After a successful API response, the user data is saved in `localStorage`, the `setIsAuthenticated` state is updated, and the user is redirected to the homepage.
-- **Error Handling**: It handles both failed responses from the server and potential network errors.
-
-By abstracting this logic into a custom hook, you make it reusable for any authentication form component.
-
-### 2. Building the `AuthForm` Component
-
-The `AuthForm` component is where users will either log in or sign up, depending on the passed `isSignup` prop. This form integrates the `useRegister` hook to handle input fields and form submission.
-
-```jsx
-import React, { useState } from "react";
-import useRegister from "./useRegister";
-
-const AuthForm = ({ isSignup }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { email, setEmail, password, setPassword, handleRegister } = useRegister(setIsAuthenticated, isSignup);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleRegister();
-  };
-
-  return (
-    <div>
-      <h2>{isSignup ? "Signup" : "Login"}</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">{isSignup ? "Signup" : "Login"}</button>
-      </form>
-    </div>
-  );
-};
-
-export default AuthForm;
-```
-
-#### Key Features:
-- **Dynamic Title**: The form's title and submit button dynamically change based on the `isSignup` prop.
-- **Form State**: The `email` and `password` values are controlled inputs tied to the state managed by `useRegister`.
-- **Submit Handler**: When the form is submitted, it calls `handleRegister`, which invokes the custom hook's logic for either signup or login.
-
-This makes the component clean, reusable, and fully decoupled from specific authentication logic.
-
-### 3. Integrating with the Main `App` Component
-
-Finally, we'll integrate the `AuthForm` component into a main `App` component. You can decide whether to render the form as a signup or login by simply passing the appropriate `isSignup` prop.
-
-```jsx
-import React from "react";
-import AuthForm from "./AuthForm";
-
-const App = () => {
-  return (
-    <div>
-      <AuthForm isSignup={true} /> {/* Signup Form */}
-      <AuthForm isSignup={false} /> {/* Login Form */}
-    </div>
-  );
-};
-
-export default App;
-```
-
-In this example, we render both the signup and login forms. However, in a real-world application, you might conditionally display either the signup or login form based on user interaction or routing.
-
-### Benefits of Using `useRegister`:
-- **Reusability**: The hook can be used across different forms or pages where authentication is required, without duplicating logic.
-- **Code Separation**: It abstracts complex logic like API calls and error handling away from the form component, keeping your components clean and focused.
-- **Flexibility**: The same hook handles both signup and login by changing a simple boolean parameter, reducing code duplication and making maintenance easier.
-
-### Conclusion
-
-Custom hooks in React offer a powerful way to encapsulate functionality in a reusable and declarative manner. We built a `useRegister` hook to handle both signup and login, demonstrated how to use it within an `AuthForm` component, and integrated it into a simple `App`. With this approach, you can easily extend and adapt the authentication logic for future use cases while keeping your components clean and focused on UI concerns.
-
----
-## Part 2: Custom React Hook: A Detailed Guide to `useFetch`
+## Part 1: Custom React Hook: A Detailed Guide to `useFetch`
 
 Fetching data from an API is a common task in web development, especially in modern applications that rely on external services for content. React’s declarative approach makes it easy to manage the data fetching process with hooks. In this part, we'll explore how to create a custom hook called `useFetch` to encapsulate the logic of fetching data from an API. We’ll break down its functionality, look at error handling, and show how to use it in a component.
 
@@ -310,6 +161,155 @@ This `UserList` component fetches data from the API and handles loading, error, 
 The `useFetch` custom hook is a powerful and reusable solution for handling API requests in React. It abstracts away the complexity of fetching data, managing loading and error states, and allows components to focus on rendering the UI. By using this hook, you can keep your components clean and reduce repetitive code in your application.
 
 By encapsulating this logic into a hook, you're also making your code more testable, maintainable, and reusable. Whether you’re working with multiple APIs or a single endpoint, `useFetch` will streamline the data-fetching process, making your React development more efficient.
+
+---
+## Part 2: Custom React Hooks: Creating a `useRegister` Hook for Signup and Login
+
+Custom hooks in React provide a way to encapsulate and reuse logic across multiple components. In this part, we'll explore the creation of a custom hook called `useRegister`, which handles both signup and login functionalities. We'll demonstrate how to implement this hook, use it in an `AuthForm` component, and integrate it within a main `App` component. By the end of this, you'll have a reusable, efficient way to handle user authentication in your React application.
+
+### 1. Creating the `useRegister` Hook
+
+The `useRegister` hook simplifies authentication by encapsulating both signup and login logic in a single function. Here's how it works:
+
+```jsx
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const useRegister = (setIsAuthenticated, isSignup = true) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleRegister = async () => {
+    const endpoint = isSignup ? "/api/user/signup" : "/api/user/login";
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        localStorage.setItem("user", JSON.stringify(user));
+        console.log(`User ${isSignup ? "signed up" : "logged in"} successfully!`);
+        setIsAuthenticated(true);
+        navigate("/");
+      } else {
+        console.error(`${isSignup ? "Signup" : "Login"} failed`);
+      }
+    } catch (error) {
+      console.error(`Error during ${isSignup ? "signup" : "login"}:`, error);
+    }
+  };
+
+  return {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    handleRegister,
+  };
+};
+
+export default useRegister;
+```
+
+#### How it works:
+- **State Management**: The hook uses `useState` to manage `email` and `password` fields.
+- **Dynamic Endpoint**: It determines whether the user is signing up or logging in based on the `isSignup` parameter, dynamically setting the appropriate API endpoint (`/api/user/signup` or `/api/user/login`).
+- **Authentication Flow**: After a successful API response, the user data is saved in `localStorage`, the `setIsAuthenticated` state is updated, and the user is redirected to the homepage.
+- **Error Handling**: It handles both failed responses from the server and potential network errors.
+
+By abstracting this logic into a custom hook, you make it reusable for any authentication form component.
+
+### 2. Building the `AuthForm` Component
+
+The `AuthForm` component is where users will either log in or sign up, depending on the passed `isSignup` prop. This form integrates the `useRegister` hook to handle input fields and form submission.
+
+```jsx
+import React, { useState } from "react";
+import useRegister from "./useRegister";
+
+const AuthForm = ({ isSignup }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const { email, setEmail, password, setPassword, handleRegister } = useRegister(setIsAuthenticated, isSignup);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleRegister();
+  };
+
+  return (
+    <div>
+      <h2>{isSignup ? "Signup" : "Login"}</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+        <button type="submit">{isSignup ? "Signup" : "Login"}</button>
+      </form>
+    </div>
+  );
+};
+
+export default AuthForm;
+```
+
+#### Key Features:
+- **Dynamic Title**: The form's title and submit button dynamically change based on the `isSignup` prop.
+- **Form State**: The `email` and `password` values are controlled inputs tied to the state managed by `useRegister`.
+- **Submit Handler**: When the form is submitted, it calls `handleRegister`, which invokes the custom hook's logic for either signup or login.
+
+This makes the component clean, reusable, and fully decoupled from specific authentication logic.
+
+### 3. Integrating with the Main `App` Component
+
+Finally, we'll integrate the `AuthForm` component into a main `App` component. You can decide whether to render the form as a signup or login by simply passing the appropriate `isSignup` prop.
+
+```jsx
+import React from "react";
+import AuthForm from "./AuthForm";
+
+const App = () => {
+  return (
+    <div>
+      <AuthForm isSignup={true} /> {/* Signup Form */}
+      <AuthForm isSignup={false} /> {/* Login Form */}
+    </div>
+  );
+};
+
+export default App;
+```
+
+In this example, we render both the signup and login forms. However, in a real-world application, you might conditionally display either the signup or login form based on user interaction or routing.
+
+### Benefits of Using `useRegister`:
+- **Reusability**: The hook can be used across different forms or pages where authentication is required, without duplicating logic.
+- **Code Separation**: It abstracts complex logic like API calls and error handling away from the form component, keeping your components clean and focused.
+- **Flexibility**: The same hook handles both signup and login by changing a simple boolean parameter, reducing code duplication and making maintenance easier.
+
+### Conclusion
+
+Custom hooks in React offer a powerful way to encapsulate functionality in a reusable and declarative manner. We built a `useRegister` hook to handle both signup and login, demonstrated how to use it within an `AuthForm` component, and integrated it into a simple `App`. With this approach, you can easily extend and adapt the authentication logic for future use cases while keeping your components clean and focused on UI concerns.
 
 ---
 ## Links
