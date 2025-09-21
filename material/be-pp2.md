@@ -179,8 +179,8 @@ At this point, all tour routes should be secured so that each user only sees and
 3. Discuss and document:
    - What are these functions (`userSchema.statics.signup()` and `userSchema.statics.login()`)?
    - Why are they used?
-   - What are the pros and cons of using this approach?
-   - What alternative approaches are available?
+   - What are the **pros** and **cons** of using this approach?
+   - What **alternative approaches** are available?
 
 
 4. **Test Signup and Login Functionality:**  
