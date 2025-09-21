@@ -2,24 +2,43 @@
 
 In this pair, you'll be adding authentication to last week's API and protecting the CRUD operations (create, read, update, delete) for tours. 
 
-We will work through this step by step. However, there will **not** be a detailed explanation for each step—it's up to you and your partner to apply your knowledge and problem-solve together. 
+<!-- We will work through this step by step. However, there will **not** be a detailed explanation for each step—it's up to you and your partner to apply your knowledge and problem-solve together.  -->
 
-<!-- If a step is unclear, feel free to ask for help. If the same question arises frequently, I may call all groups to the main room for clarification. -->
+If a step is unclear, feel free to ask for help. If the same question arises frequently, I may call all groups to the main room for clarification.
 
 ---
 
 ### **Iteration 1: Set Up**
-<!-- You can either use the code that you wrote last week or  -->
 
-1. Clone this starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-bepp-starter)
-   - After cloning, **delete** the `.git` directory.
-2. Copy the example environment file  `.env.example` to `.env`
-3. Run `npm install`
-4. Run the following tests in your terminal to ensure everything is set up correctly. There should be no errors:
+1. **Clone the starter repository**  
+   [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-bepp-starter)  
+   - After cloning, **delete** the `.git` directory so you can initialize your own repository later.
+
+2. **Set up environment variables**  
+   Copy the example file:  
+   ```
+   cp .env.example .env
+   ```
+
+3. **Install dependencies**  
+   ```
+   npm install
+   ```
+
+4. **Run the tests**  
+   Run the following commands in your terminal. All tests should pass without errors:  
    ```
    npm test users.test.js
    npm test todoTasks.test.js
    ```
+
+> [!NOTE] 
+> In the starter code:  
+> - All routes in the **`todoTaskRouter`** are already protected and should be fully functional.  
+> - The routes in the **`tourRouter`** are not yet protected.  
+> 
+> In the next iteration, you’ll secure the tour routes by following the same approach used for `todoTask` — starting with updates to the **Tour model**, **tourRouter**, and **tour controllers**.
+
 
 ---
 
