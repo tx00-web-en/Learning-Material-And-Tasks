@@ -96,7 +96,6 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    In Postman, go to the **Authorization** tab → choose **Bearer Token** → paste the token.
 
 6. **Fix the `GET /api/tours` endpoint**  
-   Even with a token, you’ll still see “Unauthorized” until you update the controller.  
    In `tourController.js`, modify `getAllTours` to filter by `user_id`:
    ```js
    const getAllTours = async (req, res) => {
@@ -111,7 +110,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    ```
    > Hint: This is the same pattern used in `getTodoTasks()` inside `todoTaskController.js`.
 
-   Test again in Postman — it should now return tours for the logged‑in user.
+   Test in Postman — it should return tours for the logged‑in user.
 
 
 7. **Fix the `POST /api/tours` endpoint**  
