@@ -69,7 +69,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    npm run dev
    ```
 
-4. **Test unauthorized access**  
+<!-- 4. **Test unauthorized access**  
    In Postman, send a `GET` request to:  
    ```
    http://localhost:4000/api/tours/
@@ -77,7 +77,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    You should see:
    ```json
    { "error": "Authorization token required" }
-   ```
+   ``` -->
 
 5. **Register a user and get a token**  
    Make a `POST` request to:
@@ -93,9 +93,8 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    }
    ```
    Copy the returned token.  
-   In Postman, go to the **Authorization** tab → choose **Bearer Token** → paste the token.
 
-6. **Fix the `GET /api/tours` endpoint**  
+6. **`GET /api/tours` endpoint**  
    In `tourController.js`, modify `getAllTours` to filter by `user_id`:
    ```js
    const getAllTours = async (req, res) => {
@@ -110,7 +109,8 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    ```
    > Hint: This is the same pattern used in `getTodoTasks()` inside `todoTaskController.js`.
 
-   Test in Postman — it should return tours for the logged‑in user.
+   - In Postman, go to the **Authorization** tab → choose **Bearer Token** → paste the token.
+   - Test in Postman — it should return tours for the logged‑in user.   
 
 
 7. **Fix the `POST /api/tours` endpoint**  
