@@ -4,6 +4,8 @@ In this pair programming activity, we'll reinforce the concepts covered on Monda
 
 You'll receive a starter code that, while not adhering to best practices, ensures a functional frontend that integrates seamlessly with the backend. This exercise will also highlight the necessity of using `useReducer` and `useContext` hooks, which will be explored further in the upcoming week.
 
+---
+
 ###  Iteration 1:
 
 1. Clone the starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-fepp-starter)  
@@ -28,23 +30,32 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - Check that you can successfully **register/signup** and **log in**.  
    - Use a strong password (e.g., `4wa95=Vx#`), otherwise you will get an error.
 
+---
+
 ### Iteration 2:
 
 Create a `useSignup` hook and refactor the `SignupComponent` component to incorporate this hook. Test the application's functionality.
 
+---
+
 ### Iteration 3:
 
 Create a `useLogin` hook and refactor the `LoginComponent` component accordingly. Test the application's functionality.
+
+---
 
 ### Iteration 4:
 
 - Enhance the `SignupComponent` form by introducing a "`password2`" field. This ensures users enter the same password in both "`password`" and "`password2`" fields for password verification. 
 - Do you need to make any adjustments on the backend?
 
+---
+
 ### Iteration 5:
 
 Refactor the code responsible for token storage, retrieval, and removal to use `localSession` instead of `localStorage`.
 
+---
 
 ### Iteration 6: Refactoring `loginUser` Controller  
 
