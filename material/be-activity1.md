@@ -1,8 +1,8 @@
 # Activity 1
 
 
-
-**Part A: Initial Setup**
+## Part A: Initial Setup
+------
 
 1. Clone the [starter repository](https://github.com/tx00-resources-en/week6-be-workout-v1)
    - After cloning, **delete** the `.git` directory.
@@ -11,9 +11,11 @@
 3. Run `npm install`
 4. Run `npm test` to run the tests using Jest.
 
-**Part B: Refactoring**
+## Part B: Refactoring (replace `test()` with `it()`)
+------
 
-1. Open the `./tests/workout_api.test.js` file and refactor the code to follow a more structured and descriptive style.  
+
+Open the `./tests/workout_api.test.js` file and refactor the code to follow a more structured and descriptive style.  
    - Instead of using `test(...)` with short or vague names, rewrite your tests using `describe(...)` and `it(...)` so that they read like natural language specifications.  
    - Your goal is to make the tests **self-explanatory**: someone reading them should immediately understand what behavior is being tested.  
 
@@ -57,15 +59,14 @@ Notice how the refactored version:
 - Reads like a natural sentence: *“when there are initially some workouts saved, it should return all workouts.”*  
 
 
-2. Note: When working with Jest, you have the following options:
-   - You can replace [`test()` with `it()`].
-   - You can [skip certain tests] as needed.
-   - You can run tests individually (More details below).
+## Part C: run skip certain tests and run tests individually 
+------
 
+When working with Jest, you have the following options:
+  - You can replace [`test()` with `it()`].
+  - You can [skip certain tests] as needed.
+  - You can run tests individually (More details below).
 
-
----
-## Misc.
 
 
 ### Running Tests One by One in Jest
