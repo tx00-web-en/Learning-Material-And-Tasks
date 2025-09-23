@@ -120,13 +120,15 @@ Now that the basic setup is complete, divide your team between backend and front
 
 #### Frontend Team:
 1. **Add Signup and Login Forms**  
-   Create the UI for the signup and login components. You can use `frontend/src/pages/AddJobPage` as a reference for creating the forms. **Note** that the logic *can be added later*, once the *backend team completes iteration 3*. 
+   - Create the UI for the signup and login components. You can use `frontend/src/pages/AddJobPage` as a reference for creating the forms. 
+   - Ensure the forms collect these required fields (e.g., **name, email, password, phone number, gender, date of birth, membership status**).
+   - **Note** that the logic *can be added later*, once the *backend team completes iteration 3*. 
 
 2. **Update Navigation Bar**  
-   Update the navigation bar in `frontend/src/components/NavBar` to include links to the signup and login components.
+   - Update the navigation bar in `frontend/src/components/NavBar` to include links to the signup and login components.
 
 3. **Test with the Mock Server**  
-   Before switching to the backend team's API, test the forms using the mock server. 
+   - Before switching to the backend team's API, test the forms using the mock server. 
 
 
 4. **Test with the API Server**  
@@ -154,7 +156,7 @@ Now that the basic setup is complete, divide your team between backend and front
    ```  
 
 6. **Handle Empty Job List**  
-   Ensure the app handles the scenario of an empty job list gracefully by displaying an appropriate message. For example:  
+   - Ensure the app handles the scenario of an empty job list gracefully by displaying an appropriate message. For example:  
 
    ```js
    {loading ? (
@@ -173,7 +175,7 @@ Now that the basic setup is complete, divide your team between backend and front
    ```  
 
 7. **Test Thoroughly**  
-   Ensure both the backend and frontend are thoroughly tested to confirm everything is functioning as expected.  
+   - Ensure both the backend and frontend are thoroughly tested to confirm everything is functioning as expected.  
 
 ---
 
@@ -182,7 +184,22 @@ Now that the basic setup is complete, divide your team between backend and front
 
 #### Backend Team:
 1. **Add User Registration and Authentication**  
-   - **Implement user registration** in the backend *and* **protect the job-related routes** (e.g., creating, updating, and deleting jobs should require authentication). You can choose the option that best suits your team. A summary of the two options is available [**here**](./bepp-summary.md):  
+   - **Implement user registration** in the backend
+   - Use the following `userSchema` as the basis for your user model:  
+      ```js
+      const userSchema = new Schema(
+      {
+         name: { type: String, required: true },
+         email: { type: String, required: true, unique: true },
+         password: { type: String, required: true },
+         phone_number: { type: String, required: true },
+         gender: { type: String, required: true },
+         date_of_birth: { type: Date, required: true },
+         membership_status: { type: String, required: true },
+      },
+      );
+      ```
+   - **Protect the job-related routes** (e.g., creating, updating, and deleting jobs should require authentication). You can choose the option that best suits your team. A summary of the two options is available [**here**](./bepp-summary.md):  
      - **Controller-Centric Design**: All authentication logic resides in the controller, as shown [**here**](https://github.com/tx00-resources-en/week6-fepp-starter/tree/main/backend-v2).  
      - **Model-Based Refactoring**: Authentication responsibilities are divided between the model and controller using static methods, as shown [**here**](https://github.com/tx00-resources-en/week6-fepp-starter/tree/main/backend).  
    - Test your changes using Postman. 
