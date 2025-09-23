@@ -1,6 +1,6 @@
 # Coding Marathon:
 
-In this coding marathon, your task is to develop an API server with authentication using a provided React frontend as a starting point. The goal is to work collaboratively, with your team members focusing on backend development and others on the frontend. At the end of the task, you'll merge your work and deploy the backend to [Render.com](https://render.com/).
+In this coding marathon, your task is to develop an API server with authentication using a provided React frontend as a starting point. The goal is to work collaboratively- some team members will focus on backend development, while others will work on the frontend. At the end of the task, you'll merge your work and deploy the backend to [Render.com](https://render.com/).
 
 > **Important**: The coding marathon assumes you have watched the [React Crash Course 2024](https://youtu.be/LDB4uaJ87e0?si=aGMiwMn7zoNiGcBM). To assist you, here are [**some notes from the video tutorial**](./cm-helper.md).  
 
