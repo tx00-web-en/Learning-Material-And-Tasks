@@ -1,27 +1,30 @@
 # Activity 1
 
-
 ## Part A: Initial Setup
-------
+---
 
-1. Clone the [starter repository](https://github.com/tx00-resources-en/week6-be-workout-v1)
-   - After cloning, **delete** the `.git` directory.
-2. Rename `.env.example` to `.env`.
-  - Inside the `.env` file, notice that there are two MongoDB URIs: one for development and one for testing purposes.
-3. Run `npm install`
-4. Run `npm test` to run the tests using Jest.
+1. Clone the [starter repository](https://github.com/tx00-resources-en/week6-be-workout-v1)  
+   - After cloning, **delete** the `.git` directory.  
+2. Rename `.env.example` to `.env`.  
+   - Inside the `.env` file, notice that there are two MongoDB URIs: one for development and one for testing purposes.  
+3. Run `npm install`.  
+4. Run `npm test` to execute the tests using Jest.  
 
-## Part B: Refactoring (replace `test()` with `it()`)
-------
+
+---
+
+## Part B: Refactoring Tests (replace `test()` with `it()`)
+---
 
 
 Open the `./tests/workout_api.test.js` file and refactor the code to follow a more structured and descriptive style.  
-   - Instead of using `test(...)` with short or vague names, rewrite your tests using `describe(...)` and `it(...)` so that they read like natural language specifications.  
-   - Your goal is to make the tests **self-explanatory**: someone reading them should immediately understand what behavior is being tested.  
 
-**Example:**  
+- Instead of using `test(...)` with short or vague names, rewrite your tests using `describe(...)` and `it(...)` so that they read like natural language specifications.  
+- Your goal is to make the tests **self-explanatory**: someone reading them should immediately understand what behavior is being tested.  
 
-Original code:  
+### Example
+
+**Original code:**
 ```javascript
 describe("when there is initially some notes saved", () => {
   test("all workouts are returned", async () => {
@@ -37,7 +40,7 @@ describe("when there is initially some notes saved", () => {
 });
 ```
 
-Refactored in BDD style:  
+**Refactored in BDD style:**
 ```javascript
 describe("when there are initially some workouts saved", () => {
   it("should return all workouts", async () => {
@@ -53,36 +56,34 @@ describe("when there are initially some workouts saved", () => {
 });
 ```
 
-Notice how the refactored version:  
+**Notice how the refactored version:**
 - Uses `it` instead of `test` for a **behavior-driven style**.  
-- Rephrases test names to be **descriptive and behavior-focused** (e.g., *“should return all workouts”*).  
+- Rephrases test names to be **descriptive and behavior-focused**.  
 - Reads like a natural sentence: *“when there are initially some workouts saved, it should return all workouts.”*  
 
 
-## Part C: run skip certain tests and run tests individually 
-------
+---
 
-When working with Jest, you have the following options:
-  - You can replace [`test()` with `it()`].
-  - You can [skip certain tests] as needed.
-  - You can run tests individually (More details below).
+## Part C: Skipping and Running Tests Individually
+---
 
-
+When working with Jest, you have the following options:  
+- Replace `test()` with `it()` (as shown above).  
+- Skip certain tests when needed.  
+- Run tests individually. 
 
 ### Running Tests One by One in Jest
 
-By default, running `npm test` will execute all of the tests in your application. However, when writing or debugging tests, it's often more efficient to run just one or a few specific tests rather than all of them. Jest offers several ways to achieve this.
+By default, running `npm test` will execute all of the tests in your application. However, when writing or debugging, it’s often more efficient to run just one or a few specific tests. Jest offers several ways to achieve this.
 
-**Using `test.only`**
-
-One way to focus on specific tests is by using the `only` method. This allows you to tell Jest to run only the test(s) you mark with `test.only`:
+#### Using `test.only`
 
 ```javascript
 test.only('tours are returned as json', async () => {
   await api
     .get('/api/tours')
     .expect(200)
-    .expect('Content-Type', /application\/json/)
+    .expect('Content-Type', /application\/json/);
 });
 
 test.only('there are two tours', async () => {
@@ -91,26 +92,26 @@ test.only('there are two tours', async () => {
 });
 ```
 
-When Jest encounters `test.only`, **it will ignore all other tests** and only run the marked ones. However, be careful: it's easy to accidentally leave `test.only` in your code, which can cause future test runs to skip important tests.
+- When Jest encounters `test.only`, it will **ignore all other tests** and only run the marked ones.  
+- ⚠️ **Be careful**: leaving `test.only` in your code can cause important tests to be skipped.  t.only` in your code, which can cause future test runs to skip important tests.
 
-**Running Tests from the Command Line**
+#### Running Tests from the Command Line
 
 Another option is to specify which tests to run directly from the command line, without modifying the code.
 
-- Running a Specific Test File: You can run a specific test file by passing the file path to the `npm test` command:
+- *Running a Specific Test File*: You can run a specific test file by passing the file path to the `npm test` command:
 ```bash
 npm test -- tests/workout_api.test.js
 ```
 
-This will execute only the tests found in the `tests/tours.test.js` file.
+This will execute only the tests found in the `tests/workout_api.test.js` file.
 
-- Running Tests by Name Pattern: You can also run tests by specifying a **name pattern**. This option allows you to run tests whose names (or describe block names) match a given string:
+- *Running Tests by Name Pattern*: You can also run tests by specifying a **name pattern**. This option allows you to run tests whose names (or describe block names) match a given string:
 ```bash
 npm test -- --test-name-pattern="Workouts are returned as json"
 ```
 
-
-The argument for `--test-name-pattern` can be the full name of a test, a part of the name, or even the name of a `describe` block. For example, if you want to run all tests related to "tours," you could use:
+- You can also *run all tests related to a keyword*, e.g.: The argument for `--test-name-pattern` can be the full name of a test, a part of the name, or even the name of a `describe` block. For example, if you want to run all tests related to "tours," you could use:
 
 ```bash
 npm run test -- --test-name-pattern="Workouts"
@@ -123,12 +124,9 @@ This will run every test that includes "Workouts" in its name.
 - The **second part** (`--test-name-pattern="Workouts"`) is the actual flag that Jest understands.  
 - If you only wrote one `--`, npm would try to interpret `--test-name-pattern` as its own option and throw an error instead of passing it to Jest.  
 
-
 **Caution with `test.only`**
 
 While `test.only` is useful, **be careful not to leave it in your code accidentally**. Doing so can cause Jest to skip important tests, potentially leading to false confidence that all tests are passing.
-
-
 
 ---
 ## Links
