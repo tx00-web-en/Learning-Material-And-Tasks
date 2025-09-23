@@ -1,8 +1,10 @@
 ### API Workflow:
 
+To explain this typical API workflow, let's break it down step by step with a simple example: **creating a workout entry in a fitness app**.
+
 > Route → Middleware → Controller → Service → Model → Database
 
-To explain this typical API workflow, let's break it down step by step with a simple example: **creating a workout entry in a fitness app**.
+![](./img/data-flow-testing.png)
 
 ---
 

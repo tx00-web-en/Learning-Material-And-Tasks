@@ -57,13 +57,13 @@ All team members should complete this iteration together. Follow these steps to 
    - After cloning, delete the `.git` directory to unlink it from the starter repository.
    
 2. **Start the Mock Backend Server**  
-   - Open a terminal in the `backend/api-fake-server` directory.
+   - Open a terminal window and navigate to the `backend/api-fake-server` directory.
    - Run `npm install` to install dependencies.
    - Start the mock server using `npm run dev`.
    - The mock server will run on `http://localhost:8000`.
 
-34. **Start the React Frontend**  
-   - Open another terminal in the `frontend` directory.
+3. **Start the React Frontend**  
+   - Open Open a new terminal window and navigate to the `frontend-simplified` or `frontend` directory.
    - Run `npm install` to install dependencies.
    - Start the app with `npm run dev`.
    - The frontend will run on `http://localhost:3000`.
