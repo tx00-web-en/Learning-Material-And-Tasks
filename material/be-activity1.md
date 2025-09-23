@@ -99,23 +99,30 @@ Another option is to specify which tests to run directly from the command line, 
 
 - Running a Specific Test File: You can run a specific test file by passing the file path to the `npm test` command:
 ```bash
-npm test -- tests/tours.test.js
+npm test -- tests/workout_api.test.js
 ```
 
 This will execute only the tests found in the `tests/tours.test.js` file.
 
 - Running Tests by Name Pattern: You can also run tests by specifying a **name pattern**. This option allows you to run tests whose names (or describe block names) match a given string:
 ```bash
-npm test -- --test-name-pattern="the first tour is about HTTP methods"
+npm test -- --test-name-pattern="Workouts are returned as json"
 ```
+
 
 The argument for `--test-name-pattern` can be the full name of a test, a part of the name, or even the name of a `describe` block. For example, if you want to run all tests related to "tours," you could use:
 
 ```bash
-npm run test -- --test-name-pattern="tours"
+npm run test -- --test-name-pattern="Workouts"
 ```
 
-This will run every test that includes "tours" in its name.
+This will run every test that includes "Workouts" in its name.  
+
+👉 Notice the **two dashes (`--`)**:  
+- The **first `--`** tells **npm** to stop interpreting options for itself and pass everything after it directly to the script (in this case, Jest).  
+- The **second part** (`--test-name-pattern="Workouts"`) is the actual flag that Jest understands.  
+- If you only wrote one `--`, npm would try to interpret `--test-name-pattern` as its own option and throw an error instead of passing it to Jest.  
+
 
 **Caution with `test.only`**
 
