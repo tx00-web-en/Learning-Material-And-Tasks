@@ -468,6 +468,7 @@ By using environment variables effectively, you can make your Node.js applicatio
 ---
 ## Links
 
+- [Jest, Mocha, Chai, Supertest, and superagent](./Jest-vs-Supertest.md)
 - [Supertest: How to Test APIs Like a Pro](https://www.testim.io/blog/supertest-how-to-test-apis-like-a-pro/)
 - [Dead-Simple API Tests With SuperTest, Mocha, and Chai](https://dev-tester.com/dead-simple-api-tests-with-supertest-mocha-and-chai/)
 - [Development and Production](https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production)
