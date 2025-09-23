@@ -6,15 +6,27 @@ You'll receive a starter code that, while not adhering to best practices, ensure
 
 ###  Iteration 1:
 
-1. Clone the starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-fepp-starter)
+1. Clone the starter repository: [Week 6 Starter Code](https://github.com/tx00-resources-en/week6-fepp-starter)  
    - After cloning, **delete** the `.git` directory.
-2. Inside the "backend" folder, copy  `.env.example` file to `.env`, and replace the environmental variables `SECRET` and `MONGO_URI` with your unique database URI and secret key. Remember to generate **strong** `SECRET` e.g. `require("crypto").randomBytes(64).toString("hex")`
 
-3. Run `npm install` and start the server by running `npm run dev` from within the "backend" folder. 
+2. Inside the `backend` folder, copy `.env.example` to `.env`, and replace the environment variables `SECRET` and `MONGO_URI` with your own values.  
+   - Generate a **strong** `SECRET`, for example:  
+     ```js
+     require("crypto").randomBytes(64).toString("hex")
+     ```  
+   - Alternatively, you can use [this online service](https://www.browserling.com/tools/random-hex).
 
-4. from within the "frontend" folder Run `npm install` and start the client by running `npm run dev` .
-   
-5. Verify the functionality of the application, **specifically, check** if you can successfully `register/signup` and `log in`.
+3. From within the `backend` folder:  
+   - Run `npm install`  
+   - Start the server with `npm run dev`
+
+4. From within the `frontend` folder:  
+   - Run `npm install`  
+   - Start the client with `npm run dev`
+
+5. Verify the functionality of the application:  
+   - Check that you can successfully **register/signup** and **log in**.  
+   - Use a strong password (e.g., `4wa95=Vx#`), otherwise you will get an error.
 
 ### Iteration 2:
 
