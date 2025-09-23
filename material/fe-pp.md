@@ -114,7 +114,7 @@ const loginUser = async (req, res) => {
 
 **Tasks**  
 
-1. Compare this version of the `loginUser` controller to the one used on Monday and in Iterations 1–5 (`backend` folder).  
+1. Compare this version of the `loginUser` controller to the one used [on Monday](https://github.com/tx00-resources-en/week6-bepp-starter/blob/main/models/userModel.js) and in Iterations 1–5 (`backend` folder).  
 2. Specifically, analyze the following:  
    - What is the purpose of `userSchema.statics.login` in `userModel.js`?  
    - Compare `User.findOne({ email })` to `this.findOne({ email })`. When and why do we use `this` instead of the model's name?  
@@ -169,7 +169,7 @@ const signupUser = async (req, res) => {
 
 **Tasks**  
 
-1. Compare this version of the `signupUser` controller to the one used on Monday and in Iterations 1–5 (`backend` folder).  
+1. Compare this version of the `signupUser` controller to the one used on [Monday](https://github.com/tx00-resources-en/week6-bepp-starter/blob/main/models/userModel.js) and in Iterations 1–5 (`backend` folder).  
 2. Specifically, analyze the following:  
    - What is the purpose of `userSchema.statics.signup` in `userModel.js`?  
    - Compare `User.create({ email, password: hash })` to `this.create({ email, password: hash })`. When and why do we use `this` instead of the model's name?  
