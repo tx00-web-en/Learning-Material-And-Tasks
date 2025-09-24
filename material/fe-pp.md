@@ -53,7 +53,7 @@ Create a `useLogin` hook and refactor the `LoginComponent` component accordingly
 
 ### Iteration 5:
 
-Refactor the code responsible for token storage, retrieval, and removal to use `localSession` instead of `localStorage`.
+Refactor the code responsible for token storage, retrieval, and removal to use `sessionStorage` instead of `localStorage`.
 
 ---
 

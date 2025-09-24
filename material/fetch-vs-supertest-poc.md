@@ -9,7 +9,7 @@ Here’s what that looks like in practice:
 let server;
 
 beforeAll(() => {
-  server = app.listen(3000);   // Start the server before tests
+  server = app.listen(3005);   // Start the server before tests
 });
 
 afterAll(() => {
@@ -54,9 +54,7 @@ const mongoose = require("mongoose");
 const app = require("../app");
 const Workout = require("../models/workoutModel");
 
-// Node 18+ has fetch built-in.
-
-const PORT = 4000; // pick a test port
+const PORT = 3005; // pick a test port
 let server;
 
 const initialWorkouts = [
