@@ -1,21 +1,22 @@
 # Homework
 -----
 
-### Monday Morning:
+### Monday:
 
 - :star: [React Crash Course 2024](https://youtu.be/LDB4uaJ87e0?si=aGMiwMn7zoNiGcBM)
-- :star: `Here's` a a [demo illustrating React authentication](https://github.com/tx00-resources-en/mern-books-v1). At this stage, the demo only provides an overview of how to access protected routes.  We will refactor the app next Wednesday to use the `useContext` hook.
+- :star: `Here's` a a [demo illustrating React authentication](https://github.com/tx00-resources-en/mern-books-v1). At this stage, the demo only provides an overview of how to access protected routes.  
+
+<!-- We will refactor the app next Wednesday to use the `useContext` hook. -->
 
 
-### Monday Afternoon: 
+
+### Wednesday:
 
 - :star: MERN Authentication Tutorial #2 - #7
   - [Videos](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT)
   - [src](https://github.com/iamshaunjp/MERN-Auth-Tutorial)
- 
-### Wednesday:
 
-- Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again.  
+<!-- - Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again.   -->
 
 <!-- 
 ### Wednesday Morning:
