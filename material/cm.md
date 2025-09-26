@@ -18,9 +18,9 @@ In this coding marathon, your task is to develop an API server with authenticati
 ---
 ## Success Criteria
 
-Your project will be evaluated based on the following criteria, totaling 100 points:
+Your project will be evaluated based on the following criteria, totaling 80 points:
 
-1. **Clean, readable, and well-organized code (60 points)**:
+1. **Clean, readable, and well-organized code (40 points)**:
    - Backend code
    - Frontend code
 
@@ -34,7 +34,7 @@ Your project will be evaluated based on the following criteria, totaling 100 poi
    - One API without authentication
    - One API with authentication  
 
-> Don't worry if you can't complete every step, as this activity is worth 100 points (only) and will be graded primarily on **group collaboration** and **communication**. 
+> Don't worry if you can't complete every step, as this activity is worth 80 points (only) and will be graded primarily on **group collaboration** and **communication**. 
 
 
 > [!NOTE]  
@@ -313,7 +313,7 @@ Now that the basic setup is complete, divide your team between backend and front
    3. Deploy **API Version 1** .
    4. Deploy **API Version 2**.
    5. For guidance, here are [some screenshots](./api2render.md) on how to deploy to [Render](https://dashboard.render.com/).
-- (**Optional**) Successfully deploying the frontend as well will earn you a **bonus** of 15 points.
+<!-- - (**Optional**) Successfully deploying the frontend as well will earn you a **bonus** of 15 points. -->
 ---
 
 ### Final Notes:
