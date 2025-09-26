@@ -20,9 +20,9 @@ In this coding marathon, your task is to develop an API server with authenticati
 
 Your project will be evaluated based on the following criteria, totaling 80 points:
 
-1. **Clean, readable, and well-organized code (40 points)**:
-   - Backend code
-   - Frontend code
+1. **Clean, readable, and well-organized code**:
+   - Backend code **(30 points)**
+   - Frontend code **(20 points)**
 
 
 2. **Self-assessment using your favorite LLM (20 points)**:
@@ -30,7 +30,7 @@ Your project will be evaluated based on the following criteria, totaling 80 poin
    - Backend assessment
    - You can use the [following template](./cm-template.md).
 
-3. **Deploy to Render (20 points)**:
+3. **Deploy to Render (10 points)**:
    - One API without authentication
    - One API with authentication  
 
