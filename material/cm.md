@@ -77,10 +77,11 @@ All team members should complete this iteration together. Follow these steps to 
    - The mock server will run on `http://localhost:8000`.
 
 3. **Start the React Frontend**  
-   - Open Open a new terminal window and navigate to the `frontend-simplified` or `frontend` directory.
-   - Run `npm install` to install dependencies.
-   - Start the app with `npm run dev`.
-   - The frontend will run on `http://localhost:3000`.
+   - Open a new terminal window and navigate to the `frontend-simplified` directory.  
+     *(If the video homework was completely clear to you, you may also use the code in the `frontend` directory as an alternative.)*  
+   - Run `npm install` to install dependencies.  
+   - Start the app with `npm run dev`.  
+   - The frontend will be available at `http://localhost:3000`.
 
 4. **Verify the Setup**  
    At this point, the app should be working with the mock server. Test by:
