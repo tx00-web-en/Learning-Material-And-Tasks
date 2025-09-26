@@ -1,6 +1,15 @@
 # Homework
 -----
 
+
+### Important but Optional:
+
+These topics were originally scheduled for Week 7 and intended to be part of the exam. However, since our priority is ensuring everyone is confident with the core material, they are now **optional** and **will not be included in the exam**.
+
+- :star: [React useContext() hook introduction](https://youtu.be/FpNfvbNYPsg?si=EADR1NJnG_794q7G)
+- :blue_book: [Learn useReducer In 20 Minutes](https://youtu.be/kK_Wqx3RnHk?si=60jrI2i05VfgWjcw)
+- :blue_book: [Automatically Generate Swagger Docs With ExpressJS & NodeJS](https://youtu.be/5aryMKiBEKY?si=d50P0xlkQQvcKmt7)
+
 ### Monday:
 
 - :star: [React Crash Course 2024](https://youtu.be/LDB4uaJ87e0?si=aGMiwMn7zoNiGcBM)
@@ -18,18 +27,6 @@
 
 <!-- - Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again.   -->
 
-<!-- 
-### Wednesday Morning:
-
-- :blue_book: [Automatically Generate Swagger Docs With ExpressJS & NodeJS](https://youtu.be/5aryMKiBEKY?si=d50P0xlkQQvcKmt7)
-
-
-### Wednesday Afternoon:
-
-- :star: [React useContext() hook introduction](https://youtu.be/FpNfvbNYPsg?si=EADR1NJnG_794q7G)
-- :blue_book: [Learn useReducer In 20 Minutes](https://youtu.be/kK_Wqx3RnHk?si=60jrI2i05VfgWjcw) 
-
--->
 
 ### Friday
 
@@ -41,8 +38,4 @@
 <!-- - Other options: https://fly.io/ or make your own server -->
 
 
-### Not in the exam 
 
-- :star: [React useContext() hook introduction](https://youtu.be/FpNfvbNYPsg?si=EADR1NJnG_794q7G)
-- :blue_book: [Learn useReducer In 20 Minutes](https://youtu.be/kK_Wqx3RnHk?si=60jrI2i05VfgWjcw)
-- :blue_book: [Automatically Generate Swagger Docs With ExpressJS & NodeJS](https://youtu.be/5aryMKiBEKY?si=d50P0xlkQQvcKmt7)]
