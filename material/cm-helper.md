@@ -13,7 +13,7 @@ In this section, we will reflect on  the [sample code](https://github.com/bradtr
 
 ### 1. `vite.config.js`
 
-The tutorial uses the `rewrite` function to remove `/api` from the API path, as the fake server runs at `http://localhost:4000/jobs`. In our case, the API runs at `http://localhost:4000/api/jobs`, so we don’t need to modify the path.
+The tutorial uses the `rewrite` function to remove `/api` from the API path, as the fake server runs at `http://localhost:4000/jobs`. In our case, the API runs at `http://localhost:8000/api/jobs`, so we don’t need to modify the path.
 
 Here’s the proxy setup from the video:
 
@@ -24,7 +24,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'http://localhost:4000',
+        target: 'http://localhost:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },
