@@ -66,18 +66,18 @@ beforeEach(async () => {
 });
 
 describe("GET /api/workouts", () => {
-  test("all workouts are returned", async () => {
+  it("should return all workouts", async () => {
     const response = await api.get("/api/workouts");
     expect(response.body).toHaveLength(initialWorkouts.length);
   });
 
-  test("a specific workout is within the returned workouts", async () => {
+  it("should include a specific workout in the returned list", async () => {
     const response = await api.get("/api/workouts");
     const titles = response.body.map(workout => workout.title);
     expect(titles).toContain("test workout 2");
   });
 
-  test("Workouts are returned as JSON", async () => {
+  it("should return workouts in JSON format", async () => {
     await api.get("/api/workouts").expect(200).expect("Content-Type", /application\/json/);
   });
 });
@@ -208,7 +208,7 @@ describe("when there is initially some workouts saved", () => {
       .send(workouts[1]);
   });
 
-  test("Workouts are returned as JSON", async () => {
+  it("should return workouts as JSON for an authenticated user", async () => {
     // Test if an authenticated user can fetch workouts
     await api
       .get("/api/workouts")
@@ -217,7 +217,7 @@ describe("when there is initially some workouts saved", () => {
       .expect("Content-Type", /application\/json/);
   });
 
-  test("New workout added successfully", async () => {
+  it("should allow adding a new workout with a valid token", async () => {
     // Test if a new workout can be added with valid token
     const newWorkout = {
       title: "testworkout",
@@ -231,7 +231,7 @@ describe("when there is initially some workouts saved", () => {
       .expect(201);  // Expect workout creation to be successful
   });
 
-  test("Workout addition fails without token", async () => {
+  it("should fail to add a workout without a token", async () => {
     // Test if an attempt to add a workout without a token fails
     const newWorkout = {
       title: "unauthorized workout",
@@ -279,27 +279,37 @@ Testing protected routes requires more than just verifying that authenticated us
 
 1. **Expired Tokens**: Test what happens when an expired JWT is sent.
    ```javascript
-   test("Access fails with expired token", async () => {
-     const expiredToken = "someExpiredTokenHere";
-     await api
-       .get("/api/workouts")
-       .set("Authorization", "bearer " + expiredToken)
-       .expect(401);  // Expect unauthorized due to token expiration
+   describe("Access with an expired token", () => {
+   it("should deny access when using an expired token", async () => {
+      const expiredToken = "someExpiredTokenHere";
+
+      await api
+         .get("/api/workouts")
+         .set("Authorization", `bearer ${expiredToken}`)
+         .expect(401); // Expect unauthorized due to token expiration
+   });
    });
    ```
 
 2. **Missing Tokens**: Verify that the server rejects requests with no token or with improperly formatted tokens.
    ```javascript
-   test("Access fails without a token", async () => {
-     await api.get("/api/workouts").expect(401);  // No token sent, expect unauthorized
+   describe("Access without a token", () => {
+   it("should deny access when no token is provided", async () => {
+      await api
+         .get("/api/workouts")
+         .expect(401); // No token sent, expect unauthorized
+   });
    });
 
-   test("Access fails with malformed token", async () => {
-     const malformedToken = "invalidtoken123";
-     await api
-       .get("/api/workouts")
-       .set("Authorization", "bearer " + malformedToken)
-       .expect(401);  // Expect failure due to malformed token
+   describe("Access with a malformed token", () => {
+   it("should deny access when using a malformed token", async () => {
+      const malformedToken = "invalidtoken123";
+
+      await api
+         .get("/api/workouts")
+         .set("Authorization", `bearer ${malformedToken}`)
+         .expect(401); // Expect failure due to malformed token
+   });
    });
    ```
 <!-- 
