@@ -124,6 +124,30 @@ app.use((req, res) => {
 // ...
 ```
 
+
+<details><summary>Best Practice</summary>
+
+While the above works, it’s safer and more portable to use Node’s built‑in `path` module. This ensures your code runs consistently across Windows, macOS, and Linux, regardless of path separators or working directory:
+
+```javascript
+// Import Node's built‑in 'path' module
+const path = require('path');
+
+// Serve static files from the 'view' folder
+app.use(express.static(path.join(__dirname, 'view')));
+
+// Fallback: send index.html for any unmatched route
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'view', 'index.html'));
+});
+```
+
+Using `path.join(__dirname, ...)` guarantees Express always resolves the correct absolute path, avoiding “works on my machine” issues.
+
+</details>
+
+
+
 **Step 4: Testing Locally**
 
 Before deploying to a platform like Render, test the integrated app locally:

@@ -30,10 +30,11 @@ These topics were originally scheduled for Week 7 and intended to be part of the
 
 ### Friday
 
+- [How to deploy MERN Stack App to Render](./deployment.md)
+
+<!-- 
 - Deploy FullStack app on Render 
   - :star: [Deploy a MERN STACK app on Render platform in 2024](https://www.youtube.com/watch?v=ZsFwpjFmpFQ) 
-  - :star: [How to Deploy Your Node.js Application for Free with Render](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/)
-<!-- - Other options: https://fly.io/ or make your own server -->
-
-
-
+  - :star: [How to Deploy Your Node.js Application for Free with Render](https://www.freecodecamp.org/news/how-to-deploy-nodejs-application-with-render/) 
+- Other options: https://fly.io/ or make your own server 
+-->
