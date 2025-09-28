@@ -148,7 +148,7 @@ Example Contribution Table
 
 ## Success Criteria
 
-The code marathon will be evaluated based on the following criteria (120 points total + bonus):
+This session will be evaluated based on the following criteria (120 points total + bonus):
 
 1. **Clean, readable, and well-organized code (40 points)**  
    - Backend code  
@@ -169,6 +169,7 @@ The code marathon will be evaluated based on the following criteria (120 points 
 5. **Bonus (15 points)**  
    - Implement the `useContext` hook instead of prop‑drilling, completed before Sunday.
    <!-- - Otherwise, we’ll cover it in next Monday’s pair programming session. -->
+
 ---
 
 **Happy coding!** :rocket: :heart:

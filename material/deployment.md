@@ -20,11 +20,10 @@ Deploying a MERN stack application involves two primary components:
 
 3. **Decide Frontend Deployment Strategy**:
    - Choose whether to:
-     - Serve the frontend from the **same origin as the backend** by including the React build folder in the backend. [HW video](https://www.youtube.com/watch?v=ZsFwpjFmpFQ)
+     - Serve the frontend from the **same origin as the backend** by including the React build folder in the backend.
      - Serve the frontend from a **different origin**, which requires: 
         - Configuring **CORS** on the backend to allow requests from the frontend URL.
         - Adding a `BASE_URL` environment variable in the frontend for API routes.
-        - [HW video](https://www.youtube.com/watch?v=l134cBAJCuc)
 
 4. **Test and Finalize**:
    - Perform end-to-end testing to ensure the frontend communicates with the backend, and the backend interacts with the database.
@@ -93,8 +92,8 @@ Since React is a **Single Page Application (SPA)**, all routes (e.g., `/about`, 
 At the **end** of `app.js`, add:  
 
 ```javascript
-app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/view/index.html');
+app.use((req, res) => {
+  res.sendFile(__dirname + '/view/index.html');
 });
 ```
 
@@ -113,14 +112,16 @@ app.use(express.static('view'));  // Serve frontend static files
 // ...
 app.use("/api/users", userRouter);
 
-// Catch-all route for React frontend
-app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/view/index.html');
-});
-
 // Error handling middleware
-app.use(unknownEndpoint);
+app.use('/api', unknownEndpoint);
 app.use(errorHandler);
+
+// Fallback: for any route not handled by API or static files,
+// send back index.html from the 'view' folder
+app.use((req, res) => {
+  res.sendFile(__dirname + '/view/index.html');
+});
+// ...
 ```
 
 **Step 4: Testing Locally**
