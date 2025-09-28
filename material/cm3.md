@@ -12,7 +12,7 @@ The data models for users and jobs are quite similar to the **Job App** we worke
 
 ## Deliverables
 
-Please submit to *OMA* **`7 separate`** *links* to the following deliverables for this coding marathon:
+Please submit `7 separate separate` links to OMA, corresponding to the following deliverables:
 
 1. **Code** for **API V1** (without authentication)
 2. **Code** for **API V2** (with authentication and protection)
@@ -166,7 +166,7 @@ The code marathon will be evaluated based on the following criteria (120 points 
    - Frontend assessment  
    - Backend assessment  
 
-5. **Bonus (10 points)**  
+5. **Bonus (15 points)**  
    - If you manage to use the `useContext` hook instead of passing props, before Sunday.
    <!-- - Otherwise, we’ll cover it in next Monday’s pair programming session. -->
 ---
