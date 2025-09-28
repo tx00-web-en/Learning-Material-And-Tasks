@@ -148,28 +148,25 @@ Example Contribution Table
 
 ## Success Criteria
 
-Your project will be evaluated based on the following criteria (200 points total+Bonus):
+The code marathon will be evaluated based on the following criteria (120 points total+Bonus):
 
-1. **Deploy to the Cloud (40 points)**  
+1. **Clean, readable, and well-organized code (40 points)**  
+   - Backend code  
+   - Frontend code  
+
+2. **Deployment to the Cloud (30 points)**  
    - One API without authentication  
    - One API with authentication  
    - Frontend without authentication  
    - Frontend with authentication  
 
-2. **Clean, readable, and well-organized code (70 points)**  
-   - Backend code  
-   - Frontend code  
+3. **Backend testing (30 points)**  
 
-3. **Self-assessment using your favorite LLM (40 points)**  
+4. **Self-assessment using your favorite LLM (20 points)**  
    - Frontend assessment  
    - Backend assessment  
 
-4. **Backend testing (30 points)**  
-
-5. **Group Grading (20 points)**  
-   - Indicate how many points the group deserves for this coding marathon  
-
-6. **Bonus (20 points)**  
+5. **Bonus (10 points)**  
    - If you manage to use the `useContext` hook instead of passing props, before Sunday.
    <!-- - Otherwise, we’ll cover it in next Monday’s pair programming session. -->
 ---
