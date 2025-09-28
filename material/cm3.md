@@ -12,11 +12,11 @@ The data models for users and jobs are quite similar to the **Job App** we worke
 
 ## Deliverables
 
-Please submit `7 separate separate` links to OMA, corresponding to the following deliverables:
+Please submit **7 separate** links to OMA, corresponding to the following deliverables:
 
 1. **Code** for **API V1** (without authentication)
 2. **Code** for **API V2** (with authentication and protection)
-3. **Code** for the final **frontend**. Optionally, include the code for Frontend V1, which worked with API V1.
+3. **Code** for the final **frontend**. Optionally, you may also include the code for Frontend V1 (the version that worked with API V1).
 4. Backend **tests** for API V1
 5. Backend **tests** for API V2
 6. **URLs** for the deployed APIs and frontend(s)
@@ -136,11 +136,11 @@ Use this checklist to track your progress:
 Example Contribution Table
 
 ```plaintext
-| Member Name  | Tasks Completed                              | Contribution (%) |
+| Member Name  | Tasks Completed                             | Contribution (%) |
 |--------------|---------------------------------------------|------------------|
 | Matti        | Frontend authentication, Backend V2 testing | 40%              |
-| Minna          | API V1 & V2 deployment, Database setup      | 35%              |
-| Jussi      | Frontend V1 & UI styling                    | 25%              |
+| Minna        | API V1 & V2 deployment, Database setup      | 35%              |
+| Jussi        | Frontend V1 & UI styling                    | 25%              |
 ```
 
 
@@ -148,7 +148,7 @@ Example Contribution Table
 
 ## Success Criteria
 
-The code marathon will be evaluated based on the following criteria (120 points total+Bonus):
+The code marathon will be evaluated based on the following criteria (120 points total + bonus):
 
 1. **Clean, readable, and well-organized code (40 points)**  
    - Backend code  
@@ -167,7 +167,7 @@ The code marathon will be evaluated based on the following criteria (120 points 
    - Backend assessment  
 
 5. **Bonus (15 points)**  
-   - If you manage to use the `useContext` hook instead of passing props, before Sunday.
+   - Implement the `useContext` hook instead of prop‑drilling, completed before Sunday.
    <!-- - Otherwise, we’ll cover it in next Monday’s pair programming session. -->
 ---
 
