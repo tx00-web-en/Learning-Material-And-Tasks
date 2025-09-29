@@ -1,11 +1,12 @@
 # Backend Testing with Jest and Supertest
 
-This pair programming activity focuses on testing backend APIs using **Jest** and **Supertest**. Rather than starting from scratch, you will build upon a starter repository that provides example tests. The goal is to write tests for the **Jobs API** following the same logic used in the provided tests for the **Tours API**.
+This pair programming activity focuses on testing backend APIs using **Jest** and **Supertest**. Rather than starting from scratch, you will build upon a starter repository that provides example tests. The goal is to write tests for the **Jobs API** following the same logic used in the provided tests for the **Tours and Workouts** API.
 
+<!-- 
 ### Provided Tests:
 1. **`examples/tours-no-auth.test.js`**: Tests for endpoints.
 2. **`examples/tours-auth.test.js`**: Tests for protected Tours endpoints.
-3. **`examples/users.test.js`**: Tests for user authentication and user-related endpoints.
+3. **`examples/users.test.js`**: Tests for user authentication and user-related endpoints. -->
 
 Your task will be to apply this testing approach to the **Jobs API**.
 
