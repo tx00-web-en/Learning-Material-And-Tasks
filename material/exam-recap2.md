@@ -1,10 +1,11 @@
 # Activity
 
-We will continue from the first activity and use the same **products model**, but this time, we will **modify the user model** to include additional details. 
+- We will continue from the first activity and use the same **products model**, but this time, we will **modify the user model** to include additional details. 
+- Additionally, we will **deploy** the backend to **Render**.
+- To assist you, you can refer to the sample solution code from Monday as a reference: [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en). In particular:
+  -  [User registration and login functionality](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch6-auth). 
+  - [Implementing Protected Routes](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch7-protect-jobs).
 
-Additionally, we will **deploy** the backend to **Render**.
-
-To assist you, you can refer to the sample solution code from Monday as a reference: [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
 
 ---
 
