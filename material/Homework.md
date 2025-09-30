@@ -17,16 +17,13 @@ These topics were originally scheduled for Week 7 and intended to be part of the
 
 <!-- We will refactor the app next Wednesday to use the `useContext` hook. -->
 
-
-
 ### Wednesday:
 
 - :star: MERN Authentication Tutorial #2 - #7
   - [Videos](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT)
   - [src](https://github.com/iamshaunjp/MERN-Auth-Tutorial)
-
-- Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again.  
-
+- Here’s a step‑by‑step guide on how to build a full‑stack jobs application. The project is organized so that each step is in its own branch, allowing you to follow along and replicate the work incrementally:  https://github.com/tx00-resources-en/week7-fepp-en
+- Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again. 
 
 ### Friday
 
