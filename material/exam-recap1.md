@@ -18,11 +18,11 @@ Approach this task **iteratively** and use **Git branching** for structured deve
 -->
 
 1. **Basic CRUD Operations (Without Authentication)**
-   - Step 1: Adding and Fetching Products. This corresponds to the **GET all jobs** and **POST (add one job)** operations shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post).
-   - Step 2: Reading and Deleting a Single Product. This corresponds to the Adds **GET one job** and **DELETE one job** operations shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post).
-   - Step 3: Updating a Product. This corresponds to the **UPDATE one job** operation shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch3-update-router).
+   - Step 1: **Adding** and **Fetching Products**. This corresponds to the **GET all jobs** and **POST (add one job)** operations shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post).
+   - Step 2: **Reading** and **Deleting a Single Product**. This corresponds to the Adds **GET one job** and **DELETE one job** operations shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post).
+   - Step 3: **Updating a Product**. This corresponds to the **UPDATE one job** operation shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch3-update-router).
 2. **User Authentication & Managing Users**. This corresponds to the *user registration and login** functionality shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch6-auth). 
-3. **Implementing Protected Routes**. This corresponds to **route protection** in backend and frontend shown in [Monday's sample solution]https://github.com/tx00-resources-en/week7-fepp-en/tree/branch7-protect-jobs).
+3. **Implementing Protected Routes**. This corresponds to **route protection** in backend and frontend shown in [Monday's sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch7-protect-jobs).
 
 ---
 
