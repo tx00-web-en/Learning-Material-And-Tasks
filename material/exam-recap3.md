@@ -19,8 +19,7 @@ Later, during the afternoon session, we will add **user administration** and **p
   - **Step 3:** Updating a property
   - **Step 4:** write **API tests**
 
-You may refer to the **sample solution code from last Monday** as a reference (**branches 1-3**):  
-- [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
+You may refer to the **sample solution code from last Monday** as a reference (**branches 1-3**): [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
 
 <!-- You may also refer to this **sample API tests** as a reference:  
   - [tours-no-auth.test.js](./src/tours-no-auth.test.js): Tests for endpoints. -->
