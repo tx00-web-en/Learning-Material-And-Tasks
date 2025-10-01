@@ -2,19 +2,20 @@
 
 ## Introduction
 
-In this activity, we will add **user administration** and **protect** the routes from the morning session. Additionally, we will write **API tests**. Sample reference code is available for both the API and the testing.
+In this activity, we will add **user administration** and **protect** the routes from the morning session. Additionally, we will write **API tests**. 
+
+<!-- Sample reference code is available for both the API and the testing. -->
 
 Approach this task **iteratively** for structured development:
   - **Step 1:** Add user authentication
   - **Step 2:** Protect Routes
   - **Step 3:** write **API tests**
 
-You may refer to the **sample solution code from last Monday** as a reference (**branches 6-7**):  
-- [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
+You may refer to the **sample solution code from last Monday** as a reference (**branches 6-7**): [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
 
-You may also refer to these **sample API tests** as a reference:  
+<!-- You may also refer to these **sample API tests** as a reference:  
   - [**`examples/tours-auth.test.js`**](./src/tours-auth.test.js): Tests for protected Tours endpoints.
-  - [**`examples/users.test.js`**](./src/user.test.js): Tests for user authentication and user-related endpoints.
+  - [**`examples/users.test.js`**](./src/user.test.js): Tests for user authentication and user-related endpoints. -->
 
 ---
 
