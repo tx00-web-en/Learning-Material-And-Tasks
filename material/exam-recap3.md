@@ -7,9 +7,7 @@
 
 ## Introduction
 
-In the morning session, we will build a full-stack application **without authentication**. Additionally, we will write **API tests**. 
-
-<!-- Sample reference code is available for both the API and the testing. -->
+In the morning session, we will build a full-stack application **without authentication**. Additionally, we will write **API tests**. Sample reference code is available for both the API and the testing. 
 
 Later, during the afternoon session, we will add **user administration** and **protect** the routes.
 
@@ -21,9 +19,7 @@ Later, during the afternoon session, we will add **user administration** and **p
 
 You may refer to the **sample solution code from last Monday** as a reference (**branches 1-3**): [GitHub Repository](https://github.com/tx00-resources-en/week7-fepp-en).
 
-<!-- You may also refer to this **sample API tests** as a reference:  
-  - [tours-no-auth.test.js](./src/tours-no-auth.test.js): Tests for endpoints. -->
-
+You may also refer to this **sample API tests** as a reference: [tours-no-auth.test.js](./src/tours-no-auth.test.js): Tests for endpoints. 
 ---
 
 ## Deliverables
