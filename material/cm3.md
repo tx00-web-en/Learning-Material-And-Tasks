@@ -12,7 +12,7 @@ The data models for users and jobs are quite similar to the **Job App** we worke
 
 ## Deliverables
 
-Please submit **7 separate** links to OMA, corresponding to the following deliverables:
+Please submit **separate** links to OMA, corresponding to the following deliverables:
 
 1. **Code** for **API V1** (without authentication)
 2. **Code** for **API V2** (with authentication and protection)
