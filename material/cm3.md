@@ -20,7 +20,8 @@ Please submit **7 separate** links to OMA, corresponding to the following delive
 4. Backend **tests** for API V1
 5. Backend **tests** for API V2
 6. **URLs** for the deployed APIs and frontend(s)
-7. **Self-assessment** and **self-grading** of your code. Use the [self-assessment template](./cm-template.md) for this purpose.
+7. **Each team membe**r must complete a self-assessment of their own code using the provided template. Submit it **in a separate file** named after yourself (e.g., `Matti.md`).
+<!-- 7. **Self-assessment** and **self-grading** of your code. Use the [self-assessment template](./cm-template.md) for this purpose. -->
 
 ---
 
