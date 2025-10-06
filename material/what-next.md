@@ -29,7 +29,10 @@ Advancing technical skills offers various pathways depending on career goals or 
 - **Next.js**: Ideal for those interested in server-side rendering  
   - *[Next.js from Scratch](https://metropolia.finna.fi/Record/nelli15.5720000000288983)*  
 
-- **React Native**: for creating mobile applications using React.  
+- **React Native**: for creating mobile applications using React. 
+  - React Native Crash Course (New)
+    - https://www.youtube.com/watch?v=bCpFbERgj7s
+    - https://github.com/bradtraversy/notes-app 
   - *[React and React Native: Build Cross-Platform Apps](https://metropolia.finna.fi/Record/nelli15.31714776600041)*  
 
 - **Redux**: Enhance state management in applications.  
@@ -66,7 +69,10 @@ Advancing technical skills offers various pathways depending on career goals or 
 
 Emerging trends offer new opportunities for innovation and growth:
 - **Sustainability**: Learn about green software practices to reduce the environmental impact of technology.  
-- **AI Integration**: Understand the legal and ethical dimensions of AI through resources like Andrew Ng’s [AI lectures](https://www.youtube.com/watch?v=5p248yoa3oE).  
+- AI coding agents
+  - [Opencode](https://opencode.ai/): open source AI coding agent
+  - [Claude Code](https://claudecode.io/)
+<!-- - **AI Integration**: Understand the legal and ethical dimensions of AI through resources like Andrew Ng’s [AI lectures](https://www.youtube.com/watch?v=5p248yoa3oE).   -->
 
 ---
 
