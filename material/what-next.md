@@ -72,6 +72,9 @@ Advancing technical skills offers various pathways depending on career goals or 
 
 <!-- 
 - [Fullstack from Scratch – Beginner’s Tutorial](https://www.youtube.com/watch?v=LzMnsfqjzkA): A 50‑hour course that takes you from the basics to building full‑stack applications. It covers `React`, `SQL`, `TypeScript`, `Next.js`, and other web development concepts.
+-->
+
+<!-- 
 - [AI Course for Developers – Build AI-Powered Apps with React](https://www.youtube.com/watch?v=PtETUYa3i2Q)  
 -->
 
