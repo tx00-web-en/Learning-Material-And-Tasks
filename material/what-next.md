@@ -26,11 +26,16 @@ Stephen Covey’s *The 7 Habits of Highly Effective People* is a highly recommen
 Advancing technical skills offers various pathways depending on career goals or interests. These topics can be explored in any order based on individual priorities:
 
 ### **Suggested Areas and Resources**
-- **Next.js**: Ideal for those interested in server-side rendering  
+
+- **Next.js**: Ideal for those interested in server-side rendering
+  - Next.sj Crash course: [Part 1](https://www.youtube.com/watch?v=mTz0GXj8NN0), [Part 2](https://www.youtube.com/watch?v=Y6KDk5iyrYE)
   - *[Next.js from Scratch](https://metropolia.finna.fi/Record/nelli15.5720000000288983)*  
 
+- **TypeScript**: Strengthen your understanding of strongly typed programming.  
+  - *[React in Depth by Morten Barklund](https://metropolia.finna.fi/Record/nelli15.34605586500041)*    
+
 - **React Native**: for creating mobile applications using React. 
-  - React Native Crash Course (New)
+  - React Native Crash Course:
     - https://www.youtube.com/watch?v=bCpFbERgj7s
     - https://github.com/bradtraversy/notes-app 
   - *[React and React Native: Build Cross-Platform Apps](https://metropolia.finna.fi/Record/nelli15.31714776600041)*  
@@ -38,13 +43,10 @@ Advancing technical skills offers various pathways depending on career goals or 
 - **Redux**: Enhance state management in applications.  
   - *[MERN E-commerce from Scratch](https://metropolia.finna.fi/Record/nelli15.4100000011702223)*  
 
-- **TypeScript**: Strengthen your understanding of strongly typed programming.  
-  - *[React in Depth by Morten Barklund](https://metropolia.finna.fi/Record/nelli15.34605586500041)*  
-
 - **Sequelize & Relational Databases**: Learn ORM tools and database management.  
   - [Python API Development](https://www.youtube.com/watch?v=ToXOb-lpipM&list=PL8VzFQ8k4U1IiGUWdBI7s9Y7dm-4tgCXJ)  
 
-- **Deno**: Explore a secure runtime for JavaScript and TypeScript.  
+- **[Deno](https://deno.com/) vs [Bun](https://bun.sh/)**: Explore a secure runtime for JavaScript and TypeScript.  
   - *[Deno Web Development](https://metropolia.finna.fi/Record/nelli15.4100000011868369)*  
   - *[Introducing Deno](https://metropolia.finna.fi/Record/nelli15.4100000011457827)*  
 
@@ -62,17 +64,15 @@ Advancing technical skills offers various pathways depending on career goals or 
     - [Microsoft Bug Bounty Program](https://www.microsoft.com/en-us/msrc/bounty)  
     - [Apple Security Bounty](https://security.apple.com/bounty/)  
     - [GitHub Bug Bounty](https://bounty.github.com/)  
-
----
-
-## **Emerging Technologies**
-
-Emerging trends offer new opportunities for innovation and growth:
-- **Sustainability**: Learn about green software practices to reduce the environmental impact of technology.  
-- AI coding agents
+ 
+- AI **coding agents**
   - [Opencode](https://opencode.ai/): open source AI coding agent
   - [Claude Code](https://claudecode.io/)
-<!-- - **AI Integration**: Understand the legal and ethical dimensions of AI through resources like Andrew Ng’s [AI lectures](https://www.youtube.com/watch?v=5p248yoa3oE).   -->
+ 
+<!-- 
+- [Fullstack from Scratch – Beginner’s Tutorial](https://www.youtube.com/watch?v=LzMnsfqjzkA): A 50‑hour course that takes you from the basics to building full‑stack applications. It covers `React`, `SQL`, `TypeScript`, `Next.js`, and other web development concepts.
+- [AI Course for Developers – Build AI-Powered Apps with React](https://www.youtube.com/watch?v=PtETUYa3i2Q)  
+-->
 
 ---
 
@@ -93,26 +93,36 @@ The tech landscape evolves rapidly, and the ability to adapt and continuously le
 This is not the end of your journey—it’s just the beginning. With a strong foundation, the road ahead is full of opportunities to innovate, explore, and grow. Embrace the challenges, continue learning, and enjoy the process.
   
 
-
 ---
 ## Misc.
 
+- [Turbiini-yrittäjyyskurssi](https://oma.metropolia.fi/delegate/object-redirect/workspace_announcement?announcementId=334702&workspace.id=98631725)
 - [Google for Startups](https://startup.google.com/) 
-- [Project IDX](https://developers.google.com/idx)
 - [Roadmap FS](https://roadmap.sh/full-stack)
 - [Roadmap BE](https://roadmap.sh/backend)
 - [Roadmap FE](https://roadmap.sh/frontend)
-  <!-- - [React Developer](https://roadmap.sh/react) -->
 - Singularity
   - [ChatGPT's new model attempts to stop itself from being shut down](https://www.deccanherald.com/technology/chatgpts-new-model-attempts-to-stop-itself-from-being-shut-down-later-lies-about-it-3307775)
   - [Technological singularity](https://en.wikipedia.org/wiki/Technological_singularity)
   - [Sci-fi: Singularity Series](https://www.amazon.com/dp/B074CGJTKM?binding=kindle_edition&ref=dbs_dp_rwt_sb_pc_tukn)
 - Books:
   - [React Hooks in Action](https://metropolia.finna.fi/Record/nelli15.5590000000463786)
+
 <!-- - Express generator(s)
   - [express-api-starter](https://github.com/w3cj/create-express-api) 
   - [Express API Starter](https://github.com/w3cj/express-api-starter)
   - [Express API Starter with Typescript](https://github.com/w3cj/express-api-starter-ts)
-  - [api-design-node-v3](https://github.com/FrontendMasters/api-design-node-v3) -->
+  - [api-design-node-v3](https://github.com/FrontendMasters/api-design-node-v3) 
+- [Project IDX](https://developers.google.com/idx)
+- [React Developer](https://roadmap.sh/react) 
 
 
+---
+
+## **Emerging Technologies**
+- **AI Integration**: Understand the legal and ethical dimensions of AI through resources like Andrew Ng’s [AI lectures](https://www.youtube.com/watch?v=5p248yoa3oE).
+- Emerging trends offer new opportunities for innovation and growth:
+  - **Sustainability**: Learn about green software practices to reduce the environmental impact of technology. 
+-->
+
+<!--    -->
