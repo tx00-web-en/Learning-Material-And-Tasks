@@ -28,20 +28,21 @@ Advancing technical skills offers various pathways depending on career goals or 
 ### **Suggested Areas and Resources**
 
 - **Next.js**: Ideal for those interested in server-side rendering
-  - Next.sj Crash course: [Part 1](https://www.youtube.com/watch?v=mTz0GXj8NN0), [Part 2](https://www.youtube.com/watch?v=Y6KDk5iyrYE)
+  - Next.js Crash course: [Part 1](https://www.youtube.com/watch?v=mTz0GXj8NN0), [Part 2](https://www.youtube.com/watch?v=Y6KDk5iyrYE)
   - *[Next.js from Scratch](https://metropolia.finna.fi/Record/nelli15.5720000000288983)*  
 
 - **TypeScript**: Strengthen your understanding of strongly typed programming.  
-  - *[React in Depth by Morten Barklund](https://metropolia.finna.fi/Record/nelli15.34605586500041)*    
+  - [Full Course for Beginners](https://www.youtube.com/watch?v=gieEQFIfgYc)
+  - *(Book)* [React in Depth by Morten Barklund](https://metropolia.finna.fi/Record/nelli15.34605586500041) 
 
 - **React Native**: for creating mobile applications using React. 
-  - React Native Crash Course:
-    - https://www.youtube.com/watch?v=bCpFbERgj7s
-    - https://github.com/bradtraversy/notes-app 
+  - React Native Crash Course: [Video](https://www.youtube.com/watch?v=bCpFbERgj7s), [src](https://github.com/bradtraversy/notes-app )
   - *[React and React Native: Build Cross-Platform Apps](https://metropolia.finna.fi/Record/nelli15.31714776600041)*  
 
 - **Redux**: Enhance state management in applications.  
+  - [Redux Crash Course](https://www.youtube.com/watch?v=mNIcu00bciM)
   - *[MERN E-commerce from Scratch](https://metropolia.finna.fi/Record/nelli15.4100000011702223)*  
+  - [Learn React with Redux Toolkit – Full Tutorial for Beginners](https://www.youtube.com/watch?v=2-crBg6wpp0)
 
 - **Sequelize & Relational Databases**: Learn ORM tools and database management.  
   - [Python API Development](https://www.youtube.com/watch?v=ToXOb-lpipM&list=PL8VzFQ8k4U1IiGUWdBI7s9Y7dm-4tgCXJ)  
@@ -49,10 +50,6 @@ Advancing technical skills offers various pathways depending on career goals or 
 - **[Deno](https://deno.com/) vs [Bun](https://bun.sh/)**: Explore a secure runtime for JavaScript and TypeScript.  
   - *[Deno Web Development](https://metropolia.finna.fi/Record/nelli15.4100000011868369)*  
   - *[Introducing Deno](https://metropolia.finna.fi/Record/nelli15.4100000011457827)*  
-
-- **GraphQL**: Simplify data-fetching for modern applications.  
-  - [GraphQL Crash Course With Full Stack MERN Project](https://www.youtube.com/watch?v=BcLNfwF04Kw)  
-  - *[Learning GraphQL by Eve Porcello & Alex Banks](https://metropolia.finna.fi/Record/nelli15.4100000005878457)*  
 
 - **CI/CD and Containers**: Gain expertise in deployment pipelines and containerization.  
   - Project courses available in the next period.  
@@ -68,7 +65,11 @@ Advancing technical skills offers various pathways depending on career goals or 
 - AI **coding agents**
   - [Opencode](https://opencode.ai/): open source AI coding agent
   - [Claude Code](https://claudecode.io/)
- 
+
+- **GraphQL**: Simplify data-fetching for modern applications.  
+  - [GraphQL Crash Course With Full Stack MERN Project](https://www.youtube.com/watch?v=BcLNfwF04Kw)  
+  - *[Learning GraphQL by Eve Porcello & Alex Banks](https://metropolia.finna.fi/Record/nelli15.4100000005878457)*  
+
 <!-- 
 - [Fullstack from Scratch – Beginner’s Tutorial](https://www.youtube.com/watch?v=LzMnsfqjzkA): A 50‑hour course that takes you from the basics to building full‑stack applications. It covers `React`, `SQL`, `TypeScript`, `Next.js`, and other web development concepts.
 - [AI Course for Developers – Build AI-Powered Apps with React](https://www.youtube.com/watch?v=PtETUYa3i2Q)  
@@ -88,10 +89,11 @@ This course serves as a foundational stepping stone for advanced studies in area
 
 ## **Closing Reflections**
 
-The tech landscape evolves rapidly, and the ability to adapt and continuously learn is essential for sustained success. Use platforms such as [FreeCodeCamp](https://www.freecodecamp.org) and [Frontend Mentor](https://www.frontendmentor.io) to sharpen your skills and remain industry-relevant.
+The tech landscape evolves rapidly, and the ability to adapt and continuously learn is essential for sustained success. Use platforms such as [FreeCodeCamp](https://www.freecodecamp.org) to sharpen your skills and remain industry-relevant.
 
 This is not the end of your journey—it’s just the beginning. With a strong foundation, the road ahead is full of opportunities to innovate, explore, and grow. Embrace the challenges, continue learning, and enjoy the process.
   
+<!-- [Frontend Mentor](https://www.frontendmentor.io) -->
 
 ---
 ## Misc.
