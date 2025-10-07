@@ -52,11 +52,12 @@ The video homework uses emojis to represent the significance of each video. Belo
 - Please register on the following platforms:
   - [Figma]
   - [Scrimba]
-  - [Figma for beginners](https://www.youtube.com/playlist?list=PLKId0A0XCIbUYx3c_NYn13W9Z_kkIiA2m)
 - :blue_book: [Scrum in 20 mins] - **with Figma files**
 - Figma:
-  - :blue_book: [Figma Tutorial for Beginners](https://www.youtube.com/watch?v=ezldKx-jPag)
-  - :blue_book: [Figma UI Design Tutorial: Get Started in Just 24 Minutes]
+  - :bell: [Figma Tutorial for Beginners](https://www.youtube.com/watch?v=ezldKx-jPag)
+  - :bell: [Figma UI Design Tutorial: Get Started in Just 24 Minutes]
+  - :bell: [Learn Figma Fast (2025)](https://www.youtube.com/watch?v=hdEDKwI46_E)
+  - :blue_book: [Figma for beginners](https://www.youtube.com/playlist?list=PLKId0A0XCIbUYx3c_NYn13W9Z_kkIiA2m)
 - :blue_book: [How To Use TRELLO for Beginners: (14 min)]
 
 <!-- 
