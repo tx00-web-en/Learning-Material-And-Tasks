@@ -32,6 +32,12 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 4. **Apply Knowledge to the Project**: Deepen your understanding to 80%.
 5. **Extra Digging**: Achieve full mastery, bringing your understanding to 100%.
 
+---
+
+- Tools for Developers
+  - [web utilities for developers, designers, and creators](https://webutils.io/about)
+  - [Developer Cheat Sheets](https://www.devsheets.io/)
+  - [Design and UI resources](https://github.com/bradtraversy/design-resources-for-developers)
 
 ---
 
