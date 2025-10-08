@@ -62,7 +62,8 @@ Advancing technical skills offers various pathways depending on career goals or 
     - [Apple Security Bounty](https://security.apple.com/bounty/)  
     - [GitHub Bug Bounty](https://bounty.github.com/)  
  
-- AI **coding agents**
+- AI **SDK** and **coding agents**
+  - [AI SDK](https://ai-sdk.dev)
   - [Opencode](https://opencode.ai/): open source AI coding agent
   - [Claude Code](https://claudecode.io/)
 
