@@ -14,7 +14,6 @@ git commit -m "Add your commit message here"
 git push
 ```
 
-
 ### Journal Submission Deadlines
 
 - Reflection journals must be submitted by **Sunday at 5:00 PM**.  

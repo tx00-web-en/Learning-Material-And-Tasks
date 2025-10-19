@@ -7,7 +7,6 @@ These resources provide a **general overview of the process**, but since MongoDB
 1. Watch this [2-minute video tutorial](https://youtu.be/DMlWdd6Z66Q?feature=shared).
 2. Follow the instructions provided below:
 
-
 ---
 ### Steps to Set Up MongoDB Atlas
 
