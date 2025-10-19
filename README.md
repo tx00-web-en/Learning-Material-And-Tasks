@@ -1,27 +1,41 @@
 # This Week in Brief
 
-- [Homework](./material/Homework.md) for this Week.
-- [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers)
-- About Privacy
-- [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/Et5CIYwWNCVMnGe4jQWd88QBdGtZRWZV1Qxb_e6XOkbJOQ)
-- [Team Formation](./material/teams.md)
-- [9 Proven Time Management Techniques and Tools](https://www.usa.edu/blog/time-management-techniques/)
-- Advices from past participants
-  - [Translated](./material/feedback-translated.md)
-  - [Original](./material/feedback-original.md)
-- [Effective prompt for learning with an LLM](https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e)
-- [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
+> [!IMPORTANT]  
+> - [Homework](./material/Homework.md) for this Week.
+> - About Privacy
+> - [Team Formation](./material/teams.md)
+> - [9 Proven Time Management Techniques and Tools](https://www.usa.edu/blog/time-management-techniques/)
+> - Advices from past participants
+>   - [Translated](./material/feedback-translated.md)
+>   - [Original](./material/feedback-original.md)
+> - [Effective prompt for learning with an LLM](https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e)
 
-<!-- 
-Metropolia  PRE-INCUBATOR/yrityshautomo
-https://turbiini.net/
-https://turbiini.net/3149-2/
-https://www.linkedin.com/company/turbiini-campus-incubator
--->
-<!-- design templates: https://www.phlox.pro/ -->
+---
+
+> [!NOTE]  
+> - Tentative Timeline per session
+>   - Mini lecture (~35min)
+>   - Group / Pair programming `+ Break` (~50min)
+>   - Mini lecture (~35min)
+>   - Group / Pair programming (~35min)
+
 
 ----
-## How You'll Learn in This Course
+
+> [!TIP] 
+> - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/Et5CIYwWNCVMnGe4jQWd88QBdGtZRWZV1Qxb_e6XOkbJOQ)
+> - [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
+> - Tools for Developers
+>   - [web utilities for developers, designers, and creators](https://webutils.io/about)
+>   - [Developer Cheat Sheets](https://www.devsheets.io/)
+>   - [Design and UI resources](https://github.com/bradtraversy/design-resources-for-developers)
+>   - [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers)
+
+
+----
+
+### How You'll Learn in This Course
+
 We'll follow a 5-step learning cycle as shown in the figure below:
 
 ![](./material/img/learning-phases.png)
@@ -31,23 +45,6 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 3. **Pair Programming**: Collaborate to reach 60% comprehension.
 4. **Apply Knowledge to the Project**: Deepen your understanding to 80%.
 5. **Extra Digging**: Achieve full mastery, bringing your understanding to 100%.
-
----
-
-- Tools for Developers
-  - [web utilities for developers, designers, and creators](https://webutils.io/about)
-  - [Developer Cheat Sheets](https://www.devsheets.io/)
-  - [Design and UI resources](https://github.com/bradtraversy/design-resources-for-developers)
-
----
-
-## Tentative Timeline per session
-
-- Mini lecture (~35min)
-- Group / Pair programming `+ Break` (~50min)
-- Mini lecture (~35min)
-- Group / Pair programming (~35min)
-
 
 ----
 ## Topics
@@ -81,11 +78,10 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 ### Friday Morning: 
 
-<!-- - [Bug Bounty](./material/bug-bounty.md) -->
 - ~~Reveal/Drawio~~
+- [Bug Bounty](./material/bug-bounty.md)
 - Announcements:
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
-  - *Friday Afternoon from 16:00-19:00*: **Optional** QA session
   - [**Sprint 1**](https://github.com/tx00-web-en/Project/)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
@@ -102,24 +98,25 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 - You will have an autonomous group session.
 - Brainstorm to decide on a project idea and begin Sprint 1 planning.
-- **Communication and miscommunication** within the group --> Next week
 - [Agenda for Team Meeting](./material/group-agenda.md)
 - [UI & AI](./material/UI.md)
 
-### Friday Afternoon (Optional - 16:00-19:00):
 
-- Optional Session
+<!-- 
+Metropolia  PRE-INCUBATOR/yrityshautomo
+https://turbiini.net/
+https://turbiini.net/3149-2/
+https://www.linkedin.com/company/turbiini-campus-incubator
+-->
+<!-- design templates: https://www.phlox.pro/ -->
 
-<!--  - [Startup ideas YouTube channel](https://www.youtube.com/@GregIsenberg/videos) -->
 
----
 
-### Note
-
+<!-- 
+- [The many, many, many JavaScript runtimes of the last decade](https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/) 
+- [Startup ideas YouTube channel](https://www.youtube.com/@GregIsenberg/videos)
 - Pair programming begins in Week 3. You’ll be paired with different classmates to work on projects and benefit from each other’s strengths.
-
-
-<!-- - [The many, many, many JavaScript runtimes of the last decade](https://buttondown.com/whatever_jamie/archive/the-many-many-many-javascript-runtimes-of-the-last-decade/) -->
+-->
 
 
 
