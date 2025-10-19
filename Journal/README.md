@@ -18,10 +18,7 @@ git push
 
 ### Journal Submission Deadlines
 
-Below are the specific deadlines for each week's journal entry:
+- Reflection journals must be submitted by **Sunday at 5:00 PM**.  
+- **Important:** Late submissions will **not** be accepted. Ensure you commit and push all updates **before** the deadline.  
 
-- **Week 7 Deadline**: [05/10 @ 17:00](./week7.md)
-
-
-> **Important:** Late submissions will not be accepted. Please make sure to commit and push your updates before the deadlines.
 

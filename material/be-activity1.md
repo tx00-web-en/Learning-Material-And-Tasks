@@ -3,6 +3,7 @@
 ## Objective:
 The objective of this lab is to familiarize with API documentation using Swagger/OpenAPI. In this lab, you will be working with simple RESTful API provided by JSONPlaceholder to perform CRUD (Create, Read, Update, Delete) operations.
 
+
 ## Part 1/3 : JSONPlaceholder todos API
 
 > This is one way of generating documentation. For more check this [summary](./be-summary.md)
