@@ -9,7 +9,7 @@ The lab is divided into two parts:
 **Part 2**: You'll apply the knowledge from Part 1 to create a similar library for a `todosArray`.
 
 **Extra guidance**: You can refer to the example files [`petLib.js`](./src/petLib.js) and [`dogLib.js`](./src/dogLib.js) located in the `src` folder. These files contain complete solutions with different data models
-
+ 
 ---
 ## Part 1: Working with `carArray`
 
