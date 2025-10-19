@@ -11,7 +11,7 @@ To explain this typical API workflow, let's break it down step by step with a si
 ### 1. **Route**: The Entry Point
 
 Routes define **which HTTP method** (GET, POST, PUT, DELETE) and **URL endpoint** the client can use to interact with the server. The route captures the request and directs it to the appropriate **controller**.
-
+ 
 Example:
 ```js
 // routes/workoutRoutes.js
