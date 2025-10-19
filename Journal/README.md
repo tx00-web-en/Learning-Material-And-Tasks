@@ -20,11 +20,11 @@ git push
 
 Below are the specific deadlines for each week's journal entry:
 
-- **Week 3 Deadline**: [07/09 @ 17:00](./week3.md)
-- **Week 4 Deadline**: [14/09 @ 17:00](./week4.md)
-- **Week 5 Deadline**: [21/09 @ 17:00](./week5.md)
-- **Week 6 Deadline**: [28/10 @ 17:00](./week6.md)
-- **Week 7 Deadline**: [05/10 @ 17:00](./week7.md)
+- **Week 3 Deadline**: [09/11 @ 17:00](./week3.md)
+- **Week 4 Deadline**: [16/11 @ 17:00](./week4.md)
+- **Week 5 Deadline**: [23/11 @ 17:00](./week5.md)
+- **Week 6 Deadline**: [30/11 @ 17:00](./week6.md)
+- **Week 7 Deadline**: [07/12 @ 17:00](./week7.md)
 
 
 > **Important:** Late submissions will not be accepted. Please make sure to commit and push your updates before the deadlines.
