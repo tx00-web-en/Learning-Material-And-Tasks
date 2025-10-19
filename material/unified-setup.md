@@ -19,20 +19,7 @@ Installing Node.js on macOS follows almost the same procedure as Windows. All yo
 
 NPM configuration:
 
-1. Older MacOS (bash terminal)
-
-```bash
-            mkdir ~/.npm-packages
-            npm config set prefix ~/.npm-packages
-            echo NPM_PACKAGES="${HOME}/.npm-packages" >> ${HOME}/.bashrc
-            echo prefix=${HOME}/.npm-packages >> ${HOME}/.npmrc
-            echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ${HOME}/.bashrc
-            echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ${HOME}/.bashrc
-            echo source "~/.bashrc" >> ${HOME}/.bash_profile
-            source ~/.bashrc
-```
-
-2. Newer MacOS (zsh terminal)
+1. Newer MacOS (zsh terminal)
 
 ```bash
             mkdir ~/.npm-packages
@@ -43,6 +30,19 @@ NPM configuration:
             echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ${HOME}/.zshrc
             echo source "~/.zshrc" >> ${HOME}/.zsh_profile
             source ~/.zshrc
+```
+
+2. Older MacOS (bash terminal)
+
+```bash
+            mkdir ~/.npm-packages
+            npm config set prefix ~/.npm-packages
+            echo NPM_PACKAGES="${HOME}/.npm-packages" >> ${HOME}/.bashrc
+            echo prefix=${HOME}/.npm-packages >> ${HOME}/.npmrc
+            echo NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\" >> ${HOME}/.bashrc
+            echo PATH=\"\$NPM_PACKAGES/bin:\$PATH\" >> ${HOME}/.bashrc
+            echo source "~/.bashrc" >> ${HOME}/.bash_profile
+            source ~/.bashrc
 ```
 
 ---

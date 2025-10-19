@@ -8,17 +8,15 @@
 <!-- mic+OBS  -->
 <!-- [Andrej Karpathy: Software Is Changing (Again) ](https://www.youtube.com/watch?v=LCEmiRjPEtQ) -->
 
-
-
-
-
-
 ---
 
 ## 1. Intro: *What?*
 
 - ~~Reveal+Drawio~~
-- Duration & Commitment: **2 months, 3 days/week**
+- Duration & Commitment:
+  - *Total Duration:* **2 months**  
+  - *Weekly Schedule:* **3 days** of **in‑class** sessions  
+  - *Independent Work:* Expect an **additional 2 day**s per week of self‑study, assignments, or project work outside class  
 - Outcomes:
   - Build a **Fullstack AI App** 
   - *(Demos)*
@@ -63,10 +61,14 @@
 
 ### b) Relevance
 
+- ~~Reveal+Drawio~~
 - [Backbone for graduation (Thesis, Projects, Internships)](./material/img/Relevance.png)
-  - Thesis (15cr), Work placement (15cr), Innovation project (10cr)
-  - Project 1 & 2 (10cr), Algorithms (5cr), Design Patterns (5cr)
-  - Web courses maps to Total (90cr: 15cr+55cr+20)
+  - Thesis (15cr)
+  - Work placement (30cr)
+  - Innovation project (10cr)
+  - Project 1 & 2 (10cr)
+  - Algorithms (5cr), Design Patterns (5cr)
+    - Web courses maps to Total (**90cr**: 15cr+55cr+20)
 - Faster path → possibilty to graduate in 3 years
 - Startup potential ([Turbiini incubator](https://www.metropolia.fi/fi/asiakastyot-ja-palvelut/yrittajyyskiihdyttamo-turbiini) )
 - Internship & career opportunities
@@ -75,7 +77,7 @@
   - [Salary](https://www.indeed.com/career/full-stack-developer/salaries?from=top_sb)
   - [How to negotiate your full-stack developer salary](https://www.salaryexpert.com/)
 - Backbone for AI specialization
-- ~~[Visual Placeholder: Roadmap/Mapping Web → Other Courses → Graduation]~~
+<!-- - ~~[Visual Placeholder: Roadmap/Mapping Web → Other Courses → Graduation]~~ -->
 
 <!-- - Turbiini Metropolia 
 https://www.metropolia.fi/fi/asiakastyot-ja-palvelut/yrittajyyskiihdyttamo-turbiini
@@ -116,7 +118,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - Preparation required before each class
 - AI For SW eng
   - AI assitant vs Vibe coding
-  - Ai replaces some taks, but make 90% more productive
+  - AI doesn’t just replace tasks — it frees you to be 90% more productive where your impact counts
 
 ---
 
@@ -129,7 +131,8 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - AI Related Tools:
   - [Use of AI in the course: copilot / ChatGPT]
   - [GitHub Copilot](https://github.com/features/copilot)
-  - [Cody](https://sourcegraph.com/cody) 
+  - [GitHub CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+  - [Bing Copilot](https://bing.com/chat) 
   - [Ollama](https://ollama.com/), [Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder)
   - [Vercel AI SDK](https://sdk.vercel.ai/docs/introduction): a toolkit designed to help developers build AI-powered applications using JavaScript and TypeScript.
   <!-- Simplifies the process of integrating large language models (LLMs) into your applications by providing a unified API that works with different model providers -->
