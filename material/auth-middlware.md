@@ -17,7 +17,7 @@ function checkAdminRole(req, res, next) {
     res.status(403).send("Access denied");
   }
 }
-
+ 
 module.exports = checkAdminRole;
 ```
 

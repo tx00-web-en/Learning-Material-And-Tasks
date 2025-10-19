@@ -20,4 +20,4 @@ git push
 
 - Reflection journals must be submitted by **Sunday at 5:00 PM**.  
 - **Important:** Late submissions will **not** be accepted. Ensure you commit and push all updates **before** the deadline.  
-
+ 
