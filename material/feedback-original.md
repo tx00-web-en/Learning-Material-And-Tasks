@@ -1,5 +1,5 @@
 # What advice would you like to give to future participants?
-
+ 
 - Näkekää vaivaa, se on sen arvoista.
 - Kurssista pääsee helposti läpi, mutta jos haluat oppia jotain, katso videoita ja pistä copilot pois päältä tehtäviä tehdessä.
 - älä ohita mitään luokkia, koska materiaalia on liian vaikea ymmärtää tulevaisuudessa

@@ -7,7 +7,7 @@
 - These components are closely intertwined, reflecting the real-world interactions between different aspects of web development.
 - This is the twelfth iteration of the course, and it has been refined based on invaluable feedback from previous students.
 - Notably, graduates of this course have successfully transitioned to roles as Junior Web Developers, launched their startups (consider one exchange student as an example), or advanced their careers as skilled software developers.
-
+ 
 ### Showcase of What You Can Achieve
 
 - Upon completing this course and successfully finishing the project, you'll have taken your first substantial steps towards constructing an end-to-end system.

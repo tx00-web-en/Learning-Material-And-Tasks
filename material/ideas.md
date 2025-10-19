@@ -1,5 +1,5 @@
 # Some Ideas
-
+ 
 ---
 ### **1. AI-Powered Writing Assistant**
 - **Description**: Users enter a sentence, and the app helps rewrite it to sound more professional or casual.  

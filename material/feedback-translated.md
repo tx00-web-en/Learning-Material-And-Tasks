@@ -1,5 +1,5 @@
 # What advice would you like to give to future participants?
-
+ 
 > **Note:** Some comments were originally written in [Finnish](./feedback-original.md). These have been translated into English and are marked with the prefix **Auto translated**.
 
 - **Auto translated**: Go through everything carefully at the beginning, so the following material won't feel too overwhelming. Many concepts build on top of each other, so if you don't understand the earlier content, it's unlikely you'll understand the next.  

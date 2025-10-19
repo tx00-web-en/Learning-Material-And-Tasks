@@ -1,5 +1,5 @@
 # Analysis of what each question can reveal about you.
-
+ 
 ---
 ### **1. Would you rather spend a week in the Bahamas or get a Corsair Vengeance i7500 gaming PC?**
 - **Purpose:** Reveals interests and priorities.

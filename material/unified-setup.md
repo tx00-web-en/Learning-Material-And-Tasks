@@ -9,7 +9,7 @@ Install all of these:
 3. Google Chrome (or/and Firefox)
 4. Homebrew (For Mac Only)
 5. Git / GitHub
-
+ 
 ---
 ## NodeJS
 
