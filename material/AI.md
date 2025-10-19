@@ -12,13 +12,13 @@ Artificial intelligence (AI) is a valuable tool for enhancing your programming j
 ### Links
 
 - [Rules of using LLM at Metropolia](./AI_Guidelines.pdf)
-- AI coding companions
-  - GitHub Copilot: Claude, GPT
+- [GitHub Copilot](https://github.com/features/copilot)
+- [GitHub CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+
+ <!--
 	- [**The all NEW GitHub Copilot Experience**]
-  - [Cursor](https://www.cursor.com/)
-  - [Cody]
   - [Tutorial]
-  <!-- - [Tabnine] -->
+-->
 
 
 
