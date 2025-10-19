@@ -1,7 +1,7 @@
 # Activity 2
 
 Prepare documentation for the Jobs API server, which was a part of Monday's pair programming. The server's source code can be found [here](https://github.com/tx00-resources-en/week7-bepp-starter). Here are some instructions to guide you:
-
+ 
 ### **Part 1: Using LLM**
 
 1. **Try the Prompt with LLM**:
