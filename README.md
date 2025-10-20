@@ -23,7 +23,7 @@
 ----
 
 > [!TIP] 
-> - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/Et5CIYwWNCVMnGe4jQWd88QBdGtZRWZV1Qxb_e6XOkbJOQ)
+> - [Zoom Recordings](#)
 > - [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
 > - Tools for Developers
 >   - [Web utilities for developers, designers, and creators](https://webutils.io/about)
