@@ -1,5 +1,9 @@
 # **Team Formations & Rationale**
 
+--------
+## Morning
+----------
+
 #### **Team A: The High-Collaboration Core**
 *   **Members:** Tamseela, Hoang, Roshini, Olga
 *   **Rationale:** This team is built around a powerful and rare foundation: a shared preference for a **High-Touch Collaboration** style from its core members.
@@ -55,3 +59,42 @@
     *   **Leadership & Workflow:** As a small team of three **Night Owls**, communication and scheduling will be simple and direct. While there isn't a primary "Leader," the roles are so well-defined that they can operate as a collaborative, flat structure.
     *   **Dynamic Roles:** The team dynamics are perfectly balanced: **Puntawat** is the Problem-Solver/Creative, **Hathadura** is the Morale Booster, and **Kumudu** is the Creative/Morale Booster.
     *   **Technical Skills:** Their technical skills are perfectly complementary. They have two **Backend** specialists (Puntawat, Hathadura) to build the engine and one **UI/UX** specialist (Kumudu) to build the chassis, making them a complete and self-sufficient product team.
+
+
+--------
+
+## Afternoon
+
+----------
+
+#### **Team 1: The High-Collaboration Hub**
+*   **Members:** Tamseela, Hoang, Olga, Chandina
+*   **Rationale:** This team is built on the strongest possible communication foundation. **Tamseela** and **Hoang** both chose the rare **"High-Touch Collaboration"** style, meaning they are natural initiators of frequent check-ins and pair programming. This is perfectly complemented by **Olga** and **Chandina**, whose "Healthy Mix" style allows them to thrive in such a communicative environment. The team is led by Tamseela, has dedicated Problem-Solvers (Hoang, Olga), a Creative (Olga), and a Morale Booster (Chandina), making it a well-rounded and deeply connected unit.
+
+#### **Team 2: The Independent Night Owls**
+*   **Members:** Wang, Unai San, Twe He, Jiya Kanhirathan
+*   **Rationale:** This team is a perfect match of schedule and work style. All four members are **Night Owls** who prefer to **Work Independently**. This creates a powerful synergy where they can divide tasks, focus intensely during their peak late-night hours, and trust each other to deliver. The dual leadership of **Wang** (analytical) and **Unai San** (creative) provides a balanced direction for their focused, autonomous work.
+
+#### **Team 3: The Early Bird Leadership Trio**
+*   **Members:** Sandip, Swostika, Chun
+*   **Rationale:** This is a small, senior, and highly autonomous team designed to take ownership of a major project component. Its power comes from the combination of two primary Leaders, **Sandip** and **Swostika**, who are also both **Early Birds**. This allows them to align on strategy and drive progress at the start of each day. **Chun**, a fellow Early Bird, provides essential Problem-Solver and Morale Booster support, creating a complete and efficient leadership core.
+
+#### **Team 4: The Adaptable All-Rounders**
+*   **Members:** Melkamu, Roberto, Sailesh, Roshini
+*   **Rationale:** This team is defined by its exceptional flexibility. Anchored by **Melkamu**, a Leader who excels in all dynamic roles, the team is built to adapt to any situation. Their **Adaptable** schedules allow them to work whenever needed. The team's workflow is internally balanced, with an "Independent Worker" (**Roberto**) for focused tasks and two "Healthy Mix" collaborators (**Sailesh** and **Roshini**) to ensure the team stays connected.
+
+#### **Team 5: The Night Owl Backend Powerhouse**
+*   **Members:** Dilmi, Puntawat, Hathadura, Iida
+*   **Rationale:** This is a highly specialized team built for a clear purpose: to architect and build the project's backend. All four members are **Night Owls**, ensuring their schedules are perfectly aligned for tackling complex logical problems together. The team is led by **Dilmi**, a backend-focused Leader/Problem-Solver, and is supported by two other **Backend** specialists (Puntawat, Hathadura) and a versatile **Full-Stack** developer (Iida), making them a formidable technical unit.
+
+#### **Team 6: The UI/UX Design Studio**
+*   **Members:** Taysa Vieira, Juyin, Nhut, Zongru
+*   **Rationale:** This team is structured like a design studio, with a clear focus on creating a polished user experience. It features three primary **UI/UX** specialists (**Juyin**, **Nhut**, and **Zongru**). The group is led by **Taysa**, a backend-focused Leader. This unique structure is a strategic advantage, as the creative UI team gets direct technical guidance on what is feasible, ensuring a smooth and integrated development process. The adaptable schedules of the UI specialists can easily sync with their Early Bird leader.
+
+#### **Team 7: The Dual-Leader Core**
+*   **Members:** THANH HONG, Ngoc, Aroush, Rui
+*   **Rationale:** This is a flexible powerhouse team built around two exceptional, all-rounder Leaders, **THANH HONG** and **Ngoc**. Their combined leadership skills allow them to manage a diverse set of work styles and schedules effectively. They are supported by two key specialists: **Aroush**, a primary Creative and Morale Booster to drive innovation and team cohesion, and **Rui**, a dedicated Backend Problem-Solver to handle deep technical challenges.
+
+#### **Team 8: The Creative Night Owl Trio**
+*   **Members:** Sachin, POORNIMA, Kumudu
+*   **Rationale:** This is a small, agile team of **Night Owls** designed for maximum creative output. The group is a triad of "Creative" specialists, with **POORNIMA** and **Kumudu** also bringing a strong "Morale Booster" focus. While they don't have a formal leader, their shared schedule, collaborative nature, and complementary technical skills (Full-Stack and UI/UX) allow them to function as a highly effective and self-organizing "idea factory."
