@@ -1,5 +1,41 @@
 # **Team Formations & Rationale**
 
+
+#### **Team A: The Night Owl Innovators (Kept)**
+*   **Members:** Dilmi, Aroush, Sachin, Iida
+*   **Rationale:** This team was kept because it forms a perfect **Night Owl** unit. All four members do their best work late, ensuring their schedules are perfectly synchronized for collaboration. The group is led by **Dilmi** (Leader/Problem-Solver), who provides a strong technical anchor. The team is a creative powerhouse, with three members (Aroush, Sachin, Iida) identifying as "Creative," and is kept positive by **Aroush's** "Morale Booster" focus.
+
+#### **Team B: The Adaptable Powerhouse (Kept)**
+*   **Members:** Melkamu, Sailesh, Juyin, Rui
+*   **Rationale:** This team was kept for its exceptional versatility and strong leadership. **Melkamu** is a universal leader who can guide and motivate any team composition. The entire group shares an **Adaptable** schedule, making them highly flexible. The team is also technically complete, with **Full-Stack** (Melkamu, Sailesh), **UI/UX** (Juyin), and **Backend** (Rui) skills all represented.
+
+#### **Team C: The Night Owl Tech Trio (Kept)**
+*   **Members:** Puntawat, Hathadura, Kumudu
+*   **Rationale:** This team was kept because it functions as a perfect, self-contained technical unit. All three members are **Night Owls**, ensuring seamless scheduling. Their skills are perfectly complementary: **Puntawat** and **Hathadura** are both **Backend** specialists, while **Kumudu** is a **UI/UX** specialist. This allows them to function as a dedicated feature crew, building the logic and the interface in lockstep.
+
+#### **Team D: The High-Collaboration Creatives (Kept)**
+*   **Members:** Tamseela, Roshini, Olga
+*   **Rationale:** This trio was kept because it is built for proactive communication and creative brainstorming. **Tamseela** is a **"High-Touch Collaboration"** Leader, meaning she naturally drives frequent check-ins and group work. This is a perfect match for **Roshini** and **Olga**, who are both primary "Creatives" with a "Healthy Mix" style. This team is designed to generate and refine ideas together.
+
+#### **Team E: The Structured Independents**
+*   **Members:** Wang, Roberto, Zongru, Twe He
+*   **Rationale:** This team is intentionally structured to maximize the potential of its "Independent Work" members. It is led by **Wang**, a "Night Owl" Leader who also prefers to work independently and is thus perfectly suited to set clear goals and trust his team to execute. The three other members (**Roberto**, **Zongru**, **Twe He**) can work autonomously without friction, knowing their leader understands their workflow. The team is technically balanced with Full-Stack, UI/UX, and another Full-Stack developer.
+
+#### **Team F: The Early Bird Leadership Core**
+*   **Members:** Sandip, Ngoc, Taysa Vieira, Chun
+*   **Rationale:** This is a powerhouse of leadership and productivity. All four members are **Early Birds**, creating a team that will start each day strong and aligned. The group contains three primary **Leaders** (Sandip, Ngoc, Taysa), making them a highly autonomous and decisive unit. Their shared "Healthy Mix" collaboration style and strong Full-Stack/Backend technical skills make them capable of tackling the project's most complex architectural challenges.
+
+#### **Team G: The High-Touch Design Duo**
+*   **Members:** Swostika, Hoang, THANH HONG, Nhut
+*   **Rationale:** This team is built around a core of proactive communicators and UI specialists. **Swostika** (Leader/Creative) and **Hoang** (Problem-Solver) provide a powerful UI/Backend duo. Crucially, **Hoang's** "High-Touch" style will drive collaboration, which is a great match for the "Healthy Mix" preference of the others. The team is led by two super-leaders, **Swostika** and **THANH HONG**, and possesses a strong UI focus with two dedicated specialists (**Swostika**, **Nhut**).
+
+#### **Team H: The Cohesive Creative Unit**
+*   **Members:** Unai San, Jiya Kanhirathan, Chandina, Hoang
+*   **Rationale:** This team is designed for a positive, creative, and collaborative workflow. It is led by **Unai San**, a Leader who is also a primary "Creative." He is paired with another strong "Creative" and "Morale Booster," **Jiya Kanhirathan**. The team's social glue is **Chandina**, a primary "Morale Booster," ensuring a supportive environment. The team's work style is balanced, with two "Independent" workers whose potential for isolation is mitigated by the highly collaborative and positive influence of the other members.
+
+
+<!-- 
+
 --------
 ## Morning
 ----------
@@ -60,41 +96,4 @@
     *   **Dynamic Roles:** The team dynamics are perfectly balanced: **Puntawat** is the Problem-Solver/Creative, **Hathadura** is the Morale Booster, and **Kumudu** is the Creative/Morale Booster.
     *   **Technical Skills:** Their technical skills are perfectly complementary. They have two **Backend** specialists (Puntawat, Hathadura) to build the engine and one **UI/UX** specialist (Kumudu) to build the chassis, making them a complete and self-sufficient product team.
 
-
---------
-
-## Afternoon
-
-----------
-
-#### **Team A: The Night Owl Innovators (Kept)**
-*   **Members:** Dilmi, Aroush, Sachin, Iida
-*   **Rationale:** This team was kept because it forms a perfect **Night Owl** unit. All four members do their best work late, ensuring their schedules are perfectly synchronized for collaboration. The group is led by **Dilmi** (Leader/Problem-Solver), who provides a strong technical anchor. The team is a creative powerhouse, with three members (Aroush, Sachin, Iida) identifying as "Creative," and is kept positive by **Aroush's** "Morale Booster" focus.
-
-#### **Team B: The Adaptable Powerhouse (Kept)**
-*   **Members:** Melkamu, Sailesh, Juyin, Rui
-*   **Rationale:** This team was kept for its exceptional versatility and strong leadership. **Melkamu** is a universal leader who can guide and motivate any team composition. The entire group shares an **Adaptable** schedule, making them highly flexible. The team is also technically complete, with **Full-Stack** (Melkamu, Sailesh), **UI/UX** (Juyin), and **Backend** (Rui) skills all represented.
-
-#### **Team C: The Night Owl Tech Trio (Kept)**
-*   **Members:** Puntawat, Hathadura, Kumudu
-*   **Rationale:** This team was kept because it functions as a perfect, self-contained technical unit. All three members are **Night Owls**, ensuring seamless scheduling. Their skills are perfectly complementary: **Puntawat** and **Hathadura** are both **Backend** specialists, while **Kumudu** is a **UI/UX** specialist. This allows them to function as a dedicated feature crew, building the logic and the interface in lockstep.
-
-#### **Team D: The High-Collaboration Creatives (Kept)**
-*   **Members:** Tamseela, Roshini, Olga
-*   **Rationale:** This trio was kept because it is built for proactive communication and creative brainstorming. **Tamseela** is a **"High-Touch Collaboration"** Leader, meaning she naturally drives frequent check-ins and group work. This is a perfect match for **Roshini** and **Olga**, who are both primary "Creatives" with a "Healthy Mix" style. This team is designed to generate and refine ideas together.
-
-#### **Team E: The Structured Independents**
-*   **Members:** Wang, Roberto, Zongru, Twe He
-*   **Rationale:** This team is intentionally structured to maximize the potential of its "Independent Work" members. It is led by **Wang**, a "Night Owl" Leader who also prefers to work independently and is thus perfectly suited to set clear goals and trust his team to execute. The three other members (**Roberto**, **Zongru**, **Twe He**) can work autonomously without friction, knowing their leader understands their workflow. The team is technically balanced with Full-Stack, UI/UX, and another Full-Stack developer.
-
-#### **Team F: The Early Bird Leadership Core**
-*   **Members:** Sandip, Ngoc, Taysa Vieira, Chun
-*   **Rationale:** This is a powerhouse of leadership and productivity. All four members are **Early Birds**, creating a team that will start each day strong and aligned. The group contains three primary **Leaders** (Sandip, Ngoc, Taysa), making them a highly autonomous and decisive unit. Their shared "Healthy Mix" collaboration style and strong Full-Stack/Backend technical skills make them capable of tackling the project's most complex architectural challenges.
-
-#### **Team G: The High-Touch Design Duo**
-*   **Members:** Swostika, Hoang, THANH HONG, Nhut
-*   **Rationale:** This team is built around a core of proactive communicators and UI specialists. **Swostika** (Leader/Creative) and **Hoang** (Problem-Solver) provide a powerful UI/Backend duo. Crucially, **Hoang's** "High-Touch" style will drive collaboration, which is a great match for the "Healthy Mix" preference of the others. The team is led by two super-leaders, **Swostika** and **THANH HONG**, and possesses a strong UI focus with two dedicated specialists (**Swostika**, **Nhut**).
-
-#### **Team H: The Cohesive Creative Unit**
-*   **Members:** Unai San, Jiya Kanhirathan, Chandina, Hoang
-*   **Rationale:** This team is designed for a positive, creative, and collaborative workflow. It is led by **Unai San**, a Leader who is also a primary "Creative." He is paired with another strong "Creative" and "Morale Booster," **Jiya Kanhirathan**. The team's social glue is **Chandina**, a primary "Morale Booster," ensuring a supportive environment. The team's work style is balanced, with two "Independent" workers whose potential for isolation is mitigated by the highly collaborative and positive influence of the other members.
+-->
