@@ -1,7 +1,7 @@
 # **Team Formations & Rationale**
 
 
-#### **Team A: The Night Owl Innovators (Kept)**
+<!-- #### **Team A: The Night Owl Innovators (Kept)**
 *   **Members:** Dilmi, Aroush, Sachin, Iida
 *   **Rationale:** This team was kept because it forms a perfect **Night Owl** unit. All four members do their best work late, ensuring their schedules are perfectly synchronized for collaboration. The group is led by **Dilmi** (Leader/Problem-Solver), who provides a strong technical anchor. The team is a creative powerhouse, with three members (Aroush, Sachin, Iida) identifying as "Creative," and is kept positive by **Aroush's** "Morale Booster" focus.
 
@@ -31,10 +31,7 @@
 
 #### **Team H: The Cohesive Creative Unit**
 *   **Members:** Unai San, Jiya Kanhirathan, Chandina, Hoang
-*   **Rationale:** This team is designed for a positive, creative, and collaborative workflow. It is led by **Unai San**, a Leader who is also a primary "Creative." He is paired with another strong "Creative" and "Morale Booster," **Jiya Kanhirathan**. The team's social glue is **Chandina**, a primary "Morale Booster," ensuring a supportive environment. The team's work style is balanced, with two "Independent" workers whose potential for isolation is mitigated by the highly collaborative and positive influence of the other members.
-
-
-<!-- 
+*   **Rationale:** This team is designed for a positive, creative, and collaborative workflow. It is led by **Unai San**, a Leader who is also a primary "Creative." He is paired with another strong "Creative" and "Morale Booster," **Jiya Kanhirathan**. The team's social glue is **Chandina**, a primary "Morale Booster," ensuring a supportive environment. The team's work style is balanced, with two "Independent" workers whose potential for isolation is mitigated by the highly collaborative and positive influence of the other members. 
 
 --------
 ## Morning

@@ -9,6 +9,7 @@
 >   - [Translated](./material/feedback-translated.md)
 >   - [Original](./material/feedback-original.md)
 > - [Effective prompt for learning with an LLM](https://gist.github.com/Dowwie/5a66cd8df639e4c98043fc7f507dab9e)
+> - [Bug Bounty](./material/bug-bounty.md)
 
 ---
 
@@ -78,28 +79,33 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Friday Morning: 
 
 - ~~Reveal/Drawio~~
-- [Bug Bounty](./material/bug-bounty.md)
 - Announcements:
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
-  - [**Sprint 1**](https://github.com/tx00-web-en/Project/)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
   - [Slides](./material/scrum.pdf)
+- **Sprint 1**
+  - [Project Ideas](./material/project-ideas.md)
+  - [UI & AI](./material/UI.md)
+  - [Sprint 1: Deadline 2025-11-07](https://github.com/tx00-web-en/Project/)
+  - [Agenda for Team Meeting](./material/group-agenda.md)  
+  
+### Friday Afternoon (13:00-16:00):
+
+- You will have an autonomous group session.
+- Brainstorm to decide on a project idea and begin Sprint 1 planning. Here are [**examples to inspire your group**](./material/project-ideas.md) — you may use one as‑is, adapt it, or take it in a completely new direction.
+- [Agenda for Team Meeting](./material/group-agenda.md)
+
+
+### Friday Afternoon (Optional - 16:00-19:00):
+
 - **Explore npm Packages**: Discover npm packages, which act as building blocks for your projects.
   - [Summary](./material/npm.md)
   - [Activity](./material/npm-activity.md)  
 - **Git Basics**: Learn how to use Git to track changes in your code.
   - [Summary](./material/github.md)
   - [Activity](./material/github-activity2.md)
-
-### Friday Afternoon (13:00-16:00):
-
-- You will have an autonomous group session.
-- Brainstorm to decide on a project idea and begin Sprint 1 planning.
-- [Agenda for Team Meeting](./material/group-agenda.md)
-- [UI & AI](./material/UI.md)
-
 
 <!-- 
 Metropolia  PRE-INCUBATOR/yrityshautomo
