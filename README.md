@@ -97,7 +97,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - Brainstorm to decide on a project idea and begin Sprint 1 planning. Here are [**examples to inspire your group**](./material/project-ideas.md) — you may use one as‑is, adapt it, or take it in a completely new direction.
 - [Agenda for Team Meeting](./material/group-agenda.md)
 
-
+---
 ### Friday Afternoon (Optional - 16:00-19:00):
 
 - **Explore npm Packages**: Discover npm packages, which act as building blocks for your projects.
