@@ -3,6 +3,7 @@
 This afternoon's session will be conducted autonomously by each group. Teams can choose whether to meet online (via Discord, Zoom, or Teams) or reserve a room on campus.
 
 - [Agenda](#agenda-for-team-meeting)
+- [Project Ideas](#project-ideas)
 - [Links](#recommended-links)
 
 ### Agenda for Team Meeting
@@ -25,11 +26,33 @@ This afternoon's session will be conducted autonomously by each group. Teams can
      - One member to focus on reviewing `CSS` skills, particularly media queries and flexbox. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5680000000060713?sid=4846325380) at Metropolia's Library.
      - One or two members to work with `Figma`. Here's a very good resource [available](https://metropolia.finna.fi/Record/nelli15.5850000000052946?sid=4846325074) at Metropolia's Library.
      - Another member to manage `Trello` for project coordination and product/sprint backlog and user stories.
+     - Feel free to use your favorite LLM (e.g. ChatGPT, Bing Copilot etc.) to refine the agenda items and brainstorm project ideas.
+
+
+ 5. **Note: Important Dates**
+   - *Prototype* (Figma): due before 2025-11-07
+   - *I:* due before 2025-11-21 
+   - *AI component:* due 2025-12-11 
+   - Backend & Frontend: developed iteratively, applying weekly learnings starting *week 2*
+   - Ensure effective time management and coordinate closely to maintain a balanced workload.
    
-> Feel free to use your favorite LLM (e.g. ChatGPT, Bing Copilot etc.) to refine the agenda items and brainstorm project ideas.
+###  Project Ideas
+
+**If you don’t already have a project idea**, you can consider one of the following MERN fullstack + AI‑powered applications.  These are **examples to inspire your group** — you may use one as‑is, adapt it, or take it in a completely new direction.
+
+- [Note‑taking Web App](./ideas/note.md)
+- [AI‑Powered Blogging Platform](./ideas/blog.md)
+- [E‑commerce Store with Admin Dashboard](./ideas/e-commerce.md)
+- [URL Shortening API Landing Page](./ideas/url.md)
+- [Bookmarks](./ideas/bookmarks.md)
+- [E‑Learning Platform](./ideas/e-learning.md)
+- [A cloud‑based storage and collaboration](./ideas/fylo.md)
+- [ Job Listings with Filtering](./ideas/jobs.md)
+- [Additional Brainstorming Ideas](./ideas/other.md)
 
 ### Recommended Links
 
+- [v0 Documentation](https://v0.dev/docs)
 - [Figma UI Design Tutorial: Get Started in Just 24 Minutes](https://youtu.be/FTFaQWZBqQ8)
 - [How To Use TRELLO for Beginners: (14 min)](https://youtu.be/6drUzoeHZkg)
 - CSS Refresher

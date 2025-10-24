@@ -63,10 +63,9 @@ Although the challenge begins as a static landing page, you will transform it in
 
 ### Workload Distribution
 
-To ensure balanced contributions, each group should assign roles clearly:  
-- **One or two members** focusing on **UI/UX** (adapting the layout, ensuring usability). This includes **Figma prototyping** in Sprint 1.  
-- **One or two members** focusing on **backend development** (Express APIs, MongoDB integration, LLM calls).  
-- Remaining members supporting **frontend logic, testing, and deployment**.  
+To ensure balanced contributions, each group should assign roles clearly e.g **One or two members** focusing on **UI/UX** (adapting the layout, ensuring usability). This includes **Figma prototyping** in Sprint 1.  
+
+This division ensures that design, prototyping, and technical implementation all progress in parallel.
 
 ---
 
