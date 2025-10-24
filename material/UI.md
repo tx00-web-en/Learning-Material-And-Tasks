@@ -137,6 +137,7 @@ create a landing page for website that can collects and displays testimonials
 
 ---
 ### Links
+
 - [v0 Documentation](https://v0.dev/docs)
 - [Vercel's VP of Product on how to use v0 to build your own ideas (Step-by-Step Guide)](https://www.youtube.com/watch?v=sCFS_U7d9Do)
 - [Maximizing outputs with v0: From UI generation to code creation](https://vercel.com/blog/maximizing-outputs-with-v0-from-ui-generation-to-code-creation)
