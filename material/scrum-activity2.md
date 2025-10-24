@@ -4,7 +4,7 @@ Work with your team to **brainstorm and agree on a project idea**, then begin pl
 
 **Notes:**
 
-* You can start Task 3 now and continue during the autonomous session in the afternoon.
+* You can start this task now and continue during the autonomous session in the afternoon.
 * Effective collaboration within your team is essential for success.
 * Apply critical thinking when defining and prioritizing **user stories**.
 * Reflect on how Scrum principles apply to your planning.

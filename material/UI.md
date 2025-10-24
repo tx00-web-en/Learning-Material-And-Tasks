@@ -114,7 +114,7 @@ The website [v0.dev](https://v0.dev/) is an AI-driven tool developed by Vercel L
 - **Integration with Modern Technologies**: It supports frameworks like React, and can generate code compatible with Tailwind CSS.
 - **AI Assistance**: Think of it as an AI-powered pair programmer that can help with generating code, building diagrams, and providing technical guidance.
 
-> Her are some prompts to help get started with designing layouts using both Vanilla CSS and Tailwind CSS on [v0.dev](https://v0.dev/)
+> Here are some prompts to help get started with designing layouts using both Vanilla CSS and Tailwind CSS on [v0.dev](https://v0.dev/)
 
 1.  Example 1: Vanilla CSS
 ```
