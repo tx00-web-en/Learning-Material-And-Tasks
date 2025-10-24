@@ -90,6 +90,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
   - [UI & AI](./material/UI.md)
   - [Sprint 1: Deadline 2025-11-07](https://github.com/tx00-web-en/Project/)
   - [Agenda for Team Meeting](./material/group-agenda.md)  
+  - [Activity](./material/scrum-activity2.md)
   
 ### Friday Afternoon (13:00-16:00):
 
