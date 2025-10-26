@@ -313,4 +313,4 @@ When comparing **Vite** to **Create React App (CRA)**, the primary differences l
 [Writing Markup with JSX]:https://react.dev/learn/writing-markup-with-jsx
 [JavaScript in JSX with Curly Braces]:https://react.dev/learn/javascript-in-jsx-with-curly-braces
 [Passing Props to a Component]:https://react.dev/learn/passing-props-to-a-component
-[Conditional Rendering]:https://react.dev/learn/rendering-lists 
+[Conditional Rendering]:https://react.dev/learn/conditional-rendering 
