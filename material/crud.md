@@ -225,7 +225,7 @@ res.json(newCar); // Sends the newly created car object as a JSON response
 
 #### `res.send()`: Sending Text Responses
 
-**`res.send()`** (not explicitly used in the given code but often referred to alongside JSON responses) can be used to send plain text, HTML, or any other type of data as a response. 
+**`res.send()`** (not explicitly used in the given code but often referred to alongside JSON responses) can be used to send **plain text, HTML, or any other type of data as a response**. 
 
 Example:
 

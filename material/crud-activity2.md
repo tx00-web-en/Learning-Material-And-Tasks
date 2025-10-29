@@ -20,8 +20,14 @@ In this lab, you will build API handlers for managing `cars` and `todos` by work
   ```
 
 3. Remove the `.git` folder:
-    - **Windows Users:** Run the following command to remove the Git history: `Remove-Item -Recurse -Force .git`
-    - **macOS/Linux Users:** Run the following command to remove the repository's Git history: `rm -rf .git`  
+    - **Windows Users (Powershell):** run the following command to remove the Git history: `Remove-Item -Recurse -Force .git`
+    - **macOS/Linux Users/Git Bash:** Run the following command to remove the repository's Git history: `rm -rf .git`  
+
+4. Install dependencies and start the server:
+  ```bash
+  npm install
+  node app.js
+  ```
 
 #### Step 2: Implement `carHandlers.js`
 
