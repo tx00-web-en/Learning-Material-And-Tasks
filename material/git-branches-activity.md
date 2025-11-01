@@ -9,7 +9,7 @@ There are three parts to this activity:
 ---
 
 ## Part 1 of 3: Reflection Journal
----
+
 
 This part is to ensure that every member of the group can push their Reflection Journal.
 
@@ -18,8 +18,10 @@ This part is to ensure that every member of the group can push their Reflection 
 * Follow the provided instructions to set it up and add me as a collaborator. The detailed guide can be found [here](../Journal/README.md).
 
 
-## Part 2/3: Git Branching
 ---
+
+## Part 2/3: Git Branching
+
 
 ### **Objective:**
 
