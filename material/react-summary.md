@@ -7,7 +7,7 @@
 - [Part 2: Rendering Lists in React](#part-2-rendering-lists-in-react)
 - [Part 3: The spread operator](#part-3-the-spread-operator)
 - [Part4: Named exports vs Default exports](#part4-named-exports-vs-default-exports)
-- [Part 4: QA](#part-5-qa)
+- [Part 5: QA](#part-5-qa)
   - degit
   - WHy import images using the `import` syntax
 - [Links](#links)
@@ -96,6 +96,8 @@ const TourList = ({ tours }) => {
   );
 };
 ```
+
+> Here's a [more elaborate explanation](./mapping-array.md)
 
 #### 3. Using Keys
 

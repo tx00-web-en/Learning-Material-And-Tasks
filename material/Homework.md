@@ -27,7 +27,7 @@ The video homework uses emojis to represent the significance of each video. Belo
 - Note:
   > - The video homework demonstrates `PropTypes`, but in the Web Development and Project courses, we will **not** be using **PropTypes**. In Week 8, we’ll cover a more powerful alternative using **TypeScript**.  
   > - For the homework videos, you can simply skip any sections related to PropTypes. If you still wish to use it, install the package by running:  `npm install prop-types`
-  > - There are different ways to import components. Here’s a [review of import methods](./material/import.md).
+  > - There are different ways to import components. Here’s a [review of import methods](./import.md).
   
 ### Monday Afternoon: 
 
