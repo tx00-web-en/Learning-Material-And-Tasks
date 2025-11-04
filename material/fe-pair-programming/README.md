@@ -13,7 +13,7 @@ In this pair programming activity, we will transform an existing HTML webpage in
 4. After **each iteration**, make sure to commit your changes with a [relevant message](./github-push-pull.md#commit-messages), such as: **"Extract Navbar section, convert to JSX, and create NavBar component."**
 4. In your reflection journal, provide the link to the created repository. 
 5. Keep the repository private until Sunday.
-
+6. Include in your reflection journal the style you used during the pair programming session. For reference, here’s a brief introduction to the different styles of pair programming: [The Different Styles of Pair Programming](https://www.drovio.com/blog/the-different-styles-of-pair-programming/).  
 
 ## Instructions
 
