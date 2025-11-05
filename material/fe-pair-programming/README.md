@@ -4,6 +4,12 @@ In this pair programming activity, we will transform an existing HTML webpage in
 
 ![](./img/App.png)
 
+<!-- 
+### Yongzhi
+Border that shows incorrectly with the image. 
+solution 1: delete:     border: 0.5rem solid var(--clr-primary-5);
+solution 1: delete:   top: -1.5rem;left: -1.5rem; 
+-->
 
 ## Setup
 
