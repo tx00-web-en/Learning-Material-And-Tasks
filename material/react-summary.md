@@ -105,13 +105,13 @@ When rendering lists, it's crucial to use a `key` prop. The `key` helps React id
 
 **Example:**
 ```js
-const Tour = (props) => (
+const Tour = (props) => {
   const { name, price }=props.tour
   <div>
     <h2>{name}</h2>
     <p>Price: ${price}</p>
   </div>
-);
+};
 
 const TourList = ({ tours }) => {
   return (

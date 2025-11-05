@@ -122,7 +122,7 @@ In this lab, you will learn the importance of using the MVC (Model-View-Controll
      - Click **Send** to retrieve the specific car.
      - Save the request in the collection as "Get car by ID".
 
-   - **PUT /car/:id**
+   - **PUT /cars/:id**
      - Method: **PUT**
      - URL: `http://localhost:4000/cars/{id}`. Replace `{id}` with the actual ID of the car you want to retrieve. **Note:** The curly braces `{}` are not part of the URL.
      - Go to the **Body** tab, select **raw**, and choose **JSON**.

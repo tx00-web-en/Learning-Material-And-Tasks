@@ -17,6 +17,7 @@ In this pair programming activity, we will transform an existing HTML webpage in
 
 ## Instructions
 
+
 ### Iteration 0: Project Setup
 
 In this iteration, you'll use this [starter code](https://github.com/tx00-resources-en/react-pp2) for the project.
@@ -78,6 +79,7 @@ The goal of this step is to get your development environment set up and understa
 
 Happy coding, and remember that you're not alone! Pair up and collaborate as you tackle each component and bring your project to life.
 
+----
 ### Iteration 1: 
 
 1. We will be refactoring an HTML website into a React app. Open the `index.html` file located at [./Original-HTML/index.html](./Original-HTML/index.html) using Visual Studio Code. The HTML file contains six sections with starting and ending line numbers for each section:
@@ -158,7 +160,7 @@ Happy coding, and remember that you're not alone! Pair up and collaborate as you
     </nav>
 ```
 
-3. Replace this existing snippet for the `Navbar` component in your React application with the converted JSX from step 4.
+3. Replace this existing snippet for the `Navbar` component in your React application with the converted JSX from step 2.
 
 ```jsx
     <div>
@@ -171,6 +173,7 @@ Happy coding, and remember that you're not alone! Pair up and collaborate as you
   - `import logo from '../assets/images/logo.svg'`
   - `<img src={logo} className='nav-logo' alt='backroads' />`
 
+----
 ### Iteration 2: 
 
 1. Following the same procedure as before, convert the following sections of the HTML website into individual React components. You can use an online tool for the conversion, such as [htmltojsx.com](https://transform.tools/html-to-jsx).
@@ -334,6 +337,7 @@ The React `Services` component is responsible for rendering a section of the web
 - You can use the React DevTools extension to inspect the component hierarchy. When you do, you should see the following structure:
 ![](./img/services.png)
 
+----
 ### Iteration 4: 
 
 Following the same procedure as in Iteration 3, rewrite the code for the `Tour` component. Then, refactor the `Tours` component to use the `Tour` component in a manner similar to how we used the `Services` component.
@@ -371,6 +375,7 @@ Following the same procedure as in Iteration 3, rewrite the code for the `Tour` 
 - You can use the React DevTools extension to inspect the component hierarchy. When you do, you should see the following structure:
 ![](./img/tours.png)
 
+----
 ### Iteration 5: 
 
 - **The `PageLink` component**
@@ -432,7 +437,7 @@ with the JSX code provided below:
 
    This code replaces the static list of links with the `PageLinks` component, passing the appropriate `parentClass` and `itemClass` props to style the footer links. The `PageLinks` component will dynamically generate the links based on the data in `pageLinks`.
 
-
+----
 ### Iteration 6: 
 
 Do the same for the `Nav` component. Refactor it to use PageLinks
@@ -441,7 +446,53 @@ Do the same for the `Nav` component. Refactor it to use PageLinks
 ![](./img/navbar.png)
 - Do the same for the `SocialLinks` component. Refactor it to use `SocialLink`.
 
-### Iteration 7 (Optional): 
+----
+### Iteration 7: 
+
+Currently, the `Navbar` component contains the `Header` component inside it:
+
+```jsx
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <div className="nav-center">
+        <Header />
+        <PageLinks parentClass="nav-links" itemClass="nav-link" />
+        <SocialLinks parentClass="nav-icons" itemClass="nav-icon" />
+      </div>
+    </nav>
+  );
+}
+
+export default Navbar;
+```
+
+**Your task:**  
+
+Refactor the code so that the `Header` component becomes the parent, and it contains the `Navbar` inside it. In other words, instead of `Navbar` rendering `Header`, the `Header` should render `Navbar`.
+
+
+**Why do we need this change?**
+
+- **Semantic hierarchy:** A header usually represents the top section of a page (logo, navigation, branding). The navigation bar (`Navbar`) is just one part of that header. Structurally, it makes more sense for `Header` to wrap `Navbar` rather than the other way around.
+- **Reusability:** If `Header` owns the `Navbar`, you can easily add other elements to the header later (like a search bar, user profile, or notifications) without cramming them into the `Navbar` component.
+- **Clarity of responsibility:**  
+  - `Header` → responsible for the overall page header layout.  
+  - `Navbar` → responsible only for navigation links and social icons.  
+  This separation of concerns makes the codebase easier to maintain and extend.
+- **Accessibility & semantics:** Screen readers and accessibility tools expect a `<header>` element to contain navigation (`<nav>`). Wrapping it this way aligns with best practices in HTML5 semantics.
+
+
+**Expected Outcome**
+
+After refactoring:
+- `Header` is the parent component.  
+- `Navbar` is a child inside `Header`.  
+- The structure reflects real-world semantics: **Header → Navbar → Links & Icons**.
+
+
+----
+### Iteration 8 (Optional): 
 
 Refactor the global CSS file `App.css` into CSS modules e.g for the `Hero` component, you can follow these steps:
 
