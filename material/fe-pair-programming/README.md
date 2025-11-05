@@ -169,9 +169,9 @@ Happy coding, and remember that you're not alone! Pair up and collaborate as you
     </div>
 ```
 - Finally, check your web browser to ensure that the React app is running and that the changes to the `Navbar` component are correctly reflected.
-- To include the the image replace `<img src="images/logo.svg"` with the followings
-  - `import logo from '../assets/images/logo.svg'`
-  - `<img src={logo} className='nav-logo' alt='backroads' />`
+- To include the image, remove the old HTML tag: `<img src="images/logo.svg"`, and:
+  - Import the image at the top of your file: `import logo from '../assets/images/logo.svg'`
+  - Use the imported variable inside your JSX: `<img src={logo} className='nav-logo' alt='backroads' />`
 
 ----
 ### Iteration 2: 
