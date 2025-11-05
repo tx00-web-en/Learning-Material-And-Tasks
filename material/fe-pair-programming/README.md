@@ -178,11 +178,11 @@ Happy coding, and remember that you're not alone! Pair up and collaborate as you
 
 1. Following the same procedure as before, convert the following sections of the HTML website into individual React components. You can use an online tool for the conversion, such as [htmltojsx.com](https://transform.tools/html-to-jsx).
 
-   - For the Hero section, convert the HTML code located between lines 68 and 79 into a `Hero` component.
-   - For the About section, convert the HTML code between lines  81 and 110 into an `About` component.
-   - For the Services section, convert the HTML code between lines 112 and 156 into a `Services` component.
-   - For the Tours section, convert the HTML code between lines 158 and 266 into a `Tours` component.
-   - For the Footer section, convert the HTML code located between lines 268 and 289 into a `Footer` component.
+   - For the Hero section, convert the HTML code located between lines 50 and 61 into a `Hero` component.
+   - For the About section, convert the HTML code between lines  63 and 88 into an `About` component.
+   - For the Services section, convert the HTML code between lines 90 and 128 into a `Services` component.
+   - For the Tours section, convert the HTML code between lines 130 and 230 into a `Tours` component.
+   - For the Footer section, convert the HTML code located between lines 232 and 265 into a `Footer` component.
 
 2. Replace the respective sections in your React application with the converted JSX components from step 1. Ensure that each section is placed in its appropriate React component.
 
