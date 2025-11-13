@@ -21,7 +21,7 @@
   - https://github.com/WebDevSimplified/JWT-Authentication
 - [What Is JWT and Why Should You Use JWT](https://youtu.be/7Q17ubqLfaM?si=Vp_SqA7PDsrsQ-ef)
 
-### Wednesday Morning:
+### Wednesday Afternoon:
 
 - :blue_book: MERN FullStack Tutorial with Deployment ~2h
   - [Video](https://www.youtube.com/watch?v=O3BUHwfHf84)
