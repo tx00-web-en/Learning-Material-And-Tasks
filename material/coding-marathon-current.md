@@ -1,6 +1,6 @@
 # Coding Marathon 
 
-<!-- Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
+Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
 
 > [!IMPORTANT]  
 > **Please submit the following to OMA after completing this group activity:**
@@ -246,7 +246,7 @@ Before submission, ensure:
 
 ---
 
-Happy coding! 🚀 -->
+Happy coding! 🚀
 
 
 
