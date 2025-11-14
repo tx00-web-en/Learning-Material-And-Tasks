@@ -25,12 +25,20 @@ Welcome to the first Coding Marathon focused on React! In this marathon, you'll 
 ---
 ## Success Criteria
 
-Your project will be evaluated based on the following criteria:
-1. Correct use of React hooks (`useState`) and controlled forms: **15 Points**.
-2. Clean, readable, and well-organized code: **15 Points**.
-3. Effective use of Git branching and merging: **20 Points**.
-4. Deployment to GitHub: **15 Points**.
-5. Self-assessment of your code: **15 Points**. Each member is expected to complete the self-assessment.md file, located in `src/components/component_name`.
+The coding marathon will be evaluated based on **individual** and **group** contributions.  
+
+- **Individual (45 Points Total)** 
+  - Correct use of React hooks (`useState`) and controlled forms: **15 Points**  
+  - Clean, readable, and well-organized code: **15 Points**  
+  - Self-assessment of your code: **15 Points**  
+    - Each member must complete the `self-assessment.md` file located in `src/components/component_name`.  
+
+- **Group (35 Points Total)** 
+  - Effective use of Git branching and merging: **20 Points**  
+  - Deployment to GitHub: **15 Points**  
+- **Self-Assessment Rules**  
+  - In your self-assessment, provide **both** your **individual total** and the **group total**.  
+  - Failing to grade yourself or **overgrading** will result in your score not being counted.  
 
 ---
 ## Phase 0: Preparation
@@ -43,8 +51,6 @@ Before starting this coding marathon, ensure that:
 
 ---
 ## Phase 1: Git Setup and Collaboration
-
-
 
 1. **Clone the starter code:**
    - One group member should clone the starter code: 
