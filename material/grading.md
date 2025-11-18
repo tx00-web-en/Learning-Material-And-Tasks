@@ -22,9 +22,19 @@
 - **Bonus** – up to 100 points (10%)  
 
 > [!IMPORTANT]  
-> **Alternative Option** (if not comfortable with *pair programming* or *group activities*):  
-> - **Open‑book exam** (last day of the course) – 50% of the final grade  
-> - **Paper exam** – 50% of the final grade  
+> **Alternative Grading Options** (for students not comfortable with *pair programming* or *group activities*):  
+>  
+> **Option A**  
+> - Open‑book Exam – 50%  
+> - Paper Exam – 50%  
+>  
+> **Option B**  
+> - Group Activities – 28%  
+> - Individual Tasks – 20%  
+> - Paper Exam – 25%  
+> - Coding Exam – 27%  
+
+
 
 ---
 
