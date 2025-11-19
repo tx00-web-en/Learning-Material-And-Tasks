@@ -115,7 +115,31 @@ git push
      ```
 
 ---
- 
+
+> [!IMPORTANT]  
+> 
+> Note for Iterations 2–7: when connecting React to the server, always use:
+> ```js
+> fetch("/api/jobs")
+> ```
+> ❌ Do **not** write something like:
+> ```js
+> fetch("http://localhost:4000/api/jobs")
+> ```
+> 
+> The reason: we’re using a **proxy** (explained in Iteration 8). In short, the setup looks like this:
+> ```js
+> proxy: {
+>   "/api": {
+>     target: "http://localhost:4000",
+>     changeOrigin: true,
+>   },
+> }
+> ```
+
+
+
+
 ### Iteration 2: Frontend Setup and Initial Fetch
 
 1. **Navigate to Frontend Folder**
