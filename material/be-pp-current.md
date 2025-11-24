@@ -178,7 +178,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
 ### **Iteration 3: Understanding Authentication Logic**
 
 1. In the `middleware/requireAuth.js` file, you'll find the logic that protects routes. 
-   - Find the block starting with: `const decodedToken = jwt.verify(...)`
+   - Find the block starting with line 12
    - Uncomment that entire block.
    - Add your own `console.log()` statements to understand what happens at each step.
 
