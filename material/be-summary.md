@@ -29,26 +29,27 @@ const initialWorkouts = [
 
 beforeEach(async () => {
   await Workout.deleteMany({});
-  let workoutObject = new Workout(initialWorkouts[0]);
-  await workoutObject.save();
-  workoutObject = new Workout(initialWorkouts[1]);
-  await workoutObject.save();
+  await new Workout(initialWorkouts[0]).save();
+  await new Workout(initialWorkouts[1]).save();
 });
 
 describe("GET /api/workouts", () => {
-  test("all workouts are returned", async () => {
+  it("should return all workouts", async () => {
     const response = await api.get("/api/workouts");
     expect(response.body).toHaveLength(initialWorkouts.length);
   });
 
-  test("a specific workout is within the returned workouts", async () => {
+  it("should include a specific workout in the returned list", async () => {
     const response = await api.get("/api/workouts");
     const titles = response.body.map(workout => workout.title);
     expect(titles).toContain("test workout 2");
   });
 
-  test("Workouts are returned as JSON", async () => {
-    await api.get("/api/workouts").expect(200).expect("Content-Type", /application\/json/);
+  it("should respond with JSON format and status 200", async () => {
+    await api
+      .get("/api/workouts")
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
   });
 });
 ```
@@ -167,28 +168,26 @@ beforeAll(async () => {
   token = result.body.token;  // Store the token for later use
 });
 
-describe("when there is initially some workouts saved", () => {
+describe("when there are initially some workouts saved", () => {
   beforeEach(async () => {
     await Workout.deleteMany({});
     // Add initial workouts as an authenticated user
     await api
       .post("/api/workouts")
-      .set("Authorization", "bearer " + token)  // Pass token in Authorization header
+      .set("Authorization", "bearer " + token)
       .send(workouts[0])
       .send(workouts[1]);
   });
 
-  test("Workouts are returned as JSON", async () => {
-    // Test if an authenticated user can fetch workouts
+  it("should return workouts as JSON for an authenticated user", async () => {
     await api
       .get("/api/workouts")
-      .set("Authorization", "bearer " + token)  // Send token in request header
+      .set("Authorization", "bearer " + token)
       .expect(200)
       .expect("Content-Type", /application\/json/);
   });
 
-  test("New workout added successfully", async () => {
-    // Test if a new workout can be added with valid token
+  it("should allow a new workout to be added with a valid token", async () => {
     const newWorkout = {
       title: "testworkout",
       reps: 10,
@@ -196,13 +195,12 @@ describe("when there is initially some workouts saved", () => {
     };
     await api
       .post("/api/workouts")
-      .set("Authorization", "bearer " + token)  // Send token for authentication
+      .set("Authorization", "bearer " + token)
       .send(newWorkout)
-      .expect(201);  // Expect workout creation to be successful
+      .expect(201);
   });
 
-  test("Workout addition fails without token", async () => {
-    // Test if an attempt to add a workout without a token fails
+  it("should fail to add a workout without a token", async () => {
     const newWorkout = {
       title: "unauthorized workout",
       reps: 15,
@@ -211,7 +209,7 @@ describe("when there is initially some workouts saved", () => {
     await api
       .post("/api/workouts")
       .send(newWorkout)
-      .expect(401);  // Expect unauthorized response
+      .expect(401);
   });
 });
 
@@ -249,28 +247,31 @@ Testing protected routes requires more than just verifying that authenticated us
 
 1. **Expired Tokens**: Test what happens when an expired JWT is sent.
    ```javascript
-   test("Access fails with expired token", async () => {
-     const expiredToken = "someExpiredTokenHere";
-     await api
-       .get("/api/workouts")
-       .set("Authorization", "bearer " + expiredToken)
-       .expect(401);  // Expect unauthorized due to token expiration
-   });
+      it("should fail to access workouts with an expired token", async () => {
+      const expiredToken = "someExpiredTokenHere";
+      await api
+         .get("/api/workouts")
+         .set("Authorization", "bearer " + expiredToken)
+         .expect(401); // Expect unauthorized due to token expiration
+      });
+
    ```
 
 2. **Missing Tokens**: Verify that the server rejects requests with no token or with improperly formatted tokens.
    ```javascript
-   test("Access fails without a token", async () => {
-     await api.get("/api/workouts").expect(401);  // No token sent, expect unauthorized
-   });
+      it("should fail to access workouts without a token", async () => {
+      await api
+         .get("/api/workouts")
+         .expect(401); // No token sent, expect unauthorized
+      });
 
-   test("Access fails with malformed token", async () => {
-     const malformedToken = "invalidtoken123";
-     await api
-       .get("/api/workouts")
-       .set("Authorization", "bearer " + malformedToken)
-       .expect(401);  // Expect failure due to malformed token
-   });
+      it("should fail to access workouts with a malformed token", async () => {
+      const malformedToken = "invalidtoken123";
+      await api
+         .get("/api/workouts")
+         .set("Authorization", "bearer " + malformedToken)
+         .expect(401); // Expect failure due to malformed token
+      });
    ```
 <!-- 
 ### Jest vs. Mocha/Chai for Testing Protected Routes
