@@ -123,7 +123,7 @@ You'll receive a starter code that, while not adhering to best practices, ensure
 
 ### Iteration 4
 
-1. Enhance the `SignupComponent` form by introducing a `password2` field. This ensures users enter the same password in both `password` and `password2` fields for password verification.
+1. Enhance the `SignupComponent` form by introducing a `password2` field, with the label **Confirm Password**. This ensures users enter the same password in both `password` and `password2` fields for password verification.
 
 2. Decide how to handle the `password` / `password2` check:
    - At minimum, validate in the frontend so users see an immediate error if the passwords do not match.
