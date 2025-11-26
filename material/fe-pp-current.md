@@ -170,54 +170,7 @@ You'll receive a starter code that, while not adhering to best practices, ensure
 
 ---
 
-   ### Iteration 8
-
-   1. Extract repeated field logic in `SignupComponent` into a reusable `useField` hook.
-
-      - Create `frontend/src/hooks/useField.jsx` that manages an input's `value` and `onChange` and returns props you can spread onto an `<input>`.
-      - Refactor `SignupComponent` to use `useField` for `email`, `password` and `password2` instead of three separate `useState` calls.
-
-   2. Test the application's functionality and run the frontend tests:
-
-      ```bash
-      npm run dev
-      npm test -- iteration8.test.jsx
-      ```
-
-   3. **Commit and Push**
-
-      ```bash
-      git add .
-      git commit -m "[iter8] Extract useField hook"
-      git push
-      ```
-
-   ---
-
-   ### Iteration 9
-
-   1. Apply the same `useField` pattern used in `SignupComponent` to another form component (for example, `LoginComponent` or a job form), extracting its field state into `useField` hooks.
-
-   2. Ensure the refactor does not break existing behaviour: the form should still submit correctly, call the right hook or API, and update authentication state or data as before.
-
-   3. Test the application's functionality and run the frontend tests:
-
-      ```bash
-      npm run dev
-      npm test -- iteration9.test.jsx
-      ```
-
-   4. **Commit and Push**
-
-      ```bash
-      git add .
-      git commit -m "[iter9] Reuse useField in another form"
-      git push
-      ```
-
-   ---
-
-### Iteration 6: Refactoring `loginUser` Controller
+### Iteration 6: Analyze login approaches
 
 From this iteration onward, use the backend-v2 folder for backend work (instead of backend), unless otherwise specified.
 
@@ -313,7 +266,7 @@ const loginUser = async (req, res) => {
 
 ---
 
-### Iteration 7: Refactoring `signupUser` Controller
+### Iteration 7: Analyze signup approaches
 
 The logic for **registering users** is also in the controller:
 
@@ -379,7 +332,7 @@ const signupUser = async (req, res) => {
 
 ---
 
-### Iteration 8
+### Iteration 8: useField in Signup
 
 For Iterations 8 and 9, you continue using the same frontend and whichever backend (backend or backend-v2) you prefer for testing, as long as it is correctly configured.
 
@@ -405,7 +358,7 @@ For Iterations 8 and 9, you continue using the same frontend and whichever backe
 
 ---
 
-### Iteration 9
+### Iteration 9: useField in Login
 
 1. Refactor the `LoginComponent` component to incorporate the `useField` hook covered in the frontend session.
 
