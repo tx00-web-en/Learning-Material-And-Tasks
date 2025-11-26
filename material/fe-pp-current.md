@@ -54,13 +54,13 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - Check that you can successfully **register/signup** and **log in**.  
    - Use a strong password (e.g., `4wa95=Vx#`), otherwise you will get an error.
 
-6. (Optional) From within the frontend folder, run the tests to make sure everything is still passing:
+<!-- 6. (Optional) From within the frontend folder, run the tests to make sure everything is still passing:
 
    ```bash
    npm test -- iteration1.test.jsx
-   ```
+   ``` -->
 
-7. **Commit and Push**
+6. **Commit and Push**
 
    ```bash
    git add .
@@ -79,15 +79,15 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - Create `frontend/src/hooks/useSignup.js` (or `.jsx`), following the pattern from the session.
    - Refactor `SignupComponent` to use this hook instead of handling the signup logic directly.
 
-2. Test the application's functionality and run the frontend tests:
+<!-- 2. Test the application's functionality and run the frontend tests:
 
    ```bash
    npm run dev
    npm test -- iteration2.test.jsx
 
-   ```
+   ``` -->
 
-3. **Commit and Push**
+2. **Commit and Push**
 
    ```bash
    git add .
@@ -104,14 +104,14 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - Create `frontend/src/hooks/useLogin.js`.
    - Refactor `LoginComponent` to use this hook instead of handling the login logic directly.
 
-2. Test the application's functionality and run the frontend tests:
+<!-- 2. Test the application's functionality and run the frontend tests:
 
    ```bash
    npm run dev
    npm test -- iteration3.test.jsx
-   ```
+   ``` -->
 
-3. **Commit and Push**
+2. **Commit and Push**
 
    ```bash
    git add .
@@ -129,14 +129,14 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - At minimum, validate in the frontend so users see an immediate error if the passwords do not match.
    - Consider whether you also want the backend to validate this (e.g., in the signup controller). Briefly justify your decision in a short note (for example, in `README.md` or as a comment in the code).
 
-3. Test the application's functionality and run the frontend tests:
+<!-- 3. Test the application's functionality and run the frontend tests:
 
    ```bash
    npm run dev
    npm test -- iteration4.test.jsx
-   ```
+   ``` -->
 
-4. **Commit and Push**
+3. **Commit and Push**
 
    ```bash
    git add .
@@ -153,14 +153,14 @@ You'll receive a starter code that, while not adhering to best practices, ensure
    - Look for auth-related logic in the frontend (e.g., in hooks, context, or utility files under src).
    - After refactoring, the user **should be logged out when the browser tab or window is closed** (because `sessionStorage` is cleared).
 
-2. Test login/logout flows and run the frontend tests:
+<!-- 2. Test login/logout flows and run the frontend tests:
 
    ```bash
    npm run dev
    npm test -- iteration5.test.jsx
-   ```
+   ``` -->
 
-3. **Commit and Push**
+2. **Commit and Push**
 
    ```bash
    git add .
@@ -341,14 +341,14 @@ For Iterations 8 and 9, you continue using the same frontend and whichever backe
    - Create `frontend/src/hooks/useField.jsx` if it doesn’t already exist, or reuse the implementation from the session.
    - Replace manual input state/handlers in `SignupComponent` with the `useField` hook, while still using `useSignup` for the actual signup request.
 
-2. Test the application's functionality and run the frontend tests:
+<!-- 2. Test the application's functionality and run the frontend tests:
 
    ```bash
    npm run dev
    npm test -- iteration8.test.jsx
-   ```
+   ``` -->
 
-3. **Commit and Push**
+2. **Commit and Push**
 
    ```bash
    git add .
@@ -364,14 +364,14 @@ For Iterations 8 and 9, you continue using the same frontend and whichever backe
 
    - Use `useField` for managing the email/password fields, combined with the `useLogin` hook for the login request.
 
-2. Test the application's functionality and run the frontend tests:
+<!-- 2. Test the application's functionality and run the frontend tests:
 
    ```bash
    npm run dev
-   npm test
-   ```
+   git commit -m "[iter8] Use useField in Login"
+   ``` -->
 
-3. **Commit and Push**
+2. **Commit and Push**
 
    ```bash
    git add .
