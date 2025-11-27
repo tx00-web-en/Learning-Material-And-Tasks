@@ -1,6 +1,6 @@
 # Weekly Submission – Checklist
 
-After completing the **autonomous session on Friday** and **before Sunday 5:00 PM**, you need to submit links to all activities, as well as your **reflection journal**, to GitHub. In addition you need to submit your **self-assessment** to OMA. 
+After completing the **autonomous session on Friday** and **before Saturday 23:45 PM**, you need to submit links to all activities, as well as your **reflection journal**, to GitHub. In addition you need to submit your **self-assessment** to OMA. 
 
 A recording that explains the weekly submission process was uploaded to the cloud. Please review it if anything is unclear.
 
