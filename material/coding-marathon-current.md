@@ -133,8 +133,9 @@ Now that the basic setup is complete, divide your team between backend and front
 #### Frontend Team:
 1. **Add Signup and Login Forms**  
    - Create the UI for the signup and login components. You can use `frontend/src/pages/AddJobPage` as a reference for creating the forms. 
-   - Ensure the forms collect these required fields (e.g., **name, email, password, etc**).
+   - Ensure the forms collect these required fields (e.g., **name, email, password, etc**). Other fields are defined in the user model below.
    - **Note** that the logic *can be added later*, once the *backend team completes iteration 3*. 
+   
 
 2. **Update Navigation Bar**  
    - Update the navigation bar in `frontend/src/components/NavBar` to include links to the signup and login components.
