@@ -1,6 +1,7 @@
 {
-  "name": "env-variable-lab",
+  "name": "bepp",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
@@ -10,9 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "type": "commonjs",
   "dependencies": {
-    "cross-env": "^7.0.3",
-    "dotenv": "^16.4.5"
+    "cross-env": "^10.1.0",
+    "nodemon": "^3.1.11"
   }
 }
