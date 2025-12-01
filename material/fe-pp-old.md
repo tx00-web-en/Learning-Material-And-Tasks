@@ -2,38 +2,26 @@
 
 ## Overview
 
-This pair programming session will be a bit different from previous ones and is designed as a **full review of the front-end concepts** used in the course.
+This pair programming session will be a bit different from previous ones. Here’s what to expect:
 
-1. First **try each iteration on your own with your pair**, and **only then** open the sample solution to compare.
-2. Likely need more than 3 hours. If necessary, continue working on your own time on Tuesday.
+1. You will work with members of your assigned group (not randomly).
+2. Sample solutions for each iteration will be provided so you can compare your work.
+3. The session may take longer than 3 hours, so if necessary, continue working on your own time on Tuesday. The benefits of completing all iterations are significant:
+   - It will fully prepare you for the front-end portion of the exam.
+   - It will prepare you for the third coding marathon.
+   - It will help you finalize any missing touches in your project.
 
-Completing all iterations will:
+### Key Learning Outcomes:
+- You will understand how the front-end connects to both protected and non-protected backend routes.
+- You will gain a deep understanding of the video content provided before this activity.
 
-- Fully prepare you for the front-end portion of the exam.
-- Prepare you for the third coding marathon.
-- Help you finalize any missing touches in your project.
-
-**Pair-programming workflow (Driver/Navigator):**
-
-- One person types (Driver), the other reviews and thinks ahead (Navigator).
-- Swap roles after each iteration.
-- Before checking the sample solution, explain your approach to your pair and **predict** what might be different in the sample.
-
-### Key Learning Outcomes
-
-- Understand how the front-end connects to both protected and non-protected backend routes.
-- Deepen your understanding of the video content provided before this activity.
-- Practice structuring React apps with routing, forms, and authentication.
-
-### Activity Structure
-
-There are 4 main parts plus a comparison section. A functional backend and starter files for the frontend will be provided. You will focus only on the frontend; normally **no backend changes are needed** except in Part 4.
+### Activity Structure:
+There are 4 parts. A functional backend and starter files for the frontend will be provided. You will focus only on the frontend, with no changes needed on the backend.
 
 1. CRUD operations on jobs via non-protected routes.
 2. User authentication (registering and logging in).
-3. CRUD operations on protected routes.
-4. Modifying the user model.
-5. Comparing your code with the video’s source code.
+3. Accessing protected routes.
+4. Comparing your code with the video’s source code.
 
 > **Important:** Commit your work after each iteration and push to GitHub.
 
@@ -41,72 +29,27 @@ There are 4 main parts plus a comparison section. A functional backend and start
 
 ## Part 1: Basic CRUD Operations (Non-Protected Routes)
 
-In this part, you will connect the React app to the Express server to perform CRUD operations on jobs via **non-protected** routes.
+In this part, you will connect the React app to the Express server to perform CRUD operations on jobs via non-protected routes.
 
 - **Backend to use:** `backend-no-auth`
 
-**API overview for this part (expected):**
-
-- `GET /api/jobs` – get all jobs.
-- `POST /api/jobs` – add a job.
-- `GET /api/jobs/:id` – get a single job.
-- `DELETE /api/jobs/:id` – delete a job.
-- `PUT /api/jobs/:id` – update a job.
-
 ### Iteration 1: Setup
+1. Clone the starter files.
+2. Clone the [starter repository](https://github.com/tx00-resources-en/week7-fepp-starter)
+   - After cloning, **delete** the `.git` directory.
+3. Navigate to the `backend-no-auth` directory. Rename the `.env` file, run `npm install`, and then `npm run dev`.
+4. Navigate to the `frontend` directory. Run `npm install`, and then `npm run dev`.
+5. In the `frontend/src` directory, there is a `hooks` folder. These hooks **will be used later** in the activity, **not in this part**.
 
-1. Clone the [starter repository](https://github.com/tx00-resources-en/week7-fepp-starter) into a separate folder.
-   - After cloning, **delete** the `.git` directory in the starter so you can use your own Git history.
-2. Navigate to the `backend-no-auth` directory.
-   - Create a new `.env` file by copying `.env.example`
-   - Run `npm install`.
-   - Start the backend: `npm run dev`.
-3. Navigate to the `frontend` directory.
-   - Run `npm install`.
-   - Start the frontend: `npm run dev`.
-4. In `frontend/src`, there is a `hooks` folder. These hooks **will be used later** in the activity, **not in this part**.
+### Iteration 2: Add and Fetch Jobs
+- Implement logic to add jobs and fetch jobs from the backend. The UI is already provided.
+- **Add Job Logic:** Add the logic to the `src/pages/AddJobPage.jsx`. Create a `submitForm` handler and an `addJob()` function to handle the POST request.
+- **Fetch Jobs Logic:** Add logic in the `src/pages/HomePage.jsx` and `JobListings/JobListing` components.
 
-**You’re done with Iteration 1 when:**
+> If you face any difficulties, check the [sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post/frontend/src).
 
-- The backend runs (e.g. on `http://localhost:4000`).
-- The frontend runs (e.g. on `http://localhost:3000`).
-- You can open the frontend in the browser without errors.
-
-### Iteration 2: Add and Fetch Jobs (List View)
-
-Goal: Implement logic to **add jobs** and **fetch all jobs** from the backend. The UI structure is already provided.
-
-- **State and data flow (suggested):**
-  - Use `useState` in `HomePage.jsx` (or a parent component) to store an array of jobs.
-  - Use `useEffect` in `HomePage.jsx` to fetch jobs from `GET /api/jobs` when the page loads.
-- **Fetch Jobs Logic:**
-  - Add the logic in `src/pages/HomePage.jsx` and the `JobListings/JobListing` components to display the jobs.
-- **Add Job Logic:**
-  - In `src/pages/AddJobPage.jsx`, create a `submitForm` handler and an `addJob()` function.
-  - `addJob()` should send a `POST` request to `/api/jobs` with the job data from the form.
-  - Use **controlled inputs** (form values stored in React state).
-  - After a successful POST, either:
-    - Navigate back to the home or jobs list page, **or**
-    - Clear the form and update the jobs list.
-
-> **Sample solution (after trying yourself):** [Part 1 – GET + POST](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post/frontend/src)
-
-**Compare your solution with the sample:**
-
-- Where is the job list state stored?
-- When and where do you call `fetch`?
-- How do you handle loading or error states (if at all)?
-
-**You’re done with Iteration 2 when:**
-
-- You can add a job from the UI.
-- The new job appears in the list **without manually refreshing the browser**.
-
-### Iteration 3: Fetch and Delete a Single Job (Detail View)
-
-Goal: Implement logic to **fetch and display a single job**, and to **delete** it.
-
-- Create a new page (e.g., `src/pages/JobPage.jsx`) to display an individual job.
+### Iteration 3: Fetch and Delete a Single Job
+- Add logic to fetch and delete a single job. Create a new page (e.g., `pages/JobPage.jsx`) for displaying individual jobs.
 - Add a route to `JobPage` in `App.jsx`:
   ```jsx
   <Route path="/jobs/:id" element={<JobPage />} />
@@ -116,52 +59,22 @@ Goal: Implement logic to **fetch and display a single job**, and to **delete** i
   <Link to={`/jobs/${job.id}`}>View Job</Link>
   ```
 
-- **Fetch single job:**
-  - In `JobPage`, use `useParams` to get the `id` from the URL.
-  - Use `useEffect` and `useState` (or a loader later) to fetch `GET /api/jobs/:id`.
-- **Delete single job:**
-  - Add a "Delete" button.
-  - On click, call `DELETE /api/jobs/:id`.
-  - After successful deletion, navigate back to the job list.
+> If you encounter difficulties, refer to the [sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch2-getone-delete/frontend/src).
 
-> **Sample solution (after trying yourself):** [Part 1 – GET one + DELETE](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch2-getone-delete/frontend/src)
+**Discussion Questions:**
+- What is the difference between `<a href>` and `<Link />`?
+- What is the difference between a page and a component?
 
-**You’re done with Iteration 3 when:**
-
-- You can click a job, open its detail page, and see all its information.
-- You can delete a job from the detail page, and it disappears from the list.
-
-**Discussion Questions (with your pair):**
-
-- What is the difference between `<a href>` and `<Link />` in React Router?
-- What is the difference between a **page** and a **component** in your app?
-- Where does the data for the current job live? Is that the best place?
-
-### Iteration 4: Update a Job (Edit View)
-
-Goal: Implement logic to **update a job**.
-
-- Create an `EditJobPage` component.
+### Iteration 4: Update a Job
+- Implement logic to update a job. Create an `EditJobPage` component.
 - Add a route for `EditJobPage` in `App.jsx`:
   ```jsx
   <Route path="/edit-job/:id" element={<EditJobPage />} />
   ```
 
-- In `EditJobPage`:
-  - Fetch the existing job data (similar to `JobPage`).
-  - Pre-fill the form with the existing values.
-  - Use controlled inputs.
-  - On submit, send a `PUT` request to `/api/jobs/:id`.
-  - After success, navigate to the job detail page or the jobs list.
-
-> **Sample solution (after trying yourself):** [Part 1 – UPDATE + Router](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch3-update-router/frontend/src).
+> For help, see the [sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch3-update-router/frontend/src).
 
 > In the sample solution, you'll notice that `App.jsx` in the React app uses `RouterProvider` and `createBrowserRouter` from React Router, instead of the more commonly used `BrowserRouter`.
-
-**You’re done with Iteration 4 when:**
-
-- You can edit an existing job.
-- The updated job data is visible in both the detail page and the list.
 
 ---
 
@@ -172,45 +85,18 @@ This part focuses on user authentication (registering and logging in).
 - **Backend to use:** `backend-auth`
 
 ### Iteration 1: Setup
-
-1. Stop the `backend-no-auth` server.
-2. Navigate to the `backend-auth` directory.
-   - Create a new `.env` file by copying .env.example
-   - Run `npm install`.
-   - Start the backend: `npm run dev`.
+1. Stop the `backend-no-auth` server and navigate to the `backend-auth` directory. Rename `.env`, run `npm install`, and `npm run dev`.
 
 ### Iteration 2: Register and Log In Users
-
-Goal: Implement user signup and login on the frontend.
-
-- **Register:**
-  - The `Signup.jsx` page already contains functional code using `useField` and `useSignup` hooks.
-  - Study how `useField` and `useSignup` are used, and how errors or success are handled.
-- **Log In:**
-  - Create a `Login.jsx` page using `useField` and `useLogin` hooks.
-  - The `email` and `password` fields are required.
-  - On successful login, **decide what should happen**, for example:
-    - Save auth info (e.g. token or user) via a hook/context (if provided).
-    - Redirect the user to `/jobs` or `/`.
-    - Update the navigation bar to show a "logged in" state (in later parts).
+- **Register:** The `Signup.jsx` page already contains functional code using `useField` and `useSignup` hooks.
+- **Log In:** Create a `Login.jsx` page using `useField` and `useLogin` hooks. The `email` and `password` fields are required.
 - Add routes for both pages in `App.jsx`:
   ```jsx
   <Route path="/signup" element={<Signup />} />
   <Route path="/login" element={<Login />} />
   ```
 
-> **Sample solution (after trying yourself):** [Part 2 – Auth](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch6-auth/frontend/src).
-
-**You’re done with Part 2 when:**
-
-- You can sign up a new user (no errors in the console).
-- You can log in with that user.
-- After logging in, there is some visible change (e.g. redirect, different nav, or message) that clearly indicates the user is logged in.
-
-**Discussion:**
-
-- Where is the token or auth info stored? Is it secure?
-<!-- - What user feedback do you show if login fails? -->
+> For reference, see the [sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch6-auth/frontend/src).
 
 ---
 
@@ -223,18 +109,9 @@ In this part, you will perform CRUD operations on jobs using `protected` routes.
 - **Backend to use:** `backend-protected`
 
 ### Iteration 1: Setup
-
-1. Stop the `backend-auth` server.
-2. Navigate to the `backend-protected` directory.
-   - Create a new `.env` file by copying .env.example
-   - Run `npm install`.
-   - Start the backend: `npm run dev`.
-
-> **Important:** In this backend, only **add**, **delete**, and **update** job routes are protected. `GET /jobs` and `GET /jobs/:id` remain **unprotected**.
+1. Stop the `backend-auth` server and navigate to the `backend-protected` directory. Rename `.env`, run `npm install`, and `npm run dev`.
 
 ### Iteration 2: Implement Protected Operations
-
-Goal: Ensure that only **authenticated** users can add, edit, or delete jobs, both in the **frontend UI** and in the **backend calls**.
 
 - In `App.jsx`, create an `isAuthenticated` state to manage user authentication, and pass it down to the `NavBar` component. This will allow the display of different menus based on the user's authentication status.
 - In `App.jsx`, pass the `setIsAuthenticated` state setter function as a prop to the `Login` and `Signup` components, as shown below:
@@ -242,97 +119,26 @@ Goal: Ensure that only **authenticated** users can add, edit, or delete jobs, bo
   <Signup setIsAuthenticated={setIsAuthenticated} />
   <Login setIsAuthenticated={setIsAuthenticated} />
   ```
-- In `App.jsx`, ensure that **unauthenticated** users **cannot access** the `AddJobPage.jsx` and `EditJobPage.jsx` pages. For example:
-  - If `!isAuthenticated`, redirect from `/add-job` and `/edit-job/:id` to `/login`.
-  - Hide the "Add Job" and "Edit/Delete" buttons in the UI when the user is not authenticated.
+- In `App.jsx`, ensure that *unauthenticated* users cannot access the `AddJobPage.jsx` and `EditJobPage.jsx` pages. Similarly, *authenticated* users should be prevented from accessing the `Login` and `Signup` pages.
 - Ensure that job updates and deletions are restricted to authenticated users, particularly in the `AddJobPage.jsx` and `EditJobPage.jsx` components.
-  - Include the required auth headers/token in the requests if the backend expects them.
-  - Handle "unauthorized" responses gracefully in the UI.
-
-> **Sample solution (after trying yourself):** [Part 3 – Protected jobs](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch7-protect-jobs/frontend/src).
-
-**You’re done with Part 3 when:**
-
-- Unauthenticated users cannot add/edit/delete jobs (both because the UI hides these options and because the backend rejects unauthorized requests).
-- Authenticated users can add/edit/delete jobs, and the UI updates correctly.
-
-**Discussion:**
-
-- What is the difference between **hiding a button in the UI** and **protecting a route on the backend**?
-- Why do we need **both** in a real application?
 
 > Refer to the [sample solution](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch7-protect-jobs/frontend/src) if needed.
 
 
 ---
 
-## Part 4: Modify the User Model
-
-1. **Backend Update**  
-   Extend the user schema in the backend to include additional fields for contact and address information:
-
-   ```js
-   const userSchema = new Schema(
-     {
-       name: { type: String, required: true },            // Full name
-       email: { type: String, required: true, unique: true }, // Unique email for login
-       password: { type: String, required: true },        // Hashed password
-       phone_number: { type: String, required: true },    // Contact number
-       gender: { type: String, required: true },          // Gender
-       address: {
-         street: { type: String, required: true },        // Street address
-         city: { type: String, required: true },          // City
-         zipCode: { type: String, required: true }        // Postal/ZIP code
-       }
-     },
-     { timestamps: true, versionKey: false }
-   );
-   ```
-
-2. **Frontend Update**  
-
-  Update the frontend so that the new user fields are properly handled.
-
-  - Extend the `Signup` (and any profile-related) form(s) to include:
-    - `phone_number`
-    - `gender`
-    - `address.street`, `address.city`, `address.zipCode`
-  - Make sure all required fields are validated on the client side (e.g. not empty, basic formatting where reasonable).
-  - After a successful registration, verify that the new fields are stored correctly.
-  - Optionally display some of this information in a "Profile" or "User Info" area.
-
-**You’re done with Part 4 when:**
-
-- You can register a new user with all the new fields filled.
-- You can confirm (e.g. via MongoDB / API response) that all fields are saved.
-
----
-
-## Part 5: Comparing Code with the Video Tutorial
+## Part 4: Comparing Code with the Video Tutorial
 
 In this section, we will compare our project code with the [sample code](https://github.com/bradtraversy/react-crash-2024) provided in the [video tutorial](https://youtu.be/LDB4uaJ87e0). 
 
 There are a few key differences between the two implementations. Below is a brief overview, followed by a detailed explanation:
 
-- In the tutorial, many handlers (add, delete, update jobs) are located in `App.jsx` and passed as props to various components.
+- In the tutorial, the handlers are located in `App.jsx` and passed as props to various components.
 - It uses `RouterProvider` and `createBrowserRouter` from React Router, instead of the more commonly used `BrowserRouter`.
-- Loaders are utilized in React Router for data fetching instead of `useEffect` in many places.
+- Loaders are utilized in React Router for data fetching.
 - The video incorporates TailwindCSS and additional UI features, such as spinners, for enhanced design.
 
 Additionally, there is a modified version of the code in the `video-related/1-simplified/frontend/src` folder and the original version in the `video-related/2-original` folder within the cloned repository.
-
-### Small Experiments (Recommended)
-
-Pick **two** of the following and try them in your own project (or in a copy of it):
-
-- Move one handler (e.g. `addJob`) into `App.jsx` and pass it down as a prop instead of defining it in the page.
-- Replace `BrowserRouter` with `RouterProvider` + `createBrowserRouter` (following the video’s structure).
-- Implement one simple loader (e.g. for the job list or single job) and use `useLoaderData()` instead of `useEffect`.
-
-After each experiment, discuss with your pair:
-
-- What changed in how you think about routing and data fetching?
-- Do you prefer the original structure or the video’s approach for this specific part? Why?
 
 
 
