@@ -17,7 +17,7 @@ Approach this task **iteratively** and use **Git branching** for structured deve
 
 2. **Step 2: Reading and Deleting a Single Product**
    - Implement **GET one product** and **DELETE one product** endpoints
-   - Reference: [Monday's sample solution - branch1-get-post](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch1-get-post)
+   - Reference: [Monday's sample solution -branch2-getone-delete](https://github.com/tx00-resources-en/week7-fepp-en/tree/branch2-getone-delete)
    - **Commit after completing this step**
 
 3. **Step 3: Updating a Product**
