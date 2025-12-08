@@ -2,6 +2,7 @@
 
 After mastering the fundamentals of building, testing, documenting, and deploying web applications, the next step involves a blend of technical advancement and the cultivation of essential soft skills.
 
+
 ---
 
 ## Soft Skills
@@ -102,7 +103,7 @@ This is not the end of your journey—it’s just the beginning. With a strong f
 ---
 ## Misc.
 
-- [Turbiini-yrittäjyyskurssi](https://oma.metropolia.fi/delegate/object-redirect/workspace_announcement?announcementId=334702&workspace.id=98631725)
+<!-- - [Turbiini-yrittäjyyskurssi](https://oma.metropolia.fi/delegate/object-redirect/workspace_announcement?announcementId=334702&workspace.id=98631725) -->
 - [Google for Startups](https://startup.google.com/) 
 - [Roadmap FS](https://roadmap.sh/full-stack)
 - [Roadmap BE](https://roadmap.sh/backend)
@@ -131,4 +132,13 @@ This is not the end of your journey—it’s just the beginning. With a strong f
   - **Sustainability**: Learn about green software practices to reduce the environmental impact of technology. 
 -->
 
-<!--    -->
+<!-- - WHere are a we vs Full Stack @ Aalto  (https://sisu.aalto.fi/student/courseunit/aalto-OPINKOHD-1142323273-20210801/brochure)  -->
+
+
+<!--
+- [TIME100 AI 2024](https://time.com/collection/time100-ai-2024/)
+  - [Dwarkesh Patel](https://www.dwarkesh.com/)
+  - [Yasir Al-Rumayyan, Governor of Saudi Arabia’s Public Investment Fund](https://time.com/7012835/yasir-al-rumayyan-2/)
+
+ Flask app: https://flask.palletsprojects.com/en/stable/quickstart/ 
+-->
