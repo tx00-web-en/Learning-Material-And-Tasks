@@ -28,10 +28,7 @@ Here’s the updated codebase:
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^4.19.2"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "express": "^5.2.1"
   }
 }
 ```
