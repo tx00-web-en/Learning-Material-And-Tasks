@@ -48,7 +48,11 @@ Advancing technical skills offers various pathways depending on career goals or 
 - **Sequelize & Relational Databases**: Learn ORM tools and database management.  
   - [Python API Development](https://www.youtube.com/watch?v=ToXOb-lpipM&list=PL8VzFQ8k4U1IiGUWdBI7s9Y7dm-4tgCXJ)  
 
-- **[Deno](https://deno.com/) vs [Bun](https://bun.sh/)**: Explore a secure runtime for JavaScript and TypeScript.  
+- **[Bun](https://bun.sh/)**:   
+  - [Anthropic acquires Bun](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone)
+  - [Bun founder Jarred Sumner explains the acquisition](https://bun.com/blog/bun-joins-anthropic)
+
+- **[Deno](https://deno.com/)**
   - *[Deno Web Development](https://metropolia.finna.fi/Record/nelli15.4100000011868369)*  
   - *[Introducing Deno](https://metropolia.finna.fi/Record/nelli15.4100000011457827)*  
 
@@ -65,8 +69,8 @@ Advancing technical skills offers various pathways depending on career goals or 
  
 - AI **SDK** and **coding agents**
   - [AI SDK](https://ai-sdk.dev)
-  - [Opencode](https://opencode.ai/): open source AI coding agent
   - [Claude Code](https://claudecode.io/)
+  - [Opencode](https://opencode.ai/): open source AI coding agent
 
 - **GraphQL**: Simplify data-fetching for modern applications.  
   - [GraphQL Crash Course With Full Stack MERN Project](https://www.youtube.com/watch?v=BcLNfwF04Kw)  
