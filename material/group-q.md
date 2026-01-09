@@ -5,11 +5,11 @@
 ### **1. Would you rather...**
 - ...spend a week in the Bahamas or get a **Corsair Vengeance i7500 gaming PC**?  
 
-
+ 
 ### **2. If you could only use one, which would it be?**
 - **Dark mode** or **Light mode** for the rest of your life?  
 
-
+ 
 ### **3. Who would you trust more to solve your coding bug?**
 - **ChatGPT** or **Your friend who says, "I know what I’m doing"?  
 

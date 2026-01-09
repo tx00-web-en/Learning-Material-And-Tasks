@@ -5,9 +5,9 @@
 - **Purpose:** Reveals interests and priorities.
   - **Bahamas:** Likely values experiences, relaxation, and stepping away from tech.
   - **Gaming PC:** Indicates tech enthusiasm, gaming culture affinity, or passion for high-performance tools.
-  
----
 
+---
+ 
 ### **2. If you could only use one, which would it be: Dark mode or Light mode?**
 - **Purpose:** Highlights their approach to functionality and personal preferences.
   - **Dark Mode:** Suggests tech-savviness or preference for aesthetics and reduced eye strain.

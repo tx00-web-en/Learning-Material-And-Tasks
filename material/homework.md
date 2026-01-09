@@ -7,7 +7,7 @@
   - :star: [Basics & Types](https://youtu.be/FhguwBJeqWs)
   - :star: [Functions & Arrow functions](https://youtu.be/xUI5Tsl2JpY)
   - :star: [Objects](https://youtu.be/X0ipw1k7ygU)
-
+ 
 ### Before Wednesday Afternoon: 
 
 - HTTP

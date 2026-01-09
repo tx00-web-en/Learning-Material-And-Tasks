@@ -9,7 +9,7 @@
 - Develop self-motivated, lifelong learners
 - Thrive in individual and team-based settings
 - Adapt to multicultural environments
- 
+
 ----
 
 ### Course Dynamics

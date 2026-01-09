@@ -7,7 +7,7 @@
   - **Frontend**: Input box for the sentence and options to choose "professional" or "casual."
   - **Backend**: Send the sentence and tone to LLM to generate a rewritten version.
   - **Extra**: Save original and rewritten versions in MongoDB for user history.
-
+ 
 ---
 
 ### **2. AI Quiz Question Generator**

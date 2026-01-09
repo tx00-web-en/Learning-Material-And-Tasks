@@ -2,7 +2,7 @@
 # Icebreaker Instructions
  
 ## Step 1: Pair Discussion (2 per pair):
-
+ 
 - **Goal**: Break the ice + learn background
 - Turn to the person sitting next to you (same row).
 - Discuss these questions:
@@ -12,7 +12,7 @@
   4. If you could build any app tomorrow, what would it do?
   5. What role do you usually take in a team (organizer, coder, designer, motivator, tester)?  
 - (7 minutes → each person speaks for about 3 minutes, keep it balanced)
-
+ 
 ## Step 2: Group of Four 
 - **Goal**: Explore project interests + AI use → helps future group formation
 - Turn around to connect with the row behind you.
