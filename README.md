@@ -14,6 +14,11 @@
 ---
 
 > [!NOTE]  
+> - Note: [Free GitHub Pro account for verified learners](https://github.com/education)
+
+---
+
+> [!NOTE]  
 > - Tentative Timeline per session
 >   - Mini lecture (~35min)
 >   - Group / Pair programming `+ Break` (~50min)
