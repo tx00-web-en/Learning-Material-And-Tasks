@@ -137,7 +137,7 @@ git push
 
 Below are the specific deadlines for each week's journal entry. **Each** reflection journal is worth **20 points**. To earn these points, the journal **must be submitted before the deadline**.
 
-- **Week 1 and Week 2 Deadline**: 24/01 @ 23:45
+- **Week 1 and Week 2 Deadline**: *24/01 @ 23:30*
 
 
 > **Important:** Please make sure to commit and push your updates before the deadlines.
