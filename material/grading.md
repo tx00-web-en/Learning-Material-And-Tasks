@@ -30,7 +30,7 @@
 >  
 > **Option B**  
 > - Group Activities – 28%  
-> - Individual Tasks – 20%  
+> - Individual Tasks **in class** – 20%  
 > - Paper Exam – 25%  
 > - Coding Exam – 27%  
 
