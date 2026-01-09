@@ -14,11 +14,6 @@
 ---
 
 > [!NOTE]  
-> - Note: [Free GitHub Pro account for verified learners](https://github.com/education)
-
----
-
-> [!NOTE]  
 > - Tentative Timeline per session
 >   - Mini lecture (~35min)
 >   - Group / Pair programming `+ Break` (~50min)
@@ -29,13 +24,13 @@
 ----
 
 > [!TIP] 
-> - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/EgcA17SAag5Or3QgZpcQ2ZsBVVMNeG8lYAPEN5NL1v-KZQ)
+> - Zoom Recordings
 > - [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
 > - Tools for Developers
 >   - [Web utilities for developers, designers, and creators](https://webutils.io/about)
 >   - [Developer Cheat Sheets](https://www.devsheets.io/)
 >   - [Design Resources For Developers](https://github.com/bradtraversy/design-resources-for-developers)
-
+> - [Free GitHub Pro account for verified learners](https://github.com/education)
 
 ----
 
