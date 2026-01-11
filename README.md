@@ -12,7 +12,7 @@
  
 ## 1. Intro: *What?*
 
-- ~~Reveal+Drawio~~
+- ~~Reveal+Drawio+Self-Assessment~~
 - Duration & Commitment:
   - *Total Duration:* **2 months**  
   - *Weekly Schedule:* **3 days** of **in‑class** sessions  
@@ -90,16 +90,22 @@ https://opinto-opas.metropolia.fi/realization/LX00EW72-3008?lang=en
 https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 
 ---
- 
-## 3. Course Dynamics: *How will we learn?*
 
-- OMA
+## 3. Activity
+
+- [Icebreaker Task](./material/ice-breaker.md)
+
+---
+ 
+## 4. Course Dynamics: *How will we learn?*
+
+- *OMA*
 - **Balanced approach**
   - **One foot in industry:** Real-world applications and practical skills
   - **One foot academia:** A solid foundation in theories and concepts
 - [Schedule](./material/timeline.md) 
 - Important dates
-- Optional sessions
+- *Optional sessions*
 - [5-step learning cycle](./material/img/learning-phases.png)
 - Grading: Pair Programming, etc.
 - [Self Assessment](./material/self-assesment.xlsx)
@@ -107,24 +113,29 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - Fast paced
   - New paradigm e.g. functional programming
   - Comfort zone vs. growth
-- **Group Formation**: *Find your circle*, *like minded link*, etc.
-  - [Questions](./material/group-q.md)
-  - [Analysis](./material/group-analysis.md)
-  - Importance of synergy
 - Time Management
   - [9 Proven Time Management Techniques and Tools](https://www.usa.edu/blog/time-management-techniques/)
   - [The 26 most effective time management techniques](https://clockify.me/time-management-techniques)
   - [6 Strategies to Better Manage Your Time](https://www.coursera.org/articles/time-management)
 - Preparation required before each class
-- AI For SW eng
-  - AI assitant vs Vibe coding
+- AI For SW Engineering
+  - [Agentic coding vs Vibe coding vs Vibe Engineering](https://www.linkedin.com/pulse/vibe-coding-vs-engineering-do-we-really-need-label-cronquist-umqmf/)
   - AI doesn’t just replace tasks — it frees you to be 90% more productive where your impact counts
 
 ---
 
-## 4. What Now? *Next steps*
 
-- Group formation: [Icebreaker Task](./material/ice-breaker.md)
+## 5. Activity
+
+- **Group Formation**: *Find your circle*, *like minded link*, etc.
+  - [Questions](./material/group-q.md)
+  - [Analysis](./material/group-analysis.md)
+  - Importance of synergy
+  
+---
+
+## 6. What Now? *Next steps*
+
 - [Unified Setup](./material/unified-setup.md)
 - [Homework](./material/homework.md) before Wednesday
 - Explore [design resources for developers](https://github.com/bradtraversy/design-resources-for-developers)
