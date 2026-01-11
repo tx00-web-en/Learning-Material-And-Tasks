@@ -15,14 +15,13 @@
 
 ### Web Development Course
 
-
 - **Group Activities in class** – 28%  
 - **Pair Programming in class** – 38%  
 - **Feedback** – 7%  
 - **Coding Exam** *(optional)* – 27%  
 - **Bonus** – up to 100 points (10%)
 
-> [!IMPORTANT]  
+> [!NOTE]  
 > **Alternative Grading Option** (for students not comfortable with *pair programming*):  
 >  
 > - Group Activities **in class** – 28%  
