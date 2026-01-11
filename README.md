@@ -69,6 +69,7 @@
   - Project 1 & 2 (10cr)
   - Algorithms (5cr), Design Patterns (5cr)
     - Web courses maps to Total (**90cr**: 15cr+55cr+20)
+  - AI major/Minor (**15cr**)
 - Faster path → possibilty to graduate in 3 years
 - Startup potential ([Turbiini incubator](https://www.metropolia.fi/fi/asiakastyot-ja-palvelut/yrittajyyskiihdyttamo-turbiini) )
 - Internship & career opportunities
