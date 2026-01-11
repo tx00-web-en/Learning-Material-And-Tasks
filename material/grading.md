@@ -17,18 +17,18 @@
 
 - **Group Activities in class** – 28%  
 - **Pair Programming in class** – 38%  
-- **Feedback** – 7%  
 - **Coding Exam** *(optional)* – 27%  
+- **Feedback** – 7%  
 - **Bonus** – up to 100 points (10%)
 
 > [!NOTE]  
 > **Alternative Grading Option** (for students not comfortable with *pair programming*):  
 >  
 > - Group Activities **in class** – 28%  
-> - Individual Tasks **in class** – 19%  
-> - **Feedback** – 7%  
-> - Paper Exam – 19%  
+> - Individual Tasks **in class** – 10%  
+> - Paper Exam – 28%  
 > - Coding Exam – 27%  
+> - **Feedback** – 7%  
 > - **Bonus** – up to 100 points (10%)
 
 <!-- 
