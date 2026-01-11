@@ -11,36 +11,36 @@
 
 ---
 
-## Web Development Course
+## Weight Distribution
 
-### Weight Distribution
+### Web Development Course
 
-- **Group Activities** – 28%  
-- **Pair Programming** – 38%  
+
+- **Group Activities in class** – 28%  
+- **Pair Programming in class** – 38%  
 - **Feedback** – 7%  
-- **Exam** *(optional)* – 27%  
-- **Bonus** – up to 100 points (10%)  
+- **Coding Exam** *(optional)* – 27%  
+- **Bonus** – up to 100 points (10%)
 
 > [!IMPORTANT]  
-> **Alternative Grading Options** (for students not comfortable with *pair programming* or *group activities*):  
+> **Alternative Grading Option** (for students not comfortable with *pair programming*):  
 >  
-> **Option A**  
-> - Open‑book Exam – 50%  
-> - Paper Exam – 50%  
->  
-> **Option B**  
-> - Group Activities – 28%  
+> - Group Activities **in class** – 28%  
 > - Individual Tasks **in class** – 20%  
 > - Paper Exam – 25%  
 > - Coding Exam – 27%  
+> - **Bonus** – up to 100 points (10%)
 
+<!-- 
+> **For students with solid full‑stack development experience**  
+> - Open‑book Exam – 50%  
+> - Paper Exam – 50%  
+-->
 
 
 ---
 
-## Project Course
-
-### Weight Distribution
+### Project Course
 
 - **Sprint 1** – 8%  
 - **Sprint 2** – 10%  
@@ -53,10 +53,12 @@
 - **Exam** *(optional)* – 20%  
 - **Bonus** – up to 100 points (10%)  
 
+<!-- 
 > [!IMPORTANT]  
-> **Alternative Option** (if not comfortable with *Reflection Journals* or *group Coding Marathons*):  
+> **For students with solid full‑stack development experience**   
 > - **Mini project** – 50% of the final grade  
 > - **Paper exam** – 50% of the final grade  
+-->
 
 
 
