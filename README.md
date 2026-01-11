@@ -66,10 +66,10 @@
   - Thesis (15cr)
   - Work placement (30cr)
   - Innovation project (10cr)
+  - **AI specialization** (15cr)
   - Project 1 & 2 (10cr)
   - Algorithms (5cr), Design Patterns (5cr)
-    - Web courses maps to Total (**90cr**: 15cr+55cr+20)
-  - AI major/Minor (**15cr**)
+  - Web courses maps to Total (**90cr**: 15cr+55cr+20)
 - Faster path → possibilty to graduate in 3 years
 - Startup potential ([Turbiini incubator](https://www.metropolia.fi/fi/asiakastyot-ja-palvelut/yrittajyyskiihdyttamo-turbiini) )
 - Internship & career opportunities
@@ -77,7 +77,6 @@
   - [Job postings](https://www.indeed.com/jobs?q=full+stack+developer&l=usa&vjk=b9da5da96494bee5)
   - [Salary](https://www.indeed.com/career/full-stack-developer/salaries?from=top_sb)
   - [How to negotiate your full-stack developer salary](https://www.salaryexpert.com/)
-- Backbone for AI specialization
 <!-- - ~~[Visual Placeholder: Roadmap/Mapping Web → Other Courses → Graduation]~~ -->
 
 <!-- - Turbiini Metropolia 
