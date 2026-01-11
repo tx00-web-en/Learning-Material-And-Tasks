@@ -161,10 +161,9 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - [Course dynamics summary](./material/course-dynamics.md)
 - [Course description](./material/description.md)
 
----
 
-
-> “In just 2 months, you’ll move from learning to launching your own fullstack AI web app with a team. It won’t be easy — fast pace, new concepts, and late-night debugging — but you won’t face it alone. You’ll have guidance, teammates, and proven strategies to succeed. The reward? Skills, confidence, and a portfolio project that can open doors to internships, jobs, or even your own startup.”
+> In just two months, you and your team will be able to launch a full‑stack AI app. The pace will be fast and the concepts new, but you won’t be facing it alone. You’ll have guidance, teammates, and proven strategies to help you succeed.
+> The reward? Real skills, real confidence, and a portfolio‑ready project that can open doors to internships, jobs, or even your own startup.
 
 <!-- Full stack developers need to integrate AI-driven solutions into applications, from personalized recommendations to chatbots. Familiarity with AI libraries and frameworks will become increasingly important for developers aiming to enhance user engagement. -->
 
