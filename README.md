@@ -149,15 +149,11 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   <!-- Simplifies the process of integrating large language models (LLMs) into your applications by providing a unified API that works with different model providers -->
 <!-- - [AI ideas (Simple)](./material/ideas.md) -->
 
----
 
-## Final message:
-
-> “In just 2 months, you’ll move from learning to launching your own fullstack AI web app with a team. It won’t be easy — fast pace, new concepts, and late-night debugging — but you won’t face it alone. You’ll have guidance, teammates, and proven strategies to succeed. The reward? Skills, confidence, and a portfolio project that can open doors to internships, jobs, or even your own startup.”
 
 ---
 
-## 5. Recap & Vision
+## 7. Recap & Vision
 
 - [Roadmap](https://roadmap.sh/full-stack): BE, FE, DevOps, Security, Testing, AI, Agile, Soft Skills
 - `Fullstack App` vs `Fullstack AI App` → added opportunities
@@ -165,6 +161,10 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - [Course dynamics summary](./material/course-dynamics.md)
 - [Course description](./material/description.md)
 
+---
+
+
+> “In just 2 months, you’ll move from learning to launching your own fullstack AI web app with a team. It won’t be easy — fast pace, new concepts, and late-night debugging — but you won’t face it alone. You’ll have guidance, teammates, and proven strategies to succeed. The reward? Skills, confidence, and a portfolio project that can open doors to internships, jobs, or even your own startup.”
 
 <!-- Full stack developers need to integrate AI-driven solutions into applications, from personalized recommendations to chatbots. Familiarity with AI libraries and frameworks will become increasingly important for developers aiming to enhance user engagement. -->
 
