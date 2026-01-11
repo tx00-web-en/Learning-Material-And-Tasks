@@ -25,8 +25,8 @@
 > **Alternative Grading Option** (for students not comfortable with *pair programming*):  
 >  
 > - Group Activities **in class** – 28%  
-> - Individual Tasks **in class** – 10%  
-> - Paper Exam – 28%  
+> - Individual Tasks **in class** – 12%  
+> - Paper Exam – 26%  
 > - Coding Exam – 27%  
 > - **Feedback** – 7%  
 > - **Bonus** – up to 100 points (10%)
