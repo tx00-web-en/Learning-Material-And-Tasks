@@ -79,6 +79,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Friday Morning: 
 
 - ~~Reveal/Drawio~~
+- [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBYnOeLH9e5SJLiDkoqxQagAQmjHsqltbXFOoC_GZsXulU)
 - Announcements:
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
