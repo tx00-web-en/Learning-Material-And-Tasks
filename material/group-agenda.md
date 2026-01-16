@@ -30,9 +30,9 @@ This afternoon's session will be conducted autonomously by each group. Teams can
 
 
  5. **Note: Important Dates**
-      - *Prototype* (Figma): due before 2025-11-07
-      - *UI:* due before 2025-11-21 
-      - *AI component:* due 2025-12-11 
+      - *Prototype* (Figma) before week 3
+      - *UI:*  before week 4
+      - *AI component:*  before week 5
       - Backend & Frontend: developed iteratively, applying weekly learnings starting *week 2*
       - Ensure effective time management and coordinate closely to maintain a balanced workload.
    

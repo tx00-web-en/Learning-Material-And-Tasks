@@ -24,7 +24,7 @@
 ----
 
 > [!TIP] 
-> - Zoom Recordings
+> - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBYnOeLH9e5SJLiDkoqxQagAQmjHsqltbXFOoC_GZsXulU)
 > - [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
 > - Tools for Developers
 >   - [Web utilities for developers, designers, and creators](https://webutils.io/about)
@@ -89,7 +89,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - **Sprint 1**
   - [Project Ideas](./material/project-ideas.md)
   - [UI & AI](./material/UI.md)
-  - [Sprint 1: Deadline 2025-11-07](https://github.com/tx00-web-en/Project/)
+  - [Sprint 1: Deadline week 3](https://github.com/tx00-web-en/Project/)
   - [Agenda for Team Meeting](./material/group-agenda.md)  
   - [Activity](./material/scrum-activity2.md)
   
@@ -100,7 +100,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - [Agenda for Team Meeting](./material/group-agenda.md)
 
 ---
-### Friday Afternoon (Optional - 16:00-19:00):
+### Friday Afternoon (Optional - 16:15-19:15):
 
 - **Explore npm Packages**: Discover npm packages, which act as building blocks for your projects.
   - [Summary](./material/npm.md)
