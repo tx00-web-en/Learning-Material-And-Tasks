@@ -109,6 +109,10 @@ We'll follow a 5-step learning cycle as shown in the figure below:
   - [Summary](./material/github.md)
   - [Activity](./material/github-activity2.md)
 
+
+
+<!-- https://coolors.co/ -->
+
 <!-- 
 Metropolia  PRE-INCUBATOR/yrityshautomo
 https://turbiini.net/
