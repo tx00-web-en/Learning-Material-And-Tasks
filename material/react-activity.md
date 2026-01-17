@@ -349,14 +349,14 @@ npm run dev
 
 3. **Footer Component:**
    - Create a new file `Footer.jsx` in the `src` folder.
-   - Define a functional component that returns a footer (e.g., "© 2025 React Lab").
+   - Define a functional component that returns a footer (e.g., "© 2026 React Lab").
 
    ```jsx
    // Footer.jsx
    function Footer() {
      return (
        <footer>
-         <p>&copy; 2025 React Lab</p>
+         <p>&copy; 2026 React Lab</p>
        </footer>
      );
    }

@@ -64,7 +64,7 @@ This command starts the development server, and you should see output indicating
    - **Footer HTML:**
      ```html
      <div class="footer">
-       <p>Copyright © 2025 My JSX App</p>
+       <p>Copyright © 2026 My JSX App</p>
        <p>Design</p>
      </div>       
      ```
@@ -414,7 +414,7 @@ Create the following React components in separate files:
    const article1Text = 'Content of Article 1.';
    const sidebarContent = 'Sidebar content goes here.';
    const section2Content = 'This is the content of section 2.';
-   const footerText = 'Copyright © 2025 JSX Props App';
+   const footerText = 'Copyright © 2026 JSX Props App';
 
    function App() {
      return (

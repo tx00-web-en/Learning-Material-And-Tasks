@@ -1,10 +1,8 @@
 # Theory: React
 
-<!-- React has become one of the most popular tools for building dynamic user interfaces, especially for Single Page Applications (SPAs). Whether you're new to React or looking to refresh your knowledge, this guide will walk you through the basics, from understanding what React is to organizing components and passing data between them.
-
 - [Introduction to React](#part-1-introduction-to-react)
 - [Other Considerations](#part-5-other-considerations)
-- [Extra Reading](#extra-reading) -->
+- [Extra Reading](#extra-reading) 
 
 ----
 ## Part 1: Introduction to React

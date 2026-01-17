@@ -70,7 +70,8 @@ Create and render an `IdCard` component with 6 props:
 
 **Expected Output:**
 
-![image](https://user-images.githubusercontent.com/5306791/52976030-22b0d200-33c8-11e9-91fe-e3ce0fa14078.png)
+![image](./img/part1.png)
+
 
  
  > In this activity, when passing a date object as a prop from parent to child components (e.g., `birth={new Date('1988-05-11')}`), ensure you convert it to a string within the child component. For example, instead of directly accessing `props.birth` as a Date object, convert it to a string using methods like `toDateString()` (e.g., `props.birth.toDateString()`).
@@ -96,7 +97,9 @@ The component should display a random integer in the range between the `min` and
 
 **Expected Output:**
 
-![image](https://user-images.githubusercontent.com/5306791/52957202-718f4500-3391-11e9-9b45-d1172067e877.png)
+![image](./img/part2.png)
+
+
 
 > Consider using [Math.random()](./fe-practice-summary.md#2-generate-random-numbers-within-a-specified-range-in-javascript) and [`Math.floor()`](./fe-practice-summary.md#2-generate-random-numbers-within-a-specified-range-in-javascript) to generate random numbers within a specified range in JavaScript.
 

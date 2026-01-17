@@ -35,7 +35,7 @@ This pair programming session will be flexible and unstructured, without strict 
 ----
 
 
-### Part 3/4: `CreditCard`
+### Part 3/5: `CreditCard`
 
 Create a `CreditCard` component that displays a rectangle with the information coming from the props. 
 
@@ -93,7 +93,8 @@ The component should take 8 props:
 
 **Expected Output:**
 
-![image](https://user-images.githubusercontent.com/5306791/52975678-ac5fa000-33c6-11e9-8cbf-7d13a8a0f625.png)
+![image](./img/part3.png)
+
 
 - Consider:
   - [How to use images in React components](./fe-practice-summary.md#how-to-use-images-in-react-components)
@@ -101,7 +102,7 @@ The component should take 8 props:
 
 ----
 
-### Part 4/4: `BoxColor`
+### Part 4/5: `BoxColor`
 
 - Create a `BoxColor` component that displays a rectangle with a background color based on props. For this, you will need to add inline styles ([documentation](./fe-practice-summary.md#understanding-inline-styles)).
 
@@ -121,12 +122,12 @@ The component should take 3 props:
 
 **Expected Output:**
 
-![image](https://user-images.githubusercontent.com/5306791/52957816-ec0c9480-3392-11e9-9e00-67094fa2b431.png)
+![image](./img/part4.png)
 
 
 ----
 
-### (Optional): `Greetings`
+### Part 5/5:  `Greetings`
 
 Create a `Greetings` component with 2 props:
 
@@ -144,7 +145,8 @@ The component should display a greeting text in the chosen language.
 
 **Expected Output:**
 
-![image](https://user-images.githubusercontent.com/5306791/52957158-57edfd80-3391-11e9-8726-93c1a3389016.png)
+![image](./img/part5.png)
+
 
 
 - Consider:
