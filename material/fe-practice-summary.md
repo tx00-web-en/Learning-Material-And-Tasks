@@ -5,9 +5,8 @@
 - [Generate random numbers within a specified range in JavaScript.](#generate-random-numbers-within-a-specified-range-in-javascript)
 - [How to use images in React components](#how-to-use-images-in-react-components)
 - [How to extract the last digits from a string](#how-to-extract-the-last-digits-from-a-string)
+- [How to Convert RGB to HEX](#converting-rgb-to-hex)
 - [Understanding Inline Styles](#understanding-inline-styles)
-- 
-
 
 ---
 ## Using the `switch` Statement in JavaScript
@@ -327,8 +326,6 @@ rgbToHex(255, 99, 71);
 ```txt
 #ff6347
 ```
-
-
 
 ---
 ## Understanding Inline Styles:
