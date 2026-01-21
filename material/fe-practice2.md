@@ -112,6 +112,7 @@ The component should take 3 props:
   - `b`: A number between `0` and `255` representing the amount of blue
 
 - Display the hex values of the color (e.g., `#ff0000` for red).
+- Here's how to [Convert RGB to HEX](./fe-practice-summary.md#converting-rgb-to-hex)
 
 **Example:**
 
@@ -123,6 +124,7 @@ The component should take 3 props:
 **Expected Output:**
 
 ![image](./img/part4.png)
+
 
 
 ----

@@ -6,6 +6,8 @@
 - [How to use images in React components](#how-to-use-images-in-react-components)
 - [How to extract the last digits from a string](#how-to-extract-the-last-digits-from-a-string)
 - [Understanding Inline Styles](#understanding-inline-styles)
+- 
+
 
 ---
 ## Using the `switch` Statement in JavaScript
@@ -265,6 +267,67 @@ console.log(last3Digits); // Output: "182"
 
 - This method works for strings, not numbers. If you have a number, you can convert it to a string using the `toString()` method before applying `slice()`.
 - The `slice()` method can also be used to extract other portions of a string by specifying different start and end indices.
+
+---
+
+## Converting RGB to HEX
+
+- RGB colors are written as three numbers:
+  `rgb(red, green, blue)`
+- Each value goes from **0 to 255**
+- HEX colors use **base-16 (hexadecimal)** numbers instead of base-10
+- JavaScript can convert numbers to hexadecimal using:
+  `number.toString(16)`
+
+
+**Step 1: Converting one RGB value to HEX**
+
+```js
+function toHex(color) {
+  const hex = color.toString(16);
+
+  // If the hex value is only one character, add a leading zero
+  return hex.length === 1 ? '0' + hex : hex;
+}
+```
+
+**Explanation**
+
+* `color.toString(16)` converts a number (like `255`) into hex (`"ff"`)
+* Some values produce **only one character**:
+
+  * `5 → "5"`
+* HEX colors **must always use two characters per color**
+
+  * `"05"` instead of `"5"`
+
+
+**Converting RGB to HEX using `toHex`**
+
+```js
+function rgbToHex(r, g, b) {
+  return '#' + toHex(r) + toHex(g) + toHex(b);
+}
+```
+
+
+**Example**
+
+```js
+rgbToHex(255, 99, 71);
+```
+
+**What happens:**
+
+* `255 → "ff"`
+* `99 → "63"`
+* `71 → "47"`
+
+**Result:**
+
+```txt
+#ff6347
+```
 
 
 

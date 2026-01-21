@@ -35,7 +35,7 @@
 
 ----
 
-### Part 1/4: `IdCard`
+### Part 1/5: `IdCard`
 
 Create and render an `IdCard` component with 6 props:
 
@@ -79,7 +79,7 @@ Create and render an `IdCard` component with 6 props:
 
 ----
 
-### Part 2/4: `Random`
+### Part 2/5: `Random`
 
 Create a `Random` component with 2 props:
 
