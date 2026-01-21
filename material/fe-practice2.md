@@ -105,14 +105,11 @@ The component should take 8 props:
 ### Part 4/5: `BoxColor`
 
 - Create a `BoxColor` component that displays a rectangle with a background color based on props. For this, you will need to add inline styles ([documentation](./fe-practice-summary.md#understanding-inline-styles)).
-
-The component should take 3 props:
+- The component should take 3 props:
   - `r`: A number between `0` and `255` representing the amount of red
   - `g`: A number between `0` and `255` representing the amount of green
   - `b`: A number between `0` and `255` representing the amount of blue
-
-- Display the hex values of the color (e.g., `#ff0000` for red).
-- Here's how to [Convert RGB to HEX](./fe-practice-summary.md#converting-rgb-to-hex)
+- Display the hex values of the color (e.g., `#ff0000` for red). Here's how to [Convert RGB to HEX](./fe-practice-summary.md#converting-rgb-to-hex)
 
 **Example:**
 

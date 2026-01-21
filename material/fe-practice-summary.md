@@ -272,8 +272,7 @@ console.log(last3Digits); // Output: "182"
 
 ## Converting RGB to HEX
 
-- RGB colors are written as three numbers:
-  `rgb(red, green, blue)`
+- RGB colors are written as three numbers: `rgb(red, green, blue)`
 - Each value goes from **0 to 255**
 - HEX colors use **base-16 (hexadecimal)** numbers instead of base-10
 - JavaScript can convert numbers to hexadecimal using:
