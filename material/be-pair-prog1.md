@@ -12,7 +12,8 @@ Here's the data model for the Feedback API:
 {
   "sender": "John Smith",
   "message": "Great session on React components! I found the examples very helpful.",
-  "rating": 5
+  "rating": 5,
+  "platform": "mobile"
 }
 ```
 
@@ -48,7 +49,7 @@ Here's the data model for the Feedback API:
    - Ensure the functions can be tested by using:
      ```js
      if (require.main === module) {
-      let result = addOne("John Smith", "Great session on React components! I found the examples very helpful.", 4);
+      let result = addOne("John Smith", "Great session on React components! I found the examples very helpful.", 5, "mobile");
       console.log(result);
       console.log("getAll called:", getAll());
       console.log("findById called:", findById(1));
@@ -177,7 +178,8 @@ Work together closely, communicate clearly, and support each other throughout th
        {
          "sender": "John Smith",
          "message": "Great session on React components! I found the examples very helpful.",
-         "rating": 5
+         "rating": 5,
+         "platform": "mobile"
        }
        ```
      - **Action**: Click "Send" to create a new feedback entry.  
@@ -195,9 +197,8 @@ Work together closely, communicate clearly, and support each other throughout th
      - **Body**: Select "Body" > "raw" > "JSON" and provide updated data for the feedback:  
        ```json
        {
-         "sender": "Jane Doe",
-         "message": "The session on React components was very insightful!",
-         "rating": 4
+         "rating": 4,
+         "platform": "tablet"
        }
        ```
      - **Action**: Click "Send" to update the feedback entry.  
@@ -220,7 +221,7 @@ Work together closely, communicate clearly, and support each other throughout th
 
 6. **Debug and Repeat**
    - If any endpoint does not work as expected, check your code in `feedbackHandlers.js` and `app.js` for errors.
-   - Fix any issues, restart the server using `npm run dev`, and retest the endpoint with Postman.
+   - Fix any issues, restart the server using `npm start`, and retest the endpoint with Postman.
 
 7. **Complete Testing**
    - Ensure that all endpoints (`GET`, `POST`, `GET/:feedbackId`, `PUT/:feedbackId`, `DELETE/:feedbackId`) are tested and working correctly.

@@ -12,7 +12,8 @@ Here's the data model for the Tour API:
   "name": "Best of Paris in 7 Days Tour",
   "info": "Paris is synonymous with the finest things that culture can offer — in art, fashion, food, literature, and ideas. On this tour, your Paris-savvy Rick Steves guide will immerse you in the very best of the City of Light: the masterpiece-packed Louvre and Orsay museums, resilient Notre-Dame Cathedral, exquisite Sainte-Chapelle, and extravagant Palace of Versailles. You'll also enjoy guided neighborhood walks through the city's historic heart as well as quieter moments to slow down and savor the city's intimate cafés, colorful markets, and joie de vivre. Join us for the Best of Paris in 7 Days!",
   "image": "https://www.course-api.com/images/tours/tour-1.jpeg",
-  "price": "1,995"
+  "price": "1,995",
+   "location": "Paris, France"
 }
 ```
 
@@ -56,7 +57,7 @@ Here's the data model for the Tour API:
    - Ensure the functions can be tested by using:
      ```js
      if (require.main === module) {
-      let result = addOne("7 Days Tour"," Join us for the Best of Helsinki!","https://www.course-api.com/images/tours/tour-x.jpeg", "1,495");
+      let result = addOne("7 Days Tour"," Join us for the Best of Helsinki!","https://www.course-api.com/images/tours/tour-x.jpeg", "1,495", "Helsinki, Finland");
       console.log(result);
       console.log("getAll called:", getAll());
       console.log("findById called:", findById(1));
@@ -193,7 +194,8 @@ Work closely with your partner, communicate effectively, and support each other 
          "name": "Best of Paris in 7 Days Tour",
          "info": "Paris is synonymous with the finest things that culture can offer...",
          "image": "https://www.course-api.com/images/tours/tour-1.jpeg",
-         "price": "1,995"
+         "price": "1,995",
+         "location": "Paris, France"
        }
        ```
      - **Action**: Click the "Send" button to create a new tour.  
@@ -213,7 +215,6 @@ Work closely with your partner, communicate effectively, and support each other 
        {
          "name": "Updated Tour Name",
          "info": "Updated tour information...",
-         "image": "https://www.course-api.com/images/tours/tour-2.jpeg",
          "price": "2,095"
        }
        ```
