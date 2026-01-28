@@ -123,7 +123,7 @@ Goal: replace the placeholder `Navbar` component with the real Navbar HTML conve
 
 Try it first (10–12 minutes):
 
-1. Open [./Original-HTML/index.html](./Original-HTML/index.html).
+1. Open [./Original-HTML/index.html](./fe-pair-programming/Original-HTML/index.html).
 2. Identify the sections (so you know what you're converting):
    - Navbar: lines 15 - 48
    - Hero: lines 50 - 61
