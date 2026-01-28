@@ -2,7 +2,7 @@
 
 In this paired activity, you will transform an existing HTML webpage into a React app with the following component structure:
 
-![](./img/App.png)
+![](./fe-pair-programming/img/App.png)
 
 ## How you will work (paired, not strict pair programming)
 
@@ -237,7 +237,7 @@ Try it first (12–15 minutes):
 
 Expected component tree:
 
-![](./img/App2.png)
+![](./fe-pair-programming/img/App2.png)
 
 <details>
 <summary>Solution (Iteration 2)</summary>
@@ -652,7 +652,7 @@ export default Services
 
 DevTools check:
 
-![](./img/services.png)
+![](./fe-pair-programming/img/services.png)
 
 ----
 ### Iteration 4: 
@@ -729,7 +729,7 @@ export default Tours
 </details>
 
 - You can use the React DevTools extension to inspect the component hierarchy. When you do, you should see the following structure:
-![](./img/tours.png)
+![](./fe-pair-programming/img/tours.png)
 
 ----
 ### Iteration 5: 
@@ -800,7 +800,7 @@ Try it first (12 minutes):
 3. Update `Navbar.jsx` to use `<PageLinks />` and `<SocialLinks />`.
 
 - You can use the React DevTools extension to inspect the component hierarchy. When you do, you should see the following structure:
-![](./img/navbar.png)
+![](./fe-pair-programming/img/navbar.png)
 
 <details>
 <summary>Solution (Iteration 6)</summary>
