@@ -42,8 +42,8 @@ When you get stuck:
 
 1. Create a new GitHub repository named `week3-fe-pair-programming`.
 2. Add your partner as a collaborator.
-3. Follow this GitHub workflow when collaborating: [./github-push-pull.md](./github-push-pull.md)
-4. After each iteration, commit with a relevant message: [./github-push-pull.md#commit-messages](./github-push-pull.md#commit-messages)
+3. Follow this GitHub workflow when collaborating: [./github-push-pull.md](./fe-pair-programming/github-push-pull.md)
+4. After each iteration, commit with a relevant message: [./github-push-pull.md](./fe-pair-programming/github-push-pull.md)
 5. Add the repo link to your reflection journal.
 6. Keep the repository private until Sunday.
 7. If any step is unclear or you're unable to complete it, don't hesitate to call the teacher to the breakout room for help.
@@ -123,7 +123,7 @@ Goal: replace the placeholder `Navbar` component with the real Navbar HTML conve
 
 Try it first (10–12 minutes):
 
-1. Open [./Original-HTML/index.html](./fe-pair-programming/Original-HTML/index.html).
+1. Open [./fe-pair-programming/Original-HTML/index.html](./fe-pair-programming/Original-HTML/index.html).
 2. Identify the sections (so you know what you're converting):
    - Navbar: lines 15 - 48
    - Hero: lines 50 - 61
@@ -229,7 +229,7 @@ Goal: convert the rest of the HTML sections into React components.
 
 Try it first (12–15 minutes):
 
-1. Open [./Original-HTML/index.html](./Original-HTML/index.html).
+1. Open [./fe-pair-programming/Original-HTML/index.html](./fe-pair-programming/Original-HTML/index.html).
 2. Convert each section (Hero/About/Services/Tours/Footer) to JSX.
 3. Paste each JSX section into its matching component in `src/components/`.
 4. Fix images by importing them from `src/assets/images`.
