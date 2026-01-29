@@ -554,7 +554,7 @@ Refactor the global CSS file `App.css` into CSS modules e.g for the `Hero` compo
    @media screen and (min-width: 768px) {
      .hero {
        background: linear-gradient(rgb(44, 174, 186, 0.7), rgba(0, 0, 0, 0.7)),
-         url('./images/main.jpeg') center/cover no-repeat;
+         url('../assets/images/main.jpeg') center/cover no-repeat;
      }
 
      .hero-banner {
