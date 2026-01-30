@@ -71,7 +71,7 @@ Before planning Sprint 2, each group must conduct a **Sprint 1 Retrospective**.
 
 ### Format:
 
-* Use the **4Ls Retrospective**:
+* [Use the **4Ls Retrospective**:](https://agilebox.app/blog/4ls-retrospective/)
 
   * **Liked**
   * **Learned**
