@@ -98,10 +98,10 @@ After the retrospective, the team must define a **Sprint 2 Goal**.
 * The goal must align with:
 
   * Sprint 1 prototype
-  * Sprint 2 deliverables
-  * Assessment criteria
+  * [Sprint 2 deliverables and Assessment criteria](https://github.com/tx00-web-en/Project/blob/main/material/sprint2.md)
+  
 
-Example (for guidance only):
+Example (for guidance):
 
 > “By the end of Sprint 2, the team will deliver a working front-end and back-end structure aligned with the Sprint 1 prototype, including routing, mock data, and initial AI-related endpoints.”
 
@@ -114,7 +114,7 @@ Example (for guidance only):
 * The Product Owner must ensure a **Product Backlog exists**.
 * The Product Backlog should include:
 
-  * Features derived from the Sprint 1 prototype
+  * ~~Features derived from the Sprint 1 prototype~~
   * Functional and technical requirements for the MERN application
   * Front-end, back-end, AI, and infrastructure-related items
 
@@ -133,9 +133,7 @@ Sprint 2 backlog items should cover:
 
 * Front-end implementation
 * Back-end implementation (including AI-related endpoints)
-* Authentication and routing
-* Database persistence
-* Scrum documentation and presentation preparation
+
 
 ---
 
