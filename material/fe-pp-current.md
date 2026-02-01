@@ -1,4 +1,4 @@
-# Pair Programming: Front end
+<!-- # Pair Programming: Front end
 
 > Throughout the activity, you will switch roles: the driver (who writes code) becomes the navigator (who reviews and guides), and vice versa. Remember to switch roles after each major step, to ensure both participants contribute to coding and reviewing.
 
@@ -220,7 +220,7 @@ export default Tours;
 1. Create a `Layout` component.
 2. Utilize `<Outlet />` in the `Layout` component.
 3. Refactor your main App component to use the `Layout` component for improved structure and organization as explained [here](./react-router.md#part-2-how-to-handle-nested-routes-in-react-building-a-structured-layout).
-4. **Commit Changes** with a meaningful message.
+4. **Commit Changes** with a meaningful message. -->
 
 
 

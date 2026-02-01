@@ -1,4 +1,4 @@
-### Pair Programming Activity
+<!-- ### Pair Programming Activity
 
 ---
 
@@ -216,4 +216,4 @@ Now, you will add functionality for a new "user" entity.
 ## Links
 
 - [How To Use And Write Express Middleware](https://blog.webdevsimplified.com/2019-12/express-middleware-in-depth/)
-- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/) 
+- [Every Important HTTP Status Code Explained](https://blog.webdevsimplified.com/2022-12/http-status-codes/)  -->

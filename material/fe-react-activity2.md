@@ -1,18 +1,29 @@
 # React Forms - Intro
 
-HTML forms are an essential and ubiquitous 
-part of the web. Forms are used to search, create resources such as accounts and posts, update resources, and more. Learning how to create forms using React is
-an invaluable skill for you to learn and practice.
+HTML forms are an essential and ubiquitous part of the web. Forms are used to search, create resources such as accounts and posts, update resources, and more. Learning how to create forms using React is an invaluable skill for you to learn and practice.
 
 When you finish this practice, you should be able to
 
 - Create a React functional component containing a simple form
-- Define controlled inputs with the `useState` hook for different form inputs
+- Define controlled inputs with the [`useState`] hook for different form inputs
 
 > Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
 
 
-## Setup
+## Clarifications (Read This Once)
+
+- This lab builds a `ContactUs` component. Each checkpoint below includes a complete `src/ContactUs.jsx` so you can compare your work or recover if you get stuck.
+- In React, `<label for="name">` becomes `htmlFor="name"` because `for` is a reserved word in JavaScript.
+- When you add `value={...}` to an `<input>` without an `onChange`, React makes it **read-only** and shows a console warning.
+- `onChange` handlers receive an event object. The current value is usually read from `event.target.value`.
+- A `<select>` also uses `value` + `onChange` to become “controlled”, just like an `<input>`.
+- A `<textarea>` uses a `value` prop in React (not inner text) when controlled.
+- A form submission triggers a page reload by default. Use `event.preventDefault()` in `onSubmit` to keep your SPA from reloading.
+
+---
+
+
+## Step 0: Setup
 
 Open your terminal and run:
 
@@ -22,8 +33,19 @@ cd forms-intro-lab
 npm install
 ```
 
+Then start the dev server:
 
-## Creating a simple form
+```sh
+npm run dev
+```
+
+- Recommended clean up the default styles so they do not interfere with the lab:
+  - In `src/index.css`, remove the default CSS (you can leave it empty).
+  - In `src/App.css`, remove the default CSS (you can leave it empty).
+
+---
+
+## Step 1: Create a simple form
 
 To learn how to create HTML forms in React, you will create a `ContactUs`
 functional component that will contain a simple `Contact Us` form. The form will
@@ -36,7 +58,7 @@ contain five fields:
   work, or mobile
 - Comments - A `textarea` field for comments
 
-## Defining the `ContactUs` form component
+### Define the `ContactUs` form component
 
 To start, add a functional component named `ContactUs` that renders an HTML form
 with `Name`, `Email`, and `Phone` fields:
@@ -70,21 +92,105 @@ function ContactUs() {
 export default ContactUs;
 ```
 
+### Add basic styles (Optional)
+
+If you want the form to look nicer while keeping the React code focused on `useState`, add a CSS file that uses **HTML element selectors**.
+
+Create:
+
+- `src/ContactUs.css`
+
+```css
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 24px 0;
+  background: #f6f7fb;
+  color: #111827;
+}
+
+h2 {
+  width: min(560px, 92vw);
+  margin: 0 auto 12px;
+}
+
+form {
+  width: min(560px, 92vw);
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e6e8f0;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+form > div {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid #cfd3e1;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #6b7cff;
+  box-shadow: 0 0 0 3px rgba(107, 124, 255, 0.2);
+}
+
+button {
+  font: inherit;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #6b7cff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #5566ff;
+}
+```
+
 So far, there's nothing particularly interesting about this form. The only thing
 that looks different from regular HTML is that the `<label>` element's `for`
 attribute is `htmlFor` in React.
+
+---
+
+## Step 2: Render `ContactUs` in App.jsx
 
 Be sure to update your __App.jsx__ to render the `ContactUs` component:
 
 ```jsx
 // src/App.jsx
 
-import ContactUs from './ContactUs'
+import ContactUs from './ContactUs';
+import './ContactUs.css';
 
 function App() {
-  return (
-    <ContactUs />
-  );
+  return <ContactUs />;
 }
 
 export default App;
@@ -94,7 +200,9 @@ Look at the form in your browser. You can fill out the form, but the component
 currently doesn't know what the form input values are. To keep track of each of
 the input values, you will need to initialize and maintain component state.
 
-## Adding state to the component
+---
+
+## Step 3: Add state to the component (`useState`)
 
 To add state to the `ContactUs` component, import `useState` from React.
 Initialize three state variables--`name`, `email`, and `phone`--as empty
@@ -124,6 +232,44 @@ function ContactUs() {
 
 Go ahead and repeat the process for `Email` and `Phone`.
 
+<details>
+<summary>Complete src/ContactUs.jsx (After adding state + value props)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input id='name' type='text' value={name} />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input id='email' type='text' value={email} />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input id='phone' type='text' value={phone} />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
 Once you finish, refresh the browser. You will get a warning in your console
 saying:
 
@@ -140,6 +286,10 @@ state variable. The `name` state variable is initialized to an empty string and
 is never updated. Accordingly, the `Name` field will always be an empty string.
 To fix this, you need to update the `name` state variable whenever the user
 types into the field.
+
+---
+
+## Step 4: Add `onChange` handlers (make inputs controlled)
 
 More generally, the associated component state variable needs to be updated
 whenever a user changes a form field element value. Adding or removing a
@@ -164,6 +314,59 @@ current value as the `value` property on the target object.
 Use the same approach to add an `onChange` event handler to the `Email` and
 `Phone` form fields as well.
 
+<details>
+<summary>Complete src/ContactUs.jsx (After adding onChange handlers)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
 Open the React DevTools in your browser. You should be able to see the
 component's state update as you type within each of the form fields (i.e., the
 `<input>` elements). You can `console.log(name)` above your return to see this
@@ -171,7 +374,9 @@ change in real time in the console.
 
 ![onchange event handler](./img/form.png)
 
-## Adding a `select` list
+---
+
+## Step 5: Add a `select` list (Phone Type)
 
 To maintain symmetry across React form element types, the `<select>` element
 also uses a `value` attribute to get and set the element's selected option. To
@@ -206,10 +411,79 @@ to specify the type of phone number they're providing:
 </div>
 ```
 
+<details>
+<summary>Complete src/ContactUs.jsx (After adding select list)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [phoneType, setPhoneType] = useState('');
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+          <select
+            name='phoneType'
+            onChange={e => setPhoneType(e.target.value)}
+            value={phoneType}
+          >
+            <option value='' disabled>
+              Select a phone type...
+            </option>
+            <option>Home</option>
+            <option>Work</option>
+            <option>Mobile</option>
+          </select>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
 Note that you can leave the first `Select a phone type...` `<option>` element
 as an empty value element before rendering the other `<option>` elements.
 
-## Adding a `textarea`
+---
+
+## Step 6: Add a `textarea` (Comments)
 
 In a regular HTML form, the value for a `<textarea>` element is defined by its
 inner content:
@@ -226,7 +500,7 @@ To see this in action, add a `comments` state variable and add a "Comments"
 field to the form:
 
 ```jsx
-// src/ContactUs.jsxx
+// src/ContactUs.jsx
 
 <div>
   <label htmlFor='comments'>Comments:</label>
@@ -239,7 +513,86 @@ field to the form:
 </div>
 ```
 
-## Handling form submissions
+<details>
+<summary>Complete src/ContactUs.jsx (After adding textarea)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [phoneType, setPhoneType] = useState('');
+  const [comments, setComments] = useState('');
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+          <select
+            name='phoneType'
+            onChange={e => setPhoneType(e.target.value)}
+            value={phoneType}
+          >
+            <option value='' disabled>
+              Select a phone type...
+            </option>
+            <option>Home</option>
+            <option>Work</option>
+            <option>Mobile</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor='comments'>Comments:</label>
+          <textarea
+            id='comments'
+            name='comments'
+            onChange={e => setComments(e.target.value)}
+            value={comments}
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
+---
+
+## Step 7: Handle form submissions (`onSubmit` + `preventDefault`)
 
 Now that the `ContactUs` component is initializing and updating state as form
 field values change, it's time to handle form submissions! To start, create an
@@ -267,6 +620,91 @@ function ContactUs() {
 }
 ```
 
+<details>
+<summary>Complete src/ContactUs.jsx (After adding onSubmit + preventDefault)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [phoneType, setPhoneType] = useState('');
+  const [comments, setComments] = useState('');
+
+  const onSubmit = e => {
+    e.preventDefault();
+  };
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+          <select
+            name='phoneType'
+            onChange={e => setPhoneType(e.target.value)}
+            value={phoneType}
+          >
+            <option value='' disabled>
+              Select a phone type...
+            </option>
+            <option>Home</option>
+            <option>Work</option>
+            <option>Mobile</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor='comments'>Comments:</label>
+          <textarea
+            id='comments'
+            name='comments'
+            onChange={e => setComments(e.target.value)}
+            value={comments}
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
+---
+
+## Step 8: Build and log a submission object
+
 Still in `onSubmit`, use the `name`, `email`, `phone`, `comments`, and
 `phoneType` values from state to create a new `contactUsInformation` object
 literal:
@@ -289,11 +727,107 @@ literal:
   };
 ```
 
+<details>
+<summary>Complete src/ContactUs.jsx (After building and logging the submission object)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [phoneType, setPhoneType] = useState('');
+  const [comments, setComments] = useState('');
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    const contactUsInformation = {
+      name,
+      email,
+      phone,
+      phoneType,
+      comments,
+      submittedOn: new Date()
+    };
+
+    console.log(contactUsInformation);
+  };
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+          <select
+            name='phoneType'
+            onChange={e => setPhoneType(e.target.value)}
+            value={phoneType}
+          >
+            <option value='' disabled>
+              Select a phone type...
+            </option>
+            <option>Home</option>
+            <option>Work</option>
+            <option>Mobile</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor='comments'>Comments:</label>
+          <textarea
+            id='comments'
+            name='comments'
+            onChange={e => setComments(e.target.value)}
+            value={comments}
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
 Notice that an additional property, `submittedOn`, is being added to the
 `contactUsInformation` object literal to indicate the date/time that the
 information was submitted. Ideally, the `contactUsInformation` object would be
 persisted to a database using a RESTful API, but for now, you can just log the
 object to the console.
+
+---
+
+## Step 9: Reset the form after submit
 
 Once the form submission has been processed, reset all the state values to empty
 strings:
@@ -322,11 +856,111 @@ strings:
   };
 ```
 
+<details>
+<summary>Complete src/ContactUs.jsx (After resetting form state on submit)</summary>
+
+```jsx
+import { useState } from 'react';
+
+function ContactUs() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [phoneType, setPhoneType] = useState('');
+  const [comments, setComments] = useState('');
+
+  const onSubmit = e => {
+    e.preventDefault();
+
+    const contactUsInformation = {
+      name,
+      email,
+      phone,
+      phoneType,
+      comments,
+      submittedOn: new Date()
+    };
+
+    console.log(contactUsInformation);
+
+    setName('');
+    setEmail('');
+    setPhone('');
+    setPhoneType('');
+    setComments('');
+  };
+
+  return (
+    <div>
+      <h2>Contact Us</h2>
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor='name'>Name:</label>
+          <input
+            id='name'
+            type='text'
+            onChange={e => setName(e.target.value)}
+            value={name}
+          />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            id='email'
+            type='text'
+            onChange={e => setEmail(e.target.value)}
+            value={email}
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            id='phone'
+            name='phone'
+            type='text'
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
+          />
+          <select
+            name='phoneType'
+            onChange={e => setPhoneType(e.target.value)}
+            value={phoneType}
+          >
+            <option value='' disabled>
+              Select a phone type...
+            </option>
+            <option>Home</option>
+            <option>Work</option>
+            <option>Mobile</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor='comments'>Comments:</label>
+          <textarea
+            id='comments'
+            name='comments'
+            onChange={e => setComments(e.target.value)}
+            value={comments}
+          />
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default ContactUs;
+```
+
+</details>
+
 You can now fill out each form field in your browser. When you click `Submit`,
 an object containing your `Contact Us` information should appear in the console!
 Also, note that the page doesn't reload.
 
-## Controlled components
+---
+
+## Step 10: Controlled components (concept)
 
 You now have a functioning React form! In creating it, you used what are known
 as _controlled components_.
@@ -364,10 +998,12 @@ natural; you won't notice the difference!
 
 > For a review and optional exercises on this topic, you can refer to the following link: [State: A Component's Memory](https://react.dev/learn/state-a-components-memory#challenges).
 
-
-
-
-
 ## Ref
 
 - https://github.com/appacademy/aa34-react-forms-intro
+- [Previous activity](./fe-react-activity2-old.md)
+
+
+[`useState`]: https://react.dev/reference/react/useState
+[event handler]: https://react.dev/learn/responding-to-events#adding-event-handlers
+
