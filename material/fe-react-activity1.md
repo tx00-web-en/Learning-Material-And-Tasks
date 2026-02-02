@@ -28,7 +28,7 @@ By the end of this lab, you should be able to:
 
 Before starting the lab steps, set up a React project so you have a place to run your `Counter` component.
 
-1. Open **VS Code** in your working folder (for example: `week3`).
+1. Open **VS Code** in your working folder (for example: `week#`).
 2. Create a new React project using Vite (full guide: [vite.md](./vite.md)). In brief, run:
 
   ```bash
@@ -741,7 +741,7 @@ export default Counter;
 * `useState` allows React to re-render components
 * Functional updates are safer when new state depends on old state
 * React encourages declarative UI design
-* [Previous lab activity](./fe-react-activity1-old.md)
+* [Reference activity from an earlier version of the course](./fe-react-activity1-old.md)
 
 <!-- Links -->
 

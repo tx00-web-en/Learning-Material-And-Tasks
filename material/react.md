@@ -9,7 +9,7 @@
 
 ## Part 1: React `useState` Concepts 
 
-This document explains the core concepts introduced in the `useState` Counter + Theme lab. The focus is on how React handles events and UI updates, and why state is the mechanism used to make the UI respond to user actions.
+This part explains the core concepts introduced in the `useState` Counter + Theme lab. The focus is on how React handles events and UI updates, and why state is the mechanism used to make the UI respond to user actions.
 
 ### Learning objectives (what you should be able to explain)
 
@@ -66,7 +66,7 @@ Characteristics:
 In React, you still handle browser events (clicks, input changes, etc.), but you attach them through JSX props:
 
 - Event names use **camelCase**: `onClick`, `onChange`, `onSubmit`, …
-- You pass a **function**, not a string.
+- You pass a **function**, not the result of calling the function.
 - In most cases you update **state**, and React updates the UI.
 
 Example:
@@ -315,7 +315,7 @@ In React, the most reliable workflow is:
 
 ## Part 2: React Forms: Core Concepts
 
-This document explains the core React concepts of **React Forms - Intro** (Activity 2). The goal is not to memorize code, but to understand the patterns so you can build and debug forms confidently.
+This part explains the core React concepts of **React Forms - Intro** (Activity 2). The goal is not to memorize code, but to understand the patterns so you can build and debug forms confidently.
 
 ### Learning goals (what you should be able to do)
 

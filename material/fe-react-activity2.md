@@ -1001,7 +1001,7 @@ natural; you won't notice the difference!
 ## Ref
 
 - https://github.com/appacademy/aa34-react-forms-intro
-- [Previous activity](./fe-react-activity2-old.md)
+- [Reference activity from an earlier version of the course](./fe-react-activity2-old.md)
 
 
 [`useState`]: https://react.dev/reference/react/useState
