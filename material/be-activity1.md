@@ -38,7 +38,8 @@ In this lab, you will work on an Express server that uses Mongoose to interact w
    - Navigate into the project directory and install the necessary dependencies:
    ```bash
    cd week4-be-activity1
-   npm install
+   npm install cors dotenv express mongoose
+   npm install nodemon -D
    ```
 
 2. **Start the Server**: Start the Express server:

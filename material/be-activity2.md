@@ -25,7 +25,8 @@ In this activity, you will refactor the code you wrote in the first activity to 
    - Navigate into the project directory and install the necessary dependencies:
    ```bash
    cd week4-be-activity2
-   npm install
+   npm install cors dotenv express mongoose
+   npm install nodemon -D
    ```
 
 #### **Step 2: Add Error Handling with `try..catch`**
