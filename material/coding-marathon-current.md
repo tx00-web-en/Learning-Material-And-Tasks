@@ -1,4 +1,4 @@
-# Coding Marathon 
+<!-- # Coding Marathon 
 
 Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
 
@@ -267,4 +267,4 @@ Notes:
 
 
 
-
+ -->
