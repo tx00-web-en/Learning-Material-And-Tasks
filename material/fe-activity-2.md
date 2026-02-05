@@ -302,7 +302,10 @@ given time.
 
 This part shows the **useEffect** hook in action. We’ll continue from the code provided in **Activity 1, Part 3**. Earlier, we discussed how the **DELETE** operation works. Now, we will look at how the **READ** operation works.
 
-The **READ** operation uses the `useEffect` hook. The code is in the file **`client-react/src/pages/BlogDetails.jsx`**, which demonstrates how to fetch and display a single resource:
+The **READ** operation uses the `useEffect` hook. 
+
+- The code in **`client-react/src/pages/Home1.jsx`**, demonstrates how to fetch and display all resources:
+- The code in **`client-react/src/pages/BlogDetails.jsx`**, demonstrates how to fetch and display a single resource:
 
 ```jsx
 const [blog, setBlog] = useState(null);
