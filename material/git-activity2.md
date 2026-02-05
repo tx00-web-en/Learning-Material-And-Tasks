@@ -67,7 +67,7 @@ Additionally, we will cover these two questions:
    - **Create a New Branch:**
      - **Explanation:** Creating a new branch (`branch-about-component`) allows you to work on the "About" component independently of the `main` branch. This branch is isolated, so changes won't affect the main codebase until merged.
      ```bash
-     git checkout -b branch-about-component
+     git switch -c branch-about-component
      ```
 
    - **Modify the About Component:**
@@ -103,8 +103,8 @@ Additionally, we will cover these two questions:
 
    - **Create Another Branch:**
      ```bash
-	 git checkout main
-     git checkout -b branch-contact-component
+	   git switch main
+     git switch -c branch-contact-component
      ```
    - **Modify the Contact Component:**
      - **Explanation:** Similar to the first branch, you modify another component (`Contact`) in the codebase. This demonstrates how different team members might work on different features simultaneously.
@@ -183,13 +183,13 @@ If you accidentally pushed changes directly to the `main` branch instead of a fe
 2. **Create a Backup Branch:**
    - **Explanation:** Creating a backup branch saves the accidental changes so that they aren't lost.
    ```bash
-   git checkout -b backup-branch
+   git switch -c backup-branch
    ```
 
 3. **Reset the `main` Branch:**
    - **Explanation:** Resetting the branch removes the accidental commits from the branch history.
    ```bash
-   git checkout main
+   git switch main
    git reset --hard <commit-hash>
    ```
 
@@ -202,7 +202,7 @@ If you accidentally pushed changes directly to the `main` branch instead of a fe
 5. **Apply Changes to the Correct Branch:**
    - **Explanation:** Switch to the intended branch (`branch-x`) and merge the changes from the backup branch.
    ```bash
-   git checkout branch-x
+   git switch branch-x
    git merge backup-branch
    ```
 

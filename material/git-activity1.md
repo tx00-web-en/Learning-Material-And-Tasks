@@ -62,9 +62,9 @@ Branches allow multiple team members to work on different features or components
 2. **Create a New Branch**:
    - Each member creates a new branch:
      ```bash
-     git checkout -b member-x-branch
+     git switch -c member-x-branch
      ```
-   - **Explanation:** `git checkout -b` creates a new branch and switches to it. This is where each member will work independently. (replace `x` with your member number).
+   - **Explanation:** `git switch -c` creates a new branch and immediately switches to it. This is the modern, clearer alternative to `git checkout -b`
 
 3. **Create a File and Make Changes**:
    - Each member creates a file named `member-x.txt` (replace `x` with your member number):
@@ -107,7 +107,7 @@ Branches allow multiple team members to work on different features or components
   - Use:
     ```bash
     git fetch origin
-    git checkout member-x-branch
+    git switch member-x-branch
     git merge main
     ```
   - **Resolve Conflicts** in your text editor, then:
@@ -141,7 +141,7 @@ To synchronize your local branch with the remote branch, you generally want to f
 
 ```bash
 git fetch origin
-git checkout <branch-name>
+git switch <branch-name>
 ```
 
 Option A: Merge the changes from the remote branch into your local branch:
@@ -183,7 +183,7 @@ Look for the commit hash (a long alphanumeric string) of the commit before your 
 To avoid losing your accidental changes, create a new branch from the current state of `main`. This allows you to keep those changes in case you need them later.
 
 ```bash
-git checkout -b backup-branch
+git switch -c backup-branch
 ```
 
 This command creates a new branch called `backup-branch` with all the accidental changes.
@@ -193,7 +193,7 @@ This command creates a new branch called `backup-branch` with all the accidental
 Switch back to the `main` branch:
 
 ```bash
-git checkout main
+git switch main
 ```
 
 Then, reset the `main` branch to the last good commit (replace `<commit-hash>` with the hash you identified earlier):
@@ -226,7 +226,7 @@ Now that you have reverted the `main` branch, you can apply your changes to the 
 Switch to `branch-x`:
 
 ```bash
-git checkout branch-x
+git switch branch-x
 ```
 
 Merge or cherry-pick the changes from the `backup-branch`:
