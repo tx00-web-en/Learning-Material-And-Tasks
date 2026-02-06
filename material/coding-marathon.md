@@ -65,7 +65,7 @@ Before starting this coding marathon, ensure that:
 2. **Create a Branch for Each Member:**
    - Follow these steps to set up your repository. Each Member:
      - Clones the main repository: `git clone <repo-url>`
-     - Creates a new branch: `git checkout -b <your-branch-name>`
+     - Creates a new branch: `git switch -c <your-branch-name>`
      - Pushes the branch to GitHub: `git push origin <your-branch-name>`
 
 3. **Plan Your Work:**
@@ -84,6 +84,169 @@ There is [starter code available for all these components](./react2.md#how-to-ad
    - **ContactListManager**: Extract a `Contact` component.
    - **RecipeManager**: Extract a `Recipe` component.
    - **ShoppingCart**: Extract an `Item` component.
+   - Here's a sample example:
+
+      <details> 
+      <summary><strong>Original Code</strong></summary>
+
+      ```jsx
+      import React, { useState } from "react";
+
+      function BookCollectionManager() {
+      const [books, setBooks] = useState([]);
+      const [title, setTitle] = useState("");
+      const [author, setAuthor] = useState("");
+
+      // Handle input change for title
+      function handleTitleChange(event) {
+         setTitle(event.target.value);
+      }
+
+      // Handle input change for author
+      function handleAuthorChange(event) {
+         setAuthor(event.target.value);
+      }
+
+      // Add a new book to the list
+      function addBook() {
+         if (title.trim() !== "" && author.trim() !== "") {
+            setBooks((b) => [...b, { title, author }]);
+            setTitle("");
+            setAuthor(""); // Clear the input fields
+         }
+      }
+
+      // Delete a book from the list
+      function deleteBook(index) {
+         const updatedBooks = books.filter((_, i) => i !== index);
+         setBooks(updatedBooks);
+      }
+
+      return (
+         <div className="book-collection">
+            <h1>Book Collection Manager</h1>
+            <div>
+            <input
+               type="text"
+               placeholder="Enter book title..."
+               value={title}
+               onChange={handleTitleChange}
+            />
+            <input
+               type="text"
+               placeholder="Enter author name..."
+               value={author}
+               onChange={handleAuthorChange}
+            />
+            <button onClick={addBook}>Add Book</button>
+            </div>
+            <ol>
+            {books.map((book, index) => (
+               <li key={index}>
+                  {book.title} by {book.author}
+                  <button onClick={() => deleteBook(index)}>Delete</button>
+               </li>
+            ))}
+            </ol>
+         </div>
+      );
+      }
+
+      export default BookCollectionManager;
+      ```
+      </details> 
+
+
+      <details> 
+      <summary><strong>Refactored Code</strong></summary>
+
+      **Book.jsx**
+
+      ```jsx
+      import React from "react";
+
+      function Book({ title, author, onDelete }) {
+      return (
+         <li>
+            {title} by {author}
+            <button onClick={onDelete}>Delete</button>
+         </li>
+      );
+      }
+
+      export default Book;
+      ```
+
+      **BookCollectionManager.jsx**
+
+      ```jsx
+      import React, { useState } from "react";
+      import Book from "./Book";
+
+      function BookCollectionManager() {
+      const [books, setBooks] = useState([]);
+      const [title, setTitle] = useState("");
+      const [author, setAuthor] = useState("");
+
+      function handleTitleChange(event) {
+         setTitle(event.target.value);
+      }
+
+      function handleAuthorChange(event) {
+         setAuthor(event.target.value);
+      }
+
+      function addBook() {
+         if (title.trim() !== "" && author.trim() !== "") {
+            setBooks((prev) => [...prev, { title, author }]);
+            setTitle("");
+            setAuthor("");
+         }
+      }
+
+      function deleteBook(index) {
+         const updated = books.filter((_, i) => i !== index);
+         setBooks(updated);
+      }
+
+      return (
+         <div className="book-collection">
+            <h1>Book Collection Manager</h1>
+
+            <div>
+            <input
+               type="text"
+               placeholder="Enter book title..."
+               value={title}
+               onChange={handleTitleChange}
+            />
+            <input
+               type="text"
+               placeholder="Enter author name..."
+               value={author}
+               onChange={handleAuthorChange}
+            />
+            <button onClick={addBook}>Add Book</button>
+            </div>
+
+            <ol>
+            {books.map((book, index) => (
+               <Book
+                  key={index}
+                  title={book.title}
+                  author={book.author}
+                  onDelete={() => deleteBook(index)}
+               />
+            ))}
+            </ol>
+         </div>
+      );
+      }
+
+      export default BookCollectionManager;
+      ```
+
+      </details> 
 
 2. **Expand Input Fields**:  
    The example code uses only two input fields. You should expand the input fields to capture additional details as follows:
@@ -139,12 +302,6 @@ Develop a Book Collection Manager that allows users to add, view, and delete boo
 - **Functions**: Implement functions to add and delete books.
 - **Component Extraction**: Extract a `Book` component to display individual book entries.
 
-**Example**
-
-```jsx
-<BookCollectionManager />
-```
-
 ---
 #### 2. ContactListManager Component
 
@@ -154,12 +311,6 @@ Create a simple Contact List Manager to add, view, and delete contacts:
 - **List Rendering**: Render contacts dynamically with the `.map()` method.
 - **Functions**: Provide functions to add and delete contacts.
 - **Component Extraction**: Extract a `Contact` component to display individual contact entries.
-
-**Example**
-
-```jsx
-<ContactListManager />
-```
 
 ---
 #### 3. RecipeManager Component
@@ -172,12 +323,6 @@ Build a Recipe Manager that lets users add, view, and delete recipes:
 - **Component Extraction**: Extract a `Recipe` component to display individual recipe entries.
 
 
-**Example**
-
-```jsx
-<RecipeManager />
-```
-
 ---
 #### 4. ShoppingCart Component
 
@@ -187,12 +332,6 @@ Develop a Shopping Cart where users can add, view, and remove items:
 - **List Rendering**: Display items dynamically with the `.map()` function.
 - **Functions**: Implement functions to add items and remove items.
 - **Component Extraction**: Extract an `Item` component to display individual cart items.
-
-**Example**
-
-```jsx
-<ShoppingCart />
-```
 
 
 ---
@@ -208,11 +347,6 @@ Create a `SignupPage` component with the following elements:
 - A paragraph displaying `"Moi"`, `"Hello"`, `"Hallo"` or `"Bonjour"` based on the selected nationality
 - A text "Your email is john@doe.com"
 
-**Example**
-
-```jsx
-<SignupPage />
-```
 
 **Output**
 
