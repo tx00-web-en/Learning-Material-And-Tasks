@@ -84,7 +84,7 @@ There is [starter code available for all these components](./react2.md#how-to-ad
    - **ContactListManager**: Extract a `Contact` component.
    - **RecipeManager**: Extract a `Recipe` component.
    - **ShoppingCart**: Extract an `Item` component.
-   - Here's a sample example:
+   - Here's an example:
 
       <details> 
       <summary><strong>Original Code</strong></summary>
