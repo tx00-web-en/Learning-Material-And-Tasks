@@ -1,8 +1,6 @@
 # Pair Programming: Back end
 
-There are two parts to this lab.
-- **Part 2 is intended primarily for the group members responsible for implementing the AI features in their group project.**
-- For all other students, it is recommended but not mandatory.
+There are two parts to this lab. Part 2 is intended **primarily for the group members responsible for implementing the AI** features in their group project.** For all other students, it is recommended but not mandatory.
 
 ----
 
