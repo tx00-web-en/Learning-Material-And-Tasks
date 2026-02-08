@@ -300,20 +300,54 @@ given time.
 ---
 ## Part 2/3
 
-This part shows the **useEffect** hook in action. We’ll continue from the code provided in **Activity 1, Part 3**. Earlier, we discussed how the **DELETE** operation works. Now, we will look at how the **READ** operation works.
+This section demonstrates how the **useEffect** hook works. We’ll continue from the code in **Activity 1, Part 3**. Previously, you learned how the **POST** and **DELETE** operations behave. Now you’ll see how the **READ** operation can run automatically, without requiring a button click.
 
-The **READ** operation uses the `useEffect` hook. 
+With `useEffect`, the component fetches data as soon as it mounts (or when its dependencies change), making the process more efficient and hands‑free compared to manual triggers.
 
-- The code in **`client-react/src/pages/Home1.jsx`**, demonstrates how to fetch and display all resources:
-- The code in **`client-react/src/pages/BlogDetails.jsx`**, demonstrates how to fetch and display a single resource:
+- The code in **`client-react-v2/src/pages/Home.jsx`**, demonstrates how to fetch and display all resources:
+- The code in **`client-react-v2/src/pages/BlogDetails.jsx`**, demonstrates how to fetch and display a single resource:
+
+**1. Fetching All Blogs (GET with useEffect) — `Home.jsx`**
+
+```jsx
+const [blogs, setBlogs] = useState(null);
+
+useEffect(() => {
+  const fetchData = async () => {
+    const res = await fetch("/api/blogs");
+    const data = await res.json();
+    setBlogs(data);
+  };
+
+  fetchData();
+}, []);
+
+return (
+  <div className="home">
+    {blogs && <BlogList blogs={blogs} />}
+  </div>
+);
+```
+
+**Explanation**
+
+- **`useState(null)`** initializes `blogs` state as empty until data loads.
+- **`useEffect(() => { ... }, [])`** runs once when the component mounts (empty dependency array).
+- Inside the effect, an async function `fetchData` is defined and immediately called.
+- A **GET request** fetches all blogs from `/api/blogs`.
+- The response is converted to JSON and saved in state.
+- The `BlogList` component only renders once `blogs` is loaded (`{blogs && ...}`).
+- **Key benefit**: Data loads automatically without requiring a button click.
+
+**2. Fetching a Single Blog (GET with useEffect) — `BlogDetails.jsx`**
 
 ```jsx
 const [blog, setBlog] = useState(null);
+const { id } = useParams();
 
 useEffect(() => {
   const fetchBlog = async () => {
-    const response = await fetch(`${apiUrl}/${id}`);
-    console.log(`${apiUrl}/${id}`);
+    const response = await fetch(`/api/blogs/${id}`);
     const json = await response.json();
 
     if (response.ok) {
@@ -323,26 +357,55 @@ useEffect(() => {
 
   fetchBlog();
 }, [id]);
+
+const handleClick = async () => {
+  await fetch(`/api/blogs/${id}`, {
+    method: "DELETE",
+  });
+  navigate("/");
+};
+
+return (
+  <div className="blog-details">
+    {blog && (
+      <article>
+        <h2>{blog.title}</h2>
+        <p>Written by {blog.author}</p>
+        <div>{blog.body}</div>
+        <button onClick={handleClick}>delete</button>
+      </article>
+    )}
+  </div>
+);
 ```
 
-**Step-by-step breakdown:**
+**Explanation**
 
-1. **`const [blog, setBlog] = useState(null);`**
-   * We use React state to store the fetched blog data. Initially, it’s `null`.
+- **`useParams()`** extracts the blog ID from the URL (e.g., `/blogs/5`).
+- **`useEffect(() => { ... }, [id])`** runs when the component mounts AND whenever the `id` changes.
+- A **GET request** fetches the specific blog by ID from `/api/blogs/{id}`.
+- If the response is successful (`response.ok`), the blog data is saved to state.
+- **Re-running on `id` change**: If a user navigates to a different blog, the new ID triggers the effect, fetching fresh data.
+- **`handleClick()`** sends a DELETE request and redirects home after deletion.
 
-2. **`useEffect(() => { ... }, [id]);`**
-   * The effect runs after the component mounts.
-   * It will also re-run whenever the `id` changes (e.g., if the user navigates to a different blog post).
+## Key Differences: useEffect vs Manual Fetching
 
-3. **`fetch(${apiUrl}/${id})`**
-   * Sends an HTTP GET request to your backend for the specific blog post.
+| Aspect | Home.jsx (v1) | Home.jsx (v2) |
+|--------|---------------|---------------|
+| **Trigger** | Button click (manual) | Component mount (automatic) |
+| **Hook Used** | Click event handler | `useEffect` hook |
+| **Dependency Array** | N/A | `[]` (runs once) |
+| **When Data Loads** | User initiated | Automatic on page load |
 
-4. **`const json = await response.json();`**
-   * Converts the response into JavaScript data.
+**How useEffect Works with Fetch**
 
-5. **`if (response.ok) { setBlog(json); }`**
-   * Checks that the request succeeded before updating state.
-   * If successful, we save the fetched blog into React state, which will trigger a re-render and display the blog content.
+1. **Define async function inside effect** - `useEffect` doesn't accept async directly, so we create an async function and call it
+2. **Dependency array controls when it runs:**
+   - `[]` - runs once on mount
+   - `[id]` - runs on mount and whenever `id` changes
+   - No array - runs after every render (usually avoid this)
+3. **State updates trigger re-renders** - When `setBlog(data)` or `setBlogs(data)` is called, the component re-renders with new data
+4. **Conditional rendering** - Use `{blogs && ...}` to avoid rendering before data arrives
 
 ---
 ## Part 3/3 (Optional)

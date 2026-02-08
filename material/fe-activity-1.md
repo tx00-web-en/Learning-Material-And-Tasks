@@ -211,7 +211,7 @@ git clone https://github.com/tx00-resources-en/fe-useeffect-demo
    npm install
    npm run dev
    ```
-4. The server should now be listening on port 3001.  
+4. The server should now be listening on port 4000.  
    
    **Note:** The `app.js` file uses `cors` middleware to handle Cross-Origin Resource Sharing:
    ```javascript
@@ -239,9 +239,9 @@ Inside this folder, you will find different modules that demonstrate the CRUD op
 
 ### Step 4: Set Up the Frontend
 
-1. Navigate to the `client-react` folder:
+1. Navigate to the `client-react-v1` folder:
    ```bash
-   cd ../client-react
+   cd ../client-react-v1
    ```
 2. Install the dependencies and start the React application:
    ```bash
@@ -251,13 +251,44 @@ Inside this folder, you will find different modules that demonstrate the CRUD op
 
 ### Step 5: Explore the Code
 
-Two files demonstrate how to interact with an API from a React frontend:
+Three files demonstrate how to interact with an API from a React frontend:
 
-* **`client-react/src/pages/Create.jsx`** → shows how to **POST** (create) a new blog.
-* **`client-react/src/pages/BlogDetails.jsx`** → shows how to **DELETE** a blog by its ID.
+* **`client-react-v1/src/pages/Home.jsx`** → shows how to **GET** (read) all blogs with a button click (not using `useEffect()`)
+* **`client-react-v1/src/pages/Create.jsx`** → shows how to **POST** (create) a new blog via a form
+* **`client-react-v1/src/pages/BlogDetails.jsx`** → shows how to **GET** a single blog and **DELETE** it by ID using `useEffect()`
 
 
-1. Creating a Blog Post (POST) — `Create.jsx`
+**1. Fetching All Blogs (GET) — `Home.jsx`**
+
+```jsx
+const [blogs, setBlogs] = useState(null);
+
+const fetchData = async () => {
+  const res = await fetch("/api/blogs");
+  const data = await res.json();
+  setBlogs(data);
+  console.log(data);
+};
+
+return (
+  <div className="home">
+    <button onClick={fetchData}>Load Blogs</button>
+    {blogs && <BlogList blogs={blogs} />}
+  </div>
+);
+```
+
+**Explanation**
+
+- **State hook** `blogs` stores the fetched blog data (initially `null`).
+- **`fetchData`** is called when the user clicks the "Load Blogs" button.
+- A **GET request** is sent to `/api/blogs` to fetch all blogs.
+- The response is converted to JSON and stored in state.
+- The `BlogList` component is only rendered after blogs are loaded.
+- This approach is **event-driven**, not automatic like `useEffect()`.
+
+
+**2. Creating a Blog Post (POST) — `Create.jsx`**
 
 ```jsx
 const [title, setTitle] = useState("");
@@ -266,82 +297,88 @@ const [author, setAuthor] = useState("mario");
 const navigate = useNavigate();
 
 const handleSubmit = async (e) => {
-  e.preventDefault(); // prevent page reload
+  e.preventDefault();
 
-  // Prepare blog data
   const blog = { title, body, author };
 
-  // Send POST request
-  const response = await fetch(apiUrl, {
+  const response = await fetch("/api/blogs", {
     method: "POST",
     body: JSON.stringify(blog),
     headers: {
       "Content-Type": "application/json",
     },
   });
-
   const json = await response.json();
 
-  // Handle errors
   if (!response.ok) {
     console.log("Error");
   }
-
-  // If successful
   if (response.ok) {
     setTitle("");
     setBody("");
     setAuthor("");
     console.log("new blog added:", json);
-    navigate("/"); // redirect to homepage
+    navigate("/");
   }
 };
 ```
 
 **Explanation**
 
-1. **State hooks** (`title`, `body`, `author`) hold the form inputs.
-2. **`handleSubmit`** prevents the default form submission and creates a blog object.
-3. A **POST request** is sent to `apiUrl` with JSON in the body.
-4. If successful, state is reset and the app navigates back to `/`.
+- **State hooks** (`title`, `body`, `author`) track form input values.
+- **`handleSubmit`** prevents the default form submission with `e.preventDefault()`.
+- A **POST request** sends the blog data to `/api/blogs` as JSON.
+- The `Content-Type: application/json` header tells the server to expect JSON.
+- If the request fails (`!response.ok`), an error is logged.
+- If successful, form fields are cleared and the user is redirected to the home page with `navigate("/")`.
 
 
-
-2. Deleting a Blog Post (DELETE) — `BlogDetails.jsx`
+**3. Deleting a Blog (DELETE) — `BlogDetails.jsx`**
 
 ```jsx
-const { id } = useParams(); // get blog ID from route params
 const [blog, setBlog] = useState(null);
 const navigate = useNavigate();
+const { id } = useParams();
+
+useEffect(() => {
+  const fetchBlog = async () => {
+    const response = await fetch(`/api/blogs/${id}`);
+    const json = await response.json();
+
+    if (response.ok) {
+      setBlog(json);
+    }
+  };
+
+  fetchBlog();
+}, [id]);
 
 const handleClick = async () => {
-  try {
-    await fetch(`${apiUrl}/${id}`, {
-      method: "DELETE",
-    });
-    navigate("/"); // redirect to homepage after deletion
-  } catch (error) {
-    console.error("Error deleting blog:", error);
-  }
+  await fetch(`/api/blogs/${id}`, {
+    method: "DELETE",
+  });
+  navigate("/");
 };
 ```
 
 **Explanation**
 
-1. **`useParams`** extracts the blog ID from the URL (e.g., `/blogs/123`).
-2. **`handleClick`** sends a DELETE request to the API.
-3. If successful, the user is redirected back to the homepage.
-4. If there’s an error (e.g., network issue), it’s caught and logged.
+- **`useParams()`** extracts the blog ID from the URL (e.g., `/blogs/123`).
+- **`useEffect()`** automatically fetches the blog when the component mounts or the ID changes.
+- A **GET request** retrieves the blog by ID from `/api/blogs/{id}`.
+- Blog data is stored in state and displayed in the JSX.
+- **`handleClick()`** sends a **DELETE request** to `/api/blogs/{id}` to remove the blog.
+- After deletion, the user is redirected home with `navigate("/")`.
 
 
+## Key Takeaways
 
-
-**Key Takeaways**
-
-* **POST (Create)** → `fetch(url, { method: "POST", body, headers })` adds a new resource.
+* **GET (Read)** → `fetch(url)` retrieves data; can be event-driven or automatic with `useEffect()`.
+* **POST (Create)** → `fetch(url, { method: "POST", body, headers })` sends new data to the server.
 * **DELETE (Remove)** → `fetch(url, { method: "DELETE" })` removes a resource by ID.
-* `useNavigate` helps redirect after successful operations.
-* `useParams` is useful when working with dynamic routes (like blog IDs).
+* **`useNavigate()`** enables programmatic navigation after successful operations.
+* **`useParams()`** extracts route parameters for dynamic URLs.
+* **`useEffect()`** can automatically trigger data fetching when dependencies change.
 
 
 
