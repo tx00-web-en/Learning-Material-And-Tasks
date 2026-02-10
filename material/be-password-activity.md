@@ -335,9 +335,11 @@ To verify user credentials, we’ll compare the password provided during login w
 
 ## **Step 5: Test the API**
 
-Now that the API is complete, you can test the registration and login functionality.
+Now that the API is complete, you can test the registration and login functionality. 
 
-1. **Register a New User**  
+2. *Start the server** using `node app.js`  
+
+2. **Register a New User**  
    Use Postman or Curl to send a `POST` request to `/api/users` with the following JSON body:
    ```json
    {
@@ -346,7 +348,7 @@ Now that the API is complete, you can test the registration and login functional
    }
    ```
 
-2. **Log In with the Registered User**  
+3. **Log In with the Registered User**  
    Send a `POST` request to `/api/users/login` with the same username and password:
    ```json
    {
@@ -355,7 +357,7 @@ Now that the API is complete, you can test the registration and login functional
    }
    ```
 
-3. **Verify Hashed Password Storage**  
+4. **Verify Hashed Password Storage**  
    After registering, check the database to ensure the password is stored as a hashed string and not in plain text.
 
 ---
