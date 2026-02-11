@@ -1,8 +1,7 @@
 <!-- # Task: Sprint 3 Kick-off Activities (Afternoon)
 
-The goal of **Sprint 2 kick-off** session is to properly transition from Sprint 1 to Sprint 2 by reflecting on the previous sprint and planning the next sprint according to the Scrum framework.
+The goal of **Sprint 3 kick-off** session is to properly transition from Sprint 2 to Sprint 3 by reflecting on the previous sprint and planning the next sprint according to the Scrum framework.
 
-This activity is **mandatory** and must be completed **today**.
 
 ---
 
@@ -194,5 +193,4 @@ Each group must have:
    * Story point estimates
 6. Agreed on tools, CSS approach, and working agreements
 7. Documented all relevant artifacts in GitHub
-
  -->
