@@ -152,9 +152,9 @@ git push
 2. **Install Dependencies**
    - Run the following command to install all dependencies:
      ```bash
-     npm install --legacy-peer-deps
+     npm install
      ```
-
+     <!-- npm install --legacy-peer-deps -->
 3. **Start the Frontend Application**
    - Launch the frontend app:
      ```bash
