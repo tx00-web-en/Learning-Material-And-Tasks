@@ -467,7 +467,7 @@ const cancelEdit = () => navigate(`/jobs/${id}`);
 
 ---
 
-### **D. Deleting Jobs**
+### **D. Fetching and Deleting Jobs**
 
 ---
 
