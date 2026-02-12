@@ -280,7 +280,7 @@ git push
 
 ### **Iteration 7**  
 
-In this optional iteration, you will enhance the functionality of your React application by integrating it with specialized backend endpoints. These endpoints enable the app to fetch or manipulate data dynamically.  
+In this iteration, you will enhance the functionality of your React application by integrating it with specialized backend endpoints. These endpoints enable the app to fetch or manipulate data dynamically.  
 
 **Available Endpoints**  
 The following backend endpoints are already implemented and ready for use:
