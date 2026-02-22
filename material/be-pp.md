@@ -62,7 +62,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
      git push
      ```
 
-✓ **Checkpoint:** Your project should now be set up with all dependencies installed and environment variables configured.
+**Checkpoint:** Your project should now be set up with all dependencies installed and environment variables configured.
 
 
 > [!NOTE] 
@@ -103,7 +103,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    ```bash
    npm run dev
    ```
-   > ✓ Verify: All tour routes should now require authentication (you'll see "Authorization token required" errors without a token)
+   > Verify: All tour routes should now require authentication (you'll see "Authorization token required" errors without a token)
 
 4. **Register a user and get a token**  
    Make a `POST` request to:
@@ -171,7 +171,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
      git push
      ```
 
-✓ **Checkpoint:** At this point, each user should only see and manage their own tours. Try creating tours with different user accounts to verify isolation.
+**Checkpoint:** At this point, each user should only see and manage their own tours. Try creating tours with different user accounts to verify isolation.
 
 ---
 
@@ -202,7 +202,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
      git push
      ```
 
-✓ **Checkpoint:** You should understand the full flow of how JWT tokens are verified and attached to requests.
+**Checkpoint:** You should understand the full flow of how JWT tokens are verified and attached to requests.
 
 
 ---
@@ -277,7 +277,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
      git push
      ```
 
-✓ **Checkpoint:** Users should now be able to register and login with full profile information, with proper validation for all fields.
+**Checkpoint:** Users should now be able to register and login with full profile information, with proper validation for all fields.
 
 ---
 
@@ -321,7 +321,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
      git push
      ```
 
-✓ **Checkpoint:** Your authentication system is now complete. All tour routes are protected, user profiles include expanded data, and the `/me` endpoint allows users to retrieve their own information.
+**Checkpoint:** Your authentication system is now complete. All tour routes are protected, user profiles include expanded data, and the `/me` endpoint allows users to retrieve their own information.
 
 ---
 
@@ -332,12 +332,12 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
 - **Database connection issues:** Verify your `MONGO_URI` in `.env` is correct
 - **Tests failing:** Run them one at a time and check the error messages for clues
 
+
+<!-- # Pair Programming: Back end
+
 ---
 
 **Happy coding!** :rocket: :heart: 
-
-
-<!-- # Pair Programming: Back end
 
 The [pair programming task](./be-pp-current.md) will become visible once we start the session. In the meantime, you are strongly encouraged to review a task from a [previous period](./be-pp-old.md). This session’s pair programming activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.
 

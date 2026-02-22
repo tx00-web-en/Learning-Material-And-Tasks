@@ -1,442 +1,289 @@
+# React Auth — Lab 2
+## Prop Drilling, Conditional UI, and Conditional Routing
 
-# Custom Hooks & localStorage
+**Starter code:** https://github.com/tx00-resources-en/react-auth-starter
+
+This lab builds on Lab 1. You now have a working signup and login flow. In this lab you will explore how authentication state is shared across the component tree using **prop drilling**, how the **Navbar** renders different UI based on that state, and how **React Router** enforces access rules through conditional routing.
+
+> **Prerequisites:** Complete Lab 1 (signup and login working, token stored in `localStorage`).
 
 ---
 
-## Part 1/3: `useCounter` Custom Hook
+## Background — The Component Tree
 
-**Objective:**  
-In this part, you will create a custom hook called `useCounter` to manage counters in React. You'll progressively refactor the code to handle multiple counters and style the interface to make it visually appealing.
+Before starting the tasks, read this diagram carefully. It shows where state lives and how it flows:
+
+```
+App.jsx  ← owns the isAuthenticated state
+  │
+  ├──▶  Navbar.jsx
+  │         receives: isAuthenticated, setIsAuthenticated
+  │         uses isAuthenticated  → decides what to render (Welcome/Logout vs Login/Signup links)
+  │         uses setIsAuthenticated → calls it on logout to update state
+  │
+  ├──▶  LoginComponent.jsx    (rendered inside <Routes>)
+  │         receives: setIsAuthenticated
+  │         calls setIsAuthenticated(true) after a successful login
+  │
+  └──▶  SignupComponent.jsx   (rendered inside <Routes>)
+            receives: setIsAuthenticated
+            calls setIsAuthenticated(true) after a successful signup
+```
+
+This pattern — passing state or state-setters from a parent to children through props — is called **prop drilling**.
 
 ---
 
-### Step 0: Setup
+## Step 1 — Prop Drilling: Tracing `setIsAuthenticated`
 
-1. Create a new React app using the following command:
+**Files:** `frontend/src/App.jsx`, `frontend/src/pages/SignupComponent.jsx`, `frontend/src/pages/LoginComponent.jsx`
 
-   ```bash
-   npx create-vite@latest custom-hooks-counter --template react
-   cd custom-hooks-counter
-   ```
+### 1a — Where the state is defined
 
-2. In `App.jsx`, replace the content with the following code to create a basic counter using `useState`. This will allow us to test the initial counter functionality.
+Open `App.jsx`. The `isAuthenticated` state and its setter are defined here:
 
 ```jsx
-import { useState } from 'react';
-
-const App = () => {
-  const [counter, setCounter] = useState(0);
-
-  return (
-    <div>
-      <div>{counter}</div>
-      <button onClick={() => setCounter(counter + 1)}>Plus</button>
-      <button onClick={() => setCounter(counter - 1)}>Minus</button>
-      <button onClick={() => setCounter(0)}>Reset</button>
-    </div>
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    JSON.parse(localStorage.getItem("user")) || false
   );
-}
 
-export default App;
-```
-
-3. Run the application with `npm run dev` and test the counter buttons to ensure they function correctly. This will be our starting point before we implement the custom hook.
-
----
-
-### Step 1: Create the `useCounter` Custom Hook
-
-In this step, you will create a custom hook called `useCounter` that encapsulates the logic for managing the counter state and actions (increment, decrement, reset). This will make the code more reusable and modular.
-
-1. Inside the `src` folder, create a new file named `useCounter.jsx`.
-2. In `useCounter.jsx`, define a custom hook that manages the state and provides functions to increment, decrement, and reset the counter.
-
-```javascript
-// useCounter.jsx
-
-import { useState } from 'react';
-
-// A reusable custom hook for handling counter logic
-export const useCounter = (initialValue = 0) => {
-  const [counter, setCounter] = useState(initialValue);
-
-  const increment = () => setCounter(counter + 1);
-  const decrement = () => setCounter(counter - 1);
-  const reset = () => setCounter(initialValue);
-
-  return { counter, increment, decrement, reset };
-};
-```
-
-- The hook uses `useState` to manage the `counter` value.
-- `increment`, `decrement`, and `reset` functions modify the state.
-- The `initialValue` is passed as an argument to `useCounter` to allow customization when initializing the counter.
-
----
-
-### Step 2: Create a Single Counter Component
-
-Now that we have the custom hook, we will use it in a component to display and control a single counter.
-
-1. Create a new file named `SingleCounter.jsx` in the `src` folder.
-2. Define a `SingleCounter` component that uses the `useCounter` custom hook.
-
-```javascript
-// SingleCounter.jsx
-import { useCounter } from './useCounter';  // Import the custom hook
-import './SingleCounter.css';  // Import CSS for styling
-
-const SingleCounter = () => {
-  const { counter, increment, decrement, reset } = useCounter(0);
-
-  return (
-    <div className="single-counter">
-      <h2>Counter:</h2>
-      <div className="counter-value">{counter}</div>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={reset}>Reset</button>
-    </div>
-  );
-};
-
-export default SingleCounter;
-```
-
-Here’s what the component does:
-- `useCounter(0)` initializes the counter at 0.
-- The buttons use the increment, decrement, and reset functions from the hook.
-- `counter` holds the current value of the counter and is displayed on the screen.
-
----
-
-### Step 3: Create CSS for the `SingleCounter` Component
-
-1. In the `src` folder, create a file called `SingleCounter.css` to style the counter.
-
-```css
-/* SingleCounter.css */
-
-.single-counter {
-  text-align: center;
-  padding: 20px;
-  border: 2px solid #333;
-  border-radius: 5px;
-  background-color: #f5f5f5;
-  margin: 10px;
-}
-
-.counter-value {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 16px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+  // ...
 }
 ```
 
-This styling makes the counter and buttons visually appealing, with hover effects on the buttons and a border around the counter component.
+`App` is the **single source of truth** — every component that needs to know whether the user is logged in reads from this one state variable.
 
----
+### 1b — Passing the setter down
 
-### Step 4: Create the `App` Component with Multiple Counters
-
-Next, you'll update the `App.jsx` file to render three separate counter components using the `SingleCounter` component.
-
-1. Modify the `App.jsx` file as follows:
-
-```javascript
-// App.jsx
-import SingleCounter from './SingleCounter';  // Import the SingleCounter component
-import './App.css';  // Import styles for the app
-
-const App = () => {
-  return (
-    <div className="app-container">
-      <SingleCounter />
-      <SingleCounter />
-      <SingleCounter />
-    </div>
-  );
-};
-
-export default App;
-```
-
-- This component renders three `SingleCounter` instances, each operating independently.
-- No additional logic is needed since each instance maintains its own state.
-
----
-
-### Step 5: Style the `App` Component
-
-1. In the `src` folder, create an `App.css` file to style the container holding the counters.
-
-```css
-/* App.css */
-
-.app-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 20px;
-}
-```
-
-This style aligns the counters horizontally and spaces them evenly.
-
----
-
-### Test Your Application
-
-1. Run your app using `npm run dev`.
-2. Open the browser and verify that all three counters function independently and have proper styling.
-
----
-
-## Part 2/3: `useField` Custom Hook
-
-**Objective:**  
-In this part, you will create a custom hook called `useField` to manage form input fields. You will first use `useState` for form handling, then refactor the code to use the `useField` custom hook, which abstracts the input handling logic.
-
----
-
-### Step 0: Setup
-
-1. Start by creating a new React app for this task, or you can use the same app from Part 1.
-2. In `App.jsx`, add the following code to implement a basic form with fields for name, birthdate, and height using `useState`.
+Still in `App.jsx`, find where `SignupComponent` and `LoginComponent` are rendered inside `<Routes>`. The setter is passed as a prop:
 
 ```jsx
-import { useState } from 'react';
-
-const App = () => {
-  const [name, setName] = useState('');
-  const [born, setBorn] = useState('');
-  const [height, setHeight] = useState('');
-
-  return (
-    <div>
-      <form>
-        <div>
-          Name: 
-          <input
-            type="text"
-            value={name}
-            onChange={(event) => setName(event.target.value)}
-          />
-        </div>
-        <br/>
-        <div>
-          Birthdate:
-          <input
-            type="date"
-            value={born}
-            onChange={(event) => setBorn(event.target.value)}
-          />
-        </div>
-        <br/>
-        <div>
-          Height:
-          <input
-            type="number"
-            value={height}
-            onChange={(event) => setHeight(event.target.value)}
-          />
-        </div>
-      </form>
-      <div>
-        {name} {born} {height}
-      </div>
-    </div>
-  );
-};
-
-export default App;
+<SignupComponent setIsAuthenticated={setIsAuthenticated} />
+<LoginComponent  setIsAuthenticated={setIsAuthenticated} />
 ```
 
----
+### 1c — Receiving and using the setter in the child
 
-### Step 1: Create the `useField` Custom Hook
+Open `SignupComponent.jsx`. The prop is received by destructuring it from the component's parameter:
 
-To simplify form handling, we will create a custom hook called `useField` that manages the state and change handler for form inputs.
+```jsx
+const SignupComponent = ({ setIsAuthenticated }) => {
+  // ...
 
-1. Create a new file named `useField.jsx`.
-2. Inside `useField.jsx`, define the `useField` custom hook:
-
-```javascript
-// useField.jsx
-
-import { useState } from 'react';
-
-const useField = (type) => {
-  const [value, setValue] = useState('');
-
-  const onChange = (event) => setValue(event.target.value);
-
-  return {
-    type,
-    value,
-    onChange,
+  const handleSignup = async () => {
+    // ... after successful fetch:
+    setIsAuthenticated(true);  // ← calls the setter defined in App
   };
 };
-
-export default useField;
 ```
 
-- This hook encapsulates input field logic, providing `type`, `value`, and `onChange` for any input field.
+When `setIsAuthenticated(true)` is called here — even though the function was defined in `App` — React updates the state in `App`. This triggers a re-render of `App` and **all its children** with the new `isAuthenticated` value. The router and navbar react immediately.
+
+**Tasks:**
+1. Open `SignupComponent.jsx` and `LoginComponent.jsx`. Confirm both receive `setIsAuthenticated` as a prop and call it after a successful response.
+2. In `App.jsx`, add a `console.log("App re-rendered, isAuthenticated:", isAuthenticated)` just before the `return` statement. Sign up or log in and watch the console to see the re-render happen.
+3. Remove the `console.log` when you are done.
+4. Answer: if you did NOT pass `setIsAuthenticated` to `SignupComponent`, what would happen after a successful signup? Would the user be redirected? Would the navbar update?
 
 ---
 
-### Step 2: Refactor to Use the `useField` Custom Hook
+## Step 2 — Conditional UI in the Navbar
 
-1. Refactor the form in `App.jsx` (or create a new file called `AppWithCustomHook.jsx`) to use the `useField` hook for each form field:
+**File:** `frontend/src/components/Navbar.jsx`
 
-```javascript
-// AppWithCustomHook.jsx
-import useField from './useField';
-import './App.css';  // Add CSS if needed
+Open `Navbar.jsx`. The navbar receives both props from `App` and uses them to branch its output:
 
-const AppWithCustomHook = () => {
-  const nameInput = useField('text');
-  const bornInput = useField('date');
-  const heightInput = useField('number');
+```jsx
+function Navbar({ isAuthenticated, setIsAuthenticated }) {
 
-  const handleSubmit = (event) => {
-   
-
- event.preventDefault();
-    // You can handle form submission logic here
+  const handleClick = () => {
+    localStorage.removeItem("user");  // 1. delete the token from storage
+    setIsAuthenticated(false);         // 2. update React state → re-render
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <nav>
+      {/* Shown ONLY when the user is logged in */}
+      {isAuthenticated && (
         <div>
-          Name: <input {...nameInput} />
+          <span>Welcome</span>
+          <button onClick={handleClick}>Log out</button>
         </div>
-        <br/>
+      )}
+
+      {/* Shown ONLY when the user is NOT logged in */}
+      {!isAuthenticated && (
         <div>
-          Birthdate: <input {...bornInput} />
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
         </div>
-        <br/>
-        <div>
-          Height: <input {...heightInput} />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-      <div>
-        {nameInput.value} {bornInput.value} {heightInput.value}
-      </div>
-    </div>
+      )}
+    </nav>
   );
-};
-
-export default AppWithCustomHook;
+}
 ```
 
-- The spread operator (`...`) simplifies passing `type`, `value`, and `onChange` as props to each input field.
-- This reduces code duplication and makes form handling cleaner.
+**How `{condition && <JSX />}` works:**  
+JavaScript evaluates `&&` left to right. If the left side is falsy, it short-circuits and returns nothing — React renders nothing. If the left side is truthy, it returns the right side — React renders the JSX.
+
+**Logout flow, step by step:**
+1. User clicks "Log out".
+2. `localStorage.removeItem("user")` — the token is permanently deleted from storage.
+3. `setIsAuthenticated(false)` — updates state in `App`.
+4. `App` re-renders with `isAuthenticated = false`.
+5. The navbar immediately shows the Login/Signup links.
+6. The router detects the state change and redirects away from any protected route.
+
+**Tasks:**
+1. Log in and confirm the navbar shows "Welcome" and a "Log out" button.
+2. Click "Log out" and confirm the navbar switches to the Login/Signup links in the same instant — no page reload.
+3. Modify the `Welcome` span to display the user's email. The email is stored in `localStorage` as part of the user object. Read it like this:
+    ```jsx
+    const user = JSON.parse(localStorage.getItem("user"));
+    // user.email
+    ```
+    Display it inside the navbar: `Welcome, matti@example.com`.
+4. Add a "Welcome" link to `/` in the logged-in navbar, alongside the Log out button, using `<Link to="/">Home</Link>`.
 
 ---
 
-### Test Your Application
+## Step 3 — Conditional Routing in `App.jsx`
 
-1. Run your React app with `npm start`.
-2. Open the browser and verify that the form fields work as expected. The `useField` custom hook should simplify the input field management.
+**File:** `frontend/src/App.jsx`
 
----
+Open `App.jsx` and read the full `<Routes>` block:
 
-## Part 3/3: Custom Hook for localStorage
+```jsx
+<Routes>
 
-**Objective:**  
-In this part, you will create a custom hook to manage data using `localStorage`. This will allow you to store and retrieve data between browser sessions.
+  {/* ── Protected: only authenticated users ───────── */}
+  <Route
+    path="/"
+    element={isAuthenticated ? <Home /> : <Navigate to="/signup" />}
+  />
+  {/*
+    ✅ authenticated   → renders <Home />
+    🔀 NOT authenticated → redirects to /signup
+  */}
 
-Follow these steps:
+  {/* ── Guest-only: only unauthenticated users ─────── */}
+  <Route
+    path="/login"
+    element={
+      !isAuthenticated
+        ? <LoginComponent setIsAuthenticated={setIsAuthenticated} />
+        : <Navigate to="/" />
+    }
+  />
+  {/*
+    ✅ NOT authenticated → renders login form
+    🔀 authenticated     → redirects to / (already logged in)
+  */}
 
-1. Create a new file named `useLocalStorage.jsx`.
-2. Inside this file, define a custom hook that synchronizes state with `localStorage`. Here's an example implementation:
+  <Route
+    path="/signup"
+    element={
+      !isAuthenticated
+        ? <SignupComponent setIsAuthenticated={setIsAuthenticated} />
+        : <Navigate to="/" />
+    }
+  />
 
-```javascript
-// useLocalStorage.jsx
-import { useState, useEffect } from 'react';
-
-const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() => {
-    const item = window.localStorage.getItem(key);
-    return item ? JSON.parse(item) : initialValue;
-  });
-
-  useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(storedValue));
-  }, [key, storedValue]);
-
-  return [storedValue, setStoredValue];
-};
-
-export default useLocalStorage;
+</Routes>
 ```
 
-- This hook first checks `localStorage` for existing data. If no data exists, it uses the `initialValue`.
-- When the `storedValue` changes, it updates `localStorage`.
+**Route access summary:**
 
-### Usage Example:
+| Route | Authenticated user | Unauthenticated user |
+|---|---|---|
+| `/` | ✅ sees `<Home />` | 🔀 redirected to `/signup` |
+| `/login` | 🔀 redirected to `/` | ✅ sees login form |
+| `/signup` | 🔀 redirected to `/` | ✅ sees signup form |
 
-In your `App.jsx` file (or another component), you can use `useLocalStorage` like this:
+**`<Navigate>` vs `navigate()`:**
 
-```javascript
-import useLocalStorage from './useLocalStorage';
+| | `<Navigate to="..." />` | `navigate("/")` |
+|---|---|---|
+| Type | JSX component | Function |
+| Used in | `element={}` prop (declarative) | Event handlers and `async` functions (imperative) |
+| When it runs | When the route renders | When the function is called |
 
-const App = () => {
-  const [name, setName] = useLocalStorage('name', '');
+**Tasks:**
+1. While logged in, try navigating directly to `http://localhost:5173/login` in the browser address bar. What happens?
+2. While logged out, try navigating directly to `http://localhost:5173/`. What happens?
+3. Modify `App.jsx` so that when the user is NOT authenticated, the `/` route redirects to `/login` instead of `/signup`.
+4. Add a new route `/profile` that is also protected — it should render a simple `<Profile />` component (you can create a minimal one that just displays the text "Profile Page") and redirect to `/login` when the user is not authenticated.
 
-  return (
-    <div>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <p>Your name is stored in localStorage: {name}</p>
-    </div>
-  );
-};
+---
 
-export default App;
+## Step 4 — Initializing `isAuthenticated` from `localStorage`
+
+**File:** `frontend/src/App.jsx`
+
+When the page loads (or refreshes), React needs to know immediately whether the user is already authenticated. We check `localStorage` for a stored user object inside `useState`.
+
+### Current approach — direct expression
+
+```jsx
+const [isAuthenticated, setIsAuthenticated] = useState(
+  JSON.parse(localStorage.getItem("user")) || false
+);
 ```
 
+**How it works, line by line:**
+1. `localStorage.getItem("user")` → returns the stored JSON string, or `null` if the key does not exist.
+2. `JSON.parse(null)` → returns `null` (falsy).
+3. `null || false` → resolves to `false` → initial state is `false`.
+4. If a user object is stored, `JSON.parse(...)` returns a non-null object (truthy) → initial state is that object.
+
+**Issues with this approach:**
+- The expression `JSON.parse(localStorage.getItem("user"))` runs **on every render** of `App`. React only uses the result on the very first render and discards it afterwards — but the computation still happens every time.
+- It trusts any stored value. If `localStorage` holds `{}` or `{ email: "x" }` (no `token`), it is still truthy and the user would be incorrectly considered authenticated.
+
+### Better approach — lazy initializer
+
+Instead of passing a value to `useState`, pass a **function**. React calls this function **only once** on the initial mount:
+
+```jsx
+const [isAuthenticated, setIsAuthenticated] = useState(() => {
+  // This runs ONCE on mount, never again
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user && user.token ? true : false;
+});
+```
+
+**Step-by-step breakdown:**
+1. `localStorage.getItem("user")` → JSON string or `null`.
+2. `JSON.parse(...)` → object like `{ email: "...", token: "eyJ..." }`, or `null`.
+3. `user && user.token` → truthy only if BOTH: `user` is not null AND `user.token` is a non-empty string.
+4. Returns a clean `true` or `false` boolean — not an object.
+
+| | Direct expression | Lazy initializer |
+|---|---|---|
+| When does it run? | Every render of `App` | Only on initial mount |
+| Checks for actual token? | ❌ any truthy object passes | ✅ explicitly checks `user.token` |
+| Empty object `{}` treated as authenticated? | ✅ (bug) | ❌ correctly returns `false` |
+| Returns a clean boolean? | ❌ returns the object or `false` | ✅ always `true` or `false` |
+
+**Tasks:**
+1. Open `App.jsx` and replace the direct expression with the lazy initializer shown above.
+2. Log in. Then open DevTools → Application → Local Storage and manually edit the stored `user` value to remove the `token` field (change `{"email":"x","token":"eyJ..."}` to `{"email":"x"}`). Refresh the page. Are you still authenticated?
+    - With the **old approach**: yes (the object is truthy).
+    - With the **lazy initializer**: no (`user.token` is `undefined` → `false`).
+3. Clear `localStorage` entirely (DevTools → Application → Local Storage → right-click → Clear). Refresh. Confirm you are redirected to the login/signup page.
+4. Answer: why is it important to return a plain `true`/`false` from the initializer instead of returning the user object itself?
+
 ---
 
-### Test Your Application
+## Summary
 
-1. Run your app and test that the value you enter in the input field is saved to `localStorage`.
-2. Refresh the page to see if the value persists.
+At the end of this lab you should be able to explain:
 
-
----
-<!--
-## (Optional) 
-
-1. Create a custom hook for managing items in the browser's local storage.
-2. You can use the [starter code] provided as your base to begin working.
-3. If needed, refer to the [solution] for guidance. Note that the provided solution may not handle all scenarios (e.g., how to clear all items from local storage), so consider extending it to fit additional use cases.
-
----
-
- > For a review and optional exercises on this topic, you can refer to the following link: [.]() -->
-
-
-<!-- Links -->
-[starter code]:https://github.com/reactpractice-dev/local-storage-hook
-[solution]:https://github.com/reactpractice-dev/local-storage-hook/tree/solution
+- What **prop drilling** is and why `setIsAuthenticated` needs to be passed from `App` to child components.
+- How calling `setIsAuthenticated` in a child component triggers a re-render in `App` and updates the whole tree.
+- How `{condition && <JSX />}` works for conditional rendering in the navbar.
+- The logout sequence: remove from `localStorage` → update state → re-render.
+- The difference between `<Navigate>` (declarative, in JSX) and `navigate()` (imperative, in handlers).
+- What a **protected route** and a **guest-only route** are and how to implement them with React Router.
+- Why the lazy initializer for `useState` is safer and more efficient than a direct expression when reading from `localStorage`.

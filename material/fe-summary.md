@@ -1,332 +1,612 @@
-# Custom React Hooks
+# React Auth — Lecture Summary
 
-
-- [Part 1: Create `useRegister` Hook](#part-1-custom-react-hooks-creating-a-useregister-hook-for-signup-and-login)
-- [Part 2: Create `useFetch`  Hook](#part-2-custom-react-hook-a-detailed-guide-to-usefetch) 
-
-<!-- 
-- [useSignup](./src/hooks/useSignup.jsx)
-- [useLogin](./src/hooks/useLogin.jsx) 
--->
+JWT-based authentication in a full-stack React + Express app. The lecture builds from the ground up: first with plain JavaScript to understand the mechanics, then inside React where state, prop drilling, conditional routing, and conditional UI all come together.
 
 ---
-## Part 1: Custom React Hook: A Detailed Guide to `useFetch`
 
-Fetching data from an API is a common task in web development, especially in modern applications that rely on external services for content. React’s declarative approach makes it easy to manage the data fetching process with hooks. In this part, we'll explore how to create a custom hook called `useFetch` to encapsulate the logic of fetching data from an API. We’ll break down its functionality, look at error handling, and show how to use it in a component.
+## Big-Picture Flow
 
-### Why Use a Custom Hook for Fetching Data?
+Before diving into individual files it helps to see how everything connects:
 
-When developing React applications, you often need to fetch data from an API. This process involves managing loading states, handling errors, and updating the UI based on the fetched data. If you write this logic repeatedly in multiple components, your code becomes harder to maintain. A custom hook like `useFetch` allows you to encapsulate this behavior in a reusable, maintainable way.
-
-### The `useFetch` Hook
-
-Here’s the `useFetch` hook that simplifies the process of fetching data from a given URL:
-
-```jsx
-import { useState, useEffect } from "react";
-
-const useFetch = (url) => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const result = await response.json();
-        setData(result);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  return { data, loading, error };
-};
-
-export default useFetch;
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                          App.jsx                                │
+│                                                                 │
+│  const [isAuthenticated, setIsAuthenticated] = useState(...)   │
+│                             │                                   │
+│          ┌──────────────────┼──────────────────┐               │
+│          ▼                  ▼                  ▼               │
+│       Navbar          LoginComponent    SignupComponent         │
+│  (isAuthenticated,   (setIsAuthenticated) (setIsAuthenticated)  │
+│   setIsAuthenticated)                                           │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-#### Detailed Breakdown of the Hook
-
-1. **State Management**:
-   - `data`: Stores the response data from the API. Initially, it's set to `null`.
-   - `loading`: Indicates whether the data is being fetched. It's initialized to `true` because the fetch operation starts immediately after the component mounts.
-   - `error`: Holds any error messages encountered during the fetch process.
-
-2. **`useEffect`**:
-   - React’s `useEffect` hook is used to run the `fetchData` function whenever the component mounts or the `url` changes. Since `url` is included in the dependency array, the hook will refetch data if the URL is updated.
-   
-   - **Important Note**: The effect will run once when the component is first rendered, and again any time the `url` prop changes, ensuring that the hook is always working with the latest URL.
-
-3. **`fetchData` Function**:
-   - **Loading State**: Before starting the fetch request, the `loading` state is set to `true`, so the UI can display a loading indicator.
-   - **Fetch API**: The `fetch` method is used to make the HTTP request to the provided `url`. This function is asynchronous, and it awaits the response.
-   
-   - **Error Handling**: If the `response.ok` flag is `false` (indicating the request failed, e.g., with a 404 or 500 status), an error is thrown, triggering the `catch` block. The error message is then stored in the `error` state.
-   
-   - **Data Processing**: If the request is successful, the response is converted to JSON using `response.json()`, and the result is stored in the `data` state. If an error occurs during the fetch, the `catch` block will handle it, ensuring that the `data` state remains `null`.
-   
-   - **Finally Block**: Whether the fetch is successful or fails, the `finally` block ensures that `loading` is set to `false` once the fetch is complete.
-
-4. **Returning State**:
-   - The `useFetch` hook returns an object containing the `data`, `loading`, and `error` states. This allows any component using the hook to easily access and display the fetched data, show a loading spinner, or display error messages.
-
-#### Advantages of `useFetch`
-
-- **Reusability**: By encapsulating the data fetching logic in a hook, you can reuse it across multiple components without duplicating code.
-- **Separation of Concerns**: Components can focus on rendering the UI, while the hook handles the data fetching logic.
-- **Simplicity**: The hook abstracts away the complexities of asynchronous requests, error handling, and state management, providing a clean API for your components.
-
-
-### How to Use `useFetch` in a Component
-
-Let’s see how the `useFetch` hook can be used in a component to fetch data from an API and display it. Here’s an example:
-
-```jsx
-import React from "react";
-import useFetch from "./useFetch";
-
-const MyComponent = () => {
-  const { data, loading, error } = useFetch("https://api.example.com/data");
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
-
-  return (
-    <div>
-      {data && data.map(item => (
-        <div key={item.id}>{item.name}</div>
-      ))}
-    </div>
-  );
-};
-
-export default MyComponent;
-```
-
-### Explanation of the Component:
-
-1. **Calling `useFetch`**:
-   - The `useFetch` hook is called with a URL, in this case, `https://api.example.com/data`. This URL points to the API that we want to retrieve data from.
-   - The returned object contains `data`, `loading`, and `error`, which are destructured for easier access.
-
-2. **Conditional Rendering**:
-   - The component first checks if `loading` is `true`. If so, it displays a "Loading..." message to the user.
-   - If there’s an `error`, the component displays the error message.
-   - Once the data is fetched and `loading` is `false` with no errors, the component renders the data. In this case, the `data` is an array, so we map over it and display each item’s `name`.
-
-3. **Handling Different States**:
-   - **Loading State**: Users will see the "Loading..." message while the data is being fetched.
-   - **Error State**: If the fetch request fails, users will be notified of the error with a message like "Error: Network response was not ok".
-   - **Data Display**: When the data is successfully fetched, it is rendered as a list of items.
-
-#### Example Scenario:
-
-Suppose you have an API that provides a list of users from `https://api.example.com/users`. Using the `useFetch` hook, you can easily fetch and display the list of users in your component.
-
-```jsx
-const UserList = () => {
-  const { data, loading, error } = useFetch("https://api.example.com/users");
-
-  if (loading) return <p>Loading users...</p>;
-  if (error) return <p>Error: {error}</p>;
-
-  return (
-    <ul>
-      {data && data.map(user => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-    </ul>
-  );
-};
-```
-
-This `UserList` component fetches data from the API and handles loading, error, and success states. The hook makes the data fetching process smooth and removes the need to manually manage these states inside the component itself.
-
-
-### Conclusion
-
-The `useFetch` custom hook is a powerful and reusable solution for handling API requests in React. It abstracts away the complexity of fetching data, managing loading and error states, and allows components to focus on rendering the UI. By using this hook, you can keep your components clean and reduce repetitive code in your application.
-
-By encapsulating this logic into a hook, you're also making your code more testable, maintainable, and reusable. Whether you’re working with multiple APIs or a single endpoint, `useFetch` will streamline the data-fetching process, making your React development more efficient.
+- **State lives in `App`** — one single source of truth for whether the user is logged in.
+- **Props flow down** — child components receive what they need from `App` (prop drilling).
+- **Setters flow down too** — children call `setIsAuthenticated` to bubble changes back up to `App`.
+- **`App` re-renders** — when `isAuthenticated` changes, the router and navbar react instantly.
 
 ---
-## Part 2: Custom React Hooks: Creating a `useRegister` Hook for Signup and Login
 
-Custom hooks in React provide a way to encapsulate and reuse logic across multiple components. In this part, we'll explore the creation of a custom hook called `useRegister`, which handles both signup and login functionalities. We'll demonstrate how to implement this hook, use it in an `AuthForm` component, and integrate it within a main `App` component. By the end of this, you'll have a reusable, efficient way to handle user authentication in your React application.
+## 1. Signup with `fetch` (no React)
 
-### 1. Creating the `useRegister` Hook
+**File:** [demo2.js](./src/demo2.js)
 
-The `useRegister` hook simplifies authentication by encapsulating both signup and login logic in a single function. Here's how it works:
+Before touching React, we focus purely on the HTTP call so there is nothing else to distract from it. Signup is a `POST` request that sends the user's email and password as a JSON body and receives back a JWT token.
+
+```js
+const apiUrl = "http://localhost:4000/api/user/signup";
+
+const user = {
+  email: "matti@example.com",
+  password: "R3g5T7#gh",
+};
+
+const register = async () => {
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      body: JSON.stringify(user),       // convert JS object → JSON string
+      headers: {
+        "Content-Type": "application/json", // tell the server what format the body is
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add a new user");
+    }
+
+    const json = await response.json(); // parse the response body
+    console.log("New user added:", json);
+    // json looks like: { email: "matti@example.com", token: "eyJhbGci..." }
+  } catch (error) {
+    console.error("Error adding user:", error.message);
+  }
+};
+
+register();
+```
+
+What is happening step by step:
+1. `fetch` sends the HTTP request — `await` pauses execution until the server responds.
+2. `response.ok` is `true` for any 2xx HTTP status (200, 201 …). If the server returns 400 or 500 we throw so the `catch` block handles it.
+3. `response.json()` reads the response body and parses it from a JSON string into a JS object — this is also async, so we `await` it.
+4. The server hashes the password, creates the user in the database, signs a JWT, and sends it back. **We now have a token.**
+
+> **What is a JWT?** A JSON Web Token is a compact string (e.g. `eyJhbGci...`) the server generates and signs with a secret key. The client stores it and sends it with every future request to prove identity — the server can verify it without a database lookup.
+
+---
+
+## 2. Login with `fetch` (no React)
+
+**File:** [demo3.js](./src/demo3.js)
+
+Login is structurally identical to signup — only the endpoint changes. This makes it easy to compare the two side by side.
+
+```js
+const apiUrl = "http://localhost:4000/api/user/login";
+
+const user = {
+  email: "matti@example.com",
+  password: "R3g5T7#gh",
+};
+
+const login = async () => {
+  try {
+    const response = await fetch(apiUrl, {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to login");
+    }
+
+    const json = await response.json();
+    console.log("Login successful:", json);
+    // json looks like: { email: "matti@example.com", token: "eyJhbGci..." }
+  } catch (error) {
+    console.error("Error:", error.message);
+  }
+};
+
+login();
+```
+
+What the server does differently: instead of creating a new user, it looks up the existing one, uses `bcrypt` to compare the submitted password with the stored hash, and — if they match — signs and returns a fresh JWT.
+
+**The key takeaway from demos 1 and 2**: both signup and login give us a token. The client's job is to store that token so it can be used on the next page load without making the user log in again. That is what `localStorage` is for.
+
+---
+
+## 3. `localStorage` — Persisting Data in the Browser
+
+**File:** [demo1.js](./src/demo1.js)
+
+`localStorage` is a key-value store built into the browser. It persists across page refreshes and browser restarts. There is one important constraint: **it only stores strings**. Any JS object or array must be converted to a string first with `JSON.stringify`, then converted back with `JSON.parse` when reading.
+
+```js
+// ── Use case 1: Plain strings ────────────────────────────────────
+localStorage.setItem("username", "Rami");     // store
+localStorage.getItem("username");              // read  → "Rami"
+localStorage.removeItem("username");           // delete one key
+
+// ── Use case 2: Objects / Arrays (must serialize) ────────────────
+const userArray = ["Rami", 25];
+
+// Store: JS value → JSON string
+localStorage.setItem("user", JSON.stringify(userArray));
+// "user" now holds the string: '["Rami",25]'
+
+// Read: JSON string → JS value
+const userData = JSON.parse(localStorage.getItem("user")); // ["Rami", 25]
+console.log(userData); // ["Rami", 25]
+
+localStorage.removeItem("user"); // delete
+localStorage.clear();             // wipe everything
+
+// ── Use case 3: sessionStorage ───────────────────────────────────
+// Exact same API — but data is wiped when the tab is closed
+sessionStorage.setItem("username", "Rami");
+sessionStorage.getItem("username");
+sessionStorage.removeItem("username");
+```
+
+| | `localStorage` | `sessionStorage` |
+|---|---|---|
+| Persists after page refresh | ✅ | ✅ |
+| Persists after closing the tab | ✅ | ❌ |
+| Persists after closing the browser | ✅ | ❌ |
+| Shared across tabs | ✅ | ❌ |
+| Suitable for storing a JWT | ✅ (common, not the most secure) | only if you want it to expire on tab close |
+
+**Why this matters for auth**: after a successful login/signup, we store the `{ email, token }` object in `localStorage`. The next time the app loads, we read that object to decide whether the user is already authenticated — without asking them to log in again.
+
+---
+
+## 4. Signup in React — `fetch` + `localStorage` + State
+
+**File:** [SignupComponent.jsx](./src/frontend/pages/SignupComponent.jsx)
+
+Now we bring everything together inside a React component. The component manages the form inputs as controlled state, calls the same `fetch` we saw in demo2, saves the token to `localStorage`, and then updates the app-wide auth state.
 
 ```jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const useRegister = (setIsAuthenticated, isSignup = true) => {
+// setIsAuthenticated is passed down from App.jsx (see §6 Prop Drilling)
+const SignupComponent = ({ setIsAuthenticated }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // programmatic navigation after signup
 
-  const handleRegister = async () => {
-    const endpoint = isSignup ? "/api/user/signup" : "/api/user/login";
+  const handleSignup = async () => {
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch("/api/user/signup", {  // relative URL — Vite proxies to :4000
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
       if (response.ok) {
         const user = await response.json();
+        // user = { email: "...", token: "eyJhbGci..." }
+
+        // Step 1 — Persist the token so it survives a page refresh
         localStorage.setItem("user", JSON.stringify(user));
-        console.log(`User ${isSignup ? "signed up" : "logged in"} successfully!`);
+
+        // Step 2 — Tell App.jsx that we are now authenticated
+        //          This triggers a re-render: the router redirects, the navbar updates
         setIsAuthenticated(true);
+
+        // Step 3 — Navigate to the home page
         navigate("/");
       } else {
-        console.error(`${isSignup ? "Signup" : "Login"} failed`);
+        console.error("Signup failed");
       }
     } catch (error) {
-      console.error(`Error during ${isSignup ? "signup" : "login"}:`, error);
+      console.error("Error during signup:", error);
     }
   };
 
-  return {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    handleRegister,
-  };
+  return (
+    <div className="form-container">
+      <h2>Sign Up</h2>
+      <label>
+        Email:
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+        />
+      </label>
+      <label>
+        Password:
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password"
+        />
+      </label>
+      <button className="signup-button" onClick={handleSignup}>Sign Up</button>
+    </div>
+  );
 };
 
-export default useRegister;
+export default SignupComponent;
 ```
 
-#### How it works:
-- **State Management**: The hook uses `useState` to manage `email` and `password` fields.
-- **Dynamic Endpoint**: It determines whether the user is signing up or logging in based on the `isSignup` parameter, dynamically setting the appropriate API endpoint (`/api/user/signup` or `/api/user/login`).
-- **Authentication Flow**: After a successful API response, the user data is saved in `localStorage`, the `setIsAuthenticated` state is updated, and the user is redirected to the homepage.
-- **Error Handling**: It handles both failed responses from the server and potential network errors.
+**The three steps after a successful response are the core pattern — memorize them:**
 
-By abstracting this logic into a custom hook, you make it reusable for any authentication form component.
+| Step | Code | Purpose |
+|---|---|---|
+| 1 | `localStorage.setItem(...)` | Persist the token — survives refreshes |
+| 2 | `setIsAuthenticated(true)` | Update React state — triggers re-render |
+| 3 | `navigate("/")` | Redirect the user to the protected home page |
 
-### 2. Building the `AuthForm` Component
+> **Vite proxy note:** The fetch URL is `/api/user/signup` (relative, no hostname). During development Vite is configured to proxy any request starting with `/api` to `http://localhost:4000`. This eliminates CORS issues — the browser thinks the frontend and backend are the same origin.
 
-The `AuthForm` component is where users will either log in or sign up, depending on the passed `isSignup` prop. This form integrates the `useRegister` hook to handle input fields and form submission.
+---
+
+## 5. Login in React — `fetch` + `localStorage` + State
+
+**File:** [LoginComponent.jsx](./src/frontend/pages/LoginComponent.jsx)
+
+Login follows exactly the same three-step pattern. The only difference is the endpoint (`/api/user/login`) and the component name.
 
 ```jsx
 import React, { useState } from "react";
-import useRegister from "./useRegister";
+import { useNavigate } from "react-router-dom";
 
-const AuthForm = ({ isSignup }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { email, setEmail, password, setPassword, handleRegister } = useRegister(setIsAuthenticated, isSignup);
+const LoginComponent = ({ setIsAuthenticated }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    handleRegister();
+  const handleLogin = async () => {
+    try {
+      const response = await fetch("/api/user/login", {   // ← only this line differs from signup
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      if (response.ok) {
+        const user = await response.json();
+        // Step 1 — Persist token
+        localStorage.setItem("user", JSON.stringify(user));
+        // Step 2 — Update auth state
+        setIsAuthenticated(true);
+        // Step 3 — Redirect
+        navigate("/");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
   };
 
   return (
-    <div>
-      <h2>{isSignup ? "Signup" : "Login"}</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">{isSignup ? "Signup" : "Login"}</button>
-      </form>
+    <div className="form-container">
+      <h2>Login</h2>
+      <label>
+        Email:
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your email" />
+      </label>
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter your password" />
+      </label>
+      <button className="login-button" onClick={handleLogin}>Log In</button>
     </div>
   );
 };
 
-export default AuthForm;
+export default LoginComponent;
 ```
 
-#### Key Features:
-- **Dynamic Title**: The form's title and submit button dynamically change based on the `isSignup` prop.
-- **Form State**: The `email` and `password` values are controlled inputs tied to the state managed by `useRegister`.
-- **Submit Handler**: When the form is submitted, it calls `handleRegister`, which invokes the custom hook's logic for either signup or login.
+Both `SignupComponent` and `LoginComponent` need to call `setIsAuthenticated(true)` when the user is authenticated. But this state variable lives in `App.jsx`. How do the child components reach it? Through **prop drilling**.
 
-This makes the component clean, reusable, and fully decoupled from specific authentication logic.
+---
 
-### 3. Integrating with the Main `App` Component
+## 6. Prop Drilling — Passing `setIsAuthenticated` Down
 
-Finally, we'll integrate the `AuthForm` component into a main `App` component. You can decide whether to render the form as a signup or login by simply passing the appropriate `isSignup` prop.
+**Files:** [App.jsx](./src/frontend/App.jsx) → child components
+
+**Prop drilling** means passing a value (or function) from a parent component down to a child through props, even if intermediate components don't need it themselves.
+
+In our app, the `isAuthenticated` state and its setter `setIsAuthenticated` are defined in `App`. Three children need access to them:
+
+```
+App.jsx  (defines state)
+  │
+  ├──▶  Navbar.jsx
+  │         props: isAuthenticated, setIsAuthenticated
+  │         needs both: isAuthenticated to decide what to show,
+  │                     setIsAuthenticated to call on logout
+  │
+  ├──▶  LoginComponent.jsx
+  │         props: setIsAuthenticated
+  │         needs setter only: calls setIsAuthenticated(true) on success
+  │
+  └──▶  SignupComponent.jsx
+            props: setIsAuthenticated
+            needs setter only: calls setIsAuthenticated(true) on success
+```
+
+In `App.jsx`, the props are passed when rendering each component inside the routes:
 
 ```jsx
-import React from "react";
-import AuthForm from "./AuthForm";
+// App.jsx — always rendered, receives both
+<Navbar
+  isAuthenticated={isAuthenticated}
+  setIsAuthenticated={setIsAuthenticated}
+/>
 
-const App = () => {
-  return (
-    <div>
-      <AuthForm isSignup={true} /> {/* Signup Form */}
-      <AuthForm isSignup={false} /> {/* Login Form */}
-    </div>
-  );
+// Inside <Routes> — each form component receives the setter
+<SignupComponent setIsAuthenticated={setIsAuthenticated} />
+<LoginComponent  setIsAuthenticated={setIsAuthenticated} />
+```
+
+In each child component, the prop is destructured from the function's parameter:
+
+```jsx
+// Receiving the prop
+const SignupComponent = ({ setIsAuthenticated }) => {
+  // ...
+  setIsAuthenticated(true); // called after successful signup
 };
+```
+
+**Why this works:** `setIsAuthenticated` is a function reference. When the child calls it, React updates the state in `App`, which re-renders `App` and all its children with the new `isAuthenticated` value. The router and navbar immediately reflect the change — with no page reload.
+
+---
+
+## 7. Conditional UI in the Navbar
+
+**File:** [Navbar.jsx](./src/frontend/components/Navbar.jsx)
+
+The navbar must show different content depending on whether the user is logged in:
+
+- **Logged in** → show a welcome message and a "Log out" button
+- **Not logged in** → show "Login" and "Signup" links
+
+It receives both props from `App`: `isAuthenticated` to branch the UI, and `setIsAuthenticated` to update state on logout.
+
+```jsx
+import { Link } from "react-router-dom";
+
+function Navbar({ isAuthenticated, setIsAuthenticated }) {
+
+  const handleClick = () => {
+    // Logout: two steps mirror what login/signup did in reverse
+    localStorage.removeItem("user"); // 1. clear the token from storage
+    setIsAuthenticated(false);        // 2. update React state → triggers re-render
+  };
+
+  return (
+    <nav>
+      {/* Branch 1: user IS logged in */}
+      {isAuthenticated && (
+        <div>
+          <span>Welcome</span>
+          <button onClick={handleClick}>Log out</button>
+        </div>
+      )}
+
+      {/* Branch 2: user is NOT logged in */}
+      {!isAuthenticated && (
+        <div>
+          <Link to="/login">Login</Link>
+          <Link to="/signup">Signup</Link>
+        </div>
+      )}
+    </nav>
+  );
+}
+
+export default Navbar;
+```
+
+**How the conditional rendering works:**
+- `{isAuthenticated && <div>...</div>}` — renders the div only when `isAuthenticated` is `true`. When it is `false`, the expression short-circuits and renders nothing.
+- `{!isAuthenticated && <div>...</div>}` — the opposite condition.
+
+**Logout flow:**
+1. User clicks "Log out".
+2. `handleClick` removes `"user"` from `localStorage` (so the token is gone permanently).
+3. `setIsAuthenticated(false)` updates state in `App`.
+4. `App` re-renders → `isAuthenticated` is now `false` everywhere.
+5. The navbar instantly switches to the login/signup links.
+6. The router redirects the user away from the protected home page.
+
+---
+
+## 8. Conditional Routing in `App.jsx`
+
+**File:** [App.jsx](./src/frontend/App.jsx)
+
+React Router's `<Navigate>` component performs a client-side redirect. By combining it with the `isAuthenticated` state we enforce route access rules: authenticated users cannot visit the login/signup pages, and unauthenticated users cannot visit the home page.
+
+```jsx
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
+import SignupComponent from "./pages/SignupComponent";
+import LoginComponent  from "./pages/LoginComponent";
+import Home   from "./pages/Home";
+import Navbar from "./components/Navbar";
+
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    JSON.parse(localStorage.getItem("user")) || false
+  );
+
+  return (
+    <BrowserRouter>
+      {/* Navbar is outside <Routes> so it always renders */}
+      <Navbar
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
+
+      <div className="pages">
+        <Routes>
+
+          {/* ── Protected route (/): only for logged-in users ───────── */}
+          <Route
+            path="/"
+            element={isAuthenticated ? <Home /> : <Navigate to="/signup" />}
+          />
+          {/*
+            If authenticated  → render <Home />
+            If NOT authenticated → redirect to /signup immediately
+          */}
+
+          {/* ── Guest-only route (/login): only for logged-out users ── */}
+          <Route
+            path="/login"
+            element={
+              !isAuthenticated
+                ? <LoginComponent setIsAuthenticated={setIsAuthenticated} />
+                : <Navigate to="/" />
+            }
+          />
+          {/*
+            If NOT authenticated → render the login form
+            If authenticated     → redirect to / (already logged in)
+          */}
+
+          {/* ── Guest-only route (/signup) ────────────────────────────*/}
+          <Route
+            path="/signup"
+            element={
+              !isAuthenticated
+                ? <SignupComponent setIsAuthenticated={setIsAuthenticated} />
+                : <Navigate to="/" />
+            }
+          />
+
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
 
 export default App;
 ```
 
-In this example, we render both the signup and login forms. However, in a real-world application, you might conditionally display either the signup or login form based on user interaction or routing.
+**Route access summary:**
 
-### Benefits of Using `useRegister`:
-- **Reusability**: The hook can be used across different forms or pages where authentication is required, without duplicating logic.
-- **Code Separation**: It abstracts complex logic like API calls and error handling away from the form component, keeping your components clean and focused.
-- **Flexibility**: The same hook handles both signup and login by changing a simple boolean parameter, reducing code duplication and making maintenance easier.
+| Route | Authenticated user | Unauthenticated user |
+|---|---|---|
+| `/` | ✅ sees `<Home />` | 🔀 redirected to `/signup` |
+| `/login` | 🔀 redirected to `/` | ✅ sees login form |
+| `/signup` | 🔀 redirected to `/` | ✅ sees signup form |
 
-### Conclusion
-
-Custom hooks in React offer a powerful way to encapsulate functionality in a reusable and declarative manner. We built a `useRegister` hook to handle both signup and login, demonstrated how to use it within an `AuthForm` component, and integrated it into a simple `App`. With this approach, you can easily extend and adapt the authentication logic for future use cases while keeping your components clean and focused on UI concerns.
+**`<Navigate>` vs `navigate()`:**
+- `<Navigate to="..." />` is a **component** — used inside JSX/`element={}` to redirect declaratively when the route renders.
+- `navigate("/")` is a **function** (from `useNavigate()`) — called imperatively inside event handlers, e.g. after a fetch succeeds.
 
 ---
-## Links
 
-- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) vs [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
-- other:
-  - [localStorage/sessionStorage vs Cookies](https://blog.logrocket.com/localstorage-javascript-complete-guide/#localstorage-vs-cookies)
-  - [localStorage in JavaScript](https://blog.logrocket.com/localstorage-javascript-complete-guide/)
-  - [Window localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
-- [Custom hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
-  - [Example: useFetch](https://www.w3schools.com/react/react_customhooks.asp)
-  - [Rules of hooks](https://react.dev/warnings/invalid-hook-call-warning)
-- Other: 
-  - [Hooks behind the scene](https://medium.com/flatiron-labs/breaking-the-rules-of-react-hooks-9e892636641e)
-  - Book: [Designing React Hooks the Right Way](https://metropolia.finna.fi/Record/nelli15.5500000000157994?sid=3444690400)
-  - [Another Example](https://swr.vercel.app/) from [NextJS](https://nextjs.org/)
-- [React Custom Hooks](https://www.w3schools.com/react/react_customhooks.asp)
-- Add Login Authentication to React Applications
-  - [Mern Auth](https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/lesson-17) 
-  - [How To Add Login Authentication to React Applications](https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications)
+## 9. Initializing `isAuthenticated` from `localStorage`
+
+**File:** [App.jsx](./src/frontend/App.jsx)
+
+When the app first loads (or the page is refreshed), React needs to know if the user is already authenticated. We check `localStorage` for a stored user object.
+
+### Current approach — direct expression
+
+```jsx
+const [isAuthenticated, setIsAuthenticated] = useState(
+  JSON.parse(localStorage.getItem("user")) || false
+);
+```
+
+**How it works:**
+- `localStorage.getItem("user")` returns the stored JSON string, or `null` if nothing is stored.
+- `JSON.parse(null)` returns `null`, which is falsy.
+- `null || false` → `false`, so the initial state is `false` when no user is stored.
+- If a user object is stored, `JSON.parse(...)` returns a truthy object → initial state is that object (truthy), which React treats as `true` in conditionals.
+
+**Issues with this approach:**
+1. The expression `JSON.parse(localStorage.getItem("user"))` is evaluated **every time** the component function runs. React only uses the result on the very first render and ignores it after that — but the work still happens on every render.
+2. It trusts any stored value. If `localStorage` holds an empty object `{}` or `{ email: "x" }` without a `token`, it is still truthy and the user would be considered authenticated incorrectly.
+
+---
+
+### Better approach — lazy initializer
+
+Pass a **function** to `useState` instead of a value. React calls this function **only once** on the initial render and uses the return value as the initial state.
+
+```jsx
+const [isAuthenticated, setIsAuthenticated] = useState(() => {
+  // This function runs ONCE on mount, never again
+  const user = JSON.parse(localStorage.getItem("user"));
+  return user && user.token ? true : false;
+});
+```
+
+**Why this is better:**
+
+| | Direct expression | Lazy initializer (function) |
+|---|---|---|
+| When does it run? | Every render | Only on initial mount |
+| Checks for actual token? | ❌ any truthy value passes | ✅ explicitly checks `user.token` |
+| Empty object `{}` treated as authenticated? | ✅ (bug) | ❌ correctly returns `false` |
+| Performance | Minor overhead on every render | Runs once |
+
+**Step by step — what the function does:**
+1. `localStorage.getItem("user")` → the stored JSON string, or `null`.
+2. `JSON.parse(...)` → JS object `{ email: "...", token: "eyJ..." }`, or `null`.
+3. `user && user.token` → only truthy if both: `user` exists **and** `user.token` exists (a real JWT string).
+4. Returns `true` (authenticated) or `false` (not authenticated) — a clean boolean, not an object.
+
+---
+
+## Complete Auth Flow — End to End
+
+```
+User visits the app for the first time
+  │
+  ├─ localStorage has no "user" key
+  │    └─ isAuthenticated = false
+  │         ├─ Navbar shows: Login | Signup links
+  │         └─ Route "/" → redirected to "/signup"
+  │
+  └─ User fills out the signup form and submits
+       │
+       ├─ fetch POST /api/user/signup  →  server creates user, returns { email, token }
+       │
+       ├─ localStorage.setItem("user", JSON.stringify({ email, token }))
+       │    └─ token is now persisted — survives page refresh
+       │
+       ├─ setIsAuthenticated(true)
+       │    └─ App re-renders with isAuthenticated = true
+       │         ├─ Navbar switches to: Welcome + Log out button
+       │         └─ Routes: "/" now renders <Home />, "/signup" redirects to "/"
+       │
+       └─ navigate("/")  →  user lands on the home page
+
+─────────────────────────────────────────────────────────────────
+User refreshes the page
+  │
+  └─ useState lazy initializer runs
+       ├─ reads localStorage → finds { email, token }
+       ├─ user.token exists → returns true
+       └─ isAuthenticated = true  →  user stays logged in, no re-login needed
+
+─────────────────────────────────────────────────────────────────
+User clicks "Log out"
+  │
+  ├─ localStorage.removeItem("user")  →  token deleted
+  ├─ setIsAuthenticated(false)        →  App re-renders
+  │    ├─ Navbar: back to Login | Signup links
+  │    └─ Route "/" → redirected to "/signup"
+  └─ If user refreshes: localStorage is empty → isAuthenticated = false 
+```
