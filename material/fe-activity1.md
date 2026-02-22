@@ -214,7 +214,7 @@ const handleSignup = async () => {
 ```
 
 **Tasks:**
-1. Run the app and sign up with a strong password (e.g. `4wa95=Vx#`). Open DevTools → **Application → Local Storage** and confirm that the `user` key is stored with both `email` and `token`.
+1. Run the app and sign up with a **strong password** (e.g. `4wa95=Vx#`). Open DevTools → **Application → Local Storage** and confirm that the `user` key is stored with both `email` and `token`.
 2. Click "Log out". Verify that the `user` key is removed from `localStorage`.
 3. Trace the `setIsAuthenticated` prop: where does this function come from? (Hint: it is not defined in this file — find where it is passed in.) You will explore this in detail in Lab 2.
 
