@@ -1,478 +1,667 @@
-# Backend Testing
+# Summary – API Testing with Jest and Supertest
 
-
-- [Part 1: Backend Testing](#part-1-backend-testing)
-- [Part 2: Backend Testing: Focus on Protected Routes](#part-2-backend-testing-with-jest-and-supertest-focus-on-protected-routes)
-- [BDD vs TDD](#part-3-bdd-vs-tdd)
-- [Managing Different Environments in Node.js](#part-4-managing-different-environments-in-nodejs)
+- [1. The Testing Stack](#1-the-testing-stack)
+- [2. Project Setup](#2-project-setup)
+- [3. Test File Structure](#3-test-file-structure)
+- [4. Lifecycle Hooks](#4-lifecycle-hooks)
+- [5. Making HTTP Requests with Supertest](#5-making-http-requests-with-supertest)
+- [6. Testing Protected Routes (JWT)](#6-testing-protected-routes-jwt)
+- [7. BDD Style – `describe` / `it`](#7-bdd-style--describe--it)
+- [8. Best Practices](#8-best-practices)
+- [9. Running Tests Selectively](#9-running-tests-selectively)
+- [10. Fetch as an Alternative to Supertest](#10-fetch-as-an-alternative-to-supertest)
+- [11. BDD vs TDD](#11-bdd-vs-tdd)
+- [12. Managing Environments with `cross-env` and `dotenv`](#12-managing-environments-with-cross-env-and-dotenv)
+- [Links](#links)
 
 ---
-## Part 1: Backend Testing
 
-Testing is an essential part of backend development, ensuring that your APIs work correctly and reliably. In Node.js applications, a combination of **Jest** and **Supertest** offers a powerful way to test APIs and backend logic effectively. In this section, we will break down how you can use both tools together, why relying on only Supertest might not be enough, and how Jest compares to other popular testing frameworks like **Mocha** and **Chai**.
+## 1. The Testing Stack
 
-### Setting Up Jest and Supertest
+| Layer | Tool | Role |
+|---|---|---|
+| Test runner | **Jest** | Discovers test files, runs them, reports results |
+| Assertions | **Jest `expect`** | Verifies that values match expectations |
+| HTTP client | **Supertest** | Sends HTTP requests to the Express app without starting a real server |
+| Alternative HTTP client | **Node `fetch`** (Node 18+) | Sends real HTTP requests to a manually started server |
 
-To illustrate how to use Jest and Supertest together, consider the following code, where we test an API for a workout management system:
+**Jest does not make HTTP requests.** It only runs your test functions and checks assertions. Supertest (or `fetch`) is the tool that actually talks to the API.
 
-```javascript
-const mongoose = require("mongoose");
-const supertest = require("supertest");
-const app = require("../app");
-const api = supertest(app);
-const Workout = require("../models/workoutModel");
+---
 
-const initialWorkouts = [
-  { title: "test workout 1", reps: 11, load: 101 },
-  { title: "test workout 2", reps: 12, load: 102 }
-];
+## 2. Project Setup
 
-beforeEach(async () => {
-  await Workout.deleteMany({});
-  await new Workout(initialWorkouts[0]).save();
-  await new Workout(initialWorkouts[1]).save();
-});
+### Separate test database
 
-describe("GET /api/workouts", () => {
-  it("should return all workouts", async () => {
-    const response = await api.get("/api/workouts");
-    expect(response.body).toHaveLength(initialWorkouts.length);
-  });
+Every project uses two MongoDB connection strings in `.env`:
 
-  it("should include a specific workout in the returned list", async () => {
-    const response = await api.get("/api/workouts");
-    const titles = response.body.map(workout => workout.title);
-    expect(titles).toContain("test workout 2");
-  });
-
-  it("should respond with JSON format and status 200", async () => {
-    await api
-      .get("/api/workouts")
-      .expect(200)
-      .expect("Content-Type", /application\/json/);
-  });
-});
+```
+MONGO_URI=mongodb://...         # development / production
+TEST_MONGO_URI=mongodb://...    # test runs only
 ```
 
-In this example, the API is tested using Jest and Supertest. Let's dive deeper into why we use these two tools and how they complement each other.
+The config file switches between them based on `NODE_ENV`:
 
-### Supertest: The API Testing Tool
+```js
+// utils/config.js
+require("dotenv").config();
 
-Supertest is an HTTP assertion library designed specifically for testing Node.js HTTP servers. It allows you to make HTTP requests to your server (without needing to actually start the server) and verify the responses. 
+const MONGO_URI =
+  process.env.NODE_ENV === "test"
+    ? process.env.TEST_MONGO_URI
+    : process.env.MONGO_URI;
 
-In the code above, Supertest is used to:
-
-- **Send GET/POST/DELETE requests**: `api.get("/api/workouts")` sends a GET request to fetch workouts.
-- **Validate HTTP responses**: Using Supertest, we can chain assertions like `.expect(200)` to check response status and `.expect("Content-Type", /application\/json/)` to verify headers.
-
-### Why Not Just Supertest? The Role of Jest
-
-While Supertest is excellent for making HTTP requests and performing basic assertions, it doesn't provide a complete testing framework. This is where **Jest** comes into play. Jest offers:
-
-1. **Test Suite Organization**: 
-   - Jest allows you to organize tests into `describe` and `test` blocks, making it easier to manage complex test suites. Supertest alone does not offer such organizational features.
-  
-2. **Rich Assertions**:
-   - Jest comes with a rich assertion library built-in (`expect`), which allows you to verify that data matches expectations. For example, in the code:
-     ```javascript
-     expect(response.body).toHaveLength(initialWorkouts.length);
-     expect(contents).toContain("test workout 2");
-     ```
-     Jest’s assertion capabilities go beyond Supertest’s simple `.expect()` method for HTTP responses.
-
-3. **Mocking and Spying**: 
-   - Jest excels at mocking functions, objects, and modules, which is useful for testing isolated components and mocking external dependencies (e.g., databases, third-party APIs).
-
-4. **Snapshot Testing**: 
-   - Jest supports snapshot testing, where you can store and compare complex data structures (like responses) in "snapshots" to detect unintended changes over time.
-
-### Jest vs. Mocha/Chai: Test Runners and Assertion Libraries
-
-While Jest is an all-in-one solution (offering a test runner, assertions, and mocking tools), other popular combinations like **Mocha** and **Chai** provide similar functionality but require more setup.
-
-1. **Test Runner**:
-   - **Jest** is a complete testing framework, offering built-in support for running tests, handling test suites, and generating reports.
-   - **Mocha** is just a test runner and does not come with built-in assertions or mocking, meaning you'll need to add other libraries like **Chai** (assertions) or **Sinon** (mocking).
-
-2. **Assertions**:
-   - **Jest** uses its own `expect` API, which is very user-friendly and powerful.
-   - **Chai** provides similar functionality but must be set up separately, and you might need additional plugins (e.g., `chai-http` for HTTP assertions).
-   
-   Example in **Jest**:
-   ```javascript
-   expect(response.body).toHaveLength(initialWorkouts.length);
-   ```
-
-   Equivalent in **Chai**:
-   ```javascript
-   expect(response.body).to.have.lengthOf(initialWorkouts.length);
-   ```
-
-3. **Setup Complexity**:
-   - **Jest** requires minimal configuration. It has a zero-config philosophy, meaning you can start writing tests with little to no setup.
-   - **Mocha/Chai** requires more initial setup. You need to install and configure multiple libraries to achieve what Jest offers out of the box.
-
-### Why Jest is Often Preferred
-
-For many developers, Jest is the preferred choice for several reasons:
-- **All-in-one solution**: Jest combines a test runner, assertion library, and mocking/stubbing tools in a single package.
-- **Better performance**: Jest is known for its speed and ability to run tests in parallel.
-- **Easy to use**: Jest is beginner-friendly, with minimal configuration required, allowing teams to focus more on writing tests and less on tooling setup.
-
-However, **Mocha/Chai** is still a solid alternative, especially for teams that prefer modularity and are already familiar with those tools.
-
-### Conclusion
-
-Combining **Jest** and **Supertest** provides a powerful approach to testing Node.js backend applications. Supertest simplifies API request validation, while Jest adds structure, advanced assertions, mocking, and overall simplicity. While alternatives like Mocha/Chai are also popular, Jest’s all-in-one nature and user-friendly design make it a popular choice in modern development environments.
-
-By leveraging the strengths of both Jest and Supertest, you can ensure that your backend APIs are tested thoroughly, ensuring reliability and quality in your application's critical components.
-
----
-## Part 2: Backend Testing with Jest and Supertest: Focus on Protected Routes
-
-In many backend applications, certain API routes are protected and require user authentication, usually via tokens (like JWT). Testing these protected routes is critical to ensuring that your authentication and authorization mechanisms work correctly. In this part, we will focus on testing protected routes using **Jest** and **Supertest**.
-
-### Why Testing Protected Routes is Essential
-
-Protected routes restrict access to specific users or user roles, ensuring that only authorized users can perform certain actions. For instance:
-- **Authenticated users** might have access to their data (e.g., fetching workout records).
-- **Admins** might be allowed to manage user accounts or other critical resources.
-- **Unauthorized users** should be prevented from accessing these routes, and the API should return proper HTTP responses (e.g., `401 Unauthorized`).
-
-By testing these routes, you verify that:
-1. Only authenticated users can access the protected routes.
-2. The correct authorization token is required.
-3. Proper HTTP responses are returned for valid and invalid requests.
-
-### Setting Up Testing for Protected Routes
-
-Here’s an example of how to test protected routes using Jest and Supertest, focusing on an API that manages workouts. The tests ensure that users must authenticate before they can access or modify workout data.
-
-```javascript
-const mongoose = require("mongoose");
-const supertest = require("supertest");
-const app = require("../app");
-const api = supertest(app);
-const User = require("../models/userModel");
-const Workout = require("../models/workoutModel");
-const workouts = require("./data/workouts.js");
-
-let token = null;
-
-beforeAll(async () => {
-  // Clear users and sign up a new user to get a valid token
-  await User.deleteMany({});
-  const result = await api
-    .post("/api/user/signup")
-    .send({ email: "mattiv@matti.fi", password: "R3g5T7#gh" });
-  token = result.body.token;  // Store the token for later use
-});
-
-describe("when there are initially some workouts saved", () => {
-  beforeEach(async () => {
-    await Workout.deleteMany({});
-    // Add initial workouts as an authenticated user
-    await api
-      .post("/api/workouts")
-      .set("Authorization", "bearer " + token)
-      .send(workouts[0])
-      .send(workouts[1]);
-  });
-
-  it("should return workouts as JSON for an authenticated user", async () => {
-    await api
-      .get("/api/workouts")
-      .set("Authorization", "bearer " + token)
-      .expect(200)
-      .expect("Content-Type", /application\/json/);
-  });
-
-  it("should allow a new workout to be added with a valid token", async () => {
-    const newWorkout = {
-      title: "testworkout",
-      reps: 10,
-      load: 100,
-    };
-    await api
-      .post("/api/workouts")
-      .set("Authorization", "bearer " + token)
-      .send(newWorkout)
-      .expect(201);
-  });
-
-  it("should fail to add a workout without a token", async () => {
-    const newWorkout = {
-      title: "unauthorized workout",
-      reps: 15,
-      load: 80,
-    };
-    await api
-      .post("/api/workouts")
-      .send(newWorkout)
-      .expect(401);
-  });
-});
-
-afterAll(() => {
-  mongoose.connection.close();
-});
+module.exports = { MONGO_URI, PORT: process.env.PORT };
 ```
 
-### Key Concepts in the Code
+Tests routinely wipe and recreate data. Pointing them at a dedicated database keeps development data safe and makes every test run deterministic.
 
-1. **Token-Based Authentication**: 
-   - In the `beforeAll` block, a user is signed up via `/api/user/signup`, and a JWT token is returned in the response (`result.body.token`). This token is stored and used in subsequent requests for authentication.
-   - Tokens are attached to requests using the `.set("Authorization", "bearer " + token)` method. This simulates how a client would send a JWT in the `Authorization` header.
+### `package.json` scripts
 
-2. **Testing Protected Routes**:
-   - **Valid Access**: In the test `Workouts are returned as JSON`, an authenticated user successfully fetches all workouts.
-   - **Workout Creation**: In `New workout added successfully`, a valid user adds a new workout, and the server responds with `201 Created`.
-   - **Unauthorized Access**: The test `Workout addition fails without token` verifies that trying to add a workout without an authorization token results in a `401 Unauthorized` response.
-
-3. **Handling Multiple Requests**: 
-   - In the `beforeEach` block, two workouts are added sequentially using `api.post("/api/workouts")`. This ensures that each test has some predefined data to work with.
-   - In each test, the token is sent to the server to simulate an authenticated user, ensuring only valid users can access protected endpoints.
-
-### Advantages of Jest for Testing Protected Routes
-
-- **Easy Token Management**: With Jest’s `beforeAll` and `beforeEach` hooks, setting up authenticated users and managing tokens is seamless. You can ensure the token is refreshed or reused across multiple test cases.
-  
-- **Clear Test Organization**: Jest's `describe` and `test` blocks allow you to organize tests by route and test scenario (e.g., successful authentication vs. failed authentication).
-  
-- **Custom Matchers**: Jest's `expect` statements make assertions readable and powerful. For example, you can expect certain status codes (`.expect(401)` for unauthorized access) and content types (`.expect("Content-Type", /application\/json/)`) directly in your test chains.
-
-### Testing Edge Cases
-
-Testing protected routes requires more than just verifying that authenticated users can access data. You should also cover potential edge cases:
-
-1. **Expired Tokens**: Test what happens when an expired JWT is sent.
-   ```javascript
-      it("should fail to access workouts with an expired token", async () => {
-      const expiredToken = "someExpiredTokenHere";
-      await api
-         .get("/api/workouts")
-         .set("Authorization", "bearer " + expiredToken)
-         .expect(401); // Expect unauthorized due to token expiration
-      });
-
-   ```
-
-2. **Missing Tokens**: Verify that the server rejects requests with no token or with improperly formatted tokens.
-   ```javascript
-      it("should fail to access workouts without a token", async () => {
-      await api
-         .get("/api/workouts")
-         .expect(401); // No token sent, expect unauthorized
-      });
-
-      it("should fail to access workouts with a malformed token", async () => {
-      const malformedToken = "invalidtoken123";
-      await api
-         .get("/api/workouts")
-         .set("Authorization", "bearer " + malformedToken)
-         .expect(401); // Expect failure due to malformed token
-      });
-   ```
-<!-- 
-### Jest vs. Mocha/Chai for Testing Protected Routes
-
-While Mocha/Chai can also be used to test protected routes, Jest provides a few advantages:
-- **Less Configuration**: Jest has built-in features like mocking and assertions, so there's no need to install additional libraries like `chai-http`.
-- **Cleaner Syntax**: Jest’s `expect` method makes it simple to test HTTP status codes, response headers, and data. In contrast, Mocha/Chai often requires more setup and boilerplate.
-  
-For example, the same tests in Mocha/Chai might require importing `chai`, `chai-http`, and configuring token management separately. With Jest, you get a more integrated and faster testing experience. 
--->
-
-<!-- 
-### Conclusion
-
-Testing protected routes is a critical aspect of ensuring your backend APIs are secure and behave as expected under various authentication scenarios. By using **Jest** and **Supertest**, you can easily simulate authenticated users, send tokens in requests, and validate both successful and unsuccessful access to protected routes. 
-
-With **Jest**, you also benefit from its intuitive setup, powerful matchers, and overall simplicity, making it an excellent choice for testing Node.js applications, especially those with complex authentication requirements. 
--->
-
----
-## Part 3: BDD vs TDD
-
--  `describe()`
--  `test()` vs `it()` vs `should`
--  `expect()` vs  `assert()`
-
-
-Behavior-Driven Development (BDD) and Test-Driven Development (TDD) are both software development methodologies that emphasize testing early in the development process. However, they have distinct differences in their approach and focus. Here are the key differences between BDD and TDD:
-
-1. **Focus on Language and Communication**:
-   - **BDD**: BDD emphasizes natural language descriptions to define the behavior of a software system. It encourages collaboration among developers, testers, and domain experts by using common, human-readable language to describe requirements and specifications.
-   - **TDD**: TDD focuses on writing test cases in code before implementing the actual functionality. While it also requires clear test descriptions, the emphasis is more on technical aspects and code-level testing.
-
-2. **Audience**:
-   - **BDD**: BDD is oriented toward a wider audience, including non-technical stakeholders like product managers, business analysts, and domain experts. It aims to bridge the gap between technical and non-technical team members.
-   - **TDD**: TDD is primarily for developers and focuses on the technical aspects of testing and code quality.
-
-3. **Testing Level**:
-   - **BDD**: BDD typically focuses on high-level, end-to-end testing and acceptance testing. It often involves testing the system's behavior as a whole, simulating user interactions.
-   - **TDD**: TDD is more focused on unit testing, where individual components or functions are tested in isolation. It addresses lower-level details and verifies that specific code units behave as expected.
-
-4. **Test Description Style**:
-   - **BDD**: BDD encourages the use of descriptive, user-centric test descriptions written in plain language. Common BDD tools like Cucumber and SpecFlow use "Given-When-Then" syntax.
-   - **TDD**: TDD test descriptions tend to be more technical and are written in code. They often follow a naming convention like "testMethodName_shouldDoSomething."
-
-5. **Development Process**:
-   - **BDD**: In BDD, tests are often written after defining the behavior and requirements using scenarios and feature files. It drives the development process by outlining expected behavior.
-   - **TDD**: TDD follows a "Red-Green-Refactor" cycle, where failing tests (Red) are written before writing the actual code to make them pass (Green). Afterward, the code is refactored for clarity and optimization.
-
-6. **Tools and Frameworks**:
-   - **BDD**: BDD commonly uses specialized tools and frameworks like Cucumber, SpecFlow, and Behave. These tools help in writing and executing tests in a human-readable format.
-   - **TDD**: TDD often utilizes testing frameworks like JUnit, NUnit, or Jest, which are more code-centric and focused on unit testing.
-   - **AI**: You can generate tests quickly using AI e.g. `copilot` or `ChatGPT`
-
-7. **Granularity of Testing**:
-   - **BDD**: BDD tests typically have a broader scope and may encompass multiple components or modules, testing interactions between them.
-   - **TDD**: TDD tests are more fine-grained and focus on individual functions or methods.
-
-While both BDD and TDD promote early testing, BDD places a strong emphasis on collaboration, natural language descriptions, and high-level behavior testing. TDD, on the other hand, is centered around unit testing, technical test descriptions, and a developer-centric approach. The choice between these methodologies depends on the project's requirements, team composition, and testing objectives.
-
----
-
-
-## Part 4: Managing Different Environments in Node.js
-
-When developing an API server in Node.js, it's important to manage different environments—such as **production**, **development**, and **test**—effectively. These environments often require different configurations, such as database connections or API keys, making environment variables crucial for separating these settings.
-
-In this section, we'll cover why different environments are necessary, how to manage them using `.env` files, and how to use tools like `cross-env` to streamline environment switching.
-
-
-
-#### Why Do We Need Different Environments in an API Server?
-
-1. **Production**: This is the live environment where the application is used by real users. The production environment often requires the use of optimized code, stable databases, and security measures like encrypted credentials.
-   
-2. **Development**: This environment is where the app is actively built and tested by developers. Here, it's common to use debugging tools and databases that are specific to development.
-
-3. **Testing**: The test environment is used for running automated tests. It needs its own isolated configuration to avoid impacting development or production systems, especially when testing features like database operations.
-
-Different environments require different settings, such as:
-- Databases (e.g., production uses live data, while development uses mock data).
-- API keys (test keys in development, real keys in production).
-- Logging levels (detailed logs in development, minimal logs in production).
-
-#### How to Manage Environments Using `.env` Files
-
-Node.js supports environment variables through `process.env`. The most common way to store environment variables is by using a `.env` file. This file holds environment-specific configuration that can be loaded into the application when needed.
-
-#### Setting Up Environment Variables
-
-1. **Install Dependencies**: Start by creating a new Node.js project and install the required packages:
-   ```bash
-   mkdir env-variable-lab
-   cd env-variable-lab
-   npm init -y
-   npm install dotenv cross-env
-   ```
-
-2. **Create `.env` File**: In your project root, create a `.env` file to store different configurations:
-   ```bash
-   PORT=3001
-   NODE_ENV=development
-   MONGO_URI=mongodb://localhost:27017/w6-be
-   TEST_MONGO_URI=mongodb://localhost:27017/TEST-w6-be
-   JWT_SECRET=abc123
-   ```
-
-   This file defines different settings for development, such as the database URI and a secret key for JWT authentication.
-
-#### Using Environment Variables in the Code
-
-3. **Load Variables with `dotenv`**: In your configuration file (e.g., `config.js`), use the `dotenv` package to load the variables from `.env`, and use `process.env` to access them:
-   
-   ```js
-   // config.js
-   require("dotenv").config();
-   
-   const NODE_ENV = process.env.NODE_ENV || 'development';
-   const PORT = process.env.PORT;
-   const MONGO_URI = NODE_ENV === 'test' ? process.env.TEST_MONGO_URI : process.env.MONGO_URI;
-   
-   module.exports = {
-     NODE_ENV,
-     MONGO_URI,
-     PORT,
-   };
-   ```
-
-4. **Main Application File (`index.js`)**: Require the configuration file in your main application file to access the environment-specific settings:
-   
-   ```js
-   // index.js
-   const config = require('./config');
-   
-   console.log("Database URI: ", config.MONGO_URI);
-   console.log("Environment: ", config.NODE_ENV);
-   console.log("Running on port: ", config.PORT);
-   ```
-
-#### Switching Between Environments with `cross-env`
-
-When running a Node.js application, you need to switch between environments like **development**, **test**, and **production**. `cross-env` is a popular package that helps manage environment variables across different operating systems.
-
-#### Why Use `cross-env`?
-
-Without `cross-env`, environment variables can be tricky to manage on different platforms. For example, setting variables works differently on Linux/macOS than it does on Windows. `cross-env` makes this consistent across all operating systems.
-
-#### Setting Up `cross-env` in `package.json`
-
-To streamline the switching between environments, use `cross-env` in your `package.json` file's scripts section:
-   
 ```json
 {
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
-    "dev": "cross-env NODE_ENV=development node index.js",
-    "test": "cross-env NODE_ENV=test node index.js"
+    "dev":   "cross-env NODE_ENV=development nodemon index.js",
+    "test":  "cross-env NODE_ENV=test jest --verbose --runInBand"
   }
 }
 ```
 
-Now, you can run your app in different environments by executing the following commands:
-- **Production**: `npm start`
-- **Development**: `npm run dev`
-- **Testing**: `npm test`
-
-Each script sets the `NODE_ENV` variable to the corresponding environment using `cross-env`, ensuring consistency across platforms.
-
-#### Example Commands
-
-1. **Start in Development**: This will run the app in development mode.
-   ```bash
-   npm run dev
-   ```
-
-2. **Start in Production**: This command switches the environment to production mode.
-   ```bash
-   npm start
-   ```
-
-3. **Start in Test**: Running your tests will use the test environment configuration.
-   ```bash
-   npm test
-   ```
-
-#### Summary: Key Steps to Manage Environments in Node.js
-
-1. **Create a `.env` file** for storing environment-specific variables (e.g., database URIs, ports).
-2. **Use `dotenv`** in your configuration file to load environment variables into `process.env`.
-3. **Implement `cross-env`** in your `package.json` to easily switch between `production`, `development`, and `test` environments.
-4. **Use `process.env.NODE_ENV`** to dynamically switch between environments in your code (e.g., connecting to different databases).
-
-By using environment variables effectively, you can make your Node.js application more flexible, secure, and easier to manage across different environments like production, development, and testing.
+`cross-env` sets `NODE_ENV` consistently across Windows, macOS, and Linux.  
+`--runInBand` forces Jest to run test files sequentially, which avoids race conditions when multiple files share the same database.
 
 ---
+
+## 3. Test File Structure
+
+### Imports and wiring Supertest
+
+```js
+const mongoose = require("mongoose");
+const supertest = require("supertest");
+const app = require("../app");       // Express app – no app.listen()
+const api = supertest(app);          // Supertest manages its own internal server
+const Workout = require("../models/workoutModel");
+```
+
+`supertest(app)` wraps the Express app and handles all HTTP transport internally. The app never binds to a real network port, so there are no port conflicts.
+
+### Test data and a database helper
+
+```js
+const initialWorkouts = [
+  { title: "test workout 1", reps: 11, load: 101 },
+  { title: "test workout 2", reps: 12, load: 102 },
+];
+
+const workoutsInDb = async () => {
+  const workouts = await Workout.find({});
+  return workouts.map((w) => w.toJSON());
+};
+```
+
+- `initialWorkouts` is the **fixed, known state** the database is reset to before every test. Controlling the starting state makes tests deterministic.
+- `workoutsInDb()` reads the database directly. Tests use it to verify that an operation actually persisted (or removed) data, not just that the HTTP response looked correct.
+
+### External fixture files (v2)
+
+In larger projects, fixture data lives in a dedicated file:
+
+```js
+// tests/data/workouts.js
+const workouts = [
+  { title: "Workout 2023-10-05", reps: 35, load: 20 },
+  { title: "Workout 2023-10-06", reps: 11, load: 101 },
+];
+module.exports = workouts;
+```
+
+```js
+// workout.test.js
+const workouts = require("./data/workouts.js");
+```
+
+Benefits: the test file stays focused on assertions; multiple test files can share the same fixtures; changing a fixture value only requires editing one file.
+
+---
+
+## 4. Lifecycle Hooks
+
+| Hook | When it runs | Typical use |
+|---|---|---|
+| `beforeAll` | Once before the entire suite (or `describe` block) | Expensive one-time setup – e.g. sign up a user and save the JWT token |
+| `beforeEach` | Before every single test | Reset mutable state – wipe the collection and re-seed it |
+| `afterAll` | Once after all tests finish | Cleanup that only needs to happen once – close the DB connection |
+| `afterEach` | After every single test | Rarely needed; useful for resetting mocks |
+
+```js
+// ── called once ───────────────────────────────────────────────
+afterAll(() => {
+  mongoose.connection.close(); // prevents Jest from hanging
+});
+
+// ── called before every test ──────────────────────────────────
+beforeEach(async () => {
+  await Workout.deleteMany({});
+  await Workout.insertMany(initialWorkouts);
+});
+```
+
+> **Why `beforeEach` for database reset?**  
+> If one test adds a document and the next test expects only the initial count, the second test will fail. Resetting before every test guarantees independence – a test can never be broken by what a previous test did.
+
+> **Why `afterAll` for connection close?**  
+> Without this, Mongoose keeps the connection open and Jest waits indefinitely. Always close the connection once after all tests, not after every test.
+
+---
+
+## 5. Making HTTP Requests with Supertest
+
+### GET request
+
+```js
+it("should return workouts as JSON with status 200", async () => {
+  await api
+    .get("/api/workouts")
+    .expect(200)
+    .expect("Content-Type", /application\/json/);
+});
+```
+
+### POST request with a body
+
+```js
+it("should persist a valid workout and include it in subsequent GET", async () => {
+  const newWorkout = { title: "Situps", reps: 25, load: 10 };
+
+  await api
+    .post("/api/workouts")
+    .send(newWorkout)
+    .expect(201)
+    .expect("Content-Type", /application\/json/);
+
+  const response = await api.get("/api/workouts");
+  expect(response.body).toHaveLength(initialWorkouts.length + 1);
+  expect(response.body.map((w) => w.title)).toContain("Situps");
+});
+```
+
+### DELETE with a database snapshot
+
+```js
+it("should delete the workout and return status 204 when the id is valid", async () => {
+  const workoutsAtStart = await workoutsInDb();
+  const workoutToDelete = workoutsAtStart[0];
+
+  await api.delete(`/api/workouts/${workoutToDelete.id}`).expect(204);
+
+  const workoutsAtEnd = await workoutsInDb();
+  expect(workoutsAtEnd).toHaveLength(initialWorkouts.length - 1);
+  expect(workoutsAtEnd.map((w) => w.title)).not.toContain(workoutToDelete.title);
+});
+```
+
+**Never hard-code a MongoDB `_id` in a test.** IDs are generated at insert time and change on every `beforeEach`. Always read current IDs from the database first (snapshot-before pattern).
+
+### Why use regex for `Content-Type`?
+
+Express sends `application/json; charset=utf-8`. An exact string match would fail because of the `; charset=utf-8` suffix. The regex `/application\/json/` matches as long as `application/json` appears anywhere in the header value.
+
+---
+
+## 6. Testing Protected Routes (JWT)
+
+### Obtaining a token once with `beforeAll`
+
+```js
+let token = null;
+
+beforeAll(async () => {
+  await User.deleteMany({});
+  const result = await api
+    .post("/api/user/signup")
+    .send({ email: "mattiv@matti.fi", password: "R3g5T7#gh" });
+  token = result.body.token;
+});
+```
+
+`beforeAll` runs once for the entire suite. Signing up inside `beforeEach` would be wasteful (repeated on every test) and would hit duplicate-email errors on the second run. The token is stored in the module-level `let token` variable so every `describe` block can read it.
+
+### Attaching the token to requests
+
+```js
+it("should return workouts as JSON for an authenticated user", async () => {
+  await api
+    .get("/api/workouts")
+    .set("Authorization", "bearer " + token)
+    .expect(200)
+    .expect("Content-Type", /application\/json/);
+});
+```
+
+`.set("Authorization", "bearer " + token)` adds the `Authorization` HTTP header. The `requireAuth` middleware on the server reads this header, extracts the token string (after the space), verifies it with `jwt.verify`, and either calls `next()` or returns `401`.
+
+### Testing the unauthenticated case
+
+```js
+it("should return 401 when no token is provided", async () => {
+  await api.get("/api/workouts").expect(401);
+});
+
+it("should return 401 when the token is malformed", async () => {
+  await api
+    .get("/api/workouts")
+    .set("Authorization", "bearer invalidtoken123")
+    .expect(401);
+});
+```
+
+Always test the failure path alongside the success path. A route that only returns the right data for valid tokens – but does not actually reject invalid ones – is not secure.
+
+### Full example with all CRUD operations
+
+```js
+describe("POST /api/workouts", () => {
+  beforeEach(async () => {
+    await Workout.deleteMany({});
+  });
+
+  describe("when the payload is valid", () => {
+    it("should create a workout and return status 201", async () => {
+      await api
+        .post("/api/workouts")
+        .set("Authorization", "bearer " + token)
+        .send({ title: "Situps", reps: 25, load: 10 })
+        .expect(201);
+    });
+  });
+
+  describe("when the payload is invalid", () => {
+    it("should return status 400 when title is missing", async () => {
+      await api
+        .post("/api/workouts")
+        .set("Authorization", "bearer " + token)
+        .send({ reps: 10, load: 100 })
+        .expect(400);
+    });
+  });
+});
+
+describe("DELETE /api/workouts/:id", () => {
+  beforeEach(async () => {
+    await Workout.deleteMany({});
+    await api
+      .post("/api/workouts")
+      .set("Authorization", "bearer " + token)
+      .send({ title: "Situps", reps: 25, load: 10 });
+  });
+
+  it("should remove the workout and return status 200", async () => {
+    const all = await api
+      .get("/api/workouts")
+      .set("Authorization", "bearer " + token);
+    const id = all.body[0]._id;
+
+    await api
+      .delete(`/api/workouts/${id}`)
+      .set("Authorization", "bearer " + token)
+      .expect(200);
+
+    const remaining = await api
+      .get("/api/workouts")
+      .set("Authorization", "bearer " + token);
+    expect(remaining.body).toHaveLength(0);
+  });
+});
+
+describe("PATCH /api/workouts/:id", () => {
+  beforeEach(async () => {
+    await Workout.deleteMany({});
+    await api
+      .post("/api/workouts")
+      .set("Authorization", "bearer " + token)
+      .send({ title: "Situps", reps: 25, load: 10 });
+  });
+
+  it("should persist updated fields and return status 200", async () => {
+    const all = await api
+      .get("/api/workouts")
+      .set("Authorization", "bearer " + token);
+    const id = all.body[0]._id;
+
+    await api
+      .patch(`/api/workouts/${id}`)
+      .set("Authorization", "bearer " + token)
+      .send({ reps: 99 })
+      .expect(200);
+
+    const updated = await api
+      .get(`/api/workouts/${id}`)
+      .set("Authorization", "bearer " + token);
+    expect(updated.body.reps).toBe(99);
+  });
+});
+```
+
+---
+
+## 7. BDD Style – `describe` / `it`
+
+Jest allows `it()` as an alias for `test()`. Using `it` with well-named `describe` blocks makes tests read like a specification in plain English:
+
+> *"GET /api/workouts — it should return all workouts"*
+
+### One `describe` block per route / action
+
+Rather than one large block, group tests by HTTP verb and route:
+
+```js
+describe("GET /api/workouts", () => {
+  it("should return all workouts", async () => { ... });
+  it("should return workouts as JSON with status 200", async () => { ... });
+});
+
+describe("POST /api/workouts", () => {
+  describe("when the payload is valid", () => {
+    it("should return status 201", async () => { ... });
+    it("should persist the workout in the database", async () => { ... });
+  });
+
+  describe("when the payload is invalid", () => {
+    it("should return status 400 when title is missing", async () => { ... });
+    it("should not increase the number of workouts", async () => { ... });
+  });
+});
+
+describe("DELETE /api/workouts/:id", () => {
+  describe("when the id is valid", () => {
+    it("should return status 204", async () => { ... });
+    it("should remove the workout from the database", async () => { ... });
+  });
+});
+```
+
+**Guidelines:**
+- One `describe` per HTTP verb / resource action.
+- Nest `describe` blocks to model sub-scenarios (valid payload, invalid payload, no token).
+- Keep each `it` focused on a single observable outcome.
+- Name `describe` blocks after the route so Jest output groups failures clearly.
+
+---
+
+## 8. Best Practices
+
+### Separate `app.js` from `index.js`
+
+```js
+// index.js – production entry point only
+const app = require("./app");
+const http = require("http");
+const config = require("./utils/config");
+
+const server = http.createServer(app);
+server.listen(config.PORT, () => {
+  console.log(`Server running on port ${config.PORT}`);
+});
+```
+
+```js
+// app.js – imported by both tests and index.js
+const express = require("express");
+const app = express();
+// ... middleware and routes ...
+module.exports = app;
+```
+
+If `app.js` called `app.listen()` itself, Supertest and `index.js` would both try to bind the same port and conflict. Keeping the `listen()` call in `index.js` prevents this entirely.
+
+| File | Used by |
+|---|---|
+| `app.js` | Tests (via Supertest) and `index.js` |
+| `index.js` | Production / `npm start` only |
+
+### Use a separate test database
+
+Point `TEST_MONGO_URI` at a dedicated database. Tests wipe collections on every run and must never touch development or production data.
+
+### Snapshot before, act, snapshot after
+
+For DELETE and UPDATE tests:
+1. Read the database to get a real `_id`.
+2. Perform the operation.
+3. Read the database again to confirm the change persisted.
+
+### Keep test data in fixture files
+
+For suites with many tests, move fixture arrays to `tests/data/` and import them. The test file stays focused on assertions.
+
+### Test coverage
+
+```bash
+npm test -- --coverage
+```
+
+Jest generates a report showing **statements**, **branches**, **functions**, and **lines** covered. 100% coverage does not mean zero bugs – the quality of assertions still matters – but low coverage on a critical module is a warning sign.
+
+---
+
+## 9. Running Tests Selectively
+
+### `it.only` – run just one test
+
+```js
+it.only("should return all workouts", async () => { ... });
+```
+
+Jest skips every other test in the file. **Never commit `.only` to version control** – it silently disables all other tests and can give a false sense of confidence.
+
+### `it.skip` – mark a test as pending
+
+```js
+it.skip("feature not yet implemented", async () => { ... });
+```
+
+Jest reports it as skipped rather than failing.
+
+### Run a specific file
+
+```bash
+npm test -- tests/workout_api.test.js
+```
+
+### Run tests matching a name pattern
+
+```bash
+npm test -- --testNamePattern="GET /api/workouts"
+```
+
+The argument can be a full test name, a partial string, or a `describe` block label.
+
+### The double `--` explained
+
+```
+npm test  --  --testNamePattern="..."
+         ↑           ↑
+    npm stops here   passed straight to Jest
+```
+
+The first `--` tells npm to stop parsing its own options and forward everything after it directly to the underlying script (Jest). Without it, npm tries to interpret `--testNamePattern` itself and throws an error.
+
+---
+
+## 10. Fetch as an Alternative to Supertest
+
+With Node.js 18+, `fetch` is built in. It is a practical alternative to Supertest, especially if you want zero extra production dependencies or a consistent HTTP API across frontend and backend tests.
+
+### Key difference: server lifecycle
+
+```js
+// Supertest – no server management needed
+const api = supertest(app);
+
+// Fetch – you must start and stop the server yourself
+let server;
+
+beforeAll((done) => {
+  server = app.listen(3005, done);
+});
+
+afterAll((done) => {
+  server.close(done);
+});
+```
+
+Supertest calls `app.listen(0)` internally, using an OS-assigned ephemeral port, so there are never port conflicts. With `fetch` you manage this explicitly.
+
+### Side-by-side comparison
+
+| Operation | Supertest | Fetch |
+|---|---|---|
+| GET | `await api.get("/api/workouts").expect(200)` | `const res = await fetch("http://localhost:3005/api/workouts"); expect(res.status).toBe(200)` |
+| POST | `await api.post(...).send(body).expect(201)` | `fetch(url, { method: "POST", headers: {...}, body: JSON.stringify(body) })` |
+| Response body | `response.body` (auto-parsed) | `await res.json()` (must call manually) |
+| Content-Type | `.expect("Content-Type", /json/)` | `expect(res.headers.get("content-type")).toMatch(/json/)` |
+
+### Pros and cons
+
+| | Supertest | Fetch |
+|---|---|---|
+| Dependencies | `npm install supertest` | None (Node 18+) |
+| Server setup | Automatic | Manual (`beforeAll` / `afterAll`) |
+| Speed | Slightly faster (no network socket) | Slightly slower (real TCP connection) |
+| Port conflicts | Impossible (ephemeral port) | Possible if port is already in use |
+| Familiar to frontend devs | No | Yes |
+
+### When to choose each
+
+| Situation | Recommendation |
+|---|---|
+| Backend-only project, fast CI | **Supertest** |
+| Node 18+, zero extra dependencies | **Fetch** is viable |
+| Unified API across frontend and backend tests | **Fetch** |
+| Learning HTTP fundamentals | **Fetch** – the explicit lifecycle is instructive |
+
+### `beforeAll` – two equivalent patterns
+
+```js
+// Pattern 1: callback-based
+beforeAll((done) => {
+  server = app.listen(3005, done);
+});
+
+// Pattern 2: promise-based
+beforeAll(async () => {
+  await new Promise((resolve) => {
+    server = app.listen(3005, resolve);
+  });
+});
+```
+
+Jest waits for `done()` to be called (pattern 1) or for the returned Promise to settle (pattern 2) before running any tests.
+
+---
+
+## 11. BDD vs TDD
+
+Both methodologies emphasize writing tests early, but they differ in scope and audience.
+
+| Dimension | TDD | BDD |
+|---|---|---|
+| Primary audience | Developers | Developers + non-technical stakeholders |
+| Level | Unit tests | Integration / acceptance tests |
+| Language | Code-centric (`testMethodName_shouldBehave`) | Human-readable (`describe / it / should`) |
+| Cycle | Red → Green → Refactor | Specify behavior → Implement → Verify |
+| Tools | Jest, JUnit, NUnit | Jest (with `it`), Cucumber, SpecFlow |
+| Focus | Individual functions / methods | Observable system behavior |
+
+In practice, Jest supports both styles. Using `describe` / `it` with behavior-focused names is a lightweight form of BDD that does not require a separate tool.
+
+```js
+// TDD-flavored naming
+test("deleteWorkout_shouldReturn204_whenIdValid", async () => { ... });
+
+// BDD-flavored naming
+describe("DELETE /api/workouts/:id", () => {
+  describe("when the id is valid", () => {
+    it("should return status 204", async () => { ... });
+  });
+});
+```
+
+The second form reads as a sentence and communicates intent to anyone reading the test output, not just developers.
+
+---
+
+## 12. Managing Environments with `cross-env` and `dotenv`
+
+### Why separate environments?
+
+| Environment | Purpose |
+|---|---|
+| `production` | Live users, real data, real credentials |
+| `development` | Active development, local data, debugging tools |
+| `test` | Automated test runs, isolated database, deterministic data |
+
+### `.env` file
+
+```
+PORT=3001
+MONGO_URI=mongodb://localhost:27017/workout-app
+TEST_MONGO_URI=mongodb://localhost:27017/workout-app-test
+SECRET=your_jwt_secret
+```
+
+Never commit `.env` to version control. Commit `.env.example` with placeholder values instead.
+
+### Loading variables with `dotenv`
+
+```js
+// utils/config.js
+require("dotenv").config();
+
+const MONGO_URI =
+  process.env.NODE_ENV === "test"
+    ? process.env.TEST_MONGO_URI
+    : process.env.MONGO_URI;
+
+module.exports = {
+  MONGO_URI,
+  PORT: process.env.PORT,
+};
+```
+
+### Switching environments with `cross-env`
+
+Without `cross-env`, setting environment variables works differently on Windows (`set NODE_ENV=test`) versus Linux/macOS (`NODE_ENV=test`). `cross-env` normalises this:
+
+```json
+{
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node index.js",
+    "dev":   "cross-env NODE_ENV=development nodemon index.js",
+    "test":  "cross-env NODE_ENV=test jest --verbose --runInBand"
+  }
+}
+```
+
+Running `npm test` automatically sets `NODE_ENV=test`, which causes `config.js` to use `TEST_MONGO_URI` instead of `MONGO_URI`. No manual switching required.
+
+---
+
 ## Links
 
-- [Jest, Mocha, Chai, Supertest, and superagent](./Jest-vs-Supertest.md)
+- [Jest documentation](https://jestjs.io/docs/getting-started)
+- [Jest – `test()` and `it()`](https://jestjs.io/docs/api#testname-fn-timeout)
+- [Jest – async setup with `done` and promises](https://jestjs.io/docs/asynchronous)
+- [Jest – `--coverage`](https://jestjs.io/docs/cli#--coverageboolean)
+- [Skip / only tests in Jest](https://codewithhugo.com/run-skip-single-jest-test/)
+- [Supertest on npm](https://www.npmjs.com/package/supertest)
 - [Supertest: How to Test APIs Like a Pro](https://www.testim.io/blog/supertest-how-to-test-apis-like-a-pro/)
 - [Dead-Simple API Tests With SuperTest, Mocha, and Chai](https://dev-tester.com/dead-simple-api-tests-with-supertest-mocha-and-chai/)
-- [Development and Production](https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production)
-- [Testing: Need for different databases](https://dev.to/kristianroopnarine/how-to-separate-your-test-development-and-production-databases-using-nodeenv-anl)
-- [Environment variables](./env-var.md)
-- [cross-env: ](https://www.npmjs.com/package/cross-env) `"start": "cross-env  NODE_ENV=production node index.js"`
+- [Node.js built-in fetch (Node 18+)](https://nodejs.org/dist/latest/docs/api/globals.html#fetch)
+- [jsonwebtoken on npm](https://www.npmjs.com/package/jsonwebtoken)
+- [cross-env on npm](https://www.npmjs.com/package/cross-env)
+- [dotenv on npm](https://www.npmjs.com/package/dotenv)
+- [Node.js – development vs production](https://nodejs.org/en/learn/getting-started/nodejs-the-difference-between-development-and-production)
+- [Separating test / dev / prod databases](https://dev.to/kristianroopnarine/how-to-separate-your-test-development-and-production-databases-using-nodeenv-anl)

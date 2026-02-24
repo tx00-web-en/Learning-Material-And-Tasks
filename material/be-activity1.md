@@ -1,31 +1,193 @@
-# Activity 1
+# Lab 1 – API Testing with Jest and Supertest
 
-## Part A: Initial Setup
+In this lab you will learn how to write automated integration tests for a REST API using **Jest** as the test runner and **Supertest** as the HTTP client. You will explore the test file that ships with the starter project, understand each concept step by step, and then refactor the tests to follow a cleaner, behavior-driven style.
+
 ---
 
-1. Clone the [starter repository](https://github.com/tx00-resources-en/week6-be-workout-v1)  
-   - After cloning, **delete** the `.git` directory.  
+## Part 1 – Project Setup
+
+1. Clone the [starter repository](https://github.com/tx00-resources-en/week6-be-workout-v1).  
+   After cloning, **delete** the `.git` directory so you can start a fresh history.
+
 2. Rename `.env.example` to `.env`.  
-   - Inside the `.env` file, notice that there are two MongoDB URIs: one for development and one for testing purposes.  
-3. Run `npm install`.  
-4. Run `npm test` to execute the tests using Jest.  
+   Open the file and notice it defines **two MongoDB connection strings**:
+   - `MONGODB_URI` – used when the app runs normally (development/production).
+   - `TEST_MONGODB_URI` – used only during test runs so tests never touch your real data.
 
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Run the test suite to verify everything works before you change anything:
+   ```bash
+   npm test
+   ```
+
+> **Why a separate test database?**  
+> Tests routinely delete and recreate data. Pointing them at a dedicated database keeps your development data safe and makes each test run predictable.
 
 ---
 
-## Part B: Refactoring Tests (replace `test()` with `it()`)
+## Part 2 – Understanding the Test File
+
+Open `./tests/workout_api.test.js`. The file is broken into logical sections; we will look at each one.
+
+### 2.1 Imports and wiring Supertest to the Express app
+
+```js
+const mongoose = require("mongoose");
+const supertest = require("supertest");
+const app = require("../app");
+const api = supertest(app);
+const Workout = require("../models/workoutModel");
+```
+
+| Line | Why it is here |
+|---|---|
+| `require("../app")` | Imports the Express application **without** calling `app.listen()`. The app is never bound to a port – Supertest handles that internally. |
+| `supertest(app)` | Wraps the Express app so you can make HTTP requests like `api.get("/api/workouts")` directly in your tests, no running server needed. |
+| `require("../models/workoutModel")` | Gives the test direct access to the Mongoose model so it can seed and inspect the database independently of the HTTP layer. |
+
+**Key concept – why not just use `fetch`?**  
+`fetch` (or `axios`) requires a real server to be listening on a port. Supertest starts a temporary in-process server automatically, which is simpler to set up and keeps tests fully isolated.
+
 ---
 
+### 2.2 Test data and a database helper
 
-Open the `./tests/workout_api.test.js` file and refactor the code to follow a more structured and descriptive style.  
+```js
+const initialWorkouts = [
+  { title: "test workout 1", reps: 11, load: 101 },
+  { title: "test workout 2", reps: 12, load: 102 },
+];
 
-- Instead of using `test(...)` with short or vague names, rewrite your tests using `describe(...)` and `it(...)` so that they read like natural language specifications.  
-- Your goal is to make the tests **self-explanatory**: someone reading them should immediately understand what behavior is being tested.  
+const workoutsInDb = async () => {
+  const workouts = await Workout.find({});
+  return workouts.map((workout) => workout.toJSON());
+};
+```
 
-### Example
+- `initialWorkouts` is the **known, fixed state** the database is reset to before every test. By controlling the starting state you make tests **deterministic** – the same test always produces the same result.
+- `workoutsInDb()` is a small helper that fetches the current database contents. Tests use it to verify that an operation actually changed the database (not just the HTTP response).
+
+---
+
+### 2.3 Lifecycle hooks – `beforeEach` and `afterAll`
+
+```js
+afterAll(() => {
+  mongoose.connection.close();
+});
+
+beforeEach(async () => {
+  await Workout.deleteMany({});
+  let workoutObject = new Workout(initialWorkouts[0]);
+  await workoutObject.save();
+  workoutObject = new Workout(initialWorkouts[1]);
+  await workoutObject.save();
+});
+```
+
+| Hook | When it runs | Purpose |
+|---|---|---|
+| `beforeEach` | Before **every single test** | Wipes the collection and re-inserts the two initial workouts. Every test therefore starts with the same clean slate. |
+| `afterAll` | Once, after **all tests** finish | Closes the Mongoose connection so Jest can exit cleanly. Without this Jest often hangs. |
+
+> **Important:** `beforeEach` runs before *every* test, not once for the whole suite. This is intentional – if a test adds or deletes a document, the next test must not be affected by that change.
+
+---
+
+### 2.4 Testing GET and POST – the main `describe` block
+
+```js
+describe("when there is initially some notes saved", () => {
+  test("all workouts are returned", async () => {
+    const response = await api.get("/api/workouts");
+    expect(response.body).toHaveLength(initialWorkouts.length);
+  });
+
+  test("a specific workout is within the returned workouts", async () => {
+    const response = await api.get("/api/workouts");
+    const contents = response.body.map((r) => r.title);
+    expect(contents).toContain("test workout 2");
+  });
+
+  test("Workouts are returned as json", async () => {
+    await api
+      .get("/api/workouts")
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
+  });
+
+  test("a valid workout can be added", async () => {
+    const newWorkout = { title: "Situps", reps: 25, load: 10 };
+
+    await api
+      .post("/api/workouts")
+      .send(newWorkout)
+      .expect(201)
+      .expect("Content-Type", /application\/json/);
+
+    const response = await api.get("/api/workouts");
+    const contents = response.body.map((r) => r.title);
+    expect(response.body).toHaveLength(initialWorkouts.length + 1);
+    expect(contents).toContain("Situps");
+  });
+
+  test("workout without title is not added", async () => {
+    const newWorkout = { reps: 23 };
+    await api.post("/api/workouts").send(newWorkout).expect(400);
+    const response = await api.get("/api/workouts");
+    expect(response.body).toHaveLength(initialWorkouts.length);
+  });
+});
+```
+
+**Concepts to notice:**
+
+- `api.get(...)` / `api.post(...).send(body)` – Supertest's fluent API mirrors the HTTP verbs.
+- Chaining `.expect(200)` checks the status code; `.expect("Content-Type", /json/)` checks a response header using a regular expression.
+- The "invalid workout" test checks **both** the immediate response (`400`) **and** the database state (count unchanged). This confirms the server correctly rejected the document, not just returned an error.
+
+---
+
+### 2.5 Testing DELETE
+
+```js
+describe("deletion of a workout", () => {
+  test("succeeds with status code 204 if id is valid", async () => {
+    const workoutsAtStart = await workoutsInDb();
+    const workoutToDelete = workoutsAtStart[0];
+
+    await api.delete(`/api/workouts/${workoutToDelete.id}`).expect(204);
+
+    const workoutsAtEnd = await workoutsInDb();
+    expect(workoutsAtEnd).toHaveLength(initialWorkouts.length - 1);
+
+    const contents = workoutsAtEnd.map((r) => r.title);
+    expect(contents).not.toContain(workoutToDelete.title);
+  });
+});
+```
+
+The pattern here is:
+1. **Snapshot before** – read the database to find a real `id`.
+2. **Act** – send the DELETE request.
+3. **Snapshot after** – confirm the database changed as expected.
+
+Never hard-code a MongoDB `_id` in a test. IDs are generated at insert time, so they change on every `beforeEach`. Always read current IDs from the database first.
+
+---
+
+## Part 3 – Refactoring: `test()` → `it()` (BDD Style)
+
+Jest allows using `it()` as an alias for `test()`. Using `it` together with well-named `describe` blocks makes tests read like plain English:
+
+> *"when there are initially some workouts saved — it should return all workouts"*
 
 **Original code:**
-```javascript
+```js
 describe("when there is initially some notes saved", () => {
   test("all workouts are returned", async () => {
     const response = await api.get("/api/workouts");
@@ -41,7 +203,7 @@ describe("when there is initially some notes saved", () => {
 ```
 
 **Refactored in BDD style:**
-```javascript
+```js
 describe("when there are initially some workouts saved", () => {
   it("should return all workouts", async () => {
     const response = await api.get("/api/workouts");
@@ -56,185 +218,349 @@ describe("when there are initially some workouts saved", () => {
 });
 ```
 
-**Notice how the refactored version:**
-- Uses `it` instead of `test` for a **behavior-driven style**.  
-- Rephrases test names to be **descriptive and behavior-focused**.  
-- Reads like a natural sentence: *“when there are initially some workouts saved, it should return all workouts.”*  
+**What changed and why:**
 
+| Before | After | Reason |
+|---|---|---|
+| `test("all workouts are returned")` | `it("should return all workouts")` | Reads as a sentence when combined with the `describe` label. |
+| Vague describe label "some notes saved" | "some workouts saved" | Matches the actual domain. |
+| Passive description | Active `should …` phrasing | Makes the expected behavior immediately clear. |
 
----
+**Your task:** Refactor the *entire* `workout_api.test.js` file in the same way. Apply `it()` and descriptive names to every test.
 
-## Part C: Skipping and Running Tests Individually
----
+<details>
+<summary>Sample solution – click to expand</summary>
 
-When working with Jest, you have the following options:  
-- Replace `test()` with `it()` (as shown above).  
-- Skip certain tests when needed.  
-- Run tests individually. 
+```js
+const mongoose = require("mongoose");
+const supertest = require("supertest");
+const app = require("../app");
+const api = supertest(app);
+const Workout = require("../models/workoutModel");
 
-### Running Tests One by One in Jest
+const initialWorkouts = [
+  { title: "test workout 1", reps: 11, load: 101 },
+  { title: "test workout 2", reps: 12, load: 102 },
+];
 
-By default, running `npm test` will execute all of the tests in your application. However, when writing or debugging, it’s often more efficient to run just one or a few specific tests. Jest offers several ways to achieve this.
+const workoutsInDb = async () => {
+  const workouts = await Workout.find({});
+  return workouts.map((workout) => workout.toJSON());
+};
 
-#### Using `test.only`
-
-```javascript
-test.only('tours are returned as json', async () => {
-  await api
-    .get('/api/tours')
-    .expect(200)
-    .expect('Content-Type', /application\/json/);
+afterAll(() => {
+  mongoose.connection.close();
 });
 
-test.only('there are two tours', async () => {
-  const response = await api.get('/api/tours');
-  assert.strictEqual(response.body.length, 2);
+beforeEach(async () => {
+  await Workout.deleteMany({});
+  let workoutObject = new Workout(initialWorkouts[0]);
+  await workoutObject.save();
+  workoutObject = new Workout(initialWorkouts[1]);
+  await workoutObject.save();
+});
+
+describe("when there are initially some workouts saved", () => {
+  it("should return all workouts", async () => {
+    const response = await api.get("/api/workouts");
+    expect(response.body).toHaveLength(initialWorkouts.length);
+  });
+
+  it("should include a specific workout in the returned list", async () => {
+    const response = await api.get("/api/workouts");
+    const contents = response.body.map((r) => r.title);
+    expect(contents).toContain("test workout 2");
+  });
+
+  it("should return workouts as JSON with status 200", async () => {
+    await api
+      .get("/api/workouts")
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
+  });
+
+  it("should add a new workout and return status 201", async () => {
+    const newWorkout = { title: "test workout x", reps: 19, load: 109 };
+    await api.post("/api/workouts").send(newWorkout).expect(201);
+  });
+
+  it("should persist a valid workout and include it in subsequent GET", async () => {
+    const newWorkout = { title: "Situps", reps: 25, load: 10 };
+
+    await api
+      .post("/api/workouts")
+      .send(newWorkout)
+      .expect(201)
+      .expect("Content-Type", /application\/json/);
+
+    const response = await api.get("/api/workouts");
+    const contents = response.body.map((r) => r.title);
+
+    expect(response.body).toHaveLength(initialWorkouts.length + 1);
+    expect(contents).toContain("Situps");
+  });
+
+  it("should reject a workout missing a title with status 400", async () => {
+    const newWorkout = { reps: 23 };
+    await api.post("/api/workouts").send(newWorkout).expect(400);
+
+    const response = await api.get("/api/workouts");
+    expect(response.body).toHaveLength(initialWorkouts.length);
+  });
+});
+
+describe("deletion of a workout", () => {
+  it("should delete the workout and return status 204 when the id is valid", async () => {
+    const workoutsAtStart = await workoutsInDb();
+    const workoutToDelete = workoutsAtStart[0];
+
+    await api.delete(`/api/workouts/${workoutToDelete.id}`).expect(204);
+
+    const workoutsAtEnd = await workoutsInDb();
+    expect(workoutsAtEnd).toHaveLength(initialWorkouts.length - 1);
+
+    const contents = workoutsAtEnd.map((r) => r.title);
+    expect(contents).not.toContain(workoutToDelete.title);
+  });
 });
 ```
 
-- When Jest encounters `test.only`, it will **ignore all other tests** and only run the marked ones.  
-- ⚠️ **Be careful**: leaving `test.only` in your code can cause important tests to be skipped.  t.only` in your code, which can cause future test runs to skip important tests.
+</details>
 
-#### Running Tests from the Command Line
+---
 
-Another option is to specify which tests to run directly from the command line, without modifying the code.
+## Part 4 – Best Practice: More Granular `describe` Blocks
 
-- *Running a Specific Test File*: You can run a specific test file by passing the file path to the `npm test` command:
+The starter file uses only **two** top-level `describe` blocks. In a real project the test file grows quickly, and two blocks are not enough to keep things navigable.
+
+**Best practice guidelines:**
+
+- **One `describe` per HTTP verb / resource action** – `GET /api/workouts`, `POST /api/workouts`, `DELETE /api/workouts/:id` each deserve their own block.
+- **Nest `describe` blocks** to model sub-scenarios – for example, within `POST /api/workouts` you can have an inner block *"when the payload is valid"* and another *"when the payload is invalid"*.
+- **Keep each `it` focused on a single assertion** where possible. If a test asserts three unrelated things and one breaks, it can be hard to tell what failed.
+- **Name the outer `describe` after the route or resource** so the Jest output groups failures clearly.
+
+```
+GET /api/workouts
+  ✓ should return all workouts
+  ✓ should return workouts as JSON with status 200
+  ✓ should include a specific workout in the returned list
+
+POST /api/workouts
+  when the payload is valid
+    ✓ should return status 201
+    ✓ should persist the new workout in the database
+  when the payload is invalid
+    ✓ should return status 400 when title is missing
+    ✓ should not increase the number of workouts in the database
+
+DELETE /api/workouts/:id
+  when the id is valid
+    ✓ should return status 204
+    ✓ should remove the workout from the database
+```
+
+<details>
+<summary>Sample solution – click to expand</summary>
+
+```js
+const mongoose = require("mongoose");
+const supertest = require("supertest");
+const app = require("../app");
+const api = supertest(app);
+const Workout = require("../models/workoutModel");
+
+const initialWorkouts = [
+  { title: "test workout 1", reps: 11, load: 101 },
+  { title: "test workout 2", reps: 12, load: 102 },
+];
+
+const workoutsInDb = async () => {
+  const workouts = await Workout.find({});
+  return workouts.map((workout) => workout.toJSON());
+};
+
+afterAll(() => {
+  mongoose.connection.close();
+});
+
+beforeEach(async () => {
+  await Workout.deleteMany({});
+  let workoutObject = new Workout(initialWorkouts[0]);
+  await workoutObject.save();
+  workoutObject = new Workout(initialWorkouts[1]);
+  await workoutObject.save();
+});
+
+// ─── GET /api/workouts ────────────────────────────────────────────────────────
+
+describe("GET /api/workouts", () => {
+  it("should return all workouts", async () => {
+    const response = await api.get("/api/workouts");
+    expect(response.body).toHaveLength(initialWorkouts.length);
+  });
+
+  it("should return workouts as JSON with status 200", async () => {
+    await api
+      .get("/api/workouts")
+      .expect(200)
+      .expect("Content-Type", /application\/json/);
+  });
+
+  it("should include a specific workout in the returned list", async () => {
+    const response = await api.get("/api/workouts");
+    const contents = response.body.map((r) => r.title);
+    expect(contents).toContain("test workout 2");
+  });
+});
+
+// ─── POST /api/workouts ───────────────────────────────────────────────────────
+
+describe("POST /api/workouts", () => {
+  describe("when the payload is valid", () => {
+    it("should return status 201 and JSON", async () => {
+      const newWorkout = { title: "Situps", reps: 25, load: 10 };
+      await api
+        .post("/api/workouts")
+        .send(newWorkout)
+        .expect(201)
+        .expect("Content-Type", /application\/json/);
+    });
+
+    it("should persist the new workout in the database", async () => {
+      const newWorkout = { title: "Situps", reps: 25, load: 10 };
+      await api.post("/api/workouts").send(newWorkout).expect(201);
+
+      const response = await api.get("/api/workouts");
+      const contents = response.body.map((r) => r.title);
+      expect(response.body).toHaveLength(initialWorkouts.length + 1);
+      expect(contents).toContain("Situps");
+    });
+  });
+
+  describe("when the payload is invalid", () => {
+    it("should return status 400 when title is missing", async () => {
+      const newWorkout = { reps: 23 };
+      await api.post("/api/workouts").send(newWorkout).expect(400);
+    });
+
+    it("should not increase the number of workouts when title is missing", async () => {
+      const newWorkout = { reps: 23 };
+      await api.post("/api/workouts").send(newWorkout);
+      const response = await api.get("/api/workouts");
+      expect(response.body).toHaveLength(initialWorkouts.length);
+    });
+  });
+});
+
+// ─── DELETE /api/workouts/:id ─────────────────────────────────────────────────
+
+describe("DELETE /api/workouts/:id", () => {
+  describe("when the id is valid", () => {
+    it("should return status 204", async () => {
+      const workoutsAtStart = await workoutsInDb();
+      const workoutToDelete = workoutsAtStart[0];
+      await api.delete(`/api/workouts/${workoutToDelete.id}`).expect(204);
+    });
+
+    it("should remove the workout from the database", async () => {
+      const workoutsAtStart = await workoutsInDb();
+      const workoutToDelete = workoutsAtStart[0];
+
+      await api.delete(`/api/workouts/${workoutToDelete.id}`);
+
+      const workoutsAtEnd = await workoutsInDb();
+      expect(workoutsAtEnd).toHaveLength(initialWorkouts.length - 1);
+
+      const contents = workoutsAtEnd.map((r) => r.title);
+      expect(contents).not.toContain(workoutToDelete.title);
+    });
+  });
+});
+```
+
+</details>
+
+---
+
+## Part 5 – Running and Skipping Tests Selectively
+
+When writing or debugging tests you rarely want to run the entire suite every time. Jest provides several ways to focus your runs.
+
+### `it.only` / `test.only`
+
+Add `.only` to any test and Jest will skip everything else in that file:
+
+```js
+it.only("should return workouts as JSON with status 200", async () => {
+  await api
+    .get("/api/workouts")
+    .expect(200)
+    .expect("Content-Type", /application\/json/);
+});
+```
+
+> **Warning:** Never commit `.only` to version control. It silently disables all other tests and can give a false sense of confidence ("all tests pass" is meaningless if only one test ran).
+
+### `it.skip` / `test.skip`
+
+Mark a test as pending without deleting it:
+
+```js
+it.skip("should do something not yet implemented", async () => {
+  // ...
+});
+```
+
+Jest will report it as *skipped* rather than failing.
+
+### Running a specific file from the terminal
+
 ```bash
 npm test -- tests/workout_api.test.js
 ```
 
-This will execute only the tests found in the `tests/workout_api.test.js` file.
-
-- *Running Tests by Name Pattern*: You can also run tests by specifying a **name pattern**. This option allows you to run tests whose names (or describe block names) match a given string:
-```bash
-npm test -- --test-name-pattern="Workouts are returned as json"
-```
-
-- You can also *run all tests related to a keyword*, e.g.: The argument for `--test-name-pattern` can be the full name of a test, a part of the name, or even the name of a `describe` block. For example, if you want to run all tests related to "tours," you could use:
+### Running tests that match a name pattern
 
 ```bash
-npm run test -- --test-name-pattern="Workouts"
+npm test -- --testNamePattern="should return all workouts"
 ```
 
-This will run every test that includes "Workouts" in its name.  
+You can also pass a partial string or describe-block label:
 
-👉 Notice the **two dashes (`--`)**:  
-- The **first `--`** tells **npm** to stop interpreting options for itself and pass everything after it directly to the script (in this case, Jest).  
-- The **second part** (`--test-name-pattern="Workouts"`) is the actual flag that Jest understands.  
-- If you only wrote one `--`, npm would try to interpret `--test-name-pattern` as its own option and throw an error instead of passing it to Jest.  
+```bash
+npm test -- --testNamePattern="GET /api/workouts"
+```
 
-**Caution with `test.only`**
+**About the double `--`:**
 
-While `test.only` is useful, **be careful not to leave it in your code accidentally**. Doing so can cause Jest to skip important tests, potentially leading to false confidence that all tests are passing.
+```
+npm test  --  --testNamePattern="..."
+         ↑           ↑
+       npm flag     passed to Jest
+```
+
+The first `--` tells npm to stop interpreting what follows and forward it directly to the underlying script (Jest). Without it, npm would try to parse `--testNamePattern` itself and throw an error.
 
 ---
+
+## Summary
+
+| Concept | Key takeaway |
+|---|---|
+| Supertest | Wraps an Express app so you can send HTTP requests in tests without starting a real server. |
+| Separate test database | Prevents tests from corrupting development data; configured via `TEST_MONGODB_URI`. |
+| `beforeEach` | Resets the database to a known state before every test, ensuring test independence. |
+| `afterAll` | Closes the Mongoose connection so Jest exits cleanly. |
+| `describe` / `it` | Group and label tests so output reads like a specification. |
+| Multiple `describe` blocks | One block per action/route keeps tests navigable as the suite grows. |
+| `it.only` / `it.skip` | Focus or temporarily disable individual tests during development. |
+| `--testNamePattern` | Run a subset of tests from the command line without modifying code. |
+
+---
+
 ## Links
 
+- [Jest documentation](https://jestjs.io/docs/getting-started)
+- [Supertest on npm](https://www.npmjs.com/package/supertest)
 - [Dead-Simple API Tests With SuperTest, Mocha, and Chai](https://dev-tester.com/dead-simple-api-tests-with-supertest-mocha-and-chai/)
-- If you use the original [code](https://github.com/dennmart/dead_simple_api_testing/blob/master/config.js), the test won't work. The reason is that the URL for the API changed so the test will receive a 301 status code (permanent redirect) instead of 200. 
-- [API](https://airportgap.com/)
-
-
-<!-- Links -->
-[`test()` with `it()`]:https://jestjs.io/docs/api#testname-fn-timeout
-[skip certain tests]:https://codewithhugo.com/run-skip-single-jest-test/
-
-
-<!-- 
-
-## (Optional) Adopting BDD Testing Style
-
-### **A: Set Up**
-
-1. **Clone the Starter Repository**  
-   Clone the repository using the following link:  
-   [Starter Repository](https://github.com/tx00-resources-en/week6-be-simple_api_testing).
-
-2. **Delete the `.git` Directory**  
-   After cloning, navigate to the project directory and **delete** the `.git` folder to remove any Git tracking.
-
-3. **Navigate to the Project Directory**  
-   Change into the `mocha-chai` directory:
-   ```bash
-   cd week6-be-simple_api_testing/mocha-chai
-   ```
-
-4. **Rename the `.env` File**  
-   Rename the `.env.example` file to `.env`. Then, update the value for `API_TOKEN` by generating your own free key from [https://airportgap.com/](https://airportgap.com/).  
-   Set the key in your `.env` file as follows:
-   ```env
-   API_TOKEN=your_key_here
-   ```
-
-5. **Install Dependencies**  
-   Run the following command to install the necessary dependencies:
-   ```bash
-   npm install
-   ```
-
-6. **Run Existing Tests**  
-   Ensure that all the existing tests are working correctly by running:
-   ```bash
-   npm test
-   ```
-
-### **B: Refactoring `airports.test.js`**
-
-1. **Execute the Command**  
-   Run the following command to execute the initial tests:
-   ```bash
-   npm run test1
-   ```
-   At this stage, the tests should pass. Now, we will refactor the code to follow the BDD (Behavior-Driven Development) style.
-
-2. **Refactor the Code**  
-   Compare the existing code in `airports.test.js` with the following BDD-style structure:
-
-```javascript
-const { request, expect } = require("./config");
-
-describe("Airport API", function () {
-  describe("GET /airports", function () {
-    describe("when retrieving airports", function () {
-      it("should return a list of airports limited to 30 per page", async function () {
-        const response = await request.get("/airports");
-
-        expect(response.status).to.eql(200);
-        expect(response.body.data.length).to.eql(30);
-      });
-    });
-  });
-
-  describe("POST /airports/distance", function () {
-    describe("when calculating the distance between two airports", function () {
-      it("should return a 200 status and the distance information", async function () {
-        const response = await request
-          .post("/airports/distance")
-          .send({ from: "KIX", to: "SFO" });
-
-        expect(response.status).to.eql(200);
-
-        const attributes = response.body.data.attributes;
-        expect(attributes).to.include.keys(
-          "kilometers",
-          "miles",
-          "nautical_miles"
-        );
-        expect(attributes.kilometers).to.be.closeTo(8692, 1);
-        expect(attributes.miles).to.be.closeTo(5397, 1);
-        expect(attributes.nautical_miles).to.be.closeTo(4690, 1);
-      });
-    });
-  });
-});
-```
-
-3. **Apply the Refactor**  
-   Replace the existing code in `airports.test.js` with the refactored code provided above. This structure clearly defines the different parts of the test, making it easier to understand and maintain.
-
-
-### **C: Refactoring `favorites-old.test.js`**
-
-1. **Refactor the Code**  
-   Now, take the existing code in `favorites-old.test.js` and refactor it to follow the same structured and descriptive BDD style shown in **Section B**. Ensure each test describes the behavior being tested in a clear and consistent way. -->
