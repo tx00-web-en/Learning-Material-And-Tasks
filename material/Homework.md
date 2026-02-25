@@ -1,29 +1,38 @@
 # Homework
+
+### Tuesday:
+
+- :star: [Learn Custom Hooks In 10 Minutes](https://www.youtube.com/watch?v=6ThXsUwLWvc) 
+- :star: `Here's` a a [demo illustrating React authentication](https://github.com/tx00-resources-en/mern-books-v1). At this stage, the demo only provides an overview of how to access protected routes.  
+
+
 -----
 
 
-### Important but Optional:
+### Wednesday :
 
-These topics were originally scheduled for Week 7 and intended to be part of the exam. However, since our priority is ensuring everyone is confident with the core material, they are now **optional** and **will not be included in the exam**.
 
-- :star: [React useContext() hook introduction](https://youtu.be/FpNfvbNYPsg?si=EADR1NJnG_794q7G)
-- :blue_book: [Learn useReducer In 20 Minutes](https://youtu.be/kK_Wqx3RnHk?si=60jrI2i05VfgWjcw)
+**Documentation**
+
 - :blue_book: [Automatically Generate Swagger Docs With ExpressJS & NodeJS](https://youtu.be/5aryMKiBEKY?si=d50P0xlkQQvcKmt7)
 
-### Monday:
-
-- :star: [React Crash Course 2024](https://youtu.be/LDB4uaJ87e0?si=aGMiwMn7zoNiGcBM)
-- :star: `Here's` a a [demo illustrating React authentication](https://github.com/tx00-resources-en/mern-books-v1). At this stage, the demo only provides an overview of how to access protected routes.  
-
-<!-- We will refactor the app next Wednesday to use the `useContext` hook. -->
-
-### Wednesday:
+**Backend**
 
 - :star: MERN Authentication Tutorial #2 - #7
   - [Videos](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT)
   - [src](https://github.com/iamshaunjp/MERN-Auth-Tutorial)
 - Here’s a step‑by‑step guide on how to build a full‑stack jobs application. The project is organized so that each step is in its own branch, allowing you to follow along and replicate the work incrementally:  https://github.com/tx00-resources-en/week7-fepp-en
 - Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again. 
+
+**Frontend**
+
+- :star: [MERN Authentication Tutorial #9 - Login & Signup Forms (10min)](https://youtu.be/VfReCe0nWOo?si=e23B1bzYEILbmcSL)
+- :star: [MERN Authentication Tutorial #10 - Making a useSignup Hook (10min)](https://youtu.be/3yaHWZdH0FM?si=5I5Tf640C0Reqzl7)
+- :star: [MERN Authentication Tutorial #11 - Making a useLogout Hook (7min)](https://youtu.be/juaWO24a9aQ?si=k6U3E1uWvjy3Cqsl)
+- :star: [MERN Authentication Tutorial #11 - Making a useLogout Hook (7min)](https://youtu.be/juaWO24a9aQ?si=k6U3E1uWvjy3Cqsl)
+- :star:  [MERN Authentication Tutorial #12 - Making a useLogin Hook (6min)](https://youtu.be/ZVHoVxfU5LU?si=vfnh81OVO0BobQhH)
+
+-----
 
 ### Friday
 
