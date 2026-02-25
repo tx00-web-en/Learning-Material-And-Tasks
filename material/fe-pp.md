@@ -4,10 +4,6 @@
 - [Part 2 — Authentication & Route Protection (Iterations 6–7)](#part-2--authentication--route-protection)
 
 ---
-> [!IMPORTANT]  
-> Commit after each iteration.
-
----
 
 # Part 1 — CRUD Front-End
 
@@ -58,31 +54,11 @@ The Vite proxy in `vite.config.js` forwards any request starting with `/api` to 
 
 ### Iteration 0: Setup
 
-1. Clone [the starter repository](https://github.com/tx00-resources-en/week6-fepp-option-b) into a separate folder.
-   - After cloning, **delete** the `.git` directory so you can start your own Git history (`git init`).
+Start the backend (`cd backend`, install dependencies, create `.env` from `.env.example`, run the dev server). Start the frontend (`cd frontend`, install dependencies, run the dev server).
 
-2. **Start the backend:**
-   ```bash
-   cd backend
-   cp .env.example .env      # create your .env file (edit MONGO_URI if needed)
-   npm install
-   npm run dev
-   ```
-   You should see `Server running on port 4000` and `MongoDB Connected`.
+**Done when:** backend is on `http://localhost:4000`, frontend on `http://localhost:5173`, and the basic UI is visible.
 
-3. **Start the frontend:**
-   ```bash
-   cd frontend
-   npm install
-   npm run dev
-   ```
-   Open `http://localhost:5173` in your browser.
-
-**You are done with Iteration 0 when:**
-
-- The backend is running on `http://localhost:4000`.
-- The frontend is running on `http://localhost:5173`.
-- You can see the basic UI (Navbar with "Home" and "Add Book" links).
+**Commit:** `chore: install dependencies and set up project`
 
 ---
 
@@ -94,6 +70,8 @@ The form exists but is not wired up. Make it work: use controlled inputs with `u
 
 **Done when:** filling in the form and submitting saves the book to the database.
 
+**Commit:** `feat(add-book): send POST request from AddBookPage form`
+
 ---
 
 ### Iteration 2: List All Books (`GET`)
@@ -103,6 +81,8 @@ The form exists but is not wired up. Make it work: use controlled inputs with `u
 Fetch all books from the API when the Home page mounts and display them. Handle loading and error states. Each `BookListing` should show at minimum the book's title, author, `publisher`, and `genre`.
 
 **Done when:** the Home page shows all books from the database, including the new fields.
+
+**Commit:** `feat(list-books): fetch and display all books on HomePage`
 
 ---
 
@@ -114,6 +94,8 @@ Add a route for `/books/:id`. Link each book title in the list to its detail pag
 
 **Done when:** clicking a book title opens a detail page with all its data.
 
+**Commit:** `feat(book-page): add route and fetch single book by id`
+
 ---
 
 ### Iteration 4: Delete a Book (`DELETE`)
@@ -124,6 +106,8 @@ Add a "Delete" button to the detail page. Ask the user to confirm before sending
 
 **Done when:** confirming deletion removes the book and returns to the Home page.
 
+**Commit:** `feat(book-page): add delete button with confirmation dialog`
+
 ---
 
 ### Iteration 5: Edit a Book (`PUT`)
@@ -133,6 +117,8 @@ Add a "Delete" button to the detail page. Ask the user to confirm before sending
 Add a route for `/edit-book/:id`. Add an "Edit" button on the detail page that navigates to this route. On `EditBookPage`, fetch the current book data, pre-fill the form, and send a `PUT` request on submit. Include all fields (`publisher`, `genre`, `dueDate`). Navigate to the detail page on success.
 
 **Done when:** the edit form opens pre-filled, and submitting it updates the book in the database.
+
+**Commit:** `feat(edit-book): add route and pre-filled edit form with PUT request`
 
 ---
 
@@ -195,6 +181,8 @@ Build Signup and Login pages with controlled forms that `POST` to the respective
 
 **Done when:** you can sign up, log in, and log out; the JWT is visible in the browser's Local Storage; all CRUD operations still work.
 
+**Commit:** `feat(auth): add Signup and Login pages with localStorage and Navbar links`
+
 ---
 
 ### Iteration 7: Route Protection & Token Headers
@@ -216,6 +204,8 @@ Add `isAuthenticated` state to `App.jsx` (initialised from `localStorage` so it 
 - Authenticated users can perform all CRUD operations successfully.
 - Logging out clears state, updates the Navbar, and re-applies route protection.
 
+**Commit:** `feat(auth): add route protection, token headers, and conditional rendering`
+
 ---
 
 ## Part 2 Summary
@@ -227,21 +217,4 @@ Add `isAuthenticated` state to `App.jsx` (initialised from `localStorage` so it 
 | Delete a book | ❌ button hidden | ✅ |
 | Signup / Login pages | ✅ | ❌ → `/` |
 
-
-
-<!--
-# Pair Programming: Front end
-
-The [pair programming task](./fe-pp-current.md) will become visible once we start the session. In the meantime, you are strongly encouraged to review a task from a [previous period](./fe-pp-old.md). This session’s pair programming activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of ypur time together.
-
-
-> [!IMPORTANT]
-> - Review the group activities, watch the pre‑session video, and revisit the task from the **previous period**.  
-> - [Read about Strong‑Style Pair Programming](./about-pair-prog.md).  
-> - For the pair programming to be accepted, **both members must alternate iterations.**  
-> - Example:* Iteration 1 – Member 1, Iteration 2 – Member 2, Iteration 3 – Member 1, Iteration 4 – Member 2, and so on.  
->   - *Note:* All commits will be graded separately.  
-> - After each iteration, take a **screenshot** of the pushed commit on GitHub. The screenshot must clearly show both the **commit message** and the **user who made the commit**. Save all screenshots in a folder named **`screenshots`** within your repository.  
-> - You may use the **Live Share** extension in VS Code to facilitate collaboration. However, commits must still alternate between members. It will **not** be considered pair programming if only one member is making all the commits.  
-
--->
+Commit after each iteration.
