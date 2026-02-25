@@ -275,11 +275,14 @@ Now that the basic setup is complete, divide your team between backend and front
 
 #### Frontend Team:
 
-1. **Use Custom Hooks for Authentication**  
-   Refactor your login and signup logic into custom hooks (e.g., `useSignup` and `useLogin`) and use them in the app.
+1. **Implement Conditional UI in the Navbar**   
+   - Show different navigation options depending on whether the user is logged in.  
+   - Use the same logic and component structure demonstrated [here](./fe-activity2.md#step-2--conditional-ui-in-the-navbar)
 
-2. **Create a `useFetch` Hook**  
-   Implement a `useFetch` hook that handles API requests and returns loading, data, and error states. Use it throughout your app to standardize data fetching.
+2. **Add Conditional Routing in `App.jsx`**  
+   - Protect routes that require authentication.  
+   - Redirect unauthenticated users appropriately.  
+   - Reference the example [here](./fe-activity2.md#step-3--conditional-routing-in-appjsx)
 
 ---
  
@@ -305,14 +308,16 @@ Now that the basic setup is complete, divide your team between backend and front
 **Happy coding!** :rocket: :heart: 
 
 
-### Links
 
-- [YouTube crash course](https://youtu.be/LDB4uaJ87e0)
-- [Custom hooks](./fe-summary.md)
 
 
 <!-- 
 # Coding Marathon  
 
 The [coding marathon](./coding-marathon-current.md) will become visible once the session begins. In the meantime, you are strongly encouraged to review a task from a [previous period](./coding-marathon-old.md). This activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.   
+
+### Links
+
+- [YouTube crash course](https://youtu.be/LDB4uaJ87e0)
+- [Custom hooks](./fe-summary.md)
 -->
