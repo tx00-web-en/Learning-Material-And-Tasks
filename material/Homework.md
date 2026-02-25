@@ -20,7 +20,7 @@
 
 - :star: [Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20?si=zkvJi7H_eHfYFLe-)
 
-### Wednesday
+### Wednesday Afternoon
 
 - :star: [MERN Authentication Tutorial #9 - Login & Signup Forms (10min)](https://youtu.be/VfReCe0nWOo?si=e23B1bzYEILbmcSL)
 - :star: [MERN Authentication Tutorial #10 - Making a useSignup Hook (10min)](https://youtu.be/3yaHWZdH0FM?si=5I5Tf640C0Reqzl7)
