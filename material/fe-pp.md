@@ -54,9 +54,31 @@ The Vite proxy in `vite.config.js` forwards any request starting with `/api` to 
 
 ### Iteration 0: Setup
 
-Start the backend (`cd backend`, install dependencies, create `.env` from `.env.example`, run the dev server). Start the frontend (`cd frontend`, install dependencies, run the dev server).
+1. Clone [the starter repository](https://github.com/tx00-resources-en/week6-fepp-option-b) into a separate folder.
+   - After cloning, **delete** the `.git` directory so you can start your own Git history (`git init`).
 
-**Done when:** backend is on `http://localhost:4000`, frontend on `http://localhost:5173`, and the basic UI is visible.
+2. **Start the backend:**
+   ```bash
+   cd backend
+   cp .env.example .env      # create your .env file (edit MONGO_URI if needed)
+   npm install
+   npm run dev
+   ```
+   You should see `Server running on port 4000` and `MongoDB Connected`.
+
+3. **Start the frontend:**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+   Open `http://localhost:5173` in your browser.
+
+**You are done with Iteration 0 when:**
+
+- The backend is running .
+- The frontend is running.
+- You can see the basic UI (Navbar with "Home" and "Add Book" links).
 
 **Commit:** `chore: install dependencies and set up project`
 
