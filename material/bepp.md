@@ -18,7 +18,8 @@ Your task is to write tests for the **Jobs API**, both with and without authenti
    * Protected Jobs endpoints (Part 2)
    * User authentication (Part 2)
 3. Follow BDD-style test descriptions.
-4. Commit after each iteration using the required commit format.
+4. Commit after each iteration using the recommended commit format.
+
 
 ---
 
@@ -35,22 +36,19 @@ Use these as templates when creating your Jobs API tests.
 > **Important:** Rewrite tests in BDD style.
 > Example:
 > **BDD:** `it("should return all jobs when GET /api/jobs is requested")`
-> **Not BDD:** `it("returns jobs")` or `it("GET /api/jobs")`
+> **Not BDD:** `it("returns jobs")` or `test("GET /api/jobs")`
 
 ---
 
-### **Important Rules**
+### Commit messages: Recommended format
 
 1. Commit after each step.
 2. Use this commit message pattern:
 
-```bash
-# After completing each iteration
-[iter1] Part 1: Add GET endpoint tests for jobs
-[iter2] Part 1: Add POST, PUT, DELETE endpoint tests for jobs
-[iter1-p2] Part 2: Add user signup and login tests
-[iter2-p2] Part 2: Add protected jobs endpoint tests
-```
+- *feat* Short for feature. Used when you add a new feature or new functionality to the codebase.
+- *refactor* used when you change existing code without altering behavior. This improves structure, readability, or organization.
+- *chore* used for maintenance tasks that don’t change application behavior. Examples: updating dependencies, adding logging, renaming files, config changes.
+
 
 ---
 
@@ -84,6 +82,8 @@ Use these as templates when creating your Jobs API tests.
    tests/jobs.test.js
    ```
 
+   > **Note:** The starter already includes a `tests/mock.test.js` placeholder so you can verify Jest is working (`npm test`). Leave it as-is — create your own `jobs.test.js` alongside it.
+
 5. **Write Tests for Non-Protected Jobs Endpoints**
    Follow the structure in `examples/tours-no-auth.test.js` to write tests for the following endpoints:
 
@@ -96,10 +96,10 @@ Use these as templates when creating your Jobs API tests.
 Your tests should check:
 
 * **Success case (200):** GET /api/jobs returns a 200 status and an array of job objects
-* **Response format:** Each job object contains `id`, `title`, `company`, `salary`, `description`, etc.
+* **Response format:** Each job object contains `id`, `title`, `type`, `company`, `description`, etc.
 * **Get by ID (200):** GET /api/jobs/:id returns a single job with the correct ID
-* **Invalid ID (404):** GET /api/jobs/invalid-id returns a 404 status
-* **Edge cases:** Empty database, non-existent IDs
+* **Non-existing ID (404):** GET /api/jobs/:id with a valid ObjectId that does not exist returns 404
+* **Invalid ID format (400):** GET /api/jobs/:id with a malformed ID (e.g. `"12345"`) returns 400
 * **Adjust** backend status codes where needed to ensure consistency with the test requirements.
 
 **Suggested test count:** 4-7 test cases
@@ -137,14 +137,13 @@ Write tests for the following endpoints:
 
 * **Update job (PUT):**
   * Valid update data returns 200 status with updated job
-  * Invalid ID returns 404
+  * Invalid ID format returns 400
   * Partial updates work correctly
-  * Invalid data returns 400
 
 * **Delete job (DELETE):**
-  * Valid deletion returns 204 or 200 status
-  * Invalid ID returns 404
-  * Job is removed from database
+  * Valid deletion returns 204 status
+  * Invalid ID format returns 400
+  * Job is removed from database (snapshot-before / act / snapshot-after)
 
 * **Adjust** backend status codes where needed to ensure consistency with the test requirements.
 
@@ -184,19 +183,15 @@ Write tests for:
 Test cases to include:
 
 * **Signup:**
-  * Valid signup returns 201 status and user object with email
-  * Missing email or password returns 400
-  * Invalid email format returns 400
-  * Password too short (less than 6 chars) returns 400
+  * Valid signup returns 201 status and response with email and token
+  * Missing required fields returns 400
   * Duplicate email returns 400
-  * Signup response should NOT include plaintext password
+  * User is actually saved in the database
 
 * **Login:**
   * Valid login with correct credentials returns 200 status and JWT token
-  * Invalid email returns 401
-  * Wrong password returns 401
-  * Missing email or password returns 400
-  * Token is a valid JWT string
+  * Wrong password returns 400
+  * Non-existing email returns 400
 
 * **Adjust** backend status codes where needed to ensure consistency with the test requirements.
 
@@ -215,14 +210,18 @@ Follow `examples/tours-auth.test.js`.
 
 Steps inside your tests:
 
-1. Signup or login a user
-2. Save the returned JWT token
-3. Use `set("Authorization", "Bearer <token>")` when calling protected routes
+1. Signup a user in `beforeAll` and save the returned JWT token
+2. Seed jobs via the API in `beforeEach` (using the token) so `user_id` is set correctly
+3. Use `.set("Authorization", "Bearer " + token)` when calling protected routes
 
-Protected endpoints:
+> **Note:** In the example, **all** tour routes are protected. In the Jobs API, **GET routes are public** — only POST, PUT, and DELETE require authentication. Adjust your tests accordingly (no token needed for GET, no 401 test for GET).
+
+Endpoints to test:
 
 | Method | Endpoint        | Description                |
 | ------ | --------------- | -------------------------- |
+| GET    | `/api/jobs`     | Get all jobs (public)      |
+| GET    | `/api/jobs/:id` | Get job by ID (public)     |
 | POST   | `/api/jobs`     | Create job (requires auth) |
 | PUT    | `/api/jobs/:id` | Update job (requires auth) |
 | DELETE | `/api/jobs/:id` | Delete job (requires auth) |
@@ -237,13 +236,18 @@ Protected endpoints:
 * Invalid token format (e.g., "Bearer invalid-token")
 * Expired token (if applicable)
 
+**Public routes (no token needed):**
+
+* GET /api/jobs returns all jobs with status 200
+* GET /api/jobs/:id returns one job by ID
+* GET /api/jobs/:id with non-existing ID returns 404
+
 **With valid token (should succeed):**
 
 * POST /api/jobs creates a new job and returns 201
 * PUT /api/jobs/:id updates job and returns 200
-* DELETE /api/jobs/:id deletes job and returns 204/200
-* Created job is associated with the authenticated user
-* User can only modify their own jobs (if applicable)
+* DELETE /api/jobs/:id deletes job and returns 204
+* Verify changes persisted in the database (snapshot-before / act / snapshot-after)
 
 * **Adjust** backend status codes where needed to ensure consistency with the test requirements.
 
@@ -253,7 +257,7 @@ Protected endpoints:
 
 ## **PART 3 — Backend Testing Best Practices**
 
-These practices should be implemented in **both** `backend-no-auth` and `backend-auth`, and are **meant for your group project**:
+These practices are **already applied in the starter repo**. Review them here so you can apply the same setup to **your group project**:
 
 ---
 
@@ -391,17 +395,3 @@ These practices should be implemented in **both** `backend-no-auth` and `backend
 - [JWT Best Practices](https://tools.ietf.org/html/rfc8725)
 
 
-
-<!-- # Pair Programming: Back end
-
-The [pair programming task](./be-pp-current.md) will become visible once we start the session. In the meantime, you are strongly encouraged to review a task from a [previous period](./be-pp-old.md). This session’s pair programming activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.
-
-> [!IMPORTANT]
-> - Review the group activities, watch the pre‑session video, and revisit the task from the **previous period**.  
-> - [Read about Strong‑Style Pair Programming](./about-pair-prog.md).  
-> - For the pair programming to be accepted, **both members must alternate iterations.**  
-> - Example:* Iteration 1 – Member 1, Iteration 2 – Member 2, Iteration 3 – Member 1, Iteration 4 – Member 2, and so on.  
->   - *Note:* All commits will be graded separately.  
-> - After each iteration, take a **screenshot** of the pushed commit on GitHub. The screenshot must clearly show both the **commit message** and the **user who made the commit**. Save all screenshots in a folder named **`screenshots`** within your repository.  
-> - You may use the **Live Share** extension in VS Code to facilitate collaboration. However, commits must still alternate between members. It will **not** be considered pair programming if only one member is making all the commits.   
--->
