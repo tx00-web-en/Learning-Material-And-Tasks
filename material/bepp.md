@@ -257,7 +257,7 @@ Endpoints to test:
 
 ## **PART 3 — Backend Testing Best Practices**
 
-> [!IMPORTANT]  
+> [!NOTE]  
 > The starter repo **already includes all of these backend testing best practices**, so you can see concrete examples in action. Review them here and use the same patterns when building **your group project**.
 
 ---
