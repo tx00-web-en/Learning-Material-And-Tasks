@@ -788,14 +788,15 @@ describe("Job Routes", () => {
   // Seed jobs via the API (so user_id is set by the controller)
   beforeEach(async () => {
     await Job.deleteMany({});
-    await Promise.all(
-      jobs.map((job) =>
-        api
-          .post("/api/jobs")
-          .set("Authorization", "Bearer " + token)
-          .send(job)
-      )
-    );
+    await api
+    .post("/api/jobs")
+    .set("Authorization", "Bearer " + token)
+    .send(jobs[0]);
+
+    await api
+      .post("/api/jobs")
+      .set("Authorization", "Bearer " + token)
+      .send(jobs[1]);
   });
 
   // ────────────────── GET /api/jobs (public) ──────────────────
