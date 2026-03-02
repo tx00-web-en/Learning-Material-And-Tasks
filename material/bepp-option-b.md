@@ -1011,7 +1011,8 @@ git commit -m "feat: add protected jobs API tests with auth"
 
 ## PART 3 — Backend Testing Best Practices
 
-These practices are **already applied in the starter repo**. Review them here so you can apply the same setup to **your group project**.
+> [!IMPORTANT]  
+> The starter repo **already includes all of these backend testing best practices**, so you can see concrete examples in action. Review them here and use the same patterns when building **your group project**.
 
 ---
 
