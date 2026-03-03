@@ -33,7 +33,7 @@ You should see `mock.test.js` pass. Leave this file as-is.
 **Step 5:** Create a new test file:
 
 ```
-backend/tests/users.test.js
+tests/users.test.js
 ```
 
 **Step 6:** The User model requires three fields: `name`, `email`, `password`.
@@ -243,7 +243,7 @@ git commit -m "feat: add signup and login tests for users API"
 **Step 1:** Create a new test file:
 
 ```
-backend/tests/books.test.js
+tests/books.test.js
 ```
 
 **Step 2:** Study the route protection in `routes/bookRouter.js`. Notice how it:
