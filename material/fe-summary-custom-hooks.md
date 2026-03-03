@@ -1,13 +1,25 @@
 # Custom React Hooks
 
 
-- [Part 1: Create `useRegister` Hook](#part-1-custom-react-hooks-creating-a-useregister-hook-for-signup-and-login)
-- [Part 2: Create `useFetch`  Hook](#part-2-custom-react-hook-a-detailed-guide-to-usefetch) 
+Custom hooks are one of the most powerful patterns in React. They let you extract component logic into reusable functions that can be shared across your application. Any function whose name starts with `use` and that calls other hooks is a custom hook.
 
-<!-- 
-- [useSignup](./src/hooks/useSignup.jsx)
-- [useLogin](./src/hooks/useLogin.jsx) 
--->
+**Table of Contents**
+
+- [Part 1: `useFetch` — Data Fetching](#part-1-custom-react-hook-a-detailed-guide-to-usefetch)
+- [Part 2: `useLogin` — Login Authentication](#part-2-uselogin-hook)
+- [Part 3: `useSignup` — User Registration](#part-3-usesignup-hook)
+- [Part 4: `useAuth` — Unified Authentication](#part-4-useauth-hook)
+- [Part 5: `useField` — Form Input Management](#part-5-usefield-custom-hook)
+
+**Why custom hooks?**
+
+| Benefit | Description |
+|---------|-------------|
+| **Reusability** | Write logic once, use it in many components |
+| **Separation of concerns** | Components render UI; hooks manage data and side effects |
+| **Readability** | Components become shorter and easier to scan |
+| **Testability** | Hooks can be unit-tested independently of any UI |
+| **Composability** | Hooks can call other hooks, enabling layered abstractions |
 
 ---
 ## Part 1: Custom React Hook: A Detailed Guide to `useFetch`
@@ -162,170 +174,586 @@ The `useFetch` custom hook is a powerful and reusable solution for handling API 
 
 By encapsulating this logic into a hook, you're also making your code more testable, maintainable, and reusable. Whether you’re working with multiple APIs or a single endpoint, `useFetch` will streamline the data-fetching process, making your React development more efficient.
 
----
-## Part 2: Custom React Hooks: Creating a `useRegister` Hook for Signup and Login
 
-Custom hooks in React provide a way to encapsulate and reuse logic across multiple components. In this part, we'll explore the creation of a custom hook called `useRegister`, which handles both signup and login functionalities. We'll demonstrate how to implement this hook, use it in an `AuthForm` component, and integrate it within a main `App` component. By the end of this, you'll have a reusable, efficient way to handle user authentication in your React application.
 
-### 1. Creating the `useRegister` Hook
+----
 
-The `useRegister` hook simplifies authentication by encapsulating both signup and login logic in a single function. Here's how it works:
+## Part 2: `useLogin` Hook
+
+Authentication is another area where custom hooks shine. Login forms typically need to POST credentials to an API, handle errors, manage a loading indicator, and persist the returned token. All of that is **non-UI logic** that belongs in a hook.
+
+### The Problem
+
+Look at a typical `Login.jsx` component:
+
+```jsx
+const Login = ({ setIsAuthenticated }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+
+    const response = await fetch("/api/users/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    const user = await response.json();
+
+    if (!response.ok) {
+      setError(user.error);
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(user));
+    setIsAuthenticated(true);
+    navigate("/");
+  };
+  // ...
+};
+```
+
+The `handleFormSubmit` function is doing too much: making the request, parsing the response, handling errors, and storing the token. If you need login functionality elsewhere (e.g. auto-login after signup), you would have to duplicate all of this.
+
+### The `useLogin` Hook
+
+```jsx
+import { useState } from "react";
+
+export default function useLogin(url) {
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const login = async (credentials) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error);
+        setIsLoading(false);
+        return null;
+      }
+
+      localStorage.setItem("user", JSON.stringify(data));
+      setIsLoading(false);
+      return data;
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+      return null;
+    }
+  };
+
+  return { login, isLoading, error };
+}
+```
+
+#### Detailed Breakdown
+
+1. **Parameters**:
+   - `url` — the API endpoint (e.g. `"/api/users/login"`). Passing it as a parameter makes the hook flexible.
+
+2. **State**:
+   - `error` — stores the error message from the server or a network error. Starts as `null`.
+   - `isLoading` — `true` while the request is in flight. Starts as `false` (unlike `useFetch`, there is no automatic request on mount).
+
+3. **The `login` function**:
+   - Accepts a `credentials` object (e.g. `{ email, password }`). The hook does not care about which fields are in the object — it simply serializes and sends it.
+   - Returns the **user object** on success so the caller can react to it (e.g. navigate). Returns `null` on failure.
+   - Handles the full request lifecycle: sets loading → fetches → parses → stores token or sets error → clears loading.
+
+4. **Return value**: `{ login, isLoading, error }` — the component gets a function to trigger the action and two state values to reflect the result.
+
+### Using `useLogin` in a Component
 
 ```jsx
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useLogin from "../hooks/useLogin";
 
-const useRegister = (setIsAuthenticated, isSignup = true) => {
+const Login = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const { login, isLoading, error } = useLogin("/api/users/login");
 
-  const handleRegister = async () => {
-    const endpoint = isSignup ? "/api/user/signup" : "/api/user/login";
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      if (response.ok) {
-        const user = await response.json();
-        localStorage.setItem("user", JSON.stringify(user));
-        console.log(`User ${isSignup ? "signed up" : "logged in"} successfully!`);
-        setIsAuthenticated(true);
-        navigate("/");
-      } else {
-        console.error(`${isSignup ? "Signup" : "Login"} failed`);
-      }
-    } catch (error) {
-      console.error(`Error during ${isSignup ? "signup" : "login"}:`, error);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const user = await login({ email, password });
+    if (user) {
+      setIsAuthenticated(true);
+      navigate("/");
     }
   };
 
-  return {
-    email,
-    setEmail,
-    password,
-    setPassword,
-    handleRegister,
-  };
+  return (
+    <div className="create">
+      <h2>Login</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label>Email address:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button disabled={isLoading}>Log in</button>
+        {error && <p className="error">{error}</p>}
+      </form>
+    </div>
+  );
 };
-
-export default useRegister;
 ```
 
-#### How it works:
-- **State Management**: The hook uses `useState` to manage `email` and `password` fields.
-- **Dynamic Endpoint**: It determines whether the user is signing up or logging in based on the `isSignup` parameter, dynamically setting the appropriate API endpoint (`/api/user/signup` or `/api/user/login`).
-- **Authentication Flow**: After a successful API response, the user data is saved in `localStorage`, the `setIsAuthenticated` state is updated, and the user is redirected to the homepage.
-- **Error Handling**: It handles both failed responses from the server and potential network errors.
+The form handler is now just four lines. The component focuses entirely on rendering and user interaction.
 
-By abstracting this logic into a custom hook, you make it reusable for any authentication form component.
 
-### 2. Building the `AuthForm` Component
 
-The `AuthForm` component is where users will either log in or sign up, depending on the passed `isSignup` prop. This form integrates the `useRegister` hook to handle input fields and form submission.
+----
+
+## Part 3: `useSignup` Hook
+
+The `useSignup` hook follows the exact same pattern as `useLogin`. This is intentional — it demonstrates how naturally hooks emerge when you spot repeated patterns.
+
+### The `useSignup` Hook
 
 ```jsx
-import React, { useState } from "react";
-import useRegister from "./useRegister";
+import { useState } from "react";
 
-const AuthForm = ({ isSignup }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const { email, setEmail, password, setPassword, handleRegister } = useRegister(setIsAuthenticated, isSignup);
+export default function useSignup(url) {
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const signup = async (credentials) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error);
+        setIsLoading(false);
+        return null;
+      }
+
+      localStorage.setItem("user", JSON.stringify(data));
+      setIsLoading(false);
+      return data;
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+      return null;
+    }
+  };
+
+  return { signup, isLoading, error };
+}
+```
+
+#### Comparison with `useLogin`
+
+| Aspect | `useLogin` | `useSignup` |
+|--------|-----------|------------|
+| Function name | `login` | `signup` |
+| Internal logic | identical | identical |
+| State variables | `error`, `isLoading` | `error`, `isLoading` |
+| localStorage | `setItem("user", …)` | `setItem("user", …)` |
+
+The two hooks are **structurally identical**. The only semantic difference is the function name exposed to the consumer. This observation leads directly to the next part.
+
+### Using `useSignup` in a Component
+
+```jsx
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useSignup from "../hooks/useSignup";
+
+const Signup = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, isLoading, error } = useSignup("/api/users/signup");
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    handleRegister();
+    const user = await signup({ name, email, password });
+    if (user) {
+      setIsAuthenticated(true);
+      navigate("/");
+    }
   };
 
   return (
-    <div>
-      <h2>{isSignup ? "Signup" : "Login"}</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">{isSignup ? "Signup" : "Login"}</button>
+    <div className="create">
+      <h2>Sign Up</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label>Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <label>Email address:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button disabled={isLoading}>Sign up</button>
+        {error && <p className="error">{error}</p>}
+      </form>
+    </div>
+  );
+};
+```
+
+
+----
+
+## Part 4: `useAuth` Hook
+
+### From Two Hooks to One
+
+In Parts 2 and 3 we created `useLogin` and `useSignup`. They work perfectly, but they share **100% of their internal logic**. When you spot this kind of duplication, the next step is to **merge them into a single, more powerful hook**.
+
+### Design Approach
+
+Instead of accepting a URL parameter, `useAuth` hardcodes both endpoints internally and exposes two thin wrapper functions:
+
+```
+useAuth()
+  ├── authenticate(url, credentials)   ← private helper (shared logic)
+  ├── login(credentials)               ← calls authenticate with "/api/users/login"
+  └── signup(credentials)              ← calls authenticate with "/api/users/signup"
+```
+
+### The `useAuth` Hook
+
+```jsx
+import { useState } from "react";
+
+export default function useAuth() {
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const authenticate = async (url, credentials) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error);
+        setIsLoading(false);
+        return null;
+      }
+
+      localStorage.setItem("user", JSON.stringify(data));
+      setIsLoading(false);
+      return data;
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+      return null;
+    }
+  };
+
+  const login = (credentials) =>
+    authenticate("/api/users/login", credentials);
+
+  const signup = (credentials) =>
+    authenticate("/api/users/signup", credentials);
+
+  return { login, signup, isLoading, error };
+}
+```
+
+#### Detailed Breakdown
+
+1. **No parameters**: Unlike `useLogin`/`useSignup`, the hook takes no arguments. The API URLs are implementation details hidden inside the hook.
+
+2. **`authenticate` — the private helper**:
+   - This function is **not** included in the return object, so consumers cannot call it directly.
+   - It contains all the shared logic: setting loading state, making the POST request, parsing the response, handling errors, and persisting the token.
+   - It returns the user data on success or `null` on failure, just like the individual hooks did.
+
+3. **`login` and `signup` — thin wrappers**:
+   - Each is a one-liner that calls `authenticate` with the appropriate URL.
+   - This pattern is sometimes called the **facade pattern** — a simple interface hiding more complex internal logic.
+
+4. **Shared state**:
+   - `error` and `isLoading` are shared between `login` and `signup`. This is safe because a user will only ever perform one auth action at a time.
+
+#### When to Use `useAuth` vs Separate Hooks
+
+| Use `useAuth` when… | Use separate hooks when… |
+|----------------------|---------------------------|
+| Login and signup share the same error/loading UI | Each form needs independent loading/error states |
+| You want fewer files to maintain | The two operations have significantly different logic |
+| The API endpoints are fixed | Different parts of the app need different auth endpoints |
+
+### Using `useAuth` in Components
+
+**Login.jsx:**
+```jsx
+const { login, isLoading, error } = useAuth();
+
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
+  const user = await login({ email, password });
+  if (user) {
+    setIsAuthenticated(true);
+    navigate("/");
+  }
+};
+```
+
+**Signup.jsx:**
+```jsx
+const { signup, isLoading, error } = useAuth();
+
+const handleFormSubmit = async (e) => {
+  e.preventDefault();
+  const user = await signup({ name, email, password });
+  if (user) {
+    setIsAuthenticated(true);
+    navigate("/");
+  }
+};
+```
+
+The two components now import the **same hook** and destructure only the function they need. The error/loading UI code is identical in both, which is consistent and predictable for users.
+
+
+
+----
+
+## Part 5: `useField` Custom Hook
+
+### The Problem: Form Boilerplate
+
+Every controlled input in React requires the same three things:
+
+1. A `useState` call for the value
+2. A `value` prop on the `<input>`
+3. An `onChange` handler
+
+For a form with three fields, that means three `useState` calls, three `value` props, and three `onChange` handlers. As forms grow, this boilerplate multiplies.
+
+### The `useField` Hook
+
+```jsx
+import { useState } from "react";
+
+export default function useField(type) {
+  const [value, setValue] = useState("");
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const reset = () => {
+    setValue("");
+  };
+
+  return { type, value, onChange, reset };
+}
+```
+
+#### Detailed Breakdown
+
+1. **Parameter — `type`**:
+   - The HTML input type (e.g. `"text"`, `"email"`, `"password"`, `"number"`).
+   - It is stored and returned as-is, so it can be spread directly onto an `<input>` element.
+
+2. **State — `value`**:
+   - A standard `useState` string that tracks the current input value.
+
+3. **`onChange` handler**:
+   - Reads `e.target.value` and updates state. This is the exact handler you would normally write inline.
+
+4. **`reset` function**:
+   - Resets the field to an empty string. Useful for clearing a form after successful submission.
+
+5. **Return object — `{ type, value, onChange, reset }`**:
+   - The first three keys (`type`, `value`, `onChange`) match exactly what an `<input>` element expects as props.
+   - This means you can use the **spread operator** to pass them all at once: `<input {...field} />`.
+   - `reset` is a bonus utility that doesn't interfere with spreading (HTML inputs ignore unknown props during rendering, and `reset` is a function, not rendered as an attribute).
+
+### The Spread Technique
+
+This is the key insight of `useField`. Instead of:
+
+```jsx
+<input
+  type={title.type}
+  value={title.value}
+  onChange={title.onChange}
+/>
+```
+
+You write:
+
+```jsx
+<input {...title} />
+```
+
+The spread operator `{...title}` expands the object into individual props. Since the object keys match the expected prop names, it just works.
+
+> **Note:** When you need additional props like `required` or `placeholder`, add them after the spread: `<input {...title} required placeholder="Enter title" />`. Props listed after the spread will override any conflicting spread values.
+
+### Using `useField` in a Component
+
+**Before (with `useState`):**
+```jsx
+const [title, setTitle] = useState("");
+const [author, setAuthor] = useState("");
+const [isbn, setIsbn] = useState("");
+
+// In JSX:
+<input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+<input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+<input type="text" value={isbn} onChange={(e) => setIsbn(e.target.value)} />
+```
+
+**After (with `useField`):**
+```jsx
+const title = useField("text");
+const author = useField("text");
+const isbn = useField("text");
+
+// In JSX:
+<input {...title} required />
+<input {...author} required />
+<input {...isbn} required />
+```
+
+To access the current values (e.g. when building the request body):
+```jsx
+const newBook = {
+  title: title.value,
+  author: author.value,
+  isbn: isbn.value,
+};
+```
+
+### Full Refactored `AddBookPage.jsx`
+
+```jsx
+import { useNavigate } from "react-router-dom";
+import useField from "../hooks/useField";
+
+const AddBookPage = () => {
+  const title = useField("text");
+  const author = useField("text");
+  const isbn = useField("text");
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  const token = user ? user.token : null;
+  const navigate = useNavigate();
+
+  const addBook = async (newBook) => {
+    try {
+      const res = await fetch("/api/books", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(newBook),
+      });
+      if (!res.ok) throw new Error("Failed to add book");
+      return true;
+    } catch (error) {
+      console.error("Error adding book:", error);
+      return false;
+    }
+  };
+
+  const submitForm = async (e) => {
+    e.preventDefault();
+    const newBook = {
+      title: title.value,
+      author: author.value,
+      isbn: isbn.value,
+    };
+    const success = await addBook(newBook);
+    if (success) {
+      console.log("Book Added Successfully");
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="create">
+      <h2>Add a New Book</h2>
+      <form onSubmit={submitForm}>
+        <label>Book Title:</label>
+        <input {...title} required />
+        <label>Author:</label>
+        <input {...author} required />
+        <label>ISBN:</label>
+        <input {...isbn} required />
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
 };
 
-export default AuthForm;
+export default AddBookPage;
 ```
 
-#### Key Features:
-- **Dynamic Title**: The form's title and submit button dynamically change based on the `isSignup` prop.
-- **Form State**: The `email` and `password` values are controlled inputs tied to the state managed by `useRegister`.
-- **Submit Handler**: When the form is submitted, it calls `handleRegister`, which invokes the custom hook's logic for either signup or login.
 
-This makes the component clean, reusable, and fully decoupled from specific authentication logic.
+----
 
-### 3. Integrating with the Main `App` Component
+## Final Summary
 
-Finally, we'll integrate the `AuthForm` component into a main `App` component. You can decide whether to render the form as a signup or login by simply passing the appropriate `isSignup` prop.
+### All Hooks at a Glance
 
-```jsx
-import React from "react";
-import AuthForm from "./AuthForm";
+| Hook | Input | Returns | Purpose |
+|------|-------|---------|---------|
+| `useFetch(url)` | API URL | `{ data, loading, error }` | GET request with full lifecycle |
+| `useLogin(url)` | API URL | `{ login, isLoading, error }` | POST login credentials |
+| `useSignup(url)` | API URL | `{ signup, isLoading, error }` | POST signup data |
+| `useAuth()` | — | `{ login, signup, isLoading, error }` | Unified auth (replaces above two) |
+| `useField(type)` | Input type | `{ type, value, onChange, reset }` | Single form field state |
 
-const App = () => {
-  return (
-    <div>
-      <AuthForm isSignup={true} /> {/* Signup Form */}
-      <AuthForm isSignup={false} /> {/* Login Form */}
-    </div>
-  );
-};
+### The Refactoring Journey
 
-export default App;
+```
+Inline code in components
+    ↓  Extract repeated logic
+useFetch  ← data fetching
+useLogin  ← login logic
+useSignup ← signup logic  ← nearly identical to useLogin
+    ↓  Merge duplicates
+useAuth   ← combines login + signup
+    ↓  Reduce form boilerplate
+useField  ← one hook per input field
 ```
 
-In this example, we render both the signup and login forms. However, in a real-world application, you might conditionally display either the signup or login form based on user interaction or routing.
+Each step made the components simpler, the logic more reusable, and the codebase easier to maintain. That is the power of custom hooks.
 
-### Benefits of Using `useRegister`:
-- **Reusability**: The hook can be used across different forms or pages where authentication is required, without duplicating logic.
-- **Code Separation**: It abstracts complex logic like API calls and error handling away from the form component, keeping your components clean and focused.
-- **Flexibility**: The same hook handles both signup and login by changing a simple boolean parameter, reducing code duplication and making maintenance easier.
-
-### Conclusion
-
-Custom hooks in React offer a powerful way to encapsulate functionality in a reusable and declarative manner. We built a `useRegister` hook to handle both signup and login, demonstrated how to use it within an `AuthForm` component, and integrated it into a simple `App`. With this approach, you can easily extend and adapt the authentication logic for future use cases while keeping your components clean and focused on UI concerns.
 
 ---
 ## Links
 
-- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) vs [sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
-- other:
-  - [localStorage/sessionStorage vs Cookies](https://blog.logrocket.com/localstorage-javascript-complete-guide/#localstorage-vs-cookies)
-  - [localStorage in JavaScript](https://blog.logrocket.com/localstorage-javascript-complete-guide/)
-  - [Window localStorage](https://www.w3schools.com/jsref/prop_win_localstorage.asp)
-- [Custom hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
-  - [Example: useFetch](https://www.w3schools.com/react/react_customhooks.asp)
-  - [Rules of hooks](https://react.dev/warnings/invalid-hook-call-warning)
-- Other: 
-  - [Hooks behind the scene](https://medium.com/flatiron-labs/breaking-the-rules-of-react-hooks-9e892636641e)
-  - Book: [Designing React Hooks the Right Way](https://metropolia.finna.fi/Record/nelli15.5500000000157994?sid=3444690400)
-  - [Another Example](https://swr.vercel.app/) from [NextJS](https://nextjs.org/)
+
 - [React Custom Hooks](https://www.w3schools.com/react/react_customhooks.asp)
 - Add Login Authentication to React Applications
   - [Mern Auth](https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/lesson-17) 
