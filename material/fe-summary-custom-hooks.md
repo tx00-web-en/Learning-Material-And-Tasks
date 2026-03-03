@@ -753,7 +753,8 @@ Each step made the components simpler, the logic more reusable, and the codebase
 ---
 ## Links
 
-
+- [Reusing Logic with Custom Hooks](https://react.dev/learn/reusing-logic-with-custom-hooks)
+- [Rules of Hooks](https://react.dev/warnings/invalid-hook-call-warning)
 - [React Custom Hooks](https://www.w3schools.com/react/react_customhooks.asp)
 - Add Login Authentication to React Applications
   - [Mern Auth](https://github.com/iamshaunjp/MERN-Auth-Tutorial/tree/lesson-17) 

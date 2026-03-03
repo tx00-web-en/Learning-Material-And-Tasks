@@ -496,6 +496,46 @@ Everything is the same except the function name and the URL. We can extract a sh
 ```jsx
 import { useState } from "react";
 
+export default function useAuth(url) {
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const authenticate = async (credentials) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.error);
+        setIsLoading(false);
+        return null;
+      }
+
+      localStorage.setItem("user", JSON.stringify(data));
+      setIsLoading(false);
+      return data;
+    } catch (err) {
+      setError(err.message);
+      setIsLoading(false);
+      return null;
+    }
+  };
+
+  return { authenticate, isLoading, error };
+}
+```
+
+<!-- 
+```jsx
+import { useState } from "react";
+
 export default function useAuth() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -537,6 +577,7 @@ export default function useAuth() {
   return { login, signup, isLoading, error };
 }
 ```
+-->
 
 **Key design decisions:**
 - `authenticate` is a **private** helper — it is not returned to the consumer. It contains all the shared logic (fetch, error handling, localStorage).
@@ -545,6 +586,47 @@ export default function useAuth() {
 - Both functions share the same `error` and `isLoading` state, which makes sense because a user can only be performing one auth action at a time.
 
 ### 4.3 — Refactor `Login.jsx` to use `useAuth`
+
+
+```jsx
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+
+const Login = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { authenticate:login, isLoading, error } = useAuth("/api/users/login");
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const user = await login({ email, password });
+    if (user) {
+      setIsAuthenticated(true);
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="create">
+      <h2>Login</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label>Email address:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button disabled={isLoading}>Log in</button>
+        {error && <p className="error">{error}</p>}
+      </form>
+    </div>
+  );
+};
+
+export default Login;
+```
+
+<!-- 
 
 ```jsx
 import { useState } from "react";
@@ -583,8 +665,53 @@ const Login = ({ setIsAuthenticated }) => {
 
 export default Login;
 ```
+-->
 
 ### 4.4 — Refactor `Signup.jsx` to use `useAuth`
+
+```jsx
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+
+const Signup = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  const { authenticate:signup, isLoading, error } = useAuth("/api/users/signup");
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const user = await signup({ name, email, password });
+    if (user) {
+      setIsAuthenticated(true);
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="create">
+      <h2>Sign Up</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label>Name:</label>
+        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+        <label>Email address:</label>
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <label>Password:</label>
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button disabled={isLoading}>Sign up</button>
+        {error && <p className="error">{error}</p>}
+      </form>
+    </div>
+  );
+};
+
+export default Signup;
+```
+
+<!-- 
 
 ```jsx
 import { useState } from "react";
@@ -625,7 +752,8 @@ const Signup = ({ setIsAuthenticated }) => {
 };
 
 export default Signup;
-```
+``` 
+-->
 
 **What changed compared to Iteration 2 & 3:**
 - The import changed from `useLogin`/`useSignup` to `useAuth`.
