@@ -704,24 +704,20 @@ With three fields this is manageable, but as forms grow, the boilerplate adds up
 import { useState } from "react";
 
 export default function useField(type) {
-  const [value, setValue] = useState("");
+    const [value, setValue] = useState("");
 
-  const onChange = (e) => {
-    setValue(e.target.value);
-  };
+    const onChange = (e) => {
+        setValue(e.target.value);
+    };
 
-  const reset = () => {
-    setValue("");
-  };
 
-  return { type, value, onChange, reset };
+    return { type, value, onChange, };
 }
 ```
 
 **Key points:**
 - The hook takes the input `type` (e.g. `"text"`, `"email"`, `"password"`) as a parameter.
 - It returns an object with `type`, `value`, and `onChange` — these are exactly the props that an `<input>` element expects.
-- It also returns a `reset` function so you can clear the field programmatically.
 - Because the returned object's keys match `<input>` props, you can **spread** the object directly onto the element: `<input {...title} />`.
 
 ### 5.3 — Refactor `AddBookPage.jsx`
