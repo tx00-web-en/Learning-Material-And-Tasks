@@ -6,7 +6,7 @@
 1. Clone the starter code and enter the project folder:
 
     ```sh
-    git clone https://github.com/tx00-resources-en/react-custom-hooks react-custom-hooks
+    git clone https://github.com/tx00-resources-en/react-custom-hooks-starter react-custom-hooks
     cd react-custom-hooks
     ```
 
