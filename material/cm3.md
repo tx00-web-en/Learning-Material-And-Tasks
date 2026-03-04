@@ -1,5 +1,5 @@
 # Coding Marathon  
 
-The coding marathon will become visible once the session begins. In the meantime, you are strongly encouraged to review a task from a [previous period](./coding-marathon-old.md). This activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.  
+The coding marathon [will become visible once the session begins](https://github.com/tx00-resources-en/cm3-starter/blob/main/task.md). In the meantime, you are strongly encouraged to review a task from a [previous period](./coding-marathon-old.md). This activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.  
 
 <!-- [coding marathon](./coding-marathon-current.md) -->
