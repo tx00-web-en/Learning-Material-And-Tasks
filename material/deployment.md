@@ -12,18 +12,18 @@ Deploying a MERN stack application involves two primary components:
    - Use **MongoDB Atlas** to host your database.
    - Test the connection using MongoDB Compass to ensure CRUD operations work.
 
-2. **Deploy the Backend**:
-   - Configure the backend to connect to MongoDB Atlas using environment variables.
-   - Enable **CORS** middleware to allow API access from the frontend running on localhost during development.
-   - Deploy the backend to **Render** as a web service.
-   - Test the deployed backend using **Postman** to verify the API endpoints and database connectivity.
-
-3. **Decide Frontend Deployment Strategy**:
+2. **Decide Frontend Deployment Strategy**:
    - Choose whether to:
      - Serve the frontend from the **same origin as the backend** by including the React build folder in the backend.
      - Serve the frontend from a **different origin**, which requires: 
         - Configuring **CORS** on the backend to allow requests from the frontend URL.
         - Adding a `BASE_URL` environment variable in the frontend for API routes.
+
+3. **Deploy the Backend**:
+   - Configure the backend to connect to MongoDB Atlas using environment variables.
+   - Enable **CORS** middleware to allow API access from the frontend running on localhost during development.
+   - Deploy the backend to **Render** as a web service.
+   - Test the deployed backend using **Postman** to verify the API endpoints and database connectivity.
 
 4. **Test and Finalize**:
    - Perform end-to-end testing to ensure the frontend communicates with the backend, and the backend interacts with the database.
