@@ -1,4 +1,4 @@
-# Optional Extra Task: Build a Fullstack Application
+<!-- # Optional Extra Task: Build a Fullstack Application
 
 If you'd like extra practice building a fullstack application from scratch, you can use the **Event** and **User** models provided below. This activity is entirely optional and will not be graded.
 
@@ -49,7 +49,7 @@ const userSchema = new Schema({
 }, { timestamps: true, versionKey: false });
 
 module.exports = model('User', userSchema);
-```
+``` -->
 
 
 <!-- 

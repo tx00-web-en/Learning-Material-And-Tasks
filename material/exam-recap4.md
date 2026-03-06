@@ -1,4 +1,4 @@
-# Activity
+<!-- # Activity
 
 ## Introduction
 
@@ -121,7 +121,7 @@ module.exports = mongoose.model("User", userSchema);
 - [ ] Backend **tests** for API V2 (explicitly covering authentication and protected routes)  
 
 
----
+--- -->
 
 <!-- 
 

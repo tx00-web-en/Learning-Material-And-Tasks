@@ -1,4 +1,4 @@
-# Activity
+<!-- # Activity
 
 ## Introduction
 
@@ -94,7 +94,7 @@ module.exports = Property;
 - [ ] Code for **Frontend V1** (*without authentication*)  
 - [ ] Backend **tests** for API V1  
 
----
+--- -->
 
 <!-- 
 
