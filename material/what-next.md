@@ -59,6 +59,7 @@ Advancing technical skills offers various pathways depending on career goals or 
 - **CI/CD and Containers**: Gain expertise in deployment pipelines and containerization.  
   - Project courses available in the next period.  
   - [Learn Docker - DevOps with Node.js & Express](https://www.youtube.com/watch?v=9zUHg7xjIqQ)  
+  - [Master Full-Stack Docker & CI/CD – Build a Production-Ready Pipeline](https://youtu.be/lEcULR30-GM)
 
 - **Security Practices**: Develop a strong understanding of vulnerabilities and participate in bug bounty programs.  
   - *[Server-side vs Client-side](https://portswigger.net/web-security/all-topics)*  
