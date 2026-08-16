@@ -46,7 +46,7 @@ The video homework uses emojis to represent the significance of each video. Belo
 - :star: [React CARD components (12min)](https://youtu.be/yYiwxYqQ9vg?si=sq50RKwzhf75eZ6f)
 - :blue_book: Review of React Basics: [Learn React 18 – Full Tutorial for Beginners] **From start till 2h 22min**
 
-### Friday
+### Thursday
 
 - [Git & GitHub Tutorial | Visualized Git Course for Beginner & Professional Developers](https://www.youtube.com/watch?v=S7XpTAnSDL4)
 - Please register on the following platforms:
