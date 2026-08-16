@@ -17,7 +17,7 @@
   - [Express JS Crash Course: (first 16 min only)]
 - [NPM Crash Course](https://youtu.be/jHDhaSSKmB0)
 
-### Before Friday: 
+### Before Thursday: 
 
 - [NPM Crash Course](https://youtu.be/jHDhaSSKmB0)
 - Please register on [GitHub] using your personal or Metropolia email.

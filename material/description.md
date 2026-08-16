@@ -12,7 +12,7 @@
 
 - Upon completing this course and successfully finishing the project, you'll have taken your first substantial steps towards constructing an end-to-end system.
 - Here are some examples of projects you'll be capable of creating:
-  - [Jobify]
+  <!-- - [Jobify] -->
   - [Next.JS]
   - [Gatsby.JS]
   - [React Projects]

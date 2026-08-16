@@ -25,7 +25,7 @@
     - [Workload](./material/img/gr7.png)
     - Sample sample exam task (< 3h)    
   - Showcase portfolio-ready projects
-    - [eCommerce Platform ](https://github.com/bradtraversy/proshop-v2), [Jobify], [Next.JS], [JavaScript Mastery]
+    - [eCommerce Platform ](https://github.com/bradtraversy/proshop-v2), [Next.JS], [JavaScript Mastery]
     - [Full Stack React Projects](https://github.com/PacktPublishing/Full-Stack-React-Projects-Second-Edition)
 - How realistic?
   - [Past course results](./material/img/grades.png)
@@ -142,10 +142,11 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 - AI Related Tools:
   - [Use of AI in the course: copilot / ChatGPT]
   - [GitHub Copilot](https://github.com/features/copilot)
-  - [GitHub CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
-  - [Bing Copilot](https://bing.com/chat) 
-  - [Ollama](https://ollama.com/), [Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder)
+  - [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
+  - [GLM AI Chat](https://glm-ai.chat/models/glm-5-3/)
   - [Vercel AI SDK](https://sdk.vercel.ai/docs/introduction): a toolkit designed to help developers build AI-powered applications using JavaScript and TypeScript.
+  - [Bing Copilot](https://bing.com/chat)   
+  <!-- - [Ollama](https://ollama.com/), [Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder) -->  
   <!-- Simplifies the process of integrating large language models (LLMs) into your applications by providing a unified API that works with different model providers -->
 <!-- - [AI ideas (Simple)](./material/ideas.md) -->
 
@@ -180,4 +181,4 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 [Next.JS]:https://nextjs.org/
 [Misc.]:https://www.johnsmilga.com/
 [JavaScript Mastery]:https://www.youtube.com/@javascriptmastery/playlists
-[Jobify]:https://jobify.live/login
+<!-- [Jobify]:https://jobify.live/login -->
