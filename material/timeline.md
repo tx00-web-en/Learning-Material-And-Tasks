@@ -1,17 +1,22 @@
 # Schedule
 
-![](./img/course-intro.png)
-----
-## Backend
-
-![](./img/be.png)
 
 ----
 ## Frontend
 
-![](./img/fe.png)
+![](./img/all-fe.png)
+
+
+----
+## Backend
+
+![](./img/all-be.png)
 
 ----
 ## Project
 
-![](./img/project.png)
+![](./img/all-project.png)
+
+----
+
+![](./img/all-schedule.png)
