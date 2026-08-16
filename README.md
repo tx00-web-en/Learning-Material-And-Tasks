@@ -129,7 +129,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - Even with the most advanced models ([Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7) & [Fable 5](https://www.anthropic.com/claude/fable)), AI still struggles to build a complete, cohesive game from scratch without an engineer guiding the architecture, debugging state management, and connecting components.
   - **Case Study:** [Can the Best AI Build a Game? (Steve Yegge)](https://yegge.ai/essays/the-shape-of-things-to-come/) - *Why complex end-to-end development still hits a wall without human direction.*
 - **Understanding the AI Evolution (Where Are We?):**
-  - [ANI vs. AGI vs. ASI Explained](https://www.neuralbuddies.com/p/ai-agi-asi-whats-the-difference) — *The distinction between current task-specific AI (Narrow) and General Intelligence.*
+  - ANI vs. AGI vs. ASI Explained - [src 1](https://github.com/jeffheaton/app_deep_learning/blob/main/t81_558_class_01_2_ai_neural.ipynb), [src 2]((https://www.neuralbuddies.com/p/ai-agi-asi-whats-the-difference)) *The distinction between current task-specific AI (Narrow) and General Intelligence.*
   - **AGI Projections (Written in 2024, forecasting ~2026):**
     - [Situational Awareness by Leopold Aschenbrenner](https://situational-awareness.ai/) — *Former OpenAI researcher predicting AGI acceleration toward 2026–2027.*
     - [Machines of Loving Grace by Dario Amodei (Anthropic CEO)](https://darioamodei.com/essay/machines-of-loving-grace) — *How powerful AI will partner with humans, not make human intellect obsolete.*
