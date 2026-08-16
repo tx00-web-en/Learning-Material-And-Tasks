@@ -119,13 +119,9 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - [6 Strategies to Better Manage Your Time](https://www.coursera.org/articles/time-management)
 - Preparation required before each class
 
+----
 
-  - AI doesn’t just replace tasks - it frees you to be 90% more productive where your impact counts
-    - [Can best AI in 2026 build Game?](https://yegge.ai/essays/the-shape-of-things-to-come/)
-    - [ANI, AGI, ASI](https://www.neuralbuddies.com/p/ai-agi-asi-whats-the-difference)
-    - AGI (2024): [src 1](https://situational-awareness.ai/), [src 2](https://darioamodei.com/essay/machines-of-loving-grace)
-
-### AI For SW Engineering
+## 5. AI For SW Engineering
 
 - [Agentic coding vs Vibe coding vs Vibe Engineering](https://www.linkedin.com/pulse/vibe-coding-vs-engineering-do-we-really-need-label-cronquist-umqmf/)
 - [Don't be a meat proxy](https://gruhn.me/blog/2026-08-03/)
@@ -144,7 +140,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 ---
 
 
-## 5. Activity
+## 6. Activity
 
 - **Group Formation**: *Find your circle*, *like minded link*, etc.
   - [Questions](./material/group-q.md)
@@ -153,7 +149,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   
 ---
 
-## 6. What Now? *Next steps*
+## 7. What Now? *Next steps*
 
 - [Unified Setup](./material/unified-setup.md)
 - [Homework](./material/homework.md) before Wednesday
@@ -174,7 +170,7 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
 
 ---
 
-## 7. Recap & Vision
+## 8. Recap & Vision
 
 - [Roadmap](https://roadmap.sh/full-stack): BE, FE, DevOps, Security, Testing, AI, Agile, Soft Skills
 - `Fullstack App` vs `Fullstack AI App` → added opportunities
