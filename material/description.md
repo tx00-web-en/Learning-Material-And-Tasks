@@ -37,6 +37,7 @@
 - Startup environments offer substantial potential for financial growth, particularly if you bring innovative ideas to the table.
   - [Finnish Startup Community]
   - [Innovation Projects at Metropolia]
+  <!-- - [Fundraising CRM For Startups](https://www.hopohopo.io/) -->
 
 ### Benefits: Exceptional Value
 

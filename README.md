@@ -118,9 +118,28 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - [The 26 most effective time management techniques](https://clockify.me/time-management-techniques)
   - [6 Strategies to Better Manage Your Time](https://www.coursera.org/articles/time-management)
 - Preparation required before each class
-- AI For SW Engineering
-  - [Agentic coding vs Vibe coding vs Vibe Engineering](https://www.linkedin.com/pulse/vibe-coding-vs-engineering-do-we-really-need-label-cronquist-umqmf/)
-  - AI doesn’t just replace tasks — it frees you to be 90% more productive where your impact counts
+
+
+  - AI doesn’t just replace tasks - it frees you to be 90% more productive where your impact counts
+    - [Can best AI in 2026 build Game?](https://yegge.ai/essays/the-shape-of-things-to-come/)
+    - [ANI, AGI, ASI](https://www.neuralbuddies.com/p/ai-agi-asi-whats-the-difference)
+    - AGI (2024): [src 1](https://situational-awareness.ai/), [src 2](https://darioamodei.com/essay/machines-of-loving-grace)
+
+### AI For SW Engineering
+
+- [Agentic coding vs Vibe coding vs Vibe Engineering](https://www.linkedin.com/pulse/vibe-coding-vs-engineering-do-we-really-need-label-cronquist-umqmf/)
+- [Don't be a meat proxy](https://gruhn.me/blog/2026-08-03/)
+- **AI Cannot Build Complex Systems Alone (The Human Element):**
+  - Even with the most advanced models ([Opus 4.7](https://www.anthropic.com/news/claude-opus-4-7) & [Fable 5](https://www.anthropic.com/claude/fable)), AI still struggles to build a complete, cohesive game from scratch without an engineer guiding the architecture, debugging state management, and connecting components.
+  - **Case Study:** [Can the Best AI Build a Game? (Steve Yegge)](https://yegge.ai/essays/the-shape-of-things-to-come/) - *Why complex end-to-end development still hits a wall without human direction.*
+- **Understanding the AI Evolution (Where Are We?):**
+  - [ANI vs. AGI vs. ASI Explained](https://www.neuralbuddies.com/p/ai-agi-asi-whats-the-difference) — *The distinction between current task-specific AI (Narrow) and General Intelligence.*
+  - **AGI Projections (Written in 2024, forecasting ~2026):**
+    - [Situational Awareness by Leopold Aschenbrenner](https://situational-awareness.ai/) — *Former OpenAI researcher predicting AGI acceleration toward 2026–2027.*
+    - [Machines of Loving Grace by Dario Amodei (Anthropic CEO)](https://darioamodei.com/essay/machines-of-loving-grace) — *How powerful AI will partner with humans, not make human intellect obsolete.*
+- **The Value of Programming Across Industries:**
+  - Many IoT, hardware, and engineering students express regret for not mastering core programming sooner. Knowing how to write and direct code remains the ultimate superpower across every tech domain.
+
 
 ---
 
@@ -145,8 +164,9 @@ https://opinto-opas.metropolia.fi/realization/SX00FJ17-3005?lang=en -->
   - [GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
   - [GLM AI Chat](https://glm-ai.chat/models/glm-5-3/)
   - [Vercel AI SDK](https://sdk.vercel.ai/docs/introduction): a toolkit designed to help developers build AI-powered applications using JavaScript and TypeScript.
-  - [Bing Copilot](https://bing.com/chat)   
-  <!-- - [Ollama](https://ollama.com/), [Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder) -->  
+  - [Muse Code](https://research.meta.ai/blog/introducing-muse-code-and-muse-spark-1-2)
+  <!-- - [Bing Copilot](https://bing.com/chat)
+  - [Ollama](https://ollama.com/), [Qwen3-Coder](https://github.com/QwenLM/Qwen3-Coder)   -->
   <!-- Simplifies the process of integrating large language models (LLMs) into your applications by providing a unified API that works with different model providers -->
 <!-- - [AI ideas (Simple)](./material/ideas.md) -->
 
