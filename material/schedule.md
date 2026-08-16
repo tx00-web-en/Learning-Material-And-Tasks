@@ -4,22 +4,19 @@
 ----
 ## Frontend
 
-![](./img/fe.png)
+![](./img/all-fe.png)
 
 
 ----
 ## Backend
 
-![](./img/be.png)
+![](./img/all-be.png)
 
 ----
 ## Project
 
-![](./img/project.png)
+![](./img/all-project.png)
 
 ----
 
-![](./img/course-intro.png)
-
-
-
+![](./img/all-schedule.png)
