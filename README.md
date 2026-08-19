@@ -24,7 +24,7 @@
 ----
 
 > [!TIP] 
-> - Zoom Recordings ?
+> - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBa4hOZUthmQ65PMbugFdbFAa673YpndNb3ZAmqTGYURK8?e=a5cjYq)
 > - [How Stanford Teaches AI-Powered Creativity (13min)](https://youtu.be/wv779vmyPVY?feature=shared&t=185)
 > - Tools for Developers
 >   - [Web utilities for developers, designers, and creators](https://webutils.io/about)
@@ -79,7 +79,7 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Thursday Morning: 
 
 - ~~Reveal/Drawio~~
-- Zoom Recordings ?
+- [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBa4hOZUthmQ65PMbugFdbFAa673YpndNb3ZAmqTGYURK8?e=a5cjYq)
 - Announcements:
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.

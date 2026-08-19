@@ -18,7 +18,7 @@
   - :bell: [Express JS Crash Course: (first 16 min only)]
 - :bell: [NPM Crash Course](https://youtu.be/jHDhaSSKmB0)
 
-### Before Friday: 
+### Before Thursday: 
 
 - :star: :blush:  [Introduction to Scrum - 7 Minutes]
 - :bell: Please register on [GitHub].
