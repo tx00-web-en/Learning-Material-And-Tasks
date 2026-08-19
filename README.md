@@ -78,11 +78,12 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 
 ### Thursday Morning: 
 
-- ~~Reveal/Drawio~~
-- [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBa4hOZUthmQ65PMbugFdbFAa673YpndNb3ZAmqTGYURK8?e=a5cjYq)
-- Announcements:
+- Misc.
+  - [Zoom Recordings](https://metropoliafi-my.sharepoint.com/:f:/g/personal/samiben_metropolia_fi/IgBa4hOZUthmQ65PMbugFdbFAa673YpndNb3ZAmqTGYURK8?e=a5cjYq)
   - [Homework for week2](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/Homework.md)
+  - [VS Code Themes](https://vscodethemes.com/?sort=trendingWeekly)
 - **Introduction to Agile and Scrum**: Understand how to work as a team to build software using Agile and Scrum methodologies.
+  - ~~Reveal/Drawio~~
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
   - [Slides](./material/scrum.pdf)
@@ -96,7 +97,8 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 ### Thursday Afternoon (13:00-16:00):
 
 - You will have an autonomous group session.
-- Brainstorm to decide on a project idea and begin Sprint 1 planning. Here are [**examples to inspire your group**](./material/project-ideas.md) — you may use one as‑is, adapt it, or take it in a completely new direction.
+- Brainstorm to decide on a project idea and begin Sprint 1 planning. 
+- Here are [**examples to inspire your group**](./material/project-ideas.md). You may use one as‑is, adapt it, or take it in a completely new direction.
 - [Agenda for Team Meeting](./material/group-agenda.md)
 
 <!-- 
