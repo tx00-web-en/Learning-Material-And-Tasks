@@ -87,12 +87,6 @@ We'll follow a 5-step learning cycle as shown in the figure below:
   - [Summary](./material/scrum.md)
   - [Activity](./material/scrum-activity.md)
   - [Slides](./material/scrum.pdf)
-- **Sprint 1**
-  - [Project Ideas](./material/project-ideas.md)
-  - [UI & AI](./material/UI.md)
-  - [Sprint 1: Deadline week 3](https://github.com/tx00-web-en/Project/)
-  - [Agenda for Team Meeting](./material/group-agenda.md)  
-  - [Activity](./material/scrum-activity2.md)
   
 ### Thursday Afternoon (13:00-16:00):
 
@@ -100,6 +94,9 @@ We'll follow a 5-step learning cycle as shown in the figure below:
 - Brainstorm to decide on a project idea and begin Sprint 1 planning. 
 - Here are [**examples to inspire your group**](./material/project-ideas.md). You may use one as‑is, adapt it, or take it in a completely new direction.
 - [Agenda for Team Meeting](./material/group-agenda.md)
+
+
+<!-- https://coolors.co/ -->
 
 <!-- 
 
@@ -113,10 +110,17 @@ We'll follow a 5-step learning cycle as shown in the figure below:
   - [Summary](./material/github.md)
   - [Activity](./material/github-activity2.md)
 
+- **Sprint 1**
+  - [Project Ideas](./material/project-ideas.md)
+  - [UI & AI](./material/UI.md)
+  - [Sprint 1: Deadline week 3](https://github.com/tx00-web-en/Project/)
+  - [Agenda for Team Meeting](./material/group-agenda.md)  
+  - [Activity](./material/scrum-activity2.md)
+
 -->
 
 
-<!-- https://coolors.co/ -->
+
 
 <!-- 
 Metropolia  PRE-INCUBATOR/yrityshautomo
