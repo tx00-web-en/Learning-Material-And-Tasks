@@ -117,6 +117,8 @@ Discuss:
 
 Be prepared to explain your prioritization decisions.
 
+> Note that product backlog encompasses all features, user stories, bug fixes, technical tasks, and any other work that contributes to the product's development. [More here](./scrum.md#product-backlog-vs-user-stories)
+
 ---
 
 # Task 5 — Who Does What?

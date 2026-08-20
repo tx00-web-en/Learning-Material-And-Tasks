@@ -78,7 +78,7 @@ For example:
 
 * **Trello:** Set up the team's Trello board and agree on how the team will use it to manage the Product Backlog, Sprint Backlog, and tasks.
 
-* **Other technologies:** Identify other areas the team may need to investigate, such as React, backend technologies, databases, Git/GitHub, or AI/API integration.
+* **Other technologies:** Identify other areas the team may need to investigate.
 
 These are **learning responsibilities, not permanent job titles**. The goal is to help the team build the knowledge needed for the next Sprints.
 
@@ -101,7 +101,7 @@ Create some initial user stories using:
 
 Add the initial stories to your Trello Product Backlog.
 
-You do **not** need to complete the entire Product Backlog this afternoon. The backlog will evolve throughout Sprint 1.
+You do **not** need to complete the entire Product Backlog this afternoon. The backlog will evolve throughout the course.
 
 ---
 
@@ -123,29 +123,7 @@ Remember that the goal is to establish a way of working that you can inspect and
 
 ---
 
-### 7. Important Dates and Sprint Roadmap
-
-Keep the following progression in mind:
-
-**Sprint 1 — Prototype**
-
-Create and validate the product idea and develop the low-fidelity prototype.
-
-**Sprint 2 — React UI**
-
-Transform the prototype into a React-based user interface without application logic.
-
-**Sprint 3 — Functionality and Integration**
-
-Develop the application functionality, backend, AI components, and integrate the different parts of the application.
-
-Backend and frontend development can also be explored iteratively throughout the project as your team's knowledge develops.
-
-Plan your time accordingly and make sure that the team is prepared for the next Sprint.
-
----
-
-# Project Ideas
+# 7. Project Ideas
 
 **If you don't already have a project idea**, you can consider one of the following MERN full-stack + AI-powered applications.
 
@@ -203,3 +181,27 @@ You are also free to use your favorite LLM, such as ChatGPT, Claude, Gemini, or 
 * [Tailwind CSS From Scratch — Learn by Building Projects](https://metropolia.finna.fi/Record/nelli15.5680000000060713?sid=4846325380)
 * [Figma for UI/UX: Master Web Design in Figma](https://metropolia.finna.fi/Record/nelli15.5850000000052946?sid=4846325074)
 
+
+<!-- 
+---
+
+### Important Dates and Sprint Roadmap
+
+Keep the following progression in mind:
+
+**Sprint 1 — Prototype**
+
+Create and validate the product idea and develop the low-fidelity prototype.
+
+**Sprint 2 — React UI**
+
+Transform the prototype into a React-based user interface without application logic.
+
+**Sprint 3 — Functionality and Integration**
+
+Develop the application functionality, backend, AI components, and integrate the different parts of the application.
+
+Backend and frontend development can also be explored iteratively throughout the project as your team's knowledge develops.
+
+Plan your time accordingly and make sure that the team is prepared for the next Sprint. 
+-->
