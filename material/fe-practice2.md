@@ -42,7 +42,7 @@ Create a `CreditCard` component that displays a rectangle with the information c
 The component should take 8 props:
 
 - `type`: A string that can be `"Visa"` or `"Master Card"`
-- `number`: A string that is the number of the credit card. For security reasons, you should only display the 4 last digits 😉
+- `number`: A string that is the number of the credit card. For security reasons, you should only display the 4 last digits.
 - `expirationMonth`: A number that represents the month, between 1 and 12
 - `expirationYear`: A number that represents the year
 - `bank`: A string that represents the name of the bank

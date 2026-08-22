@@ -21,10 +21,10 @@
 3. Run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest intro-react-project --template react
+npx create-vite@latest intro-react-project --template react --eslint
 ```
 
-This command creates a new React project in a folder named `intro-react-project`.
+This command creates a new React project in a folder named `intro-react-project`. When prompted about installing dependencies, choose **No**. 
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
@@ -87,10 +87,10 @@ Before starting Part 2:
 3. Run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week2-fe-lab2 --template react
+npx create-vite@latest week2-fe-lab2 --template react --eslint
 ```
 
-This command creates a new React project in a folder named `week2-fe-lab2`.
+This command creates a new React project in a folder named `week2-fe-lab2`. When prompted about installing dependencies, choose **No**. 
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
@@ -181,10 +181,10 @@ Before starting Part 3:
 3. Run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week2-fe-lab3 --template react
+npx create-vite@latest week2-fe-lab3 --template react --eslint
 ```
 
-This command creates a new React project in a folder named `week2-fe-lab3`.
+This command creates a new React project in a folder named `week2-fe-lab3`. When prompted about installing dependencies, choose **No**.  
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
@@ -398,6 +398,17 @@ npm run dev
    ```
 
 4. Save `App.jsx` and check your browser to see your static components in action.
+
+
+### Note Regarding `Vite Linter`
+
+- For the first few weeks, we will use **ESLint**. After that, you can choose between **ESLint** and **Oxlint**.
+- If you want Vite to install dependencies immediately, you can use:
+
+  ```bash
+  npx create-vite@latest intro-react-project --template react --eslint --immediate
+  ```
+
 
 ### Optional:
 

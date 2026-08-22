@@ -20,10 +20,10 @@
 - Create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week2-fe-lab5 --template react
+npx create-vite@latest week2-fe-lab5 --template react --eslint
 ```
 
-This command creates a new React project in a folder named `week2-fe-lab5`.
+This command creates a new React project in a folder named `week2-fe-lab5`. When prompted about installing dependencies, choose **No**.  
 
 > If you receive error like this `npm ERR! enoent ENOENT: no such file or directory`, then one fix is to issue this command: `npm install npm -g` . 
 
@@ -196,8 +196,15 @@ In this part, you'll create a React component, pass `props` to it, and `console.
 
 Open your terminal and run:
 
+
+```bash
+npx create-vite@latest week2-fe-lab6 --template react --eslint
+```
+
+This command creates a new React project in a folder named `week2-fe-lab5`. When prompted about installing dependencies, choose **No**.  Then run the following commands manually:
+
+
 ```sh
-npx create-vite@latest week2-fe-lab6 --template react
 cd week2-fe-lab6
 npm install
 npm run dev
@@ -281,7 +288,7 @@ npm run dev
 
 ### Step 0: Project Setup
 
-> Follow the same steps as in Part 1 and APart 2, to set up a new React project, and name the folder `week2-fe-lab7`.
+> Follow the same steps as in Part 1 and Part 2, to set up a new React project, and name the folder `week2-fe-lab7`.
 
 
 #### Step 1: Create Components
@@ -435,3 +442,12 @@ Create the following React components in separate files:
 
 
 By incorporating JavaScript variables for dynamic content, this part showcases how JSX and props can be used with greater flexibility and ease of maintenance in a React application.
+
+### Note Regarding `Vite Linter`
+
+- For the first few weeks, we will use **ESLint**. After that, you can choose between **ESLint** and **Oxlint**.
+- If you want Vite to install dependencies immediately, you can use:
+
+  ```bash
+  npx create-vite@latest intro-react-project --template react --eslint --immediate
+  ```

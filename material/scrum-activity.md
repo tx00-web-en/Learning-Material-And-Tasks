@@ -1,5 +1,7 @@
 # Activity: Scrum
 
+-  When using scrum, who is the "team leader"?
+
 ### Part 1: INVEST Criteria
 
 1. Review these [user stories](./scrum-part1.md) for an e-commerce website.

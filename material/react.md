@@ -25,7 +25,7 @@ React is particularly well-suited for Single Page Applications (SPAs). An SPA is
 2. **Create a New React Project:**
    - Open your terminal or command prompt and run:
       ```sh
-      npx create-vite@latest  my-react-app --template react
+      npx create-vite@latest  my-react-app --template react --eslint
       ```
    - Replace `my-react-app` with your desired project name.
 
@@ -51,6 +51,7 @@ React is particularly well-suited for Single Page Applications (SPAs). An SPA is
         ➜  press h to show help
       ```
 
+<!--
 ### Vite vs create-react-app (CRA) 
 
 Instead of using [Vite](https://vite.dev/), you can use `create-react-app`[ (*CRA*)](https://github.com/facebook/create-react-app) for your React projects. Key differences to note:
@@ -58,7 +59,7 @@ Instead of using [Vite](https://vite.dev/), you can use `create-react-app`[ (*CR
 - **Entry file:** `CRA` uses `index.js`, while `vite` defaults to `main.jsx`.
 - **File extension:** `CRA` typically uses `.js`, whereas `vite`  uses `.jsx`.
 
-<!-- The key advantages of using `create-react-app` (*CRA*), especially those new to React, is that CRA provides a ready-to-use environment for React development, including bundling, linting, testing. `vite` serves a similar purpose and offers several advantages, especially in terms of build speed.  -->
+ The key advantages of using `create-react-app` (*CRA*), especially those new to React, is that CRA provides a ready-to-use environment for React development, including bundling, linting, testing. `vite` serves a similar purpose and offers several advantages, especially in terms of build speed.  -->
 
 
 ## Part 2: Organizing Components and Using JSX
@@ -261,7 +262,7 @@ The **`import`** statement, introduced in ES6, is the modern way of including mo
 
 #### 10: `npx` vs. `npm`
 
-Both **`npx`** and **`npm`** are command-line tools associated with Node.js, but they serve different purposes. **`npm`** is used to install packages and manage dependencies, while **`npx`** is a tool for executing Node.js packages without installing them globally. For example, when creating a new React project, `npx create-react-app` allows you to run `create-react-app` without needing to install it globally, ensuring you always use the latest version. Understanding when to use `npx` versus `npm` can streamline your development workflow.
+Both **`npx`** and **`npm`** are command-line tools associated with Node.js, but they serve different purposes. **`npm`** is used to install packages and manage dependencies, while **`npx`** is a tool for executing Node.js packages without installing them globally. For example, when creating a new React project, `npx create-vite@latest` allows you to run `create-vite@latest` without needing to install it globally, ensuring you always use the latest version. Understanding when to use `npx` versus `npm` can streamline your development workflow.
 
 #### 11: JSX (JavaScript XML)
 
