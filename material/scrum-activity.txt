@@ -204,7 +204,7 @@ Why?
 
 Now the real rescue begins.
 
-Your facilitator (teacher) will give your team **Trouble Cards**.
+Your facilitator will give your team **Trouble Cards**.
 
 Each Trouble Card introduces a new problem, question, or piece of information.
 
@@ -265,7 +265,7 @@ You can spend your coins during the rescue mission.
 
 **Ask for a Hint**
 
-The facilitator (teacher)  gives you a clue about the problem.
+The facilitator gives you a clue about the problem.
 
 ---
 
@@ -273,7 +273,7 @@ The facilitator (teacher)  gives you a clue about the problem.
 
 **Ask the Product Owner**
 
-You may ask the facilitator (teacher)  one question about the customer, product, or business.
+You may ask the facilitator one question about the customer, product, or business.
 
 You cannot ask:
 
@@ -314,12 +314,6 @@ or:
 If your challenge is useful, your team may earn additional coins.
 
 
-* *AI Assistance Policy
-  * You **may** use AI tools (e.g., ChatGPT, Claude) to help brainstorm ideas, refine user story wording, or draft acceptance criteria.
-  * **Using AI is FREE and does NOT cost any Scrum Coins.**
-  * **Spending Scrum Coins** is reserved exclusively for interacting with humans in the room (asking the Instructor/Product Owner, consulting another team, or challenging another team).
-  * *Note:* While AI can help suggest wording, your team is 100% responsible for defending your decisions during the final team challenge and presentation!
-
 ---
 
 # Part 7: Earn Scrum Coins
@@ -346,19 +340,15 @@ Successfully defend your decision when another team challenges you.
 
 Find a problem that another team missed.
 
-Your facilitator (teacher)  decides whether your team earns the coins.
+Your facilitator decides whether your team earns the coins.
 
 ---
 
 # Part 8: Trouble Cards
 
-You are provided with **8 Trouble Cards**, but some cards describe overlapping problems or target the same backlog item. 
+Your facilitator will distribute these cards.
 
-Your team must inspect all 8 cards, identify the redundancies, and select **exactly 5 distinct Trouble Cards** that represent 5 different problems across the backlog. 
-
-* **Do not solve two cards that target the exact same issue.**
-* Record your 5 chosen solutions in the table in **Part 9**.
-
+Do not look at all the cards at once if your facilitator is running the activity as a game.
 
 ---
 
@@ -756,7 +746,7 @@ Your presentation must include:
 
 # Scoring
 
-Your facilitator (teacher)  will score the teams.
+Your facilitator will score the teams.
 
 | Category                                 | Points |
 | ---------------------------------------- | -----: |

@@ -1,0 +1,735 @@
+# Theory: DEEP & INVEST
+
+## From Last Week to This Week
+
+Last week, you explored Scrum by reverse-engineering Airbnb.
+
+You identified users, created user stories, built a Product Backlog, prioritized backlog items, selected a Sprint Backlog, defined a Sprint Goal, and discussed how a Scrum team works during a Sprint.
+
+This week, we look at what happens **after a Product Backlog has been created**.
+
+A Product Backlog is not a finished list.
+
+As the team learns more about the product, users, and the problem they are trying to solve, the backlog changes.
+
+Some items become clearer.
+
+Some items become more important.
+
+Some items become less important.
+
+Some items need to be split.
+
+Some new items appear.
+
+Some items may no longer be needed.
+
+So before planning a future Sprint, the team needs to ask:
+
+> **Is our Product Backlog healthy?**
+
+And:
+
+> **Are the individual backlog items good enough to work on?**
+
+Two useful ideas help us answer these questions:
+
+# DEEP and INVEST
+
+---
+
+# 1. DEEP — A Healthy Product Backlog
+
+**DEEP** describes four characteristics of a good Product Backlog:
+
+* **D — Detailed appropriately**
+* **E — Estimated**
+* **E — Emergent**
+* **P — Prioritized**
+
+DEEP is about looking at the **Product Backlog as a whole**.
+
+Think of DEEP as a way to inspect the backlog before making decisions about future Sprints.
+
+---
+
+## D — Detailed Appropriately
+
+Not every item in the Product Backlog needs the same amount of detail.
+
+Items that are likely to be worked on soon should contain enough information for the team to understand and discuss them.
+
+Items that are further down the backlog can remain less detailed.
+
+For example:
+
+### Near the top of the backlog
+
+> As a customer, I want to receive an order confirmation after placing an order, so that I know my order was successfully received.
+
+This item may need:
+
+* a clear description
+* acceptance criteria
+* an estimate
+* discussion about what "confirmation" means
+
+### Further down the backlog
+
+> As a customer, I want to save favourite restaurants, so that I can find them more easily later.
+
+This might not need detailed specifications yet.
+
+Why?
+
+Because the team may not work on it for several Sprints.
+
+By the time they get to it, they may have learned new information and the story may change.
+
+### The important idea
+
+> **More detail is not always better.**
+
+The goal is:
+
+> **The right amount of detail at the right time.**
+
+---
+
+# 2. E — Estimated
+
+Backlog items should have some understanding of their relative effort.
+
+Teams often use **story points** to estimate backlog items.
+
+Story points do not represent exact hours.
+
+Instead, they help the team compare the relative:
+
+* effort
+* complexity
+* risk
+* uncertainty
+
+of different items.
+
+For example:
+
+| Story                      | Estimate |
+| -------------------------- | -------: |
+| Display restaurant details |        3 |
+| Send order confirmation    |        3 |
+| Process payment            |        5 |
+| Complete checkout          |       13 |
+
+A 13-point story is not necessarily "four times as much time" as a 3-point story.
+
+The numbers help the team communicate about the **relative size and complexity** of the work.
+
+### Important question
+
+If the team cannot understand what a story actually means, can they estimate it confidently?
+
+Usually, a story needs more discussion or refinement first.
+
+---
+
+# 3. E — Emergent
+
+A Product Backlog is **not static**.
+
+It changes as the team learns.
+
+For example, imagine that QuickBite's team discovers:
+
+> "Customers are abandoning checkout because they cannot see delivery costs before placing an order."
+
+This is new information.
+
+The Product Owner and team may decide to:
+
+* add a new backlog item
+* change an existing story
+* change priorities
+* split an item
+* remove something that is no longer important
+
+The Product Backlog therefore **emerges over time**.
+
+This is important because we cannot know everything about the product at the beginning.
+
+### Remember
+
+> **The Product Backlog is a living, evolving list.**
+
+Do not spend a lot of time perfectly specifying work that may change before the team ever develops it.
+
+---
+
+# 4. P — Prioritized
+
+The Product Backlog should be ordered according to what is most important.
+
+The Product Owner is responsible for ordering the Product Backlog, considering factors such as:
+
+* customer value
+* business value
+* importance
+* risk
+* dependencies
+* new information
+
+Imagine a Product Owner says:
+
+> "Everything is HIGH priority."
+
+That does not help the team decide what to work on first.
+
+A useful backlog should help answer:
+
+> **"If we can only work on a few things next, which things should we choose?"**
+
+For example:
+
+| Priority | Backlog Item               |
+| -------- | -------------------------- |
+| 1        | Place an order             |
+| 2        | Pay for an order           |
+| 3        | Receive order confirmation |
+| 4        | Cancel an order            |
+| 5        | Save favourite restaurants |
+
+The exact order will depend on the product and the decisions of the Product Owner.
+
+The important point is that the backlog should be **ordered**, not simply a collection of items.
+
+---
+
+# DEEP in One Picture
+
+Think about DEEP as asking four questions about the **whole Product Backlog**:
+
+| DEEP                           | Question                                               |
+| ------------------------------ | ------------------------------------------------------ |
+| **D — Detailed appropriately** | Do important/near-term items have enough detail?       |
+| **E — Estimated**              | Do we have useful estimates?                           |
+| **E — Emergent**               | Can the backlog evolve as we learn?                    |
+| **P — Prioritized**            | Is the backlog ordered according to what matters most? |
+
+So:
+
+> **DEEP = Product Backlog health**
+
+---
+
+# 5. INVEST — A Healthy Backlog Item
+
+DEEP looks at the whole Product Backlog.
+
+Now we zoom in.
+
+Take **one user story**.
+
+Is this particular story good enough for the team to work with?
+
+The **INVEST** criteria help us think about that.
+
+INVEST stands for:
+
+* **I — Independent**
+* **N — Negotiable**
+* **V — Valuable**
+* **E — Estimable**
+* **S — Small**
+* **T — Testable**
+
+---
+
+# I — Independent
+
+A good user story should be as independent as reasonably possible from other stories.
+
+For example, imagine we have:
+
+> Story A: As a customer, I want to add a meal to my cart.
+
+> Story B: As a customer, I want to place an order from my cart.
+
+Story B depends to some extent on the ability to have a cart.
+
+Dependencies are not automatically proof that a story is "bad".
+
+Instead, the team should ask:
+
+> **Can we structure the work so that stories can be developed and delivered with as little unnecessary dependency as possible?**
+
+Independence gives the team more flexibility when planning and ordering work.
+
+---
+
+# N — Negotiable
+
+A user story is **not a detailed technical contract**.
+
+The story describes the need and value, but the details can be discussed.
+
+For example:
+
+> As a customer, I want to receive an order confirmation so that I know my order was successfully received.
+
+This does not necessarily specify:
+
+* exactly how the confirmation looks
+* whether it is an email or notification
+* the exact UI design
+* the technical implementation
+
+Those details can be discussed between the Product Owner and Developers.
+
+### Remember
+
+> **The story describes what is valuable; the details can be negotiated.**
+
+---
+
+# V — Valuable
+
+A good story should provide value to a user, customer, stakeholder, or the product.
+
+Compare:
+
+### Weak
+
+> As a customer, I want a blue button.
+
+This describes a UI element, but the value is unclear.
+
+### Better
+
+> As a customer, I want to place my order, so that I can purchase my food.
+
+The second story describes a user outcome.
+
+Ask:
+
+> **Who benefits from this?**
+
+and:
+
+> **What problem does it solve?**
+
+If nobody can explain the value, the story deserves more discussion.
+
+---
+
+# E — Estimable
+
+The team should understand the story well enough to estimate it.
+
+Consider:
+
+> As a customer, I want the best possible ordering experience.
+
+How big is that?
+
+Nobody really knows.
+
+Compare:
+
+> As a customer, I want to receive an order confirmation after placing an order.
+
+This is much easier to discuss and estimate.
+
+If a story is difficult to estimate, ask:
+
+> **Do we understand what we are actually building?**
+
+The problem might be that the story is:
+
+* too vague
+* too large
+* missing important information
+* uncertain
+* hiding several different pieces of work
+
+---
+
+# S — Small
+
+A story should be small enough to be completed within a Sprint.
+
+Consider:
+
+> As a restaurant owner, I want to manage my restaurant profile, menu, prices, opening hours, delivery areas, promotions, and photos.
+
+This is probably too much for one story.
+
+We could consider splitting it into smaller user-focused stories.
+
+For example:
+
+> As a restaurant owner, I want to update my restaurant information, so that customers see accurate information.
+
+> As a restaurant owner, I want to manage my menu, so that customers can see the food I offer.
+
+> As a restaurant owner, I want to update my opening hours, so that customers know when I am available.
+
+### Important
+
+Do not split a story simply because it contains several technical tasks.
+
+The goal is to create **smaller valuable pieces of work**, not just smaller technical tasks.
+
+---
+
+# T — Testable
+
+A good story should allow the team to determine whether it has been successfully completed.
+
+Consider:
+
+> As a customer, I want the app to be beautiful.
+
+How do we know when this is done?
+
+It is difficult to test objectively.
+
+Compare:
+
+> As a customer, I want to see the total cost of my order before confirming payment, so that I know how much I will pay.
+
+This gives us something we can verify.
+
+We can define acceptance criteria such as:
+
+* the total is displayed
+* the total includes the selected items
+* delivery cost is included
+* the customer can see the total before confirming payment
+
+### Remember
+
+> **If we cannot explain how we would test it, the story probably needs more discussion.**
+
+---
+
+# INVEST in One Picture
+
+When looking at an **individual backlog item**, ask:
+
+| INVEST              | Question                                                             |
+| ------------------- | -------------------------------------------------------------------- |
+| **I — Independent** | Can this be developed/delivered with limited unnecessary dependency? |
+| **N — Negotiable**  | Can the details be discussed and refined?                            |
+| **V — Valuable**    | Is the user/customer value clear?                                    |
+| **E — Estimable**   | Does the team understand it well enough to estimate it?              |
+| **S — Small**       | Is it small enough for a Sprint?                                     |
+| **T — Testable**    | Can we determine whether it is complete?                             |
+
+So:
+
+> **INVEST = individual backlog item health**
+
+---
+
+# 6. DEEP vs INVEST
+
+This distinction is important.
+
+Imagine we are looking at the QuickBite Product Backlog.
+
+### Looking at the whole backlog:
+
+> Are the items appropriately detailed?
+
+> Are they estimated?
+
+> Can the backlog change?
+
+> Are they prioritized?
+
+We are thinking about:
+
+# DEEP
+
+---
+
+### Looking at one story:
+
+> Is it Independent?
+
+> Is it Negotiable?
+
+> Is it Valuable?
+
+> Is it Estimable?
+
+> Is it Small?
+
+> Is it Testable?
+
+We are thinking about:
+
+# INVEST
+
+---
+
+## A useful mental model
+
+Think of a camera.
+
+### Zoom out 📷
+
+Look at the whole Product Backlog.
+
+**DEEP**
+
+↓
+
+### Zoom in 🔍
+
+Look at one backlog item.
+
+**INVEST**
+
+↓
+
+### Zoom back out 📷
+
+Decide:
+
+> **Which items should we take into the next Sprint?**
+
+---
+
+# 7. DEEP and INVEST Work Together
+
+DEEP and INVEST are not competing ideas.
+
+They work together.
+
+Imagine this Product Backlog:
+
+| Priority | Story                      | Points |
+| -------- | -------------------------- | -----: |
+| 1        | Place an order             |      8 |
+| 2        | Complete checkout          |     13 |
+| 3        | Receive order confirmation |      3 |
+| 4        | Save favourite restaurants |      5 |
+
+The backlog might be **prioritized and estimated**.
+
+That is part of DEEP.
+
+But then we inspect:
+
+> **"Complete checkout"**
+
+and discover that it actually includes:
+
+* entering delivery information
+* selecting payment
+* calculating delivery cost
+* confirming the order
+* displaying confirmation
+
+It might not be **Small**.
+
+It might also be difficult to **Estimate** and **Test**.
+
+So we improve the individual story.
+
+For example, we might split it into smaller valuable stories.
+
+This is how DEEP and INVEST work together.
+
+---
+
+# 8. A Backlog Is Not Perfect
+
+A common misunderstanding is:
+
+> **"We need to make the entire Product Backlog perfect before starting development."**
+
+That is not the goal.
+
+A healthy backlog evolves.
+
+Items near the top generally need more attention because they are more likely to be developed soon.
+
+Items further down can remain less detailed because priorities and understanding may change.
+
+So the goal is not:
+
+> **Perfect backlog**
+
+The goal is:
+
+> **A backlog that supports good decisions.**
+
+---
+
+# 9. From Backlog to Sprint
+
+Eventually, the team needs to decide:
+
+> **What should we work on next?**
+
+This is where the ideas come together.
+
+The Product Backlog contains many possible items.
+
+The team considers:
+
+* priority
+* value
+* dependencies
+* estimates
+* available capacity
+* whether items are understood well enough
+* whether the items are small enough
+* whether they can be tested
+* the Sprint Goal
+
+Then the team selects work for the Sprint Backlog.
+
+---
+
+# The Big Question
+
+When preparing for a Sprint, do not simply ask:
+
+> **"Which stories have the highest priority?"**
+
+Ask:
+
+> **"Which valuable items are ready enough for us to make a good Sprint decision?"**
+
+This is the thinking you will practice in today's activity.
+
+---
+
+# 10. QuickBite Example
+
+Imagine the Product Owner gives you this backlog:
+
+| # | Backlog Item                                                                                                                        | Priority | Estimate |
+| - | ----------------------------------------------------------------------------------------------------------------------------------- | -------- | -------: |
+| 1 | As a customer, I want to see restaurant details so that I can decide where to order.                                                | High     |        5 |
+| 2 | As a customer, I want to complete checkout.                                                                                         | High     |       13 |
+| 3 | As a customer, I want the app to be beautiful and easy to use.                                                                      | High     |        ? |
+| 4 | As a restaurant owner, I want to manage my restaurant profile, menu, prices, opening hours, delivery areas, promotions, and photos. | Medium   |       13 |
+| 5 | As a customer, I want to pay by card.                                                                                               | High     |        5 |
+
+Before selecting Sprint 2, ask:
+
+### About the backlog
+
+**DEEP**
+
+* Is it appropriately detailed?
+* Is it estimated?
+* Can it change?
+* Is it prioritized?
+
+### About individual stories
+
+**INVEST**
+
+* Is it Independent?
+* Is it Negotiable?
+* Is it Valuable?
+* Is it Estimable?
+* Is it Small?
+* Is it Testable?
+
+You may discover that some items need to be changed before you would confidently take them into a Sprint.
+
+---
+
+# 11. What Happens When New Information Arrives?
+
+Imagine that during Sprint 1, the team discovers:
+
+> **Customers are abandoning checkout because delivery costs are unclear.**
+
+What should happen?
+
+The answer is not necessarily:
+
+> "Ignore the backlog because Sprint 1 is finished."
+
+Instead, the team should inspect what has been learned.
+
+The Product Backlog may change.
+
+Perhaps:
+
+* an existing item becomes more important
+* a new backlog item is added
+* another item moves down
+* an existing story is rewritten
+* a story is split
+* an item becomes unnecessary
+
+This is **Emergent**.
+
+The backlog reflects what the team currently understands.
+
+---
+
+# 12. From Theory to Practice
+
+In today's activity, you will become the team responsible for **QuickBite's Sprint 2**.
+
+Your Product Backlog contains problems.
+
+You will receive **Trouble Cards** that introduce new situations.
+
+You will have a limited **Scrum Budget**.
+
+Your team will need to:
+
+### FIND
+
+Find the problem.
+
+### EXPLAIN
+
+Connect it to DEEP or INVEST.
+
+### FIX
+
+Improve the backlog or story.
+
+### DEFEND
+
+Explain why your decision makes sense.
+
+### DECIDE
+
+Choose what you would take into Sprint 2.
+
+---
+
+# Final Takeaway
+
+Remember these three questions:
+
+### 1. Looking at the whole backlog:
+
+> **Is our Product Backlog DEEP?**
+
+### 2. Looking at one story:
+
+> **Is this backlog item INVEST?**
+
+### 3. Preparing for a Sprint:
+
+> **Would we take this item into the next Sprint?**
+
+That is the connection:
+
+# DEEP → INVEST → Sprint Decision
+
+**Healthy Backlog → Healthy Stories → Better Sprint Decisions**

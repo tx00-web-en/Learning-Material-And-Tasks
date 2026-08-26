@@ -1,209 +1,282 @@
-# Theory: Scrum ...
+# Theory: Product Backlog Management (DEEP & INVEST)
 
-- DEEP principle
-- INVEST principle
-- DEEP vs INVEST
-- Misc.
-  - Story points
-  - Examples
+## Overview
 
----
-## DEEP principle
+In Scrum, managing requirements is an iterative process. The Product Backlog is not an exhaustive, static specification; it evolves as the team and stakeholders gain knowledge through development and user feedback. 
 
-A good product backlog has four characteristics:
-- **D**etailed appropriately
-- **E**stimated
-- **E**mergent
-- **P**rioritized
-
-1. **Detailed Appropriately**  As backlog items approach sprint readiness, they should contain enough information for the development team to proceed. Items lower in priority, however, should remain less detailed to save time and avoid rework, given the backlog’s evolving nature.
-
-2. **Emergent:** The details of user stories and items should emerge over time, meaning they can evolve and be refined as the team gains a better understanding. It's not necessary for all details to be known upfront.
-
-3. **Estimated:** The product backlog items should have some level of estimation associated with them, typically in terms of effort. This helps the team in planning and prioritization.
-
-4. **Prioritized:** The product backlog should be ordered by priority, with the most valuable and important items at the top. This helps the team focus on what's most critical for the product.
-
-In Scrum, "DEEP" is an acronym that stands for *Detailed appropriately*, *Estimated*, *Emergent*, and *Prioritized*. The DEEP principle helps ensure that the product backlog remains a dynamic and well-organized list of items that can be effectively taken into sprints for development. It emphasizes that backlog items should not be overly detailed upfront, as they can evolve and be refined as the project progresses and more information becomes available.
+To maintain an effective backlog and prepare items for development, Scrum teams rely on two complementary quality frameworks:
+- **DEEP**: Evaluates the health and structure of the **overall Product Backlog** (Macro level).
+- **INVEST**: Evaluates the quality and readiness of **individual Product Backlog Items** (Micro level).
 
 ---
-## INVEST
 
-In the context of Scrum and Agile software development, "INVEST" is an acronym that represents a set of criteria for writing good user stories or product backlog items. These criteria help ensure that the stories are well-structured, understandable, and valuable for the development team. Each letter in "INVEST" stands for a specific characteristic:
+## 1. The DEEP Principle (Product Backlog Level)
 
-1. **Independent:** User stories should be independent of each other, meaning they can be developed, tested, and delivered without relying on the completion of other stories. This promotes flexibility and efficient development.
+The DEEP framework defines four foundational characteristics of a well-maintained Product Backlog:
 
-2. **Negotiable:** User stories should not be overly detailed or rigid. They should be open to negotiation and discussion between the development team and the product owner to refine and adapt them as needed.
+* **D — Detailed appropriately**
+* **E — Estimated**
+* **E — Emergent**
+* **P — Prioritized**
 
-3. **Valuable:** Each user story should deliver value to the end-users or stakeholders of the product. It should address a specific need or provide a benefit that contributes to the overall goals of the project.
+```
++-------------------------------------------------------------------+
+|                        PRODUCT BACKLOG                            |
+|                                                                   |
+|   [Top Priority]    High Detail  |  Estimated  | Ready for Sprint |
+|         |                                                         |
+|         v           Medium Detail|  Estimated  | Needs Refinement |
+|                                                                   |
+|   [Low Priority]    Low Detail   |  Unestimated| Long-term Vision |
++-------------------------------------------------------------------+
+```
 
-4. **Estimable:** User stories should be clear enough that the development team can estimate the effort required to complete them. This helps with sprint planning and prioritization.
+### 1.1 Detailed Appropriately
+A Product Backlog should not have uniform detail across all items. Instead, detail is applied **just-in-time**:
+* **Near-term items (Top of Backlog):** Items selected for upcoming Sprints require precise descriptions, acceptance criteria, and clear scope so the team can commit to them.
+* **Long-term items (Bottom of Backlog):** Items scheduled far in the future should remain high-level concepts or epics. Over-specifying low-priority items leads to wasted effort, as requirements frequently change before development begins.
 
-5. **Small:** User stories should be small enough to fit within a single sprint, typically ranging from a few days to a couple of weeks in duration. Smaller stories are easier to manage and track progress on.
+### 1.2 Estimated
+Product Backlog Items must include relative estimates of effort and complexity (typically expressed in **Story Points**). 
+* Top-of-backlog items require reliable estimates to facilitate Sprint Planning and capacity forecasting.
+* Bottom-of-backlog items may have coarse, high-level estimates or remain unestimated until they move upward.
+* An inability to estimate an item indicates ambiguity or excessive size, requiring further backlog refinement.
 
-6. **Testable:** Each user story should have clear acceptance criteria that define when the story is complete and meets the intended requirements. This ensures that the story can be tested and validated.
+### 1.3 Emergent
+The Product Backlog is a living artifact. It is continuously updated based on:
+* Empirical feedback from Sprint Reviews.
+* Newly discovered technical constraints.
+* Changing market conditions and user research.
 
-By following the INVEST criteria, teams can create user stories that are well-structured, manageable, and focused on delivering value to the product. These criteria are a valuable part of Agile development practices and help maintain a healthy product backlog.
+Items are added, removed, split, rewritten, or re-evaluated throughout the entire product lifecycle.
+
+### 1.4 Prioritized
+The Product Backlog must be sequentially ordered based on value, risk, urgency, and dependencies.
+* **The "All High Priority" Anti-Pattern:** Designating every item as "High Priority" provides no actionable guidance. The backlog must represent a single, ordered list to clearly signal what the team should build next.
+
+### DEEP Inspection Matrix
+
+| Attribute | Inspection Question | Anti-Pattern |
+| :--- | :--- | :--- |
+| **Detailed appropriately** | Do high-priority items have clear acceptance criteria while low-priority items remain concise? | Writing comprehensive technical specifications for items scheduled months away. |
+| **Estimated** | Are near-term items sized using a relative estimation model? | Committing to vague stories with unknown scope. |
+| **Emergent** | Does the backlog change based on Sprint learnings and user feedback? | Treating the backlog as a fixed scope contract. |
+| **Prioritized** | Is there a distinct, sequential ordering of work? | Labeling all backlog items with the same priority tier. |
 
 ---
-## DEEP vs INVEST
 
-- The *DEEP* acronym is used specifically to guide the management of the **product backlog** in Scrum. Each part of *DEEP* (Detailed Appropriately, Estimated, Emergent, Prioritized) describes key qualities that help keep the product backlog organized and effective:
-  - **Detailed Appropriately**: Items near the top are refined with more detail, so they’re ready for development.
-  - **Estimated**: Items have estimates for effort, usually in [story points](#story-points).
-  - **Emergent**: The backlog is a "living" document, constantly evolving as more information becomes available.
-  - **Prioritized**: Items are ordered by priority, ensuring the most valuable work is done first.
-- The *INVEST* criteria, on the other hand, apply to **individual user stories** or **product backlog items (PBIs)** to ensure they are well-defined and ready for development. *INVEST* helps ensure that each item in the product backlog is actionable and valuable for the team to work on:
-  - **Independent**: Each story should be self-contained so it can be developed and delivered independently.
-  - **Negotiable**: Stories are not contracts; details can evolve based on discussion.
-  - **Valuable**: Each story should deliver value to the customer.
-  - **Estimable**: Stories must be clear enough to estimate effort.
-  - **Small**: Stories should be small enough to be completed in a single sprint.
-  - **Testable**: There should be clear acceptance criteria to confirm when the story is done.
+## 2. The INVEST Criteria (Individual Story Level)
 
-In short:
-- *DEEP* is for structuring the **whole product backlog**.
-- *INVEST* is for creating **individual backlog items** that are clear and ready for work. 
+While DEEP inspects the backlog as an aggregate entity, the **INVEST** criteria evaluate whether an individual User Story or Product Backlog Item (PBI) is sufficiently defined to be taken into a Sprint.
 
-Both together help Scrum teams maintain a high-quality backlog that aligns well with agile values and Scrum principles.
+* **I — Independent**
+* **N — Negotiable**
+* **V — Valuable**
+* **E — Estimable**
+* **S — Small**
+* **T — Testable**
 
-----
-## Misc.
+### 2.1 Independent
+Stories should be as self-contained as reasonably possible to avoid tight coupling.
+* **Nuance:** Absolute zero dependency across complex systems is rare. The goal is to **minimize unnecessary dependencies** so stories can be reordered, developed, and deployed with maximum scheduling flexibility.
 
-### Story Points
+### 2.2 Negotiable
+A user story is **not a rigid contract or a detailed specification**. It represents a statement of intent and business value.
+* The specific implementation details, technical architecture, and interface design remain open to collaboration between the Product Owner and the Developers during refinement and planning.
 
-**Story points** are a unit of measure used in agile methodologies to estimate the effort and complexity of a particular task, feature, or user story. Instead of measuring time (like hours or days), story points assess **relative complexity** based on factors like:
+### 2.3 Valuable
+Every story must deliver tangible value to a user, customer, or internal stakeholder.
+* Focus on the **user outcome** rather than low-level technical or cosmetic tasks.
+* *Example of Low Value:* "Add a database column." (Purely technical task).
+* *Example of High Value:* "Persist order notes so the restaurant receives custom instructions." (Delivers functional value).
 
-1. **Effort Required**: How much work will it take to complete?
-2. **Complexity**: How challenging or intricate is the task?
-3. **Risk and Uncertainty**: Are there unknowns or potential challenges?
+### 2.4 Estimable
+The development team must understand the work well enough to gauge its relative size, complexity, and risk. A story is difficult to estimate if it:
+* Lacks clear acceptance criteria.
+* Is too large or vaguely defined.
+* Contains significant unresolved technical unknowns (which may require an exploratory Spike first).
 
-- Why Story Points Instead of Time?
-Story points allow teams to estimate without the pressure of setting exact deadlines. Since teams differ in skills and experience, story points provide a **relative measure** that can be more consistent and flexible across sprints.
+### 2.5 Small (Vertical Slicing)
+Stories must be small enough to be fully designed, implemented, and tested within a single Sprint.
+* **Vertical Slicing Rule:** Split stories by **user value**, not by architectural layers (e.g., do not split into separate "Frontend", "Backend", and "Database" stories). Each split story should ideally deliver a thin, end-to-end slice of working software.
 
-- How Do Teams Assign Story Points?
-Teams typically use a **scale** for story points, with the **Fibonacci sequence** (1, 2, 3, 5, 8, 13...) being popular. Smaller numbers represent simpler tasks, while higher numbers represent tasks with greater complexity and uncertainty.
+### 2.6 Testable
+A story must have clear, objective **Acceptance Criteria** that define what constitutes completion.
+* Subjective requirements (e.g., *"The checkout must be fast and easy"*) are not testable.
+* Objective criteria (e.g., *"Checkout must complete in under 3 seconds on standard mobile connections"*) allow automated and manual validation.
 
-For example:
+### INVEST Inspection Matrix
 
-- **1 Story Point**: Very simple, straightforward task.
-- **3 Story Points**: Slightly more complex, requires moderate effort.
-- **8 Story Points**: Complex, significant effort needed.
-- **13 Story Points**: Very complex, high uncertainty, and risk.
+| Criterion | Inspection Question | Anti-Pattern |
+| :--- | :--- | :--- |
+| **Independent** | Can this item be prioritized and delivered without blocking or being blocked? | Chaining stories together in a strict, multi-sprint dependency sequence. |
+| **Negotiable** | Is the story focused on the problem to solve rather than prescriptive implementation? | Treating the story description as an unchangeable technical specification. |
+| **Valuable** | Does the item deliver a clear functional outcome to the user/business? | Creating stories that only produce architectural artifacts without visible user value. |
+| **Estimable** | Do developers have sufficient clarity to assign a relative effort score? | Accepting ambiguous or open-ended requirements into a sprint. |
+| **Small** | Can the story be completed comfortably within a single sprint? | Pulling multi-week epics directly into a sprint backlog. |
+| **Testable** | Are there verifiable conditions to determine when the story is "Done"? | Using subjective phrases like "the UI should look good." |
 
-How Are Story Points Useful?
+---
 
-  - They help teams understand and compare the difficulty of tasks relative to each other.
-  - They allow the team to **plan sprints and velocity** (the average number of story points completed in a sprint).
-  - They support a focus on **value and progress** rather than exact time estimates, helping the team adapt and improve over time. 
+## 3. DEEP vs. INVEST: Comparison and Interaction
 
-In essence, story points provide a flexible, team-centered approach to estimating work.
+```
+       MACRO VIEW (DEEP)                     MICRO VIEW (INVEST)
++-------------------------------+       +-------------------------------+
+|  Evaluates: Entire Backlog    |  -->  |  Evaluates: Single PBI        |
+|  Focus: Organization & Flow   |       |  Focus: Readiness for Work    |
+|  Scope: Living Artifact       |       |  Scope: Single Sprint Context |
++-------------------------------+       +-------------------------------+
+```
 
-### Example User stories that meet the INVEST criteria:
+### 3.1 Structural Comparison
 
-1. As a new user, I want to easily sign up for an account using my email and password, so that I can start shopping online.
-   - **Reasons:**
-     - Independent: This user story focuses on a specific action (user registration) and is not dependent on other stories.
-     - Negotiable: Details about how the signup process will work can be discussed and refined.
-     - Valuable: Creating accounts is a fundamental feature of the system that adds value for users.
-     - Estimable: The scope and effort required to implement user registration can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – successful registration enables user access.
+| Dimension | DEEP | INVEST |
+| :--- | :--- | :--- |
+| **Primary Scope** | The entire Product Backlog (Macro). | Individual Product Backlog Items (Micro). |
+| **Focus** | Structural health, prioritization, and lifecycle management. | Definition quality, scope boundaries, and delivery feasibility. |
+| **Primary Owner** | Product Owner (curated collaboratively with the team). | Product Owner and Developers during refinement. |
+| **Target Outcome** | An organized, adaptable, and prioritized roadmap of work. | Actionable, well-scoped stories ready for Sprint Planning. |
 
-2. As a registered user, I want to log in quickly using my email and password, ensuring a secure and personalized shopping experience.
-   - **Reasons:**
-     - Independent: This user story focuses on a specific action (user login) and is not dependent on other stories.
-     - Negotiable: Details about how the login process will work can be discussed and refined.
-     - Valuable: Quick and secure login enhances the user experience.
-     - Estimable: The scope and effort required to implement user login can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – successful login grants user access.
+### 3.2 Operational Interaction
+DEEP and INVEST work together during the Backlog Refinement process:
+1. **Apply DEEP:** The Product Owner ensures the overall backlog is ordered and that upcoming items reflect current priorities.
+2. **Apply INVEST:** The team inspects individual high-priority items. If an item fails INVEST (e.g., it is too large or ambiguously defined), the team splits and clarifies it.
+3. **Sprint Planning Decision:** Only items that satisfy both strategic priority (DEEP) and operational readiness (INVEST) are moved into the Sprint Backlog.
 
-3. As a user, I expect clear error messages if I enter incorrect login credentials or try to register with an existing email.
-   - **Reasons:**
-     - Independent: This user story focuses on handling specific error cases and is not dependent on other stories.
-     - Negotiable: Specific error messages and handling can be discussed and refined.
-     - Valuable: Clear error messages improve user understanding and reduce frustration.
-     - Estimable: The effort required to implement error handling can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – incorrect credentials trigger appropriate error messages.
+---
 
-4. As a registered user, I want the option to stay logged in, so that I don't have to enter my credentials every time I visit the website.
-   - **Reasons:**
-     - Independent: This user story focuses on session management and is not dependent on other stories.
-     - Negotiable: Details about session management and staying logged in can be discussed and refined.
-     - Valuable: Persistent login enhances user convenience.
-     - Estimable: The effort required to implement persistent login can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users remain logged in across visits.
+## 4. Estimation and Story Points
 
-5. As a user, I want to see a "Forgot Password" option that allows me to reset my password by receiving a link via email.
-   - **Reasons:**
-     - Independent: This user story focuses on password recovery and is not dependent on other stories.
-     - Negotiable: Details about the password recovery process can be discussed and refined.
-     - Valuable: Password recovery provides a way for users to regain access to their accounts.
-     - Estimable: The effort required to implement password recovery can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users receive a password reset link.
+### 4.1 Definition
+**Story Points** are an abstract unit of measure used to estimate the relative effort, complexity, and risk associated with completing a Product Backlog Item. 
 
-For the rest of the user stories, let's continue the evaluation:
+Unlike time-based estimates (e.g., developer hours), story points capture three combined factors:
+1. **Effort Required:** The volume of work involved.
+2. **Complexity:** The technical difficulty or intricacy of the solution.
+3. **Risk and Uncertainty:** Unknown architectural factors, external dependencies, or ambiguous edge cases.
 
-6. As a logged-in user, I want to browse products, view detailed product pages, and easily add items to my shopping cart.
-   - **Reasons:**
-     - Independent: This user story focuses on browsing and adding products to the cart without dependency.
-     - Negotiable: Details about browsing, viewing, and adding can be discussed and refined.
-     - Valuable: Core shopping functionality that adds value for users.
-     - Estimable: The effort required for browsing and adding products can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – products can be added to the cart.
+### 4.2 Relative Sizing and the Fibonacci Scale
+Agile teams use non-linear scales—most commonly the **Fibonacci sequence** (1, 2, 3, 5, 8, 13, 21...)—to size stories. This reflects the principle that as work becomes larger, uncertainty increases non-linearly:
 
-7. As a shopper, I want to see a summary of my cart with product names, quantities, and total cost before proceeding to checkout.
-   - **Reasons:**
-     - Independent: This user story involves displaying a cart summary and is not dependent on other stories.
-     - Negotiable: Details about the cart summary and layout can be discussed and refined.
-     - Valuable: Cart summary provides a clear overview of selected items.
-     - Estimable: The effort required to display the cart summary can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – cart summary is displayed accurately.
+* **1–3 Points:** Small, well-understood tasks with low complexity.
+* **5–8 Points:** Moderate effort and complexity requiring clear coordination.
+* **13+ Points:** Large epics with high uncertainty. Items of this size should be split into smaller vertical stories before sprint commitment.
 
-8. As a user, I want to have the option to adjust the quantity of products in my cart or remove items entirely before finalizing my purchase.
-   - **Reasons:**
-     - Independent: This user story involves cart manipulation and is not dependent on other stories.
-     - Negotiable: Details about adjusting quantities and removing items can be discussed and refined.
-     - Valuable: Cart manipulation options enhance user control.
-     - Estimable: The effort required for cart adjustments can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users can change quantities and remove items.
+### 4.3 Practical Utility
+* **Decoupled from Individual Speeds:** Relative sizing remains stable regardless of whether a senior or junior developer implements the item.
+* **Velocity Tracking:** Sizing stories enables teams to calculate their historical **Velocity** (average story points completed per sprint), facilitating realistic long-term planning.
 
-9. As a customer, I expect a clear indication of products that are out of stock or unavailable for purchase.
-   - **Reasons:**
-     - Independent: This user story involves indicating product availability and is not dependent on other stories.
-     - Negotiable: Details about how out-of-stock products are displayed can be discussed and refined.
-     - Valuable: Clear product availability information prevents frustration for customers.
-     - Estimable: The effort required to indicate availability can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – out-of-stock products are appropriately indicated.
+---
 
-10. As a shopper, I need the option to continue shopping after adding items to my cart, without losing the contents of my cart.
-    - **Reasons:**
-      - Independent: This user story focuses on session management and continuity of shopping.
-      - Negotiable: Details about session management and cart continuity can be discussed and refined.
-      - Valuable: Continuous shopping without cart loss enhances user experience.
-      - Estimable: The effort required to manage sessions and cart continuity can be estimated.
-      - Small: The user story has a clear and limited scope.
-      - Testable: Success criteria are evident – users can continue shopping without cart loss.
+## 5. Practical User Story Examples (INVEST Evaluation)
 
-11. As a user, I want to see real-time updates to my cart total and available discounts as I add or remove products.
-    - **Reasons:**
-      - Independent: This user story involves real-time updates to the cart summary.
-      - Negotiable: Details about updating totals and discounts can be discussed and refined.
-      - Valuable: Real-time updates provide instant feedback during cart manipulation.
-      - Estimable: The effort required for real-time updates can be estimated.
-      - Small: The user story has a clear and limited scope.
-      - Testable: Success criteria are evident – cart totals and discounts
+Below are reference user stories evaluated against the INVEST criteria:
 
-### Links
+### Story 1: User Registration
+> *As a new user, I want to sign up for an account using my email and password, so that I can access personalized shopping features.*
+* **Independent:** Focuses entirely on account creation without requiring external feature completion.
+* **Negotiable:** Password security rules and verification workflows can be discussed during refinement.
+* **Valuable:** Enables user identification and persistent customer profiles.
+* **Estimable:** Common architectural pattern with well-understood effort requirements.
+* **Small:** Scope is constrained to basic account creation.
+* **Testable:** Validated by testing successful account storage and credential authorization.
 
-- [What is Scrum?](https://www.scrum.org/learning-series/what-is-scrum/what-is-scrum)
-- [Writing meaningful user stories with the INVEST principle](https://blog.logrocket.com/product-management/writing-meaningful-user-stories-invest-principle/)
-- [DEEP: The 4 Characteristics of a Good Product Backlog](https://www.easyagile.com/blog/product-backlog/)
+### Story 2: User Login
+> *As a registered user, I want to log in using my email and password, so that I can access my saved preferences.*
+* **Independent:** Can be developed and verified separately from the registration UI.
+* **Negotiable:** Implementation of session storage mechanisms remains flexible.
+* **Valuable:** Secures user access and protects customer data.
+* **Estimable:** Scope and technical requirements are clearly bounded.
+* **Small:** Represents a compact, verifiable unit of work.
+* **Testable:** Validated by confirming successful authentication and rejection of invalid credentials.
+
+### Story 3: Authentication Error Feedback
+> *As a user, I want to receive clear error messages during failed login attempts, so that I can correct my credentials.*
+* **Independent:** Bounded to error handling flows.
+* **Negotiable:** Visual design and copy tone can be adjusted collaboratively.
+* **Valuable:** Prevents user frustration and reduces abandonment.
+* **Estimable:** Standard validation logic with predictable implementation effort.
+* **Small:** Focused exclusively on validation responses.
+* **Testable:** Validated by supplying incorrect inputs and asserting expected error states.
+
+### Story 4: Persistent Sessions
+> *As a registered user, I want the option to remain logged in across visits, so that I do not need to re-enter credentials repeatedly.*
+* **Independent:** Extends session management without blocking base authentication.
+* **Negotiable:** Token expiration lengths and storage mechanisms can be refined.
+* **Valuable:** Streamlines returning user workflows.
+* **Estimable:** Technical requirements (e.g., secure cookies/JWT) are standard.
+* **Small:** Distinct, isolated functional scope.
+* **Testable:** Validated by testing session persistence across browser restarts.
+
+### Story 5: Password Recovery
+> *As a user, I want to request a password reset link via email, so that I can regain access if I forget my credentials.*
+* **Independent:** Self-contained recovery flow.
+* **Negotiable:** Token timeout thresholds and email layouts can be negotiated.
+* **Valuable:** Reduces account lockouts and customer support load.
+* **Estimable:** Standard reset flow involving email dispatch and token validation.
+* **Small:** Bounded to the reset request and token verification mechanism.
+* **Testable:** Validated by generating, delivering, and redeeming a reset token.
+
+### Story 6: Product Catalog Exploration
+> *As a customer, I want to view detailed product information pages, so that I can make informed purchasing decisions.*
+* **Independent:** Focuses on product data display without depending on payment systems.
+* **Negotiable:** Layout, imagery sizes, and field ordering are open to design review.
+* **Valuable:** Fundamental capability required for e-commerce conversion.
+* **Estimable:** Scope of attributes and data structures can be determined clearly.
+* **Small:** Can be isolated to catalog rendering logic.
+* **Testable:** Validated by confirming product data is accurately rendered from the database.
+
+### Story 7: Shopping Cart Summary
+> *As a shopper, I want to review item quantities and total costs in my cart, so that I can verify my selections before checkout.*
+* **Independent:** Operates on local/stored cart state independently of external payment gateways.
+* **Negotiable:** Formatting and summary presentation can be refined.
+* **Valuable:** Provides essential price transparency before transaction commitment.
+* **Estimable:** Math calculations and UI summary are straightforward to size.
+* **Small:** Self-contained aggregation view.
+* **Testable:** Validated by ensuring line item calculations and grand totals are mathematically correct.
+
+### Story 8: Cart Modification
+> *As a shopper, I want to modify item quantities or remove items from my cart, so that I can update my order before payment.*
+* **Independent:** Self-contained cart mutation behavior.
+* **Negotiable:** UI controls (e.g., dropdowns vs. increment counters) can be discussed.
+* **Valuable:** Gives customers full control over their selection.
+* **Estimable:** Basic data-mutation logic with predictable complexity.
+* **Small:** Limited scope focused strictly on cart mutations.
+* **Testable:** Validated by asserting state updates when items are added, incremented, or removed.
+
+### Story 9: Out-of-Stock Indication
+> *As a customer, I want to see clear out-of-stock indicators on unavailable products, so that I do not attempt to purchase invalid inventory.*
+* **Independent:** Reads inventory flags without requiring full inventory management systems.
+* **Negotiable:** Visual indicators (e.g., badges vs. disabled buttons) can be refined.
+* **Valuable:** Prevents checkout failures and fulfillment errors.
+* **Estimable:** Requires checking inventory values against display logic.
+* **Small:** Focused solely on rendering inventory status states.
+* **Testable:** Validated by asserting visual and functional constraints on zero-inventory items.
+
+### Story 10: Persistent Cart Across Navigation
+> *As a shopper, I want my cart contents preserved while browsing other pages, so that I can continue shopping seamlessly.*
+* **Independent:** Focuses on cart state persistence across routing transitions.
+* **Negotiable:** Client-side vs. server-side persistence strategy can be negotiated.
+* **Valuable:** Reduces checkout friction and transaction abandonment.
+* **Estimable:** Well-defined state management implementation.
+* **Small:** Narrow focus on cart state lifecycle.
+* **Testable:** Validated by navigating across views and asserting that cart state remains intact.
+
+### Story 11: Dynamic Cart Total Updates
+> *As a shopper, I want the cart total and discounts to recalculate dynamically when quantities change, so that I see real-time price updates.*
+* **Independent:** Evaluates client-side recalculation rules.
+* **Negotiable:** Calculation timing and debouncing approaches are open to discussion.
+* **Valuable:** Provides instant feedback during cart adjustments.
+* **Estimable:** Computation algorithms and reactive UI patterns are well-understood.
+* **Small:** Bounded to dynamic recalculation and display bindings.
+* **Testable:** Validated by asserting that price totals update reactively when quantity triggers occur.
+
+---
+
+## 6. Reference Links
+
+* [Scrum Guide](https://scrumguides.org/)
+* [What is Scrum? (Scrum.org)](https://www.scrum.org/learning-series/what-is-scrum/what-is-scrum)
+* [Writing Meaningful User Stories with the INVEST Principle](https://blog.logrocket.com/product-management/writing-meaningful-user-stories-invest-principle/)
+* [DEEP: Characteristics of a Good Product Backlog](https://www.easyagile.com/blog/product-backlog/)
