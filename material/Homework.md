@@ -44,7 +44,7 @@ The video homework uses emojis to represent the significance of each video. Belo
 - :bell: [Spread Operator (8min)](https://youtu.be/4Zyr5a3m0Fc?si=Cf7DYtSjbYaR2srD)
 - :blue_book: Review of React Basics: [Learn React 18 – Full Tutorial for Beginners](https://youtu.be/Flbw5BX_AX0?si=Pch8zLMRoSJwQzTQ) **From  2h 22min till2h 58min**
 
-### Friday
+### Thursday
 
 - Prepare a group presentation (12-15 minutes), then upload all Sprint 1 deliverables (Figma file, link to Trello, Presentation) to GitHub and submit the link to your repository on OMA.
 - Please consider using one of the following tools for your slides:
