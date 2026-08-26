@@ -17,6 +17,24 @@ Here's the data model for the Tour API:
 }
 ```
 
+### Commit messages (best-practice, beginner-friendly)
+
+Use small commits that describe *what* changed.
+
+Recommended format (Conventional Commits style):
+
+- `feat(routing): add Home and NotFound components`
+  - *feat* Short for feature. Used when you add a new feature or new functionality to the codebase.
+- `refactor(components): convert Services to use useState`
+  - *refactor* used when you change existing code without altering behavior. This improves structure, readability, or organization.
+- `chore: install react-router-dom dependency`
+  - *chore* used for maintenance tasks that don't change application behavior. Examples: updating dependencies, adding logging, renaming files, config changes.
+
+Rule of thumb:
+
+- One commit = one "idea" that you could explain quickly.
+- If a commit breaks the app, it's too big.
+
 ### Instructions
 
 1. **Set Up Your Project**
