@@ -19,6 +19,7 @@ The DEEP framework defines four foundational characteristics of a well-maintaine
 * **E — Emergent**
 * **P — Prioritized**
 
+<!-- 
 ```
 +-------------------------------------------------------------------+
 |                        PRODUCT BACKLOG                            |
@@ -29,7 +30,9 @@ The DEEP framework defines four foundational characteristics of a well-maintaine
 |                                                                   |
 |   [Low Priority]    Low Detail   |  Unestimated| Long-term Vision |
 +-------------------------------------------------------------------+
-```
+``` 
+-->
+
 
 ### 1.1 Detailed Appropriately
 A Product Backlog should not have uniform detail across all items. Instead, detail is applied **just-in-time**:

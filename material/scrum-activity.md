@@ -1,5 +1,19 @@
 # Scrum Activity: Sprint 2 Backlog Rescue
 
+## Activity Overview
+
+This activity is organized into five stages:
+
+1. **Fictitious Scenario** — Students enter the world of QuickBite, a food-ordering product that has just completed Sprint 1 and is preparing for Sprint 2.
+2. **Warm-up** — Students inspect the Product Backlog and practice distinguishing between **DEEP** and **INVEST**.
+3. **Rules of the Game** — Students learn how the Trouble Cards and Scrum Coins work, including how to spend and earn coins.
+4. **The Game** — Teams rescue the Product Backlog, solve Trouble Cards, select a Sprint 2 Backlog, test their decisions using INVEST and DEEP, and challenge another team.
+5. **Results & Reflection** — Teams are scored, discuss what they learned, and consolidate the key differences between DEEP and INVEST.
+
+---
+
+# Part 1: Fictitious Scenario — Meet the Product: QuickBite
+
 ## Objective
 
 Last week, you explored Scrum by reverse-engineering Airbnb. You identified users, created user stories, built a Product Backlog, prioritized it, selected a Sprint Backlog, and planned a Sprint.
@@ -17,10 +31,15 @@ But there is a problem...
 > **Your Product Backlog is a mess.**
 
 Some items are too large.
+
 Some are unclear.
+
 Some are difficult to estimate.
+
 Some are not testable.
+
 Some priorities no longer make sense.
+
 And new information has arrived from users.
 
 Your team has limited time and limited resources.
@@ -53,23 +72,6 @@ Remember:
 
 ---
 
-# Part 1: Meet the Product: QuickBite
-
-Your team is developing **QuickBite**, a web/mobile application that allows customers to order food from nearby restaurants.
-
-The product allows customers to:
-
-* discover restaurants
-* view restaurant information and menus
-* add food to a cart
-* place orders
-* pay for orders
-* receive order updates
-
-Restaurant owners can also use QuickBite to manage their restaurants and menus.
-
----
-
 # Part 2: What Happened in Sprint 1?
 
 The team has just completed Sprint 1.
@@ -88,7 +90,7 @@ Unfortunately, the backlog contains some problems.
 
 ---
 
-# Part 3: The Product Backlog
+# Part 3: Warm-up — Inspect the Product Backlog
 
 Below is the current Product Backlog.
 
@@ -129,7 +131,7 @@ Be ready to explain your thinking.
 
 ---
 
-# Part 4: DEEP or INVEST?
+# Part 4: Warm-up — DEEP or INVEST?
 
 Before starting the rescue mission, test your understanding.
 
@@ -144,11 +146,9 @@ For each situation, decide whether it is mainly related to:
 
 > Everything in the Product Backlog is marked **HIGH priority**.
 
-Answer: __________
+Answer: *___________*
 
 Why?
-
----
 
 ---
 
@@ -156,11 +156,9 @@ Why?
 
 > A user story says: "As a customer, I want a great experience."
 
-Answer: __________
+Answer: *___________*
 
 Why?
-
----
 
 ---
 
@@ -168,11 +166,9 @@ Why?
 
 > A low-priority backlog item has extremely detailed requirements, UI designs and technical specifications, even though the team may not work on it for several Sprints.
 
-Answer: __________
+Answer: *___________*
 
 Why?
-
----
 
 ---
 
@@ -180,11 +176,9 @@ Why?
 
 > A user story is so large that the Developers are not confident they can finish it during one Sprint.
 
-Answer: __________
+Answer: *___________*
 
 Why?
-
----
 
 ---
 
@@ -192,21 +186,17 @@ Why?
 
 > New user research shows that customers are abandoning the checkout process because delivery costs are unclear.
 
-Answer: __________
+Answer: *___________*
 
 Why?
 
 ---
 
----
-
-# Part 5: Trouble Cards
+# Part 5: Rules of the Game — Trouble Cards
 
 Now the real rescue begins.
 
-Your facilitator (teacher) will give your team **Trouble Cards**.
-
-Each Trouble Card introduces a new problem, question, or piece of information.
+You will given **Trouble Cards**. Each Trouble Card introduces a new problem, question, or piece of information.
 
 Your job is to:
 
@@ -253,7 +243,7 @@ Your team must be able to defend its decision.
 
 ---
 
-# Part 6: Your Scrum Budget
+# Part 6: Rules of the Game — Your Scrum Budget
 
 Your team starts with:
 
@@ -265,25 +255,7 @@ You can spend your coins during the rescue mission.
 
 **Ask for a Hint**
 
-The facilitator (teacher)  gives you a clue about the problem.
-
----
-
-### Spend 2 coins
-
-**Ask the Product Owner**
-
-You may ask the facilitator (teacher)  one question about the customer, product, or business.
-
-You cannot ask:
-
-> "Is this INVEST?"
-
-You need to ask a meaningful product question.
-
-For example:
-
-> "Which customer problem is more important: faster checkout or restaurant discovery?"
+Using AI costs 1 Scrum Coin.
 
 ---
 
@@ -313,16 +285,9 @@ or:
 
 If your challenge is useful, your team may earn additional coins.
 
-
-* *AI Assistance Policy
-  * You **may** use AI tools (e.g., ChatGPT, Claude) to help brainstorm ideas, refine user story wording, or draft acceptance criteria.
-  * **Using AI is FREE and does NOT cost any Scrum Coins.**
-  * **Spending Scrum Coins** is reserved exclusively for interacting with humans in the room (asking the Instructor/Product Owner, consulting another team, or challenging another team).
-  * *Note:* While AI can help suggest wording, your team is 100% responsible for defending your decisions during the final team challenge and presentation!
-
 ---
 
-# Part 7: Earn Scrum Coins
+# Part 7: Rules of the Game — Earn Scrum Coins
 
 You can also earn coins.
 
@@ -346,19 +311,16 @@ Successfully defend your decision when another team challenges you.
 
 Find a problem that another team missed.
 
-Your facilitator (teacher)  decides whether your team earns the coins.
-
 ---
 
-# Part 8: Trouble Cards
+# Part 8: The Game — Trouble Cards
 
-You are provided with **8 Trouble Cards**, but some cards describe overlapping problems or target the same backlog item. 
+You are provided with **8 Trouble Cards**, but some cards describe overlapping problems or target the same backlog item.
 
-Your team must inspect all 8 cards, identify the redundancies, and select **exactly 5 distinct Trouble Cards** that represent 5 different problems across the backlog. 
+Your team must inspect all 8 cards, identify the redundancies, and select **exactly 5 distinct Trouble Cards** that represent 5 different problems across the backlog.
 
 * **Do not solve two cards that target the exact same issue.**
 * Record your 5 chosen solutions in the table in **Part 9**.
-
 
 ---
 
@@ -396,7 +358,7 @@ Rewrite the smaller stories.
 
 ---
 
-## Trouble Card 3: The Mystery 13 
+## Trouble Card 3: The Mystery 13
 
 The Developers have estimated a story as **13 points**.
 
@@ -512,7 +474,7 @@ What would you change?
 
 ---
 
-# Part 9: The Backlog Rescue
+# Part 9: The Game — The Backlog Rescue
 
 Now work through your Trouble Cards.
 
@@ -532,7 +494,7 @@ Remember:
 
 ---
 
-# Part 10: Final Challenge: Would You Take This Into Sprint 2?
+# Part 10: The Game — Final Challenge: Would You Take This Into Sprint 2?
 
 Your Product Backlog has now been improved.
 
@@ -571,11 +533,11 @@ Your decisions should make sense together.
 
 ### Total:
 
-**_____ / 15 points**
+**____ / 15 points**
 
 ---
 
-# Step 2: Test Your Selected Stories Against INVEST
+# Part 10 — Step 2: Test Your Selected Stories Against INVEST
 
 For every story you selected, ask:
 
@@ -641,7 +603,7 @@ Why?
 
 ---
 
-# Step 3: Zoom Out: Is Our Product Backlog DEEP?
+# Part 10 — Step 3: Zoom Out: Is Our Product Backlog DEEP?
 
 Now stop looking at individual stories.
 
@@ -677,13 +639,15 @@ Is the backlog ordered according to value and importance?
 
 What are your top three items now?
 
-1. ---
-2. ---
-3. ---
+1. **---
+
+2. **---
+
+3. **---
 
 ---
 
-# Part 11: Team Challenge
+# Part 11: The Game — Team Challenge
 
 Pair up with another team.
 
@@ -718,7 +682,7 @@ Then switch roles.
 
 ---
 
-# Part 12: The Final Decision
+# Part 12: The Game — The Final Decision
 
 Each team has **2 minutes** to present.
 
@@ -730,33 +694,35 @@ Your presentation must include:
 
 ### 1. Our Sprint Goal
 
-> ---
+> **---
 
 ### 2. Our selected stories
 
-> ---
+> **---
 
-> ---
+> **---
 
-> ---
+> **---
 
 ### 3. Our strongest INVEST decision
 
-> ---
+> **---
 
 ### 4. Our strongest DEEP decision
 
-> ---
+> **---
 
 ### 5. The biggest change we made to the backlog
 
-> ---
+> **---
 
 ---
 
+# Results
+
 # Scoring
 
-Your facilitator (teacher)  will score the teams.
+Your facilitator (teacher) will score the teams.
 
 | Category                                 | Points |
 | ---------------------------------------- | -----: |
@@ -831,17 +797,25 @@ Remember:
 ## DEEP = the Product Backlog
 
 **D** - Detailed appropriately
+
 **E** - Estimated
+
 **E** - Emergent
+
 **P** - Prioritized
 
 ## INVEST = the individual story
 
 **I** - Independent
+
 **N** - Negotiable
+
 **V** - Valuable
+
 **E** - Estimable
+
 **S** - Small
+
 **T** - Testable
 
 And the real Scrum question is:

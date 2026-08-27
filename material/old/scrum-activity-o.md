@@ -1,263 +1,824 @@
-# Activity: Scrum
+# Scrum Activity: Sprint 2 Backlog Rescue
 
--  When using scrum, who is the "team leader"?
+## Objective
 
-### Part 1: INVEST Criteria
+Last week, you explored Scrum by reverse-engineering Airbnb. You identified users, created user stories, built a Product Backlog, prioritized it, selected a Sprint Backlog, and planned a Sprint.
 
-1. Review these [user stories](#scrum-stories) for an e-commerce website.
-2. Assess how well each story meets the **INVEST** criteria:
-   * Independent
-   * Negotiable
-   * Valuable
-   * Estimable
-   * Small
-   * Testable
-3. Compare your answers with [this reference](#user-story-meets-the-invest-criteria).
+This week, we move forward in time.
 
-### Part 2: Breaking Down User Stories into Tasks
+Imagine that your Scrum team has already completed **Sprint 1**.
 
-* Review [this table](#breaking-down-user-stories-into-tasks), which shows examples of user stories mapped to their corresponding tasks.
-* Consider the examples as a guide when start breaking down your own project’s user stories into actionable tasks.
+The team built an initial prototype, received feedback, and learned more about the product and its users.
 
-### Part 3: Applying INVEST & DEEP to Your Project
+Now it is time to prepare for **Sprint 2**.
 
-* Review your project’s **product backlog** to ensure it follows the [**DEEP principle**](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/scrum.md#deep-principle).
-* Check that some of your project’s **user stories** also follow the [**INVEST criteria**](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week2/material/scrum.md#invest).
+But there is a problem...
+
+> **Your Product Backlog is a mess.**
+
+Some items are too large.
+Some are unclear.
+Some are difficult to estimate.
+Some are not testable.
+Some priorities no longer make sense.
+And new information has arrived from users.
+
+Your team has limited time and limited resources.
+
+Your mission is to:
+
+> **RESCUE THE PRODUCT BACKLOG and decide what you would take into Sprint 2.**
+
+You will use two ideas:
+
+### DEEP - Is the Product Backlog healthy?
+
+* **D** - Detailed appropriately
+* **E** - Estimated
+* **E** - Emergent
+* **P** - Prioritized
+
+### INVEST - Is an individual user story healthy?
+
+* **I** - Independent
+* **N** - Negotiable
+* **V** - Valuable
+* **E** - Estimable
+* **S** - Small
+* **T** - Testable
+
+Remember:
+
+> **DEEP looks at the Product Backlog as a whole. INVEST looks at individual backlog items.**
+
+---
+
+# Part 1: Meet the Product: QuickBite
+
+Your team is developing **QuickBite**, a web/mobile application that allows customers to order food from nearby restaurants.
+
+The product allows customers to:
+
+* discover restaurants
+* view restaurant information and menus
+* add food to a cart
+* place orders
+* pay for orders
+* receive order updates
+
+Restaurant owners can also use QuickBite to manage their restaurants and menus.
+
+---
+
+# Part 2: What Happened in Sprint 1?
+
+The team has just completed Sprint 1.
+
+### Sprint 1 Goal
+
+> **Allow a customer to discover a restaurant and add a meal to a cart.**
+
+The team created an initial prototype.
+
+During Sprint 1, the team also learned more about the product and received feedback from potential users.
+
+Now the Product Owner has prepared the current Product Backlog for Sprint 2 planning.
+
+Unfortunately, the backlog contains some problems.
+
+---
+
+# Part 3: The Product Backlog
+
+Below is the current Product Backlog.
+
+Your first job is simply to **inspect it**.
+
+Do not try to fix everything immediately.
+
+| #  | Product Backlog Item                                                                                                                | Priority | Estimate |
+| -- | ----------------------------------------------------------------------------------------------------------------------------------- | -------- | -------: |
+| 1  | As a customer, I want to see restaurant details so that I can decide where to order.                                                | High     |        5 |
+| 2  | As a customer, I want to complete checkout.                                                                                         | High     |       13 |
+| 3  | As a customer, I want the app to be beautiful and easy to use.                                                                      | High     |        ? |
+| 4  | As a restaurant owner, I want to manage my restaurant profile, menu, prices, opening hours, delivery areas, promotions, and photos. | Medium   |       13 |
+| 5  | As a customer, I want to pay by card.                                                                                               | High     |        5 |
+| 6  | Improve database performance.                                                                                                       | Low      |        3 |
+| 7  | As a customer, I want to receive an order confirmation after placing an order.                                                      | Medium   |        3 |
+| 8  | As a customer, I want to place an order.                                                                                            | High     |        8 |
+| 9  | Research whether customers prefer dark mode.                                                                                        | Low      |        2 |
+| 10 | As a customer, I want to cancel an order.                                                                                           | Low      |        8 |
+
+### Discuss as a team
+
+Do not worry about getting the "correct" answer yet.
+
+Look at the backlog and ask:
+
+* Which items immediately look suspicious?
+* Are any items too large?
+* Are any items unclear?
+* Are all items valuable?
+* Are all items estimable?
+* Are all items testable?
+* Does the priority order make sense?
+* Is everything equally detailed?
+* Are there things that might change as we learn more?
+
+Be ready to explain your thinking.
+
+---
+
+# Part 4: DEEP or INVEST?
+
+Before starting the rescue mission, test your understanding.
+
+For each situation, decide whether it is mainly related to:
+
+* **DEEP**
+* **INVEST**
+* **Both**
+* **Neither**
+
+### Situation A
+
+> Everything in the Product Backlog is marked **HIGH priority**.
+
+Answer: __________
+
+Why?
+
+---
+
+---
+
+### Situation B
+
+> A user story says: "As a customer, I want a great experience."
+
+Answer: __________
+
+Why?
+
+---
+
+---
+
+### Situation C
+
+> A low-priority backlog item has extremely detailed requirements, UI designs and technical specifications, even though the team may not work on it for several Sprints.
+
+Answer: __________
+
+Why?
+
+---
+
+---
+
+### Situation D
+
+> A user story is so large that the Developers are not confident they can finish it during one Sprint.
+
+Answer: __________
+
+Why?
+
+---
+
+---
+
+### Situation E
+
+> New user research shows that customers are abandoning the checkout process because delivery costs are unclear.
+
+Answer: __________
+
+Why?
+
+---
+
+---
+
+# Part 5: Trouble Cards
+
+Now the real rescue begins.
+
+You will given  **Trouble Cards**. Each Trouble Card introduces a new problem, question, or piece of information.
+
+Your job is to:
+
+## FIND → EXPLAIN → FIX
+
+### 1. FIND
+
+Find the relevant backlog item or part of the backlog.
+
+### 2. EXPLAIN
+
+Identify which DEEP or INVEST principle is involved.
+
+Do not just name the letter.
+
+Explain **why**.
+
+### 3. FIX
+
+Change something.
+
+You might:
+
+* rewrite a story
+* split a story
+* add acceptance criteria
+* change an estimate
+* reorder the backlog
+* reduce unnecessary detail
+* clarify the value
+* identify a dependency
+* remove or change an item
+* add a new item
+
+---
+
+## Important Rule
+
+> **Finding a problem is not enough. Your team must propose a solution.**
+
+There may be more than one reasonable solution.
+
+Your team must be able to defend its decision.
+
+---
+
+# Part 6: Your Scrum Budget
+
+Your team starts with:
+
+# 10 Scrum Coins
+
+You can spend your coins during the rescue mission.
+
+### Spend 1 coin
+
+**Ask for a Hint**
+
+Using AI costs  1 Scrum Coin.**
+
+---
+
+### Spend 2 coins
+
+**Ask Another Team**
+
+Another team gives you its opinion about one of your problems.
+
+You must still make the final decision yourselves.
+
+---
+
+### Spend 3 coins
+
+**Challenge Another Team**
+
+Choose another team and challenge one of their decisions.
+
+For example:
+
+> "Why do you think this story is Small?"
+
+or:
+
+> "Why did you prioritize this item above the payment story?"
+
+If your challenge is useful, your team may earn additional coins.
+
+---
+
+# Part 7: Earn Scrum Coins
+
+You can also earn coins.
+
+### +2 coins
+
+Find a genuine DEEP problem.
+
+### +2 coins
+
+Find a genuine INVEST problem.
+
+### +2 coins
+
+Successfully improve a backlog item.
+
+### +3 coins
+
+Successfully defend your decision when another team challenges you.
+
+### +3 coins
+
+Find a problem that another team missed.
+
+---
+
+# Part 8: Trouble Cards
+
+You are provided with **8 Trouble Cards**, but some cards describe overlapping problems or target the same backlog item. 
+
+Your team must inspect all 8 cards, identify the redundancies, and select **exactly 5 distinct Trouble Cards** that represent 5 different problems across the backlog. 
+
+* **Do not solve two cards that target the exact same issue.**
+* Record your 5 chosen solutions in the table in **Part 9**.
 
 
+---
 
-----
+## Trouble Card 1: The Angry Customer
 
+A customer says:
 
-# Scrum stories
+> "I don't care how beautiful the application is. I just want to successfully place my order."
 
-> Here are some user stories for an ecommerce website using the template **"As a ..., I need ..., so that ..."**:
+### Your mission
 
-**User Registration and Login:**
+Find a backlog item where the **value** is unclear.
 
-- As a new user, I want to easily sign up for an account using my email and password, so that I can start shopping online.
-- As a registered user, I want to log in quickly using my email and password, ensuring a secure and personalized shopping experience.
-- As a user, I expect clear error messages if I enter incorrect login credentials or try to register with an existing email.
-- As a registered user, I want the option to stay logged in, so that I don't have to enter my credentials every time I visit the website.
-- As a user, I want to see a "Forgot Password" option that allows me to reset my password by receiving a link via email.
+Which INVEST principle is involved?
 
-**Buying a Product and Managing Cart:**
+What would you change?
 
-- As a logged-in user, I want to browse products, view detailed product pages, and easily add items to my shopping cart.
-- As a shopper, I want to see a summary of my cart with product names, quantities, and total cost before proceeding to checkout.
-- As a user, I want to have the option to adjust the quantity of products in my cart or remove items entirely before finalizing my purchase.
-- As a customer, I expect a clear indication of products that are out of stock or unavailable for purchase.
-- As a shopper, I need the option to continue shopping after adding items to my cart, without losing the contents of my cart.
-- As a user, I want to see real-time updates to my cart total and available discounts as I add or remove products.
-- As a shopper, I expect a seamless transition from browsing to checkout, with my cart items and details retained during the process.
+---
 
-**Removing Products from Cart:**
+## Trouble Card 2: The Giant Story
 
-- As a customer, I want the ability to easily remove individual items or clear my entire cart with a single action.
-- As a user, I expect a confirmation prompt before removing items from my cart to prevent accidental deletions.
-- As a shopper, I want to see my cart updated immediately after removing an item, with the total cost adjusted accordingly.
+The Developers say:
 
-**Administrator role**
+> "There is no way we can finish this story during one Sprint."
 
-- As an admin, I need a secure login system with role-based access control, so that I can access and manage the backend functionalities of the ecommerce website.
-- As an administrator, I want to be able to add, edit, and delete product listings, including details such as product name, description, price, and available stock.
-- As an admin, I need to have the ability to categorize products into different product categories and subcategories, ensuring that products are organized and easy for customers to find.
-- As an administrator, I want to be able to manage customer orders, view order details, update order statuses, and communicate with customers about their orders.
-- As an admin, I need a dashboard that provides insights into website performance, including metrics such as sales trends, popular products, and customer behavior.
-- As an administrator, I want to manage user reviews and ratings, including the ability to moderate or remove inappropriate content.
-- As an admin, I need to be able to process refunds, cancellations, and returns in an efficient manner, ensuring a smooth customer service experience.
-- As an administrator, I want to be able to set up and manage promotional campaigns, discounts, and coupon codes to attract and retain customers.
-- As an admin, I need to have the ability to manage customer accounts, including creating accounts, resetting passwords, and resolving account-related issues.
-- As an administrator, I want to be able to generate and export reports, such as sales reports, inventory reports, and customer analytics, to help make informed business decisions.
-- As an admin, I need to have tools to manage and update the content of static pages, such as the homepage, about us, and contact pages.
-- As an administrator, I want to be able to configure shipping options, including setting shipping rates, delivery methods, and tracking integration.
-- As an admin, I need a system to manage and track product inventory, including notifications when stock levels are low and the ability to reorder products.
-- As an administrator, I want to be able to manage and respond to customer inquiries and support requests efficiently.
-- As an admin, I need the ability to customize the website's appearance, including banners, colors, and layout, to align with branding and marketing strategies.
+Find the story that might be causing the problem.
 
-**User Registration and Login:**
+### Your mission
 
-- As a user, I want to be able to create a new account using my email address and a secure password, so that I can access the website's features and services.
-- As a user, I need the option to log in to my existing account using my registered email and password, ensuring a secure and personalized experience.
-- As a user, I want to receive a confirmation email after registering, containing a verification link to activate my account.
-- As a user, I want the option to reset my password if I forget it, by receiving a password reset link via email.
-- As a user, I expect a smooth and intuitive login process with error messages displayed clearly if there are any issues with my credentials.
+Which INVEST principle is involved?
 
-**Adding Own Product:**
+Can you split the story?
 
-- As a seller, I want to be able to create a seller account and provide necessary information such as contact details and payment preferences.
-- As a seller, I need to have a dedicated dashboard where I can manage my products, orders, and seller profile information.
-- As a seller, I want to be able to add my own product listings, including product details, images, price, and shipping information.
-- As a seller, I need to have the ability to edit and update my product listings whenever there are changes or updates.
-- As a seller, I want to receive notifications when my product is sold, along with information about the buyer and the order.
-- As a seller, I need a straightforward process to set up my payment preferences and receive payments for the products I've sold.
-- As a seller, I want to have the option to mark my products as "out of stock" or temporarily deactivate listings if needed.
-- As a seller, I expect a user-friendly interface for managing my products, orders, and sales performance, helping me to effectively run my online store.
-- As a seller, I need the ability to communicate with buyers through the platform, addressing their questions and providing updates about their orders.
-- As a seller, I want to be able to track my earnings, view sales reports, and analyze trends to make informed decisions about my product offerings.
+Rewrite the smaller stories.
 
+---
 
-----
+## Trouble Card 3: The Mystery 13 
 
+The Developers have estimated a story as **13 points**.
 
-# user story meets the INVEST criteria:
+Nobody can clearly explain what the story actually includes.
 
-**User Registration and Login:**
+The Product Owner says:
 
-1. As a new user, I want to easily sign up for an account using my email and password, so that I can start shopping online.
-   - **Reasons:**
-     - Independent: This user story focuses on a specific action (user registration) and is not dependent on other stories.
-     - Negotiable: Details about how the signup process will work can be discussed and refined.
-     - Valuable: Creating accounts is a fundamental feature of the system that adds value for users.
-     - Estimable: The scope and effort required to implement user registration can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – successful registration enables user access.
+> "Just start building it. We'll figure it out later."
 
-2. As a registered user, I want to log in quickly using my email and password, ensuring a secure and personalized shopping experience.
-   - **Reasons:**
-     - Independent: This user story focuses on a specific action (user login) and is not dependent on other stories.
-     - Negotiable: Details about how the login process will work can be discussed and refined.
-     - Valuable: Quick and secure login enhances the user experience.
-     - Estimable: The scope and effort required to implement user login can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – successful login grants user access.
+### Your mission
 
-3. As a user, I expect clear error messages if I enter incorrect login credentials or try to register with an existing email.
-   - **Reasons:**
-     - Independent: This user story focuses on handling specific error cases and is not dependent on other stories.
-     - Negotiable: Specific error messages and handling can be discussed and refined.
-     - Valuable: Clear error messages improve user understanding and reduce frustration.
-     - Estimable: The effort required to implement error handling can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – incorrect credentials trigger appropriate error messages.
+What is wrong?
 
-4. As a registered user, I want the option to stay logged in, so that I don't have to enter my credentials every time I visit the website.
-   - **Reasons:**
-     - Independent: This user story focuses on session management and is not dependent on other stories.
-     - Negotiable: Details about session management and staying logged in can be discussed and refined.
-     - Valuable: Persistent login enhances user convenience.
-     - Estimable: The effort required to implement persistent login can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users remain logged in across visits.
+Which INVEST principles might be involved?
 
-5. As a user, I want to see a "Forgot Password" option that allows me to reset my password by receiving a link via email.
-   - **Reasons:**
-     - Independent: This user story focuses on password recovery and is not dependent on other stories.
-     - Negotiable: Details about the password recovery process can be discussed and refined.
-     - Valuable: Password recovery provides a way for users to regain access to their accounts.
-     - Estimable: The effort required to implement password recovery can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users receive a password reset link.
+What should happen before the team commits to the work?
 
-For the rest of the user stories, let's continue the evaluation:
+---
 
-6. As a logged-in user, I want to browse products, view detailed product pages, and easily add items to my shopping cart.
-   - **Reasons:**
-     - Independent: This user story focuses on browsing and adding products to the cart without dependency.
-     - Negotiable: Details about browsing, viewing, and adding can be discussed and refined.
-     - Valuable: Core shopping functionality that adds value for users.
-     - Estimable: The effort required for browsing and adding products can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – products can be added to the cart.
+## Trouble Card 4: Everything Is Urgent
 
-7. As a shopper, I want to see a summary of my cart with product names, quantities, and total cost before proceeding to checkout.
-   - **Reasons:**
-     - Independent: This user story involves displaying a cart summary and is not dependent on other stories.
-     - Negotiable: Details about the cart summary and layout can be discussed and refined.
-     - Valuable: Cart summary provides a clear overview of selected items.
-     - Estimable: The effort required to display the cart summary can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – cart summary is displayed accurately.
+The Product Owner says:
 
-8. As a user, I want to have the option to adjust the quantity of products in my cart or remove items entirely before finalizing my purchase.
-   - **Reasons:**
-     - Independent: This user story involves cart manipulation and is not dependent on other stories.
-     - Negotiable: Details about adjusting quantities and removing items can be discussed and refined.
-     - Valuable: Cart manipulation options enhance user control.
-     - Estimable: The effort required for cart adjustments can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – users can change quantities and remove items.
+> "Everything in the backlog is HIGH priority."
 
-9. As a customer, I expect a clear indication of products that are out of stock or unavailable for purchase.
-   - **Reasons:**
-     - Independent: This user story involves indicating product availability and is not dependent on other stories.
-     - Negotiable: Details about how out-of-stock products are displayed can be discussed and refined.
-     - Valuable: Clear product availability information prevents frustration for customers.
-     - Estimable: The effort required to indicate availability can be estimated.
-     - Small: The user story has a clear and limited scope.
-     - Testable: Success criteria are evident – out-of-stock products are appropriately indicated.
+Your team can only work on a few items in Sprint 2.
 
-10. As a shopper, I need the option to continue shopping after adding items to my cart, without losing the contents of my cart.
-    - **Reasons:**
-      - Independent: This user story focuses on session management and continuity of shopping.
-      - Negotiable: Details about session management and cart continuity can be discussed and refined.
-      - Valuable: Continuous shopping without cart loss enhances user experience.
-      - Estimable: The effort required to manage sessions and cart continuity can be estimated.
-      - Small: The user story has a clear and limited scope.
-      - Testable: Success criteria are evident – users can continue shopping without cart loss.
+### Your mission
 
-11. As a user, I want to see real-time updates to my cart total and available discounts as I add or remove products.
-    - **Reasons:**
-      - Independent: This user story involves real-time updates to the cart summary.
-      - Negotiable: Details about updating totals and discounts can be discussed and refined.
-      - Valuable: Real-time updates provide instant feedback during cart manipulation.
-      - Estimable: The effort required for real-time updates can be estimated.
-      - Small: The user story has a clear and limited scope.
-      - Testable: Success criteria are evident – cart totals and discounts
+Which DEEP principle is involved?
 
+Reorder the Product Backlog.
 
-----
+Be prepared to explain your top three items.
 
+---
 
-# Breaking Down User Stories into Tasks 
+## Trouble Card 5: New Information
 
+New customer research arrives:
 
-| User Story | Task |
-|------------|------|
-| As a new user, I want to easily sign up for an account using my email and password, so that I can start shopping online. | 1. Create user registration form with email and password fields. |
-| As a registered user, I want to log in quickly using my email and password, ensuring a secure and personalized shopping experience. | 2. Implement user login system with email and password authentication. |
-| As a user, I expect clear error messages if I enter incorrect login credentials or try to register with an existing email. | 3. Display clear error messages for incorrect login credentials and duplicate email registrations. |
-| As a registered user, I want the option to stay logged in, so that I don't have to enter my credentials every time I visit the website. | 4. Implement the "Stay Logged In" feature for registered users. |
-| As a user, I want to see a "Forgot Password" option that allows me to reset my password by receiving a link via email. | 5. Develop the "Forgot Password" feature with email-based password reset. |
-| As a logged-in user, I want to browse products, view detailed product pages, and easily add items to my shopping cart. | 6. Develop product browsing functionality and product detail pages. 7. Implement the ability to add items to the shopping cart. |
-| As a shopper, I want to see a summary of my cart with product names, quantities, and total cost before proceeding to checkout. | 8. Design a shopping cart summary with product details and pricing. |
-| As a user, I want to have the option to adjust the quantity of products in my cart or remove items entirely before finalizing my purchase. | 9. Allow users to adjust item quantities and remove items from the cart. |
-| As a customer, I expect a clear indication of products that are out of stock or unavailable for purchase. | 10. Provide clear indications for out-of-stock or unavailable products. |
-| As a shopper, I need the option to continue shopping after adding items to my cart, without losing the contents of my cart. | 11. Enable continuous shopping without losing the contents of the shopping cart. |
-| As a user, I want to see real-time updates to my cart total and available discounts as I add or remove products. | 12. Implement real-time updates to the cart total and discounts. |
-| As a shopper, I expect a seamless transition from browsing to checkout, with my cart items and details retained during the process. | 13. Ensure a seamless transition from browsing to checkout while retaining cart items and details. |
-| As a customer, I want the ability to easily remove individual items or clear my entire cart with a single action. | 14. Implement options to remove individual items or clear the entire cart with a single action. |
-| As a user, I expect a confirmation prompt before removing items from my cart to prevent accidental deletions. | 15. Add a confirmation prompt for item removal to prevent accidental deletions. |
-| As a shopper, I want to see my cart updated immediately after removing an item, with the total cost adjusted accordingly. | 16. Update the cart immediately after removing an item, adjusting the total cost. |
-| As an admin, I need a secure login system with role-based access control, so that I can access and manage the backend functionalities of the ecommerce website. | 17. Create a secure login system with role-based access control for administrators. |
-| As an administrator, I want to be able to add, edit, and delete product listings, including details such as product name, description, price, and available stock. | 18. Develop product management features, including adding, editing, and deleting product listings. |
-| As an admin, I need to have the ability to categorize products into different product categories and subcategories, ensuring that products are organized and easy for customers to find. | 19. Allow product categorization into different categories and subcategories. |
-| As an administrator, I want to be able to manage customer orders, view order details, update order statuses, and communicate with customers about their orders. | 20. Implement order management, order status updates, and customer communication for administrators. |
-| As an admin, I need a dashboard that provides insights into website performance, including metrics such as sales trends, popular products, and customer behavior. | 21. Create a dashboard for website performance metrics and insights. |
-| As an administrator, I want to manage user reviews and ratings, including the ability to moderate or remove inappropriate content. | 22. Manage user reviews and ratings, including moderation. |
-| As an admin, I need to be able to process refunds, cancellations, and returns in an efficient manner, ensuring a smooth customer service experience. | 23. Process refunds, cancellations, and returns efficiently. |
-| As an administrator, I want to be able to set up and manage promotional campaigns, discounts, and coupon codes to attract and retain customers. | 24. Set up and manage promotional campaigns, discounts, and coupon codes. |
-| As an admin, I need to have the ability to manage customer accounts, including creating accounts, resetting passwords, and resolving account-related issues. | 25. Manage customer accounts, including account creation, password resets, and account issue resolution. |
-| As an administrator, I want to be able to generate and export reports, such as sales reports, inventory reports, and customer analytics, to help make informed business decisions. | 26. Generate and export reports, including sales reports, inventory reports, and customer analytics. |
-| As an admin, I need to have tools to manage and update the content of static pages, such as the homepage, about us, and contact pages. | 27. Manage and update the content of static pages, such as the homepage, about us, and contact pages. |
-| As an administrator, I want to be able to configure shipping options, including setting shipping rates, delivery methods, and tracking integration. | 28. Configure shipping options, including shipping rates, delivery methods, and tracking integration. |
-| As an admin, I need a system to manage and track product inventory, including notifications when stock levels are low and the ability to reorder products. | 29. Manage and track product inventory, including low stock notifications and reordering. |
-| As an administrator, I want to be able to manage and respond to customer inquiries and support requests efficiently. | 30. Manage and respond to customer inquiries and support requests efficiently. |
-| As an admin, I need the ability to customize the website's appearance, including banners, colors, and layout, to align with branding and marketing strategies. | 31. Customize the website's appearance, including banners, colors, and layout. |
-| As a user, I want to be able to create a new account using my email address and a secure password, so that I can access the website's features and services. | 32. Create user registration with email and secure password. |
-| As a user, I need the option to log in to my existing account using my registered email and password, ensuring a secure and personalized experience. | 33. Design a user-friendly login process with email and password authentication. |
-| As a user, I want to receive a confirmation email after registering, containing a verification link to activate my account. | 34. Send a confirmation email with a verification link for new user registrations. |
-| As a user, I want the option to reset my password if I forget it, by receiving a password reset link via email. | 35. Provide a password reset option via email link for users who forget their password. |
-| As a user, I expect a smooth and intuitive login process with error messages displayed clearly if there are any issues with my credentials. | 36. Implement a smooth and intuitive login process with clear error messages. |
-| As a seller, I want to be able to create a seller account and provide necessary information such as contact details and payment preferences. | 37. Create a seller registration system with the option to provide contact details and payment preferences. |
-| As a seller, I need to have a dedicated dashboard where I can manage my products, orders, and seller profile information. | 38. Design a seller dashboard for product, order, and seller profile management. |
-| As a seller, I want to be able to add my own product listings, including product details, images, price, and shipping information. | 39. Allow sellers to add their product listings with details, images, pricing, and shipping information. |
-| As a seller, I need to have the ability to edit and update my product listings whenever there are changes or updates. | 40. Provide sellers with the ability to edit and update their product listings. |
-| As a seller, I want to receive notifications when my product is sold, along with information about the buyer and the order. | 41. Implement notifications for sellers when their products are sold, including buyer and order details. |
-| As a seller, I need a straightforward process to set up my payment preferences and receive payments for the products I've sold. | 42. Create a straightforward process for sellers to set up payment preferences and receive payments. |
-| As a seller, I want to have the option to mark my products as "out of stock" or temporarily deactivate listings if needed. | 43. Allow sellers to mark their products as "out of stock" or temporarily deactivate listings. |
-| As a seller, I expect a user-friendly interface for managing my products, orders, and sales performance, helping me to effectively run my online store. | 44. Provide a user-friendly interface for sellers to manage their products, orders, and sales performance. |
-| As a seller, I need the ability to communicate with buyers through the platform, addressing their questions and providing updates about their orders. | 45. Enable communication features for sellers to interact with buyers and provide order updates. |
-| As a seller, I want to be able to track my earnings, view sales reports, and analyze trends to make informed decisions about my product offerings. | 46. Implement features for sellers to track earnings, view sales reports, and analyze sales trends. |
+> "Customers are abandoning the ordering process because they don't understand the delivery cost before checkout."
 
+### Your mission
 
+What should happen to the Product Backlog?
+
+Which DEEP principle is involved?
+
+Does the team need to:
+
+* add something?
+* change something?
+* reorder something?
+* clarify something?
+
+Explain your decision.
+
+---
+
+## Trouble Card 6: "We'll Know When It Looks Good"
+
+The Product Owner says:
+
+> "We'll know the story is finished when it looks good."
+
+### Your mission
+
+Find a story where this could be a problem.
+
+Which INVEST principle is involved?
+
+Rewrite the story or add acceptance criteria so that the team can determine whether it is complete.
+
+---
+
+## Trouble Card 7: The Dependency
+
+A Developer says:
+
+> "We cannot finish Story B until Story A is completely finished."
+
+### Your mission
+
+Look at the relevant stories.
+
+Is this a problem with **Independent**?
+
+Could the stories be changed or split?
+
+Explain your decision.
+
+---
+
+## Trouble Card 8: Too Much Too Soon
+
+You discover that a low-priority item has:
+
+* detailed UI designs
+* detailed technical specifications
+* many acceptance criteria
+* several pages of documentation
+
+The team probably will not work on this item for several Sprints.
+
+### Your mission
+
+Which DEEP principle is involved?
+
+Is more detail always better?
+
+What would you change?
+
+---
+
+# Part 9: The Backlog Rescue
+
+Now work through your Trouble Cards.
+
+For every problem you solve, record it below.
+
+| Problem | DEEP / INVEST | Why is it a problem? | What did we change? |
+| ------- | ------------- | -------------------- | ------------------- |
+| 1       |               |                      |                     |
+| 2       |               |                      |                     |
+| 3       |               |                      |                     |
+| 4       |               |                      |                     |
+| 5       |               |                      |                     |
+
+Remember:
+
+> **Do not simply write "Small" or "Testable". Explain your reasoning.**
+
+---
+
+# Part 10: Final Challenge: Would You Take This Into Sprint 2?
+
+Your Product Backlog has now been improved.
+
+But the job isn't finished.
+
+Your team is about to start **Sprint 2**.
+
+You have limited capacity.
+
+## Your Sprint 2 capacity:
+
+# 15 Story Points
+
+Your team must decide:
+
+> **Which backlog items would you take into Sprint 2?**
+
+Select the items you believe should form your Sprint Backlog.
+
+You do **not** have to use all 15 points.
+
+You also do **not** have to select the highest-priority items automatically.
+
+Your decisions should make sense together.
+
+---
+
+## Step 1: Select your Sprint 2 items
+
+| Backlog Item | Story Points | Why did we choose it? |
+| ------------ | -----------: | --------------------- |
+|              |              |                       |
+|              |              |                       |
+|              |              |                       |
+|              |              |                       |
+
+### Total:
+
+**_____ / 15 points**
+
+---
+
+# Step 2: Test Your Selected Stories Against INVEST
+
+For every story you selected, ask:
+
+### I - Independent
+
+Can this story reasonably be developed and delivered without depending heavily on another story?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+### N - Negotiable
+
+Are the details open to discussion and refinement?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+### V - Valuable
+
+Is the customer or stakeholder value clear?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+### E - Estimable
+
+Does the team understand the story well enough to estimate it?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+### S - Small
+
+Is it small enough to be completed within a Sprint?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+### T - Testable
+
+Can the team determine whether the story is complete and working?
+
+**Yes / No / Unsure**
+
+Why?
+
+---
+
+---
+
+# Step 3: Zoom Out: Is Our Product Backlog DEEP?
+
+Now stop looking at individual stories.
+
+Look at the **whole Product Backlog**.
+
+### D - Detailed appropriately
+
+Are items near the top more refined than items further down?
+
+What did you change?
+
+---
+
+### E - Estimated
+
+Do the relevant items have useful estimates?
+
+What did you change?
+
+---
+
+### E - Emergent
+
+Can the backlog change as the team learns more?
+
+What changed because of the new customer information?
+
+---
+
+### P - Prioritized
+
+Is the backlog ordered according to value and importance?
+
+What are your top three items now?
+
+1. ---
+2. ---
+3. ---
+
+---
+
+# Part 11: Team Challenge
+
+Pair up with another team.
+
+Team A presents its proposed Sprint 2.
+
+Team B becomes the **Challenge Team**.
+
+Your job is not to say:
+
+> "We don't agree."
+
+Your job is to ask:
+
+> **"Why?"**
+
+You may challenge the other team with questions such as:
+
+* Why did you choose this story?
+* Why did you leave this story out?
+* How is this story Valuable?
+* How is it Testable?
+* Why do you think it is Small?
+* How did you decide the priority?
+* Why is this story estimated at 5 points?
+* Could this story be split?
+* What would happen if new information arrived?
+* Is this item ready for Sprint 2?
+
+The other team gets a chance to defend its decision.
+
+Then switch roles.
+
+---
+
+# Part 12: The Final Decision
+
+Each team has **2 minutes** to present.
+
+Complete this sentence:
+
+> **"We would take these items into Sprint 2 because..."**
+
+Your presentation must include:
+
+### 1. Our Sprint Goal
+
+> ---
+
+### 2. Our selected stories
+
+> ---
+
+> ---
+
+> ---
+
+### 3. Our strongest INVEST decision
+
+> ---
+
+### 4. Our strongest DEEP decision
+
+> ---
+
+### 5. The biggest change we made to the backlog
+
+> ---
+
+---
+
+# Scoring
+
+Your facilitator (teacher)  will score the teams.
+
+| Category                                 | Points |
+| ---------------------------------------- | -----: |
+| Found genuine DEEP problems              |      5 |
+| Found genuine INVEST problems            |      5 |
+| Improved backlog items effectively       |      5 |
+| Made reasonable prioritization decisions |      5 |
+| Defended decisions during the challenge  |      5 |
+| Made a convincing Sprint 2 selection     |      5 |
+| **Total**                                | **30** |
+
+The winning team is not necessarily the team that finishes first.
+
+> **The winning team makes the strongest Scrum decisions and can explain why.**
+
+---
+
+# Final Discussion
+
+After the game, discuss these questions as a team.
+
+### 1.
+
+What makes a Product Backlog **DEEP**?
+
+---
+
+### 2.
+
+What makes an individual backlog item **INVEST**?
+
+---
+
+### 3.
+
+Can a story be INVEST but still **not belong in Sprint 2**?
+
+Why?
+
+---
+
+### 4.
+
+What happens to a Product Backlog after every Sprint?
+
+---
+
+### 5.
+
+Why shouldn't we make every item in the Product Backlog highly detailed?
+
+---
+
+### 6.
+
+What is the difference between:
+
+> **"This story is good."**
+
+and
+
+> **"This story is ready for our Sprint."**
+
+---
+
+---
+
+# Key Takeaway
+
+Remember:
+
+## DEEP = the Product Backlog
+
+**D** - Detailed appropriately
+**E** - Estimated
+**E** - Emergent
+**P** - Prioritized
+
+## INVEST = the individual story
+
+**I** - Independent
+**N** - Negotiable
+**V** - Valuable
+**E** - Estimable
+**S** - Small
+**T** - Testable
+
+And the real Scrum question is:
+
+> **"Is this backlog healthy enough, and are these stories ready enough, for us to make a good Sprint decision?"**
+
+You don't need a perfect backlog.
+
+You need a backlog that can **evolve, be understood, be prioritized, and support good decisions.**
