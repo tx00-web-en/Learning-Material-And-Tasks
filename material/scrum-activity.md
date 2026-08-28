@@ -726,13 +726,13 @@ Your facilitator (teacher) will score the teams.
 
 | Category                                 | Points |
 | ---------------------------------------- | -----: |
-| Found genuine DEEP problems              |      5 |
-| Found genuine INVEST problems            |      5 |
-| Improved backlog items effectively       |      5 |
-| Made reasonable prioritization decisions |      5 |
-| Defended decisions during the challenge  |      5 |
-| Made a convincing Sprint 2 selection     |      5 |
-| **Total**                                | **30** |
+| Found genuine DEEP problems              |      |
+| Found genuine INVEST problems            |      |
+| Improved backlog items effectively       |      |
+| Made reasonable prioritization decisions |      |
+| Defended decisions during the challenge  |      |
+| Made a convincing Sprint 2 selection     |      |
+| **Total**                                |      |
 
 The winning team is not necessarily the team that finishes first.
 
