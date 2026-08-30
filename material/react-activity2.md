@@ -15,7 +15,7 @@ There are two parts in this activity.
 2. Create a new React project and start the development server. In brief, run:
 
    ```bash
-   npx create-vite@latest react-lists-lab2 --template react
+   npx create-vite@latest react-lists-lab2 --template react --eslint
    cd react-lists-lab2
    npm install
    npm run dev
@@ -279,7 +279,7 @@ In this part, you will learn how to work with lists in React by importing a list
 2. Create a new React project and start the development server. In brief, run:
 
    ```bash
-   npx create-vite@latest react-lists-lab3 --template react
+   npx create-vite@latest react-lists-lab3 --template react --eslint
    cd react-lists-lab3
    npm install
    npm run dev

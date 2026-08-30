@@ -1,8 +1,23 @@
 # Task: Sprint 2 Kick-off Activities (Afternoon)
-
+<!-- 
 The goal of **Sprint 2 kick-off** session is to properly transition from Sprint 1 to Sprint 2 by reflecting on the previous sprint and planning the next sprint according to the Scrum framework.
 
 This activity is **mandatory** and must be completed **today**.
+
+> DEEP & INVEST
+
+> Preview & Technical Prep for Sprint 2
+
+In Sprint 2, your team will begin converting the Figma prototype into a **React UI** (without backend logic).
+
+Discuss briefly:
+* How will your prototype be broken down into modular React components?
+* Which styling approach will the team use (e.g., Tailwind CSS, plain CSS)?
+* Does anyone on the team need to review React or Tailwind resources before next week?
+
+- **Backend:** Write an API server for your project following the MVC (Model-View-Controller) architecture. You will need at least two data models: one for users and another for the service or product relevant to your project.   
+Todo: FEPP + [fakeapi](https://jsonplaceholder.typicode.com/)+ FE connect to backend
+[activities](./material/react-extra-activity.md)  
 
 ---
 
@@ -196,3 +211,4 @@ Each group must have:
 7. Documented all relevant artifacts in GitHub
 
 
+-->

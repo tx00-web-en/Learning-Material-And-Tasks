@@ -134,7 +134,7 @@ In this part, you will learn how to work with lists in React by importing a list
 2. Create a new React project and start the development server. For full steps on creating a React project with `Vite`, refer to [these instructions](./vite.md). In brief, run:
 
    ```bash
-   npx create-vite@latest react-lists-lab1 --template react
+   npx create-vite@latest react-lists-lab1 --template react --eslint
    cd react-lists-lab1
    npm install
    npm run dev
@@ -257,7 +257,7 @@ export default App;
 **Step 6: Test Your Application**
 
 1. Save your files and make sure your React development server is still running.
-2. Open your web browser and visit the URL specified by your React project e.g `http://localhost:5173`. It is possible to change the default port e.g `3000`, here's a [guideline](./vite.md#2-optional-change-the-default-port-to-3000-and-open-browser-automatically).
+2. Open your web browser and visit the URL specified by your React project e.g `http://localhost:5173`. It is possible to change the default port e.g `3000`, here's a [guideline](./vite.md#6-optional-use-port-3000-and-open-the-browser-automatically).
 3. You should see a list of books rendered on the page.
 4. To stop the server, use `ctr+c` (win users)
 

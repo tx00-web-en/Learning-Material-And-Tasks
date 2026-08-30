@@ -20,6 +20,26 @@ solution 1: delete:   top: -1.5rem;left: -1.5rem;
 5. Keep the repository private until Sunday.
 6. Include in your reflection journal the style you used during the pair programming session. For reference, here’s a brief introduction to the different styles of pair programming: [The Different Styles of Pair Programming](https://www.drovio.com/blog/the-different-styles-of-pair-programming/).  
 
+
+## Commit messages (best-practice, beginner-friendly)
+
+Use small commits that describe *what* changed.
+
+Recommended format (Conventional Commits style):
+
+- `feat(routing): add Home and NotFound components`
+  - *feat* Short for feature. Used when you add a new feature or new functionality to the codebase.
+- `refactor(components): convert Services to use useState`
+  - *refactor* used when you change existing code without altering behavior. This improves structure, readability, or organization.
+- `chore: install react-router-dom dependency`
+  - *chore* used for maintenance tasks that don't change application behavior. Examples: updating dependencies, adding logging, renaming files, config changes.
+
+Rule of thumb:
+
+- One commit = one "idea" that you could explain quickly.
+- If a commit breaks the app, it's too big.
+
+
 ## Instructions
 
 
