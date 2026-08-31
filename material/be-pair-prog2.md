@@ -1,4 +1,4 @@
-# Pair Programming Session 2 — Tour API
+# Pair Programming Session 2: Tour API
 
 In this pair programming session, you will build a **Tour API** using Node.js and Express.
 
@@ -402,7 +402,7 @@ You do not need to memorize every possible commit type. For this activity, focus
 
 ---
 
-# Iteration 0 — Create a Working Mock API
+# Iteration 0: Create a Working Mock API
 
 ## Goal
 
@@ -548,7 +548,7 @@ Does the tour logic work?
 This means that when a later iteration fails, you have already proved that the basic HTTP setup works.
 
 <details>
-<summary>Sample solution — Iteration 0</summary>
+<summary>Sample solution: Iteration 0</summary>
 
 ### `tourHandlers.js`
 
@@ -634,7 +634,7 @@ chore: initialize tour API
 
 Switch Driver and Navigator.
 
-# Iteration 1 — Install and Understand Nodemon
+# Iteration 1: Install and Understand Nodemon
 
 ## Goal
 
@@ -773,7 +773,7 @@ A good answer is:
 
 
 <details>
-<summary>Sample solution — Iteration 1</summary>
+<summary>Sample solution: Iteration 1</summary>
 
 `package.json` should contain:
 
@@ -812,7 +812,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 2 — Create `tourLib.js`
+# Iteration 2: Create `tourLib.js`
 
 ## Goal
 
@@ -900,7 +900,7 @@ Confirm that:
 
 
 <details>
-<summary>Sample solution — Iteration 2</summary>
+<summary>Sample solution: Iteration 2</summary>
 
 ```js
 let tours = [];
@@ -945,7 +945,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 3 — Implement `getAll()`
+# Iteration 3: Implement `getAll()`
 
 ## Goal
 
@@ -999,7 +999,7 @@ Both partners should be able to explain:
 
 
 <details>
-<summary>Sample solution — Iteration 3</summary>
+<summary>Sample solution: Iteration 3</summary>
 
 Add `getAll()`:
 
@@ -1058,7 +1058,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 4 — Create `tourHandlers.js`
+# Iteration 4: Create `tourHandlers.js`
 
 ## Goal
 
@@ -1118,7 +1118,7 @@ Make sure all five handlers:
 
 
 <details>
-<summary>Sample solution — Iteration 4</summary>
+<summary>Sample solution: Iteration 4</summary>
 
 ```js
 const Tour = require("./tourLib");
@@ -1170,7 +1170,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 5 — Connect the Express Routes
+# Iteration 5: Connect the Express Routes
 
 ## Goal
 
@@ -1240,7 +1240,7 @@ all reach the expected handler.
 
 
 <details>
-<summary>Sample solution — Iteration 5</summary>
+<summary>Sample solution: Iteration 5</summary>
 
 ```js
 const express = require("express");
@@ -1286,7 +1286,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 6 — Implement `GET /tours`
+# Iteration 6: Implement `GET /tours`
 
 ## Goal
 
@@ -1339,7 +1339,7 @@ Confirm the response contains the tours stored by `tourLib.js`.
 
 
 <details>
-<summary>Sample solution — Iteration 6</summary>
+<summary>Sample solution: Iteration 6</summary>
 
 Update the handler:
 
@@ -1368,7 +1368,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 7 — Implement `POST /tours`
+# Iteration 7: Implement `POST /tours`
 
 ## Goal
 
@@ -1442,7 +1442,7 @@ tours array
 
 
 <details>
-<summary>Sample solution — Iteration 7</summary>
+<summary>Sample solution: Iteration 7</summary>
 
 ```js
 const createTour = (req, res) => {
@@ -1488,7 +1488,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 8 — Implement `GET /tours/:tourId`
+# Iteration 8: Implement `GET /tours/:tourId`
 
 ## Goal
 
@@ -1537,7 +1537,7 @@ Test both an existing and non-existent tour.
 
 
 <details>
-<summary>Sample solution — Iteration 8</summary>
+<summary>Sample solution: Iteration 8</summary>
 
 Add this to `tourLib.js`:
 
@@ -1587,7 +1587,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 9 — Implement `PATCH /tours/:tourId`
+# Iteration 9: Implement `PATCH /tours/:tourId`
 
 ## Goal
 
@@ -1730,7 +1730,7 @@ Explain to your partner:
 
 
 <details>
-<summary>Sample solution — Iteration 9</summary>
+<summary>Sample solution: Iteration 9</summary>
 
 A simple `update()` can find the tour and replace only the supplied properties:
 
@@ -1785,7 +1785,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 10 — Implement `DELETE /tours/:tourId`
+# Iteration 10: Implement `DELETE /tours/:tourId`
 
 ## Goal
 
@@ -1839,7 +1839,7 @@ Confirm that the deleted tour is no longer available.
 
 
 <details>
-<summary>Sample solution — Iteration 10</summary>
+<summary>Sample solution: Iteration 10</summary>
 
 A simple library function:
 
@@ -1888,7 +1888,7 @@ Switch Driver and Navigator.
 
 ---
 
-# Iteration 11 — Add Validation
+# Iteration 11: Add Validation
 
 ## Goal
 
@@ -1941,7 +1941,7 @@ Also verify that the invalid tour was **not added** to the in-memory array.
 
 
 <details>
-<summary>Sample solution — Iteration 11</summary>
+<summary>Sample solution: Iteration 11</summary>
 
 Keep the validation simple.
 
@@ -2209,7 +2209,7 @@ PATCH /tours/:tourId
 
 because we want to update only part of a tour.
 
-## PATCH — Partial Update
+## PATCH: Partial Update
 
 Suppose the existing tour is:
 
@@ -2418,4 +2418,3 @@ git status
 
 Make sure all completed work has been committed.
 
-Congratulations — you have completed Pair Programming Session 2!

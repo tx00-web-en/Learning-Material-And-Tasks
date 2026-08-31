@@ -1,4 +1,4 @@
-# Pair Programming Session 1 — Feedback API
+# Pair Programming Session 1: Feedback API
 
 In this pair programming session, you will build a small **Feedback API** using Node.js and Express.
 
@@ -176,7 +176,7 @@ The Driver and Navigator should communicate continuously.
 
 You will use **one shared GitHub repository per pair**.
 
-## Step 1 — Member 1 creates the repository
+## Step 1: Member 1 creates the repository
 
 Choose one student as **Member 1**.
 
@@ -199,7 +199,7 @@ git remote add origin <your-repository-url>
 git push -u origin main
 ```
 
-## Step 2 — Member 2 clones the repository
+## Step 2: Member 2 clones the repository
 
 Member 2 does **not** create a second repository.
 
@@ -214,7 +214,7 @@ After cloning, both students are working with the same repository.
 
 > **Important:** `git clone` is only needed the first time. After that, use `git pull`.
 
-## Step 3 — Before starting an iteration, pull
+## Step 3: Before starting an iteration, pull
 
 The student who is going to work next should first make sure they have the latest version:
 
@@ -224,7 +224,7 @@ git pull
 
 Do this **before** starting the next iteration.
 
-## Step 4 — Work, test, commit, and push
+## Step 4: Work, test, commit, and push
 
 The Driver works while the Navigator reviews and discusses the implementation.
 
@@ -368,7 +368,7 @@ From this point onward, **you decide the commit message after each iteration**.
 
 ---
 
-# Iteration 0 — Create a Running Mock API
+# Iteration 0: Create a Running Mock API
 
 ## Goal
 
@@ -603,7 +603,7 @@ The other student should now `git pull`, and you should switch Driver and Naviga
 
 ---
 
-# Iteration 1 — Create `feedbackLib.js`
+# Iteration 1: Create `feedbackLib.js`
 
 > **How to use the sample solutions:** Try the iteration yourself first. The `<details>` section is there as a reference after you have attempted the task. The examples are intentionally simple and follow the style of the Pets API rather than introducing extra abstractions or libraries.
 
@@ -749,7 +749,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 2 — Implement `getAll()`
+# Iteration 2: Implement `getAll()`
 
 ## Goal
 
@@ -841,7 +841,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 3 — Create the Feedback Handlers
+# Iteration 3: Create the Feedback Handlers
 
 ## Goal
 
@@ -938,7 +938,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 4 — Connect the Express Routes
+# Iteration 4: Connect the Express Routes
 
 ## Goal
 
@@ -1052,7 +1052,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 5 — Implement `GET /feedback`
+# Iteration 5: Implement `GET /feedback`
 
 ## Goal
 
@@ -1143,7 +1143,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 6 — Implement `POST /feedback`
+# Iteration 6: Implement `POST /feedback`
 
 ## Goal
 
@@ -1239,7 +1239,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 7 — Implement `GET /feedback/:feedbackId`
+# Iteration 7: Implement `GET /feedback/:feedbackId`
 
 ## Goal
 
@@ -1344,7 +1344,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 8 — Implement `PATCH /feedback/:feedbackId`
+# Iteration 8: Implement `PATCH /feedback/:feedbackId`
 
 ## Goal
 
@@ -1526,7 +1526,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 9 — Implement `DELETE /feedback/:feedbackId`
+# Iteration 9: Implement `DELETE /feedback/:feedbackId`
 
 ## Goal
 
@@ -1633,7 +1633,7 @@ Commit and push your completed work. The other student should `git pull` before 
 
 ---
 
-# Iteration 10 — Add Validation
+# Iteration 10: Add Validation
 
 ## Goal
 
@@ -1896,7 +1896,7 @@ You used `PATCH` for the update endpoint in this activity.
 
 It is important to understand why.
 
-## PATCH — Partial Update
+## PATCH: Partial Update
 
 `PATCH` is appropriate when you want to change **only some fields** of an existing resource.
 
@@ -1942,7 +1942,7 @@ The other fields remain unchanged.
 
 ---
 
-## PUT — Replace the Resource
+## PUT: Replace the Resource
 
 `PUT` is generally used when the client sends a **complete replacement representation** of the resource.
 
