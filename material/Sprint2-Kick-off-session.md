@@ -206,7 +206,7 @@ An initial **Sprint 2 Backlog** containing the work selected for the sprint.
 
 ---
 
-## 6a. Frontend and Backend Responsibilities
+## 6. Frontend and Backend Responsibilities
 
 **Suggested time: 15 minutes**
 
@@ -228,7 +228,7 @@ A clear understanding of frontend and backend responsibilities.
 
 ---
 
-## 6b. UI Layout and Design Approach
+## 7. UI Layout and Design Approach
 
 **Suggested time: 10 minutes**
 
@@ -271,7 +271,7 @@ For example:
 
 ---
 
-## 7. Agree on the Frontend/Backend Interface
+## 8. Agree on the Frontend/Backend Interface
 
 **Suggested time: 20 minutes**
 
@@ -318,7 +318,7 @@ A shared, agreed-upon interface that both frontend and backend teams can follow 
 
 ---
 
-## 8. Convert User Stories into Tickets
+## 9. Convert User Stories into Tickets
 
 **Suggested time: 15 minutes**
 
@@ -358,7 +358,7 @@ A set of actionable tickets connected to the Sprint 2 user stories.
 
 ---
 
-## 9. Create a Timeline for the Current Week and the First Three Days of Week 4
+## 10. Create a Timeline for the Current Week and the First Three Days of Week 4
 
 **Suggested time: 15 minutes**
 
@@ -444,7 +444,7 @@ Begin Sprint 2 development according to your Sprint Backlog and timeline.
 Remember:
 
 - Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent.
-- The frontend and backend will be connected in Sprint 3.**
+- The frontend and backend will be connected in Sprint 3.
 
 <!-- 
 ---
