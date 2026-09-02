@@ -85,7 +85,7 @@ Establish a clear Sprint 2 Goal for your project.
 
 Your Sprint Goal should reflect the main purpose of Sprint 2:
 
-> **Develop the frontend and backend independently and establish the interface required to connect them in Sprint 3.**
+> **Develop the frontend and backend independently.**
 
 Adapt this goal to your specific application.
 
@@ -198,6 +198,8 @@ The **Product Owner is responsible for the Product Backlog**, but the Sprint Bac
 
 Do not select more work than the team can reasonably complete during the sprint.
 
+> remember: **Story Points** are an abstract unit of measure used to estimate the relative effort, complexity, and risk associated with completing a Product Backlog Item. 
+
 ### Outcome
 
 An initial **Sprint 2 Backlog** containing the work selected for the sprint.
@@ -240,7 +242,7 @@ Examples include:
 2. **F-pattern layout**
 3. **Fullscreen image layout**
 4. **Split-screen layout**
-5. etc.
+5. https://www.wix.com/blog/website-layouts 
 
 You may use **AI assistance** to research and compare these layout patterns and to discuss which approach may be appropriate for your application.
 
@@ -273,7 +275,7 @@ For example:
 
 **Suggested time: 20 minutes**
 
-Before development continues, the frontend and backend teams should agree on the interface that will be used when the application is connected in Sprint 3.
+Before development continues, the frontend and backend teams should agree on the interface that will be used.
 
 Discuss and agree on:
 
@@ -308,7 +310,7 @@ The backend team can independently implement the corresponding API endpoints.
 
 > **Important:** The frontend and backend should agree on the interface, but **do not connect them during Sprint 2**.
 
-Swagger/OpenAPI documentation will be covered in Sprint 3.
+<!-- API documentation will be covered in Sprint 3. -->
 
 ### Outcome
 
@@ -441,7 +443,8 @@ Begin Sprint 2 development according to your Sprint Backlog and timeline.
 
 Remember:
 
-> **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. The frontend and backend will be connected in Sprint 3.**
+- **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent.
+- The frontend and backend will be connected in Sprint 3.**
 
 
 ---
@@ -505,7 +508,7 @@ Establish a clear Sprint 2 Goal for your project.
 
 Your Sprint Goal should reflect the main purpose of Sprint 2:
 
-> **Develop the frontend and backend independently and establish the interface required to connect them in Sprint 3.**
+> **Develop the frontend and backend independently.**
 
 Adapt this goal to your specific application.
 
@@ -529,7 +532,7 @@ Also review the Sprint 2 scope and make sure the team understands what is and is
 
 * connecting the frontend to the backend;
 * real authentication;
-* Swagger/OpenAPI documentation;
+* API documentation;
 * Supertest;
 * other Sprint 3 functionality.
 
@@ -661,7 +664,7 @@ A clear understanding of frontend and backend responsibilities.
 
 **Suggested time: 20 minutes**
 
-Before development continues, the frontend and backend teams should agree on the interface that will be used when the application is connected in Sprint 3.
+Before development continues, the frontend and backend teams should agree on the interface that will be used **later**.
 
 Discuss and agree on:
 
@@ -696,7 +699,7 @@ The backend team can independently implement the corresponding API endpoints.
 
 > **Important:** The frontend and backend should agree on the interface, but **do not connect them during Sprint 2**.
 
-Swagger/OpenAPI documentation will be covered in Sprint 3.
+<!-- API documentation will be covered in Sprint 3. -->
 
 ---
 
@@ -821,6 +824,7 @@ Begin Sprint 2 development according to your Sprint Backlog and timeline.
 
 Remember:
 
-> **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. The frontend and backend will be connected in Sprint 3.**
+- Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. 
+- The frontend and backend will be connected in Sprint 3.**
 
 
