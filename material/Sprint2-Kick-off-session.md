@@ -198,7 +198,7 @@ The **Product Owner is responsible for the Product Backlog**, but the Sprint Bac
 
 Do not select more work than the team can reasonably complete during the sprint.
 
-> remember: **Story Points** are an abstract unit of measure used to estimate the relative effort, complexity, and risk associated with completing a Product Backlog Item. 
+> Note: **Story Points** are an abstract unit of measure used to estimate the relative effort, complexity, and risk associated with completing a Product Backlog Item. 
 
 ### Outcome
 
@@ -443,10 +443,10 @@ Begin Sprint 2 development according to your Sprint Backlog and timeline.
 
 Remember:
 
-- **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent.
+- Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent.
 - The frontend and backend will be connected in Sprint 3.**
 
-
+<!-- 
 ---
 
 
@@ -699,7 +699,6 @@ The backend team can independently implement the corresponding API endpoints.
 
 > **Important:** The frontend and backend should agree on the interface, but **do not connect them during Sprint 2**.
 
-<!-- API documentation will be covered in Sprint 3. -->
 
 ---
 
@@ -827,4 +826,4 @@ Remember:
 - Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. 
 - The frontend and backend will be connected in Sprint 3.**
 
-
+ -->
