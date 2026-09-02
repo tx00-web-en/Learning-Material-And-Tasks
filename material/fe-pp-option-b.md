@@ -12,6 +12,7 @@ Some students feel nervous about “strict” pair programming. That's totally o
 - Your goal is to **try together first**, then reveal help only if you need it.
 - Each iteration below has a hidden solution you can expand/collapse.
 
+
 Example format you will see:
 
 ```html
