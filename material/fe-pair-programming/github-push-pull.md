@@ -25,7 +25,7 @@ Here's an example workflow that you can follow before starting the pair programm
    - **Step 3**: Member 1 pushes the repository to GitHub:
      ```bash
      git remote add origin https://github.com/username/repo-name.git
-     branch -M main
+     git branch -M main
      git push -u origin main
      ```
 
