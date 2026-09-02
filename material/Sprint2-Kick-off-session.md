@@ -1,214 +1,826 @@
-# Task: Sprint 2 Kick-off Activities (Afternoon)
-<!-- 
-The goal of **Sprint 2 kick-off** session is to properly transition from Sprint 1 to Sprint 2 by reflecting on the previous sprint and planning the next sprint according to the Scrum framework.
+# Task: Sprint 2 Kick-off Activities
 
-This activity is **mandatory** and must be completed **today**.
+**Duration: 2 hours 30 minutes**
 
-> DEEP & INVEST
+## Purpose of the Meeting
 
-> Preview & Technical Prep for Sprint 2
+This meeting is the starting point for Sprint 2.
 
-In Sprint 2, your team will begin converting the Figma prototype into a **React UI** (without backend logic).
+By the end of the meeting, each group should have:
 
-Discuss briefly:
-* How will your prototype be broken down into modular React components?
-* Which styling approach will the team use (e.g., Tailwind CSS, plain CSS)?
-* Does anyone on the team need to review React or Tailwind resources before next week?
+* reflected on Sprint 1 and identified improvements for Sprint 2;
+* established a Sprint 2 Goal;
+* assigned Scrum roles and responsibilities;
+* reviewed and updated the Product Backlog;
+* created an initial Sprint 2 Backlog;
+* created the Sprint 2 Git repository and added the instructor as a collaborator;
+* identified the main frontend and backend work;
+* agreed on the interface between the frontend and backend;
+* converted selected user stories into actionable tickets;
+* created a timeline for the remainder of Week 3 and the first three days of Week 4.
 
-- **Backend:** Write an API server for your project following the MVC (Model-View-Controller) architecture. You will need at least two data models: one for users and another for the service or product relevant to your project.   
-Todo: FEPP + [fakeapi](https://jsonplaceholder.typicode.com/)+ FE connect to backend
-[activities](./material/react-extra-activity.md)  
-
----
-
-## 1. Confirm Scrum Roles (Mandatory)
-
-Each group must clearly identify and agree on the following roles:
-
-### 1.1 Scrum Master
-
-* One person must be identified as the **Scrum Master**.
-* Due to small group sizes, the Scrum Master **is also a developer**.
-* Responsibilities:
-
-  * Facilitate all Scrum ceremonies:
-
-    * Sprint Planning
-    * Daily Scrum
-    * Sprint Review
-    * Sprint Retrospective
-  * Ensure the **Sprint 1 Retrospective** is conducted today.
-  * Ensure the **Sprint 2 Planning session** is completed today.
-  * Log the team’s Scrum adoption **daily** (short entries).
-  * Maintain Scrum-related documentation in GitHub.
+The activities below are **suggested time allocations**. Groups may adjust the time spent on each activity according to their needs.
 
 ---
 
-### 1.2 Product Owner
+## 1. Sprint 1 Retrospective
 
-* One person must be identified as the **Product Owner**.
-* The Product Owner **is also a developer**.
-* Responsibilities:
+**Suggested time: 20 minutes**
 
-  * Own and maintain the **Product Backlog**.
-  * Ensure that the **Sprint 2 Backlog** is derived from the Product Backlog.
-  * If a Product Backlog does not exist, create one today.
-  * Prioritize backlog items according to Sprint 2 deliverables and assessment criteria.
-  * Maintain Product Backlog and Sprint Backlog documentation in GitHub.
+Reflect on your experience during Sprint 1.
 
----
+Discuss:
 
-### 1.3 UI/UX Responsibility
+* What worked well?
+* What did not work well?
+* What did you learn?
+* What should you continue doing?
+* What should you change in Sprint 2?
+* What problems from Sprint 1 should be avoided?
 
-* One team member must take responsibility for **UI/UX decisions**.
-* Responsibilities:
+Use the retrospective format agreed upon by your group.
 
-  * Decide which **CSS approach or library** will be used (e.g., Vanilla CSS, Tailwind, MUI).
-  * Ensure consistency with the **Sprint 1 Figma prototype**.
-  * Ensure responsiveness is considered during Sprint 2 planning.
+### Outcome
+
+Identify a small number of **concrete improvements** that the team will apply during Sprint 2.
 
 ---
 
-### 1.4 Developers
+## 2. Scrum Roles and Sprint 2 Git Repository
 
-* All team members act as developers.
-* Responsibilities:
+**Suggested time: 15 minutes**
 
-  * Contribute to front-end and/or back-end development.
-  * Participate in backlog refinement and estimation.
-  * Commit code regularly and document contributions clearly.
+### Scrum Roles
 
----
+After completing the retrospective, decide whether your Scrum roles will remain the same or change for Sprint 2.
 
-## 2. Conduct Sprint 1 Retrospective (First Activity After Presentations)
+The **Product Owner remains the same**.
 
-Before planning Sprint 2, each group must conduct a **Sprint 1 Retrospective**.
+The group may choose a different Scrum Master for Sprint 2 if appropriate.
 
-### Format:
+Confirm the responsibilities of each role and make sure the workload associated with Scrum responsibilities is considered when distributing development work.
 
-* [Use the **4Ls Retrospective**:](https://agilebox.app/blog/4ls-retrospective/)
+### Git Repository
 
-  * **Liked**
-  * **Learned**
-  * **Lacked**
-  * **Longed For**
+Create the Git repository for Sprint 2.
 
-### Requirements:
+Make sure that:
 
-* Include both:
+* all team members have access;
+* the instructor has been added as a collaborator;
+* the repository is ready for Sprint 2 development;
+* the project structure is ready for the team to begin working.
 
-  * **Factual insights** (process, tools, collaboration)
-  * **Emotional insights** (stress, confidence, motivation)
-* Document the retrospective results and store them in GitHub.
+### Outcome
+
+Confirmed Scrum roles and a working Sprint 2 Git repository.
 
 ---
 
-## 3. Define Sprint 2 Goal
+## 3. Sprint 2 Goal and Scope
 
-After the retrospective, the team must define a **Sprint 2 Goal**.
+**Suggested time: 15 minutes**
 
-### Sprint Goal:
+Establish a clear Sprint 2 Goal for your project.
 
-* A **single clear statement** describing what the team aims to achieve by the end of Sprint 2.
-* The goal must align with:
+Your Sprint Goal should reflect the main purpose of Sprint 2:
 
-  * Sprint 1 prototype
-  * [Sprint 2 deliverables and Assessment criteria](https://github.com/tx00-web-en/Project/blob/main/material/sprint2.md)
-  
+> **Develop the frontend and backend independently and establish the interface required to connect them in Sprint 3.**
 
-Example (for guidance):
+Adapt this goal to your specific application.
 
-> “By the end of Sprint 2, the team will deliver a working front-end and back-end structure aligned with the Sprint 1 prototype, including routing, mock data, and initial AI-related endpoints.”
+Also review the Sprint 2 scope and make sure the team understands what is and is not expected during this sprint.
 
----
+### Sprint 2 includes
 
-## 4. Product Backlog Review and Creation
+* React frontend development;
+* components and pages;
+* navigation and routing;
+* responsive design;
+* mock/static frontend data;
+* backend development using MVC;
+* CRUD functionality;
+* mock/array data;
+* MongoDB/Mongoose when covered in class;
+* Postman API testing;
+* agreement on the frontend/backend interface.
 
-### 4.1 Product Backlog
+### Sprint 2 does not include
 
-* The Product Owner must ensure a **Product Backlog exists**.
-* The Product Backlog should include:
-
-  * ~~Features derived from the Sprint 1 prototype~~
-  * Functional and technical requirements for the MERN application
-  * Front-end, back-end, AI, and infrastructure-related items
-
-If no Product Backlog exists, it **must be created today**.
-
----
-
-## 5. Sprint 2 Backlog Creation
-
-### 5.1 Extract Sprint 2 Backlog
-
-* The Sprint 2 Backlog must be selected from the Product Backlog.
-* Only items that contribute to **Sprint 2 deliverables** should be included.
-
-Sprint 2 backlog items should cover:
-
-* Front-end implementation
-* Back-end implementation (including AI-related endpoints)
-
+* connecting the frontend to the backend;
+* real authentication;
+* Swagger/OpenAPI documentation;
+* Supertest;
+* other Sprint 3 functionality.
 
 ---
 
-### 5.2 User Stories and Story Points (Mandatory)
+## 4. Product Backlog Refinement
 
-All Sprint 2 backlog items must be written as **user stories** where applicable and **estimated using story points**.
+**Suggested time: 25 minutes**
 
-#### User Story Format:
+Review your existing Product Backlog from Sprint 1.
 
-> *As a [type of user], I want [some goal] so that [some value].*
+The **Product Owner leads the Product Backlog work**, while the rest of the team participates and works in parallel.
 
-#### Story Points:
+As a group:
 
-* Use **story points** to estimate effort and complexity.
-* Teams may use a simple scale such as:
+* review and improve the user stories;
+* check whether the important stories are sufficiently clear;
+* apply **INVEST** where appropriate;
+* make sure the backlog is **DEEP**;
+* prioritize the backlog;
+* identify stories that are relevant to Sprint 2;
+* identify stories that may need to be split into smaller pieces.
 
-  * 1, 2, 3, 5, 8
-* Estimation should be done collaboratively by the team.
-* Story points represent **relative effort**, not hours.
+### While the Product Owner is reviewing the backlog
 
-Each Sprint 2 backlog item must include:
+Other team members should not wait for the Product Owner to finish.
 
-* A short description or user story
-* Assigned story points
-* Responsible team member(s)
+Use the time to:
 
----
+* review the stories from the perspective of the frontend;
+* review the stories from the perspective of the backend;
+* identify frontend and backend work required by each story;
+* identify dependencies or questions;
+* identify stories that may require coordination;
+* consider which stories are realistic for Sprint 2.
 
-## 6. Tooling and Documentation (GitHub)
+The team should discuss any issues or decisions together as they arise.
 
-GitHub must be used to document and support Scrum activities.
+### Outcome
 
-Recommended documentation includes:
-
-* Product Backlog
-* Sprint 2 Backlog
-* Sprint 1 Retrospective (4Ls)
-* Scrum Master daily logs
-* Evidence of team contributions (commits, issues)
-
-The structure is flexible, but documentation must be **clear, accessible, and traceable**.
+An updated and prioritized Product Backlog, with a clear understanding of the stories that may be selected for Sprint 2.
 
 ---
 
-## 7. Outcome of Today’s Session
+## 5. Create the Initial Sprint 2 Backlog
 
-By the end of today’s session:
+**Suggested time: 20 minutes**
 
-Each group must have:
+The **Product Owner and the development team create the Sprint 2 Backlog together**.
 
-1. Identified Scrum Master, Product Owner, and UI/UX responsibility
-2. Completed and documented Sprint 1 Retrospective
-3. Defined a clear Sprint 2 Goal
-4. Created or refined the Product Backlog
-5. Created a Sprint 2 Backlog with:
+Select the user stories that the team plans to work on during Sprint 2.
 
-   * User stories
-   * Story point estimates
-6. Agreed on tools, CSS approach, and working agreements
-7. Documented all relevant artifacts in GitHub
+Consider the work required for both the frontend and backend.
+
+Organize the selected work into appropriate areas, for example:
+
+### Frontend
+
+* React components;
+* pages;
+* navigation;
+* routing;
+* responsive design;
+* lists;
+* mock/static data;
+* other frontend functionality required by the selected stories.
+
+### Backend
+
+* server setup;
+* models/data structures;
+* controllers;
+* routes;
+* middleware;
+* CRUD operations;
+* mock/array data;
+* API endpoints.
+
+### Coordination
+
+* frontend/backend data structures;
+* API endpoints;
+* responsibilities between frontend and backend teams.
+
+The **Product Owner is responsible for the Product Backlog**, but the Sprint Backlog is developed **with the team**. The team should discuss feasibility, workload, dependencies, and the amount of work that can realistically be completed.
+
+Do not select more work than the team can reasonably complete during the sprint.
+
+### Outcome
+
+An initial **Sprint 2 Backlog** containing the work selected for the sprint.
+
+---
+
+## 6a. Frontend and Backend Responsibilities
+
+**Suggested time: 15 minutes**
+
+Identify how the work will be divided between the frontend and backend members of the team.
+
+For the selected Sprint 2 stories, identify:
+
+* which work belongs to the frontend;
+* which work belongs to the backend;
+* which work requires coordination between both sides.
+
+Remember that the frontend and backend teams will work **in parallel**.
+
+The teams should communicate regularly even though the applications will not be connected during Sprint 2.
+
+### Outcome
+
+A clear understanding of frontend and backend responsibilities.
+
+---
+
+## 6b. UI Layout and Design Approach
+
+**Suggested time: 10 minutes**
+
+Before continuing with frontend development, discuss the main UI layout patterns that your application will use.
+
+Consider which layout or combination of layouts best supports your application's purpose and users.
+
+Examples include:
+
+1. **Z-pattern layout**
+2. **F-pattern layout**
+3. **Fullscreen image layout**
+4. **Split-screen layout**
+5. etc.
+
+You may use **AI assistance** to research and compare these layout patterns and to discuss which approach may be appropriate for your application.
+
+Consider:
+
+* Who are your users?
+* What is the main purpose of each page?
+* What information should users notice first?
+* What actions should users take?
+* Which layout makes the content easiest to understand?
+* Does the layout fit the type of application you are building?
+* Does it support responsive design?
+* Does it match the visual direction of your Sprint 1 prototype?
+
+### Outcome
+
+Agree on the main UI layout approach for your application and briefly record:
+
+> **Which layout(s) are you using, and why?**
+
+For example:
+
+> **Our application primarily uses a card-based layout for displaying services because users need to compare multiple services quickly. We combine this with a single-column layout for the registration form because it provides a simple and focused form experience.**
+
+**Important:** The goal is not to choose the "best" layout in general. Choose a layout that is appropriate for **your users, content, functionality, and application**.
+
+---
+
+## 7. Agree on the Frontend/Backend Interface
+
+**Suggested time: 20 minutes**
+
+Before development continues, the frontend and backend teams should agree on the interface that will be used when the application is connected in Sprint 3.
+
+Discuss and agree on:
+
+* API endpoint names;
+* HTTP methods;
+* required data;
+* JSON request structures;
+* JSON response structures;
+* required fields and their data types.
+
+For example:
+
+```text
+GET /api/products
+```
+
+could return:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 1200
+  }
+]
+```
+
+The frontend team can then use mock data with the agreed structure while developing the React application.
+
+The backend team can independently implement the corresponding API endpoints.
+
+> **Important:** The frontend and backend should agree on the interface, but **do not connect them during Sprint 2**.
+
+Swagger/OpenAPI documentation will be covered in Sprint 3.
+
+### Outcome
+
+A shared, agreed-upon interface that both frontend and backend teams can follow during Sprint 2.
+
+---
+
+## 8. Convert User Stories into Tickets
+
+**Suggested time: 15 minutes**
+
+Select some of the Sprint 2 user stories and break them into smaller, actionable development tickets.
+
+For example:
+
+### User Story
+
+> As a customer, I want to see available services so that I can choose a service.
+
+Possible tickets:
+
+**Frontend**
+
+* Create `ServiceList` component.
+* Create `ServiceCard` component.
+* Add mock service data.
+* Display services.
+* Make the service list responsive.
+
+**Backend**
+
+* Create Service model/data structure.
+* Create service controller.
+* Create `GET /api/services` endpoint.
+* Add service route.
+* Test the endpoint with Postman.
+
+Tickets should be sufficiently clear that a team member can understand what needs to be done.
+
+You do not necessarily need to convert every Sprint 2 user story into detailed tickets during this meeting. Focus on the work that needs to start first.
+
+### Outcome
+
+A set of actionable tickets connected to the Sprint 2 user stories.
+
+---
+
+## 9. Create a Timeline for the Current Week and the First Three Days of Week 4
+
+**Suggested time: 15 minutes**
+
+Create a realistic timeline for the **remainder of Week 3 and the first three days of Week 4**.
+
+Use the recommended Sprint 2 workflow as a guide.
+
+### Frontend
+
+Plan work such as:
+
+* main React components;
+* application pages;
+* navbar and navigation;
+* responsive layouts;
+* lists of products/services or other application data;
+* mock/static data;
+* conversion of an existing HTML template to React components, if applicable.
+
+### Backend
+
+Plan work such as:
+
+* Express server;
+* MVC structure;
+* mock/array data;
+* models/data structures;
+* controllers;
+* routes;
+* middleware;
+* CRUD functionality;
+* API endpoints;
+* Postman testing.
+
+### Coordination
+
+Include time for:
+
+* frontend/backend communication;
+* checking the agreed interface;
+* resolving questions or inconsistencies;
+* reviewing progress.
+
+Login, registration, and other forms will be addressed later in the Sprint 2 workflow when appropriate.
+
+### Outcome
+
+A realistic timeline for the work to be completed during the remainder of Week 3 and the first three days of Week 4.
+
+---
+
+# Final Check
+
+**Suggested time: 5 minutes**
+
+Before finishing the meeting, confirm that your group has completed the following:
+
+* [ ] Sprint 1 retrospective completed.
+* [ ] Sprint 2 improvements identified.
+* [ ] Scrum roles confirmed.
+* [ ] Sprint 2 Git repository created.
+* [ ] Instructor added as collaborator.
+* [ ] Sprint 2 Goal defined.
+* [ ] Sprint 2 scope understood.
+* [ ] Product Backlog reviewed and updated.
+* [ ] Product Backlog prioritized.
+* [ ] Initial Sprint 2 Backlog created.
+* [ ] Frontend responsibilities identified.
+* [ ] Backend responsibilities identified.
+* [ ] Frontend/backend interface agreed upon.
+* [ ] Main UI layout approach identified and justified.
+* [ ] Selected user stories converted into tickets.
+* [ ] Timeline created for the remainder of Week 3 and the first three days of Week 4.
+* [ ] Each team member knows what they are expected to work on next.
 
 
--->
+---
+
+# After the Meeting
+
+Begin Sprint 2 development according to your Sprint Backlog and timeline.
+
+Remember:
+
+> **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. The frontend and backend will be connected in Sprint 3.**
+
+
+---
+
+
+
+
+# Task: Sprint 2 Kick-off Activities (version 1)
+
+
+
+## Purpose of the Meeting
+
+This meeting is the starting point for Sprint 2.
+
+By the end of the meeting, each group should have:
+
+* reflected on Sprint 1 and identified improvements for Sprint 2;
+* established a Sprint 2 Goal;
+* reviewed and updated the Product Backlog;
+* created an initial Sprint 2 Backlog;
+* assigned Scrum roles and responsibilities;
+* created the Sprint 2 Git repository and added the instructor as a collaborator;
+* identified the main frontend and backend work;
+* agreed on the interface between the frontend and backend;
+* converted selected user stories into actionable tickets;
+* created a timeline for the remainder of Week 3 and the first three days of Week 4.
+
+The activities below are **suggested time allocations**. Groups may adjust the time spent on each activity according to their needs.
+
+---
+
+## 1. Sprint 1 Retrospective
+
+**Suggested time: 20 minutes**
+
+Reflect on your experience during Sprint 1.
+
+Discuss:
+
+* What worked well?
+* What did not work well?
+* What did you learn?
+* What should you continue doing?
+* What should you change in Sprint 2?
+* What problems from Sprint 1 should be avoided?
+
+Use the retrospective format agreed upon by your group.
+
+### Outcome
+
+Identify a small number of **concrete improvements** that the team will apply during Sprint 2.
+
+---
+
+## 2. Sprint 2 Goal and Scope
+
+**Suggested time: 15 minutes**
+
+Establish a clear Sprint 2 Goal for your project.
+
+Your Sprint Goal should reflect the main purpose of Sprint 2:
+
+> **Develop the frontend and backend independently and establish the interface required to connect them in Sprint 3.**
+
+Adapt this goal to your specific application.
+
+Also review the Sprint 2 scope and make sure the team understands what is and is not expected during this sprint.
+
+### Sprint 2 includes
+
+* React frontend development;
+* components and pages;
+* navigation and routing;
+* responsive design;
+* mock/static frontend data;
+* backend development using MVC;
+* CRUD functionality;
+* mock/array data;
+* MongoDB/Mongoose when covered in class;
+* Postman API testing;
+* agreement on the frontend/backend interface.
+
+### Sprint 2 does not include
+
+* connecting the frontend to the backend;
+* real authentication;
+* Swagger/OpenAPI documentation;
+* Supertest;
+* other Sprint 3 functionality.
+
+---
+
+## 3. Product Backlog Refinement
+
+**Suggested time: 25 minutes**
+
+Review your existing Product Backlog from Sprint 1.
+
+As a group:
+
+* review and improve the user stories;
+* check whether the important stories are sufficiently clear;
+* apply **INVEST** where appropriate;
+* make sure the backlog is **DEEP**;
+* prioritize the backlog;
+* identify stories that are relevant to Sprint 2.
+
+The purpose is not necessarily to rewrite the entire backlog. Focus on the items that need attention and on the items that may be selected for Sprint 2.
+
+### Outcome
+
+An updated and prioritized Product Backlog.
+
+---
+
+## 4. Create the Initial Sprint 2 Backlog
+
+**Suggested time: 20 minutes**
+
+Select the user stories that the team plans to work on during Sprint 2.
+
+Consider the work required for both the frontend and backend.
+
+Organize the selected work into appropriate areas, for example:
+
+### Frontend
+
+* React components;
+* pages;
+* navigation;
+* routing;
+* responsive design;
+* lists;
+* mock/static data;
+* other frontend functionality required by the selected stories.
+
+### Backend
+
+* server setup;
+* models/data structures;
+* controllers;
+* routes;
+* middleware;
+* CRUD operations;
+* mock/array data;
+* API endpoints.
+
+### Coordination
+
+* frontend/backend data structures;
+* API endpoints;
+* responsibilities between frontend and backend teams.
+
+Do not select more work than the team can reasonably complete during the sprint.
+
+### Outcome
+
+An initial **Sprint 2 Backlog** containing the work selected for the sprint.
+
+---
+
+## 5. Scrum Roles and Sprint 2 Git Repository
+
+**Suggested time: 15 minutes**
+
+### Scrum Roles
+
+After completing the retrospective, decide whether your Scrum roles will remain the same or change for Sprint 2.
+
+The **Product Owner remains the same**.
+
+The group may choose a different Scrum Master for Sprint 2 if appropriate.
+
+Confirm the responsibilities of each role and make sure the workload associated with Scrum responsibilities is considered when distributing development work.
+
+### Git Repository
+
+Create the Git repository for Sprint 2.
+
+Make sure that:
+
+* all team members have access;
+* the instructor has been added as a collaborator;
+* the repository is ready for Sprint 2 development;
+* the project structure is ready for the team to begin working.
+
+### Outcome
+
+Confirmed Scrum roles and a working Sprint 2 Git repository.
+
+---
+
+## 6. Frontend and Backend Responsibilities
+
+**Suggested time: 15 minutes**
+
+Identify how the work will be divided between the frontend and backend members of the team.
+
+For the selected Sprint 2 stories, identify:
+
+* which work belongs to the frontend;
+* which work belongs to the backend;
+* which work requires coordination between both sides.
+
+Remember that the frontend and backend teams will work **in parallel**.
+
+The teams should communicate regularly even though the applications will not be connected during Sprint 2.
+
+### Outcome
+
+A clear understanding of frontend and backend responsibilities.
+
+---
+
+## 7. Agree on the Frontend/Backend Interface
+
+**Suggested time: 20 minutes**
+
+Before development continues, the frontend and backend teams should agree on the interface that will be used when the application is connected in Sprint 3.
+
+Discuss and agree on:
+
+* API endpoint names;
+* HTTP methods;
+* required data;
+* JSON request structures;
+* JSON response structures;
+* required fields and their data types.
+
+For example:
+
+```text
+GET /api/products
+```
+
+could return:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 1200
+  }
+]
+```
+
+The frontend team can then use mock data with the agreed structure while developing the React application.
+
+The backend team can independently implement the corresponding API endpoints.
+
+> **Important:** The frontend and backend should agree on the interface, but **do not connect them during Sprint 2**.
+
+Swagger/OpenAPI documentation will be covered in Sprint 3.
+
+---
+
+## 8. Convert User Stories into Tickets
+
+**Suggested time: 15 minutes**
+
+Select some of the Sprint 2 user stories and break them into smaller, actionable development tickets.
+
+For example:
+
+### User Story
+
+> As a customer, I want to see available services so that I can choose a service.
+
+Possible tickets:
+
+**Frontend**
+
+* Create `ServiceList` component.
+* Create `ServiceCard` component.
+* Add mock service data.
+* Display services.
+* Make the service list responsive.
+
+**Backend**
+
+* Create Service model/data structure.
+* Create service controller.
+* Create `GET /api/services` endpoint.
+* Add service route.
+* Test the endpoint with Postman.
+
+Tickets should be sufficiently clear that a team member can understand what needs to be done.
+
+### Outcome
+
+A set of actionable tickets connected to the Sprint 2 user stories.
+
+---
+
+## 9. Create a Timeline for the Current Week and the First Three Days of Week 4
+
+**Suggested time: 15 minutes**
+
+Create a realistic timeline for the **remainder of Week 3 and the first three days of Week 4**.
+
+Use the recommended Sprint 2 workflow as a guide.
+
+### Frontend
+
+Plan work such as:
+
+* main React components;
+* application pages;
+* navbar and navigation;
+* responsive layouts;
+* lists of products/services or other application data;
+* mock/static data;
+* conversion of an existing HTML template to React components, if applicable.
+
+### Backend
+
+Plan work such as:
+
+* Express server;
+* MVC structure;
+* mock/array data;
+* models/data structures;
+* controllers;
+* routes;
+* middleware;
+* CRUD functionality;
+* API endpoints;
+* Postman testing.
+
+### Coordination
+
+Include time for:
+
+* frontend/backend communication;
+* checking the agreed interface;
+* resolving questions or inconsistencies;
+* reviewing progress.
+
+Login, registration, and other forms will be addressed later in the Sprint 2 workflow when appropriate.
+
+### Outcome
+
+A realistic timeline for the work to be completed during the remainder of Week 3 and the first three days of Week 4.
+
+---
+
+# Final Check
+
+**Suggested time: 5 minutes**
+
+Before finishing the meeting, confirm that your group has completed the following:
+
+* [ ] Sprint 1 retrospective completed.
+* [ ] Sprint 2 improvements identified.
+* [ ] Sprint 2 Goal defined.
+* [ ] Sprint 2 scope understood.
+* [ ] Product Backlog reviewed and updated.
+* [ ] Product Backlog prioritized.
+* [ ] Sprint 2 Backlog created.
+* [ ] Scrum roles confirmed.
+* [ ] Sprint 2 Git repository created.
+* [ ] Instructor added as collaborator.
+* [ ] Frontend responsibilities identified.
+* [ ] Backend responsibilities identified.
+* [ ] Frontend/backend interface agreed upon.
+* [ ] Selected user stories converted into tickets.
+* [ ] Timeline created for the remainder of Week 3 and the first three days of Week 4.
+* [ ] Each team member knows what they are expected to work on next.
+
+---
+
+## After the Meeting
+
+Begin Sprint 2 development according to your Sprint Backlog and timeline.
+
+Remember:
+
+> **Work independently on the frontend and backend, communicate frequently, and keep the interface between the two sides consistent. The frontend and backend will be connected in Sprint 3.**
+
+
