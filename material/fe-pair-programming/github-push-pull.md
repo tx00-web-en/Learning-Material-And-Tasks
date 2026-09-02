@@ -28,7 +28,7 @@ Here's an example workflow that you can follow before starting the pair programm
      git branch -M main
      git push -u origin main
      ```
-
+ 
 2. **Member 2: Clone the Repository and Make Changes**
    - **Step 4**: Member 2 clones the repository from GitHub:
      ```bash
