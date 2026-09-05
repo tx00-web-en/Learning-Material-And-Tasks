@@ -32,7 +32,7 @@ Before starting the lab steps, set up a React project so you have a place to run
 2. Create a new React project using Vite (full guide: [vite.md](./vite.md)). In brief, run:
 
   ```bash
-  npx create-vite@latest w3-fe-lab1 --template react
+  npx create-vite@latest w3-fe-lab1 --template react --eslint
   cd w3-fe-lab1
   npm install
   npm run dev
