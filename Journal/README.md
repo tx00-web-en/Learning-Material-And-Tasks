@@ -1,0 +1,21 @@
+# Reflection journal
+
+**Each** reflection journal is worth **20 points**. To earn these points, the journal **must be submitted before the deadline**.
+
+### Update the Journals
+
+Please ensure that you update this repository by the weekend of each week. **The deadlines are strict** and must be adhered to.
+
+To update your journal for each respective week (e.g., `week3.md` for Week 3 and `week4.md` for Week 4), follow these commands:
+
+```bash
+git add .
+git commit -m "Add your commit message here"
+git push
+```
+
+### Journal Submission Deadlines
+
+- Reflection journals must be submitted by **Saturday at 23:30 PM**. 
+- **Important:** Late submissions will **not** be accepted. Ensure you commit and push all updates **before** the deadline.  
+
