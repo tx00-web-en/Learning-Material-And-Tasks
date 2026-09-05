@@ -28,7 +28,7 @@ When you finish this practice, you should be able to
 Open your terminal and run:
 
 ```sh
-npx create-vite@latest forms-intro-lab --template react
+npx create-vite@latest forms-intro-lab --template react --eslint
 cd forms-intro-lab
 npm install
 ```
