@@ -132,7 +132,7 @@ In this activity, you will refactor the code you wrote in the first activity to 
 
 Look at the code in `db.js` and think about why it might not be optimal. After reviewing, suggest improvements.
 
-#### **Step 5: Push to GitHub
+#### Step 5: Push to GitHub
 
 > Upon completion, follow the steps in this [guideline](push-to-github.md) to push your code to GitHub. 
 

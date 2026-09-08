@@ -36,6 +36,10 @@ https://www.youtube.com/playlist?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv
 
 - :bell: Please install MongoDB before class. [Here's a guide](https://www.mongodbtutorial.org/getting-started/install-mongodb/)
 - :blue_book: [Learn MongoDB in 1 Hour](https://youtu.be/c2M-rlkkT5o?si=NHjzyACLsblRyjO-)
+- If you would like to follow along with the video tutorial, there are two ways to use the shell: 
+  - Download the shell separately from this link and ADD it to your system PATH: https://www.mongodb.com/try/download/shell 
+  - Use the shell through MongoDB Compass. When you install MongoDB with the default configuration, it also installs MongoDB Compass. Compass is a GUI application for working with MongoDB, but it also has an embedded shell that you can use. To use the shell through Compass: Establish a connection to your MongoDB deployment, then open the shell from within Compass.
+
 <!-- - [MongoDB tutorial for beginners](https://www.youtube.com/playlist?list=PLZPZq0r_RZONbmOn3EsHac5u5_-Rue3ne) -->
 
 
@@ -48,7 +52,7 @@ https://www.youtube.com/playlist?list=PLZPZq0r_RZOO1zkgO4bIdfuLpizCeHYKv
 - :blue_book:  [Learn React 18 – Full Tutorial for Beginners](https://youtu.be/Flbw5BX_AX0?si=Pch8zLMRoSJwQzTQ) **From  2h58min till 5h43min**
 
 
-### Friday
+### Thursday
 
 - :bell: :blush: [React JS how to update OBJECTS in state (9min)](https://youtu.be/YxQlt3n1ZPA?si=-CLIyfDWIYQFQnOu). [src 1](./src/demo4/App1.jsx), [src 2](./src/demo4/App2.jsx), [src 3](./src/demo4/App3.jsx).
 - :bell: :blush: [React JS how to update ARRAYS in state (9min)](https://youtu.be/A9Bz2YxhAQk?si=pPo3MyTb0l9FcsUw)

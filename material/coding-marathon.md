@@ -11,9 +11,12 @@ Welcome to the first Coding Marathon focused on React! In this marathon, you'll 
 >    - Make sure the  **Self Assessment** of your code is included. 
 > 2. **Link to the deployed app on GitHub Pages**  
 >    - The related repository must be **public**, otherwise deployment will not work.
+
+<!-- 
 > 3. **If you have questions about the coding marathon:**  
 >    - You can ask during the session (09:00–12:00), **or**  
->    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**.
+>    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**. 
+-->
 
 
 ---
