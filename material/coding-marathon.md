@@ -610,16 +610,15 @@ confirmPassword : password
 nationality : select
 ```
 
-<img src="./img/signup.png" width="50%"/>
-
-
-### Optional
+**Optional**
 
 You can add validation that:
 
 * Changes the email input appearance when the email is valid/invalid.
 * Changes the password appearance when the password is strong/weak.
 * Checks whether `password` and `confirmPassword` match.
+
+<img src="./img/signup.png" width="50%"/>
 
 ---
 
