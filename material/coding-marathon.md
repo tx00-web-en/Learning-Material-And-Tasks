@@ -1,398 +1,952 @@
-<!-- # Coding Marathon  
+# Coding Marathon — React
 
+Welcome to the **React Coding Marathon**!
 
-Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
+In this activity, you will work in a team to build a small React application. Each team member will develop one component on their own Git branch. You will then merge your work, review each other's code, and deploy the final application to GitHub Pages.
 
-> [!IMPORTANT]  
-> **Please submit the following to OMA after completing this group activity:**
+The goal is to bring together the React concepts you have learned so far:
 
-> 1. **GitHub repository link(s)**  
->    - Include **all branches**.  
->    - Make sure the  **Self Assessment** of your code is included. 
-> 2. **Link to the deployed app on GitHub Pages**  
->    - The related repository must be **public**, otherwise deployment will not work.
-
-
-
----
-## Overview
-
-- **Goal**: Create a dynamic, single-page application using React components.
-- **Skills Used**: React fundamentals (list rendering, `useState` hook, controlled forms), Git branching, and merging.
-- **Group Work**: You will work in groups, with each member responsible for building one component.
+* React components
+* `useState`
+* Controlled forms
+* List rendering with `.map()`
+* Create, Read, and Delete operations
+* Component extraction
+* Git branches and merging
+* Code review
+* GitHub Pages deployment
 
 ---
-## Success Criteria
 
-The coding marathon will be evaluated based on **individual** and **group** contributions.  
+# 1. What You Will Build
 
-- **Individual (45 Points Total)** 
-  - Correct use of React hooks (`useState`) and controlled forms: **15 Points**  
-  - Clean, readable, and well-organized code: **15 Points**  
-  - Self-assessment of your code: **15 Points**  
-    - Each member must complete the `self-assessment.md` file located in `src/components/component_name`.  
+Your team will build a single React application containing several independent components.
 
-- **Group (35 Points Total)** 
-  - Effective use of Git branching and merging: **20 Points**  
-  - Deployment to GitHub: **15 Points**  
-- **Self-Assessment Rules**  
-  - In your self-assessment, provide **both** your **individual total** and the **group total**.  
-  - Failing to grade yourself or **overgrading** will result in your score not being counted.  
+Each team member will choose **one** component to develop:
 
----
-## Phase 0: Preparation
+1. `BookCollectionManager`
+2. `ContactListManager`
+3. `RecipeManager`
+4. `ShoppingCart`
+5. `SignupPage`
 
-Before starting this coding marathon, ensure that:
+Each person is responsible for their own component and must work on a separate Git branch.
 
-1. All team members are familiar with the Git branching workflow. Review the [steps for creating branches, making changes, and merging them to collaborate effectively](./git-branches.md).
-2. You are able to deploy React Apps to GitHub. Review the [guideline](./demo-deployment.md).
-
-
----
-## Phase 1: Git Setup and Collaboration
-
-1. **Clone the starter code:**
-   - One group member should clone the starter code: 
-   ```sh
-   git clone https://github.com/tx00-resources-en/cm1
-   ```
-   - Remove the `.git` folder.
-   - Update the `package.json` and `vite.config.js` to ensure the project works with GitHub Pages. Instructions are provided [here](./demo-deployment.md).   
-   - Make sure you can view the React App deployed on GitHub Pages.
-
-2. **Create a Branch for Each Member:**
-   - Follow these steps to set up your repository. Each Member:
-     - Clones the main repository: `git clone <repo-url>`
-     - Creates a new branch: `git switch -c <your-branch-name>`
-     - Pushes the branch to GitHub: `git push origin <your-branch-name>`
-
-3. **Plan Your Work:**
-   - Discuss with your team to decide who will build which component. Each member should select a different component from the list provided below.
-
----
-## Phase 2: Component Development
-
-Each member will choose and develop one component from the following options: **SignupPage**, **BookCollectionManager**, **ContactListManager**, **RecipeManager**, or **ShoppingCart**.
-
-There is [starter code available for all these components](./react2.md#how-to-adapt-the-to-do-list-for-other-apps), based on the ToDoList app code provided in the homework video. However, the provided code requires several modifications:
-
-1. **Refactor to Extract Components**:  
-   Currently, all code is in a single file. Refactor the code to separate the main item into its own component:
-   - **BookCollectionManager**: Extract a `Book` component.
-   - **ContactListManager**: Extract a `Contact` component.
-   - **RecipeManager**: Extract a `Recipe` component.
-   - **ShoppingCart**: Extract an `Item` component.
-   - Here's an example:
-
-      <details> 
-      <summary><strong>Original Code</strong></summary>
-
-      ```jsx
-      import React, { useState } from "react";
-
-      function BookCollectionManager() {
-      const [books, setBooks] = useState([]);
-      const [title, setTitle] = useState("");
-      const [author, setAuthor] = useState("");
-
-      // Handle input change for title
-      function handleTitleChange(event) {
-         setTitle(event.target.value);
-      }
-
-      // Handle input change for author
-      function handleAuthorChange(event) {
-         setAuthor(event.target.value);
-      }
-
-      // Add a new book to the list
-      function addBook() {
-         if (title.trim() !== "" && author.trim() !== "") {
-            setBooks((b) => [...b, { title, author }]);
-            setTitle("");
-            setAuthor(""); // Clear the input fields
-         }
-      }
-
-      // Delete a book from the list
-      function deleteBook(index) {
-         const updatedBooks = books.filter((_, i) => i !== index);
-         setBooks(updatedBooks);
-      }
-
-      return (
-         <div className="book-collection">
-            <h1>Book Collection Manager</h1>
-            <div>
-            <input
-               type="text"
-               placeholder="Enter book title..."
-               value={title}
-               onChange={handleTitleChange}
-            />
-            <input
-               type="text"
-               placeholder="Enter author name..."
-               value={author}
-               onChange={handleAuthorChange}
-            />
-            <button onClick={addBook}>Add Book</button>
-            </div>
-            <ol>
-            {books.map((book, index) => (
-               <li key={index}>
-                  {book.title} by {book.author}
-                  <button onClick={() => deleteBook(index)}>Delete</button>
-               </li>
-            ))}
-            </ol>
-         </div>
-      );
-      }
-
-      export default BookCollectionManager;
-      ```
-      </details> 
-
-
-      <details> 
-      <summary><strong>Refactored Code</strong></summary>
-
-      **Book.jsx**
-
-      ```jsx
-      import React from "react";
-
-      function Book({ title, author, onDelete }) {
-      return (
-         <li>
-            {title} by {author}
-            <button onClick={onDelete}>Delete</button>
-         </li>
-      );
-      }
-
-      export default Book;
-      ```
-
-      **BookCollectionManager.jsx**
-
-      ```jsx
-      import React, { useState } from "react";
-      import Book from "./Book";
-
-      function BookCollectionManager() {
-      const [books, setBooks] = useState([]);
-      const [title, setTitle] = useState("");
-      const [author, setAuthor] = useState("");
-
-      function handleTitleChange(event) {
-         setTitle(event.target.value);
-      }
-
-      function handleAuthorChange(event) {
-         setAuthor(event.target.value);
-      }
-
-      function addBook() {
-         if (title.trim() !== "" && author.trim() !== "") {
-            setBooks((prev) => [...prev, { title, author }]);
-            setTitle("");
-            setAuthor("");
-         }
-      }
-
-      function deleteBook(index) {
-         const updated = books.filter((_, i) => i !== index);
-         setBooks(updated);
-      }
-
-      return (
-         <div className="book-collection">
-            <h1>Book Collection Manager</h1>
-
-            <div>
-            <input
-               type="text"
-               placeholder="Enter book title..."
-               value={title}
-               onChange={handleTitleChange}
-            />
-            <input
-               type="text"
-               placeholder="Enter author name..."
-               value={author}
-               onChange={handleAuthorChange}
-            />
-            <button onClick={addBook}>Add Book</button>
-            </div>
-
-            <ol>
-            {books.map((book, index) => (
-               <Book
-                  key={index}
-                  title={book.title}
-                  author={book.author}
-                  onDelete={() => deleteBook(index)}
-               />
-            ))}
-            </ol>
-         </div>
-      );
-      }
-
-      export default BookCollectionManager;
-      ```
-
-      </details> 
-
-2. **Expand Input Fields**:  
-   The example code uses only two input fields. You should expand the input fields to capture additional details as follows:
-
-   ### **BookCollectionManager**
-   - **[genre]**: Fiction, non-fiction, etc.  
-   - **[language]**: Original language of the book.  
-   - **[edition]**: First edition, revised edition, etc.  
-   - **[pages]**: Total number of pages.  
-   - **[rating]**: Average reader rating.  
-
-   ---
-
-   ### **ContactListManager**
-   - **[job_title]**: Position or role.  
-   - **[birthday]**: Date of birth.  
-   - **[notes]**: Extra info about the contact.  
-   - **[website]**: Personal or company site.  
-   - **[favorite]**: Boolean flag for priority contacts.  
-
-   ---
-
-   ### **RecipeManager**
-   - **[cuisine]**: Italian, Indian, etc.  
-   - **[difficulty]**: Easy, medium, hard.  
-   - **[cookTime]**: Time required for cooking.  
-   - **[servings]**: Number of people served.  
-   - **[allergens]**: Gluten, nuts, dairy, etc.  
-
-   ---
-
-   ### **ShoppingCart**
-   - **[brand]**: Manufacturer or label.  
-   - **[subtotal]**: Item total before discount.  
-   - **[tax]**: Applicable tax amount.  
-   - **[availability]**: In stock / out of stock.
-
-3. **Optional: Add CSS for Styling**:  
-   The starter code does not include any styles. You are expected to create and apply CSS to improve the visual presentation of your component.
-
-A detailed explanation of the components is provided below. You will implement code for all CRUD operations, except "update." Specifically, you will focus on reading data, deleting data, and adding data using a form.
-
-
-### Component Options to Build
-
----
-#### 1. BookCollectionManager Component
-
-Develop a Book Collection Manager that allows users to add, view, and delete books:
-- **State Management**: Use the `useState` hook to manage the book list and input fields (`genre`, `language`, `edition`, `pages`, `rating`).
-- **Controlled Forms**: Ensure all inputs are controlled components.
-- **List Rendering**: Render the list of books using the `.map()` method.
-- **Functions**: Implement functions to add and delete books.
-- **Component Extraction**: Extract a `Book` component to display individual book entries.
-
----
-#### 2. ContactListManager Component
-
-Create a simple Contact List Manager to add, view, and delete contacts:
-- **State Management**: Use the `useState` hook to handle the contact list and input fields (`job_title`, `birthday`, `notes`, `website`, `favorite`).
-- **Controlled Forms**: Manage input values using controlled components.
-- **List Rendering**: Render contacts dynamically with the `.map()` method.
-- **Functions**: Provide functions to add and delete contacts.
-- **Component Extraction**: Extract a `Contact` component to display individual contact entries.
-
----
-#### 3. RecipeManager Component
-
-Build a Recipe Manager that lets users add, view, and delete recipes:
-- **State Management**: Use the `useState` hook for the recipe list and input fields (`cuisine`, `difficulty`, `cookTime`, `servings`, `allergens`).
-- **Controlled Forms**: Handle inputs as controlled components.
-- **List Rendering**: Render the recipe details as list items.
-- **Functions**: Add and delete recipes through functions.
-- **Component Extraction**: Extract a `Recipe` component to display individual recipe entries.
-
-
----
-#### 4. ShoppingCart Component
-
-Develop a Shopping Cart where users can add, view, and remove items:
-- **State Management**: Use the `useState` hook to manage cart items and input fields (`brand`, `subtotal`, `tax`, `availability`).
-- **Controlled Forms**: Use controlled components for inputs.
-- **List Rendering**: Display items dynamically with the `.map()` function.
-- **Functions**: Implement functions to add items and remove items.
-- **Component Extraction**: Extract an `Item` component to display individual cart items.
-
-
----
-#### 5. SignupPage Component
-
-> There is no starter code for the SignupPage.
-
-Create a `SignupPage` component with the following elements:
-
-- An `input` of type `"email"` (bonus: make the input green/red when the email is valid/invalid)
-- An `input` of type `"password"` (bonus: make the input green/red when the password is strong/weak)
-- A `select` input, used for selecting a nationality, with possible options/values: `"fi"`, `"en"`, `"de"`, `"fr"`
-- A paragraph displaying `"Moi"`, `"Hello"`, `"Hallo"` or `"Bonjour"` based on the selected nationality
-- A text "Your email is john@doe.com"
-
-
-**Output**
-
-<img src="./img/signup.png" width="50%">
-
----
-## Phase 3: Merge and Review
-
-1. **Merge Branches:**
-   - Once all members have completed their components:
-     - Create a pull request to merge each branch into the main branch.
-     - Review each other's code for consistency, readability, and proper usage of React concepts.
-     - Merge the branches after resolving any conflicts.
-
-2. **Final Testing:**
-   - Test the integrated application to ensure all components work together smoothly.
-
-
----
-## Phase 4: Deploy your app to GitHub
-
-- To deploy your app to GitHub, please follow this [guideline](./demo-deployment.md).
-
+At the end of the marathon, all components will be merged into the `main` branch and deployed to GitHub Pages.
 
 ---
 
-## Submission Checklist
+# 2. Assessment
 
-Before submission, ensure:
-- [ ] All team members have individual branches
-- [ ] Each component branch is merged to main
-- [ ] Self-assessments are completed and documented
-- [ ] Repository is public on GitHub
-- [ ] GitHub Pages deployment is active
-- [ ] All documentation is complete
-- [ ] Code review comments are addressed
-- [ ] Final testing passed on deployed app
+The marathon is worth **80 points**.
+
+## Individual — 45 points
+
+| Criteria                                       | Points |
+| ---------------------------------------------- | -----: |
+| Correct use of `useState` and controlled forms |     15 |
+| Clean, readable, and well-organized code       |     15 |
+| Self-assessment                                |     15 |
+| **Total**                                      | **45** |
+
+## Group — 35 points
+
+| Criteria                            | Points |
+| ----------------------------------- | -----: |
+| Effective Git branching and merging |     20 |
+| GitHub Pages deployment             |     15 |
+| **Total**                           | **35** |
+
+### Self-assessment
+
+Each team member must complete a `self-assessment.md` file inside their component folder.
+
+For example:
+
+```text
+src/
+└── components/
+    └── BookCollectionManager/
+        ├── BookCollectionManager.jsx
+        ├── Book.jsx
+        ├── self-assessment.md
+        └── ...
+```
+
+Your self-assessment must include:
+
+* Your individual score
+* Your group score
+* A short explanation of your contribution
+* An honest assessment of your code
+
+**Do not overgrade yourself.** If you overgrade yourself or fail to complete the self-assessment, your self-assessment score will not be counted.
 
 ---
 
-Happy coding! -->
+# 3. Before You Start
 
-<!-- 
-> 3. **If you have questions about the coding marathon:**  
->    - You can ask during the session (09:00–12:00), **or**  
->    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**. 
--->
+Make sure you understand:
 
-<!-- 
-The [coding marathon](./coding-marathon-current.md) will become visible once the session begins. In the meantime, you are strongly encouraged to review a task from a [previous period](./coding-marathon-old.md). This activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.   
--->
+* Basic React components
+* `useState`
+* Controlled inputs
+* `.map()`
+* Event handlers
+* Basic Git commands
+* Git branches
+
+You should also review:
+
+* [Git branching guide](./git-branches.md)
+* [GitHub Pages deployment guide](./demo-deployment.md)
+
+---
+
+# 4. Phase 1 — Set Up the Project
+
+## Step 1: Create the Repository
+
+One team member should start by cloning the starter project:
+
+```sh
+git clone https://github.com/tx00-resources-en/cm1
+```
+
+Move into the project:
+
+```sh
+cd cm1
+```
+
+Remove the existing Git history:
+
+```sh
+rm -rf .git
+```
+
+Create your team's GitHub repository and connect the project to it.
+
+---
+
+## Step 2: Configure GitHub Pages
+
+Update:
+
+* `package.json`
+* `vite.config.js`
+
+Follow the deployment instructions in:
+
+```text
+demo-deployment.md
+```
+
+Before starting development, make sure the React application runs correctly.
+
+For example:
+
+```sh
+npm install
+npm run dev
+```
+
+---
+
+# 5. Phase 2 — Create Your Branches
+
+Every team member must work on their own branch.
+
+Clone the team's repository:
+
+```sh
+git clone <repo-url>
+```
+
+Create a branch:
+
+```sh
+git switch -c <your-branch-name>
+```
+
+For example:
+
+```sh
+git switch -c book-collection
+```
+
+Push the branch:
+
+```sh
+git push origin <your-branch-name>
+```
+
+### Important
+
+Do **not** have multiple team members working directly on `main`.
+
+Each person should:
+
+1. Create their own branch.
+2. Develop their component.
+3. Commit their changes.
+4. Push their branch.
+5. Create a pull request later.
+
+---
+
+# 6. Phase 3 — Choose Your Component
+
+As a team, decide who will develop each component.
+
+Each team member should choose a **different** component.
+
+You can choose from:
+
+| Component             | Main Model |
+| --------------------- | ---------- |
+| BookCollectionManager | Book       |
+| ContactListManager    | Contact    |
+| RecipeManager         | Recipe     |
+| ShoppingCart          | Item       |
+| SignupPage            | User       |
+
+Once everyone has chosen a component, start development.
+
+---
+
+# 7. Phase 4 — Build Your Component
+
+All components must follow the same basic pattern.
+
+Your component should:
+
+1. Store data using `useState`.
+2. Use controlled form inputs.
+3. Allow the user to add data.
+4. Display the data using `.map()`.
+5. Allow the user to delete data.
+6. Extract the individual item into a separate component where required.
+7. Include the additional field specified below.
+8. Use clear and readable code.
+
+You are implementing:
+
+### Create
+
+Add a new item using a form.
+
+### Read
+
+Display all items in a list.
+
+### Delete
+
+Remove an item from the list.
+
+> **Update is not required for this marathon.**
+
+Therefore, the required operations are:
+
+**Create → Read → Delete**
+
+---
+
+# 8. Component 1 — BookCollectionManager
+
+## Goal
+
+Create a book collection where users can add, view, and delete books.
+
+### Required fields
+
+Your book should contain:
+
+* `title`
+* `author`
+* `genre`
+* `language`
+* `edition`
+* `pages`
+* `rating`
+* `year`
+
+### New field: `year`
+
+The `year` field represents the publication year of the book.
+
+Example:
+
+```text
+Title: The Hobbit
+Author: J.R.R. Tolkien
+Genre: Fantasy
+Language: English
+Edition: First Edition
+Pages: 310
+Rating: 4.8
+Year: 1937
+```
+
+### Requirements
+
+Use `useState` to manage:
+
+* The book list
+* The form inputs
+
+All inputs must be controlled components.
+
+Render the books using `.map()`.
+
+Extract an individual book into:
+
+```text
+Book.jsx
+```
+
+The `Book` component should receive the required data through props.
+
+### Suggested input types
+
+```text
+title     → text
+author    → text
+genre     → text
+language  → text
+edition   → text
+pages     → number
+rating    → number
+year      → number
+```
+
+---
+
+# 9. Component 2 — ContactListManager
+
+## Goal
+
+Create a contact list where users can add, view, and delete contacts.
+
+### Required fields
+
+Your contact should contain:
+
+* `name`
+* `email`
+* `phone`
+* `job_title`
+* `birthday`
+* `notes`
+* `website`
+* `favorite`
+
+### New field: `phone`
+
+The `phone` field represents the contact's telephone number.
+
+Example:
+
+```text
+Name: Jane Doe
+Email: jane@example.com
+Phone: +358 40 123 4567
+Job title: Designer
+Birthday: 1995-05-20
+Notes: Works with our design team.
+Website: https://example.com
+Favorite: Yes
+```
+
+### Requirements
+
+Use `useState` to manage:
+
+* The contact list
+* The form inputs
+
+All inputs must be controlled components.
+
+Render contacts using `.map()`.
+
+Extract an individual contact into:
+
+```text
+Contact.jsx
+```
+
+### Suggested input types
+
+```text
+name       → text
+email      → email
+phone      → tel
+job_title  → text
+birthday   → date
+notes      → textarea
+website    → url
+favorite   → checkbox
+```
+
+---
+
+# 10. Component 3 — RecipeManager
+
+## Goal
+
+Create a recipe manager where users can add, view, and delete recipes.
+
+### Required fields
+
+Your recipe should contain:
+
+* `name`
+* `description`
+* `cuisine`
+* `difficulty`
+* `cookTime`
+* `servings`
+* `allergens`
+* `ingredients`
+
+### New field: `ingredients`
+
+The `ingredients` field contains the ingredients needed for the recipe.
+
+For this assignment, you may store the ingredients as a simple string.
+
+Example:
+
+```text
+Name: Pasta Carbonara
+Description: Classic Italian pasta dish
+Cuisine: Italian
+Difficulty: Medium
+Cook time: 25 minutes
+Servings: 4
+Allergens: Gluten, dairy, eggs
+Ingredients: Pasta, eggs, parmesan, pancetta, black pepper
+```
+
+### Requirements
+
+Use `useState` to manage:
+
+* The recipe list
+* The form inputs
+
+All inputs must be controlled components.
+
+Render recipes using `.map()`.
+
+Extract an individual recipe into:
+
+```text
+Recipe.jsx
+```
+
+### Suggested input types
+
+```text
+name         → text
+description  → textarea
+cuisine      → text
+difficulty   → select
+cookTime     → number
+servings     → number
+allergens    → text
+ingredients  → textarea
+```
+
+For `difficulty`, use:
+
+```text
+Easy
+Medium
+Hard
+```
+
+---
+
+# 11. Component 4 — ShoppingCart
+
+## Goal
+
+Create a shopping cart where users can add, view, and delete items.
+
+### Required fields
+
+Your item should contain:
+
+* `name`
+* `brand`
+* `quantity`
+* `subtotal`
+* `tax`
+* `availability`
+
+### New field: `quantity`
+
+The `quantity` field represents how many units of the product are being purchased.
+
+Example:
+
+```text
+Name: Wireless Mouse
+Brand: ExampleBrand
+Quantity: 2
+Subtotal: €40
+Tax: €9.60
+Availability: In stock
+```
+
+### Requirements
+
+Use `useState` to manage:
+
+* The cart item list
+* The form inputs
+
+All inputs must be controlled components.
+
+Render items using `.map()`.
+
+Extract an individual item into:
+
+```text
+Item.jsx
+```
+
+### Suggested input types
+
+```text
+name         → text
+brand        → text
+quantity     → number
+subtotal     → number
+tax          → number
+availability → select
+```
+
+For `availability`, use:
+
+```text
+In stock
+Out of stock
+```
+
+### Optional challenge
+
+Calculate a total based on the quantity:
+
+```text
+total = subtotal × quantity + tax
+```
+
+This is optional and is not required for the basic assignment.
+
+---
+
+# 12. Component 5 — SignupPage
+
+## Goal
+
+Create a signup form using controlled inputs.
+
+There is no starter code for this component.
+
+### Required fields
+
+Your signup page should contain:
+
+* `email`
+* `password`
+* `confirmPassword`
+* `nationality`
+
+### New field: `confirmPassword`
+
+The user must enter their password a second time.
+
+Example:
+
+```text
+Email: john@doe.com
+Password: ********
+Confirm password: ********
+Nationality: fi
+```
+
+### Nationality options
+
+Use:
+
+```text
+fi
+en
+de
+fr
+```
+
+Display:
+
+| Nationality | Message |
+| ----------- | ------- |
+| `fi`        | Moi     |
+| `en`        | Hello   |
+| `de`        | Hallo   |
+| `fr`        | Bonjour |
+
+The page should also display:
+
+```text
+Your email is john@doe.com
+```
+
+Replace the email with the value entered by the user.
+
+### Suggested input types
+
+```text
+email           → email
+password        → password
+confirmPassword → password
+nationality     → select
+```
+
+### Bonus
+
+You can add validation that:
+
+* Changes the email input appearance when the email is valid/invalid.
+* Changes the password appearance when the password is strong/weak.
+* Checks whether `password` and `confirmPassword` match.
+
+---
+
+# 13. Phase 5 — Refactor Your Component
+
+For the following components, you must extract the individual item into a separate component.
+
+### BookCollectionManager
+
+```text
+BookCollectionManager.jsx
+Book.jsx
+```
+
+### ContactListManager
+
+```text
+ContactListManager.jsx
+Contact.jsx
+```
+
+### RecipeManager
+
+```text
+RecipeManager.jsx
+Recipe.jsx
+```
+
+### ShoppingCart
+
+```text
+ShoppingCart.jsx
+Item.jsx
+```
+
+The parent component should manage the list and pass the required information to the child component using props.
+
+For example:
+
+```jsx
+<Book
+  title={book.title}
+  author={book.author}
+  year={book.year}
+  onDelete={() => deleteBook(index)}
+/>
+```
+
+The child component is responsible for displaying the individual item.
+
+---
+
+# 14. Phase 6 — Test Your Component
+
+Before pushing your branch, test your component.
+
+Use this checklist:
+
+### Form
+
+* [ ] All inputs work.
+* [ ] All inputs are controlled.
+* [ ] The form accepts valid data.
+* [ ] Empty required fields are handled appropriately.
+
+### Create
+
+* [ ] A new item can be added.
+* [ ] The new item appears immediately.
+
+### Read
+
+* [ ] Items are displayed correctly.
+* [ ] `.map()` is used for list rendering.
+
+### Delete
+
+* [ ] An item can be deleted.
+* [ ] The correct item is deleted.
+
+### Component structure
+
+* [ ] The individual item has been extracted where required.
+* [ ] Props are used correctly.
+* [ ] Components are readable and organized.
+
+### Extra field
+
+* [ ] The new required field works.
+* [ ] The field is stored with the model.
+* [ ] The field is displayed where appropriate.
+
+---
+
+# 15. Phase 7 — Commit and Push
+
+Once your component works, commit your changes.
+
+Example:
+
+```sh
+git status
+```
+
+Then:
+
+```sh
+git add .
+```
+
+Commit:
+
+```sh
+git commit -m "Add BookCollectionManager"
+```
+
+Push:
+
+```sh
+git push origin <your-branch-name>
+```
+
+Use a meaningful commit message that describes your work.
+
+---
+
+# 16. Phase 8 — Code Review and Pull Requests
+
+After everyone has finished their component:
+
+1. Push all branches to GitHub.
+2. Create a pull request for each branch.
+3. Review each other's code.
+4. Discuss problems or improvements.
+5. Fix any issues.
+6. Resolve merge conflicts.
+7. Merge the pull requests into `main`.
+
+During the review, check:
+
+* Is the code readable?
+* Are React hooks used correctly?
+* Are the forms controlled?
+* Is `.map()` used correctly?
+* Are components properly extracted?
+* Are props used correctly?
+* Does the delete functionality work?
+* Is the additional field implemented?
+* Is the code consistent with the rest of the project?
+
+---
+
+# 17. Phase 9 — Final Integration Test
+
+After all branches have been merged into `main`, test the **whole application**.
+
+Do not assume that because your individual component worked, the final application works.
+
+Check:
+
+* [ ] All components appear.
+* [ ] All forms work.
+* [ ] All components can add data.
+* [ ] All lists render correctly.
+* [ ] All components can delete data.
+* [ ] No component breaks another component.
+* [ ] There are no console errors.
+* [ ] The application works after refreshing the page.
+
+---
+
+# 18. Phase 10 — Deploy to GitHub Pages
+
+Deploy the final application using:
+
+```text
+demo-deployment.md
+```
+
+The final repository must be public.
+
+After deployment, open the GitHub Pages URL and test the deployed application.
+
+Make sure:
+
+* [ ] The application loads.
+* [ ] All components are available.
+* [ ] Forms work.
+* [ ] Adding items works.
+* [ ] Deleting items works.
+* [ ] There are no broken assets or routes.
+
+---
+
+# 19. Phase 11 — Complete Your Self-Assessment
+
+Each team member must complete:
+
+```text
+src/components/<your-component>/self-assessment.md
+```
+
+Your self-assessment should contain:
+
+## Individual Score
+
+Give yourself a score out of **45**.
+
+Explain briefly how you earned the points.
+
+## Group Score
+
+Give the group a score out of **35**.
+
+Explain how the team performed in:
+
+* Git branching and merging
+* Collaboration
+* Deployment
+
+## Reflection
+
+Answer:
+
+1. What did you implement?
+2. What React concepts did you practice?
+3. What was challenging?
+4. What would you improve in your code?
+5. How did your team collaborate?
+
+Be honest when grading yourself and your group.
+
+---
+
+# 20. Final Submission Checklist
+
+Before submitting, make sure everything below is complete.
+
+## GitHub Repository
+
+* [ ] Repository is public.
+* [ ] All team branches are available.
+* [ ] All branches have been merged into `main`.
+* [ ] Pull requests have been completed.
+* [ ] Code review comments have been addressed.
+
+## React Application
+
+* [ ] Each team member completed one component.
+* [ ] `useState` is used correctly.
+* [ ] Forms are controlled.
+* [ ] `.map()` is used for list rendering.
+* [ ] Create functionality works.
+* [ ] Read/display functionality works.
+* [ ] Delete functionality works.
+* [ ] Required additional fields are implemented.
+* [ ] Individual components have been extracted where required.
+* [ ] Code is clean and readable.
+
+## Self-Assessment
+
+* [ ] Every team member completed their `self-assessment.md`.
+* [ ] Individual score is included.
+* [ ] Group score is included.
+* [ ] Reflection is included.
+* [ ] Scores are honest and reasonable.
+
+## Deployment
+
+* [ ] GitHub Pages deployment works.
+* [ ] The deployed application can be opened.
+* [ ] The deployed application has been tested.
+* [ ] There are no obvious errors.
+
+---
+
+# 21. Submission
+
+Submit the following to OMA:
+
+### 1. GitHub repository link
+
+The repository must include:
+
+* All branches
+* The completed project
+* Self-assessments
+
+### 2. GitHub Pages deployment link
+
+Provide the URL of your deployed application.
+
+The related GitHub repository must be **public** for the deployment to work.
+
+---
+
+# Final Goal
+
+By the end of this coding marathon, your team should have:
+
+```text
+                    React Application
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+     Member 1           Member 2           Member 3
+        │                  │                  │
+   Component A        Component B        Component C
+        │                  │                  │
+        └──────────────────┼──────────────────┘
+                           │
+                      Git branches
+                           │
+                      Pull Requests
+                           │
+                         Review
+                           │
+                         Merge
+                           │
+                          main
+                           │
+                    GitHub Pages
+                           │
+                    Deployed App
+```
+
+The most important thing is not just getting the application to work. You should be able to demonstrate that you can **build a React component, manage state, work with forms, render data, collaborate with Git, review code, and deploy a project as a team.**
+
+# Happy coding! 
