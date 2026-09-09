@@ -1,4 +1,4 @@
-# Coding Marathon — React
+# Coding Marathon: React
 
 Welcome to the **React Coding Marathon**!
 
@@ -40,7 +40,7 @@ At the end of the marathon, all components will be merged into the `main` branch
 
 The marathon is worth **80 points**.
 
-## Individual — 45 points
+## Individual: 45 points
 
 | Criteria                                       | Points |
 | ---------------------------------------------- | -----: |
@@ -49,7 +49,7 @@ The marathon is worth **80 points**.
 | Self-assessment                                |     15 |
 | **Total**                                      | **45** |
 
-## Group — 35 points
+## Group: 35 points
 
 | Criteria                            | Points |
 | ----------------------------------- | -----: |
@@ -103,7 +103,7 @@ You should also review:
 
 ---
 
-# 4. Phase 1 — Set Up the Project
+# 4. Phase 1: Set Up the Project
 
 ## Step 1: Create the Repository
 
@@ -136,11 +136,7 @@ Update:
 * `package.json`
 * `vite.config.js`
 
-Follow the deployment instructions in:
-
-```text
-demo-deployment.md
-```
+Follow the deployment instructions in [deployment guide](./demo-deployment.md)
 
 Before starting development, make sure the React application runs correctly.
 
@@ -153,7 +149,25 @@ npm run dev
 
 ---
 
-# 5. Phase 2 — Create Your Branches
+# 5. Phase 2: Choose Your Component
+
+As a team, decide who will develop each component.
+
+Each team member should choose a **different** component.
+
+You can choose from:
+
+| Component             | Main Model |
+| --------------------- | ---------- |
+| BookCollectionManager | Book       |
+| ContactListManager    | Contact    |
+| RecipeManager         | Recipe     |
+| ShoppingCart          | Item       |
+| SignupPage            | User       |
+
+---
+
+# 6. Phase 6: Create Your Branches
 
 Every team member must work on their own branch.
 
@@ -195,27 +209,9 @@ Each person should:
 
 ---
 
-# 6. Phase 3 — Choose Your Component
+# 7. Phase 4: Build Your Component
 
-As a team, decide who will develop each component.
-
-Each team member should choose a **different** component.
-
-You can choose from:
-
-| Component             | Main Model |
-| --------------------- | ---------- |
-| BookCollectionManager | Book       |
-| ContactListManager    | Contact    |
-| RecipeManager         | Recipe     |
-| ShoppingCart          | Item       |
-| SignupPage            | User       |
-
-Once everyone has chosen a component, start development.
-
----
-
-# 7. Phase 4 — Build Your Component
+Once everyone has chosen a component, start development. 
 
 All components must follow the same basic pattern.
 
@@ -252,7 +248,7 @@ Therefore, the required operations are:
 
 ---
 
-# 8. Component 1 — BookCollectionManager
+# 8. Component 1: BookCollectionManager
 
 ## Goal
 
@@ -310,19 +306,19 @@ The `Book` component should receive the required data through props.
 ### Suggested input types
 
 ```text
-title     → text
-author    → text
-genre     → text
-language  → text
-edition   → text
-pages     → number
-rating    → number
-year      → number
+title : text
+author: text
+genre : text
+language  : text
+edition   : text
+pages : number
+rating: number
+year  : number
 ```
 
 ---
 
-# 9. Component 2 — ContactListManager
+# 9. Component 2: ContactListManager
 
 ## Goal
 
@@ -378,19 +374,19 @@ Contact.jsx
 ### Suggested input types
 
 ```text
-name       → text
-email      → email
-phone      → tel
-job_title  → text
-birthday   → date
-notes      → textarea
-website    → url
-favorite   → checkbox
+name   : text
+email  : email
+phone  : tel
+job_title  : text
+birthday   : date
+notes  : textarea
+website: url
+favorite   : checkbox
 ```
 
 ---
 
-# 10. Component 3 — RecipeManager
+# 10. Component 3: RecipeManager
 
 ## Goal
 
@@ -448,14 +444,14 @@ Recipe.jsx
 ### Suggested input types
 
 ```text
-name         → text
-description  → textarea
-cuisine      → text
-difficulty   → select
-cookTime     → number
-servings     → number
-allergens    → text
-ingredients  → textarea
+name     : text
+description  : textarea
+cuisine  : text
+difficulty   : select
+cookTime : number
+servings : number
+allergens: text
+ingredients  : textarea
 ```
 
 For `difficulty`, use:
@@ -468,7 +464,7 @@ Hard
 
 ---
 
-# 11. Component 4 — ShoppingCart
+# 11. Component 4: ShoppingCart
 
 ## Goal
 
@@ -520,12 +516,12 @@ Item.jsx
 ### Suggested input types
 
 ```text
-name         → text
-brand        → text
-quantity     → number
-subtotal     → number
-tax          → number
-availability → select
+name     : text
+brand    : text
+quantity : number
+subtotal : number
+tax      : number
+availability : select
 ```
 
 For `availability`, use:
@@ -547,7 +543,7 @@ This is optional and is not required for the basic assignment.
 
 ---
 
-# 12. Component 5 — SignupPage
+# 12. Component 5: SignupPage
 
 ## Goal
 
@@ -608,13 +604,16 @@ Replace the email with the value entered by the user.
 ### Suggested input types
 
 ```text
-email           → email
-password        → password
-confirmPassword → password
-nationality     → select
+email       : email
+password    : password
+confirmPassword : password
+nationality : select
 ```
 
-### Bonus
+<img src="./img/signup.png" width="50%"/>
+
+
+### Optional
 
 You can add validation that:
 
@@ -624,7 +623,7 @@ You can add validation that:
 
 ---
 
-# 13. Phase 5 — Refactor Your Component
+# 13. Phase 5: Refactor Your Component
 
 For the following components, you must extract the individual item into a separate component.
 
@@ -673,7 +672,7 @@ The child component is responsible for displaying the individual item.
 
 ---
 
-# 14. Phase 6 — Test Your Component
+# 14. Phase 6: Test Your Component
 
 Before pushing your branch, test your component.
 
@@ -707,115 +706,18 @@ Use this checklist:
 * [ ] Props are used correctly.
 * [ ] Components are readable and organized.
 
+<!-- 
 ### Extra field
 
 * [ ] The new required field works.
 * [ ] The field is stored with the model.
-* [ ] The field is displayed where appropriate.
+* [ ] The field is displayed where appropriate. 
+-->
+
 
 ---
 
-# 15. Phase 7 — Commit and Push
-
-Once your component works, commit your changes.
-
-Example:
-
-```sh
-git status
-```
-
-Then:
-
-```sh
-git add .
-```
-
-Commit:
-
-```sh
-git commit -m "Add BookCollectionManager"
-```
-
-Push:
-
-```sh
-git push origin <your-branch-name>
-```
-
-Use a meaningful commit message that describes your work.
-
----
-
-# 16. Phase 8 — Code Review and Pull Requests
-
-After everyone has finished their component:
-
-1. Push all branches to GitHub.
-2. Create a pull request for each branch.
-3. Review each other's code.
-4. Discuss problems or improvements.
-5. Fix any issues.
-6. Resolve merge conflicts.
-7. Merge the pull requests into `main`.
-
-During the review, check:
-
-* Is the code readable?
-* Are React hooks used correctly?
-* Are the forms controlled?
-* Is `.map()` used correctly?
-* Are components properly extracted?
-* Are props used correctly?
-* Does the delete functionality work?
-* Is the additional field implemented?
-* Is the code consistent with the rest of the project?
-
----
-
-# 17. Phase 9 — Final Integration Test
-
-After all branches have been merged into `main`, test the **whole application**.
-
-Do not assume that because your individual component worked, the final application works.
-
-Check:
-
-* [ ] All components appear.
-* [ ] All forms work.
-* [ ] All components can add data.
-* [ ] All lists render correctly.
-* [ ] All components can delete data.
-* [ ] No component breaks another component.
-* [ ] There are no console errors.
-* [ ] The application works after refreshing the page.
-
----
-
-# 18. Phase 10 — Deploy to GitHub Pages
-
-Deploy the final application using:
-
-```text
-demo-deployment.md
-```
-
-The final repository must be public.
-
-After deployment, open the GitHub Pages URL and test the deployed application.
-
-Make sure:
-
-* [ ] The application loads.
-* [ ] All components are available.
-* [ ] Forms work.
-* [ ] Adding items works.
-* [ ] Deleting items works.
-* [ ] There are no broken assets or routes.
-
----
-
-# 19. Phase 11 — Complete Your Self-Assessment
+# 15. Phase 11: Complete Your Self-Assessment
 
 Each team member must complete:
 
@@ -852,6 +754,106 @@ Answer:
 5. How did your team collaborate?
 
 Be honest when grading yourself and your group.
+
+---
+
+# 16. Phase 7: Commit and Push
+
+Once your component works, commit your changes.
+
+Example:
+
+```sh
+git status
+```
+
+Then:
+
+```sh
+git add .
+```
+
+Commit:
+
+```sh
+git commit -m "Add BookCollectionManager"
+```
+
+Push:
+
+```sh
+git push origin <your-branch-name>
+```
+
+Use a meaningful commit message that describes your work.
+
+---
+
+# 17. Phase 8: Code Review and Pull Requests
+
+After everyone has finished their component:
+
+1. Push all branches to GitHub.
+2. Create a pull request for each branch.
+3. Review each other's code.
+4. Discuss problems or improvements.
+5. Fix any issues.
+6. Resolve merge conflicts.
+7. Merge the pull requests into `main`.
+
+During the review, check:
+
+* Is the code readable?
+* Are React hooks used correctly?
+* Are the forms controlled?
+* Is `.map()` used correctly?
+* Are components properly extracted?
+* Are props used correctly?
+* Does the delete functionality work?
+* Is the additional field implemented?
+* Is the code consistent with the rest of the project?
+
+---
+
+# 18. Phase 9: Final Integration Test
+
+After all branches have been merged into `main`, test the **whole application**.
+
+Do not assume that because your individual component worked, the final application works.
+
+Check:
+
+* [ ] All components appear.
+* [ ] All forms work.
+* [ ] All components can add data.
+* [ ] All lists render correctly.
+* [ ] All components can delete data.
+* [ ] No component breaks another component.
+* [ ] There are no console errors.
+* [ ] The application works after refreshing the page.
+
+---
+
+# 19. Phase 10: Deploy to GitHub Pages
+
+Deploy the final application using:
+
+```text
+demo-deployment.md
+```
+
+The final repository must be public.
+
+After deployment, open the GitHub Pages URL and test the deployed application.
+
+Make sure:
+
+* [ ] The application loads.
+* [ ] All components are available.
+* [ ] Forms work.
+* [ ] Adding items works.
+* [ ] Deleting items works.
+* [ ] There are no broken assets or routes.
 
 ---
 
@@ -921,6 +923,15 @@ The related GitHub repository must be **public** for the deployment to work.
 
 By the end of this coding marathon, your team should have:
 
+<img src="./img/Final-Goal.png" width="50%"/>
+
+The most important thing is not just getting the application to work. You should be able to demonstrate that you can **build a React component, manage state, work with forms, render data, collaborate with Git, review code, and deploy a project as a team.**
+
+# Happy coding! 
+
+
+
+<!-- 
 ```text
                     React Application
                            │
@@ -945,8 +956,5 @@ By the end of this coding marathon, your team should have:
                     GitHub Pages
                            │
                     Deployed App
-```
-
-The most important thing is not just getting the application to work. You should be able to demonstrate that you can **build a React component, manage state, work with forms, render data, collaborate with Git, review code, and deploy a project as a team.**
-
-# Happy coding! 
+``` 
+-->

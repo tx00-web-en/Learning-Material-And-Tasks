@@ -11,7 +11,7 @@
 - Open your terminal and run the following command to create a new React project using Vite:
 
 ```bash
-npx create-vite@latest week4-demo --template react
+npx create-vite@latest week4-demo --template react --eslint
 ```
 
 - Change into the project directory:
