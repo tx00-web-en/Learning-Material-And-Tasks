@@ -1,4 +1,4 @@
-# Coding Marathon 
+<!-- # Coding Marathon 
 
 Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
 
@@ -52,7 +52,6 @@ Before starting this coding marathon, ensure that
    git clone https://github.com/tx00-resources-en/cm1
    ```
    - Remove the `.git` folder.
-   <!-- - Install react router: ` npm i react-router-dom`     -->
    - Update the `package.json` and `vite.config.js` to ensure the project works with GitHub Pages. Instructions are provided [here](./demo-deployment.md).   
    - Make sure you can view the React App deployed on GitHub Pages.
 
@@ -116,7 +115,7 @@ Create a `SignupPage` component with the following elements:
 **Output**
 
 <img src="./img/signup.png" width="50%">
-<!-- ![image](./img/signup.png) -->
+
 
 ---
 #### 2. BookCollectionManager Component
@@ -133,9 +132,6 @@ Develop a Book Collection Manager that allows users to add, view, and delete boo
 <BookCollectionManager />
 ```
 
-<!-- **Output**
-
-![image](./img/book-manager.png) -->
 
 ---
 #### 3. ContactListManager Component
@@ -200,6 +196,15 @@ Develop a Shopping Cart where users can add, update quantities, and remove items
 ## Phase 4: Deploy your app to GitHub
 
 - To deploy your app to GitHub, please follow this [guideline](./demo-deployment.md).
+
+ -->
+
+
+<!-- **Output**
+![image](./img/book-manager.png) -->
+<!-- ![image](./img/signup.png) -->
+<!-- - Install react router: ` npm i react-router-dom`     -->
+
 <!-- 
 
 Notes:

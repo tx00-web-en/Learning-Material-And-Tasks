@@ -17,7 +17,7 @@ To start using React Router, we need a basic React application. If you need a fr
 Open your terminal and run the following commands to create a new React app:
 
 ```bash
-npx create-vite@latest react-router-example --template react
+npx create-vite@latest react-router-example --template react --eslint
 cd react-router-example
 ```
 

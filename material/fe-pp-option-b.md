@@ -147,11 +147,11 @@ Before you add routing (Step 1), confirm you can run the project *as-is*.
 <summary>Full step solution (Step 0) — check after finishing</summary>
 
 **Successful setup checklist:**
-- ✅ React dev server runs without errors
-- ✅ Browser shows the complete tour website
-- ✅ Git repository is initialized with initial commit
-- ✅ Both partners can access the code
-- ✅ react-router-dom is installed (check package.json)
+- React dev server runs without errors
+- Browser shows the complete tour website
+- Git repository is initialized with initial commit
+- Both partners can access the code
+- react-router-dom is installed (check package.json)
 
 If any of these fail, fix them before Step 1.
 
@@ -410,12 +410,12 @@ Test every navigation link works:
 <summary>Full step solution (Step 1) — check after finishing</summary>
 
 **Successful Step 1 checklist:**
-- ✅ All navigation links work correctly
-- ✅ URL changes when clicking links (but no page refresh)
-- ✅ Each page shows only its relevant content
-- ✅ Invalid URLs show the 404 NotFound component
-- ✅ Browser back/forward buttons work
-- ✅ All commits have descriptive messages
+- All navigation links work correctly
+- URL changes when clicking links (but no page refresh)
+- Each page shows only its relevant content
+- Invalid URLs show the 404 NotFound component
+- Browser back/forward buttons work
+- All commits have descriptive messages
 
 If any of these fail, review the specific micro-step.
 
@@ -538,11 +538,11 @@ function Services() {
 <summary>Full step solution (Step 2) — check after finishing</summary>
 
 **Successful Step 2 checklist:**
-- ✅ Services component imports and uses useState
-- ✅ Services are stored in component state (servicesData)
-- ✅ All services display correctly on the /services page
-- ✅ Component behavior is identical to before (external observer can't tell the difference)
-- ✅ Code is ready for Step 3 (adding removal functionality)
+- Services component imports and uses useState
+- Services are stored in component state (servicesData)
+- All services display correctly on the /services page
+- Component behavior is identical to before (external observer can't tell the difference)
+- Code is ready for Step 3 (adding removal functionality)
 
 </details>
 
@@ -689,12 +689,12 @@ const Service = ({ id, icon, title, text, onRemove }) => {
 <summary>Full step solution (Step 3) — check after finishing</summary>
 
 **Successful Step 3 checklist:**
-- ✅ Each service has a visible remove button
-- ✅ Clicking remove immediately hides that service
-- ✅ Can remove multiple services
-- ✅ Removing all services leaves an empty services section
-- ✅ Page refresh restores all original services (expected behavior)
-- ✅ No console errors when removing services
+- Each service has a visible remove button
+- Clicking remove immediately hides that service
+- Can remove multiple services
+- Removing all services leaves an empty services section
+- Page refresh restores all original services (expected behavior)
+- No console errors when removing services
 
 </details>
 
@@ -777,10 +777,10 @@ function Tours() {
 <summary>Full step solution (Step 4) — check after finishing</summary>
 
 **Successful Step 4 checklist:**
-- ✅ Tours component uses useState for managing tours data
-- ✅ All tours display correctly on the /tours page
-- ✅ Component behavior is identical to before
-- ✅ Code is ready for Step 5 (adding removal functionality)
+- Tours component uses useState for managing tours data
+- All tours display correctly on the /tours page
+- Component behavior is identical to before
+- Code is ready for Step 5 (adding removal functionality)
 
 </details>
 
@@ -878,11 +878,11 @@ const Tour = ({ id, image, date, title, info, location, duration, cost, onRemove
 <summary>Full step solution (Step 5) — check after finishing</summary>
 
 **Successful Step 5 checklist:**
-- ✅ Each tour has a visible remove button
-- ✅ Clicking remove immediately hides that tour
-- ✅ Can remove multiple tours
-- ✅ Removing all tours leaves an empty tours section
-- ✅ Page refresh restores all original tours
+- Each tour has a visible remove button
+- Clicking remove immediately hides that tour
+- Can remove multiple tours
+- Removing all tours leaves an empty tours section
+- Page refresh restores all original tours
 
 </details>
 
@@ -1125,12 +1125,12 @@ function Registration() {
 <summary>Full step solution (Step 6) — check after finishing</summary>
 
 **Successful Step 6 checklist:**
-- ✅ Registration component has 5+ form fields
-- ✅ Registration page is accessible via navigation link
-- ✅ Form has proper labels and input types
-- ✅ Form state is managed with React hooks
-- ✅ Form submission logs data and resets form
-- ✅ No console errors during form interaction
+- Registration component has 5+ form fields
+- Registration page is accessible via navigation link
+- Form has proper labels and input types
+- Form state is managed with React hooks
+- Form submission logs data and resets form
+- No console errors during form interaction
 
 </details>
 
@@ -1154,10 +1154,10 @@ Test your complete application:
 
 Congratulations! You've successfully:
 
-- ✅ Implemented client-side routing with React Router
-- ✅ Converted components to use React state management
-- ✅ Added interactive features (removal functionality)
-- ✅ Created a complete form with state handling
-- ✅ Practiced collaborative development with meaningful commits
+- Implemented client-side routing with React Router
+- Converted components to use React state management
+- Added interactive features (removal functionality)
+- Created a complete form with state handling
+- Practiced collaborative development with meaningful commits
 
 The application is now a fully functional multi-page React app with interactive features!

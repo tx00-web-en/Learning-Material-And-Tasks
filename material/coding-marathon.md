@@ -1,4 +1,4 @@
-# Coding Marathon  
+<!-- # Coding Marathon  
 
 
 Welcome to the first Coding Marathon focused on React! In this marathon, you'll put all the React concepts you've learned into practice by building components in a collaborative environment. You’ll also gain experience with Git branching and merging.
@@ -12,11 +12,6 @@ Welcome to the first Coding Marathon focused on React! In this marathon, you'll 
 > 2. **Link to the deployed app on GitHub Pages**  
 >    - The related repository must be **public**, otherwise deployment will not work.
 
-<!-- 
-> 3. **If you have questions about the coding marathon:**  
->    - You can ask during the session (09:00–12:00), **or**  
->    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**. 
--->
 
 
 ---
@@ -390,8 +385,13 @@ Before submission, ensure:
 
 ---
 
-Happy coding!
+Happy coding! -->
 
+<!-- 
+> 3. **If you have questions about the coding marathon:**  
+>    - You can ask during the session (09:00–12:00), **or**  
+>    - Reserve a 30‑minute time slot for your whole group between **17:00–19:00**. 
+-->
 
 <!-- 
 The [coding marathon](./coding-marathon-current.md) will become visible once the session begins. In the meantime, you are strongly encouraged to review a task from a [previous period](./coding-marathon-old.md). This activity will be **similar, though not identical**, and reflecting on earlier work will help you make the most of our time together.   
