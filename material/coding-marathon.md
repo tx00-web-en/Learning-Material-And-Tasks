@@ -618,7 +618,7 @@ You can add validation that:
 * Changes the password appearance when the password is strong/weak.
 * Checks whether `password` and `confirmPassword` match.
 
-<img src="./img/signup.png" width="50%"/>
+<img src="./img/signup.png" width="40%"/>
 
 ---
 
@@ -922,7 +922,7 @@ The related GitHub repository must be **public** for the deployment to work.
 
 By the end of this coding marathon, your team should have:
 
-<img src="./img/Final-Goal.png" width="50%"/>
+<img src="./img/goal.png" width="50%"/>
 
 The most important thing is not just getting the application to work. You should be able to demonstrate that you can **build a React component, manage state, work with forms, render data, collaborate with Git, review code, and deploy a project as a team.**
 
