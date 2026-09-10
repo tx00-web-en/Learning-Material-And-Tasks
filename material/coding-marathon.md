@@ -18,6 +18,13 @@ The goal is to bring together the React concepts you have learned so far:
 
 ---
 
+> [!NOTE] 
+> - At **11:15**, I will temporarily close the Zoom breakout rooms so that we can come back together and discuss the **agenda for the autonomous session**.Tentative Timeline per session
+> - After the discussion, we will return to the breakout rooms and continue working on the marathon.
+> - This is only a temporary pause — **please stay in the Zoom meeting and do not leave the session.**
+
+---
+
 # 1. What You Will Build
 
 Your team will build a single React application containing several independent components.
@@ -206,6 +213,43 @@ Each person should:
 3. Commit their changes.
 4. Push their branch.
 5. Create a pull request later.
+
+
+
+### Commit Requirements
+
+Each team member must make **at least 3 meaningful commits** during the marathon. The commits should show the progression of your work.
+
+Use clear, conventional commit messages:
+
+1. **After completing your main component**
+
+   ```text
+   feat: add BookCollectionManager
+   ```
+
+2. **After extracting the individual component**
+
+   ```text
+   refactor: extract Book component
+   ```
+
+3. **After completing your self-assessment**
+
+   ```text
+   docs: add self-assessment
+   ```
+
+Other appropriate commit types include:
+
+* `feat:` — new functionality
+* `refactor:` — restructuring code without changing its behavior
+* `fix:` — bug fix
+* `style:` — CSS or formatting changes
+* `docs:` — documentation or self-assessment
+
+**Important:** Commits should represent real stages of your work. Do not create empty or meaningless commits simply to reach the required number.
+
 
 ---
 
