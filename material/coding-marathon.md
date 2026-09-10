@@ -21,7 +21,6 @@ The goal is to bring together the React concepts you have learned so far:
 > [!NOTE] 
 > - At **11:15**, I will temporarily close the Zoom breakout rooms so that we can come back together and discuss the **agenda for the autonomous session**.Tentative Timeline per session
 > - After the discussion, we will return to the breakout rooms and continue working on the marathon.
-> - This is only a temporary pause — **please stay in the Zoom meeting and do not leave the session.**
 
 ---
 
