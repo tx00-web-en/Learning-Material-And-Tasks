@@ -1,8 +1,10 @@
 # Pair Programming: Back end (MVC with Database)
 
+<!-- 
 There are two parts to this lab. Part 2 is intended **primarily for the group members responsible for implementing the AI** features in their group project.** For all other students, it is recommended but not mandatory.
 
-----
+---- 
+-->
 
 ### Overview
 
