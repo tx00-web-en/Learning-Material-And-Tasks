@@ -19,7 +19,7 @@ During the activity, you will **switch roles**: the driver (who writes the code)
 - *refactor* used when you change existing code without altering behavior. This improves structure, readability, or organization.
 - *chore* used for maintenance tasks that don’t change application behavior. Examples: updating dependencies, adding logging, renaming files, config changes.
 
-### Iteration 0
+### Iteration 1
 
 1. **Decide Initial Roles**:
    - Determine who will start as the driver and who will be the navigator. Remember to switch roles after each major step.
@@ -66,7 +66,7 @@ Before proceeding to Iteration 1, **ensure MongoDB is installed and running** on
   - **Windows**: Start MongoDB service from the Services app
   - **macOS/Linux**: Run `sudo systemctl start mongod` or `brew services start mongodb-community`
 
-### Iteration 1: Using Environment Variables with `.env`
+### Iteration 2: Using Environment Variables with `.env`
 
 In this iteration, we'll set up environment variables in your Express.js application using a `.env` file. This practice helps manage configuration data that may differ between environments (e.g., development, testing, production).
 
@@ -118,7 +118,7 @@ In this iteration, we'll set up environment variables in your Express.js applica
      ```bash
      git commit -m "chore: configure dotenv for environment management"
      ```
-
+<!-- 
 ---
 
 ### Iteration 2: Configure AI Integration
@@ -152,11 +152,12 @@ In this iteration, we'll set up environment variables in your Express.js applica
 3. **Commit Your Changes**
    ```bash
    git commit -m "chore: configure environment variables for AI integration"
-   ```
+   ``` 
+-->
 
 ---
 
-### Iteration 3: Refactor Tours API to Use MongoDB
+### Iteration 2: Refactor Tours API to Use MongoDB
 
 1. **Database connection:**
    - Import and call `connectDB()` in your `app.js`:
