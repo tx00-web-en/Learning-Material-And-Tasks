@@ -56,7 +56,7 @@ const port = process.env.PORT || 4000;
 
 **What is Error-Handling Middleware?**
 
-Error-handling middleware in Express.js captures and manages errors that occur during request processing. It takes four parameters: `(error, request, response, next)`. This allows it to handle errors passed via `next()` and provide a consistent response to clients.
+[Error-handling middleware](https://expressjs.com/en/guide/error-handling/#the-default-error-handler) in Express.js captures and manages errors that occur during request processing. It takes four parameters: `(error, request, response, next)`. This allows it to handle errors passed via `next()` and provide a consistent response to clients.
 
 **How to Implement Error-Handling Middleware**
 
@@ -106,7 +106,7 @@ Cloud-based services like [MongoDB Atlas](https://www.mongodb.com/atlas/database
 mongoose.connect('mongodb://localhost:27017/mydatabase');
 ```
 
-**Cloud-Based MongoDB Connection String:**
+**Cloud-Based MongoDB [Connection String](https://www.mongodb.com/resources/products/fundamentals/mongodb-connection-string):**
 
 ```js
 mongoose.connect(process.env.MONGO_URI); // e.g., mongodb+srv://user:password@cluster0.mongodb.net/mydatabase
