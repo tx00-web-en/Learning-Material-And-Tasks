@@ -17,7 +17,7 @@ const createToken = (_id) => {
 // Connect to MongoDB database
 mongoose
   .connect(
-    "YOUR_MONGO_URI"
+    "mongodb://localhost:27017/web-dev"
   )
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));

@@ -124,7 +124,7 @@ Salting involves appending a randomly generated string of characters to a plain-
 - Salts can be added at the beginning, end, or middle of a password.
 - Salts are applied before hashing:
 
-```sh
+```js
     // Most common way of applying a salt
     hashInput = salt + plainTextPassword
     hashOutput = hashingFunction(hashInput)
