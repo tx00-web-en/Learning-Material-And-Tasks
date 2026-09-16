@@ -38,9 +38,9 @@ A metric is not a decision by itself. It is information that can support a decis
 
 Scrum is based on empirical process control. The three pillars are:
 
-1. **Transparency** — Work and progress are visible.
-2. **Inspection** — Progress and results are examined.
-3. **Adaptation** — The approach is adjusted when necessary.
+1. **Transparency**: Work and progress are visible.
+2. **Inspection**: Progress and results are examined.
+3. **Adaptation**: The approach is adjusted when necessary.
 
 Metrics can support all three pillars.
 
@@ -1525,7 +1525,7 @@ The goal is to improve the team's ability to deliver a valuable, usable, and hig
 
 # 21. Links
 
-1. [Atlassian — Scrum Metrics](https://www.atlassian.com/agile/scrum/scrum-metrics)
-2. [ITPhobia — 11 Scrum Metrics and Their Value](https://itphobia.com/11-scrum-metrics-and-their-value-to-scrum-teams/)
-3. [Dee Project Manager — Scrum Metrics](https://deeprojectmanager.com/scrum-metrics/)
+1. [Atlassian: Scrum Metrics](https://www.atlassian.com/agile/scrum/scrum-metrics)
+2. [ITPhobia: 11 Scrum Metrics and Their Value](https://itphobia.com/11-scrum-metrics-and-their-value-to-scrum-teams/)
+3. [Dee Project Manager: Scrum Metrics](https://deeprojectmanager.com/scrum-metrics/)
 4. [Agile Scrum Sprint Metrics Template](https://github.com/eric-spink-agile/agile-scrum-sprint-metrics-template)
