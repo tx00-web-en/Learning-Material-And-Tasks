@@ -45,7 +45,7 @@ git push
      ```
 
 4. **Run Tests**
-   - Verify that the backend is functioning using postman
+   - Verify that the backend is functioning using postman.
 
 5. **Start the Server**
    - Start the backend server:
@@ -181,7 +181,8 @@ git push
      git push
      ```
    - Go to your GitHub repository's **Actions** tab to see the automated tests run.
-   - Verify that all tests pass in the GitHub Actions workflow.
+
+<!-- - Verify that all tests pass in the GitHub Actions workflow. -->
 
 ---
 
@@ -408,7 +409,7 @@ Congratulations on completing the Frontend Pair Programming Activity! You have s
 - API integration and fetch operations
 - CORS and proxy configuration
 - MongoDB virtual fields
-- Git workflow with GitHub Actions
 - Testing with Vitest and React Testing Library
 - Full-stack development workflow
 
+<!-- - Git workflow with GitHub Actions -->
