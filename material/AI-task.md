@@ -5,11 +5,11 @@
 In this part, you will work with AI-powered endpoints to enhance your application's functionality.
 
 1. **Understand the Existing AI Setup**
-   - Review the AI code explanation in [**`AI_API_Setup_and_Logic.md`**](https://github.com/tx00-resources-en/AI-part2-demo/blob/main/AI_API_Setup_and_Logic.md)
+   - Review the AI code explanation in [**`AI_API_Setup_and_Logic.md`**](https://github.com/tx00-resources-en/AI-demo2/blob/main/AI_API_Setup_and_Logic.md)
    - Ensure the current AI API is running correctly by following the setup instructions
 
 2. **Complete the AI Task**
-   - Follow the step-by-step instructions in [**`task.md`**](https://github.com/tx00-resources-en/AI-part2-demo/blob/main/task.md)
+   - Follow the step-by-step instructions in [**`task.md`**](https://github.com/tx00-resources-en/AI-demo2/blob/main/task.md)
    - Each step includes a sample solution wrapped in a `<details>` tag for reference
    - Reuse the same logic and structure to build your new AI endpoint
 
