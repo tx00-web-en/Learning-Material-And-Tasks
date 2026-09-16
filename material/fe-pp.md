@@ -45,11 +45,7 @@ git push
      ```
 
 4. **Run Tests**
-   - Verify that the backend is functioning by running tests:
-     ```bash
-     npm test
-     ```
-   - Ensure all tests pass successfully.
+   - Verify that the backend is functioning using postman
 
 5. **Start the Server**
    - Start the backend server:
