@@ -1,196 +1,434 @@
-<!-- # Task: Sprint 3 Kick-off Activities (Afternoon)
+# Task: Sprint 3 Kick-off Activities
 
-The goal of **Sprint 3 kick-off** session is to properly transition from Sprint 2 to Sprint 3 by reflecting on the previous sprint and planning the next sprint according to the Scrum framework.
+## Purpose of the Meeting
 
+This meeting is the starting point for Sprint 3.
 
----
+Sprint 3 focuses on:
 
-## 1. Confirm Scrum Roles (Mandatory)
+* connecting the frontend and backend;
+* implementing real authentication;
+* integrating the application;
+* testing the backend and integrated functionality;
+* preparing the application for deployment;
+* implementing AI functionality if your group has selected AI as a feature;
+* improving the application based on Sprint 2 feedback and Scrum metrics.
 
-Each group must clearly identify and agree on the following roles:
+By the end of the meeting, each group should have:
 
-### 1.1 Scrum Master
+* completed a Sprint 2 retrospective;
+* identified concrete improvements for Sprint 3;
+* reviewed the Scrum metrics activity;
+* established a Sprint 3 Goal;
+* reviewed the Sprint 3 scope;
+* reviewed and updated the Product Backlog;
+* created an initial Sprint 3 Backlog;
+* identified frontend and backend work;
+* identified the integration tasks;
+* agreed on a realistic Sprint 3 timeline;
+* assigned initial responsibilities;
+* identified what needs to be completed first.
 
-* One person must be identified as the **Scrum Master**.
-* Due to small group sizes, the Scrum Master **is also a developer**.
-* Responsibilities:
+The activities below are suggested time allocations. Groups may adjust the time spent on each activity according to their needs.
 
-  * Facilitate all Scrum ceremonies:
+## 1. Sprint 2 Retrospective
 
-    * Sprint Planning
-    * Daily Scrum
-    * Sprint Review
-    * Sprint Retrospective
-  * Ensure the **Sprint 1 Retrospective** is conducted today.
-  * Ensure the **Sprint 2 Planning session** is completed today.
-  * Log the team’s Scrum adoption **daily** (short entries).
-  * Maintain Scrum-related documentation in GitHub.
+Begin by reflecting on your experience during Sprint 2.
 
----
+Discuss:
 
-### 1.2 Product Owner
+* What worked well?
+* What did not work well?
+* What did we learn?
+* What should we continue doing?
+* What should we change in Sprint 3?
+* What problems should we avoid repeating?
+* How well did the frontend and backend teams communicate?
+* How well did the team maintain the agreed interface?
+* What should improve before integration?
 
-* One person must be identified as the **Product Owner**.
-* The Product Owner **is also a developer**.
-* Responsibilities:
+Use the retrospective format agreed upon by your group.
 
-  * Own and maintain the **Product Backlog**.
-  * Ensure that the **Sprint 2 Backlog** is derived from the Product Backlog.
-  * If a Product Backlog does not exist, create one today.
-  * Prioritize backlog items according to Sprint 2 deliverables and assessment criteria.
-  * Maintain Product Backlog and Sprint Backlog documentation in GitHub.
+### Outcome
 
----
+Identify a small number of specific and actionable improvements for Sprint 3.
 
-### 1.3 UI/UX Responsibility
+For example:
 
-* One team member must take responsibility for **UI/UX decisions**.
-* Responsibilities:
+* communicate API changes earlier;
+* review pull requests more regularly;
+* divide integration work more clearly;
+* test features before merging;
+* improve task estimation;
+* coordinate authentication responsibilities.
 
-  * Decide which **CSS approach or library** will be used (e.g., Vanilla CSS, Tailwind, MUI).
-  * Ensure consistency with the **Sprint 1 Figma prototype**.
-  * Ensure responsiveness is considered during Sprint 2 planning.
+## 2. Review Scrum Metrics and Sprint Capacity
 
----
+Suggested time: 15 minutes
 
-### 1.4 Developers
+Use the Scrum metrics activity completed in class.
 
-* All team members act as developers.
-* Responsibilities:
+Review the information available from previous sprints, such as:
 
-  * Contribute to front-end and/or back-end development.
-  * Participate in backlog refinement and estimation.
-  * Commit code regularly and document contributions clearly.
+* team velocity;
+* team capacity;
+* workload distribution;
+* Sprint Goal completion;
+* team satisfaction;
+* completed and unfinished work.
 
----
+Discuss:
 
-## 2. Conduct Sprint 1 Retrospective (First Activity After Presentations)
+* How much work did the team complete?
+* How much work can the team realistically complete in Sprint 3?
+* Are there any changes in team availability?
+* Are some team members carrying too much or too little work?
+* What risks could affect Sprint 3?
+* Should the team leave some capacity for unexpected problems?
 
-Before planning Sprint 2, each group must conduct a **Sprint 1 Retrospective**.
+Use the metrics to support your planning.
 
-### Format:
+> Metrics are useful information for planning and reflection. They should not be treated as a complete measure of individual performance or team quality.
 
-* [Use the **4Ls Retrospective**:](https://agilebox.app/blog/4ls-retrospective/)
+### Outcome
 
-  * **Liked**
-  * **Learned**
-  * **Lacked**
-  * **Longed For**
+A realistic understanding of the team's capacity and possible risks for Sprint 3.
 
-### Requirements:
+## 3. Sprint 3 Goal and Scope
 
-* Include both:
+Establish a clear Sprint 3 Goal for your project.
 
-  * **Factual insights** (process, tools, collaboration)
-  * **Emotional insights** (stress, confidence, motivation)
-* Document the retrospective results and store them in GitHub.
+The general purpose of Sprint 3 is:
 
----
+> Connect the frontend and backend, implement authentication, test the integrated application, and prepare the application for deployment.
 
-## 3. Define Sprint 2 Goal
+Adapt this goal to your specific application.
 
-After the retrospective, the team must define a **Sprint 2 Goal**.
+### Sprint 3 includes
 
-### Sprint Goal:
+* connecting the React frontend to the backend API;
+* replacing relevant frontend mock data with API data;
+* integrating frontend and backend functionality;
+* implementing real user registration and login;
+* implementing JWT authentication;
+* implementing role-based access control if needed;
+* protecting appropriate routes or features;
+* testing API endpoints when covered in class;
+* using Supertest when covered in class;
+* API documentation when covered in class;
+* deployment when covered in class;
 
-* A **single clear statement** describing what the team aims to achieve by the end of Sprint 2.
-* The goal must align with:
+* AI functionality if your group has selected AI as a feature.
 
-  * Sprint 1 prototype
-  * [Sprint 2 deliverables and Assessment criteria](https://github.com/tx00-web-en/Project/blob/main/material/sprint2.md)
-  
+### Sprint 3 does not automatically require
 
-Example (for guidance):
+* adding AI if it is not part of your application;
+* adding unnecessary technologies;
+* implementing features that are not connected to your product goal;
+* using advanced state management without a clear reason;
+* completing optional bonus activities before the required work.
 
-> “By the end of Sprint 2, the team will deliver a working front-end and back-end structure aligned with the Sprint 1 prototype, including routing, mock data, and initial AI-related endpoints.”
+Do not introduce technologies that have not been covered in class unless your whole group agrees and the choice is appropriate for the project.
 
----
+### Outcome
 
-## 4. Product Backlog Review and Creation
+A shared Sprint 3 Goal and a clear understanding of the sprint scope.
 
-### 4.1 Product Backlog
+## 4. Review and Refine the Product Backlog
 
-* The Product Owner must ensure a **Product Backlog exists**.
-* The Product Backlog should include:
+The Product Owner leads the Product Backlog work, while the rest of the team participates and works in parallel.
 
-  * ~~Features derived from the Sprint 1 prototype~~
-  * Functional and technical requirements for the MERN application
-  * Front-end, back-end, AI, and infrastructure-related items
+Review the existing Product Backlog from Sprint 2.
 
-If no Product Backlog exists, it **must be created today**.
+As a group:
 
----
+* review unfinished Sprint 2 work;
+* identify stories required for Sprint 3;
+* update stories that have changed;
+* clarify integration requirements;
+* identify AI work if applicable;
+* prioritize the backlog;
+* identify dependencies and risks.
 
-## 5. Sprint 2 Backlog Creation
+### While the Product Owner reviews the backlog
 
-### 5.1 Extract Sprint 2 Backlog
+Other team members should:
 
-* The Sprint 2 Backlog must be selected from the Product Backlog.
-* Only items that contribute to **Sprint 2 deliverables** should be included.
+* identify frontend integration tasks;
+* identify backend integration tasks;
+* identify database and authentication tasks;
+* identify possible technical risks;
+* check whether the existing interface is still suitable.
 
-Sprint 2 backlog items should cover:
+The Product Owner remains responsible for the Product Backlog, but the team develops the Sprint Backlog collaboratively.
 
-* Front-end implementation
-* Back-end implementation (including AI-related endpoints)
+### Outcome
 
+An updated and prioritized Product Backlog.
 
----
+## 5. Create the Initial Sprint 3 Backlog
 
-### 5.2 User Stories and Story Points (Mandatory)
+Select the user stories that the team plans to complete during Sprint 3.
 
-All Sprint 2 backlog items must be written as **user stories** where applicable and **estimated using story points**.
+Consider the work required for all relevant areas.
 
-#### User Story Format:
+### Frontend
 
-> *As a [type of user], I want [some goal] so that [some value].*
+Possible work includes:
 
-#### Story Points:
+* connecting React pages to backend endpoints;
+* replacing mock data with API data;
+* handling loading and error states;
+* integrating login and registration;
+* storing and using authentication information;
+* protecting frontend routes;
+* displaying user-specific content;
+* improving state management;
+* updating forms and validation.
 
-* Use **story points** to estimate effort and complexity.
-* Teams may use a simple scale such as:
+### Backend
 
-  * 1, 2, 3, 5, 8
-* Estimation should be done collaboratively by the team.
-* Story points represent **relative effort**, not hours.
+Possible work includes:
 
-Each Sprint 2 backlog item must include:
+* connecting controllers to MongoDB/Mongoose;
+* implementing user registration;
+* implementing login;
+* hashing and securely handling passwords;
+* generating and validating JWTs;
+* implementing authorization or role-based access control if needed;
+* protecting API routes;
+* updating product/service endpoints;
+* handling errors;
+* implementing AI endpoints if applicable.
 
-* A short description or user story
-* Assigned story points
-* Responsible team member(s)
 
----
+### AI
 
-## 6. Tooling and Documentation (GitHub)
+If AI is part of your application:
 
-GitHub must be used to document and support Scrum activities.
+* identify the AI user story;
+* identify the backend AI endpoint;
+* identify the frontend interaction;
+* identify required data;
+* identify testing and error-handling tasks.
 
-Recommended documentation includes:
+If AI is not part of your application, do not add it only because it is available as an option.
 
-* Product Backlog
-* Sprint 2 Backlog
-* Sprint 1 Retrospective (4Ls)
-* Scrum Master daily logs
-* Evidence of team contributions (commits, issues)
+### Outcome
 
-The structure is flexible, but documentation must be **clear, accessible, and traceable**.
+An initial Sprint 3 Backlog containing realistic, prioritized work.
 
----
+## 6. Identify Integration and Authentication Responsibilities
 
-## 7. Outcome of Today’s Session
+Suggested time: 15 minutes
 
-By the end of today’s session:
+Identify how the team will coordinate the transition from separate frontend and backend applications to one integrated application.
 
-Each group must have:
+Discuss:
 
-1. Identified Scrum Master, Product Owner, and UI/UX responsibility
-2. Completed and documented Sprint 1 Retrospective
-3. Defined a clear Sprint 2 Goal
-4. Created or refined the Product Backlog
-5. Created a Sprint 2 Backlog with:
+* which frontend pages will connect first;
+* which backend endpoints will be connected first;
+* who is responsible for each integration task;
+* who will handle authentication on the backend;
+* who will handle authentication on the frontend;
+* how login and registration will be tested;
+* which routes or features need protection;
+* how frontend and backend errors will be handled.
 
-   * User stories
-   * Story point estimates
-6. Agreed on tools, CSS approach, and working agreements
-7. Documented all relevant artifacts in GitHub
- -->
+Make sure the team understands that integration is a shared responsibility.
+
+### Outcome
+
+Clear responsibilities for integration and authentication work.
+
+## 7. Review the API Interface Before Integration
+
+Suggested time: 15 minutes
+
+Review the interface agreed upon during Sprint 2.
+
+Check that the frontend and backend still agree on:
+
+* endpoint names;
+* HTTP methods;
+* request structures;
+* response structures;
+* field names;
+* field types;
+* user data;
+* product/service data;
+* authentication-related responses;
+* error responses.
+
+Identify any differences before connecting the applications.
+
+If changes are necessary:
+
+* discuss them with the whole team;
+* update the relevant frontend and backend code;
+* record the agreed change;
+* make sure both sides use the same structure.
+
+### Outcome
+
+An updated and consistent interface ready for integration.
+
+## 8. Convert Sprint 3 User Stories into Tickets
+
+Suggested time: 15 minutes
+
+Break selected Sprint 3 user stories into smaller, actionable tickets.
+
+For example:
+
+### User Story
+
+> As a registered user, I want to log in so that I can access protected features.
+
+Possible tickets:
+
+Backend
+
+* Create login controller.
+* Check user credentials.
+* Hash and compare passwords.
+* Generate JWT.
+* Return the required response.
+* Add authentication middleware.
+* Test the login endpoint.
+
+Frontend
+
+* Connect the login form to the API.
+* Display validation errors.
+* Display login errors.
+* Store authentication information appropriately.
+* Redirect the user after successful login.
+* Protect the relevant frontend route.
+
+Testing
+
+* Test successful login.
+* Test invalid credentials.
+* Test missing fields.
+* Test access to protected routes.
+
+Tickets should be clear enough that a team member can understand what needs to be done.
+
+### Outcome
+
+A set of actionable tickets connected to the Sprint 3 user stories.
+
+## 9. Create a Sprint 3 Timeline
+
+Suggested time: 15 minutes
+
+Create a realistic timeline for the Sprint 3 work.
+
+Use the provided Sprint 3 workflow as a guide.
+
+Consider planning for:
+
+### Week 5
+
+* Sprint planning;
+* frontend/backend integration;
+* connecting the first important API endpoints;
+* identifying and fixing interface problems.
+
+### Week 6
+
+* real registration and login;
+* JWT authentication;
+* protected routes;
+* role-based access control if needed;
+* deployment preparation.
+
+### Week 7
+
+* backend testing;
+* Supertest when covered;
+* API documentation if required;
+* frontend improvements;
+* state management improvements when appropriate;
+* deployment of frontend and backend.
+
+### Week 8
+
+* final improvements;
+* testing;
+* bug fixing;
+* presentation preparation;
+* optional bonus activities if the required work is complete.
+
+Your timeline should identify:
+
+* the responsible team members;
+* the order of important tasks;
+* dependencies;
+* testing time;
+* time for fixing problems;
+* presentation preparation time.
+
+Do not plan only development work. Integration and debugging may require additional time.
+
+### Outcome
+
+A realistic Sprint 3 timeline.
+
+# Final Check
+
+Suggested time: 5 minutes
+
+Before finishing the meeting, confirm that your group has completed the following:
+
+* Sprint 2 retrospective completed.
+* Sprint 3 improvements identified.
+* Scrum metrics reviewed.
+* Team capacity discussed.
+* Sprint 3 Goal defined.
+* Sprint 3 scope understood.
+* Product Backlog reviewed and updated.
+* Product Backlog prioritized.
+* Initial Sprint 3 Backlog created.
+* Frontend integration work identified.
+* Backend integration work identified.
+* Authentication work identified.
+* Testing work identified.
+* Deployment work identified.
+* AI work identified if applicable.
+* API interface reviewed.
+* Selected user stories converted into tickets.
+* Responsibilities assigned.
+* Sprint 3 timeline created.
+* Each team member knows what they should work on next.
+
+# After the Meeting
+
+Begin Sprint 3 development according to your Sprint Backlog and timeline.
+
+Remember:
+
+> Sprint 3 is the sprint in which the frontend and backend become one integrated application. Communicate frequently, test continuously, and coordinate authentication and API changes carefully.
+
+## Exact changes I made to your Sprint 3 instructions
+
+1. Added an explicit Sprint 3 Goal focused on integration, authentication, testing, and deployment.
+2. Added AI as an optional Sprint 3 feature, reflecting the postponed AI activity.
+3. Added a dedicated Sprint 2 Retrospective as the first planning activity.
+4. Added a separate Scrum Metrics and Sprint Capacity activity.
+5. Moved Scrum roles into the planning process and made the backlog work collaborative.
+6. Added explicit frontend integration tasks.
+7. Added explicit backend authentication tasks.
+8. Added explicit testing tasks, including Supertest when covered.
+9. Added a dedicated API interface review before integration.
+10. Added a dedicated integration and authentication responsibility discussion.
+11. Added deployment planning to the Sprint Backlog.
+12. Added AI planning only for groups whose application includes AI.
+13. Added a more detailed presentation-preparation reminder through the timeline.
+14. Added testing and debugging time to the timeline.
+15. Clarified that metrics support planning and reflection, rather than measuring individual performance by themselves.
+16. Clarified the difference between required work and optional bonus work.
+17. Clarified the API documentation expectation so that Swagger/OpenAPI is not accidentally treated as both optional and mandatory.
+18. Clarified the total as 150 points plus up to 30 bonus points.
+19. Added a final checklist specifically for integration, authentication, testing, deployment, and AI planning.
