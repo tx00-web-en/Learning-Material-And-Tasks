@@ -1546,6 +1546,11 @@ The goal is not to maximize a number.
 
 The goal is to improve the team's ability to deliver a valuable, usable, and high-quality product.
 
+
+> [!NOTE]  
+> Story points are not a measure of individual or team productivity: Story points are a relative estimate of the effort/complexity/uncertainty of work. Developers may have different responsibilities and contribute in different ways, for example, solving different types of problems, helping teammates, reviewing code, investigating bugs, mentoring colleagues, or improving technical practices. Therefore, comparing individuals based on story points is misleading.
+
+
 ---
 
 # 21. Links
