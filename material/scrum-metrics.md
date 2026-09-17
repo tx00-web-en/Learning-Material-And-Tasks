@@ -16,6 +16,31 @@ After studying this material, you should be able to:
 
 ---
 
+### Scrum Metris In Brief
+
+| Scrum Metric                        | Short Description                                                                                                                         |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Capacity**                        | How much time/effort the team has available to work during a sprint, considering holidays, vacations, meetings, and other commitments.    |
+| **Velocity**                        | The amount of work the team typically completes in a sprint, usually measured in story points.                                            |
+| **Throughput**                      | The number of work items completed within a given period (e.g., stories/tasks per sprint or week).                                        |
+| **Cycle Time**                      | The time it takes for a work item to move from **start of active work to completion**.                                                    |
+| **Burndown**                        | Shows how much remaining work decreases over time during a sprint or release, helping track progress toward completion.                   |
+| **WIP (Work in Progress)**          | The number of work items currently being worked on but not yet completed. Helps identify bottlenecks and overloading.                     |
+| **Defect Rate & Quality Metrics**   | Measures product quality through defects found, escaped defects, defect severity, rework, test coverage, and similar indicators.          |
+| **Customer Satisfaction**           | Measures how satisfied customers/users are with the product, features, and overall experience, often using surveys, ratings, or feedback. |
+| **Release Progress**                | Tracks progress toward completing the scope and objectives planned for a release, including completed vs. remaining work.                 |
+| **Team Satisfaction & Team Health** | Measures the team's morale, engagement, collaboration, workload, psychological safety, and overall ability to work effectively.           |
+
+**Useful distinction:**
+
+* **Capacity = how much time the team has available**
+* **Velocity = how much work the team usually completes**
+* **Throughput = how many items the team completes**
+* **Cycle time = how long each item takes**
+
+
+---
+
 # 1. What are Scrum metrics?
 
 A Scrum metric is a measurement used to understand some aspect of a Scrum Team's work, delivery, quality, or outcomes.

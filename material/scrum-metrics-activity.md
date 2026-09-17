@@ -1,8 +1,36 @@
 # Activity: Scrum Metrics Showdown
 
-**Assessment:** Group competition
+**Assessment:** Competition
 
-**Winning group bonus:** +1 bonus mark (equivalent to 5 points) for each member.
+* **2× bonus** for the winning members
+* **1× bonus** for the judge
+* **1× bonus** in case of a tie/draw
+
+---
+
+### Scrum Metris In Brief
+
+| Scrum Metric                        | Short Description                                                                                                                         |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Capacity**                        | How much time/effort the team has available to work during a sprint, considering holidays, vacations, meetings, and other commitments.    |
+| **Velocity**                        | The amount of work the team typically completes in a sprint, usually measured in story points.                                            |
+| **Throughput**                      | The number of work items completed within a given period (e.g., stories/tasks per sprint or week).                                        |
+| **Cycle Time**                      | The time it takes for a work item to move from **start of active work to completion**.                                                    |
+| **Burndown**                        | Shows how much remaining work decreases over time during a sprint or release, helping track progress toward completion.                   |
+| **WIP (Work in Progress)**          | The number of work items currently being worked on but not yet completed. Helps identify bottlenecks and overloading.                     |
+| **Defect Rate & Quality Metrics**   | Measures product quality through defects found, escaped defects, defect severity, rework, test coverage, and similar indicators.          |
+| **Customer Satisfaction**           | Measures how satisfied customers/users are with the product, features, and overall experience, often using surveys, ratings, or feedback. |
+| **Release Progress**                | Tracks progress toward completing the scope and objectives planned for a release, including completed vs. remaining work.                 |
+| **Team Satisfaction & Team Health** | Measures the team's morale, engagement, collaboration, workload, psychological safety, and overall ability to work effectively.           |
+
+**Useful distinction:**
+
+* **Capacity = how much time the team has available**
+* **Velocity = how much work the team usually completes**
+* **Throughput = how many items the team completes**
+* **Cycle time = how long each item takes**
+
+
 
 ---
 
@@ -54,9 +82,9 @@ Before starting the investigation, review the main Scrum metrics.
 
 The following resources can be used:
 
-1. [Atlassian — Scrum Metrics](https://www.atlassian.com/agile/scrum/scrum-metrics)
-2. [ITPhobia — 11 Scrum Metrics and Their Value](https://itphobia.com/11-scrum-metrics-and-their-value-to-scrum-teams/)
-3. [Dee Project Manager — Scrum Metrics](https://deeprojectmanager.com/scrum-metrics/)
+1. [Atlassian: Scrum Metrics](https://www.atlassian.com/agile/scrum/scrum-metrics)
+2. [ITPhobia: 11 Scrum Metrics and Their Value](https://itphobia.com/11-scrum-metrics-and-their-value-to-scrum-teams/)
+3. [Dee Project Manager: Scrum Metrics](https://deeprojectmanager.com/scrum-metrics/)
 4. [Agile Scrum Sprint Metrics Template](https://github.com/eric-spink-agile/agile-scrum-sprint-metrics-template)
 
 ### AI use
@@ -120,7 +148,7 @@ Help AppNest understand its situation and recommend how Scrum metrics should be 
 
 The four members of the group must work together on the same investigation.
 
-## Part A — Select three metrics
+## Part A: Select three metrics
 
 Choose three metrics that are most useful for AppNest.
 
@@ -141,7 +169,7 @@ For each metric, explain:
 
 ---
 
-## Part B — Interpret the data
+## Part B: Interpret the data
 
 Discuss the following questions.
 
@@ -183,7 +211,7 @@ Explain why.
 
 ---
 
-## Part C — Make a recommendation
+## Part C: Make a recommendation
 
 Prepare a recommendation for the next Sprint.
 
@@ -226,7 +254,7 @@ Possible actions include:
 
 ---
 
-## Part D — Prepare the defense
+## Part D: Prepare the defense
 
 Prepare a short explanation of the group's recommendation.
 
@@ -316,102 +344,8 @@ A disagreement without explanation does not count as a strong challenge.
 
 ---
 
-# 8. Scoring
-
-Each pairing is worth a maximum of 10 points.
-
-| Criterion                             | Points |
-| ------------------------------------- | -----: |
-| Understanding of metrics              |      2 |
-| Interpretation of the scenario        |      2 |
-| Quality of recommendation             |      2 |
-| Challenge questions            |      2 |
-| Evidence-based reasoning and teamwork |      2 |
-| **Total per pairing**                 | **10** |
-
-### Group score
-
-Each group participates in two pairings.
-
-| Pairing               |       Maximum |
-| --------------------- | ------------: |
-| Pair A                |     10 points |
-| Pair B                |     10 points |
-| **Total group score** | **20 points** |
-
-The group with the highest total score wins.
-
 ### Bonus
 
-Every member of the winning group receives:
-
-**+1 bonus mark (equivalent to 5 points).**
-
-The bonus is awarded to all four members of the winning group.
-
----
-
-# 9. Twist round: New evidence
-
-After the challenge round, new information is revealed.
-
-## Management's new demand
-
-> "From the next Sprint, AppNest must reach 50 story points. The team with the highest velocity will be considered the best team."
-
-### Task
-
-Discuss the following questions.
-
-1. Should the recommendation change?
-2. Which metric should management stop using as a performance target?
-3. What should AppNest measure instead?
-4. How should the situation be explained to management?
-
-### Final response
-
-**Does the recommendation change? Why?**
-
----
-
----
-
----
-
-**What should AppNest measure instead?**
-
----
-
----
-
----
-
-### Twist round timing
-
-* 3 minutes: Discuss the new information.
-* 2 minutes: Prepare the response.
-* 5 minutes: Share and compare the recommendations.
-
-The twist round can be used as a tiebreaker if two groups have the same score.
-
----
-
-# 10. Final reflection
-
-Discuss the following questions after the competition.
-
-1. Which metric was the most difficult to understand?
-2. Did any group choose a different metric? Why?
-3. Did the challenge change the way the situation was understood?
-4. What is the danger of using velocity as a target?
-5. Which metric would be most useful for AppNest?
-6. What is the difference between measuring activity and measuring value?
-7. What makes a Scrum metric useful?
-
-### Final takeaway
-
-Scrum metrics are used to help a Scrum Team inspect its situation, make better decisions, and improve.
-
-A metric should not be treated as a target simply because it is easy to measure.
-
-The most useful metric is one that helps the team understand what is happening and decide what to do next.
+* **2× bonus** for the winning members
+* **1× bonus** for the judge
+* **1× bonus** in case of a tie/draw
