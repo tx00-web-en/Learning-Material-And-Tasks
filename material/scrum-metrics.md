@@ -16,7 +16,7 @@ After studying this material, you should be able to:
 
 ---
 
-### Scrum Metris In Brief
+### Scrum Metrics In Brief
 
 | Scrum Metric                        | Short Description                                                                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
