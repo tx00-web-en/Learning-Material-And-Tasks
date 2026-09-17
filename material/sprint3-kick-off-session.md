@@ -410,25 +410,3 @@ Begin Sprint 3 development according to your Sprint Backlog and timeline.
 Remember:
 
 > Sprint 3 is the sprint in which the frontend and backend become one integrated application. Communicate frequently, test continuously, and coordinate authentication and API changes carefully.
-
-## Exact changes I made to your Sprint 3 instructions
-
-1. Added an explicit Sprint 3 Goal focused on integration, authentication, testing, and deployment.
-2. Added AI as an optional Sprint 3 feature, reflecting the postponed AI activity.
-3. Added a dedicated Sprint 2 Retrospective as the first planning activity.
-4. Added a separate Scrum Metrics and Sprint Capacity activity.
-5. Moved Scrum roles into the planning process and made the backlog work collaborative.
-6. Added explicit frontend integration tasks.
-7. Added explicit backend authentication tasks.
-8. Added explicit testing tasks, including Supertest when covered.
-9. Added a dedicated API interface review before integration.
-10. Added a dedicated integration and authentication responsibility discussion.
-11. Added deployment planning to the Sprint Backlog.
-12. Added AI planning only for groups whose application includes AI.
-13. Added a more detailed presentation-preparation reminder through the timeline.
-14. Added testing and debugging time to the timeline.
-15. Clarified that metrics support planning and reflection, rather than measuring individual performance by themselves.
-16. Clarified the difference between required work and optional bonus work.
-17. Clarified the API documentation expectation so that Swagger/OpenAPI is not accidentally treated as both optional and mandatory.
-18. Clarified the total as 150 points plus up to 30 bonus points.
-19. Added a final checklist specifically for integration, authentication, testing, deployment, and AI planning.
