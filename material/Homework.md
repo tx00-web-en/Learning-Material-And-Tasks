@@ -1,6 +1,18 @@
 # Homework
 
 
+The video homework uses emojis to represent the significance of each video. Below are the explanations:
+
+| **Category**  | **Description**       | **Emoji** |
+|---------------|-----------------------|-----------|
+| **Importance**| Very Important        | :star:        |
+|               | Important             | :bell:        |
+|               | Good to Know          | :blue_book:        |
+| **Difficulty**| Easy                  | :blush:        |
+|               | Challenging           | :sweat_smile:        |
+
+------
+
 > [!NOTE]  
 > Please take some time to review **parts** of this [material](./review.md) (ideally **over the weekend**). It’s a great way to **refresh** the frontend and backend concepts we’ve built up **over the last 5 weeks**.
 
@@ -19,6 +31,7 @@
 ### Wednesday Morning:
 
 - :star: [Testing Node Server with Jest and Supertest](https://youtu.be/FKnzS_icp20?si=zkvJi7H_eHfYFLe-)
+- :blue_book: s[Unit Testing Crash Course using vitest](https://www.youtube.com/playlist?list=PL4cUxeGkcC9iyuClsf48SSgsJPBStHo7F)
 
 ### Wednesday Afternoon
 
