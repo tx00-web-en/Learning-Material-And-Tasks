@@ -11,6 +11,14 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
 
 ## Important: 
 
+**Commit messages: Recommended format**
+
+- *feat* Short for feature. Used when you add a new feature or new functionality to the codebase.
+- *refactor* used when you change existing code without altering behavior. This improves structure, readability, or organization.
+- *chore* used for maintenance tasks that don’t change application behavior. Examples: updating dependencies, adding logging, renaming files, config changes.
+
+<!--
+
 1. Commit Format: **use this commit format**:
 
       ```bash
@@ -18,7 +26,8 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
       git commit -m "[iterX] Your commit message"
       git push
       ```
-2. **DO NOT** delete the **.github** directory, from the cloned repo
+ 2. **DO NOT** delete the **.github** directory, from the cloned repo 
+-->
 
 ---
 
@@ -58,7 +67,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    - When complete, commit your setup with the proper format:
      ```bash
      git add .
-     git commit -m "[iter1] Complete setup"
+     git commit -m "[iter1] Complete setup ..."
      git push
      ```
 
@@ -167,7 +176,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    - When complete, commit your setup with the proper format:
      ```bash
      git add .
-     git commit -m "[iter2] Secure Tour Routes"
+     git commit -m "[iter2] Secure Tour Routes ..."
      git push
      ```
 
@@ -198,7 +207,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    - When complete, commit your setup with the proper format:
      ```bash
      git add .
-     git commit -m "[iter3] Understand Authentication Logic"
+     git commit -m "[iter3] Understand Authentication Logic ..."
      git push
      ```
 
@@ -273,7 +282,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    - When complete, commit your setup with the proper format:
    ```bash
      git add .
-     git commit -m "[iter4] Expand the User Model"
+     git commit -m "[iter4] Expand the User Model ..."
      git push
      ```
 
@@ -317,7 +326,7 @@ If a step is unclear, feel free to ask for help. If the same question arises fre
    - When complete, commit your setup with the proper format:
      ```bash
      git add .
-     git commit -m "[iter5] Final Testing"
+     git commit -m "[iter5] Final Testing ..."
      git push
      ```
 
