@@ -1,106 +1,89 @@
-### Explanation of the Code and How It Illustrates the Rainbow Attack
+### 1. Conceptual Overview: Precomputed Tables and Rainbow Attacks
 
-#### Overview
-This code demonstrates a **password cracking attack** using **HMAC-SHA256** (a hashing algorithm) without salt, simulating the scenario where an attacker attempts to recover passwords from a leaked table containing username-hash pairs. The code illustrates how attackers can use a **precomputed list of passwords** (a form of a brute force attack) to easily recover passwords if proper measures (like **salting** and **slow hashing** algorithms) are not used.
+#### The Underlying Vulnerability
+Cryptographic hash functions (such as SHA-256 or MD5) are designed to be **one-way functions**: computing a hash from an input is fast and deterministic, but computing the original input from a hash is computationally infeasible. 
 
-#### Key Sections of the Code
+When a system stores passwords as raw hashes without a cryptographic salt, the output for any given password is always identical:
+$$\text{Hash}(\text{"password"}) \rightarrow \text{5e884898da28...}$$
 
-1. **Hashing the Passwords**:
-   - This function takes the plain-text password, applies the SHA-256 hashing function, and outputs the hash in hexadecimal format.
+Because the mapping is deterministic, attackers do not need to reverse the mathematics of the algorithm. Instead, they can precompute the hashes for millions of common passwords in advance.
 
-   ```javascript
-   function hashPassword(password) {
-     const secretKey = "secret_key"; 
-     return crypto.createHmac('sha256', secretKey).update(password).digest('hex');
-   }
-   ```
+#### The Lookup Table
+Cracking unsalted hashes exists on a spectrum between computational time and storage space:
 
-   - *There is no secret key involved here, unlike HMAC, which would require a key to combine with the password.* By not using HMAC, the hash is generated directly from the password itself, which makes the hash function much simpler and easier to compute. However, this is less secure compared to using HMAC with a secret key.
+1. **Pure Brute-Force / Online Dictionary Attack (High Time, Low Storage):** 
+   The attacker computes hashes dynamically during the attack for each candidate password until a match is found. This requires negligible storage but significant CPU/GPU processing power.
+2. **Precomputed Lookup Table (Low Time, High Storage):**
+   The attacker computes millions or billions of hashes once and stores every `Hash -> Plaintext` pair in a database. At attack time, cracking reduces to a constant-time ($O(1)$) search. The limitation is the enormous amount of disk space required.
+3. **Rainbow Tables (Balanced Time and Storage):**
+   A specialized implementation of a precomputed table. It uses mathematical chains formed by alternating **hash functions** and **reduction functions** (which convert a hash back into a valid password format). Instead of storing every single hash, a Rainbow Table stores only the start and end of each chain. This drastically reduces storage space requirements while keeping lookup speeds much faster than brute-force cracking.
 
-2. **Simulating the Leaked Table**:
-   A "leaked table" is created, which contains **username-hash pairs**. The hash for each username is calculated by calling `hashPassword` with the respective password.
+*Note on the provided code:* The simulation implements a **precomputed lookup table**, which models the operational outcome of a rainbow table attack: looking up precalculated data to achieve instantaneous password recovery without performing runtime hashing.
 
-   ```javascript
-   const leakedTable = [
-     { username: "user1", hash: hashPassword("p@ssword12345") },
-     { username: "user2", hash: hashPassword("R#wdf78>$12") },
-     { username: "user3", hash: hashPassword("Ilovecats") },
-     { username: "user4", hash: hashPassword("admin") },
-     { username: "user5", hash: hashPassword("Ab123456") },
-   ];
-   ```
+#### Countermeasures
+* **Cryptographic Salting:** Adding a unique, random string to each password prior to hashing ensures that two users with the same password produce completely different hashes:
+  $$\text{Hash}(\text{"password"} + \text{"saltA"}) \neq \text{Hash}(\text{"password"} + \text{"saltB"})$$
+  Because the salt is unique per user, a shared precomputed table is rendered useless. The attacker would have to generate an entirely new table for every distinct salt.
+* **Slow Hash Functions (Key Derivation Functions):** Algorithms like bcrypt, scrypt, and Argon2 introduce deliberate computational cost (memory and time parameters), making both precomputation and brute-force attacks impractical.
 
-3. **Brute Force Attack Simulation**:
-   The attacker simulates a **brute force attack** by trying each password in the list of `possiblePasswords`. The attacker hashes each password guess and compares the result to the stored hash in the leaked table. If a match is found, the attacker successfully recovers the password.
+---
 
-   ```javascript
-   function recoverPasswords(leakedTable, possiblePasswords) {
-     const recovered = [];
-     leakedTable.forEach((entry) => {
-       for (const password of possiblePasswords) {
-         const hashAttempt = hashPassword(password);
-         if (hashAttempt === entry.hash) {
-           recovered.push({
-             username: entry.username,
-             matchedPassword: password,
-           });
-           break;
-         }
-       }
-     });
-     return recovered;
-   }
-   ```
+### 2. Code Explanation
 
-   The attack attempts to find the matching password for each user by comparing all potential password hashes to the ones stored in the table. If a match is found, the password is considered "recovered."
+The provided JavaScript program models the mechanics of an attack against unsalted password hashes using precomputed data.
 
-4. **Output Results**:
-   The code prints out the leaked table and any passwords that were successfully recovered by the attacker.
+#### Step 1: Simulated Target (`leakedDatabase`)
+```javascript
+const leakedDatabase = [
+  { username: "user1", hash: "741bfdda..." },
+  { username: "user2", hash: "fdfcc1d7..." },
+  ...
+];
+```
+* Represents data an attacker might obtain through a database breach.
+* Only the identifier (`username`) and the unsalted SHA-256 hash are visible.
+* The original plaintext values are unknown to the attacker.
 
-   ```javascript
-   console.log("\nRecovered Passwords:");
-   recoveredPasswords.forEach((rec) =>
-     console.log(`Recovered: ${rec.username}'s password is "${rec.matchedPassword}"`)
-   );
-   console.log("\nNote: if we use bcrypt, this attack is not possible because of salting");
-   ```
+#### Step 2: Simulated Precomputed Table (`rainbowTable`)
+```javascript
+const rainbowTable = {
+  "922e9646b...": "letmein",
+  "fdfcc1d7c...": "R#wdf78>$12",
+  ...
+};
+```
+* Represents the attacker's pre-existing database.
+* It is structured as a key-value dictionary where:
+  * **Key:** The precomputed hash.
+  * **Value:** The plaintext password that produces that hash.
+* This data is loaded directly into memory, simulating an asset the attacker obtained or computed prior to the breach.
 
-### How It Illustrates the Rainbow Table Attack
+#### Step 3: The Attack Logic (`crackPasswords`)
+```javascript
+function crackPasswords(leakedData, lookupTable) {
+  const crackedUsers = [];
 
-The attack demonstrated in this code is essentially a simplified version of a **rainbow table attack**.
+  leakedData.forEach((victim) => {
+    const plaintext = lookupTable[victim.hash];
 
-- **Rainbow Tables**: Rainbow tables are precomputed tables containing hash values for a large number of possible passwords. In this case, the attacker has a predefined list of potential passwords (`possiblePasswords`), which they can hash and compare to the stored hashes in the leaked table. Since the hashing method used here is deterministic (i.e., the same password always produces the same hash), the attacker can use the hash of each guess to check against the leaked hash values.
+    if (plaintext) {
+      crackedUsers.push({
+        username: victim.username,
+        password: plaintext,
+      });
+    }
+  });
 
-- **Why It Works in This Case**: 
-  - The attacker doesn't need to recompute hashes for every password guess; they simply need to try each one in the list and hash it using the same secret key (HMAC-SHA256). If the hash matches any entry in the leaked table, the password is "cracked."
-  - This would be much easier if there were no salt, and if the hashes were precomputed using a simple, fast hashing algorithm like SHA-256 or HMAC-SHA256.
+  return crackedUsers;
+}
+```
+* **No Cryptographic Operations:** The function imports no cryptographic libraries and performs no mathematical hashing operations.
+* **Complexity:** The operation `lookupTable[victim.hash]` executes in average $O(1)$ time complexity per record. For $N$ leaked records, the entire database can be evaluated in $O(N)$ time.
+* **Conditional Matching:** 
+  * If the hash is an index in the dictionary, the password is recovered immediately.
+  * If the hash is absent, the entry remains uncracked.
 
-- **Speed and Efficiency**: Since the hashing function is simple and fast, an attacker can quickly try many different passwords in a short period, making brute-force or rainbow table attacks effective.
-
-### How Salting Can Help
-
-A **salt** is a random value added to the password before hashing, which helps prevent attackers from using precomputed tables (like rainbow tables) to quickly crack passwords.
-
-- **Salting in Action**: If each password was salted with a random value before being hashed, then even if two users have the same password, their hashes would be different because the salt would change. This means the attacker cannot use a precomputed table of hashes for cracking multiple passwords. 
-
-- **How Salting Prevents Rainbow Table Attacks**:
-  - With salting, the attacker would need to recompute the hash for every password guess with a unique salt, which significantly increases the time and resources required for an attack.
-  - The attacker would also need to know the salt for each password in the leaked table, which is typically stored separately, making it harder for the attacker to reverse-engineer the hashes.
-
-### Why Bcrypt Is a Good Practice
-
-**Bcrypt** is a hashing algorithm that is specifically designed for securely hashing passwords, and it is a best practice for several reasons:
-
-1. **Salting is Built-in**: Bcrypt automatically generates a unique salt for each password, making it resistant to rainbow table attacks. Even if two users have the same password, their hashes will be different because of the unique salts.
-
-2. **Slow Hashing**: Bcrypt is deliberately slow to compute (it uses a work factor or "cost factor" to control how long the hashing process takes). This makes brute-force attacks much more time-consuming because the attacker must hash each guess many times.
-
-3. **Adaptive Security**: Bcrypt’s cost factor can be increased over time as computing power increases. This means that as technology improves, bcrypt hashes can be made more computationally expensive, maintaining strong security.
-
-4. **Prevention of Precomputations**: Since each bcrypt hash involves a unique salt, attackers cannot use precomputed hash tables (like rainbow tables). This makes bcrypt much more secure than simple hashing algorithms (like HMAC-SHA256 or SHA-256) without salt.
-
-### Conclusion
-
-In summary, the code simulates a basic password recovery attack using HMAC-SHA256, where an attacker uses a predefined list of possible passwords and attempts to recover the passwords from a leaked table of username-hash pairs. This illustrates how a **rainbow table attack** can work when there is no salt, making password hashes predictable and vulnerable to brute-force attempts.
-
-**Salting** helps prevent rainbow table attacks by ensuring that each password's hash is unique, even if two users share the same password. Using a strong, slow hashing algorithm like **bcrypt**, which includes salting and is computationally expensive, is best practice for securely storing passwords and preventing these kinds of attacks.
+#### Step 4: Results and Takeaways
+When executed:
+* `user2` (`R#wdf78>$12`), `user3` (`Ilovecats`), and `user4` (`admin`) are matched instantly because their hashes exist in `rainbowTable`.
+* `user1` (`p@ssword12345`) and `user5` (`Ab123456`) fail to resolve because their specific hashes were not present in the attacker's table. This highlights that lookup attacks are bounded by the completeness of the attacker's precomputed dataset.
