@@ -31,7 +31,7 @@ In this lab you will learn how to write automated integration tests for a REST A
 
 ## Part 2 – Understanding the Test File
 
-Open `./tests/workout_api.test.js`. The file is broken into logical sections; we will look at each one.
+Open `./tests/workout.test.js`. The file is broken into logical sections; we will look at each one.
 
 ### 2.1 Imports and wiring Supertest to the Express app
 
