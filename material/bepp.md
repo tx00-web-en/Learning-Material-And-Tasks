@@ -1,6 +1,6 @@
-# Backend Testing with Jest and Supertest — Pair Programming Activity
+# Backend Testing with Vitest and Supertest: Pair Programming Activity
 
-This pair programming activity focuses on testing backend APIs using **Jest** and **Supertest**.
+This pair programming activity focuses on testing backend APIs using **Vitest** and **Supertest**.
 You will not start from scratch. You will build on a **starter repository** that includes example test files.
 Your task is to write tests for the **Jobs API**, both with and without authentication, using the same logic shown in the example tests.
 
@@ -82,7 +82,7 @@ Use these as templates when creating your Jobs API tests.
    tests/jobs.test.js
    ```
 
-   > **Note:** The starter already includes a `tests/mock.test.js` placeholder so you can verify Jest is working (`npm test`). Leave it as-is — create your own `jobs.test.js` alongside it.
+   > **Note:** The starter already includes a `tests/mock.test.js` placeholder so you can verify Vitest is working (`npm test`). Leave it as-is — create your own `jobs.test.js` alongside it.
 
 5. **Write Tests for Non-Protected Jobs Endpoints**
    Follow the structure in `examples/tours-no-auth.test.js` to write tests for the following endpoints:
@@ -305,10 +305,10 @@ Endpoints to test:
 
 #### **3. Install test dependencies**
 
-   - Install the required testing libraries (`jest` and `supertest`) as dev dependencies:
+   - Install the required testing libraries (`Vitest` and `supertest`) as dev dependencies:
    
    ```bash
-   npm install jest supertest -D
+   npm install vitest supertest -D
    ```
 
 ---
@@ -320,10 +320,10 @@ Endpoints to test:
    `fd20f5055aa4ddae6e76493a39e4481f87810080c7ac9587e49339ed61cd22f7`
 
    You can use online tools like [Browserling's Random Hex Generator](https://www.browserling.com/tools/random-hex) to generate this.
-
+<!-- 
 ---
 
-#### **5. Add Jest teardown**
+#### **5. Add Vitest teardown**
 
    - Create a `tests/teardown.js` file. This script will run after all tests are completed to clean up resources such as database connections or mock servers.
    - In `package.json`, add the following configuration:
@@ -360,11 +360,23 @@ Endpoints to test:
 
    - The `glob` package is used for pattern matching and file searching. Older versions of `glob` may cause warnings during Jest execution due to deprecated features. By specifying `"glob": "^13.0.0"`, you ensure compatibility with the latest versions of Jest and avoid deprecation issues.
 
----
+--- 
+
+-->
+
+
+#### **5.  
+
+
+#### **6. 
+
+
+#### **7. 
+
 
 #### **8. Run a single test by name**
 
-   - To run individual tests instead of running all tests at once, use the `--testNamePattern` flag in Jest:
+   - To run individual tests instead of running all tests at once, use the `--testNamePattern` flag in Vitest:
    
      ```bash
      npm test -- --testNamePattern="should return 400 for invalid job ID"
@@ -390,7 +402,7 @@ Endpoints to test:
 
 ## **Helpful Resources**
 
-- [Jest Documentation](https://jestjs.io/docs/getting-started)
+- [Vitest Documentation](https://vitest.dev/guide/)
 - [Supertest Documentation](https://github.com/visionmedia/supertest)
 - [HTTP Status Codes Reference](https://httpwg.org/specs/rfc7231.html#status.codes)
 - [JWT Best Practices](https://tools.ietf.org/html/rfc8725)

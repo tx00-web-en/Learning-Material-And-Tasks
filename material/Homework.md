@@ -18,7 +18,7 @@
   - [Videos](https://www.youtube.com/playlist?list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT)
   - [src](https://github.com/iamshaunjp/MERN-Auth-Tutorial)
 - Here’s a step‑by‑step guide on how to build a full‑stack jobs application. The project is organized so that each step is in its own branch, allowing you to follow along and replicate the work incrementally:  https://github.com/tx00-resources-en/week7-fepp-en
-- Please revisit the [Front-End Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again. 
+- Please revisit the [Pair Programming Activity](./fepp.md) we worked on Monday and go through the same steps again. 
 
 **Frontend**
 
