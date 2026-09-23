@@ -226,7 +226,7 @@ describe("when there are initially some workouts saved", () => {
 | Vague describe label "some notes saved" | "some workouts saved" | Matches the actual domain. |
 | Passive description | Active `should …` phrasing | Makes the expected behavior immediately clear. |
 
-**Your task:** Refactor the *entire* `workout_api.test.js` file in the same way. Apply `it()` and descriptive names to every test.
+**Your task:** Refactor the *entire* `workout.test.js` file in the same way. Apply `it()` and descriptive names to every test.
 
 <details>
 <summary>Sample solution – click to expand</summary>
@@ -517,7 +517,7 @@ Vitest will report it as *skipped* rather than failing.
 ### Running a specific file from the terminal
 
 ```bash
-npm test -- tests/workout_api.test.js
+npm test -- tests/workout.test.js
 ```
 
 ### Running tests that match a name pattern
