@@ -182,6 +182,7 @@ Now that the basic setup is complete, divide your team between backend and front
             password: { type: String, required: true }, // Hashed password for authentication
             phone_number: { type: String, required: true }, // Contact phone number
             gender: { type: String, required: true }, // Gender of the user
+            date_of_birth: { type: Date, required: true },
             address: {
                 street: { type: String, required: true }, // Street address
                 city: { type: String, required: true }, // City
