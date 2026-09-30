@@ -14,7 +14,7 @@ The objective of this lab is to familiarize with API documentation using Swagger
 
 2. Generate Swagger/OpenAPI Documentation:
    - Use `ChatGPT` to generate a Swagger/OpenAPI JSON document for the API. You can use the following prompt: *Generate a Swagger/OpenAPI JSON document for the API at this endpoint: `https://jsonplaceholder.typicode.com/todos`.*
-   - Copy the generated JSON document.
+   - Copy the generated JSON document. [Sample Output](./swagger-demo1.md)
 
 3. Open Swagger Editor:
    - Visit [Swagger Editor](https://editor.swagger.io/) in your web browser.
