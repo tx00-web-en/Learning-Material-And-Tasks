@@ -1,0 +1,502 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Jobs & User Authentication API",
+    "description": "API documentation for managing jobs and user accounts. All mutating job operations (POST, PUT, DELETE) require JWT authentication, while GET endpoints are publicly accessible.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4000/api",
+      "description": "Local Development Server"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/users/signup": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Register a new user",
+        "description": "Registers a new user and returns the user email along with a signed JWT token.",
+        "operationId": "signupUser",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserSignupInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing fields, user already exists, or invalid data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Log in an existing user",
+        "description": "Authenticates a user with email and password, returning a signed JWT token.",
+        "operationId": "loginUser",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserLoginInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Login successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid credentials",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs": {
+      "get": {
+        "tags": ["Jobs"],
+        "summary": "Get all jobs",
+        "description": "Fetches all job postings sorted by newest first. Publicly accessible.",
+        "operationId": "getAllJobs",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "A list of job postings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Job"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Jobs"],
+        "summary": "Create a new job",
+        "description": "Creates a new job record. Requires a valid JWT token; the user ID is extracted from the authenticated user.",
+        "operationId": "createJob",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Job created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid token"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs/{jobId}": {
+      "parameters": [
+        {
+          "name": "jobId",
+          "in": "path",
+          "required": true,
+          "description": "MongoDB ObjectId of the job",
+          "schema": {
+            "type": "string",
+            "example": "664c39f018e69cf241bf8e12"
+          }
+        }
+      ],
+      "get": {
+        "tags": ["Jobs"],
+        "summary": "Get a job by ID",
+        "description": "Retrieves a single job by its MongoDB ObjectId. Publicly accessible.",
+        "operationId": "getJobById",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "Job found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Job not found or invalid ObjectId format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["Jobs"],
+        "summary": "Update a job by ID",
+        "description": "Updates an existing job. Protected route requiring JWT authentication.",
+        "operationId": "updateJob",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Job updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Job"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid token"
+          },
+          "404": {
+            "description": "Job not found or invalid ObjectId format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Jobs"],
+        "summary": "Delete a job by ID",
+        "description": "Deletes a job record by its ID. Protected route requiring JWT authentication.",
+        "operationId": "deleteJob",
+        "responses": {
+          "204": {
+            "description": "Job successfully deleted (No Content)"
+          },
+          "401": {
+            "description": "Unauthorized - Missing or invalid token"
+          },
+          "404": {
+            "description": "Job not found or invalid ObjectId format",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Enter your signed JWT token (without the 'Bearer ' prefix)."
+      }
+    },
+    "schemas": {
+      "UserSignupInput": {
+        "type": "object",
+        "required": [
+          "name",
+          "email",
+          "password",
+          "phone_number",
+          "gender",
+          "date_of_birth",
+          "membership_status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Jane Doe"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "jane.doe@example.com"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "SuperSecret123!"
+          },
+          "phone_number": {
+            "type": "string",
+            "example": "+1-555-123-4567"
+          },
+          "gender": {
+            "type": "string",
+            "example": "female"
+          },
+          "date_of_birth": {
+            "type": "string",
+            "format": "date",
+            "example": "1995-06-15"
+          },
+          "membership_status": {
+            "type": "string",
+            "example": "active"
+          }
+        }
+      },
+      "UserLoginInput": {
+        "type": "object",
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "jane.doe@example.com"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "example": "SuperSecret123!"
+          }
+        }
+      },
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "example": "jane.doe@example.com"
+          },
+          "token": {
+            "type": "string",
+            "description": "Signed JWT token",
+            "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+          }
+        }
+      },
+      "Company": {
+        "type": "object",
+        "required": ["name", "contactEmail", "contactPhone"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Acme Innovations"
+          },
+          "contactEmail": {
+            "type": "string",
+            "format": "email",
+            "example": "careers@acme.com"
+          },
+          "contactPhone": {
+            "type": "string",
+            "example": "+1-555-987-6543"
+          }
+        }
+      },
+      "JobInput": {
+        "type": "object",
+        "required": ["title", "type", "description", "company"],
+        "properties": {
+          "title": {
+            "type": "string",
+            "example": "Senior Full-Stack Developer"
+          },
+          "type": {
+            "type": "string",
+            "example": "Full-Time"
+          },
+          "description": {
+            "type": "string",
+            "example": "We are seeking a Full-Stack developer proficient in React and Node.js."
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          }
+        }
+      },
+      "Job": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Virtual ID mapped from _id",
+            "example": "664c39f018e69cf241bf8e12"
+          },
+          "_id": {
+            "type": "string",
+            "description": "MongoDB ObjectId",
+            "example": "664c39f018e69cf241bf8e12"
+          },
+          "title": {
+            "type": "string",
+            "example": "Senior Full-Stack Developer"
+          },
+          "type": {
+            "type": "string",
+            "example": "Full-Time"
+          },
+          "description": {
+            "type": "string",
+            "example": "We are seeking a Full-Stack developer proficient in React and Node.js."
+          },
+          "company": {
+            "$ref": "#/components/schemas/Company"
+          },
+          "user_id": {
+            "type": "string",
+            "description": "Reference to the User ObjectId who created the job",
+            "example": "664c39e218e69cf241bf8e0f"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-05-21T06:12:00.000Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "example": "2024-05-21T06:12:00.000Z"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "example": "Server Error"
+          },
+          "message": {
+            "type": "string",
+            "example": "Job not found"
+          }
+        }
+      }
+    }
+  }
+}
