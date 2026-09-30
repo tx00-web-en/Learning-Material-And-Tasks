@@ -1,6 +1,6 @@
-# Activity 2
+# Demo 2
 
-Prepare documentation for the Jobs API server, which was a part of Monday's pair programming. The server's source code can be found [here](https://github.com/tx00-resources-en/API-Testing-jobs). Here are some instructions to guide you:
+The server's source code can be found [here](https://github.com/tx00-resources-en/API-Testing-jobs). Here are some instructions to guide you:
 
 
 1. **Try the Prompt with LLM**:

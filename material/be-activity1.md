@@ -1,7 +1,7 @@
-# Activity 1: Introduction to API Documentation with Swagger/OpenAPI
+# Demo 1: Introduction to API Documentation with Swagger/OpenAPI
 
 ## Objective:
-The objective of this lab is to familiarize with API documentation using Swagger/OpenAPI. In this lab, you will be working with simple RESTful API provided by JSONPlaceholder to perform CRUD (Create, Read, Update, Delete) operations.
+The objective of this demo is to familiarize with API documentation using Swagger/OpenAPI. In this demo, you will be working with simple RESTful API provided by JSONPlaceholder to perform CRUD (Create, Read, Update, Delete) operations.
 
 
 ## Part 1/2 : JSONPlaceholder todos API
@@ -90,7 +90,7 @@ The "components" section is used to define reusable components for the API. In t
 Inside "schemas," there's a definition for a schema named "NewComment." This  represents the structure of a new comment that can be used when creating a comment through a POST request.
 
 
-## Part 2/2 (Optional)
+## Part 2/2
 
 Follow the steps of part 1 to generate documentation for the following APIs:
 - https://jsonplaceholder.typicode.com/photos
