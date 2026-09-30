@@ -259,3 +259,70 @@
   }
 }
 ```
+
+## Code Explanation
+
+In OpenAPI / Swagger, the **`components`** section acts as a central **data dictionary**. Instead of writing out the structure of a "Todo" item repeatedly across every endpoint (GET, POST, PUT, PATCH), you define it once under `components.schemas` and reference it elsewhere using `$ref: "#/components/schemas/..."`.
+
+
+
+### Why Are There Three Different Schemas?
+
+Even though they all represent a "Todo", APIs treat data differently depending on whether it is being **read**, **created**, or **partially updated**:
+
+| Schema | Purpose | Where It Is Used | Key Characteristic |
+| :--- | :--- | :--- | :--- |
+| **`Todo`** | The full response model | `GET` (returns a todo) and responses from `POST`/`PUT`/`PATCH` | Includes server-generated `id`. All fields are required. |
+| **`TodoInput`** | Full request body | `POST` (create) and `PUT` (replace) | Does **not** include `id` (the server generates it). |
+| **`TodoPatchInput`** | Partial request body | `PATCH` (update specific fields) | **No required fields**. Clients can send just what they want to change. |
+
+
+### Detailed Breakdown of Each Schema
+
+#### 1. `Todo` (The Complete Object)
+```json
+"Todo": {
+  "type": "object",
+  "required": ["userId", "id", "title", "completed"],
+  "properties": { ... }
+}
+```
+* **Role:** Represents the data as stored and returned by the server.
+* **Why `id` is included:** When reading from the database/API (`GET /todos/1`), the item always has an ID.
+* **`required`:** Lists all four fields because a complete Todo returned by JSONPlaceholder will always contain all of them.
+
+
+#### 2. `TodoInput` (Payload for Creating / Replacing)
+```json
+"TodoInput": {
+  "type": "object",
+  "required": ["userId", "title", "completed"],
+  "properties": { ... }
+}
+```
+* **Role:** Used in the request body when a client creates a new item (`POST /todos`) or replaces an existing one (`PUT /todos/{id}`).
+* **Why `id` is omitted:** Clients typically do not specify the primary key when creating a resource; the backend database generates it automatically.
+* **`required`:** Enforces that a client must supply `userId`, `title`, and `completed` for the request to be valid.
+
+
+#### 3. `TodoPatchInput` (Payload for Partial Updates)
+```json
+"TodoPatchInput": {
+  "type": "object",
+  "properties": { ... }
+}
+```
+* **Role:** Used for `PATCH /todos/{id}`.
+* **Why there is no `required` list:** A `PATCH` request only updates the fields sent by the client. For example, if a user marks a task done, they only need to send:
+  ```json
+  { "completed": true }
+  ```
+  They don't need to re-send the `title` or `userId`.
+
+
+### Meaning of the Internal Keywords
+
+* **`type`**: The JSON data type (`object`, `string`, `integer`, `boolean`).
+* **`properties`**: The dictionary of keys that can exist inside the object.
+* **`required`**: An array of property names that **must** be present in the JSON payload.
+* **`example`**: Sample values used by documentation tools (like Swagger UI) to populate mock data or interactive test forms.
