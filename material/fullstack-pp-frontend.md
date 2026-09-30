@@ -104,7 +104,7 @@ By the end you will have a working app that can **Create, Read, Update and Delet
 
 **File to change:** `src/pages/AddProductPage.jsx`
 
-The form already exists in the file but nothing happens on submit and the inputs are not connected to state.
+<!-- The form already exists in the file but nothing happens on submit and the inputs are not connected to state. -->
 
 **Tasks:**
 
