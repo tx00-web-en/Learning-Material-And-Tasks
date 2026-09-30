@@ -76,6 +76,9 @@ Here is the API you are building.
 
 ### Iteration 0: Setup 
 
+- Instructions are [here](./backend-setup.md)
+
+
 ### Iteration 1: Create a Product (`POST`)
 
 **Goal:** Implement the `createProduct` controller function so that `POST /api/products` saves a new product to the database.

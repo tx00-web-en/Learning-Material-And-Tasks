@@ -94,6 +94,10 @@ By the end you will have a working app that can **Create, Read, Update and Delet
 
 ## Instructions
 
+### Iteration 0: Setup
+
+- Instructions are [here](./frontend-setup.md)
+
 ### Iteration 1: Add a Product (`POST`)
 
 **Goal:** Make the "Add Product" form save a new product to the database.
