@@ -112,7 +112,7 @@ Each team member must create separate documentation files under the `evaluation/
    - Reflect on what you learned
 
 3. **Self-Grading** (`evaluation/self-grading/YourName.md`)
-   - Grade yourself out of 80 points
+   - Grade yourself out of 60 points
    - Justify your grade based on:
      - Code quality and organization
      - Completion of assigned features

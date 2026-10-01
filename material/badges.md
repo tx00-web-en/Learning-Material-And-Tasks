@@ -2,13 +2,13 @@
 
 During the Coding Marathon, groups can earn badges by completing specific milestones within the given time limits.
 
-Badges are awarded to the **whole group** and will be converted into the announced group bonuses.
+Badges are awarded to the **whole group** and will be converted into bonuses.
 
 There are three parts to the Coding Marathon.
 
 ---
 
-## Part A: 09:45–12:00
+## Part A: 
 
 Three badges are available:
 
@@ -26,7 +26,7 @@ Awarded to **every group** that successfully deploys the Part A full-stack appli
 
 ---
 
-## Part B: 13:00–16:00
+## Part B: 
 
 Part B starts at **13:00**, giving all groups a new opportunity to compete for Part B badges.
 
