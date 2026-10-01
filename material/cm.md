@@ -158,6 +158,6 @@ This session will be evaluated based on the following criteria:
 
 ---
 
-## Deadline
+## Submission
 
-**Submission Deadline: October 1, 2026 at 23:45**. Ensure all OMA links are submitted before the deadline.
+Submit the required deliverables to **OMA before the deadline: 23:45**. Ensure all OMA links are submitted before the deadline.
