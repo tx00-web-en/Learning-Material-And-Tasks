@@ -123,14 +123,14 @@ Each team member must create separate documentation files under the `evaluation/
 
 Use this checklist to track your progress:
 
-**Phase 1: Version 1 (API V1: No Authentication)**
+**Version 1 (API V1: No Authentication)**
 - [ ] API V1 code repository with all CRUD endpoints
 - [ ] Backend tests for API V1 (Vitest/Supertest) for all endpoints
 - [ ] Frontend V1 code (working with API V1)
 - [ ] Deployed APP V1 URL to Render: (backend+frontend).
 - [ ] Links to OMA 
 
-**Phase 2: Version 2 (API V2: With Authentication)**
+**Version 2 (API V2: With Authentication)**
 - [ ] API V2 code repository with protected endpoints
 - [ ] Backend tests for API V2 (Vitest/Supertest), including authentication tests
 - [ ] Frontend V2 code (with authentication integration)
