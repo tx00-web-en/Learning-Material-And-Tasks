@@ -64,7 +64,7 @@ Complete the frontend add form and listings. Submit all four schema fields to th
 
 Verify by adding a workout in the browser, checking the list, and refreshing to confirm MongoDB persistence. A missing required field must return `400`.
 
-The sample solution for the backend and frontend for this step is available here: [Iteration 1 sample solution](https://github.com/tx00-resources-en/w8-fullstack-sample-solutions).
+The sample solution for the backend and frontend for this step is available here: [Iteration 1 sample solution](https://github.com/tx00-web-en/Learning-Material-And-Tasks/tree/week8).
 
 ## Iteration 2: Read and Delete One Workout
 
@@ -136,7 +136,7 @@ export default defineConfig({
 });
 ```
 
-Use [api-testing-v1.md](https://github.com/tx00-resources-en/API-testing-products/blob/main/products-api1-no-auth/api-testing.md) as a reference. Adapt Products to Workouts and use the workout schema above. Use only the setup and API-testing material needed from [vitest.md](vitest.md); no watch or coverage scripts are required.
+Use [api-testing-v1.md](https://github.com/tx00-resources-en/API-testing-products/blob/main/products-api1-no-auth/api-testing.md) as a reference. Adapt Products to Workouts and use the workout schema above. Use only the setup and API-testing material needed from [vitest.md](https://github.com/tx00-web-en/Learning-Material-And-Tasks/blob/week7/material/bepp-summary.md); no watch or coverage scripts are required.
 
 Create `tests/workout.test.js` with:
 
