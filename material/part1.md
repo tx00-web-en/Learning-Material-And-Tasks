@@ -8,11 +8,11 @@ Build a workout application in four iterations. Keep each iteration working befo
 - Passing workout CRUD API tests.
 - A commit for each iteration, for example `[iter3] feat(workouts): implement workout editing`.
 
-Work on one branch and alternate driver/navigator roles after each iteration.
+> Work on one branch and alternate driver/navigator roles after each iteration.
 
 ## Setup
 
-Clone the starter code from here: [url]. Use the cloned `w8-fullstack-starter` in your own working folder. The starter has workout forms and placeholder controllers; it is not a finished solution.
+Clone the starter code from [here](https://github.com/tx00-resources-en/w8-fullstack-starter). Use the cloned `w8-fullstack-starter` in your own working folder. The starter has workout forms and placeholder controllers; it is not a finished solution.
 
 In `backend`:
 
@@ -64,7 +64,7 @@ Complete the frontend add form and listings. Submit all four schema fields to th
 
 Verify by adding a workout in the browser, checking the list, and refreshing to confirm MongoDB persistence. A missing required field must return `400`.
 
-The sample solution for the backend and frontend for this step is available here: [Iteration 1 sample solution](https://github.com/tx00-web-en/Learning-Material-And-Tasks/tree/week8).
+The sample solution for the backend and frontend for this step is available here: [Iteration 1 sample solution](https://github.com/tx00-resources-en/w8-fullstack-sample-solutions/tree/main/part1/iter1).
 
 ## Iteration 2: Read and Delete One Workout
 
