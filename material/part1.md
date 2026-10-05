@@ -1,6 +1,5 @@
 # Activity - Part 1 (Without Authentication)
 
-Build a workout application in four iterations. Keep each iteration working before moving on. Part 1 has public CRUD routes and no user authentication.
 
 ## Deliverables
 
@@ -39,16 +38,12 @@ Keep nodemon for the backend. The Vite proxy forwards `/api` to `http://localhos
 ## Workout Model
 
 ```js
-const mongoose = require("mongoose");
-
 const workoutSchema = new mongoose.Schema({
-  title: { type: String, required: true },
-  difficulty: { type: String, required: true },
-  description: { type: String, required: true },
-  price: { type: Number, required: true },
+  title: { type: String, required: true }, // Name of the workout (e.g., "30-Day Fat Burn", "Upper Body Blast")
+  difficulty: { type: String, required: true }, //  e.g., Beginner, Intermediate, Advanced (replaces 'type')
+  description: { type: String, required: true }, // Details about routine, target muscles, and goals
+  price: { type: Number, required: true }, // Cost of the workout program/session
 });
-
-module.exports = mongoose.model("Workout", workoutSchema);
 ```
 
 Use `difficulty`, such as Beginner, Intermediate, or Advanced. Send `price` as a number. Keep the starter's JSON ID conversion if you use it.

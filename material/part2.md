@@ -37,21 +37,16 @@ Add a long random `SECRET` to the backend `.env` for JWT signing. Export it from
 ### User Model
 
 ```js
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
-
 const userSchema = new Schema(
   {
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     phoneNumber: { type: String, required: true },
     name: { type: String, required: true },
-    role: { type: String, default: "user" },
+    role: { type: String, default: "user" }, //e.g., 'user', 'admin', 'trainer'
   },
   { timestamps: true, versionKey: false }
 );
-
-module.exports = mongoose.model("User", userSchema);
 ```
 
 Use `username`, not email, throughout signup, login, forms, and tests. Store the bcrypt password hash. For this lab, signup includes a role selector with `user` and `admin`; the backend validates and saves the selected role, defaulting to `user` when omitted. Display the role beside the username. Both roles have the same workout permissions in this exercise.
