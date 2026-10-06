@@ -29,7 +29,7 @@ Advancing technical skills offers various pathways depending on career goals or 
 ### **Suggested Areas and Resources**
 
 - **Next.js**: Ideal for those interested in server-side rendering
-  - [Next.js 16 Full Course](https://www.youtube.com/watch?v=mTz0GXj8NN0)
+  - [Next.js 16 Full Course](https://www.youtube.com/watch?v=I1V9YWqRIeI)
   - *[Next.js from Scratch](https://metropolia.finna.fi/Record/nelli15.5720000000288983)*  
 
 - **TypeScript**: Strengthen your understanding of strongly typed programming.  
